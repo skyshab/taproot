@@ -1,0 +1,374 @@
+// add to default styles
+.screen('default')
+{
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .wp-post-image {
+        display: block;
+    }
+
+
+    // caption styles
+    .wp-caption {
+        max-width: 100%;
+        margin: 0 0 1.8em 0;
+        background: white;
+        box-shadow: 0px 0px 1px 1px lightgrey;
+        padding: 5px;
+        
+        &.aligncenter {
+            margin: 0 auto 1.8em auto;
+        }
+    }
+
+    .wp-caption img {
+        margin: 0;
+    }
+
+    .wp-caption-text {
+        font-size: 0.8em;
+        text-align: center;
+    }
+
+
+    // icons 
+    .taproot-icon {
+        display: inline-block;
+        vertical-align: middle;
+        height: 1em;
+        width: 1em;    
+        position: relative;
+        top: -0.125em;
+        fill: currentColor;
+    }    
+
+
+    // fixed background image utility class
+    .taproot-fixed-bkg {
+        background-attachment: fixed;
+        background-position: center;
+        height: 100%;
+    }
+
+
+    // Parallax
+    .parallax-wrapper, .parallax-container {
+        position: relative;
+    }
+
+    .parallax-wrapper {
+
+        z-index: 1;
+
+        &.has-img .parallax,  &.has-img .parallax img {
+            position: relative;
+        }
+
+        &.fullscreen .parallax-container {
+            height: 100vh;
+        }
+    }
+
+    .parallax-container {
+        overflow: hidden;
+    }
+
+    .taproot-hero-image {
+        background-size: cover;
+    }
+
+    .taproot-hero-image img {
+        display: block;
+    }
+    .taproot-hero-image.parallax img {
+        width: 100%;
+        width: auto; // testing min height on images
+        display: block;
+    }
+
+    .taproot-hero-area.has-img.fullscreen img {
+        min-height: 100vh;
+        width: auto;
+        max-width: none;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .admin-bar .taproot-hero-area.has-img.fullscreen img {
+        min-height: ~'calc(100vh - 32px)';
+    }
+
+
+    .parallax, .parallax-content, .taproot-hero-area.has-bkg .taproot-hero-image, .taproot-hero:after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    // hero overlay post navigation
+    .taproot-hero-content > .post-navigation {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);  
+    }
+
+
+    // hero overlay
+    .taproot-hero:after {
+        display: block;
+        content: '';
+    }
+
+
+    .parallax {
+        z-index: -1;
+        transform: translate3d(0,0,0);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        img {
+            position: absolute;
+            display: none;
+            bottom: 0;
+            margin-bottom: 0;
+            max-width: none;
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    .parallax-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        z-index: 1;
+    }
+
+
+    .parallax-wrapper.has-bkg:not(.taproot-hero-area) .parallax {
+        margin-top: -25vh;
+    }
+
+
+    // parallax in content styles
+    main .parallax-wrapper {
+        margin-bottom: 1.6em; // this should be equal to line-height
+    }
+
+
+// embedded video styles 
+
+    .embed-wrap {
+        position:       relative;
+        padding-bottom: 56.25%;
+        height:         0;
+        overflow:       hidden;
+    }
+
+    .embed-wrap iframe,
+    .embed-wrap object,
+    .embed-wrap embed {
+        position:  absolute;
+        top:       0;
+        left:      0;
+        width:     100%;
+        max-width: 100%;
+        height:    100%;
+    }
+
+
+
+
+
+
+
+} // end screen
+
+
+
+ .size-tiny, .size-thumbnail, .size-small, .size-medium, .size-full {
+
+    &.alignleft, &.alignright {
+        float: none;
+    }
+ }
+
+
+.feature-tiny, .feature-thumbnail, .feature-full, .feature-small, .feature-medium {
+
+    .post-thumbnail, .entry-header {
+        img.alignleft, img.alignright {
+            float: none;
+        }
+    }
+}
+
+
+// Tiny Thumb 
+
+@media (min-width: 481px) {
+
+    .feature-tiny {
+        .post-thumbnail, .entry-header {
+            img {
+                max-width: 33%;
+            }
+        }
+    }    
+
+    .feature-tiny, .feature-full {
+
+        .post-thumbnail, .entry-header {
+            img.alignleft {
+                .go-left();
+            }
+
+            img.alignright {
+                .go-right();
+            }
+        }
+
+    }
+
+    .size-tiny, .size-full {
+
+        &.alignleft {
+            .go-left();
+        }
+
+        &.alignright {
+            .go-right();
+        }
+    }
+
+}
+
+
+@media (min-width: 481px) {
+
+    .feature-thumbnail {
+        .post-thumbnail, .entry-header {
+            img {
+                max-width: 50%;
+            }
+        }
+    }    
+
+    .feature-thumbnail {
+
+        .post-thumbnail, .entry-header {
+            img.alignleft {
+                .go-left();
+            }
+
+            img.alignright {
+                .go-right();
+            }
+        }
+
+    }
+
+    .size-thumbnail {
+
+        &.alignleft {
+            .go-left();
+        }
+
+        &.alignright {
+            .go-right();
+        }
+    }
+
+}
+
+@media (min-width: 580px) {
+
+    .feature-small {
+        .post-thumbnail, .entry-header {
+            img {
+                max-width: 50%;
+            }
+        }
+    }
+
+    .feature-small {
+
+        .post-thumbnail, .entry-header {
+            img.alignleft {
+                .go-left();
+            }
+
+            img.alignright {
+                .go-right();
+            }
+        }
+    }
+
+    .size-small {
+
+        &.alignleft {
+            .go-left();
+        }
+
+        &.alignright {
+            .go-right();
+        }
+    }
+
+}
+
+@media (min-width: 640px) {
+
+    .feature-medium {
+        .post-thumbnail, .entry-header {
+            img {
+                max-width: 50%;
+            }
+        }
+    }    
+
+    .feature-medium {
+
+        .post-thumbnail, .entry-header {
+            img.alignleft {
+                .go-left();
+            }
+
+            img.alignright {
+                .go-right();
+            }
+        }
+    }
+
+    .size-medium {
+
+        &.alignleft {
+            .go-left();
+        }
+
+        &.alignright {
+            .go-right();
+        }
+    }
+}
+
+.go-left()
+{
+    float: left;
+    margin: 0 2em 1.8em 0;
+}
+
+.go-right()
+{
+    float: right;
+    margin: 0 0 1.8em 2em;
+}

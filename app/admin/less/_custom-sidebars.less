@@ -1,0 +1,223 @@
+/**
+ * Sidebar form styles
+ */
+ 
+.widgets-php #widgets-left {
+    margin-right: 0 !important;
+}
+
+.widgets-php #footer{
+    background: #fff;
+    margin-right: 0px;
+    padding-right: 20px;
+}
+
+.taproot-options {
+    margin-top: 12px;
+    text-align:right
+}
+
+#taproot-widgets-extra{
+    display:none;
+}
+#taproot-title-options {
+    overflow: hidden;
+}
+#taproot-title-options h2{
+    margin-left: 5px;
+    float: left;
+    margin-bottom: 0;
+    border:none;
+}
+
+.sidebar-form{
+    margin: 0 15px;
+}
+.sidebar-form label {
+    display:block;
+}
+.sidebar-form .submit{
+    text-align: right;
+    margin: 0;
+    padding: 1em 0;
+}
+.sidebar-form .description{
+    margin-top: 5px;
+}
+
+.sidebar_name, .sidebar_description{
+    width: 100%;
+}
+
+div#widgets-right .sidebar-name>h3{
+    padding: 15px;
+}
+
+div#widgets-right .widgets-sortables .sidebar-name>h3{
+    padding: 15px 7px;
+}
+
+div#widgets-right .sidebar-name .sidebar-name-arrow:before {
+    top: 4px;
+    position: relative;
+}
+
+.taproot-message{
+    margin: .5em 0;
+    padding: 10px;
+    font-weight:bolder;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.taproot-update{
+    background: lightYellow;
+    border: 1px solid #E6DB55;
+}
+
+.taproot-error{
+    background: #FFEBE8;
+    border: 1px solid #C00;
+}
+
+.taproot-remove-sidebar {
+    text-align: right;
+    padding: 0 10px 10px 10px;
+}
+
+.closed .taproot-remove-sidebar {
+    display: none;
+}
+.taproot-remove-sidebar a{
+    text-decoration: none;
+}
+
+.widgets_access .widget-liquid-right{
+    position: static;
+}
+
+.taproot-options .ajax-feedback,
+#new-sidebar-holder .ajax-feedback {
+    height:16px;
+    vertical-align: middle;
+    margin: 0 5px;
+}
+
+#new-sidebar-holder h3 .ajax-feedback {
+    vertical-align: bottom;
+}
+
+#new-sidebar-holder .sidebar-name {
+    cursor: default!important;
+}
+
+.sidebar-name h3 .ajax-feedback {
+    height:16px;
+    vertical-align: bottom;
+    margin: 0 5px;
+}
+
+/* clearfix */
+.cf:after {
+    content:"";
+    display:table;
+    clear:both;
+}
+
+div#widgets-right .sidebars-column-1, div#widgets-right .sidebars-column-2 {
+    max-width: 100%;
+}
+
+div#widgets-right .widget {
+    margin: 0 auto 12px auto!important;
+}
+div#widgets-right .widgets-holder-wrap {
+    /*min-height: 133px;*/
+}
+div#widgets-right .widgets-holder-wrap.closed {
+    min-height: 1em;
+}
+div#widgets-right .widgets-sortables {
+    min-height: 90px;
+}
+div#widgets-right .widgets-holder-wrap.closed .widgets-sortables {
+    min-height: 1em;
+}
+
+
+/*#sidebar + .taproot-remove-sidebar { display: none; }*/
+
+ [id^="taproot-"].widgets-sortables + .taproot-remove-sidebar { display: none; }
+
+/* hide Divi Builder sidebar form. */
+#et_pb_widget_area_create {
+    display: none;
+}
+
+
+@media screen and (min-width: 480px) {
+
+    div.widget-liquid-right {
+        float: none;
+        width: 100%;
+    }
+
+    div.widget-liquid-left {
+        margin: 0;
+        width: 100%;
+        float: none;
+    }
+
+    .wrap {
+        margin: 0 auto;
+        max-width: 480px;
+    }
+
+}
+
+@media screen and (min-width: 782px) {
+
+    .widget-liquid-right .overview { list-style: none; position: absolute; left: 0; top: 0; width: 99%; margin-left:1%; }
+    .widget-liquid-right .viewport { position: relative; margin-right: 20px;}
+
+
+    .wrap {
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .liquid-wrap {
+        display: flex;
+        width: 100%;
+        padding-top: 12px;
+    }
+
+    .liquid-wrap  .widget-liquid-left, .liquid-wrap .widget-liquid-right {
+        width: 50%;
+        padding: 0 16px 16px;
+    }
+
+    .liquid-wrap  .widget-liquid-left {
+    }
+
+    #widgets-left {
+        padding-top: 0;
+    }
+
+   .liquid-wrap .widget-liquid-right {
+        border-left: 1px solid #ddd;
+    }
+
+
+
+}
+
+@media screen and (min-width: 1250px) {
+
+
+    div#widgets-right .sidebars-column-1, div#widgets-right .sidebars-column-2 {
+        max-width: 50%;
+    }
+
+}

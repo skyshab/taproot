@@ -1,0 +1,39 @@
+
+// skip link styles
+#skip-link a {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: -64px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    background: #fd6f23;
+    color: white;
+    padding: 0.4em 1em;
+    text-decoration: underline;
+    transition: top 0.5s ease-in;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.25);
+}
+
+#skip-link a:focus {
+    top: 0px;
+
+    .admin-bar & {
+        top: 30px;
+    }
+}
+
+// focus styles
+
+:focus {
+    outline: none;
+    box-shadow: 0 0 3px 2px #fd6f23;
+}
+
+
+/* suppress focus ring on form controls for mouse users */
+[data-whatintent="mouse"] *:focus {
+    box-shadow: none;
+}
+

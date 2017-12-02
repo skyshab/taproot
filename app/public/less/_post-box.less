@@ -1,0 +1,60 @@
+// add to default styles
+.screen('default')
+{
+    .post-box {
+        
+        .clearfix();
+
+        border-top-width: 1px;
+        border-top-style: solid;
+        padding-top: 2em;
+
+        &:last-of-type {
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+        }
+
+        .entry-title {
+            margin-bottom: 0.2em;
+
+            a, a:hover {
+                color: inherit;
+            }
+        }
+        .taproot-meta {
+            margin-top: 0;
+            margin-bottom: 1em;
+        }
+
+        &.format-image, &.format-gallery, &.format-audio, &.format-video {
+            padding-bottom: 2em;
+        }
+    }
+
+    .post-box.format-gallery .gallery {
+        margin-top: -0.8em;
+        margin-bottom: -0.8em;        
+    }
+
+
+    // required for theme check
+    .bypostauthor {
+        display: inherit;
+    }
+
+    // sticky post
+    // required for theme check    
+    .sticky .taproot-icon--thumb-tack {
+        margin-left: -0.5em;
+    }    
+
+} // end screen
+
+
+.screen( 'tablet-and-up')
+{
+    .sticky .taproot-icon--thumb-tack {
+        margin-left: -1em;
+    }  
+    
+} // end screen

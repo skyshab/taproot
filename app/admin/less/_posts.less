@@ -1,0 +1,73 @@
+
+// when in fullscreen mode, hide other elements that are showing above fullscreen editor
+    .mce-fullscreen #adminmenumain, .mce-fullscreen #post-body-content {
+        display: none;
+    }
+
+
+/* Taproot Post Metabox styles */
+
+    #taproot_settings_metabox, #postimagediv {
+        .inside {
+            padding: 0;
+            margin: 0;
+        }        
+    }
+
+    .taproot-metabox__setting {
+        border-bottom: 1px solid #eeeeee;
+        padding: 0;
+        margin: 0;
+    }
+
+    .taproot-metabox__setting__label {
+        display: inline-block!important;
+        box-sizing: border-box;
+        font-weight: bold;
+        background-color: #fff;
+        margin: 0!important;
+        padding: 10px 5% 10px 5%;
+        width: 40%;
+        border-right: 1px solid #eeeeee;    
+    }
+
+    .taproot-metabox__setting__select {
+        display: inline-block!important;
+        box-sizing: border-box;
+        color: #a0a5aa;
+        margin-right: 5%;
+        width: 53%;
+        border: none;
+        box-shadow: none;
+        outline: none;
+        padding: 0;    
+    }
+
+    .taproot-metabox__setting__select:focus {
+        color: #444;
+        box-shadow: none;
+        outline: none;    
+    }
+
+
+    .taproot-metabox__setting__checkbox {
+        margin-left: 6px!important;
+    }
+
+
+    // featured image metabox
+    #postimagediv {
+
+        .taproot-metabox {
+            border-top: 1px solid #eeeeee;
+        }
+
+        .inside > p {
+            padding: 0 12px;
+        }
+
+        // hide the controls when there's no featured image set
+        input[value="-1"] + .taproot-metabox { 
+            display: none;
+        }
+    }    

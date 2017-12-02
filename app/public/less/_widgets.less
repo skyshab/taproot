@@ -1,0 +1,120 @@
+.screen('default')
+{
+	// general widget styles
+	.widget {
+
+		margin-bottom: 2em;
+
+		ul {
+	    	list-style-position: outside;
+		    padding-left: 1em;
+		}
+	}
+	
+	// calendar widget
+	.calendar_wrap table {
+	  width: 100%;
+	  border-collapse: collapse; 
+	  background: white;
+	}
+
+	.calendar_wrap td,.calendar_wrap th {
+	  text-align: center;
+	} 
+
+	.calendar_wrap thead {
+	  border-bottom: 1px solid;
+	}
+
+	.calendar_wrap tfoot td:first-child {
+	  text-align: left;
+	  padding-left: .8em;
+	}
+	.calendar_wrap tfoot td:last-child {
+	  text-align: right;
+	  padding-right: .8em;
+	}
+	.calendar_wrap tfoot td {
+	  border-top: 1px solid;
+	  font-size: 0.8em;
+	}
+
+
+	// search widget
+
+
+    input[type="search"] {
+      -webkit-appearance: none;
+    }
+
+    .widget {
+
+		.taproot-search {
+
+			.input-group {
+	        	width: 100%;  
+	        	display: flex;
+	        	color: inherit;
+	        }  
+
+	        .taproot-search__field	{
+	        	width: 100%;
+	        	flex: 0 1 auto;
+	        	color: inherit;
+	        	border-width: 1px;
+	        	border-style: solid;	        	
+	        	border-right-color: transparent;
+			    padding: 0.4em 0.6em;
+			    font-size: 0.9em;
+
+			    &:focus {
+			    	// outline: none;
+			    }
+	        }	
+
+	        .taproot-search__button {
+	        	border: 1px solid;
+	        	border-radius: 0;
+	        	background: currentColor;
+	        	padding: 0 1em;
+	        	transition: all 0.4s ease-in-out; 
+
+	        	.taproot-icon {
+	        		top: 0;
+	        		color: white;
+	        		font-size: 1.6em;
+	        	}
+
+	        	&:hover {
+	        		color: inherit;
+	        	}
+	        	&:focus, &:active {
+	        		// outline: none;
+	        	}
+	        }	       
+		} // end search
+
+
+    } // end widget
+
+    .widget_categories, .widget_archive {
+
+        select {
+			font-size: 0.8em;
+		    border-radius: 0;
+		    -webkit-appearance: none;
+		    padding: 0.5em 1em;
+		    width: 100%;
+		    background: url(../images/triangle-down--transparent-bkg--42px.png) no-repeat;
+		    border: none;
+		    background-size: auto 20%;
+		    background-position-y: 50%;
+		    background-position-x: ~"calc(100% - 1em)";
+
+		    &:focus {
+		    	// outline: none;
+		    }
+        } 
+        
+    }
+}

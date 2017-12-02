@@ -1,0 +1,849 @@
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute!important;
+  width: 1px;
+}
+/* General Customizer Styles */
+.wp-full-overlay-header input {
+  width: auto;
+}
+#customize-theme-controls > ul {
+  min-width: 299px;
+}
+.customize-panel-back {
+  height: 70px;
+}
+.control-panel-back:before,
+.customize-controls-close:before {
+  top: 3px;
+  left: 12px;
+}
+.accordion-section-content {
+  min-height: 300px!important;
+  padding: 20px;
+  background-color: #fff !important;
+  border-bottom: 1px solid #dddddd;
+}
+.accordion-section-content li.customize-control:first-of-type,
+.accordion-section-content li.customize-control:first-of-type .customize-control-title {
+  margin-top: 0 !important;
+}
+#customize-preview > iframe {
+  position: static;
+}
+body .wp-full-overlay #customize-preview iframe.resizing {
+  max-width: 100%!important;
+}
+.wp-full-overlay .collapse-sidebar-label {
+  display: none;
+}
+/* Global Customizer control styles */
+.customize-control {
+  margin-bottom: 0;
+}
+.customize-control label {
+  font-size: 12px;
+  position: relative;
+}
+.customize-control select,
+.customize-control input[type=text] {
+  width: 100%;
+}
+.customize-control select,
+.customize-control input[type=checkbox],
+.customize-control input[type=text] {
+  margin-left: 0;
+  border-radius: 4px;
+  border: none;
+  box-shadow: none;
+  background: #f4f4f4;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #32373c;
+}
+.customize-control input:focus,
+.customize-control select:focus {
+  box-shadow: none !important;
+  outline: none !important;
+  background: #eaeaea;
+  transition: background .5s;
+}
+.customize-control button.button {
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  background-color: #2E86B9;
+  color: #fff;
+  height: 30px;
+}
+.customize-control button.button:hover {
+  color: #fff;
+  background-color: #186EA0;
+  transition: all 0.5s ease-in-out;
+}
+.customize-control button.button.remove-button {
+  margin-bottom: 10px;
+}
+.customize-control-title {
+  margin-top: 15px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.customize-control-description {
+  margin: 5px;
+}
+.customize-control select,
+.customize-control-text input {
+  background: #FDFDFD;
+  border: 1px solid #eee;
+  height: 35px;
+}
+/* Control: range slider */
+.customize-control-range .customize-control-title {
+  margin-bottom: 0;
+}
+.customize-control-range input[type=range] {
+  transition: background .5s;
+  -webkit-appearance: none;
+  background-color: #f4f4f4;
+  height: 5px;
+  width: 165px;
+  padding: 0;
+}
+.customize-control-range input[type=range]:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+.customize-control-range input[type=range]:hover {
+  background-color: #CAEBFF;
+}
+.customize-control-range input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: #2e86b9;
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+}
+.customize-control-range input[type=range]::-moz-range-track {
+  border: inherit;
+  background: transparent;
+}
+.customize-control-range input[type=range]::-ms-track {
+  border: inherit;
+  color: transparent;
+  background: transparent;
+}
+.customize-control-range input[type=range]::-ms-fill-lower,
+.customize-control-range input[type=range]::-ms-fill-upper {
+  background: transparent;
+}
+.customize-control-range input[type=range]::-ms-tooltip {
+  display: none;
+}
+.customize-control-range input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border: none;
+  border-radius: 15px;
+  background-color: #2e86b9;
+}
+.customize-control-range input[type=range]::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border: none;
+  border-radius: 15px;
+  background-color: #2e86b9;
+}
+.customize-control-range input[type=range]::-ms-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  border: 0;
+  background-color: #2e86b9;
+}
+.customize-control-range .taproot-range-input {
+  width: 60px!important;
+  text-align: center;
+  margin-left: 4px;
+  border-radius: 4px;
+  border: none;
+  box-shadow: none;
+  background: #F4F4F4;
+  padding: 3px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #555;
+  -moz-appearance: textfield;
+}
+.customize-control-range .taproot-range-input:hover,
+.customize-control-range .taproot-range-input:focus {
+  background: #eaeaea;
+  transition: background .5s;
+}
+.customize-control-range .taproot-range-input::-webkit-outer-spin-button,
+.customize-control-range .taproot-range-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.customize-control-range .taproot_reset_slider {
+  width: 28px;
+  height: 28px;
+  margin-left: 5px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}
+.customize-control-range .taproot_reset_slider:after {
+  font-family: 'Dashicons';
+  content: "\f531";
+  font-size: 18px;
+  line-height: 28px;
+  color: #D4D4D4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background .5s;
+}
+.customize-control-range .taproot_reset_slider:hover:after {
+  color: #A7A7A7;
+}
+/* Control: checkboxes */
+.customize-control-checkbox {
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  border: 1px solid #EEEEEE;
+  background-color: #FDFDFD;
+  margin-bottom: -1px;
+  margin-top: 1.2em;
+  padding: 6px 10px;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+.customize-control-checkbox input[type=checkbox] {
+  margin-right: 10px;
+  margin-top: 0;
+  width: 25px;
+  height: 25px;
+}
+.customize-control-checkbox input[type=checkbox]:checked:before {
+  color: #2E86B9;
+  float: none;
+  margin: 0;
+  width: inherit;
+  height: 23px;
+  margin-top: 2px;
+}
+.customize-control-checkbox label {
+  padding: 0;
+  margin-left: 0;
+  line-height: 25px;
+}
+.customize-control-checkbox .customize-inside-control-row {
+  margin-left: 0;
+  padding: 0;
+}
+/* Control: image picker */
+.customize-control-image .inner,
+.customize-control-background .inner {
+  line-height: 30px;
+  top: 0;
+}
+.customize-control-image .current .container,
+.customize-control-background .current .container {
+  min-height: 30px;
+}
+.customize-control-image .attachment-media-view,
+.customize-control-background .attachment-media-view {
+  background: #fff;
+}
+.customize-control-image .default-button,
+.customize-control-background .default-button {
+  margin-bottom: 12px;
+}
+/* Control: color picker */
+.wp-color-result {
+  box-sizing: border-box;
+  width: 100%;
+  height: 30px;
+  margin: 0;
+  padding: 0 0 0 40px;
+  border: none;
+  border-radius: 0px;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5) !important;
+}
+.wp-color-result:after {
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  padding: 0 15px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+.wp-color-result:hover,
+.wp-color-result:focus:after,
+.wp-color-result:hover:after {
+  color: #fff;
+  border: none;
+}
+.wp-picker-container .iris-picker {
+  margin: 15px 0 0 0;
+}
+.wp-picker-container,
+.wp-picker-input-wrap {
+  width: 100%;
+}
+.wp-picker-container input[type=text].wp-color-picker,
+.wp-core-ui .wp-picker-default,
+.wp-core-ui .wp-picker-clear {
+  vertical-align: bottom;
+  margin-top: 10px;
+}
+.wp-picker-container input[type=text].wp-color-picker {
+  width: 70% !important;
+}
+.wp-core-ui .wp-picker-default,
+.wp-core-ui .wp-picker-clear {
+  width: 25% !important;
+  margin-left: 5%;
+}
+.customize-control-alpha-color label {
+  width: 70%;
+}
+.customize-control-alpha-color .wp-color-result-text,
+.customize-control-taproot-color .wp-color-result-text,
+.taproot-color-container .wp-color-result-text {
+  color: white;
+  line-height: 30px;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 30px;
+  border-left: none;
+}
+.customize-control-alpha-color .wp-picker-container .wp-color-result.button,
+.customize-control-taproot-color .wp-picker-container .wp-color-result.button,
+.taproot-color-container .wp-picker-container .wp-color-result.button {
+  height: 32px;
+  font-size: 12px;
+}
+.customize-control-alpha-color .wp-picker-container input[type=text].wp-color-picker,
+.customize-control-taproot-color .wp-picker-container input[type=text].wp-color-picker,
+.taproot-color-container .wp-picker-container input[type=text].wp-color-picker {
+  width: 100%!important;
+}
+.customize-control-alpha-color .wp-color-result.button,
+.customize-control-taproot-color .wp-color-result.button,
+.taproot-color-container .wp-color-result.button {
+  background-color: #ffffff;
+  padding-left: 38px;
+}
+.customize-control-alpha-color .wp-color-result.button:hover,
+.customize-control-taproot-color .wp-color-result.button:hover,
+.taproot-color-container .wp-color-result.button:hover {
+  background-color: #ffffff;
+}
+.customize-control-alpha-color .wp-color-result.button:hover .wp-color-result-text,
+.customize-control-taproot-color .wp-color-result.button:hover .wp-color-result-text,
+.taproot-color-container .wp-color-result.button:hover .wp-color-result-text {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.customize-control-alpha-color .wp-picker-container,
+.customize-control-taproot-color .wp-picker-container,
+.taproot-color-container .wp-picker-container {
+  max-width: 100%;
+}
+/* Control: font styles */
+.taproot-font-style {
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 0;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  box-shadow: none;
+  background: #f4f4f4;
+  padding: 6px 0;
+  float: left;
+  width: 23.5%;
+  margin-right: 2%;
+  text-align: center;
+  font-size: 14px;
+  color: #32373c;
+  box-sizing: border-box;
+}
+.taproot-font-style:hover {
+  border-color: #2e86b9;
+}
+.taproot-font-style:last-of-type {
+  margin-right: 0;
+}
+.taproot-font-style .taproot-font-style-checkbox {
+  display: none;
+}
+.taproot-font-style.taproot-font-style-checked {
+  background: #2e86b9;
+}
+.taproot-font-style.taproot-font-style-checked:before {
+  color: #FFF;
+}
+.taproot-font-style:before {
+  font-size: 24px;
+  line-height: 40px;
+  display: inline-block;
+  vertical-align: middle;
+  speak: none;
+  color: #B7B7B7;
+}
+.taproot-font-style.taproot-font-value-bold:before {
+  content: "B";
+  font-weight: bold;
+}
+.taproot-font-style.taproot-font-value-italic:before {
+  content: "I";
+  font-style: italic;
+}
+.taproot-font-style.taproot-font-value-uppercase:before {
+  content: "TT";
+}
+.taproot-font-style.taproot-font-value-capitalize:before {
+  content: "Tt";
+}
+/* Control: Responsive Panel Controls */
+#customize-controls #customize-theme-controls .control-panel-responsive .control-section-default > h3 {
+  background-color: #555;
+  color: white;
+  border-color: transparent;
+}
+#customize-controls #customize-theme-controls .control-panel-responsive .control-section-default > h3:after {
+  color: white;
+}
+#customize-controls #customize-theme-controls .control-panel-responsive .control-section-default:hover > h3 {
+  background: #666;
+  color: white;
+}
+#customize-controls #customize-theme-controls .control-panel-responsive .control-section-default ~ li > h3 {
+  color: #555;
+  background: white;
+  border-bottom-color: #eee;
+  padding-left: 40px;
+}
+#customize-controls #customize-theme-controls .control-panel-responsive .control-section-default ~ li > h3:hover {
+  background: rgba(255, 255, 255, 0.6);
+  color: black;
+}
+#customize-controls #customize-theme-controls .control-panel-responsive .control-section-default ~ li > h3:before {
+  position: absolute;
+  display: block;
+  -webkit-font-smoothing: antialiased;
+  font: 400 20px/30px dashicons;
+  vertical-align: top;
+  color: #656a6f;
+  left: 10px;
+  top: 50%;
+  margin-top: -15px;
+  font-size: 20px;
+  height: 30px;
+}
+#customize-controls #customize-theme-controls .control-panel-responsive .control-section-default ~ li > h3:after {
+  color: inherit;
+}
+.control-section-responsive .customize-section-description-container h3 {
+  position: relative;
+}
+.control-section-responsive .customize-section-description-container h3:after {
+  position: absolute;
+  -webkit-font-smoothing: antialiased;
+  font: 400 20px/30px dashicons;
+  color: #656a6f;
+  right: 10px;
+  top: 50%;
+  margin-top: -13px;
+  font-size: 30px;
+}
+.control-section-responsive-mobile-landscape .customize-section-description-container h3:after,
+.control-section-responsive-laptop .customize-section-description-container h3:after {
+  right: 14px!important;
+}
+/* Screen Sections */
+.control-section-responsive-mobile > h3:before,
+.control-section-responsive-mobile .customize-section-description-container h3:after {
+  content: "\f470";
+}
+.control-section-responsive-mobile-landscape > h3:before,
+.control-section-responsive-mobile-landscape .customize-section-description-container h3:after {
+  content: "\f470";
+  transform: rotate(270deg) scaleX(-1);
+}
+.control-section-responsive-tablet > h3:before,
+.control-section-responsive-tablet .customize-section-description-container h3:after {
+  content: "\f471";
+}
+.control-section-responsive-laptop > h3:before,
+.control-section-responsive-laptop .customize-section-description-container h3:after {
+  content: "\f547";
+}
+.control-section-responsive-desktop > h3:before,
+.control-section-responsive-desktop .customize-section-description-container h3:after {
+  content: "\f472";
+}
+.customize-section-title {
+  overflow: hidden;
+}
+/* Section Titles */
+#customize-theme-controls .taproot-group-title {
+  display: block;
+  width: 100%;
+  padding-top: 1.6em;
+  padding-bottom: .6em;
+  border-bottom: 1px solid #f4f4f4;
+  color: #555;
+  font-weight: bold;
+  font-size: 16px;
+}
+/* Open Current Screen Button */
+.control-panel-responsive > ul {
+  padding-bottom: 3em;
+}
+#current-screen-button {
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+}
+#current-screen-button a {
+  color: #555;
+}
+#current-screen-button a:hover {
+  color: #777;
+  text-decoration: underline;
+}
+#customize-footer-actions .devices button:before {
+  vertical-align: middle;
+}
+/* Screen Navigation */
+.customize-control-taproot-screen-nav {
+  margin: -16px 0 12px -12px;
+  padding: 10px 12px;
+  background: #555;
+}
+.customize-control-taproot-screen-nav a.taproot-screen-nav-link {
+  color: white;
+  opacity: 0.75;
+  position: relative;
+}
+.customize-control-taproot-screen-nav a.taproot-screen-nav-link:hover {
+  opacity: 1;
+  text-decoration: underline!important;
+}
+.customize-control-taproot-screen-nav a.taproot-screen-nav-link.alignleft:before,
+.customize-control-taproot-screen-nav a.taproot-screen-nav-link.alignright:after {
+  font: 400 1em dashicons;
+  position: absolute;
+  top: 50%;
+  margin-top: -0.5em;
+}
+.customize-control-taproot-screen-nav a.taproot-screen-nav-link.alignleft {
+  padding-left: 1em;
+}
+.customize-control-taproot-screen-nav a.taproot-screen-nav-link.alignleft:before {
+  content: "\f341";
+  margin-left: -1em;
+}
+.customize-control-taproot-screen-nav a.taproot-screen-nav-link.alignright {
+  padding-right: 1em;
+}
+.customize-control-taproot-screen-nav a.taproot-screen-nav-link.alignright:after {
+  content: "\f345";
+  margin-right: -1em;
+}
+/* Rootstrap tabs */
+.customize-control.customize-control-rootstrap-tabs {
+  border-bottom: 1px solid #ddd;
+  width: 299px;
+  margin: 0px -12px 12px -12px;
+  text-align: right;
+}
+.rootstrap-tab {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  border-bottom: none;
+  color: #555;
+  padding: .6em 1em;
+  margin: 0;
+  margin-right: 12px;
+  z-index: 2;
+  position: relative;
+  display: inline-block;
+  text-transform: capitalize;
+}
+.rootstrap-tab.current-tab {
+  background: white;
+  border-bottom-color: white;
+}
+.rootstrap-tab.current-tab:after {
+  content: '';
+  background: white;
+  height: 1.25px;
+  width: 100%;
+  display: block;
+  position: absolute;
+  bottom: -1.25px;
+  left: 0;
+}
+.accordion-section[id*="tab-hider"] ~ .accordion-section {
+  height: 0;
+}
+.accordion-section[id*="tab-hider"] ~ .accordion-section .accordion-section-title {
+  display: none;
+}
+/* Widgets panel */
+#accordion-panel-widgets .customize-control-widget_form {
+  margin-bottom: 12px;
+}
+.mce-fullscreen #adminmenumain,
+.mce-fullscreen #post-body-content {
+  display: none;
+}
+/* Taproot Post Metabox styles */
+#taproot_settings_metabox .inside,
+#postimagediv .inside {
+  padding: 0;
+  margin: 0;
+}
+.taproot-metabox__setting {
+  border-bottom: 1px solid #eeeeee;
+  padding: 0;
+  margin: 0;
+}
+.taproot-metabox__setting__label {
+  display: inline-block !important;
+  box-sizing: border-box;
+  font-weight: bold;
+  background-color: #fff;
+  margin: 0!important;
+  padding: 10px 5% 10px 5%;
+  width: 40%;
+  border-right: 1px solid #eeeeee;
+}
+.taproot-metabox__setting__select {
+  display: inline-block !important;
+  box-sizing: border-box;
+  color: #a0a5aa;
+  margin-right: 5%;
+  width: 53%;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  padding: 0;
+}
+.taproot-metabox__setting__select:focus {
+  color: #444;
+  box-shadow: none;
+  outline: none;
+}
+.taproot-metabox__setting__checkbox {
+  margin-left: 6px!important;
+}
+#postimagediv .taproot-metabox {
+  border-top: 1px solid #eeeeee;
+}
+#postimagediv .inside > p {
+  padding: 0 12px;
+}
+#postimagediv input[value="-1"] + .taproot-metabox {
+  display: none;
+}
+/**
+ * Sidebar form styles
+ */
+.widgets-php #widgets-left {
+  margin-right: 0 !important;
+}
+.widgets-php #footer {
+  background: #fff;
+  margin-right: 0px;
+  padding-right: 20px;
+}
+.taproot-options {
+  margin-top: 12px;
+  text-align: right;
+}
+#taproot-widgets-extra {
+  display: none;
+}
+#taproot-title-options {
+  overflow: hidden;
+}
+#taproot-title-options h2 {
+  margin-left: 5px;
+  float: left;
+  margin-bottom: 0;
+  border: none;
+}
+.sidebar-form {
+  margin: 0 15px;
+}
+.sidebar-form label {
+  display: block;
+}
+.sidebar-form .submit {
+  text-align: right;
+  margin: 0;
+  padding: 1em 0;
+}
+.sidebar-form .description {
+  margin-top: 5px;
+}
+.sidebar_name,
+.sidebar_description {
+  width: 100%;
+}
+div#widgets-right .sidebar-name > h3 {
+  padding: 15px;
+}
+div#widgets-right .widgets-sortables .sidebar-name > h3 {
+  padding: 15px 7px;
+}
+div#widgets-right .sidebar-name .sidebar-name-arrow:before {
+  top: 4px;
+  position: relative;
+}
+.taproot-message {
+  margin: .5em 0;
+  padding: 10px;
+  font-weight: bolder;
+  border-radius: 3px;
+}
+.taproot-update {
+  background: lightYellow;
+  border: 1px solid #E6DB55;
+}
+.taproot-error {
+  background: #FFEBE8;
+  border: 1px solid #C00;
+}
+.taproot-remove-sidebar {
+  text-align: right;
+  padding: 0 10px 10px 10px;
+}
+.closed .taproot-remove-sidebar {
+  display: none;
+}
+.taproot-remove-sidebar a {
+  text-decoration: none;
+}
+.widgets_access .widget-liquid-right {
+  position: static;
+}
+.taproot-options .ajax-feedback,
+#new-sidebar-holder .ajax-feedback {
+  height: 16px;
+  vertical-align: middle;
+  margin: 0 5px;
+}
+#new-sidebar-holder h3 .ajax-feedback {
+  vertical-align: bottom;
+}
+#new-sidebar-holder .sidebar-name {
+  cursor: default!important;
+}
+.sidebar-name h3 .ajax-feedback {
+  height: 16px;
+  vertical-align: bottom;
+  margin: 0 5px;
+}
+/* clearfix */
+.cf:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+div#widgets-right .sidebars-column-1,
+div#widgets-right .sidebars-column-2 {
+  max-width: 100%;
+}
+div#widgets-right .widget {
+  margin: 0 auto 12px auto!important;
+}
+div#widgets-right .widgets-holder-wrap {
+  /*min-height: 133px;*/
+}
+div#widgets-right .widgets-holder-wrap.closed {
+  min-height: 1em;
+}
+div#widgets-right .widgets-sortables {
+  min-height: 90px;
+}
+div#widgets-right .widgets-holder-wrap.closed .widgets-sortables {
+  min-height: 1em;
+}
+/*#sidebar + .taproot-remove-sidebar { display: none; }*/
+[id^="taproot-"].widgets-sortables + .taproot-remove-sidebar {
+  display: none;
+}
+/* hide Divi Builder sidebar form. */
+#et_pb_widget_area_create {
+  display: none;
+}
+@media screen and (min-width: 480px) {
+  div.widget-liquid-right {
+    float: none;
+    width: 100%;
+  }
+  div.widget-liquid-left {
+    margin: 0;
+    width: 100%;
+    float: none;
+  }
+  .wrap {
+    margin: 0 auto;
+    max-width: 480px;
+  }
+}
+@media screen and (min-width: 782px) {
+  .widget-liquid-right .overview {
+    list-style: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 99%;
+    margin-left: 1%;
+  }
+  .widget-liquid-right .viewport {
+    position: relative;
+    margin-right: 20px;
+  }
+  .wrap {
+    margin: 0;
+    max-width: 100%;
+  }
+  .liquid-wrap {
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    padding-top: 12px;
+  }
+  .liquid-wrap .widget-liquid-left,
+  .liquid-wrap .widget-liquid-right {
+    width: 50%;
+    padding: 0 16px 16px;
+  }
+  #widgets-left {
+    padding-top: 0;
+  }
+  .liquid-wrap .widget-liquid-right {
+    border-left: 1px solid #ddd;
+  }
+}
+@media screen and (min-width: 1250px) {
+  div#widgets-right .sidebars-column-1,
+  div#widgets-right .sidebars-column-2 {
+    max-width: 50%;
+  }
+}

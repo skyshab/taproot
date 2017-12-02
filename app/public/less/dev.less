@@ -1,0 +1,175 @@
+/*
+ * Dev Styles
+ */
+ 	// all pointers
+ 	.pointer(@_; @pointer_side_length; @color; @border_color; @border_width: 1px)
+ 		when (@border_color = null)
+ 		and not (@color = null)
+ 	{
+ 		position: relative;
+
+ 		&:after {
+ 			content: '';
+ 			position: absolute;
+ 			width: 0;
+ 			height: 0;
+ 			z-index: 1000;
+ 		}
+ 	}
+
+
+ 	.pointer(@_; @pointer_side_length; @color; @border_color; @border_width: 1px)
+ 		when (@color = null)
+ 		and not (@border_color = null)
+ 	{
+ 		position: relative;
+
+ 		&:before {
+ 			content: '';
+ 			position: absolute;
+ 			width: 0;
+ 			height: 0;
+ 			z-index: 1000;
+ 		}
+ 	}
+
+ 	.pointer(@_; @pointer_side_length; @color; @border_color; @border_width: 1px)
+ 		when not (@color = null)
+ 		and not (@border_color = null)
+ 	{
+ 		position: relative;
+
+ 		&:before, &:after {
+ 			content: '';
+ 			position: absolute;
+ 			width: 0;
+ 			height: 0;
+ 			z-index: 1000;
+ 		}
+ 	}
+
+
+ 	// top pointer:after
+ 	.pointer(top; @pointer_side_length; @color; @border_color; @border_width: 1px)
+ 		when not (@color = null)
+ 	{
+ 		@pointer_pixels: unit(@pointer_side_length, px);
+
+ 		&:after {
+ 			left: 50%;
+ 			bottom: 100%;
+ 			margin-left: (-1 * @pointer_pixels);
+ 			border: @pointer_pixels solid transparent;
+ 			border-bottom-color: @color;
+ 		}
+ 	}
+
+ 	// top pointer:before
+ 	.pointer(top; @pointer_side_length; @color; @border_color; @border_width: 1px)
+ 		when not (@border_color = null)
+ 	{
+ 		@pointer_pixels: unit(@pointer_side_length, px);
+ 		@pointer_pixel_outer: (@pointer_pixels + @border_width);
+
+ 		&:before {
+ 			left: 50%;
+ 			margin-left: (-1 * @pointer_pixel_outer);
+ 			bottom: 100%;
+ 			border: @pointer_pixel_outer solid transparent;
+ 			border-bottom-color: @border_color;
+ 		}
+ 	}
+
+ 	// right pointer:after
+ 	.pointer(right; @pointer_side_length; @color; @border_color; @border_width: 1px)
+ 		when not (@color = null)
+ 	{
+ 		@pointer_pixels: unit(@pointer_side_length, px);
+
+ 		&:after {
+ 			top: 50%;
+ 			left: 100%;
+ 			margin-top: (-1 * @pointer_pixels);
+ 			border: @pointer_pixels solid transparent;
+ 			border-left-color: @color;
+ 		}
+ 	}
+
+ 	// right pointer:before
+ 	.pointer(right; @pointer_side_length; @color; @border_color; @border_width: 1px)
+ 		when not (@border_color = null)
+ 	{
+ 		@pointer_pixels: unit(@pointer_side_length, px);
+ 		@pointer_pixel_outer: (@pointer_pixels + @border_width);
+
+ 		&:before {
+ 			top: 50%;
+ 			left: 100%;
+ 			margin-top: (-1 * @pointer_pixel_outer);
+ 			border: @pointer_pixel_outer solid transparent;
+ 			border-left-color: @border_color;
+ 		}
+ 	}
+
+ 	// bottom pointer:after
+ 	.pointer(bottom; @pointer_side_length; @color; @border_color; @border_width: 1px)
+ 		when not (@color = null)
+ 	{
+ 		@pointer_pixels: unit(@pointer_side_length, px);
+
+ 		&:after {
+ 			left: 50%;
+ 			top: 100%;
+ 			margin-left: (-1 * @pointer_pixels);
+ 			border: @pointer_pixels solid transparent;
+ 			border-top-color: @color;
+ 		}
+ 	}
+
+ 	// bottom pointer:before
+ 	.pointer(bottom; @pointer_side_length; @color; @border_color; @border_width: 1px)
+ 		when not (@border_color = null)
+ 	{
+ 		@pointer_pixels: unit(@pointer_side_length, px);
+ 		@pointer_pixel_outer: (@pointer_pixels + @border_width);
+
+ 		&:before {
+ 			left: 50%;
+ 			top: 100%;
+ 			margin-left: (-1 * @pointer_pixel_outer);
+ 			border: @pointer_pixel_outer solid transparent;
+ 			border-top-color: @border_color;
+ 		}
+ 	}
+
+ 	// left pointer:after
+ 	.pointer(left; @pointer_side_length; @color; @border_color; @border_width: 1px)
+ 		when not (@color = null)
+ 	{
+ 		@pointer_pixels: unit(@pointer_side_length, px);
+
+ 		&:after {
+ 			top: 50%;
+ 			right: 100%;
+ 			margin-top: (-1 * @pointer_pixels);
+ 			border: @pointer_pixels solid transparent;
+ 			border-right-color: @color;
+ 		}
+ 	}
+
+ 	// left pointer:before
+ 	.pointer(left; @pointer_side_length; @color; @border_color; @border_width: 1px)
+ 		when not (@border_color = null)
+ 	{
+ 		@pointer_pixels: unit(@pointer_side_length, px);
+ 		@pointer_pixel_outer: (@pointer_pixels + @border_width);
+
+ 		&:before {
+ 			top: 50%;
+ 			right: 100%;
+ 			margin-top: (-1 * @pointer_pixel_outer);
+ 			border: @pointer_pixel_outer solid transparent;
+ 			border-right-color: @border_color;
+ 		}
+ 	}
+ 	.pointer(){}

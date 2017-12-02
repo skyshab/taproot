@@ -1,0 +1,339 @@
+// add to default styles
+.screen('default')
+{
+    // top bar
+    .torso .top-bar__container {
+        flex-direction: row;
+        height: auto;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .top-bar__container img {
+        margin-right: 2em;
+    }
+
+    .top-bar__content {
+        display: flex;
+        width: 100%;
+        flex: 1;   
+        align-items: center;     
+    }
+
+    .post-title-wrapper {
+        width: 100%;
+    }
+    
+    .taproot-top-bar {
+        display: flex;
+        width: 100%;
+
+        &.static {
+            position: relative;
+            box-shadow: 0px 1px 1px 0 rgba(0,0,0,.1);
+        }
+
+        .taproot-hero-area & {
+            position: absolute;
+            bottom: 0;
+        }       
+
+        &.v-align-top .top-bar__content {
+            align-items: flex-start;            
+        } 
+
+        &.v-align-center .top-bar__content {
+            align-items: center;            
+        }  
+
+        &.v-align-bottom .top-bar__content {
+            align-items: flex-end;            
+        } 
+
+
+        .post-title {
+            margin-bottom: 0;
+        }
+
+
+        &.h-align-center, 
+        &.h-align-left.breadcrumbs-align-left,
+        &.h-align-right.breadcrumbs-align-right {
+            .top-bar__content {
+                flex-direction: column;   
+
+                .taproot-breadcrumbs {
+                    width: 100%;
+                }             
+            }
+        }
+
+        &.h-align-center {
+            .post-title-wrapper, .taproot-breadcrumbs {
+                text-align: center;
+            }            
+        }
+        &.h-align-left {
+            .post-title-wrapper, .taproot-breadcrumbs {
+                text-align: left;
+            }            
+        }
+        &.h-align-right {
+            .post-title-wrapper, .taproot-breadcrumbs {
+                text-align: right;
+            }            
+        }
+
+        &.h-align-left.breadcrumbs-align-right, &.h-align-left.breadcrumbs-align-center {
+
+            .taproot-breadcrumbs {
+                width: 100%;
+                text-align: right;
+            }   
+        }    
+    } // end top bar
+
+    // meta
+    .taproot-meta {
+        color: inherit;
+        margin-bottom: 0;
+
+        a, a:visited, a:hover, a:active {
+            color: inherit;
+        }
+
+        .taproot-icon {
+            margin-right: 0.25em;
+        }
+
+        &> span {
+            margin-right: 0.6em;
+        }
+
+        .entry-header & {
+            margin-top: -1.2em;
+            margin-bottom: 1em;
+        }
+
+        // prevent floats in content from going next to the bottom meta area
+        .post + & {
+            clear: both;
+        }
+    }
+
+    // clear floats before post pagination
+    .taproot-post-pagination {
+        clear: both;
+    }
+
+    // .post-navigation-bar {
+    //     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    // }
+
+    .post-navigation {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        clear: both;
+
+        .taproot-icon {
+            top: 0;
+        }
+    }
+
+    .breadcrumbs--separator:before {
+        content: '>';
+        padding: 0 .5em;
+    }
+
+    .taproot-breadcrumbs {
+        z-index: 1;
+
+        .post-navigation--has-separators & {
+            margin: .4em auto;            
+        }
+    }
+
+
+    .taproot-breadcrumbs, .post-navigation__link {
+
+        & > a:not(:hover) {
+            color: inherit;
+        }
+    }
+
+    .post-navigation--top {
+
+        .taproot-breadcrumbs, 
+        .taproot-breadcrumbs > a,
+        .taproot-breadcrumbs > a:visited {
+            color: inherit;
+        }        
+    }
+
+    .post-navigation__link {
+
+        line-height: 1;
+
+        & > a {
+            display: inline-block;
+            vertical-align: top;
+            line-height: 1;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        &--prev > a > i {
+            margin-right: 0.5em;
+        }
+
+        &--next > a > i {
+            margin-left: 0.5em;
+        }
+    }
+
+    .taproot-top-bar, .post-navigation--hero {
+
+        .post-navigation__link {
+            position: absolute;            
+            top: 50%;
+
+            &--prev {
+                transform: translateY(-50%);
+                left: -1em;
+            }
+
+            &--next {
+                transform: translateY(-50%);
+                right: -1em;
+            }
+        }
+    }
+
+
+    .post-navigation--top .post-navigation__link {
+            
+        width: 2em;
+
+        &--next {
+            text-align: right;
+        }
+    }
+
+    // if separators are enabled
+    .post-navigation--top, .post-navigation--bottom {
+        &.post-navigation--has-separators {
+
+            border-top-width: 1px;
+            border-bottom-width: 1px;
+            border-top-style: solid;
+            border-bottom-style: solid;  
+
+            .post-navigation__link {
+                padding: 0.7em 0;
+            }          
+        }
+    }
+
+    .post-navigation--bottom  {
+
+        margin: 2em 0;
+
+        .post-navigation__link {
+            text-transform: uppercase;
+
+            span {
+                display: inline-block;
+                position: relative;
+                top: 1px;
+            }
+        }
+
+    }
+
+
+    // .post-title-wrapper {
+    //     padding: 0.8em 0;
+    // }
+
+    // hero area
+    .taproot-hero-area {
+        z-index: 3; // added to allow shadow to show when above content
+    }
+    .admin-bar .taproot-hero-area.fullscreen .taproot-hero {
+        height: ~"calc(100vh - 32px)";
+    }
+
+    .divsion-hero-image img {
+        max-width: 100%;
+    }
+
+    // .taproot-top-bar .postnav {
+    //     &.prev {
+    //         transform: translateX(-1em);
+    //     }
+    //     &.next {
+    //         transform: translateX(1em);
+    //     }
+    // }    
+
+} // end screen
+
+
+
+.screen('tablet-and-under')
+{
+
+    .taproot-top-bar.h-align-center, 
+    .taproot-top-bar.h-align-left,
+    .taproot-top-bar.h-align-right {
+        .top-bar__content {
+            flex-direction: column;   
+
+            .taproot-breadcrumbs {
+                width: 100%;
+            }             
+        }
+    }
+
+    .taproot-top-bar.h-align-center {
+        .top-bar__content .taproot-breadcrumbs {
+            text-align: center;
+        }
+    }
+
+    .taproot-top-bar.h-align-left {
+        .top-bar__content .taproot-breadcrumbs {
+            text-align: left;
+        }
+    }
+
+    .taproot-top-bar.h-align-right {
+        .top-bar__content .taproot-breadcrumbs {
+            text-align: right;
+        }
+    }    
+
+
+}
+
+.screen('tablet')
+{
+    .taproot-hero-area, .taproot-top-bar {
+        .post-navigation__link {
+            font-size: 1.6em;
+        }
+    }
+}
+
+
+.screen('laptop-and-up')
+{
+    .taproot-hero-area, .taproot-top-bar {
+        .post-navigation__link {
+            font-size: 2em;
+        }
+    }
+}
