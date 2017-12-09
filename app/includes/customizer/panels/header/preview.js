@@ -46,38 +46,6 @@
     });
 
 
-    // background image
-    wp.customize( 'taproot_header_background_image', function( value ) {
-        value.bind( function( to ) {
-            $('.header-content').css( 'background-image', 'url(' + to + ')' );
-        } );
-    } );
-
-
-    // background image repeat
-    wp.customize( 'taproot_header_background_repeat', function( value ) {
-        value.bind( function( to ) {
-            $('.header-content').css( 'background-repeat', to );
-        } );
-    } );
-
-
-    // background image size
-    wp.customize( 'taproot_header_background_size', function( value ) {
-        value.bind( function( to ) {
-            $('.header-content').css( 'background-size', to );
-        } );
-    } );
-
-
-    // background image position
-    wp.customize( 'taproot_header_background_position', function( value ) {
-        value.bind( function( to ) {
-            $('.header-content').css( 'background-position', 'top ' + to );
-        } );
-    } );
-
-
     // search icon/text color
     wp.customize( 'taproot_header_search_color', function( value ) {
         value.bind( function( to ) {
@@ -102,9 +70,6 @@
             });
         });
     });
-
-
-
 
 
     // fixed styles
@@ -246,8 +211,6 @@
     // fixed header search 
     wp.customize( 'taproot_enable_fixed_header_search', function( value ) {
         value.bind( function( to ) {
-
-            console.log('yo');
 
             if( to == 1 ) {
 

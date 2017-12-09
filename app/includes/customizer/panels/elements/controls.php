@@ -66,168 +66,174 @@ $wp_customize->add_panel( 'taproot_elements', array(
 
 
         // Setting: Border Width
-        taproot_setting( $wp_customize, 'taproot_button_border_width', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-                'type' => 'range',
-                'section' => 'taproot_buttons',
-                'label' => esc_html__( 'Button Border Width', 'taproot' ),
-                'input_attrs' => array(
-                    'min' => 0,
-                    'max' => 10,
-                    'step' => 1
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_button_border_width', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_button_border_width', array(
+            'type' => 'range',
+            'section' => 'taproot_buttons',
+            'label' => esc_html__( 'Button Border Width', 'taproot' ),
+            'input_attrs' => array(
+                'min' => 0,
+                'max' => 10,
+                'step' => 1
+            ),
+        )));
 
 
         // Setting: Border Radius
-        taproot_setting( $wp_customize, 'taproot_button_border_radius', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+        $wp_customize->add_setting( 'taproot_button_border_radius', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_button_border_radius', array(
+            'type' => 'range',
+            'section' => 'taproot_buttons',
+            'label' => esc_html__( 'Button Border Radius', 'taproot' ),
+            'input_attrs' => array(
+                'min' => 0,
+                'max' => 1.25,
+                'step' => 0.01
             ),
-            'control' => array(
-                'type' => 'range',
-                'section' => 'taproot_buttons',
-                'label' => esc_html__( 'Button Border Radius', 'taproot' ),
-                'input_attrs' => array(
-                    'min' => 0,
-                    'max' => 1.25,
-                    'step' => 0.01
-                ),
-            ),
+        )));
+
+
+        // Setting: Button Font Family       
+        $wp_customize->add_setting( 'taproot_button_font', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_button_font', array(
+            'type' => 'select',
+            'section' => 'taproot_buttons',
+            'label' => esc_html__( 'Button Font', 'taproot' ),
+            'choices' => taproot_get_font_choices(),
         ));
 
 
-        // Setting: Button Font Family
-        taproot_setting( $wp_customize, 'taproot_button_font', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'select',
-                'section' => 'taproot_buttons',
-                'label' => esc_html__( 'Button Font', 'taproot' ),
-                'choices' => taproot_get_font_choices(),
-            ),
-        ));        
-
-
         // Setting: Button Font Style
-        taproot_setting( $wp_customize, 'taproot_button_font_style', array(
-            'setting' => array(),
-            'control' => array(
-                'type'  => 'font_styles',
-                'section' => 'taproot_buttons',
-                'label' => esc_html__( 'Button Font Style', 'taproot' ),
-            ),
-        ));  
+        $wp_customize->add_setting( 'taproot_button_font_style', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
+        ));
 
+        $wp_customize->add_control( new Taproot_Font_Styles( $wp_customize, 'taproot_button_font_style', array(
+            'type'  => 'font_styles',
+            'section' => 'taproot_buttons',
+            'label' => esc_html__( 'Button Font Style', 'taproot' ),
+        )));
 
     /*
     ** Secondary Button Styles
     */
 
-
         // Color Setting: Secondary Button Background Color
         taproot_customizer_color( $wp_customize, 'taproot_secondary_button_background_color', array(
-            'label'   => esc_html__( 'Secondary Button Color', 'taproot' ),
+            'label'   => esc_html__( 'Button Color', 'taproot' ),
             'section' => 'taproot_buttons[secondary]',  
         )); 
 
 
         // Color Setting: Secondary Button Border Color
         taproot_customizer_color( $wp_customize, 'taproot_secondary_button_border_color', array(
-            'label'   => esc_html__( 'Secondary Button Border Color', 'taproot' ),
+            'label'   => esc_html__( 'Button Border Color', 'taproot' ),
             'section' => 'taproot_buttons[secondary]',  
         )); 
 
 
         // Color Setting: Secondary Button Text Color
         taproot_customizer_color( $wp_customize, 'taproot_secondary_button_text_color', array(
-            'label'   => esc_html__( 'Secondary Button Text Color', 'taproot' ),
+            'label'   => esc_html__( 'Button Text Color', 'taproot' ),
             'section' => 'taproot_buttons[secondary]',  
         )); 
 
 
         // Color Setting: Secondary Button Background Color Hover
         taproot_customizer_color( $wp_customize, 'taproot_secondary_button_background_color_hover', array(
-            'label'   => esc_html__( 'Secondary Button Background Color: Hover', 'taproot' ),
+            'label'   => esc_html__( 'Button Background Color: Hover', 'taproot' ),
             'section' => 'taproot_buttons[secondary]',  
         )); 
 
 
         // Color Setting: Secondary Button Border Color: Hover
         taproot_customizer_color( $wp_customize, 'taproot_secondary_button_border_color_hover', array(
-            'label'   => esc_html__( 'Secondary Button Border Color: Hover', 'taproot' ),
+            'label'   => esc_html__( 'Button Border Color: Hover', 'taproot' ),
             'section' => 'taproot_buttons[secondary]',  
         )); 
 
 
         // Color Setting: Secondary Button Text Color: Hover
         taproot_customizer_color( $wp_customize, 'taproot_secondary_button_text_color_hover', array(
-            'label'   => esc_html__( 'Secondary Button Text Color: Hover', 'taproot' ),
+            'label'   => esc_html__( 'Button Text Color: Hover', 'taproot' ),
             'section' => 'taproot_buttons[secondary]',  
         )); 
 
 
         // Setting: Border Width
-        taproot_setting( $wp_customize, 'taproot_secondary_button_border_width', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+        $wp_customize->add_setting( 'taproot_secondary_button_border_width', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_secondary_button_border_width', array(
+            'type' => 'range',
+            'section' => 'taproot_buttons[secondary]',
+            'label' => esc_html__( 'Button Border Width', 'taproot' ),
+            'input_attrs' => array(
+                'min' => 0,
+                'max' => 10,
+                'step' => 1
             ),
-            'control' => array(
-                'label' => esc_html__( 'Button Border Width', 'taproot' ),
-                'section' => 'taproot_buttons[secondary]',
-                'type' => 'range',
-                'input_attrs' => array(
-                    'min' => 0,
-                    'max' => 10,
-                    'step' => 1
-                ),
-            ),
-        ));        
+        )));
 
 
         // Setting: Border Radius
-        taproot_setting( $wp_customize, 'taproot_secondary_button_border_radius', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+        $wp_customize->add_setting( 'taproot_secondary_button_border_radius', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_secondary_button_border_radius', array(
+            'type' => 'range',
+            'section' => 'taproot_buttons[secondary]',
+            'label' => esc_html__( 'Button Border Radius', 'taproot' ),
+            'input_attrs' => array(
+                'min' => 0,
+                'max' => 1.25,
+                'step' => 0.01
             ),
-            'control' => array(
-                'type' => 'range',
-                'section' => 'taproot_buttons[secondary]',
-                'label' => esc_html__( 'Secondary Button Border Radius', 'taproot' ),
-                'input_attrs' => array(
-                    'min' => 0,
-                    'max' => 1.25,
-                    'step' => 0.01
-                ),
-            ),
-        ));        
+        )));
 
 
-        // Setting: Secondary Button Font Family
-        taproot_setting( $wp_customize, 'taproot_secondary_button_font', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'select',
-                'section' => 'taproot_buttons[secondary]',
-                'label' => esc_html__( 'Secondary Button Font', 'taproot' ),
-                'choices' => taproot_get_font_choices(),
-            ),
+        // Setting: Button Font Family       
+        $wp_customize->add_setting( 'taproot_secondary_button_font', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_secondary_button_font', array(
+            'type' => 'select',
+            'section' => 'taproot_buttons[secondary]',
+            'label' => esc_html__( 'Button Font', 'taproot' ),
+            'choices' => taproot_get_font_choices(),
         ));
 
 
-        // Setting: Secondary Button Font Style
-        taproot_setting( $wp_customize, 'taproot_secondary_button_font_style', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'font_styles',
-                'section' => 'taproot_buttons[secondary]',
-                'label' => esc_html__( 'Secondary Button Font Style', 'taproot' ),
-            ),
-        ));        
+        // Setting: Button Font Style
+        $wp_customize->add_setting( 'taproot_secondary_button_font_style', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( new Taproot_Font_Styles( $wp_customize, 'taproot_secondary_button_font_style', array(
+            'type'  => 'font_styles',
+            'section' => 'taproot_buttons[secondary]',
+            'label' => esc_html__( 'Button Font Style', 'taproot' ),
+        )));      
 
 
     // Section: Links
@@ -296,54 +302,59 @@ $wp_customize->add_panel( 'taproot_elements', array(
     ));
 
         // Setting: Breadcrumbs Location
-        taproot_setting( $wp_customize, 'taproot_breadcrumbs_location', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'select',
-                'section' => 'taproot_breadcrumbs',
-                'label' => esc_html__( 'Breadcrumbs Location', 'taproot' ),
-                'choices' => array(
-                    'content' => esc_html__( 'Inside Content', 'taproot' ),                
-                    'top-bar' => esc_html__( 'Inside Top Bar', 'taproot' ),
-                    'hero' => esc_html__( 'Hero Overlay', 'taproot' ),                
-                    'hide' => esc_html__( "Don't Show", 'taproot' ),
-                ),
+        $wp_customize->add_setting( 'taproot_breadcrumbs_location', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_breadcrumbs_location', array(
+            'type' => 'select',
+            'section' => 'taproot_breadcrumbs',
+            'label' => esc_html__( 'Breadcrumbs Location', 'taproot' ),
+            'choices' => array(
+                'content' => esc_html__( 'Inside Content', 'taproot' ),                
+                'top-bar' => esc_html__( 'Inside Top Bar', 'taproot' ),
+                'hero' => esc_html__( 'Hero Overlay', 'taproot' ),                
+                'hide' => esc_html__( "Don't Show", 'taproot' ),
             ),
         ));
 
 
         // Setting: Breadcrumbs Alignment
-        taproot_setting( $wp_customize, 'taproot_breadcrumbs_align', array(
-            'setting' => array(),
-            'control' => array(
-                'label' => esc_html__( 'Breadcrumbs Align', 'taproot' ),
-                'section' => 'taproot_breadcrumbs',
-                'type' => 'select',
-                'choices' => array(
-                    'left' => esc_html__( 'Left', 'taproot' ),
-                    'center' => esc_html__( 'Center', 'taproot' ),
-                    'right' => esc_html__( 'Right', 'taproot' ),
-                ),
+        $wp_customize->add_setting( 'taproot_breadcrumbs_align', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_breadcrumbs_align', array(
+            'type' => 'select',
+            'section' => 'taproot_breadcrumbs',
+            'label' => esc_html__( 'Breadcrumbs Align', 'taproot' ),
+            'choices' => array(
+                'left' => esc_html__( 'Left', 'taproot' ),
+                'center' => esc_html__( 'Center', 'taproot' ),
+                'right' => esc_html__( 'Right', 'taproot' ),
             ),
         ));
 
 
         // Setting: Breadcrumbs Font Size
-        taproot_setting( $wp_customize, 'taproot_breadcrumbs_size', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-                'type' => 'range',
-                'section' => 'taproot_breadcrumbs',
-                'label' => esc_html__( 'Breadcrumbs Font Size', 'taproot' ),
-                'input_attrs' => array(
-                    'min'  => 0,
-                    'max'  => 2,
-                    'step' => 0.1
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_breadcrumbs_size', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_breadcrumbs_size', array(
+            'type' => 'range',
+            'section' => 'taproot_breadcrumbs',
+            'label' => esc_html__( 'Breadcrumbs Font Size', 'taproot' ),
+            'input_attrs' => array(
+                'min'  => 0,
+                'max'  => 2,
+                'step' => 0.1
+            ),
+        )));        
+
 
         // Color Setting: Breadcrumbs Color
         taproot_customizer_color( $wp_customize, 'taproot_post_navigation_breadcrumb_color', array(

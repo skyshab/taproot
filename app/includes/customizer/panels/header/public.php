@@ -54,20 +54,6 @@ $styles->set_style( array(
 ));
 
 
-// Background Image
-if( get_theme_mod( 'taproot_header_background_image', false ) || is_customize_preview() )
-{
-    $styles->set_style( array(
-        'selector' => '.main-header',
-        'styles' => array(
-            'background-image: url(%s);' => get_theme_mod( 'taproot_header_background_image' ),
-            'background-repeat: %s;' => get_theme_mod( 'taproot_header_background_repeat' ),
-            'background-size: %s;' => get_theme_mod( 'taproot_header_background_size' ),
-            'background-position: top %s;' => get_theme_mod( 'taproot_header_background_position' ),
-        ),
-    ));
-}
-
 // Search Styles
 
 // Search Color

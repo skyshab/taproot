@@ -57,27 +57,29 @@ $wp_customize->add_control( 'blogname', array(
 
 
 // Setting: Display Site Title in Header
-taproot_setting( $wp_customize, 'taproot_display_title', array(
-    'setting' => array(
-        'sanitize_callback' => 'taproot_sanitize_checkbox',
-    ),
-    'control' => array(
-        'type' => 'checkbox',
-        'section' => 'branding_elements[title]',
-        'label' => esc_html__( 'Display Site Title in Header', 'taproot' ),
-    ),
+$wp_customize->add_setting( 'taproot_display_title', array(
+    'sanitize_callback' => 'taproot_sanitize_checkbox',
+    'transport' => 'postMessage',
+));
+
+$wp_customize->add_control( 'taproot_display_title', array(
+    'type' => 'checkbox',
+    'section' => 'branding_elements[title]',
+    'label' => esc_html__( 'Display Site Title in Header', 'taproot' ),
 ));
 
 
 // Setting: Title Font 
-taproot_setting( $wp_customize, 'taproot_site_title_font', array(
-    'setting' => array(),
-    'control' => array(
-        'type' => 'select',
-        'section' => 'branding_elements[title]',
-        'label' => esc_html__( 'Font Family', 'taproot' ),
-        'choices' => taproot_get_font_choices(),
-    ),
+$wp_customize->add_setting( 'taproot_site_title_font', array(
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage',
+));
+
+$wp_customize->add_control( 'taproot_site_title_font', array(
+    'type' => 'select',
+    'section' => 'branding_elements[title]',
+    'label' => esc_html__( 'Font Family', 'taproot' ),
+    'choices' => taproot_get_font_choices(),    
 ));
 
 
@@ -96,14 +98,16 @@ taproot_customizer_color( $wp_customize, 'taproot_title_font_color_fixed', array
 
 
 // Setting: Site Title Font Style
-taproot_setting( $wp_customize, 'taproot_site_title_font_style', array(
-    'setting' => array(),
-    'control' => array(
-        'type'  => 'font_styles',
-        'section' => 'branding_elements[title]',
-        'label' => esc_html__( 'Title Font Style', 'taproot' ),
-    ),
+$wp_customize->add_setting( 'taproot_site_title_font_style', array(
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage',
 ));
+
+$wp_customize->add_control( new Taproot_Font_Styles( $wp_customize, 'taproot_site_title_font_style', array(
+    'type'  => 'font_styles',
+    'section' => 'branding_elements[title]',
+    'label' => esc_html__( 'Title Font Style', 'taproot' ),    
+)));
 
 
 // Setting: Site Description
@@ -120,27 +124,29 @@ $wp_customize->add_control( 'blogdescription', array(
 
 
 // Setting: Show Tagline
-taproot_setting( $wp_customize, 'taproot_display_tagline', array(
-    'setting' => array(
-        'sanitize_callback' => 'taproot_sanitize_checkbox',
-    ),
-    'control' => array(
-        'type' => 'checkbox',
-        'section' => 'branding_elements[tagline]',
-        'label' => esc_html__( 'Display Tagline in Header', 'taproot' ),
-    ),
+$wp_customize->add_setting( 'taproot_display_tagline', array(
+    'sanitize_callback' => 'taproot_sanitize_checkbox',
+    'transport' => 'postMessage',
+));
+
+$wp_customize->add_control( 'taproot_display_tagline', array(
+    'type' => 'checkbox',
+    'section' => 'branding_elements[tagline]',
+    'label' => esc_html__( 'Display Tagline in Header', 'taproot' ),
 ));
 
 
 // Setting: Tagline Font
-taproot_setting( $wp_customize, 'taproot_site_tagline_font', array(
-    'setting' => array(),
-    'control' => array(
-        'type' => 'select',
-        'section' => 'branding_elements[tagline]',
-        'label' => esc_html__( 'Font Family', 'taproot' ),
-        'choices' => taproot_get_font_choices(),
-    ),
+$wp_customize->add_setting( 'taproot_site_tagline_font', array(
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage',
+));
+
+$wp_customize->add_control( 'taproot_site_tagline_font', array(
+    'type' => 'select',
+    'section' => 'branding_elements[tagline]',
+    'label' => esc_html__( 'Font Family', 'taproot' ),
+    'choices' => taproot_get_font_choices(),
 ));
 
 
@@ -159,14 +165,16 @@ taproot_customizer_color( $wp_customize, 'taproot_tagline_font_color_fixed', arr
 
 
 // Setting: Tagline Font Style
-taproot_setting( $wp_customize, 'taproot_tagline_font_style', array(
-    'setting' => array(),
-    'control' => array(
-        'type' => 'font_styles',
-        'section' => 'branding_elements[tagline]',
-        'label'	=> esc_html__( 'Tagline Font Style', 'taproot' ),
-    ),
+$wp_customize->add_setting( 'taproot_tagline_font_style', array(
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage',
 ));
+
+$wp_customize->add_control( new Taproot_Font_Styles( $wp_customize, 'taproot_tagline_font_style', array(
+    'type' => 'font_styles',
+    'section' => 'branding_elements[tagline]',
+    'label'	=> esc_html__( 'Tagline Font Style', 'taproot' ),
+)));
 
 
 // selective refresh for logo title and tagline
@@ -230,18 +238,20 @@ foreach ( $devices as $device => $args )
     if( 'laptop' !== $device && 'desktop' !== $device )
     {
         // Setting: Branding Layout Mobile
-        taproot_setting( $wp_customize, sprintf( 'taproot_branding_layout_%s', $device_id ), array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'select',
-                'section' => $section_id,
-                'label' => esc_html__( 'Branding Layout', 'taproot' ),
-                'choices' => array(
-                    'stacked' => esc_html__( 'Stacked', 'taproot' ),
-                    'spread' => esc_html__( 'Spread', 'taproot' ),
-                ),
-            ),
+        $wp_customize->add_setting( sprintf( 'taproot_branding_layout_%s', $device_id ), array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( sprintf( 'taproot_branding_layout_%s', $device_id ), array(
+            'type' => 'select',
+            'section' => $section_id,
+            'label' => esc_html__( 'Branding Layout', 'taproot' ),
+            'choices' => array(
+                'stacked' => esc_html__( 'Stacked', 'taproot' ),
+                'spread' => esc_html__( 'Spread', 'taproot' ),
+            ),
+        ));        
 
     } // end mobile - tablet only
 
@@ -284,22 +294,22 @@ foreach ( $devices as $device => $args )
          * Branding Fixed Header Controls
         **/
 
-    	// Setting: Gutter Spacing
-        taproot_setting( $wp_customize, sprintf( 'taproot_gutter_spacing_%s_fixed', $device_id ), array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+    	// Setting: Gutter Spacing       
+        $wp_customize->add_setting( sprintf( 'taproot_gutter_spacing_%s_fixed', $device_id ), array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_gutter_spacing_%s_fixed', $device_id ), array(
+            'type' => 'range',
+            'section' => $fixed_section_id,                
+            'label' => esc_html__( 'Gutter Spacing', 'taproot' ),
+            'input_attrs' => array(
+                'min' => 0,
+                'max' => 6.4,
+                'step' => 0.2
             ),
-            'control' => array(
-                'type' => 'range',
-                'section' => $fixed_section_id,                
-        		'label' => esc_html__( 'Gutter Spacing', 'taproot' ),
-        		'input_attrs' => array(
-        			'min' => 0,
-        			'max' => 6.4,
-        			'step' => 0.2
-        		),
-            ),
-        ));        
+        )));
 
 
         // Group Title: Logo Styles
@@ -316,55 +326,55 @@ foreach ( $devices as $device => $args )
 
 
         // Setting: Hide Logo in Fixed Header 
-        taproot_setting( $wp_customize, sprintf( 'taproot_hide_logo_%s_fixed', $device_id ), array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_checkbox',
-            ),
-            'control' => array(
-                'type' => 'checkbox',
-                'section' => $fixed_section_id,
-                'label' => esc_html__( 'Hide Logo', 'taproot' ),
-                'active_callback' => 'taproot_has_logo',
-            ),
+        $wp_customize->add_setting( sprintf( 'taproot_hide_logo_%s_fixed', $device_id ), array(
+            'sanitize_callback' => 'taproot_sanitize_checkbox',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( sprintf( 'taproot_hide_logo_%s_fixed', $device_id ), array(
+            'type' => 'checkbox',
+            'section' => $fixed_section_id,
+            'label' => esc_html__( 'Hide Logo', 'taproot' ),
+            'active_callback' => 'taproot_has_logo',
         ));
 
 
-    	// Setting: Logo Height
-        taproot_setting( $wp_customize, sprintf( 'taproot_logo_height_%s_fixed', $device_id ), array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+    	// Setting: Logo Height       
+        $wp_customize->add_setting( sprintf( 'taproot_logo_height_%s_fixed', $device_id ), array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_logo_height_%s_fixed', $device_id ), array(
+            'type' => 'range',
+            'section' => $fixed_section_id,
+            'label' => esc_html__( 'Logo Height', 'taproot' ),
+            'active_callback' => sprintf( 'taproot_show_logo_%s', $device_id ),
+            'input_attrs' => array(
+                'min' => 24,
+                'max' => 300,
+                'step' => 1
             ),
-            'control' => array(
-                'type' => 'range',
-                'section' => $fixed_section_id,
-                'label' => esc_html__( 'Logo Height', 'taproot' ),
-                'active_callback' => sprintf( 'taproot_show_logo_%s', $device_id ),
-                'input_attrs' => array(
-                    'min' => 24,
-                    'max' => 300,
-                    'step' => 1
-                ),
-            ),
-        ));        
+        )));
 
 
         // Setting: Logo Gutter
-        taproot_setting( $wp_customize, sprintf( 'taproot_logo_gutter_%s_fixed', $device_id ), array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-                'type' => 'range',
-                'section' => $fixed_section_id,
-                'label' => esc_html__( 'Logo Gutter Spacing', 'taproot' ),
-                'active_callback' => sprintf( 'taproot_show_logo_%s', $device_id ),
-                'input_attrs' => array(
-                    'min' => 0,
-                    'max' => 6.4,
-                    'step' => 0.2
-                ),
-            ),
+        $wp_customize->add_setting( sprintf( 'taproot_logo_gutter_%s_fixed', $device_id ), array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_logo_gutter_%s_fixed', $device_id ), array(
+            'type' => 'range',
+            'section' => $fixed_section_id,
+            'label' => esc_html__( 'Logo Gutter Spacing', 'taproot' ),
+            'active_callback' => sprintf( 'taproot_show_logo_%s', $device_id ),
+            'input_attrs' => array(
+                'min' => 0,
+                'max' => 6.4,
+                'step' => 0.2
+            ),
+        )));
 
 
         // Group Title: Title Styles
@@ -381,74 +391,74 @@ foreach ( $devices as $device => $args )
 
 
     	// Setting: Hide Title in Fixed Header
-        taproot_setting( $wp_customize, sprintf( 'taproot_hide_site_title_%s_fixed', $device_id ), array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_checkbox',
-            ),
-            'control' => array(
-                'type' => 'checkbox',
-                'section' => $fixed_section_id,
-                'label' => esc_html__( 'Hide Site Title', 'taproot' ),
-                'active_callback' => 'taproot_has_title',
-            ),
+        $wp_customize->add_setting( sprintf( 'taproot_hide_site_title_%s_fixed', $device_id ), array(
+            'sanitize_callback' => 'taproot_sanitize_checkbox',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( sprintf( 'taproot_hide_site_title_%s_fixed', $device_id ), array(
+            'type' => 'checkbox',
+            'section' => $fixed_section_id,
+            'label' => esc_html__( 'Hide Site Title', 'taproot' ),
+            'active_callback' => 'taproot_has_title',
         ));
 
 
     	// Setting: Title Font Size
-        taproot_setting( $wp_customize, sprintf( 'taproot_title_font_size_%s_fixed', $device_id ), array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-                'type' => 'range',
-                'section' => $fixed_section_id,
-                'label' => esc_html__( 'Title Font Size', 'taproot' ),
-                'active_callback' => sprintf( 'taproot_show_title_%s', $device_id ),
-                'input_attrs' => array(
-                    'min' => 12,
-                    'max' => 72,
-                    'step' => 1
-                ),
-            ),
+        $wp_customize->add_setting( sprintf( 'taproot_title_font_size_%s_fixed', $device_id ), array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_title_font_size_%s_fixed', $device_id ), array(
+            'type' => 'range',
+            'section' => $fixed_section_id,
+            'label' => esc_html__( 'Title Font Size', 'taproot' ),
+            'active_callback' => sprintf( 'taproot_show_title_%s', $device_id ),
+            'input_attrs' => array(
+                'min' => 12,
+                'max' => 72,
+                'step' => 1
+            ),
+        )));
 
 
     	// Setting: Title Letter Spacing
-        taproot_setting( $wp_customize, sprintf( 'taproot_title_spacing_%s_fixed', $device_id ), array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-                'type' => 'range',
-                'section' => $fixed_section_id,
-                'label' => esc_html__( 'Title Letter Spacing', 'taproot' ),
-                'active_callback' => sprintf( 'taproot_show_title_%s', $device_id ),
-                'input_attrs' => array(
-                    'min' => -1,
-                    'max' => 8,
-                    'step' => 1
-                ),
-            ),
+        $wp_customize->add_setting( sprintf( 'taproot_title_spacing_%s_fixed', $device_id ), array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_title_spacing_%s_fixed', $device_id ), array(
+            'type' => 'range',
+            'section' => $fixed_section_id,
+            'label' => esc_html__( 'Title Letter Spacing', 'taproot' ),
+            'active_callback' => sprintf( 'taproot_show_title_%s', $device_id ),
+            'input_attrs' => array(
+                'min' => -1,
+                'max' => 8,
+                'step' => 1
+            ),
+        )));
 
 
     	// Setting: Title Line Height
-        taproot_setting( $wp_customize, sprintf( 'taproot_title_line_height_%s_fixed', $device_id ), array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-                'type' => 'range',
-                'section' => $fixed_section_id,
-                'label' => esc_html__( 'Title Line Height', 'taproot' ),
-                'active_callback' => sprintf( 'taproot_show_title_%s', $device_id ),
-                'input_attrs' => array(
-                    'min' => 0,
-                    'max' => 2,
-                    'step' => 0.1
-                ),
-            ),
+        $wp_customize->add_setting( sprintf( 'taproot_title_line_height_%s_fixed', $device_id ), array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_title_line_height_%s_fixed', $device_id ), array(
+            'type' => 'range',
+            'section' => $fixed_section_id,
+            'label' => esc_html__( 'Title Line Height', 'taproot' ),
+            'active_callback' => sprintf( 'taproot_show_title_%s', $device_id ),
+            'input_attrs' => array(
+                'min' => 0,
+                'max' => 2,
+                'step' => 0.1
+            ),
+        )));
 
 
         // Group Title: Tagline Styles
@@ -465,118 +475,119 @@ foreach ( $devices as $device => $args )
 
 
     	// Setting: Hide Tagline in Fixed Header
-        taproot_setting( $wp_customize, sprintf( 'taproot_hide_site_tagline_%s_fixed', $device_id ), array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_checkbox',
-            ),
-            'control' => array(
-        		'type' => 'checkbox',
-                'section' => $fixed_section_id,
-                'label' => esc_html__( 'Hide Site Tagline', 'taproot' ),
-        		'active_callback' => 'taproot_has_tagline',
-            ),
+        $wp_customize->add_setting( sprintf( 'taproot_hide_site_tagline_%s_fixed', $device_id ), array(
+            'sanitize_callback' => 'taproot_sanitize_checkbox',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( sprintf( 'taproot_hide_site_tagline_%s_fixed', $device_id ), array(
+            'type' => 'checkbox',
+            'section' => $fixed_section_id,
+            'label' => esc_html__( 'Hide Site Tagline', 'taproot' ),
+            'active_callback' => 'taproot_has_tagline',
         ));
 
 
     	// Setting: Tagline Font Size
-        taproot_setting( $wp_customize, sprintf( 'taproot_tagline_font_size_%s_fixed', $device_id ), array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-        		'type' => 'range',
-                'section' => $fixed_section_id,
-                'label' => esc_html__( 'Tagline Font Size', 'taproot' ),
-                'active_callback' => sprintf( 'taproot_show_tagline_%s', $device_id ),
-        		'input_attrs' => array(
-        			'min' => 12,
-        			'max' => 72,
-        			'step' => 1
-        		),
-            ),
+        $wp_customize->add_setting( sprintf( 'taproot_tagline_font_size_%s_fixed', $device_id ), array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_tagline_font_size_%s_fixed', $device_id ), array(
+            'type' => 'range',
+            'section' => $fixed_section_id,
+            'label' => esc_html__( 'Tagline Font Size', 'taproot' ),
+            'active_callback' => sprintf( 'taproot_show_tagline_%s', $device_id ),
+            'input_attrs' => array(
+                'min' => 12,
+                'max' => 72,
+                'step' => 1
+            ),
+        )));
 
 
     	// Setting: Tagline Letter Spacing
-        taproot_setting( $wp_customize, sprintf( 'taproot_tagline_spacing_%s_fixed', $device_id ), array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-        		'type' => 'range',
-                'section' => $fixed_section_id,
-                'label' => esc_html__( 'Tagline Letter Spacing', 'taproot' ),
-                'active_callback' => sprintf( 'taproot_show_tagline_%s', $device_id ),
-        		'input_attrs' => array(
-        			'min' => -1,
-        			'max' => 8,
-        			'step' => 1
-        		),
-            ),
+        $wp_customize->add_setting( sprintf( 'taproot_tagline_spacing_%s_fixed', $device_id ), array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_tagline_spacing_%s_fixed', $device_id ), array(
+            'type' => 'range',
+            'section' => $fixed_section_id,
+            'label' => esc_html__( 'Tagline Letter Spacing', 'taproot' ),
+            'active_callback' => sprintf( 'taproot_show_tagline_%s', $device_id ),
+            'input_attrs' => array(
+                'min' => -1,
+                'max' => 8,
+                'step' => 1
+            ),
+        )));
 
 
     	// Setting: Tagline Line Height
-        taproot_setting( $wp_customize, sprintf( 'taproot_tagline_line_height_%s_fixed', $device_id ), array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-        		'type' => 'range',
-                'section' => $fixed_section_id,
-                'label' => esc_html__( 'Tagline Line Height', 'taproot' ),
-                'active_callback' => sprintf( 'taproot_show_tagline_%s', $device_id ),
-        		'input_attrs' => array(
-        			'min' => 0,
-        			'max' => 2,
-        			'step' => 0.1
-        		),
-            ),
+        $wp_customize->add_setting( sprintf( 'taproot_tagline_line_height_%s_fixed', $device_id ), array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_tagline_line_height_%s_fixed', $device_id ), array(
+            'type' => 'range',
+            'section' => $fixed_section_id,
+            'label' => esc_html__( 'Tagline Line Height', 'taproot' ),
+            'active_callback' => sprintf( 'taproot_show_tagline_%s', $device_id ),
+            'input_attrs' => array(
+                'min' => 0,
+                'max' => 2,
+                'step' => 0.1
+            ),
+        )));
 
 
     	// Setting: Tagline Top Margin
-        taproot_setting( $wp_customize, sprintf( 'taproot_tagline_top_margin_%s_fixed', $device_id ), array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-        		'type' => 'range',
-                'section' => $fixed_section_id,
-                'label' => esc_html__( 'Tagline Top Margin', 'taproot' ),
-                'active_callback' => sprintf( 'taproot_show_tagline_%s', $device_id ),
-        		'input_attrs' => array(
-        			'min' => 0,
-        			'max' => 2,
-        			'step' => 0.2
-        		),
-            ),
+        $wp_customize->add_setting( sprintf( 'taproot_tagline_top_margin_%s_fixed', $device_id ), array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_tagline_top_margin_%s_fixed', $device_id ), array(
+            'type' => 'range',
+            'section' => $fixed_section_id,
+            'label' => esc_html__( 'Tagline Top Margin', 'taproot' ),
+            'active_callback' => sprintf( 'taproot_show_tagline_%s', $device_id ),
+            'input_attrs' => array(
+                'min' => 0,
+                'max' => 2,
+                'step' => 0.2
+            ),
+        )));
+
 
     } // end laptop or desktop only
 
 
-    /**
+    /*
      * all devices
-    **/
+     */
 
 
     // Setting: Gutter Spacing
-    taproot_setting( $wp_customize, sprintf( 'taproot_gutter_spacing_%s', $device_id ), array(
-        'setting' => array(
-            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-        ),
-        'control' => array(
-            'type' => 'range',
-            'section' => $section_id,
-            'label' => esc_html__( 'Gutter Spacing', 'taproot' ),
-            'input_attrs' => array(
-                'min' => 0,
-                'max' => 6.4,
-                'step' => 0.2
-            ),
-        ),
+    $wp_customize->add_setting( sprintf( 'taproot_gutter_spacing_%s', $device_id ), array(
+        'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+        'transport' => 'postMessage',
     ));
+
+    $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_gutter_spacing_%s', $device_id ), array(
+        'type' => 'range',
+        'section' => $section_id,
+        'label' => esc_html__( 'Gutter Spacing', 'taproot' ),
+        'input_attrs' => array(
+            'min' => 0,
+            'max' => 6.4,
+            'step' => 0.2
+        ),
+    )));
 
 
     // Group Title: Logo Styles
@@ -593,39 +604,40 @@ foreach ( $devices as $device => $args )
 
 
     // Setting: Logo Height
-    taproot_setting( $wp_customize, sprintf( 'taproot_logo_height_%s', $device_id ), array(
-        'setting' => array(
-            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-        ),
-        'control' => array(
-            'type' => 'range',
-            'section' => $section_id,
-            'label' => esc_html__( 'Logo Height', 'taproot' ),
-            'active_callback' => '',
-            'input_attrs' => array(
-                'min' => 24,
-                'max' => 300,
-                'step' => 1
-            ),
-        ),
+    $wp_customize->add_setting( sprintf( 'taproot_logo_height_%s', $device_id ), array(
+        'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+        'transport' => 'postMessage',
     ));
 
-    // Setting: Logo Gutter
-    taproot_setting( $wp_customize, sprintf( 'taproot_logo_gutter_%s', $device_id ), array(
-        'setting' => array(
-            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+    $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_logo_height_%s', $device_id ), array(
+        'type' => 'range',
+        'section' => $section_id,
+        'label' => esc_html__( 'Logo Height', 'taproot' ),
+        'active_callback' => '',
+        'input_attrs' => array(
+            'min' => 24,
+            'max' => 300,
+            'step' => 1
         ),
-        'control' => array(
-            'type' => 'range',
-            'section' => $section_id,
-            'label' => esc_html__( 'Logo Gutter Spacing', 'taproot' ),
-            'input_attrs' => array(
-                'min' => 0,
-                'max' => 6.4,
-                'step' => 0.2
-            ),
+    )));
+
+
+    // Setting: Logo Gutter  
+    $wp_customize->add_setting( sprintf( 'taproot_logo_gutter_%s', $device_id ), array(
+        'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+        'transport' => 'postMessage',
+    ));
+
+    $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_logo_gutter_%s', $device_id ), array(
+        'type' => 'range',
+        'section' => $section_id,
+        'label' => esc_html__( 'Logo Gutter Spacing', 'taproot' ),
+        'input_attrs' => array(
+            'min' => 0,
+            'max' => 6.4,
+            'step' => 0.2
         ),
-    ));    
+    )));
 
 
     // Group Title: Title Styles
@@ -642,60 +654,60 @@ foreach ( $devices as $device => $args )
 
 
     // Setting: Title Font Size
-    taproot_setting( $wp_customize, sprintf( 'taproot_title_font_size_%s', $device_id ), array(
-        'setting' => array(
-            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-        ),
-        'control' => array(
-            'type' => 'range',
-            'section' => $section_id,
-            'label' => esc_html__( 'Title Font Size', 'taproot' ),
-            'active_callback' => 'taproot_has_title',
-            'input_attrs' => array(
-                'min' => 12,
-                'max' => 72,
-                'step' => 1,
-            ),
-        ),
+    $wp_customize->add_setting( sprintf( 'taproot_title_font_size_%s', $device_id ), array(
+        'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+        'transport' => 'postMessage',
     ));
+
+    $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_title_font_size_%s', $device_id ), array(
+        'type' => 'range',
+        'section' => $section_id,
+        'label' => esc_html__( 'Title Font Size', 'taproot' ),
+        'active_callback' => 'taproot_has_title',
+        'input_attrs' => array(
+            'min' => 12,
+            'max' => 72,
+            'step' => 1,
+        ),
+    )));
 
 
     // Setting: Title Letter Spacing
-    taproot_setting( $wp_customize, sprintf( 'taproot_title_spacing_%s', $device_id ), array(
-        'setting' => array(
-            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-        ),
-        'control' => array(
-            'type'  => 'range',
-            'section' => $section_id,
-            'label' => esc_html__( 'Title Letter Spacing', 'taproot' ),
-            'active_callback' => 'taproot_has_title',
-            'input_attrs' => array(
-                'min' => -1,
-                'max' => 8,
-                'step' => 1
-            ),
-        ),
+    $wp_customize->add_setting( sprintf( 'taproot_title_spacing_%s', $device_id ), array(
+        'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+        'transport' => 'postMessage',
     ));
+
+    $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_title_spacing_%s', $device_id ), array(
+        'type'  => 'range',
+        'section' => $section_id,
+        'label' => esc_html__( 'Title Letter Spacing', 'taproot' ),
+        'active_callback' => 'taproot_has_title',
+        'input_attrs' => array(
+            'min' => -1,
+            'max' => 8,
+            'step' => 1
+        ),
+    )));
 
 
     // Setting: Title Line Height
-    taproot_setting( $wp_customize, sprintf( 'taproot_title_line_height_%s', $device_id ), array(
-        'setting' => array(
-            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-        ),
-        'control' => array(
-            'type' => 'range',
-            'section' => $section_id,
-            'label' => esc_html__( 'Title Line Height', 'taproot' ),
-            'active_callback' => 'taproot_has_title',
-            'input_attrs' => array(
-                'min' => 0,
-                'max' => 2,
-                'step' => 0.1
-            ),
-        ),
+    $wp_customize->add_setting( sprintf( 'taproot_title_line_height_%s', $device_id ), array(
+        'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+        'transport' => 'postMessage',
     ));
+
+    $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_title_line_height_%s', $device_id ), array(
+        'type' => 'range',
+        'section' => $section_id,
+        'label' => esc_html__( 'Title Line Height', 'taproot' ),
+        'active_callback' => 'taproot_has_title',
+        'input_attrs' => array(
+            'min' => 0,
+            'max' => 2,
+            'step' => 0.1
+        ),
+    )));
 
 
     // Group Title: Tagline Styles
@@ -711,80 +723,80 @@ foreach ( $devices as $device => $args )
 	)));
 
 
-    // Setting: Tagline Font Size
-    taproot_setting( $wp_customize, sprintf( 'taproot_tagline_font_size_%s', $device_id ), array(
-        'setting' => array(
-            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+    // Setting: Tagline Font Size   
+    $wp_customize->add_setting( sprintf( 'taproot_tagline_font_size_%s', $device_id ), array(
+        'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+        'transport' => 'postMessage',
+    ));
+
+    $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_tagline_font_size_%s', $device_id ), array(
+        'type' => 'range',
+        'section' => $section_id,
+        'label' => esc_html__( 'Tagline Font Size', 'taproot' ),
+        'active_callback' => 'taproot_has_tagline',
+        'input_attrs' => array(
+            'min' => 12,
+            'max' => 72,
+            'step' => 1
         ),
-        'control' => array(
-            'type' => 'range',
-            'section' => $section_id,
-            'label' => esc_html__( 'Tagline Font Size', 'taproot' ),
-            'active_callback' => 'taproot_has_tagline',
-            'input_attrs' => array(
-                'min' => 12,
-                'max' => 72,
-                'step' => 1
-            ),
-        ),
-    ));    
+    )));
 
 
     // Setting: Tagline Letter Spacing
-    taproot_setting( $wp_customize, sprintf( 'taproot_tagline_spacing_%s', $device_id ), array(
-        'setting' => array(
-            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-        ),
-        'control' => array(
-            'type' => 'range',
-            'section' => $section_id,
-            'active_callback' => 'taproot_has_tagline',
-            'label' => esc_html__( 'Tagline Letter Spacing', 'taproot' ),
-            'input_attrs' => array(
-                'min' => -1,
-                'max' => 8,
-                'step' => 1
-            ),
-        ),
+    $wp_customize->add_setting( sprintf( 'taproot_tagline_spacing_%s', $device_id ), array(
+        'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+        'transport' => 'postMessage',
     ));
+
+    $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_tagline_spacing_%s', $device_id ), array(
+        'type' => 'range',
+        'section' => $section_id,
+        'active_callback' => 'taproot_has_tagline',
+        'label' => esc_html__( 'Tagline Letter Spacing', 'taproot' ),
+        'input_attrs' => array(
+            'min' => -1,
+            'max' => 8,
+            'step' => 1
+        ),
+    )));
 
 
     // Setting: Tagline Line Height
-    taproot_setting( $wp_customize, sprintf( 'taproot_tagline_line_height_%s', $device_id ), array(
-        'setting' => array(
-            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-        ),
-        'control' => array(
-            'type' => 'range',
-            'section' => $section_id,
-            'label' => esc_html__( 'Tagline Line Height', 'taproot' ),
-            'active_callback' => 'taproot_has_tagline',
-            'input_attrs' => array(
-                'min' => 0,
-                'max' => 2,
-                'step' => 0.1
-            ),
-        ),
+    $wp_customize->add_setting( sprintf( 'taproot_tagline_line_height_%s', $device_id ), array(
+        'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+        'transport' => 'postMessage',
     ));
+
+    $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_tagline_line_height_%s', $device_id ), array(
+        'type' => 'range',
+        'section' => $section_id,
+        'label' => esc_html__( 'Tagline Line Height', 'taproot' ),
+        'active_callback' => 'taproot_has_tagline',
+        'input_attrs' => array(
+            'min' => 0,
+            'max' => 2,
+            'step' => 0.1
+        ),
+    )));
 
 
     // Setting: Tagline Top Margin
-    taproot_setting( $wp_customize, sprintf( 'taproot_tagline_top_margin_%s', $device_id ), array(
-        'setting' => array(
-            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+    $wp_customize->add_setting( sprintf( 'taproot_tagline_top_margin_%s', $device_id ), array(
+        'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+        'transport' => 'postMessage',
+    ));
+
+    $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_tagline_top_margin_%s', $device_id ), array(
+        'type' => 'range',
+        'section' => $section_id,
+        'label' => esc_html__( 'Tagline Top Margin', 'taproot' ),
+        'active_callback' => 'taproot_has_tagline',
+        'input_attrs' => array(
+            'min'  => 0,
+            'max'  => 2,
+            'step' => 0.2
         ),
-        'control' => array(
-            'type' => 'range',
-            'section' => $section_id,
-            'label' => esc_html__( 'Tagline Top Margin', 'taproot' ),
-            'active_callback' => 'taproot_has_tagline',
-            'input_attrs' => array(
-                'min'  => 0,
-                'max'  => 2,
-                'step' => 0.2
-            ),
-        ),
-    ));    
+    )));      
 
     $section_priority += 10;
 

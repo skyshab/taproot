@@ -52,79 +52,84 @@
 
 
         // Setting: Topnav Font
-        taproot_setting( $wp_customize, 'taproot_topnav_font', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'select',
-                'section' => 'taproot_nav_topnav',
-                'label' => esc_html__( 'Font Family', 'taproot' ),
-                'choices' => taproot_get_font_choices(),
-            ),
+        $wp_customize->add_setting( 'taproot_topnav_font', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_topnav_font', array(
+            'type' => 'select',
+            'section' => 'taproot_nav_topnav',
+            'label' => esc_html__( 'Font Family', 'taproot' ),
+            'choices' => taproot_get_font_choices(),        
         ));
 
 
         // Setting: Top Nav Font Style
-        taproot_setting( $wp_customize, 'taproot_topnav_font_style', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'font_styles',
-                'section' => 'taproot_nav_topnav',
-                'label' => esc_html__( 'Top Nav Font Style', 'taproot' ),
-            ),
+        $wp_customize->add_setting( 'taproot_topnav_font_style', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Font_Styles( $wp_customize, 'taproot_topnav_font_style', array(
+            'type' => 'font_styles',
+            'section' => 'taproot_nav_topnav',
+            'label' => esc_html__( 'Top Nav Font Style', 'taproot' ),        
+        )));
+
 
         // Setting: Topnav Font Size
-        taproot_setting( $wp_customize, 'taproot_topnav_font_size', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-            	'type' => 'range',
-                'section' => 'taproot_nav_topnav',
-                'label' => esc_html__( 'Text Font Size', 'taproot' ),
-            	'input_attrs' => array(
-            		'min'  => 12,
-            		'max'  => 32,
-            		'step' => 1
-            	),
-            ),
+        $wp_customize->add_setting( 'taproot_topnav_font_size', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
 
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_topnav_font_size', array(
+            'type' => 'range',
+            'section' => 'taproot_nav_topnav',
+            'label' => esc_html__( 'Text Font Size', 'taproot' ),
+            'input_attrs' => array(
+                'min'  => 12,
+                'max'  => 32,
+                'step' => 1
+            ),      
+        )));
 
-        // Setting: Topnav Height
-        taproot_setting( $wp_customize, 'taproot_topnav_height', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-            	'type' => 'range',
-                'section' => 'taproot_nav_topnav',
-                'label' => esc_html__( 'Menu Height', 'taproot' ),
-            	'input_attrs' => array(
-            		'min'  => 0.2,
-            		'max'  => 3.2,
-            		'step' => 0.1
-            	),
-            ),
-        ));        
+
+        // Setting: Topnav Height       
+        $wp_customize->add_setting( 'taproot_topnav_height', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_topnav_height', array(
+            'type' => 'range',
+            'section' => 'taproot_nav_topnav',
+            'label' => esc_html__( 'Menu Height', 'taproot' ),
+            'input_attrs' => array(
+                'min'  => 0.2,
+                'max'  => 3.2,
+                'step' => 0.1
+            ),      
+        )));
 
 
         // Setting: Topnav Menu Item Spacing
-        taproot_setting( $wp_customize, 'taproot_topnav_item_spacing', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-            	'type' => 'range',
-                'section' => 'taproot_nav_topnav',
-                'label' => esc_html__( 'Menu Item Spacing', 'taproot' ),
-            	'input_attrs' => array(
-            		'min'  => 0,
-            		'max'  => 3.2,
-            		'step' => 0.1
-            	),
-            ),
+        $wp_customize->add_setting( 'taproot_topnav_item_spacing', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_topnav_item_spacing', array(
+            'type' => 'range',
+            'section' => 'taproot_nav_topnav',
+            'label' => esc_html__( 'Menu Item Spacing', 'taproot' ),
+            'input_attrs' => array(
+                'min'  => 0,
+                'max'  => 3.2,
+                'step' => 0.1
+            ),     
+        )));
 
 
         // Setting: Topnav Info - Phone
@@ -171,15 +176,15 @@
 
 
         // Setting: Hide Topnav when desktop
-        taproot_setting( $wp_customize, 'taproot_topnav_hide_when_not_mobile', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_checkbox',
-            ),
-            'control' => array(
-                'type' => 'checkbox',
-                'section' => 'taproot_nav_topnav',
-                'label' => esc_html__( 'Hide Nav When Not Mobile', 'taproot' ),
-            ),
+        $wp_customize->add_setting( 'taproot_topnav_hide_when_not_mobile', array(
+            'sanitize_callback' => 'taproot_sanitize_checkbox',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_topnav_hide_when_not_mobile', array(
+            'type' => 'checkbox',
+            'section' => 'taproot_nav_topnav',
+            'label' => esc_html__( 'Hide Nav When Not Mobile', 'taproot' ),
         ));
 
 
@@ -188,50 +193,50 @@
         */
 
 
-        // Setting: Top Nav Mobile Breakpoint
-        taproot_setting( $wp_customize, 'taproot_topnav_mobile_breakpoint', array(
-            'setting' => array(
-                'transport' => 'refresh',
-            ),
-            'control' => array(
-                'type' => 'select',
-                'section' => 'taproot_nav_topnav[mobile]',
-                'label' => esc_html__( 'Mobile Menu Breakpoint', 'taproot' ),
-                'choices' => array(
-                    'bp-none' => esc_html__( 'Never Mobile', 'taproot' ),
-                    'bp-m' => esc_html__( 'Mobile Only', 'taproot' ),
-                    'bp-ml' => esc_html__( 'Mobile Landscape and under', 'taproot' ),
-                    'bp-t' => esc_html__( 'Tablet and under', 'taproot' ),
-                    'bp-l' => esc_html__( 'Laptop and under', 'taproot' ),
-                    'bp-always' => esc_html__( 'Always Mobile', 'taproot' ),
-                ),
-            ),
-        ));        
+        // Setting: Top Nav Mobile Breakpoint       
+        $wp_customize->add_setting( 'taproot_topnav_mobile_breakpoint', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'refresh',
+        ));
+
+        $wp_customize->add_control( 'taproot_topnav_mobile_breakpoint', array(
+            'type' => 'select',
+            'section' => 'taproot_nav_topnav[mobile]',
+            'label' => esc_html__( 'Mobile Menu Breakpoint', 'taproot' ),
+            'choices' => array(
+                'bp-none' => esc_html__( 'Never Mobile', 'taproot' ),
+                'bp-m' => esc_html__( 'Mobile Only', 'taproot' ),
+                'bp-ml' => esc_html__( 'Mobile Landscape and under', 'taproot' ),
+                'bp-t' => esc_html__( 'Tablet and under', 'taproot' ),
+                'bp-l' => esc_html__( 'Laptop and under', 'taproot' ),
+                'bp-always' => esc_html__( 'Always Mobile', 'taproot' ),
+            ),       
+        ));
 
 
         // Setting: Hide Topnav when mobile
-        taproot_setting( $wp_customize, 'taproot_topnav_hide_when_mobile', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_checkbox',
-            ),
-            'control' => array(
-                'type' => 'checkbox',
-                'section' => 'taproot_nav_topnav[mobile]',
-                'label' => esc_html__( 'Hide Nav When Mobile', 'taproot' ),
-            ),
+        $wp_customize->add_setting( 'taproot_topnav_hide_when_mobile', array(
+            'sanitize_callback' => 'taproot_sanitize_checkbox',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_topnav_hide_when_mobile', array(
+            'type' => 'checkbox',
+            'section' => 'taproot_nav_topnav[mobile]',
+            'label' => esc_html__( 'Hide Nav When Mobile', 'taproot' ),       
         ));
 
 
         // Setting: Hide Topnave When Mobile Bar Is Active
-        taproot_setting( $wp_customize, 'taproot_topnav_hide_when_mobile_bar', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_checkbox',
-            ),
-            'control' => array(
-                'type' => 'checkbox',
-                'section' => 'taproot_nav_topnav[mobile]',
-                'label' => esc_html__( 'Hide When Mobile Bar Is Active', 'taproot' ),
-            ),
+        $wp_customize->add_setting( 'taproot_topnav_hide_when_mobile_bar', array(
+            'sanitize_callback' => 'taproot_sanitize_checkbox',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_topnav_hide_when_mobile_bar', array(
+            'type' => 'checkbox',
+            'section' => 'taproot_nav_topnav[mobile]',
+            'label' => esc_html__( 'Hide When Mobile Bar Is Active', 'taproot' ),
         ));
 
 
@@ -241,15 +246,15 @@
 
 
         // Setting: Show Topnav in Fixed Header
-        taproot_setting( $wp_customize, 'taproot_topnav_display_when_fixed', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_checkbox',
-            ),
-            'control' => array(
-                'type' => 'checkbox',
-                'section' => 'taproot_nav_topnav[fixed]',
-                'label' => esc_html__( 'Display When Fixed Header', 'taproot' ),
-            ),
+        $wp_customize->add_setting( 'taproot_topnav_display_when_fixed', array(
+            'sanitize_callback' => 'taproot_sanitize_checkbox',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_topnav_display_when_fixed', array(
+            'type' => 'checkbox',
+            'section' => 'taproot_nav_topnav[fixed]',
+            'label' => esc_html__( 'Display When Fixed Header', 'taproot' ),
         ));
 
 
@@ -322,122 +327,128 @@
 
 
         // Setting: Enable Header Nav Pointers
-        taproot_setting( $wp_customize, 'taproot_header_nav_enable_dropdown_pointers', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_checkbox',
-            ),
-            'control' => array(
-                'type' => 'checkbox',
-                'section' => 'taproot_nav_header',
-                'label' => esc_html__( 'Enable Dropdown Pointers', 'taproot' ),
-            ),
+        $wp_customize->add_setting( 'taproot_header_nav_enable_dropdown_pointers', array(
+            'sanitize_callback' => 'taproot_sanitize_checkbox',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_header_nav_enable_dropdown_pointers', array(
+            'type' => 'checkbox',
+            'section' => 'taproot_nav_header',
+            'label' => esc_html__( 'Enable Dropdown Pointers', 'taproot' ),
         ));
 
 
         // Setting: Header Nav Font
-        taproot_setting( $wp_customize, 'taproot_header_nav_font', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'select',
-                'section' => 'taproot_nav_header',
-                'label' => esc_html__( 'Font Family', 'taproot' ),
-                'choices' => taproot_get_font_choices(),
-            ),
+        $wp_customize->add_setting( 'taproot_header_nav_font', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_header_nav_font', array(
+            'type' => 'select',
+            'section' => 'taproot_nav_header',
+            'label' => esc_html__( 'Font Family', 'taproot' ),
+            'choices' => taproot_get_font_choices(),        
         ));
 
 
         // Setting: Header Nav Font Style
-        taproot_setting( $wp_customize, 'taproot_header_nav_font_style', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'font_styles',
-                'section' => 'taproot_nav_header',
-                'label' => esc_html__( 'Header Nav Font Style', 'taproot' ),
-            ),
+        $wp_customize->add_setting( 'taproot_header_nav_font_style', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Font_Styles( $wp_customize, 'taproot_header_nav_font_style', array(
+            'type' => 'font_styles',
+            'section' => 'taproot_nav_header',
+            'label' => esc_html__( 'Header Nav Font Style', 'taproot' ),        
+        )));
 
 
         // Setting: Header Nav Font Size
-        taproot_setting( $wp_customize, 'taproot_header_nav_font_size', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-            	'type' => 'range',
-                'section' => 'taproot_nav_header',
-                'label' => esc_html__( 'Menu Item Font Size', 'taproot' ),
-            	'input_attrs' => array(
-            		'min'  => 12,
-            		'max'  => 32,
-            		'step' => 1
-            	),
-            ),
+        $wp_customize->add_setting( 'taproot_header_nav_font_size', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_header_nav_font_size', array(
+            'type' => 'range',
+            'section' => 'taproot_nav_header',
+            'label' => esc_html__( 'Menu Item Font Size', 'taproot' ),
+            'input_attrs' => array(
+                'min'  => 12,
+                'max'  => 32,
+                'step' => 1
+            ),      
+        )));
 
 
         // Setting: Header Nav Height
-        taproot_setting( $wp_customize, 'taproot_header_nav_height', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-                'type' => 'range',
-                'section' => 'taproot_nav_header',
-                'label' => esc_html__( 'Menu Item Height', 'taproot' ),
-                'input_attrs' => array(
-                    'min'  => 0.2,
-                    'max'  => 3.2,
-                    'step' => 0.1
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_header_nav_height', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_header_nav_height', array(
+            'type' => 'range',
+            'section' => 'taproot_nav_header',
+            'label' => esc_html__( 'Menu Item Height', 'taproot' ),
+            'input_attrs' => array(
+                'min'  => 0.2,
+                'max'  => 3.2,
+                'step' => 0.1
+            ),     
+        )));
 
 
         // Setting: Header Nav Menu Item Spacing
-        taproot_setting( $wp_customize, 'taproot_header_nav_item_spacing', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-                'type' => 'range',
-                'section' => 'taproot_nav_header',
-                'label' => esc_html__( 'Menu Item Spacing', 'taproot' ),
-                'input_attrs' => array(
-                    'min'  => 0,
-                    'max'  => 3.2,
-                    'step' => 0.1
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_header_nav_item_spacing', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_header_nav_item_spacing', array(
+            'type' => 'range',
+            'section' => 'taproot_nav_header',
+            'label' => esc_html__( 'Menu Item Spacing', 'taproot' ),
+            'input_attrs' => array(
+                'min'  => 0,
+                'max'  => 3.2,
+                'step' => 0.1
+            ),      
+        )));
 
 
         // Setting: Header Nav Item Alignment
-        taproot_setting( $wp_customize, 'taproot_header_nav_align', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'select',
-                'section' => 'taproot_nav_header',
-                'label' => esc_html__( 'Menu Item Alignment', 'taproot' ),
-                'choices' => array(
-                    'left' => esc_html__( 'Left', 'taproot' ),
-                    'right' => esc_html__( 'Right', 'taproot' ),
-                    'center' => esc_html__( 'Center', 'taproot' ),
-                    'fill' => esc_html__( 'Fill', 'taproot' ),
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_header_nav_align', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_header_nav_align', array(
+            'type' => 'select',
+            'section' => 'taproot_nav_header',
+            'label' => esc_html__( 'Menu Item Alignment', 'taproot' ),
+            'choices' => array(
+                'left' => esc_html__( 'Left', 'taproot' ),
+                'right' => esc_html__( 'Right', 'taproot' ),
+                'center' => esc_html__( 'Center', 'taproot' ),
+                'fill' => esc_html__( 'Fill', 'taproot' ),
+            ),        
         ));
 
 
         // Setting: Hide Header Nav when desktop
-        taproot_setting( $wp_customize, 'taproot_header_nav_hide_when_not_mobile', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_checkbox',
-            ),
-            'control' => array(
-                'type' => 'checkbox',
-                'section' => 'taproot_nav_header',
-                'label' => esc_html__( 'Hide Nav When Not Mobile', 'taproot' ),
-            ),
+        $wp_customize->add_setting( 'taproot_header_nav_hide_when_not_mobile', array(
+            'sanitize_callback' => 'taproot_sanitize_checkbox',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_header_nav_hide_when_not_mobile', array(
+            'type' => 'checkbox',
+            'section' => 'taproot_nav_header',
+            'label' => esc_html__( 'Hide Nav When Not Mobile', 'taproot' ),
         ));
 
 
@@ -446,65 +457,69 @@
         */
 
 
-        // Setting: Header Nav Mobile Breakpoint
-        taproot_setting( $wp_customize, 'taproot_header_nav_mobile_breakpoint', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'select',
-                'section' => 'taproot_nav_header[mobile]',
-                'label' => esc_html__( 'Mobile Menu Breakpoint', 'taproot' ),
-                'choices' => array(
-                    'bp-none' => esc_html__( 'Never Mobile', 'taproot' ),
-                    'bp-m' => esc_html__( 'Mobile Only', 'taproot' ),
-                    'bp-ml' => esc_html__( 'Mobile Landscape and under', 'taproot' ),
-                    'bp-t' => esc_html__( 'Tablet and under', 'taproot' ),
-                    'bp-l' => esc_html__( 'Laptop and under', 'taproot' ),
-                    'bp-always' => esc_html__( 'Always Mobile', 'taproot' ),
-                ),
-            ),
-        ));        
+        // Setting: Header Nav Mobile Breakpoint       
+        $wp_customize->add_setting( 'taproot_header_nav_mobile_breakpoint', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_header_nav_mobile_breakpoint', array(
+            'type' => 'select',
+            'section' => 'taproot_nav_header[mobile]',
+            'label' => esc_html__( 'Mobile Menu Breakpoint', 'taproot' ),
+            'choices' => array(
+                'bp-none' => esc_html__( 'Never Mobile', 'taproot' ),
+                'bp-m' => esc_html__( 'Mobile Only', 'taproot' ),
+                'bp-ml' => esc_html__( 'Mobile Landscape and under', 'taproot' ),
+                'bp-t' => esc_html__( 'Tablet and under', 'taproot' ),
+                'bp-l' => esc_html__( 'Laptop and under', 'taproot' ),
+                'bp-always' => esc_html__( 'Always Mobile', 'taproot' ),
+            ),       
+        ));
 
 
         // Setting: Hide Header Nav when mobile
-        taproot_setting( $wp_customize, 'taproot_header_nav_hide_when_mobile', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_checkbox',
-            ),
-            'control' => array(
-                'type' => 'checkbox',
-                'section' => 'taproot_nav_header[mobile]',
-                'label' => esc_html__( 'Hide Nav When Mobile', 'taproot' ),
-            ),
+        $wp_customize->add_setting( 'taproot_header_nav_hide_when_mobile', array(
+            'sanitize_callback' => 'taproot_sanitize_checkbox',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_header_nav_hide_when_mobile', array(
+            'type' => 'checkbox',
+            'section' => 'taproot_nav_header[mobile]',
+            'label' => esc_html__( 'Hide Nav When Mobile', 'taproot' ),
         ));
 
 
         // Setting: Hide Header Nav when mobile bar
-        taproot_setting( $wp_customize, 'taproot_header_nav_hide_when_mobile_bar', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_checkbox',
-            ),
-            'control' => array(
-                'type' => 'checkbox',
-                'label' => esc_html__( 'Hide When Mobile Bar Is Active', 'taproot' ),
-                'section' => 'taproot_nav_header[mobile]',
-            ),
+        $wp_customize->add_setting( 'taproot_header_nav_hide_when_mobile_bar', array(
+            'sanitize_callback' => 'taproot_sanitize_checkbox',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_header_nav_hide_when_mobile_bar', array(
+            'type' => 'checkbox',
+            'label' => esc_html__( 'Hide When Mobile Bar Is Active', 'taproot' ),
+            'section' => 'taproot_nav_header[mobile]',
         ));
 
 
         // Setting: Header Nav Type
-        taproot_setting( $wp_customize, 'taproot_header_nav_type', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'select',
-                'section' => 'taproot_nav_header[mobile]',
-                'label' => esc_html__( 'Mobile Menu Type', 'taproot' ),
-                'choices' => array(
-                    'dropdown-slide' => esc_html__( 'Dropdown - Slide', 'taproot' ),
-                    'dropdown-fade' => esc_html__( 'Dropdown - Fade', 'taproot' ),
-                    'slide' => esc_html__( 'Slide In', 'taproot' ),
-                    'fullscreen' => esc_html__( 'Fullscreen', 'taproot' ),
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_header_nav_type', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_header_nav_type', array(
+            'type' => 'select',
+            'section' => 'taproot_nav_header[mobile]',
+            'label' => esc_html__( 'Mobile Menu Type', 'taproot' ),
+            'choices' => array(
+                'dropdown-slide' => esc_html__( 'Dropdown - Slide', 'taproot' ),
+                'dropdown-fade' => esc_html__( 'Dropdown - Fade', 'taproot' ),
+                'slide' => esc_html__( 'Slide In', 'taproot' ),
+                'fullscreen' => esc_html__( 'Fullscreen', 'taproot' ),
+            ),       
         ));
 
 
@@ -517,21 +532,21 @@
 
 
         // Setting: Header Nav Mobile Icon Size
-        taproot_setting( $wp_customize, 'taproot_header_nav_mobile_icon_size', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-            	'type' => 'range',
-                'section' => 'taproot_nav_header[mobile]',
-                'label' => esc_html__( 'Menu Icon Font Size', 'taproot' ),
-            	'input_attrs' => array(
-            		'min'  => 0.6,
-            		'max'  => 3,
-            		'step' => 0.1
-            	),
-            ),
+        $wp_customize->add_setting( 'taproot_header_nav_mobile_icon_size', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_header_nav_mobile_icon_size', array(
+            'type' => 'range',
+            'section' => 'taproot_nav_header[mobile]',
+            'label' => esc_html__( 'Menu Icon Font Size', 'taproot' ),
+            'input_attrs' => array(
+                'min'  => 0.6,
+                'max'  => 3,
+                'step' => 0.1
+            ),      
+        )));
 
 
         // Color Setting: Menu Icon Color
@@ -571,39 +586,39 @@
 
 
         // Setting: Header Nav Mobile Menu Item Height 
-        taproot_setting( $wp_customize, 'taproot_header_nav_mobile_dropdown_item_height', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-            	'type' => 'range',
-                'section' => 'taproot_nav_header[mobile]',
-                'label' => esc_html__( 'Mobile Menu Item Height', 'taproot' ),
-            	'input_attrs' => array(
-            		'min'  => 0,
-            		'max'  => 2,
-            		'step' => 0.1
-            	),
-            ),
+        $wp_customize->add_setting( 'taproot_header_nav_mobile_dropdown_item_height', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_header_nav_mobile_dropdown_item_height', array(
+            'type' => 'range',
+            'section' => 'taproot_nav_header[mobile]',
+            'label' => esc_html__( 'Mobile Menu Item Height', 'taproot' ),
+            'input_attrs' => array(
+                'min'  => 0,
+                'max'  => 2,
+                'step' => 0.1
+            ),      
+        )));
 
 
         // Setting: Header Nav Mobile Menu Item Gutter
-        taproot_setting( $wp_customize, 'taproot_header_nav_mobile_dropdown_item_padding', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-                'type' => 'range',
-                'section' => 'taproot_nav_header[mobile]',
-                'label' => esc_html__( 'Mobile Menu Item Padding', 'taproot' ),
-                'input_attrs' => array(
-                    'min' => 0,
-                    'max' => 5,
-                    'step' => 0.1
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_header_nav_mobile_dropdown_item_padding', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_header_nav_mobile_dropdown_item_padding', array(
+            'type' => 'range',
+            'section' => 'taproot_nav_header[mobile]',
+            'label' => esc_html__( 'Mobile Menu Item Padding', 'taproot' ),
+            'input_attrs' => array(
+                'min' => 0,
+                'max' => 5,
+                'step' => 0.1
+            ),       
+        )));
 
 
         // Group Title: Mobile Menu Item Styles:hover
@@ -641,15 +656,15 @@
 
 
         // Setting: Show Navbar in Fixed Header
-        taproot_setting( $wp_customize, 'taproot_header_nav_display_when_fixed', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_checkbox',
-            ),
-            'control' => array(
-                'label' => esc_html__( 'Display When Fixed Header', 'taproot' ),
-                'section' => 'taproot_nav_header[fixed]',
-                'type' => 'checkbox',
-            ),
+        $wp_customize->add_setting( 'taproot_header_nav_display_when_fixed', array(
+            'sanitize_callback' => 'taproot_sanitize_checkbox',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_header_nav_display_when_fixed', array(
+            'label' => esc_html__( 'Display When Fixed Header', 'taproot' ),
+            'section' => 'taproot_nav_header[fixed]',
+            'type' => 'checkbox',
         ));
 
 
@@ -668,57 +683,57 @@
 
 
         // Setting: Header Nav Font Size
-        taproot_setting( $wp_customize, 'taproot_header_nav_font_size_fixed', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-            	'type' => 'range',
-                'section' => 'taproot_nav_header[fixed]',
-                'label' => esc_html__( 'Menu Item Font Size', 'taproot' ),
-            	'input_attrs' => array(
-            		'min'  => 12,
-            		'max'  => 32,
-            		'step' => 1
-            	),
-            ),
+        $wp_customize->add_setting( 'taproot_header_nav_font_size_fixed', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_header_nav_font_size_fixed', array(
+            'type' => 'range',
+            'section' => 'taproot_nav_header[fixed]',
+            'label' => esc_html__( 'Menu Item Font Size', 'taproot' ),
+            'input_attrs' => array(
+                'min'  => 12,
+                'max'  => 32,
+                'step' => 1
+            ),      
+        ))); 
 
 
         // Setting: Header Nav Height
-        taproot_setting( $wp_customize, 'taproot_header_nav_height_fixed', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-            	'type' => 'range',
-                'section' => 'taproot_nav_header[fixed]',
-                'label' => esc_html__( 'Menu Item Height', 'taproot' ),
-            	'input_attrs' => array(
-            		'min'  => 0.2,
-            		'max'  => 3.2,
-            		'step' => 0.1
-            	),
-            ),
+        $wp_customize->add_setting( 'taproot_header_nav_height_fixed', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_header_nav_height_fixed', array(
+            'type' => 'range',
+            'section' => 'taproot_nav_header[fixed]',
+            'label' => esc_html__( 'Menu Item Height', 'taproot' ),
+            'input_attrs' => array(
+                'min'  => 0.2,
+                'max'  => 3.2,
+                'step' => 0.1
+            ),     
+        ))); 
 
 
         // Setting: Header Nav Menu Item Spacing
-        taproot_setting( $wp_customize, 'taproot_header_nav_item_spacing_fixed', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-                'type' => 'range',
-                'section' => 'taproot_nav_header[fixed]',
-                'label' => esc_html__( 'Menu Item Spacing', 'taproot' ),
-                'input_attrs' => array(
-                    'min'  => 0,
-                    'max'  => 3.2,
-                    'step' => 0.1
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_header_nav_item_spacing_fixed', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_header_nav_item_spacing_fixed', array(
+            'type' => 'range',
+            'section' => 'taproot_nav_header[fixed]',
+            'label' => esc_html__( 'Menu Item Spacing', 'taproot' ),
+            'input_attrs' => array(
+                'min'  => 0,
+                'max'  => 3.2,
+                'step' => 0.1
+            ),     
+        ))); 
 
 
         // Color Setting: Dropdown Menu Background Color
@@ -743,19 +758,21 @@
 
 
         // Setting: Header Nav Item Alignment
-        taproot_setting( $wp_customize, 'taproot_header_nav_align_fixed', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'select',
-                'section' => 'taproot_nav_header[fixed]',
-                'label' => esc_html__( 'Menu Item Alignment', 'taproot' ),
-                'choices' => array(
-                    'left' => esc_html__( 'Left', 'taproot' ),
-                    'right' => esc_html__( 'Right', 'taproot' ),
-                    'center' => esc_html__( 'Center', 'taproot' ),
-                    'fill' => esc_html__( 'Fill', 'taproot' ),
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_header_nav_align_fixed', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_header_nav_align_fixed', array(
+            'type' => 'select',
+            'section' => 'taproot_nav_header[fixed]',
+            'label' => esc_html__( 'Menu Item Alignment', 'taproot' ),
+            'choices' => array(
+                'left' => esc_html__( 'Left', 'taproot' ),
+                'right' => esc_html__( 'Right', 'taproot' ),
+                'center' => esc_html__( 'Center', 'taproot' ),
+                'fill' => esc_html__( 'Fill', 'taproot' ),
+            ),       
         ));
 
 
@@ -798,45 +815,49 @@
 
 
         // Setting: Navbar Font
-        taproot_setting( $wp_customize, 'taproot_navbar_font', array(
-            'setting' => array(),
-            'control' => array(
-                'label' => esc_html__( 'Font Family', 'taproot' ),
-                'section' => 'taproot_nav_navbar',
-                'active_callback' => '',
-                'type' => 'select',
-                'choices' => taproot_get_font_choices(),
-            ),
+        $wp_customize->add_setting( 'taproot_navbar_font', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_navbar_font', array(
+            'label' => esc_html__( 'Font Family', 'taproot' ),
+            'section' => 'taproot_nav_navbar',
+            'active_callback' => '',
+            'type' => 'select',
+            'choices' => taproot_get_font_choices(),       
         ));
 
 
         // Setting: Navbar Font Style
-        taproot_setting( $wp_customize, 'taproot_navbar_font_style', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'font_styles',
-                'section' => 'taproot_nav_navbar',
-                'label' => esc_html__( 'Navbar Font Style', 'taproot' ),
-            ),
+        $wp_customize->add_setting( 'taproot_navbar_font_style', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Font_Styles( $wp_customize, 'taproot_navbar_font_style', array(
+            'type' => 'font_styles',
+            'section' => 'taproot_nav_navbar',
+            'label' => esc_html__( 'Navbar Font Style', 'taproot' ),       
+        )));
 
 
         // Setting: Navbar Font Size
-        taproot_setting( $wp_customize, 'taproot_navbar_font_size', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-            	'type' => 'range',
-                'section' => 'taproot_nav_navbar',
-                'label' => esc_html__( 'Navbar Font Size', 'taproot' ),
-            	'input_attrs' => array(
-            		'min'  => 12,
-            		'max'  => 32,
-            		'step' => 1
-            	),
-            ),
+        $wp_customize->add_setting( 'taproot_navbar_font_size', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_navbar_font_size', array(
+            'type' => 'range',
+            'section' => 'taproot_nav_navbar',
+            'label' => esc_html__( 'Navbar Font Size', 'taproot' ),
+            'input_attrs' => array(
+                'min'  => 12,
+                'max'  => 32,
+                'step' => 1
+            ),       
+        )));
 
 
         // Color Setting: Dropdown Menu Background Color
@@ -861,81 +882,82 @@
 
 
         // Setting: Enable Navbar Pointers
-        taproot_setting( $wp_customize, 'taproot_navbar_enable_dropdown_pointers', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_checkbox',
-            ),
-            'control' => array(
-                'type' => 'checkbox',
-                'section' => 'taproot_nav_navbar',
-                'label' => esc_html__( 'Enable Dropdown Pointers', 'taproot' ),
-            ),
+        $wp_customize->add_setting( 'taproot_navbar_enable_dropdown_pointers', array(
+            'sanitize_callback' => 'taproot_sanitize_checkbox',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_navbar_enable_dropdown_pointers', array(
+            'type' => 'checkbox',
+            'section' => 'taproot_nav_navbar',
+            'label' => esc_html__( 'Enable Dropdown Pointers', 'taproot' ),
         ));
 
 
         // Setting: Navbar Height
-        taproot_setting( $wp_customize, 'taproot_navbar_height', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-            	'type' => 'range',
-                'section' => 'taproot_nav_navbar',
-                'label' => esc_html__( 'Menu Height', 'taproot' ),
-            	'input_attrs' => array(
-            		'min'  => 0.2,
-            		'max'  => 3.2,
-            		'step' => 0.1
-            	),
-            ),
+        $wp_customize->add_setting( 'taproot_navbar_height', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
 
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_navbar_height', array(
+            'type' => 'range',
+            'section' => 'taproot_nav_navbar',
+            'label' => esc_html__( 'Menu Height', 'taproot' ),
+            'input_attrs' => array(
+                'min'  => 0.2,
+                'max'  => 3.2,
+                'step' => 0.1
+            ),     
+        )));  
 
         // Setting: Navbar Menu Item Spacing
-        taproot_setting( $wp_customize, 'taproot_navbar_item_spacing', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-                'type' => 'range',
-                'section' => 'taproot_nav_navbar',
-                'label' => esc_html__( 'Menu Item Spacing', 'taproot' ),
-                'input_attrs' => array(
-                    'min'  => 0,
-                    'max'  => 3.2,
-                    'step' => 0.1
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_navbar_item_spacing', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_navbar_item_spacing', array(
+            'type' => 'range',
+            'section' => 'taproot_nav_navbar',
+            'label' => esc_html__( 'Menu Item Spacing', 'taproot' ),
+            'input_attrs' => array(
+                'min'  => 0,
+                'max'  => 3.2,
+                'step' => 0.1
+            ),     
+        )));  
 
 
         // Setting: Navbar Item Alignment
-        taproot_setting( $wp_customize, 'taproot_navbar_align', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'select',
-                'section' => 'taproot_nav_navbar',
-                'label' => esc_html__( 'Menu Item Alignment', 'taproot' ),
-                'choices' => array(
-                    'left' => esc_html__( 'Left', 'taproot' ),
-                    'right' => esc_html__( 'Right', 'taproot' ),
-                    'center' => esc_html__( 'Center', 'taproot' ),
-                    'fill' => esc_html__( 'Fill', 'taproot' ),
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_navbar_align', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_navbar_align', array(
+            'type' => 'select',
+            'section' => 'taproot_nav_navbar',
+            'label' => esc_html__( 'Menu Item Alignment', 'taproot' ),
+            'choices' => array(
+                'left' => esc_html__( 'Left', 'taproot' ),
+                'right' => esc_html__( 'Right', 'taproot' ),
+                'center' => esc_html__( 'Center', 'taproot' ),
+                'fill' => esc_html__( 'Fill', 'taproot' ),
+            ),      
         ));
 
 
         // Setting: Hide Navbar when desktop
-        taproot_setting( $wp_customize, 'taproot_navbar_hide_when_not_mobile', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_checkbox',
-            ),
-            'control' => array(
-                'type' => 'checkbox',
-                'section' => 'taproot_nav_navbar',
-                'label' => esc_html__( 'Hide Nav When Not Mobile', 'taproot' ),
-            ),
+        $wp_customize->add_setting( 'taproot_navbar_hide_when_not_mobile', array(
+            'sanitize_callback' => 'taproot_sanitize_checkbox',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_navbar_hide_when_not_mobile', array(
+            'type' => 'checkbox',
+            'section' => 'taproot_nav_navbar',
+            'label' => esc_html__( 'Hide Nav When Not Mobile', 'taproot' ),
         ));
 
 
@@ -945,85 +967,87 @@
 
 
         // Setting: Navbar Mobile Breakpoint
-        taproot_setting( $wp_customize, 'taproot_navbar_mobile_breakpoint', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'select',
-                'section' => 'taproot_nav_navbar[mobile]',
-                'label' => esc_html__( 'Mobile Menu Breakpoint', 'taproot' ),
-                'choices' => array(
-                    'bp-none' => esc_html__( 'Never Mobile', 'taproot' ),
-                    'bp-m' => esc_html__( 'Mobile Only', 'taproot' ),
-                    'bp-ml' => esc_html__( 'Mobile Landscape and under', 'taproot' ),
-                    'bp-t' => esc_html__( 'Tablet and under', 'taproot' ),
-                    'bp-l' => esc_html__( 'Laptop and under', 'taproot' ),
-                    'bp-always' => esc_html__( 'Always Mobile', 'taproot' ),
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_navbar_mobile_breakpoint', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_navbar_mobile_breakpoint', array(
+            'type' => 'select',
+            'section' => 'taproot_nav_navbar[mobile]',
+            'label' => esc_html__( 'Mobile Menu Breakpoint', 'taproot' ),
+            'choices' => array(
+                'bp-none' => esc_html__( 'Never Mobile', 'taproot' ),
+                'bp-m' => esc_html__( 'Mobile Only', 'taproot' ),
+                'bp-ml' => esc_html__( 'Mobile Landscape and under', 'taproot' ),
+                'bp-t' => esc_html__( 'Tablet and under', 'taproot' ),
+                'bp-l' => esc_html__( 'Laptop and under', 'taproot' ),
+                'bp-always' => esc_html__( 'Always Mobile', 'taproot' ),
+            ),       
         ));
 
 
         // Setting: Hide Navbar when mobile
-        taproot_setting( $wp_customize, 'taproot_navbar_hide_when_mobile', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_checkbox',
-            ),
-            'control' => array(
-                'type' => 'checkbox',
-                'section' => 'taproot_nav_navbar[mobile]',
-                'label' => esc_html__( 'Hide Nav When Mobile', 'taproot' ),
-            ),
+        $wp_customize->add_setting( 'taproot_navbar_hide_when_mobile', array(
+            'sanitize_callback' => 'taproot_sanitize_checkbox',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_navbar_hide_when_mobile', array(
+            'type' => 'checkbox',
+            'section' => 'taproot_nav_navbar[mobile]',
+            'label' => esc_html__( 'Hide Nav When Mobile', 'taproot' ),
         ));
 
 
         // Setting: Hide Navbar when mobile bar 
-        taproot_setting( $wp_customize, 'taproot_navbar_hide_when_mobile_bar', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_checkbox',
-            ),
-            'control' => array(
-                'type' => 'checkbox',
-                'section' => 'taproot_nav_navbar[mobile]',
-                'label' => esc_html__( 'Hide When Mobile Bar Is Active', 'taproot' ),
-            ),
+        $wp_customize->add_setting( 'taproot_navbar_hide_when_mobile_bar', array(
+            'sanitize_callback' => 'taproot_sanitize_checkbox',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_navbar_hide_when_mobile_bar', array(
+            'type' => 'checkbox',
+            'section' => 'taproot_nav_navbar[mobile]',
+            'label' => esc_html__( 'Hide When Mobile Bar Is Active', 'taproot' ),
         ));
 
 
         // Setting: Navbar Nav Type
-        taproot_setting( $wp_customize, 'taproot_navbar_nav_type', array(
-            'setting' => array(
-                'transport' => 'refresh',
-            ),
-            'control' => array(
-                'type' => 'select',
-                'section' => 'taproot_nav_navbar[mobile]',
-                'label' => esc_html__( 'Mobile Menu Type', 'taproot' ),
-                'choices' => array(
-                    'dropdown-slide' => esc_html__( 'Dropdown - Slide', 'taproot' ),
-                    'dropdown-fade' => esc_html__( 'Dropdown - Fade', 'taproot' ),
-                    'slide' => esc_html__( 'Slide In', 'taproot' ),
-                    'fullscreen' => esc_html__( 'Fullscreen', 'taproot' ),
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_navbar_nav_type', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'refresh',
+        ));
+
+        $wp_customize->add_control( 'taproot_navbar_nav_type', array(
+            'type' => 'select',
+            'section' => 'taproot_nav_navbar[mobile]',
+            'label' => esc_html__( 'Mobile Menu Type', 'taproot' ),
+            'choices' => array(
+                'dropdown-slide' => esc_html__( 'Dropdown - Slide', 'taproot' ),
+                'dropdown-fade' => esc_html__( 'Dropdown - Fade', 'taproot' ),
+                'slide' => esc_html__( 'Slide In', 'taproot' ),
+                'fullscreen' => esc_html__( 'Fullscreen', 'taproot' ),
+            ),       
         ));
 
 
         // Setting: Mobile Navbar Height
-        taproot_setting( $wp_customize, 'taproot_navbar_height_mobile', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-             	'type' => 'range',
-                'section' => 'taproot_nav_navbar[mobile]',
-                'label' => esc_html__( 'Mobile Navbar Height', 'taproot' ),
-             	'input_attrs' => array(
-             		'min'  => 0.2,
-             		'max'  => 2,
-             		'step' => 0.1
-             	),
-            ),
+        $wp_customize->add_setting( 'taproot_navbar_height_mobile', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_navbar_height_mobile', array(
+            'type' => 'range',
+            'section' => 'taproot_nav_navbar[mobile]',
+            'label' => esc_html__( 'Mobile Navbar Height', 'taproot' ),
+            'input_attrs' => array(
+                'min'  => 0.2,
+                'max'  => 2,
+                'step' => 0.1
+            ),      
+        )));
 
 
         // Group Title: Mobile Menu Icon Styles
@@ -1042,21 +1066,21 @@
 
 
         // Setting: Mobile Icon Size
-        taproot_setting( $wp_customize, 'taproot_navbar_mobile_icon_size', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-            	'type' => 'range',
-                'section' => 'taproot_nav_navbar[mobile]',
-                'label' => esc_html__( 'Mobile Icon Size', 'taproot' ),
-            	'input_attrs' => array(
-            		'min'  => 1,
-            		'max'  => 2,
-            		'step' => 0.1
-            	),
-            ),
+        $wp_customize->add_setting( 'taproot_navbar_mobile_icon_size', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_navbar_mobile_icon_size', array(
+            'type' => 'range',
+            'section' => 'taproot_nav_navbar[mobile]',
+            'label' => esc_html__( 'Mobile Icon Size', 'taproot' ),
+            'input_attrs' => array(
+                'min'  => 1,
+                'max'  => 2,
+                'step' => 0.1
+            ),       
+        )));
 
 
         // Group Title: Mobile Menu Item Styles
@@ -1089,39 +1113,39 @@
 
 
         // Setting: Navbar Mobile Menu Item Height
-        taproot_setting( $wp_customize, 'taproot_navbar_mobile_dropdown_item_height', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-            	'type' => 'range',
-                'section' => 'taproot_nav_navbar[mobile]',
-                'label' => esc_html__( 'Mobile Menu Item Height', 'taproot' ),
-            	'input_attrs' => array(
-            		'min'  => 0,
-            		'max'  => 2,
-            		'step' => 0.1
-            	),
-            ),
+        $wp_customize->add_setting( 'taproot_navbar_mobile_dropdown_item_height', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_navbar_mobile_dropdown_item_height', array(
+            'type' => 'range',
+            'section' => 'taproot_nav_navbar[mobile]',
+            'label' => esc_html__( 'Mobile Menu Item Height', 'taproot' ),
+            'input_attrs' => array(
+                'min'  => 0,
+                'max'  => 2,
+                'step' => 0.1
+            ),     
+        )));
 
 
         // Setting: Navbar Mobile Menu Item Gutter
-        taproot_setting( $wp_customize, 'taproot_navbar_mobile_dropdown_item_padding', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-                'type' => 'range',
-                'section' => 'taproot_nav_navbar[mobile]',
-                'label' => esc_html__( 'Mobile Menu Item Padding', 'taproot' ),
-                'input_attrs' => array(
-                    'min' => 0,
-                    'max' => 5,
-                    'step' => 0.1
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_navbar_mobile_dropdown_item_padding', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_navbar_mobile_dropdown_item_padding', array(
+            'type' => 'range',
+            'section' => 'taproot_nav_navbar[mobile]',
+            'label' => esc_html__( 'Mobile Menu Item Padding', 'taproot' ),
+            'input_attrs' => array(
+                'min' => 0,
+                'max' => 5,
+                'step' => 0.1
+            ),    
+        )));
 
 
         // Group Title: Mobile Menu Item Styles:hover
@@ -1152,15 +1176,15 @@
 
 
         // Setting: Show Navbar in Fixed Header
-        taproot_setting( $wp_customize, 'taproot_navbar_display_when_fixed', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_checkbox',
-            ),
-            'control' => array(
-                'type' => 'checkbox',
-                'section' => 'taproot_nav_navbar[fixed]',
-                'label' => esc_html__( 'Display When Fixed Header', 'taproot' ),
-            ),
+        $wp_customize->add_setting( 'taproot_navbar_display_when_fixed', array(
+            'sanitize_callback' => 'taproot_sanitize_checkbox',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_navbar_display_when_fixed', array(
+            'type' => 'checkbox',
+            'section' => 'taproot_nav_navbar[fixed]',
+            'label' => esc_html__( 'Display When Fixed Header', 'taproot' ),
         ));
 
 
@@ -1248,112 +1272,121 @@
         )); 
 
 
-        // Setting: Footer Nav Font
-        taproot_setting( $wp_customize, 'taproot_footer_nav_font', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'select',
-                'section' => 'taproot_footer_nav',
-                'label' => esc_html__( 'Font Family', 'taproot' ),
-                'choices' => taproot_get_font_choices(),
-            ),
-        ));        
+        // Setting: Footer Nav Font        
+        $wp_customize->add_setting( 'taproot_footer_nav_font', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_footer_nav_font', array(
+            'type' => 'select',
+            'section' => 'taproot_footer_nav',
+            'label' => esc_html__( 'Font Family', 'taproot' ),
+            'choices' => taproot_get_font_choices(),       
+        ));
 
 
         // Setting: Footer Nav Font Style
-        taproot_setting( $wp_customize, 'taproot_footer_nav_font_style', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'font_styles',
-                'section' => 'taproot_footer_nav',
-                'label' => esc_html__( 'Footer Nav Font Style', 'taproot' ),
-            ),
+        $wp_customize->add_setting( 'taproot_footer_nav_font_style', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Font_Styles( $wp_customize, 'taproot_footer_nav_font_style', array(
+            'type' => 'font_styles',
+            'section' => 'taproot_footer_nav',
+            'label' => esc_html__( 'Footer Nav Font Style', 'taproot' ),      
+        )));
 
 
         // Setting: Navbar Font Size
-        taproot_setting( $wp_customize, 'taproot_footer_nav_font_size', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-                'type' => 'range',
-                'section' => 'taproot_footer_nav',
-                'label' => esc_html__( 'Navbar Font Size', 'taproot' ),
-                'input_attrs' => array(
-                    'min'  => 12,
-                    'max'  => 32,
-                    'step' => 1
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_footer_nav_font_size', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_footer_nav_font_size', array(
+            'type' => 'range',
+            'section' => 'taproot_footer_nav',
+            'label' => esc_html__( 'Navbar Font Size', 'taproot' ),
+            'input_attrs' => array(
+                'min'  => 12,
+                'max'  => 32,
+                'step' => 1
+            ),      
+        )));
 
 
         // Setting: Navbar Menu Item Spacing
-        taproot_setting( $wp_customize, 'taproot_footer_nav_item_spacing', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-                'type' => 'range',
-                'section' => 'taproot_footer_nav',
-                'label' => esc_html__( 'Menu Item Spacing', 'taproot' ),
-                'input_attrs' => array(
-                    'min'  => 0,
-                    'max'  => 3.2,
-                    'step' => 0.1
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_footer_nav_item_spacing', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_footer_nav_item_spacing', array(
+            'type' => 'range',
+            'section' => 'taproot_footer_nav',
+            'label' => esc_html__( 'Menu Item Spacing', 'taproot' ),
+            'input_attrs' => array(
+                'min'  => 0,
+                'max'  => 3.2,
+                'step' => 0.1
+            ),     
+        )));
 
 
         // Setting: Navbar Height
-        taproot_setting( $wp_customize, 'taproot_footer_nav_height', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-                'type' => 'range',
-                'section' => 'taproot_footer_nav',
-                'label' => esc_html__( 'Menu Height', 'taproot' ),
-                'input_attrs' => array(
-                    'min'  => 0.2,
-                    'max'  => 3.2,
-                    'step' => 0.1
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_footer_nav_height', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_footer_nav_height', array(
+            'type' => 'range',
+            'section' => 'taproot_footer_nav',
+            'label' => esc_html__( 'Menu Height', 'taproot' ),
+            'input_attrs' => array(
+                'min'  => 0.2,
+                'max'  => 3.2,
+                'step' => 0.1
+            ),     
+        )));
 
 
         // Setting: Navbar Item Alignment
-        taproot_setting( $wp_customize, 'taproot_footer_nav_align', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'select',
-                'section' => 'taproot_footer_nav',
-                'label' => esc_html__( 'Menu Item Alignment', 'taproot' ),
-                'choices' => array(
-                    'left' => esc_html__( 'Left', 'taproot' ),
-                    'right' => esc_html__( 'Right', 'taproot' ),
-                    'center' => esc_html__( 'Center', 'taproot' ),
-                    'fill' => esc_html__( 'Fill', 'taproot' ),
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_footer_nav_align', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
         ));
 
+        $wp_customize->add_control( 'taproot_footer_nav_align', array(
+            'type' => 'select',
+            'section' => 'taproot_footer_nav',
+            'label' => esc_html__( 'Menu Item Alignment', 'taproot' ),
+            'choices' => array(
+                'left' => esc_html__( 'Left', 'taproot' ),
+                'right' => esc_html__( 'Right', 'taproot' ),
+                'center' => esc_html__( 'Center', 'taproot' ),
+                'fill' => esc_html__( 'Fill', 'taproot' ),
+            ),       
+        ));
+
+
         // Setting: Navbar Position
-        taproot_setting( $wp_customize, 'taproot_footer_nav_position', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'select',
-                'section' => 'taproot_footer_nav',
-                'label' => esc_html__( 'Footer Nav Position', 'taproot' ),
-                'choices' => array(
-                    'before' => esc_html__( 'Before Widget Area', 'taproot' ),
-                    'after' => esc_html__( 'After Widget Area', 'taproot' ),
-                    'bottom-bar' => esc_html__( 'Inside Bottom Bar', 'taproot' ),
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_footer_nav_position', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_footer_nav_position', array(
+            'type' => 'select',
+            'section' => 'taproot_footer_nav',
+            'label' => esc_html__( 'Footer Nav Position', 'taproot' ),
+            'choices' => array(
+                'before' => esc_html__( 'Before Widget Area', 'taproot' ),
+                'after' => esc_html__( 'After Widget Area', 'taproot' ),
+                'bottom-bar' => esc_html__( 'Inside Bottom Bar', 'taproot' ),
+            ),       
         ));
 
 
@@ -1362,22 +1395,22 @@
         */
 
 
-        // Setting: Footer Nav Mobile Breakpoint
-        taproot_setting( $wp_customize, 'taproot_footer_nav_mobile_breakpoint', array(
-            'setting' => array(
-                'transport' => 'refresh',
-            ),
-            'control' => array(
-                'type' => 'select',
-                'section' => 'taproot_footer_nav[mobile]',
-                'label' => esc_html__( 'Mobile Menu Breakpoint', 'taproot' ),
-                'choices' => array(
-                    'bp-none' => esc_html__( 'Never Mobile', 'taproot' ),
-                    'bp-m' => esc_html__( 'Mobile Only', 'taproot' ),
-                    'bp-ml' => esc_html__( 'Mobile Landscape and under', 'taproot' ),
-                    'bp-t' => esc_html__( 'Tablet and under', 'taproot' ),
-                    'bp-l' => esc_html__( 'Laptop and under', 'taproot' ),
-                    'bp-always' => esc_html__( 'Always Mobile', 'taproot' ),
-                ),
-            ),
-        ));      
+        // Setting: Footer Nav Mobile Breakpoint 
+        $wp_customize->add_setting( 'taproot_footer_nav_mobile_breakpoint', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'refresh',
+        ));
+
+        $wp_customize->add_control( 'taproot_footer_nav_mobile_breakpoint', array(
+            'type' => 'select',
+            'section' => 'taproot_footer_nav[mobile]',
+            'label' => esc_html__( 'Mobile Menu Breakpoint', 'taproot' ),
+            'choices' => array(
+                'bp-none' => esc_html__( 'Never Mobile', 'taproot' ),
+                'bp-m' => esc_html__( 'Mobile Only', 'taproot' ),
+                'bp-ml' => esc_html__( 'Mobile Landscape and under', 'taproot' ),
+                'bp-t' => esc_html__( 'Tablet and under', 'taproot' ),
+                'bp-l' => esc_html__( 'Laptop and under', 'taproot' ),
+                'bp-always' => esc_html__( 'Always Mobile', 'taproot' ),
+            ),       
+        ));            

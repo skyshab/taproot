@@ -89,4 +89,3 @@ if( $wp_customize->get_control( 'background_attachment' ) )
 	$wp_customize->get_control( 'background_attachment' )->section = 'taproot_background';
 	$wp_customize->get_control( 'background_attachment' )->priority = 550;
 }
-
