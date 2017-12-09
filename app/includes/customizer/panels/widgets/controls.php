@@ -87,23 +87,22 @@ foreach ( $sidebars_widgets as $sidebar_id => $sidebar_widget_ids )
 
 
         // Setting: Sidebar Gutter
-        taproot_setting( $wp_customize, $aside_gutter_width_id, array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-                'default' => 0,
-            ),
-            'control' => array(
-                'type' => 'range',
-                'section' => $styles_section_id,
-                'label' => esc_html__( 'Sidebar Gutter', 'taproot' ),
-                'input_attrs' => array(
-                    'min'  => 0,
-                    'max'  => 20,
-                    'step' => 1
-                ),
-            ),
+        $wp_customize->add_setting( $aside_gutter_width_id, array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
+            'default' => 0,
         ));
 
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, $aside_gutter_width_id, array(
+            'type' => 'range',
+            'section' => $styles_section_id,
+            'label' => esc_html__( 'Sidebar Gutter', 'taproot' ),
+            'input_attrs' => array(
+                'min'  => 0,
+                'max'  => 20,
+                'step' => 1
+            ),       
+        )));
 
 
 

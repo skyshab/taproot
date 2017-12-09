@@ -18,53 +18,53 @@ $wp_customize->add_panel( 'general_settings', array(
         'panel' => 'general_settings'
     ));
 
-        // Setting: Taproot Boxed Layout
-        taproot_setting( $wp_customize, 'taproot_boxed_layout', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_checkbox',
-            ),
-            'control' => array(
-                'label' => esc_html__( 'Use a boxed layout', 'taproot' ),
-                'section' => 'taproot_layout',
-                'type' => 'checkbox'
-            ),
-        ));   
+        // Setting: Taproot Boxed Layout  
+        $wp_customize->add_setting( 'taproot_boxed_layout', array(
+            'sanitize_callback' => 'taproot_sanitize_checkbox',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_boxed_layout', array(
+            'label' => esc_html__( 'Use a boxed layout', 'taproot' ),
+            'section' => 'taproot_layout',
+            'type' => 'checkbox',
+        ));
 
 
         // Setting: Boxed Layout Padding 
-        taproot_setting( $wp_customize, 'taproot_boxed_layout_padding', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-                'type' => 'range',
-                'section' => 'taproot_layout',
-                'label' => esc_html__( 'Boxed Layout Padding', 'taproot' ),
-                'input_attrs' => array(
-                    'min' => 0,
-                    'max' => 7,
-                    'step' => 0.1,
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_boxed_layout_padding', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_boxed_layout_padding', array(
+            'type' => 'range',
+            'section' => 'taproot_layout',
+            'label' => esc_html__( 'Boxed Layout Padding', 'taproot' ),
+            'input_attrs' => array(
+                'min' => 0,
+                'max' => 7,
+                'step' => 0.1,
+            ),
+        )));
 
 
         // Setting: Max Content Width
-        taproot_setting( $wp_customize, 'taproot_max_content_width', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-                'type' => 'range',
-                'section' => 'taproot_layout',
-                'label' => esc_html__( 'Max Content Width', 'taproot' ),
-                'input_attrs' => array(
-                    'min'  => 800,
-                    'max'  => 1440,
-                    'step' => 20,
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_max_content_width', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_max_content_width', array(
+            'type' => 'range',
+            'section' => 'taproot_layout',
+            'label' => esc_html__( 'Max Content Width', 'taproot' ),
+            'input_attrs' => array(
+                'min'  => 800,
+                'max'  => 1440,
+                'step' => 20,
+            ),
+        )));
 
 
     // Section: Background
@@ -88,11 +88,13 @@ $wp_customize->add_panel( 'general_settings', array(
     ));
 
         // Setting: Google Fonts
-        taproot_setting( $wp_customize, 'taproot_google_fonts', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'text',
-                'section' => 'taproot_fonts',
-                'label' => esc_html__( 'Google Fonts Code', 'taproot' ),
-            ),
+        $wp_customize->add_setting( 'taproot_google_fonts', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( 'taproot_google_fonts', array(
+            'type' => 'text',
+            'section' => 'taproot_fonts',
+            'label' => esc_html__( 'Google Fonts Code', 'taproot' ),
+        ));        

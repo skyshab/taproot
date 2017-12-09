@@ -27,18 +27,17 @@ $wp_customize->add_panel( 'taproot_header', array(
         **  Tab: taproot_header_styles
         */
 
+        // Setting: Fullwidth Header       
+        $wp_customize->add_setting( 'taproot_main_header_fullwidth', array(
+            'sanitize_callback' => 'taproot_sanitize_checkbox',
+            'transport' => 'postMessage',
+        ));
 
-        // Setting: Fullwidth Header
-        taproot_setting( $wp_customize, 'taproot_main_header_fullwidth', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_checkbox',
-            ),
-            'control' => array(
-                'type' => 'checkbox',
-                'section' => 'taproot_header_styles',
-                'label' => esc_html__( 'Enable Fullwidth Header', 'taproot' ),
-            ),
-        ));        
+        $wp_customize->add_control( 'taproot_main_header_fullwidth', array(
+            'type' => 'checkbox',
+            'section' => 'taproot_header_styles',
+            'label' => esc_html__( 'Enable Fullwidth Header', 'taproot' ),
+        ));
 
 
         // Color Setting: Header Background Color
@@ -63,62 +62,70 @@ $wp_customize->add_panel( 'taproot_header', array(
 
 
         // Setting: Header Background Image
-        taproot_setting( $wp_customize, 'taproot_header_background_image', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'image',
-                'section' => 'taproot_header_styles',
-                'label' => esc_html__( 'Background Image', 'taproot' ),
-            ),
+        $wp_customize->add_setting( 'taproot_header_background_image', array(
+            'sanitize_callback' => 'esc_url_raw',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,'taproot_header_background_image', array(
+            'type' => 'image',
+            'section' => 'taproot_header_styles',
+            'label' => esc_html__( 'Background Image', 'taproot' ),
+        )));
 
 
         // Setting: Header Background Image Repeat
-        taproot_setting( $wp_customize, 'taproot_header_background_repeat', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'radio',
-                'section' => 'taproot_header_styles',
-                'label' => esc_html__( 'Background Repeat', 'taproot' ),
-                'choices' => array(
-                    'no-repeat' => esc_html__( 'No Repeat', 'taproot' ),
-                    'repeat' => esc_html__( 'Tile', 'taproot' ),
-                    'repeat-x' => esc_html__( 'Tile Horizontally', 'taproot' ),
-                    'repeat-y' => esc_html__( 'Tile Vertically', 'taproot' ),
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_header_background_repeat', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_header_background_repeat', array(
+            'type' => 'radio',
+            'section' => 'taproot_header_styles',
+            'label' => esc_html__( 'Background Repeat', 'taproot' ),
+            'choices' => array(
+                'no-repeat' => esc_html__( 'No Repeat', 'taproot' ),
+                'repeat' => esc_html__( 'Tile', 'taproot' ),
+                'repeat-x' => esc_html__( 'Tile Horizontally', 'taproot' ),
+                'repeat-y' => esc_html__( 'Tile Vertically', 'taproot' ),
+            ),        
         ));
 
 
         // Setting: Header Background Image Size
-        taproot_setting( $wp_customize, 'taproot_header_background_size', array(
-            'setting' => array(),
-            'control' => array(
-                'label'	=> esc_html__( 'Background Size', 'taproot' ),
-                'section' => 'taproot_header_styles',
-                'type' => 'radio',
-                'choices' => array(
-                    'initial' => esc_html__( 'Initial', 'taproot' ),
-                    'cover' => esc_html__( 'Cover', 'taproot' ),
-                    'contain' => esc_html__( 'Contain', 'taproot' ),
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_header_background_size', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_header_background_size', array(
+            'label' => esc_html__( 'Background Size', 'taproot' ),
+            'section' => 'taproot_header_styles',
+            'type' => 'radio',
+            'choices' => array(
+                'initial' => esc_html__( 'Initial', 'taproot' ),
+                'cover' => esc_html__( 'Cover', 'taproot' ),
+                'contain' => esc_html__( 'Contain', 'taproot' ),
+            ),        
         ));
 
 
         // Setting: Header Background Image Position
-        taproot_setting( $wp_customize, 'taproot_header_background_position', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'radio',
-                'section' => 'taproot_header_styles',
-                'label' => esc_html__( 'Background Position', 'taproot' ),
-                'choices' => array(
-                    'center' => esc_html__( 'Center', 'taproot' ),
-                    'left' => esc_html__( 'Left', 'taproot' ),
-                    'right' => esc_html__( 'Right', 'taproot' ),
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_header_background_position', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_header_background_position', array(
+            'type' => 'radio',
+            'section' => 'taproot_header_styles',
+            'label' => esc_html__( 'Background Position', 'taproot' ),
+            'choices' => array(
+                'center' => esc_html__( 'Center', 'taproot' ),
+                'left' => esc_html__( 'Left', 'taproot' ),
+                'right' => esc_html__( 'Right', 'taproot' ),
+            ),        
         ));
 
 
@@ -128,35 +135,34 @@ $wp_customize->add_panel( 'taproot_header', array(
 
 
         // Setting: Enable Fixed Header
-        taproot_setting( $wp_customize, 'taproot_main_header_display_when_fixed', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_checkbox',
-            ),
-            'control' => array(
-                'type' => 'checkbox',
-                'section' => 'taproot_header_styles[fixed]',
-                'label' => esc_html__( 'Enable Fixed Header', 'taproot' ),
-            ),
+        $wp_customize->add_setting( 'taproot_main_header_display_when_fixed', array(
+            'sanitize_callback' => 'taproot_sanitize_checkbox',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_main_header_display_when_fixed', array(
+            'type' => 'checkbox',
+            'section' => 'taproot_header_styles[fixed]',
+            'label' => esc_html__( 'Enable Fixed Header', 'taproot' ),       
         ));
 
 
         // Setting: Fixed Header Type
-        taproot_setting( $wp_customize, 'taproot_fixed_header_type', array(
-            'setting' => array(
-                'transport' => 'refresh'
-            ),
-            'control' => array(
-                'type' => 'select',
-                'section' => 'taproot_header_styles[fixed]',
-                'label' => esc_html__( 'Fixed Header Type', 'taproot' ),
-                'choices' => array(
-                    'fade' => esc_html__( 'Fade In', 'taproot' ),
-                    'slide' => esc_html__( 'Slide In', 'taproot' ),
-                    'sticky' => esc_html__( 'Sticky', 'taproot' ),
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_fixed_header_type', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'refresh',
         ));
 
+        $wp_customize->add_control( 'taproot_fixed_header_type', array(
+            'type' => 'select',
+            'section' => 'taproot_header_styles[fixed]',
+            'label' => esc_html__( 'Fixed Header Type', 'taproot' ),
+            'choices' => array(
+                'fade' => esc_html__( 'Fade In', 'taproot' ),
+                'slide' => esc_html__( 'Slide In', 'taproot' ),
+                'sticky' => esc_html__( 'Sticky', 'taproot' ),
+            ),       
+        ));
 
         // Color Setting: Fixed Header Background Color
         taproot_customizer_color( $wp_customize, 'taproot_header_background_color_fixed', array(
@@ -179,65 +185,71 @@ $wp_customize->add_panel( 'taproot_header', array(
         )); 
 
 
-        // Setting: Fixed Header Background Image
-        taproot_setting( $wp_customize, 'taproot_fixed_header_background_image', array(
-            'setting' => array(
-                'sanitize_callback' => 'esc_url_raw',
-            ),
-            'control' => array(
-                'type' => 'image',
-                'section' => 'taproot_header_styles[fixed]',
-                'label' => esc_html__( 'Background Image', 'taproot' ),
-            ),
-        ));        
+        // Setting: Fixed Header Background Image       
+        $wp_customize->add_setting( 'taproot_fixed_header_background_image', array(
+            'sanitize_callback' => 'esc_url_raw',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,'taproot_fixed_header_background_image', array(
+            'type' => 'image',
+            'section' => 'taproot_header_styles[fixed]',
+            'label' => esc_html__( 'Background Image', 'taproot' ),
+        )));
 
 
         // Setting: Fixed Header Background Image Repeat
-        taproot_setting( $wp_customize, 'taproot_fixed_header_background_repeat', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'radio',
-                'section' => 'taproot_header_styles[fixed]',
-                'label' => esc_html__( 'Background Repeat', 'taproot' ),
-                'choices' => array(
-                    'no-repeat' => esc_html__( 'No Repeat', 'taproot' ),
-                    'repeat' => esc_html__( 'Tile', 'taproot' ),
-                    'repeat-x' => esc_html__( 'Tile Horizontally', 'taproot' ),
-                    'repeat-y' => esc_html__( 'Tile Vertically', 'taproot' ),
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_fixed_header_background_repeat', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_fixed_header_background_repeat', array(
+            'type' => 'radio',
+            'section' => 'taproot_header_styles[fixed]',
+            'label' => esc_html__( 'Background Repeat', 'taproot' ),
+            'choices' => array(
+                'no-repeat' => esc_html__( 'No Repeat', 'taproot' ),
+                'repeat' => esc_html__( 'Tile', 'taproot' ),
+                'repeat-x' => esc_html__( 'Tile Horizontally', 'taproot' ),
+                'repeat-y' => esc_html__( 'Tile Vertically', 'taproot' ),
+            ),        
         ));
 
 
         // Setting: Fixed Header Background Image Size
-        taproot_setting( $wp_customize, 'taproot_fixed_header_background_size', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'radio',
-                'section' => 'taproot_header_styles[fixed]',
-                'label' => esc_html__( 'Background Size', 'taproot' ),
-                'choices' => array(
-                    'initial' => esc_html__( 'Initial', 'taproot' ),
-                    'cover' => esc_html__( 'Cover', 'taproot' ),
-                    'contain' => esc_html__( 'Contain', 'taproot' ),
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_fixed_header_background_size', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_fixed_header_background_size', array(
+            'type' => 'radio',
+            'section' => 'taproot_header_styles[fixed]',
+            'label' => esc_html__( 'Background Size', 'taproot' ),
+            'choices' => array(
+                'initial' => esc_html__( 'Initial', 'taproot' ),
+                'cover' => esc_html__( 'Cover', 'taproot' ),
+                'contain' => esc_html__( 'Contain', 'taproot' ),
+            ),       
         ));
 
 
         // Setting: Fixed Header Background Image Position
-        taproot_setting( $wp_customize, 'taproot_fixed_header_background_position', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'radio',
-                'section' => 'taproot_header_styles[fixed]',
-                'label' => esc_html__( 'Background Position', 'taproot' ),
-                'choices' => array(
-                    'center' => esc_html__( 'Center', 'taproot' ),
-                    'left' => esc_html__( 'Left', 'taproot' ),
-                    'right' => esc_html__( 'Right', 'taproot' ),
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_fixed_header_background_position', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_fixed_header_background_position', array(
+            'type' => 'radio',
+            'section' => 'taproot_header_styles[fixed]',
+            'label' => esc_html__( 'Background Position', 'taproot' ),
+            'choices' => array(
+                'center' => esc_html__( 'Center', 'taproot' ),
+                'left' => esc_html__( 'Left', 'taproot' ),
+                'right' => esc_html__( 'Right', 'taproot' ),
+            ),        
         ));
 
 
@@ -257,15 +269,15 @@ $wp_customize->add_panel( 'taproot_header', array(
     ));
 
             // Setting: Show Header Search
-            taproot_setting( $wp_customize, 'taproot_enable_header_search', array(
-                'setting' => array(
-                    'sanitize_callback' => 'taproot_sanitize_checkbox',
-                ),
-                'control' => array(
-                    'type' => 'checkbox',
-                    'section' => 'taproot_search_styles',
-                    'label' => esc_html__( 'Enable Header Search', 'taproot' ),
-                ),
+            $wp_customize->add_setting( 'taproot_enable_header_search', array(
+                'sanitize_callback' => 'taproot_sanitize_checkbox',
+                'transport' => 'postMessage',
+            ));
+
+            $wp_customize->add_control( 'taproot_enable_header_search', array(
+                'type' => 'checkbox',
+                'section' => 'taproot_search_styles',
+                'label' => esc_html__( 'Enable Header Search', 'taproot' ),       
             ));
 
 
@@ -277,21 +289,21 @@ $wp_customize->add_panel( 'taproot_header', array(
 
 
             // Setting: Header Search Size
-            taproot_setting( $wp_customize, 'taproot_header_search_size', array(
-                'setting' => array(
-                    'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-                ),
-                'control' => array(
-                    'type'  => 'range',
-                    'section' => 'taproot_search_styles',
-                    'label' => esc_html__( 'Search Icon Size', 'taproot' ),
-                    'input_attrs' => array(
-                        'min'  => 8,
-                        'max'  => 64,
-                        'step' => 1
-                    ),
-                ),
+            $wp_customize->add_setting( 'taproot_header_search_size', array(
+                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+                'transport' => 'postMessage',
             ));
+
+            $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_header_search_size', array(
+                'type'  => 'range',
+                'section' => 'taproot_search_styles',
+                'label' => esc_html__( 'Search Icon Size', 'taproot' ),
+                'input_attrs' => array(
+                    'min'  => 8,
+                    'max'  => 64,
+                    'step' => 1
+                ),       
+            )));
 
 
             /*
@@ -300,15 +312,15 @@ $wp_customize->add_panel( 'taproot_header', array(
 
 
             // Setting: Show Fixed Header Search
-            taproot_setting( $wp_customize, 'taproot_enable_fixed_header_search', array(
-                'setting' => array(
-                    'sanitize_callback' => 'taproot_sanitize_checkbox',
-                ),
-                'control' => array(
-                    'type' => 'checkbox',
-                    'section' => 'taproot_search_styles[fixed]',
-                    'label' => esc_html__( 'Show Search When Fixed', 'taproot' ),
-                ),
+            $wp_customize->add_setting( 'taproot_enable_fixed_header_search', array(
+                'sanitize_callback' => 'taproot_sanitize_checkbox',
+                'transport' => 'postMessage',
+            ));
+
+            $wp_customize->add_control( 'taproot_enable_fixed_header_search', array(
+                'type' => 'checkbox',
+                'section' => 'taproot_search_styles[fixed]',
+                'label' => esc_html__( 'Show Search When Fixed', 'taproot' ),
             ));
 
 
@@ -319,19 +331,19 @@ $wp_customize->add_panel( 'taproot_header', array(
             ));
 
 
-            // Setting: Fixed Header Search Size
-            taproot_setting( $wp_customize, 'taproot_search_size_fixed', array(
-                'setting' => array(
-                    'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-                ),
-                'control' => array(
-                    'type' => 'range',
-                    'section' => 'taproot_search_styles[fixed]',
-                    'label' => esc_html__( 'Search Icon Size', 'taproot' ),
-                    'input_attrs' => array(
-                        'min'  => 8,
-                        'max'  => 64,
-                        'step' => 1
-                    ),
-                ),
-            ));            
+            // Setting: Fixed Header Search Size    
+            $wp_customize->add_setting( 'taproot_search_size_fixed', array(
+                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+                'transport' => 'postMessage',
+            ));
+
+            $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_search_size_fixed', array(
+                'type' => 'range',
+                'section' => 'taproot_search_styles[fixed]',
+                'label' => esc_html__( 'Search Icon Size', 'taproot' ),
+                'input_attrs' => array(
+                    'min'  => 8,
+                    'max'  => 64,
+                    'step' => 1
+                ),      
+            )));                   

@@ -145,6 +145,7 @@ if( !class_exists( 'Taproot_Admin' ) )
 			 */
 			add_theme_support( 'custom-background' );
 
+
 			/*
 			 * Define editor stylesheet
 			 */

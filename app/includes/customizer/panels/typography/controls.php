@@ -26,14 +26,16 @@ $wp_customize->add_panel( 'typography', array(
     ));
 
         // Setting:  Body Font
-        taproot_setting( $wp_customize, 'taproot_body_font', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'select',
-                'section' => 'typographic_elements[body]',
-                'label' => esc_html__( 'Body Text Font', 'taproot' ),
-                'choices' => taproot_get_font_choices(),
-            ),
+        $wp_customize->add_setting( 'taproot_body_font', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_body_font', array(
+            'type' => 'select',
+            'section' => 'typographic_elements[body]',
+            'label' => esc_html__( 'Body Text Font', 'taproot' ),
+            'choices' => taproot_get_font_choices(),       
         ));
 
 
@@ -45,32 +47,34 @@ $wp_customize->add_panel( 'typography', array(
 
 
         // Setting: Line Height
-        taproot_setting( $wp_customize, 'taproot_line_height', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-                'type' => 'range',
-                'section' => 'typographic_elements[body]',
-                'label' => esc_html__( 'Line Height', 'taproot' ),
-                'input_attrs' => array(
-                    'min'  => 0.8,
-                    'max'  => 2.2,
-                    'step' => 0.1
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_line_height', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_line_height', array(
+            'type' => 'range',
+            'section' => 'typographic_elements[body]',
+            'label' => esc_html__( 'Line Height', 'taproot' ),
+            'input_attrs' => array(
+                'min'  => 0.8,
+                'max'  => 2.2,
+                'step' => 0.1
+            ),    
+        ))); 
 
 
         // Setting: Heading Font
-        taproot_setting( $wp_customize, 'taproot_heading_font', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'select',
-                'section' => 'typographic_elements[heading]',
-                'label' => esc_html__( 'Heading Font', 'taproot' ),
-                'choices' => taproot_get_font_choices(),
-            ),
+        $wp_customize->add_setting( 'taproot_heading_font', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_heading_font', array(
+            'type' => 'select',
+            'section' => 'typographic_elements[heading]',
+            'label' => esc_html__( 'Heading Font', 'taproot' ),
+            'choices' => taproot_get_font_choices(),     
         ));
 
 
@@ -82,43 +86,47 @@ $wp_customize->add_panel( 'typography', array(
 
 
         // Setting: Headings Line Height
-        taproot_setting( $wp_customize, 'taproot_heading_line_height', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-                'type' => 'range',
-                'section' => 'typographic_elements[heading]',
-                'label' => esc_html__( 'Heading Line Height', 'taproot' ),
-                'input_attrs' => array(
-                    'min'  => 0.8,
-                    'max'  => 2.2,
-                    'step' => 0.1
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_heading_line_height', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_heading_line_height', array(
+            'type' => 'range',
+            'section' => 'typographic_elements[heading]',
+            'label' => esc_html__( 'Heading Line Height', 'taproot' ),
+            'input_attrs' => array(
+                'min'  => 0.8,
+                'max'  => 2.2,
+                'step' => 0.1
+            ),     
+        ))); 
 
 
         // Setting: Headings Font Style
-        taproot_setting( $wp_customize, 'taproot_heading_font_style', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'font_styles',
-                'section' => 'typographic_elements[heading]',
-                'label' => esc_html__( 'Heading Font Style', 'taproot' ),
-            ),
+        $wp_customize->add_setting( 'taproot_heading_font_style', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Font_Styles( $wp_customize, 'taproot_heading_font_style', array(
+            'type' => 'font_styles',
+            'section' => 'typographic_elements[heading]',
+            'label' => esc_html__( 'Heading Font Style', 'taproot' ),      
+        )));
 
 
         // Setting: Post Title Font
-        taproot_setting( $wp_customize, 'taproot_post_title_font', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'select',
-                'section' => 'typographic_elements[title]',
-                'label' => esc_html__( 'Post Title Font', 'taproot' ),
-                'choices' => taproot_get_font_choices(),
-            ),
+        $wp_customize->add_setting( 'taproot_post_title_font', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
+        ));
+
+        $wp_customize->add_control( 'taproot_post_title_font', array(
+            'type' => 'select',
+            'section' => 'typographic_elements[title]',
+            'label' => esc_html__( 'Post Title Font', 'taproot' ),
+            'choices' => taproot_get_font_choices(),       
         ));
 
 
@@ -130,32 +138,34 @@ $wp_customize->add_panel( 'typography', array(
 
 
         // Setting: Post Title Line Height
-        taproot_setting( $wp_customize, 'taproot_title_line_height', array(
-            'setting' => array(
-                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-            ),
-            'control' => array(
-                'label'	      => esc_html__( 'Title Line Height', 'taproot' ),
-                'section'     => 'typographic_elements[title]',
-                'type'        => 'range',
-                'input_attrs' => array(
-                    'min'  => 0.8,
-                    'max'  => 2.2,
-                    'step' => 0.1
-                ),
-            ),
+        $wp_customize->add_setting( 'taproot_title_line_height', array(
+            'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, 'taproot_title_line_height', array(
+            'label'       => esc_html__( 'Title Line Height', 'taproot' ),
+            'section'     => 'typographic_elements[title]',
+            'type'        => 'range',
+            'input_attrs' => array(
+                'min'  => 0.8,
+                'max'  => 2.2,
+                'step' => 0.1
+            ),      
+        )));
 
 
         // Setting: Post Title Font Style
-        taproot_setting( $wp_customize, 'taproot_title_font_style', array(
-            'setting' => array(),
-            'control' => array(
-                'type' => 'font_styles',
-                'section' => 'typographic_elements[title]',
-                'label' => esc_html__( 'Title Font Style', 'taproot' ),
-            ),
+        $wp_customize->add_setting( 'taproot_title_font_style', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage',
         ));
+
+        $wp_customize->add_control( new Taproot_Font_Styles( $wp_customize, 'taproot_title_font_style', array(
+            'type' => 'font_styles',
+            'section' => 'typographic_elements[title]',
+            'label' => esc_html__( 'Title Font Style', 'taproot' ),     
+        )));
 
 
         $devices = $rootstrap->get_devices();
@@ -242,21 +252,21 @@ $wp_customize->add_panel( 'typography', array(
 
 
                 // Setting: Font Size
-                taproot_setting( $wp_customize, sprintf( 'taproot_sidebar_layout_font_size_%s', $device_id ), array(
-                    'setting' => array(
-                        'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-                    ),
-                    'control' => array(
-                        'type' => 'range',
-                        'section' => $sidebar_layout_section_id ,
-                        'label' => esc_html__( 'Font Size', 'taproot' ),
-                        'input_attrs' => array(
-                            'min'  => 12,
-                            'max'  => 36,
-                            'step' => 1
-                        ),
-                    ),
+                $wp_customize->add_setting( sprintf( 'taproot_sidebar_layout_font_size_%s', $device_id ), array(
+                    'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+                    'transport' => 'postMessage',
                 ));
+
+                $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_sidebar_layout_font_size_%s', $device_id ), array(
+                    'type' => 'range',
+                    'section' => $sidebar_layout_section_id ,
+                    'label' => esc_html__( 'Font Size', 'taproot' ),
+                    'input_attrs' => array(
+                        'min'  => 12,
+                        'max'  => 36,
+                        'step' => 1
+                    ),      
+                )));                
 
 
                 // Group Title: Headings
@@ -272,21 +282,21 @@ $wp_customize->add_panel( 'typography', array(
 
 
                 // Setting: Headings Font Size 
-                taproot_setting( $wp_customize, sprintf( 'taproot_sidebar_layout_heading_font_size_%s', $device_id ), array(
-                    'setting' => array(
-                        'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-                    ),
-                    'control' => array(
-                        'type' => 'range',
-                        'section' => $sidebar_layout_section_id,
-                        'label' => esc_html__( 'Heading Size', 'taproot' ),
-                        'input_attrs' => array(
-                            'min'  => 1,
-                            'max'  => 5,
-                            'step' => 0.1
-                        ),
-                    ),
+                $wp_customize->add_setting( sprintf( 'taproot_sidebar_layout_heading_font_size_%s', $device_id ), array(
+                    'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+                    'transport' => 'postMessage',
                 ));
+
+                $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_sidebar_layout_heading_font_size_%s', $device_id ), array(
+                    'type' => 'range',
+                    'section' => $sidebar_layout_section_id,
+                    'label' => esc_html__( 'Heading Size', 'taproot' ),
+                    'input_attrs' => array(
+                        'min'  => 1,
+                        'max'  => 5,
+                        'step' => 0.1
+                    ),      
+                )));
 
 
                 // Group Title: Post Title
@@ -302,21 +312,21 @@ $wp_customize->add_panel( 'typography', array(
 
 
                 // Setting: Title Font Size
-                taproot_setting( $wp_customize, sprintf( 'taproot_sidebar_layout_post_title_font_size_%s', $device_id ), array(
-                    'setting' => array(
-                        'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-                    ),
-                    'control' => array(
-                        'type' => 'range',
-                        'section' => $sidebar_layout_section_id,
-                        'label' => esc_html__( 'Title Font Size', 'taproot' ),
-                        'input_attrs' => array(
-                            'min'  => 1,
-                            'max'  => 5,
-                            'step' => 0.1
-                        ),
-                    ),
+                $wp_customize->add_setting( sprintf( 'taproot_sidebar_layout_post_title_font_size_%s', $device_id ), array(
+                    'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+                    'transport' => 'postMessage',
                 ));
+
+                $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_sidebar_layout_post_title_font_size_%s', $device_id ), array(
+                    'type' => 'range',
+                    'section' => $sidebar_layout_section_id,
+                    'label' => esc_html__( 'Title Font Size', 'taproot' ),
+                    'input_attrs' => array(
+                        'min'  => 1,
+                        'max'  => 5,
+                        'step' => 0.1
+                    ),       
+                )));
 
 
                 // Group Title: Sidebar
@@ -332,21 +342,21 @@ $wp_customize->add_panel( 'typography', array(
 
 
                 // Setting: Sidebar Font Size
-                taproot_setting( $wp_customize, sprintf( 'taproot_sidebar_layout_sidebar_font_size_%s', $device_id ), array(
-                    'setting' => array(
-                        'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-                    ),
-                    'control' => array(
-                        'type' => 'range',
-                        'section' => $sidebar_layout_section_id,
-                        'label' => esc_html__( 'Sidebar Font Size', 'taproot' ),
-                        'input_attrs' => array(
-                            'min'  => 0.5,
-                            'max'  => 1.5,
-                            'step' => 0.1
-                        ),
-                    ),
-                ));                              
+                $wp_customize->add_setting( sprintf( 'taproot_sidebar_layout_sidebar_font_size_%s', $device_id ), array(
+                    'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+                    'transport' => 'postMessage',
+                ));
+
+                $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_sidebar_layout_sidebar_font_size_%s', $device_id ), array(
+                    'type' => 'range',
+                    'section' => $sidebar_layout_section_id,
+                    'label' => esc_html__( 'Sidebar Font Size', 'taproot' ),
+                    'input_attrs' => array(
+                        'min'  => 0.5,
+                        'max'  => 1.5,
+                        'step' => 0.1
+                    ),      
+                )));
 
             } // end laptop or desktop only
 
@@ -369,21 +379,21 @@ $wp_customize->add_panel( 'typography', array(
 
 
             // Setting: Font Size
-            taproot_setting( $wp_customize, sprintf( 'taproot_font_size_%s', $device_id ), array(
-                'setting' => array(
-                    'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-                ),
-                'control' => array(
-                    'type' => 'range',
-                    'section' => $section_id,
-                    'label' => esc_html__( 'Font Size', 'taproot' ),
-                    'input_attrs' => array(
-                        'min'  => 12,
-                        'max'  => 36,
-                        'step' => 1
-                    ),
-                ),
+            $wp_customize->add_setting( sprintf( 'taproot_font_size_%s', $device_id ), array(
+                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+                'transport' => 'postMessage',
             ));
+
+            $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_font_size_%s', $device_id ), array(
+                'type' => 'range',
+                'section' => $section_id,
+                'label' => esc_html__( 'Font Size', 'taproot' ),
+                'input_attrs' => array(
+                    'min'  => 12,
+                    'max'  => 36,
+                    'step' => 1
+                ),     
+            )));
 
 
             // Group Title: Headings
@@ -399,21 +409,21 @@ $wp_customize->add_panel( 'typography', array(
 
 
             // Setting: Heading Font Size
-            taproot_setting( $wp_customize, sprintf( 'taproot_heading_font_size_%s', $device_id ), array(
-                'setting' => array(
-                    'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-                ),
-                'control' => array(
-                    'type' => 'range',
-                    'section' => $section_id,
-                    'label' => esc_html__( 'Heading Size', 'taproot' ),
-                    'input_attrs' => array(
-                        'min'  => 1,
-                        'max'  => 5,
-                        'step' => 0.1
-                    ),
-                ),
+            $wp_customize->add_setting( sprintf( 'taproot_heading_font_size_%s', $device_id ), array(
+                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+                'transport' => 'postMessage',
             ));
+
+            $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_heading_font_size_%s', $device_id ), array(
+                'type' => 'range',
+                'section' => $section_id,
+                'label' => esc_html__( 'Heading Size', 'taproot' ),
+                'input_attrs' => array(
+                    'min'  => 1,
+                    'max'  => 5,
+                    'step' => 0.1
+                ),       
+            )));
 
 
             // Group Title: Post Title
@@ -429,21 +439,21 @@ $wp_customize->add_panel( 'typography', array(
 
 
             // Setting: Title Font Size
-            taproot_setting( $wp_customize, sprintf( 'taproot_post_title_font_size_%s', $device_id ), array(
-                'setting' => array(
-                    'sanitize_callback' => 'taproot_sanitize_range_slider_value',
-                ),
-                'control' => array(
-                    'type' => 'range',
-                    'section' => $section_id,
-                    'label' => esc_html__( 'Title Font Size', 'taproot' ),
-                    'input_attrs' => array(
-                        'min'  => 1,
-                        'max'  => 5,
-                        'step' => 0.1
-                    ),
-                ),
+            $wp_customize->add_setting( sprintf( 'taproot_post_title_font_size_%s', $device_id ), array(
+                'sanitize_callback' => 'taproot_sanitize_range_slider_value',
+                'transport' => 'postMessage',
             ));
+
+            $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, sprintf( 'taproot_post_title_font_size_%s', $device_id ), array(
+                'type' => 'range',
+                'section' => $section_id,
+                'label' => esc_html__( 'Title Font Size', 'taproot' ),
+                'input_attrs' => array(
+                    'min'  => 1,
+                    'max'  => 5,
+                    'step' => 0.1
+                ),     
+            )));
 
             $section_priority += 10;
 

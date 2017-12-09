@@ -58,7 +58,7 @@
      */
     function taproot_has_logo()
     {
-        return ( get_theme_mod( 'custom_logo', false ) ) ? true : false;
+        return ( get_theme_mod( 'custom_logo', false ) || has_filter( 'taproot_svg_logo' ) ) ? true : false;
     }
 
 
@@ -354,66 +354,6 @@
 
 
 /* Utility functions */
-
-
-    /**
-     * Create Taproot Customizer Setting and Control
-     *
-     * @since 0.8.0
-     * 
-     * @param object $wp_customize 
-     * @param string $id 
-     * @param array $args - control and settings args
-     */  
-    function taproot_setting( $wp_customize, $id, $args )
-    {
-        // setting
-        $setting_args = array();
-
-        // define default args
-        $setting_defaults = array(
-            'sanitize_callback' => 'sanitize_text_field',
-            'transport' => 'postMessage',
-        );    
-
-        if( isset( $args['setting'] ) && is_array( $args['setting'] ) )
-        {
-            // replace the empty args with incoming args
-            $setting_args = $args['setting'];
-        }
-
-        // combine defaults and args being passed in
-        $setting_args = wp_parse_args( $setting_args, $setting_defaults );
-
-        // register the setting
-        $wp_customize->add_setting( $id, $setting_args );
-
-        // control
-        if( isset( $args['control'] ) && is_array( $args['control'] ) )
-        {
-            if( isset( $args['control']['type'] ) && 'range' === $args['control']['type'] && class_exists('Taproot_Range_Option') )
-            {
-                $wp_customize->add_control( new Taproot_Range_Option( $wp_customize, $id, $args['control'] ));    
-            } 
-            elseif( isset( $args['control']['type'] ) && 'image' === $args['control']['type'] ) 
-            {
-                $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $id, $args['control'] ));    
-            }
-            elseif( isset( $args['control']['type'] ) && 'font_styles' === $args['control']['type']  && class_exists('Taproot_Font_Styles') ) 
-            {
-                $wp_customize->add_control( new Taproot_Font_Styles( $wp_customize, $id, $args['control'] ));    
-            }  
-            elseif( isset( $args['control']['type'] ) && 'color' === $args['control']['type'] ) 
-            {
-                $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $id, $args['control'] ));    
-            }  
-            else 
-            {
-                // register the control
-                $wp_customize->add_control( $id, $args['control'] );          
-            }  
-        }   
-    }
 
 
     /**
