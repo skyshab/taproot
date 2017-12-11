@@ -2,7 +2,7 @@
 Contributors: Sky Shabatura
 Requires at least: WordPress 4.4
 Tested up to: WordPress 4.9
-Version: 0.9.0
+Version: 0.9.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: Divi Builder, Divi, Elegant Themes
@@ -55,3 +55,10 @@ GNU General Public License for more details.
 * Renamed from Division to Taproot for compatibility with the repository. 
 * Removed other features as required by the theme review team.
 * New screenshot. 
+
+= 0.9.1
+* 12/11/17 *
+* Bug Fix - fixed issue with customizer filter.
+* Bug Fix - hid auto generated color control for background.
+* Bug Fix - refactored Google Fonts description for better escaping.
+* Big Fix - fix for default fonts not showing before customizer save.
