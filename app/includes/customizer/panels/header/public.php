@@ -14,6 +14,7 @@ $styles->set_style( array(
     ),
 ));
 
+
 // if no header background color, add a shadow
 if( !get_theme_mod( 'taproot_header_background_color' ) || get_theme_mod( 'taproot_header_background_color' ) === '#ffffff' || get_theme_mod( 'taproot_header_background_color' ) === 'rgb(255,255,255)' )
 {

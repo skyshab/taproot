@@ -56,6 +56,12 @@ if( $wp_customize->get_control( 'background_image' ) )
 }
 
 // move background control to our custom section
+if( $wp_customize->get_control( 'background_color' ) )
+{
+	$wp_customize->get_control( 'background_color' )->active_callback = 'taproot_hide_that_stuff';
+}
+
+// move background control to our custom section
 if( $wp_customize->get_control( 'background_preset' ) )
 {
 	$wp_customize->get_control( 'background_preset' )->section = 'taproot_background';
