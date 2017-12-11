@@ -84,7 +84,13 @@ $wp_customize->add_panel( 'general_settings', array(
     $wp_customize->add_section( 'taproot_fonts', array(
         'title' => esc_html__( 'Google Fonts', 'taproot' ),
         'panel' => 'general_settings',
-        'description' => esc_html__('Visit <a href="https://fonts.google.com" target="_blank">Google Fonts</a> to create your font profile. Paste in the font list from the end of the embed URL, or add desired fonts using the following formula: Each font name should be separated by a "|" and use a "+" for spaces.', 'taproot'),
+        'description' => 
+            sprintf( '%s <a href="%s" target="_blank">%s</a>', 
+                esc_html__( 'Visit', 'taproot' ), 
+                esc_url( 'https://fonts.google.com' ),
+                esc_html__( 'Google Fonts', 'taproot' )
+            ) 
+            . esc_html__(' to create your font profile. Paste in the font list from the end of the embed URL, or add desired fonts using the following formula: Each font name should be separated by a "|" and use a "+" for spaces.', 'taproot'),
     ));
 
         // Setting: Google Fonts
