@@ -465,7 +465,7 @@
      */
     function taproot_get_font_choices()
     {
-        $font_code = get_theme_mod( 'taproot_google_fonts' );
+        $font_code = get_theme_mod( 'taproot_google_fonts', rootstrap_get_default('taproot_google_fonts') );
         $fonts = explode("|", $font_code);
         $font_choices = array('default' => 'Default');
         foreach( $fonts as $font )
