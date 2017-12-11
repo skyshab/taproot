@@ -203,7 +203,8 @@ class WP_Rootstrap
 
         // apply customizer output filters for defaults 
         add_action( 'wp', array( $this, 'customizer_default_filters' ), 100 );  
-        // apply customizer output filters for defaults 
+
+        // apply customizer output filters for post meta 
         add_action( 'wp', array( $this, 'customizer_filters' ), 500 );            
     }
 
@@ -390,7 +391,7 @@ class WP_Rootstrap
         {
             add_filter( "theme_mod_{$id}", function( $value ) use ( $default ) 
             { 
-                return ( $default && '' !==  $default ) ? $default : $value;
+                return ( $value && '' !==  $value ) ? $value : $default;
             });
         }
     } 
