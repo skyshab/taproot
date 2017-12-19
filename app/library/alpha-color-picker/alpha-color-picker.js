@@ -236,6 +236,9 @@ jQuery( document ).ready( function( $ ) {
 			});
 
 			acp_update_alpha_value_on_alpha_slider( 100, $alphaSlider );
+
+			// sky - added to fix color being set to white on clear
+			wp.customize.previewer.refresh();
 		});
 
 		// Bind event handler for clicking on the 'Default' button.
