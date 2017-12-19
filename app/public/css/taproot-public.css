@@ -1108,6 +1108,11 @@ input[type="search"]::-webkit-search-decoration {
   text-align: center;
   cursor: pointer;
   z-index: 10;
+  display: -ms-flexbox;
+  display: flex;
+}
+.search-toggle .taproot-icon {
+  top: 0;
 }
 .header-content-container .search-toggle {
   margin-left: 0.6em;
