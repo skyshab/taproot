@@ -33,6 +33,7 @@ var rootstrapPreview = ( function($) {
         var device = 'default';
         var andUp = false;
         var andUnder = false;
+        var styleContent = false;
 
         // if device has 'and up' flag
         if( styleObj.device && styleObj.device.endsWith( '-and-up') ) {
@@ -54,13 +55,13 @@ var rootstrapPreview = ( function($) {
 
         // if a value was supplied, replace all instances in styles.
         if( styleObj.value && styleObj.styles ) {
-            var styleContent = styleObj.styles.replace( /{{value}}/g, styleObj.value );
+            styleContent = styleObj.styles.replace( /{{value}}/g, styleObj.value );
         }
         // otherise, just get the styles
-        else if( styleObj.styles ){
-            var styleContent = styleObj.styles;
+        else if( styleObj.styles && styleObj.styles.indexOf("{{value}}") < 0 ) {
+            styleContent = styleObj.styles;              
         }
-        // no styles? outta here
+        // no styles at all? outta here
         else return;
 
         // create our styleblock
