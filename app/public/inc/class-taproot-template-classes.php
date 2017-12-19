@@ -67,20 +67,6 @@ if( !class_exists( 'Taproot_Template_Classes' ) )
 			}
 			else {
 				$classes[] = 'taproot-fullwidth-layout';
-			}
-
-			// add class if mobile bar
-			if( 'bottom' === get_theme_mod( 'taproot_mobile_bar_location' ) )
-			{
-				$classes[] = 'taproot-mobile-bar--bottom';
-			}
-			elseif( 'top' === get_theme_mod( 'taproot_mobile_bar_location' ) )
-			{
-				$classes[] = 'taproot-mobile-bar--top';
-			}
-			elseif( is_customize_preview() )
-			{
-				$classes[] = 'taproot-mobile-bar--none';
 			}		
 
 			// Filter the body classes to remove any unwanted classes
@@ -391,11 +377,6 @@ if( !class_exists( 'Taproot_Template_Classes' ) )
 			if( get_theme_mod( 'taproot_header_nav_hide_when_mobile') ) 
 			{
 				$classes[] = 'taproot-nav-hidden-when-mobile';
-			}
-
-			if( get_theme_mod( 'taproot_header_nav_hide_when_mobile_bar') ) 
-			{
-				$classes[] = 'taproot-nav-hidden-when-mobile-bar';
 			}		
 
 			if( get_theme_mod( 'taproot_header_nav_hide_when_not_mobile') ) 
@@ -447,11 +428,6 @@ if( !class_exists( 'Taproot_Template_Classes' ) )
 			if( get_theme_mod( 'taproot_navbar_hide_when_mobile') ) 
 			{
 				$classes[] = 'taproot-nav-hidden-when-mobile';
-			}	
-
-			if( get_theme_mod( 'taproot_navbar_hide_when_mobile_bar') ) 
-			{
-				$classes[] = 'taproot-nav-hidden-when-mobile-bar';
 			}			
 
 			if( get_theme_mod( 'taproot_navbar_hide_when_not_mobile') ) 
@@ -494,11 +470,6 @@ if( !class_exists( 'Taproot_Template_Classes' ) )
 			if( get_theme_mod( 'taproot_topnav_hide_when_mobile') ) 
 			{
 				$classes[] = 'taproot-nav-hidden-when-mobile';
-			}
-
-			if( get_theme_mod( 'taproot_topnav_hide_when_mobile_bar') ) 
-			{
-				$classes[] = 'taproot-nav-hidden-when-mobile-bar';
 			}
 
 			if( get_theme_mod( 'taproot_topnav_hide_when_not_mobile') ) 
