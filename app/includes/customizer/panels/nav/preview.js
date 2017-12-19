@@ -234,7 +234,7 @@
             rootstrap.style({
                 id: 'taproot-navbar-mobile-icon-color',
                 device: screen,
-                styles: '#taproot-navbar .label-toggle { color: {{value}}; }',
+                styles: '#taproot-navbar .label-toggle { color: {{value}}; fill: {{value}}; }',
                 value: to
             });
         });
@@ -654,7 +654,7 @@ wp.customize( 'taproot_header_nav_mobile_icon_color', function( value ) {
         rootstrap.style({
             id: 'taproot-header-nav-mobile-icon-color',
             device: screen,
-            styles: '.header-nav .label-toggle { color: {{value}}; }',
+            styles: '.header-nav .label-toggle { color: {{value}}; fill: {{value}}; }',
             value: to,
         });
     });

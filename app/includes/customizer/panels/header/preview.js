@@ -52,7 +52,7 @@
             if( to == '' ) to = 'inherit';
             rootstrap.style({
                 id: 'taproot-header-search-color',
-                styles: 'header.static .search-container, header.static .search-toggle { color: {{value}}; }',
+                styles: 'header.static .search-container, .main-header.static .search-toggle { color: {{value}}; fill: {{value}}; }',
                 value: to,
             });
 
@@ -65,7 +65,7 @@
         value.bind( function( to ) {
             rootstrap.style({
                 id: 'taproot-header-search-size',
-                styles: 'header .search-toggle, .search-container .taproot-search__field { font-size: {{value}}px; }',
+                styles: '.main-header .search-toggle, .search-container .taproot-search__field { font-size: {{value}}px; }',
                 value: to,
             });
         });

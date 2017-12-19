@@ -416,6 +416,7 @@ $styles->set_style( array(
     'selector' => '.navbar .label-toggle',
     'styles' => array(
         'color: %s;' => get_theme_mod( 'taproot_navbar_mobile_icon_color' ),
+        'fill: %s;' => get_theme_mod( 'taproot_navbar_mobile_icon_color' ),
         'font-size: %sem;' => get_theme_mod( 'taproot_navbar_mobile_icon_size' ),
         'margin: %sem 0;' => get_theme_mod( 'taproot_navbar_height_mobile' ),
     ),

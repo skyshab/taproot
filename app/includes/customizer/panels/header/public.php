@@ -62,6 +62,7 @@ $styles->set_style( array(
     'selector' => '.main-header.static .search-container, .main-header.static .search-toggle',
     'styles' => array(
         'color: %s;' => get_theme_mod( 'taproot_header_search_color' ),
+        'fill: %s;' => get_theme_mod( 'taproot_header_search_color' ),        
     ),
 ));
 
