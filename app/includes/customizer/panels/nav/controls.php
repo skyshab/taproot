@@ -14,7 +14,7 @@
 ));
 
     // Tabs: Top Nav
-    $rootstrap->customizer_tabs( $wp_customize, 'taproot_nav_topnav', array(
+    rootstrap_tabs( $wp_customize, 'taproot_nav_topnav', array(
         'title' => esc_html__( 'Top Nav', 'taproot' ),
         'priority' => 10,
         'panel' => 'navigation',
@@ -267,7 +267,7 @@
 
 
     // Tabs: Header Nav
-    $rootstrap->customizer_tabs( $wp_customize, 'taproot_nav_header', array(
+    rootstrap_tabs( $wp_customize, 'taproot_nav_header', array(
         'title' => esc_html__( 'Header Nav', 'taproot' ),
         'priority' => 10,
         'panel' => 'navigation',
@@ -751,7 +751,7 @@
 
 
     // Tabs: Navbar
-    $rootstrap->customizer_tabs( $wp_customize, 'taproot_nav_navbar', array(
+    rootstrap_tabs( $wp_customize, 'taproot_nav_navbar', array(
         'title' => esc_html__( 'Navbar', 'taproot' ),
         'priority' => 10,
         'panel' => 'navigation',
@@ -1197,7 +1197,7 @@
     */
 
 
-    $rootstrap->customizer_tabs( $wp_customize, 'taproot_footer_nav', array(
+    rootstrap_tabs( $wp_customize, 'taproot_footer_nav', array(
         'title'    => esc_html__( 'Footer Nav', 'taproot' ),
         'priority' => 100,
         'panel' => 'navigation',

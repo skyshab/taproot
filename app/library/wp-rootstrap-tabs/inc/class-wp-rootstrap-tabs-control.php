@@ -35,6 +35,22 @@ if( !class_exists('WP_Rootstrap_Customizer_Tabs_Control') )
 
 
         /**
+         * Enqueue scripts and styles.
+         *
+         * Filters are applied to the script uri. 
+         * 
+         */
+        public function enqueue() {
+
+            $scripts = get_template_directory_uri() . '/app/library/wp-rootstrap-tabs/js/wp-rootstrap-tabs.js';
+            wp_enqueue_script( 'wp-rootstrap-tabs', apply_filters( 'wp-rootstrap-tabs-scripts', $scripts ), array('jquery'), '1.0.0', true );
+
+            $styles = get_template_directory_uri() . '/app/library/wp-rootstrap-tabs/css/wp-rootstrap-tabs.css';
+            wp_enqueue_style( 'wp-rootstrap-tabs', apply_filters( 'wp-rootstrap-tabs-styles', $styles ), '', '1.0.0' );      
+        }
+
+
+        /**
          * Renders the content of our custom control
          * 
          * @since 0.8.0

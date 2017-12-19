@@ -13,7 +13,7 @@ $wp_customize->add_panel( 'taproot_header', array(
 ));
 
     // Tabs: Header Styles
-    $rootstrap->customizer_tabs( $wp_customize, 'taproot_header_styles', array(
+    rootstrap_tabs( $wp_customize, 'taproot_header_styles', array(
         'title' => esc_html__( 'Header Styles', 'taproot' ),
         'priority' => 10,
         'panel' => 'taproot_header',
@@ -122,7 +122,7 @@ $wp_customize->add_panel( 'taproot_header', array(
     */
 
 
-    $rootstrap->customizer_tabs( $wp_customize, 'taproot_search_styles', array(
+    rootstrap_tabs( $wp_customize, 'taproot_search_styles', array(
         'title'    => esc_html__( 'Search Styles', 'taproot' ),
         'priority' => 20,
         'panel' => 'taproot_header',

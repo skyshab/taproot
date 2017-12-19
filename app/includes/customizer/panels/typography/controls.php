@@ -14,7 +14,7 @@ $wp_customize->add_panel( 'typography', array(
 ));
 
     // Rootstrap Tabs: Typographic Elements
-    $rootstrap->customizer_tabs( $wp_customize, 'typographic_elements[body]', array(
+    rootstrap_tabs( $wp_customize, 'typographic_elements[body]', array(
         'priority' => 10,
         'panel' => 'typography',
         'title' => esc_html__( 'Typographic Elements', 'taproot' ),
@@ -214,7 +214,7 @@ $wp_customize->add_panel( 'typography', array(
 
 
                 // Rootstrap Tabs: Typography Sidebar Layout
-                $rootstrap->customizer_tabs( $wp_customize, $section_id, array(
+                rootstrap_tabs( $wp_customize, $section_id, array(
                     'priority' => 10,
                     'panel' => 'typography',
                     'active_callback' => '',

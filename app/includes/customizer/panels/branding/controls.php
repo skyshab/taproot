@@ -16,7 +16,7 @@ $wp_customize->add_panel( 'branding', array(
 
 
 // Rootstrap Tabs: Branding Elements
-$rootstrap->customizer_tabs( $wp_customize, 'branding_elements[logo]', array(
+rootstrap_tabs( $wp_customize, 'branding_elements[logo]', array(
     'priority' => 10,
     'panel' => 'branding',
     'title' => esc_html__( 'Branding Elements', 'taproot' ),
@@ -265,7 +265,7 @@ foreach ( $devices as $device => $args )
         $fixed_section_id = sprintf( '%s[tab-2]',  $section_id);
 
         // Rootstrap Tabs: Fixed Header Branding
-        $rootstrap->customizer_tabs( $wp_customize, $section_id, array(
+        rootstrap_tabs( $wp_customize, $section_id, array(
             'priority' => 10,
             'panel' => 'branding',
             'active_callback' => '',

@@ -168,6 +168,11 @@ if( !class_exists( 'Taproot_Customizer' ) )
              * The file that contains callbacks and functions for use in our customizer settings. 
              */            
             require_once TAPROOT_CUSTOMIZER . '/inc/taproot-customizer-functions.php';
+
+            /**
+             * The file that contains callbacks and functions for use in our customizer settings. 
+             */            
+            require_once TAPROOT_LIBRARY . '/wp-rootstrap-tabs/wp-rootstrap-tabs.php';            
         }
 
 

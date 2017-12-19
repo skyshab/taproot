@@ -1,0 +1,48 @@
+/* Rootstrap tabs */
+
+    .customize-control.customize-control-rootstrap-tabs {
+        border-bottom: 1px solid #ddd;
+        width: 299px;
+        margin: 0px -12px 12px -12px;
+        text-align: right;
+    }
+
+    .rootstrap-tab {
+        background: #f4f4f4;
+        border: 1px solid #ddd;
+        border-bottom: none;
+        color: #555;
+        padding: .6em 1em;
+        margin: 0;
+        margin-right: 12px;
+        z-index: 2;
+        position: relative;
+        display: inline-block;
+        text-transform: capitalize;
+    }
+
+    .rootstrap-tab.current-tab {
+
+        background: white;
+        border-bottom-color: white;
+    }
+
+    .rootstrap-tab.current-tab:after {
+        content: '';
+        background: white;
+        height: 1.25px;
+        width: 100%;
+        display: block;
+        position: absolute;
+        bottom: -1.25px;
+        left: 0;
+    }
+
+
+    // hide tab sections in the customizer panel
+    .accordion-section[id*="tab-hider"] ~ .accordion-section {
+        height: 0;
+    }
+    .accordion-section[id*="tab-hider"] ~ .accordion-section .accordion-section-title {
+        display: none;
+    }

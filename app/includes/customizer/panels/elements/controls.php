@@ -13,7 +13,7 @@ $wp_customize->add_panel( 'taproot_elements', array(
 ));
 
     // Rootstrap Tabs: Buttons
-    $rootstrap->customizer_tabs( $wp_customize, 'taproot_buttons', array(
+    rootstrap_tabs( $wp_customize, 'taproot_buttons', array(
         'priority' => 10,
         'panel' => 'taproot_elements',
         'title' => esc_html__( 'Buttons', 'taproot' ),

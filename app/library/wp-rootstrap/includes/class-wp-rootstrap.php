@@ -177,11 +177,6 @@ class WP_Rootstrap
          * The class responsible for creating style objects
          */
         require_once ROOTSTRAP_INCLUDES . 'class-wp-rootstrap-styles.php';
-
-        /**
-         * The class responsible for managing Customizer Tabs
-         */
-        require_once ROOTSTRAP_INCLUDES . 'class-wp-rootstrap-customizer-tabs.php';
     }
 
 
@@ -520,22 +515,6 @@ class WP_Rootstrap
     public function new_styles()
     {
         return new WP_Rootstrap_Styles( $this->screens );
-    }
-
-
-    /**
-     * Create a tabbed interface for customizer sections
-     *
-     * @since 0.8.0
-     * @param object $wp_customize - WordPress customizer control oject
-     * @param string $root_id - the id of the tab that should be open by default
-     * @param array $args - contains tab labels and their associated sections
-     * @return object
-     */    
-    public function customizer_tabs( $wp_customize = false, $root_id = false, $args = false )
-    {
-        if( !$wp_customize || !$root_id || !$args ) return;
-        return new WP_Rootstrap_Customizer_Tabs( $wp_customize, $root_id, $args );
     }
 
 
