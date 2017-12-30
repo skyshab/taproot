@@ -1,0 +1,44 @@
+{
+    "name": "skyshab/wp-rootstrap",
+
+    "license": "GPL-2.0",
+
+    "description": "WP Rootstrap imports the Rootstrap configuration file into the WordPress environment and provides utilities for managing styles and screens within PHP and Javascript.",
+    
+    "homepage": "http://rootstrap.io",
+
+    "support": {
+        "issues": "http://github.com/skyshab/wp-rootstrap/issues"
+    },
+
+    "authors": [
+        {
+            "homepage": "http://rootstrap.io",
+            "name": "Taproot Studios, LLC"
+        },
+        {
+            "role": "Developer",
+            "name": "Sky Shabatura"
+        }
+    ],
+
+    "keywords": [
+        "rootstrap",
+        "WordPress",
+        "customizer",
+        "responsive",
+        "breakpoints",
+        "devices"
+    ],
+
+    "autoload": {
+        "files": ["src/wp-rootstrap.php"]
+    },
+
+    "repositories": [
+        {
+            "type" : "vcs",
+            "url" : "https://github.com/skyshab/wp-rootstrap"
+        }
+    ]
+}
