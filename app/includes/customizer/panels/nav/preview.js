@@ -334,13 +334,13 @@
 
 
     // Navbar Mobile Menubar Text Color
-    wp.customize( 'taproot_navbar_mobile_dropdown_text_color', function( value ) {
+    wp.customize( 'taproot_navbar_mobile_item_color', function( value ) {
         value.bind( function( to ) {
             var navbarBp = wp.customize.instance('taproot_navbar_mobile_breakpoint').get();
             var screen = getScreenFromBp( navbarBp );
 
             rootstrap.style({
-                id: 'taproot-navbar-mobile-dropdown-text-color',
+                id: 'taproot_navbar_mobile_item_color',
                 device: screen,
                 styles: '#taproot-navbar .menu-item a { color: {{value}}; }',
                 value: to

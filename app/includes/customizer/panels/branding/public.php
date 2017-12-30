@@ -26,7 +26,7 @@ $styles->set_style( array(
      ),
 ));
 
-// Gutter Spacing: Container`
+// Gutter Spacing: Container
 
 $styles->set_style( array(
     'screen' => 'mobile',
@@ -123,7 +123,7 @@ if( 'stacked' == get_theme_mod( 'taproot_branding_layout_mobile' ) || is_customi
          ),
     ));
 }
-if( 'spread' == get_theme_mod( 'taproot_branding_layout_mobile', 'stacked' ) || is_customize_preview() )
+if( 'spread' == get_theme_mod( 'taproot_branding_layout_mobile' ) || is_customize_preview() )
 {
     $styles->set_style( array(
         'screen' => 'mobile',
@@ -134,7 +134,7 @@ if( 'spread' == get_theme_mod( 'taproot_branding_layout_mobile', 'stacked' ) || 
     ));
 }
 
-if( 'stacked' == get_theme_mod( 'taproot_branding_layout_mobile_landscape', 'spread' ) || is_customize_preview() )
+if( 'stacked' == get_theme_mod( 'taproot_branding_layout_mobile_landscape' ) || is_customize_preview() )
 {
     $styles->set_style( array(
         'screen' => 'mobile-landscape',
@@ -144,7 +144,7 @@ if( 'stacked' == get_theme_mod( 'taproot_branding_layout_mobile_landscape', 'spr
          ),
     ));
 }
-if( 'spread' == get_theme_mod( 'taproot_branding_layout_mobile_landscape', 'spread' ) || is_customize_preview() )
+if( 'spread' == get_theme_mod( 'taproot_branding_layout_mobile_landscape' ) || is_customize_preview() )
 {
     $styles->set_style( array(
         'screen' => 'mobile-landscape-and-up',
@@ -155,7 +155,7 @@ if( 'spread' == get_theme_mod( 'taproot_branding_layout_mobile_landscape', 'spre
     ));
 }
 
-if( 'stacked' == get_theme_mod( 'taproot_branding_layout_tablet', 'spread' ) || is_customize_preview() )
+if( 'stacked' == get_theme_mod( 'taproot_branding_layout_tablet' ) || is_customize_preview() )
 {
     $styles->set_style( array(
         'screen' => 'tablet',
@@ -165,7 +165,7 @@ if( 'stacked' == get_theme_mod( 'taproot_branding_layout_tablet', 'spread' ) || 
          ),
     ));
 }
-if( 'spread' == get_theme_mod( 'taproot_branding_layout_tablet', 'spread' ) || is_customize_preview() )
+if( 'spread' == get_theme_mod( 'taproot_branding_layout_tablet' ) || is_customize_preview() )
 {
     $styles->set_style( array(
         'screen' => 'tablet-and-up',

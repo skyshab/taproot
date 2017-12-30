@@ -55,7 +55,8 @@ $styles->set_style( array(
     'styles' => array(
         'padding: 0 0 %sem 0;' => '0.4',
     ),
-    'screen' => $topnav_mobile_screen
+    'screen' => $topnav_mobile_screen, 
+    'cb' => $topnav_mobile_screen,
 ));
 
 // Top Nav fixed styles
@@ -188,7 +189,8 @@ $styles->set_style( array(
     'screen' => $header_nav_mobile_screen,
     'selector' => '.header-nav--fullscreen .menu-toggle.toggle ~ .label-toggle',
     'styles' => array(
-        'fill: %s;' => get_theme_mod( 'taproot_header_nav_mobile_item_color' ),
+        'color: %s;' => get_theme_mod( 'taproot_header_nav_mobile_icon_color' ),
+        'fill: %s;' => get_theme_mod( 'taproot_header_nav_mobile_icon_color' ),
     ),
 ));
 
@@ -206,7 +208,7 @@ $styles->set_style( array(
     'screen' => $header_nav_mobile_screen,
     'selector' => '.header-nav__menu .menu-item > a',
     'styles' => array(
-        'color: %s;' => get_theme_mod( 'taproot_header_nav_mobile_item_color', '#424242' ),
+        'color: %s;' => get_theme_mod( 'taproot_header_nav_mobile_item_color' ),
         'padding-top: %sem; padding-bottom: %sem;' => get_theme_mod( 'taproot_header_nav_mobile_dropdown_item_height' ),
         'padding-left: %sem; padding-right: %sem;' => get_theme_mod( 'taproot_header_nav_mobile_dropdown_item_padding' ),
     ),
@@ -426,7 +428,7 @@ $styles->set_style( array(
     'screen' => $navbar_mobile_screen,
     'selector' => '.navbar--fullscreen .menu-toggle.toggle ~ .label-toggle',
     'styles' => array(
-        'color: %s;' => get_theme_mod( 'taproot_navbar_mobile_item_color' ),
+        'color: %s;' => get_theme_mod( 'taproot_navbar_mobile_icon_color' ),
     ),
 ));
 
@@ -454,7 +456,7 @@ $styles->set_style( array(
     'screen' => $navbar_mobile_screen,
     'selector' => '.navbar__menu .menu-item > a',
     'styles' => array(
-        'color: %s;' => get_theme_mod( 'taproot_navbar_mobile_dropdown_text_color', 'black' ),
+        'color: %s;' => get_theme_mod( 'taproot_navbar_mobile_item_color' ),
         'padding-top: %sem; padding-bottom: %sem;' => get_theme_mod( 'taproot_navbar_mobile_dropdown_item_height' ),
         'padding-left: %sem; padding-right: %sem;' => get_theme_mod( 'taproot_navbar_mobile_dropdown_item_padding' ),
     ),

@@ -262,7 +262,7 @@
             rootstrap.style({
                 id: 'taproot-custom-gutter-spacing',
                 device: 'mobile',
-                styles: '.header-nav__menu > .menu-item > a, .branding, .search-container { padding: {{value}}em 0; }',
+                styles: '.header-nav__menu > .menu-item > a, .branding, .search-container { padding-top: {{value}}em; padding-bottom: {{value}}em; }',
                 value: to
             });
         });
@@ -273,7 +273,7 @@
             rootstrap.style({
                 id: 'taproot-custom-gutter-spacing',
                 device: 'mobile-landscape-and-up',
-                styles: '.header-nav__menu > .menu-item > a, .branding, .search-container { padding: {{value}}em 0; }',
+                styles: '.header-nav__menu > .menu-item > a, .branding, .search-container { padding-top: {{value}}em; padding-bottom: {{value}}em; }',
                 value: to
             });
         });
@@ -284,7 +284,7 @@
             rootstrap.style({
                 id: 'taproot-custom-gutter-spacing',
                 device: 'tablet-and-up',
-                styles: '.header-nav__menu > .menu-item > a, .branding, .search-container { padding: {{value}}em 0; }',
+                styles: '.header-nav__menu > .menu-item > a, .branding, .search-container { padding-top: {{value}}em; padding-bottom: {{value}}em; }',
                 value: to
             });
         });
@@ -295,7 +295,7 @@
             rootstrap.style({
                 id: 'taproot-custom-gutter-spacing',
                 device: 'laptop-and-up',
-                styles: '.header-nav__menu > .menu-item > a, .branding, .search-container { padding: {{value}}em 0; }',
+                styles: '.header-nav__menu > .menu-item > a, .branding, .search-container { padding-top: {{value}}em; padding-bottom: {{value}}em; }',
                 value: to
             });
         });
@@ -306,7 +306,7 @@
             rootstrap.style({
                 id: 'taproot-custom-gutter-spacing',
                 device: 'desktop',
-                styles: '.header-nav__menu > .menu-item > a, .branding, .search-container { padding: {{value}}em 0; }',
+                styles: '.header-nav__menu > .menu-item > a, .branding, .search-container { padding-top: {{value}}em; padding-bottom: {{value}}em; }',
                 value: to
             });
         });
