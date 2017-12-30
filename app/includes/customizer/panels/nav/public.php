@@ -55,7 +55,8 @@ $styles->set_style( array(
     'styles' => array(
         'padding: 0 0 %sem 0;' => '0.4',
     ),
-    'screen' => $topnav_mobile_screen
+    'screen' => $topnav_mobile_screen, 
+    'cb' => $topnav_mobile_screen,
 ));
 
 // Top Nav fixed styles
@@ -188,7 +189,8 @@ $styles->set_style( array(
     'screen' => $header_nav_mobile_screen,
     'selector' => '.header-nav--fullscreen .menu-toggle.toggle ~ .label-toggle',
     'styles' => array(
-        'fill: %s;' => get_theme_mod( 'taproot_header_nav_mobile_item_color' ),
+        'color: %s;' => get_theme_mod( 'taproot_header_nav_mobile_icon_color' ),
+        'fill: %s;' => get_theme_mod( 'taproot_header_nav_mobile_icon_color' ),
     ),
 ));
 
@@ -206,7 +208,7 @@ $styles->set_style( array(
     'screen' => $header_nav_mobile_screen,
     'selector' => '.header-nav__menu .menu-item > a',
     'styles' => array(
-        'color: %s;' => get_theme_mod( 'taproot_header_nav_mobile_item_color', '#424242' ),
+        'color: %s;' => get_theme_mod( 'taproot_header_nav_mobile_item_color' ),
         'padding-top: %sem; padding-bottom: %sem;' => get_theme_mod( 'taproot_header_nav_mobile_dropdown_item_height' ),
         'padding-left: %sem; padding-right: %sem;' => get_theme_mod( 'taproot_header_nav_mobile_dropdown_item_padding' ),
     ),
@@ -416,6 +418,7 @@ $styles->set_style( array(
     'selector' => '.navbar .label-toggle',
     'styles' => array(
         'color: %s;' => get_theme_mod( 'taproot_navbar_mobile_icon_color' ),
+        'fill: %s;' => get_theme_mod( 'taproot_navbar_mobile_icon_color' ),
         'font-size: %sem;' => get_theme_mod( 'taproot_navbar_mobile_icon_size' ),
         'margin: %sem 0;' => get_theme_mod( 'taproot_navbar_height_mobile' ),
     ),
@@ -425,7 +428,7 @@ $styles->set_style( array(
     'screen' => $navbar_mobile_screen,
     'selector' => '.navbar--fullscreen .menu-toggle.toggle ~ .label-toggle',
     'styles' => array(
-        'color: %s;' => get_theme_mod( 'taproot_navbar_mobile_item_color' ),
+        'color: %s;' => get_theme_mod( 'taproot_navbar_mobile_icon_color' ),
     ),
 ));
 
@@ -453,7 +456,7 @@ $styles->set_style( array(
     'screen' => $navbar_mobile_screen,
     'selector' => '.navbar__menu .menu-item > a',
     'styles' => array(
-        'color: %s;' => get_theme_mod( 'taproot_navbar_mobile_dropdown_text_color', 'black' ),
+        'color: %s;' => get_theme_mod( 'taproot_navbar_mobile_item_color' ),
         'padding-top: %sem; padding-bottom: %sem;' => get_theme_mod( 'taproot_navbar_mobile_dropdown_item_height' ),
         'padding-left: %sem; padding-right: %sem;' => get_theme_mod( 'taproot_navbar_mobile_dropdown_item_padding' ),
     ),
@@ -503,147 +506,6 @@ $styles->set_style( array(
     ),
 ));
 
-
-// mobile bar styles
-
-
-// mobile bar background
-$styles->set_style( array(
-    'selector' => '.mobile-bar',
-    'styles' => array(
-        'background-color: %s;' => get_theme_mod( 'taproot_mobile_bar_background_color' ),
-    ),
-));
-
-
-// mobile bar icon styles
-
-$styles->set_style( array(
-    'selector' => '.mobile-bar .icon',
-    'styles' => array(
-        'color: %s;' => get_theme_mod( 'taproot_mobile_bar_icon_color' ),
-        'font-size: %spx;' => get_theme_mod( 'taproot_mobile_bar_icon_size' ),
-
-    ),
-));    
-
-
-
-// mobile bar text styles
-
-$styles->set_style( array(
-    'selector' => '.mobile-bar .menu-item > a',
-    'styles' => array(
-        'font-size: %spx;' => get_theme_mod( 'taproot_mobile_bar_text_size' ),
-    ),
-));   
-
-
-$styles->set_style( array(
-    'selector' => '.mobile-bar .menu-item > a, .mobile-bar .search-toggle .icon, .mobile-bar .taproot-search__field',
-    'styles' => array(
-        'color: %s;' => get_theme_mod( 'taproot_mobile_bar_text_color' ),
-    ),
-));  
-
-
-$styles->set_style( array(
-    'selector' => '.mobile-bar .menu-item',
-    'styles' => array(
-        'border-right-color: %s;' => get_theme_mod( 'taproot_mobile_bar_separator_color' ),
-    ),
-));   
-
-// margin on body to compensate for the height of the mobile bar
-
-$mobile_bar_height = floor( 
-    intval( get_theme_mod( 'taproot_mobile_bar_text_size', '14' ) ) + 
-    intval( get_theme_mod( 'taproot_mobile_bar_icon_size', '24' ) ) +
-    ( 0.2 * intval( get_theme_mod( 'taproot_mobile_bar_icon_size', '24' ) ) ) +
-    22
-);
-
-
-$mobile_bar_breakpoint = get_theme_mod( 'taproot_mobile_bar_breakpoint' );
-$print_mobile_bar_fixed_footer_styles = false;       
-
-
-
-if( $mobile_bar_breakpoint === 'mobile' )
-{
-    $mobile_bar_screen = 'mobile';
-    $mobile_bar_hide_screen = 'mobile-landscape-and-up';
-}
-elseif( $mobile_bar_breakpoint === 'tablet' )
-{
-    $mobile_bar_screen = 'tablet-and-under';
-    $mobile_bar_hide_screen = 'laptop-and-up'; 
-    $print_mobile_bar_fixed_footer_styles = true;       
-}
-else 
-{
-    $mobile_bar_screen = 'mobile-landscape-and-under';   
-    $mobile_bar_hide_screen = 'tablet-and-up';
-}
-
-
-// hide mobile bar breakpoint
-
-$styles->set_style( array(
-    'screen' => $mobile_bar_hide_screen,
-    'selector' => '.taproot-nav.mobile-bar',
-    'styles' => array(
-        'display: %s;' => 'none',
-    ),
-)); 
-
-
-// adjust fixed footer styles to accomodate for mobile bar
-
-if( $print_mobile_bar_fixed_footer_styles )
-{
-    $styles->set_style( array(
-        'screen' => 'tablet',
-        'selector' => '.footer--style-fixed',
-        'styles' => array(
-            'bottom: %spx;' => $mobile_bar_height,
-        ),
-    ));  
-}
-
-
-// when mobile bar is on the bottom
-
-$styles->set_style( array(
-    'screen' => $mobile_bar_screen,
-    'selector' => '.taproot-mobile-bar--bottom',
-    'styles' => array(
-        'margin-bottom: %spx;' => $mobile_bar_height,
-    ),
-)); 
-
-
-// when mobile bar is on the top
-
-$styles->set_style( array(
-    'screen' => $mobile_bar_screen,
-    'selector' => '.taproot-mobile-bar--top',
-    'styles' => array(
-        'margin-top: %spx;' => $mobile_bar_height,
-    ),
-)); 
-
-
-// Hide other navs that have the setting while mobile bar is visible
-
-$styles->set_style( array(
-    'screen' => $mobile_bar_screen,
-    'selector' => '.taproot-nav-hidden-when-mobile-bar',
-    'styles' => array(
-        'display: %s;' => 'none',
-    ),
-));   
-
       
 // footer nav
 
@@ -686,4 +548,3 @@ $styles->set_style( array(
          'color: %s;' => get_theme_mod( 'taproot_footer_nav_menu_item_hover_color' ),
      ),
 ));
-

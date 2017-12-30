@@ -101,24 +101,6 @@ var rootstrapControls = ( function($){
 
 
     /**
-     * Add click handler to rootstrap tabs controls in the customizer
-    **/
-    var initializeTabs = function(){
-
-        // show/hide tabs content when manually clicking tabs
-        $( 'body' ).on( 'click', '.customize-control-rootstrap-tabs .rootstrap-tab', function(){
-
-            var target = $(this).data( 'target-section' );
-
-            if( api.section( target ) ){
-                api.section( target ).activate();
-                api.section( target ).focus();
-            }
-        });
-    };
-
-
-    /**
      * Initialize our module
     **/
     var init = function(){
@@ -131,9 +113,6 @@ var rootstrapControls = ( function($){
 
         // define registered devices
         devices = rootstrapDevices;
-
-        // initialize tab functionality
-        initializeTabs();
     };
 
 

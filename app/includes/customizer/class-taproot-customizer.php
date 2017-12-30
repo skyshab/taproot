@@ -87,7 +87,13 @@ if( !class_exists( 'Taproot_Customizer' ) )
                 /**
                  * The file that initiates rootstrap object
                  */                
-                require_once TAPROOT_LIBRARY . '/wp-rootstrap/wp-rootstrap.php';
+                require_once TAPROOT_LIBRARY . '/wp-rootstrap/src/wp-rootstrap.php';
+
+                // load the default Rootstrap settings from the theme. 
+                $rootstrap_defaults = include( TAPROOT_CUSTOMIZER . '/inc/taproot-rootstrap-settings.php' );
+
+                // Load the Rootstrap config
+                $rootstrap->load_config( $rootstrap_defaults );                
             }
             else
             {
@@ -95,13 +101,7 @@ if( !class_exists( 'Taproot_Customizer' ) )
             }
 
             // Set the Roostrap uri
-            $rootstrap->set_uri( TAPROOT_LIBRARY_URI . '/wp-rootstrap/' );
-
-            // load the default Rootstrap settings from the theme. 
-            $rootstrap_defaults = include( TAPROOT_CUSTOMIZER . '/inc/taproot-rootstrap-settings.php' );
-
-            // Load the Rootstrap config
-            $rootstrap->load_config( $rootstrap_defaults );
+            $rootstrap->set_uri( TAPROOT_LIBRARY_URI . '/wp-rootstrap/src/' );
 
             // Store the Rootstrap object
             $this->rootstrap = $rootstrap;     
@@ -168,6 +168,11 @@ if( !class_exists( 'Taproot_Customizer' ) )
              * The file that contains callbacks and functions for use in our customizer settings. 
              */            
             require_once TAPROOT_CUSTOMIZER . '/inc/taproot-customizer-functions.php';
+
+            /**
+             * The file that contains callbacks and functions for use in our customizer settings. 
+             */            
+            require_once TAPROOT_LIBRARY . '/wp-rootstrap-tabs/wp-rootstrap-tabs.php';            
         }
 
 

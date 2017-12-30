@@ -424,7 +424,7 @@ $wp_customize->add_panel( 'taproot_posts', array(
 
 
     // Rootstrap Tabs: Top Post Nav
-    $rootstrap->customizer_tabs( $wp_customize, 'taproot_post_navigation[top]', array(
+    rootstrap_tabs( $wp_customize, 'taproot_post_navigation[top]', array(
         'priority' => 500,
         'panel' => 'taproot_posts',
         'title' => esc_html__( 'Post Navigation', 'taproot' ),

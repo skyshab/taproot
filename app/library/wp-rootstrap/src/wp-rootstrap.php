@@ -14,7 +14,7 @@
  * @since 0.8.0
  * @var string
  */
-define( 'ROOTSTRAP_CURRENT_VERSION', '0.8.0' );
+define( 'ROOTSTRAP_CURRENT_VERSION', '0.9.1' );
 
 /**
  * Defines the path to the base plugin directory

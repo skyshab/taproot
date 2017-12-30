@@ -67,21 +67,11 @@ if( !class_exists( 'Taproot_Template_Classes' ) )
 			}
 			else {
 				$classes[] = 'taproot-fullwidth-layout';
-			}
+			}	
 
-			// add class if mobile bar
-			if( 'bottom' === get_theme_mod( 'taproot_mobile_bar_location' ) )
-			{
-				$classes[] = 'taproot-mobile-bar--bottom';
-			}
-			elseif( 'top' === get_theme_mod( 'taproot_mobile_bar_location' ) )
-			{
-				$classes[] = 'taproot-mobile-bar--top';
-			}
-			elseif( is_customize_preview() )
-			{
-				$classes[] = 'taproot-mobile-bar--none';
-			}		
+			// add utility class if in customize preview
+			if( is_customize_preview() )
+				$classes[] = 'customize-preview';
 
 			// Filter the body classes to remove any unwanted classes
 		    $classes = array_diff( $classes, $blacklist );
@@ -174,9 +164,9 @@ if( !class_exists( 'Taproot_Template_Classes' ) )
 		public function header_content_classes( $classes )
 	    {
 			// mobile screen branding layouts
-	        $classes[] = sprintf( 'm-%s',  get_theme_mod( 'taproot_branding_layout_mobile', 'stacked' ) );
-	        $classes[] = sprintf( 'ml-%s', get_theme_mod( 'taproot_branding_layout_mobile_landscape', 'spread' ) );
-	        $classes[] = sprintf( 't-%s',  get_theme_mod( 'taproot_branding_layout_tablet', 'spread' ) );
+	        $classes[] = sprintf( 'm-%s',  get_theme_mod( 'taproot_branding_layout_mobile' ) );
+	        $classes[] = sprintf( 'ml-%s', get_theme_mod( 'taproot_branding_layout_mobile_landscape' ) );
+	        $classes[] = sprintf( 't-%s',  get_theme_mod( 'taproot_branding_layout_tablet' ) );
 
 	        return $classes;
 	    }
@@ -193,10 +183,10 @@ if( !class_exists( 'Taproot_Template_Classes' ) )
 		public function branding_classes( $classes )
 	    {
 			// branding element classes
-			$classes[] = ( get_option( 'custom_logo', true ) ) ? ' has-logo' : ' has-logo';
-	        $classes[] = ( get_theme_mod( 'taproot_display_title', true ) || get_theme_mod( 'taproot_display_tagline', true ) ) ? ' has-titles' : ' no-titles';
-			$classes[] = ( get_theme_mod( 'taproot_display_title', true ) ) ? ' show-title' : ' no-title';
-			$classes[] = ( get_theme_mod( 'taproot_display_tagline', true ) ) ? ' show-tagline' : ' no-tagline';
+			$classes[] = ( get_option( 'custom_logo' ) || apply_filters( 'taproot_svg_logo', false ) ) ? ' has-logo' : ' no-logo';
+	        $classes[] = ( get_theme_mod( 'taproot_display_title' ) || get_theme_mod( 'taproot_display_tagline' ) ) ? ' has-titles' : ' no-titles';
+			$classes[] = ( get_theme_mod( 'taproot_display_title' ) ) ? ' show-title' : ' no-title';
+			$classes[] = ( get_theme_mod( 'taproot_display_tagline' ) ) ? ' show-tagline' : ' no-tagline';
 
 	        return $classes;
 	    }
@@ -383,7 +373,7 @@ if( !class_exists( 'Taproot_Template_Classes' ) )
 				$classes[] = 'taproot-nav-hidden-when-fixed';
 			}
 
-			if( get_theme_mod( 'taproot_header_nav_enable_dropdown_pointers', true ) )
+			if( get_theme_mod( 'taproot_header_nav_enable_dropdown_pointers' ) )
 			{
 				$classes[] = 'has-pointers';
 			}
@@ -391,11 +381,6 @@ if( !class_exists( 'Taproot_Template_Classes' ) )
 			if( get_theme_mod( 'taproot_header_nav_hide_when_mobile') ) 
 			{
 				$classes[] = 'taproot-nav-hidden-when-mobile';
-			}
-
-			if( get_theme_mod( 'taproot_header_nav_hide_when_mobile_bar') ) 
-			{
-				$classes[] = 'taproot-nav-hidden-when-mobile-bar';
 			}		
 
 			if( get_theme_mod( 'taproot_header_nav_hide_when_not_mobile') ) 
@@ -403,18 +388,18 @@ if( !class_exists( 'Taproot_Template_Classes' ) )
 				$classes[] = 'taproot-nav-hidden-when-not-mobile';
 			}		
 
-			$classes[] = sprintf( 'nav-align-%s', get_theme_mod( 'taproot_header_nav_align', 'right') );
+			$classes[] = sprintf( 'nav-align-%s', get_theme_mod( 'taproot_header_nav_align' ) );
 
 			if( $this->has_fixed_header() )
 			{
-				$classes[] = sprintf( 'fixed-nav-align-%s', get_theme_mod( 'taproot_header_nav_align_fixed', 'right') );
+				$classes[] = sprintf( 'fixed-nav-align-%s', get_theme_mod( 'taproot_header_nav_align_fixed' ) );
 			}
 
 			// add class for header nav type
-			$classes[] = sprintf( 'header-nav--%s', get_theme_mod( 'taproot_header_nav_type', 'slide' ) );
+			$classes[] = sprintf( 'header-nav--%s', get_theme_mod( 'taproot_header_nav_type' ) );
 
 			// add class for header nav breakpoint
-			$classes[] = sprintf( 'header-nav--%s', get_theme_mod( 'taproot_header_nav_mobile_breakpoint', 'bp-t' ) );
+			$classes[] = sprintf( 'header-nav--%s', get_theme_mod( 'taproot_header_nav_mobile_breakpoint' ) );
 
 			return $classes;
 		}
@@ -439,7 +424,7 @@ if( !class_exists( 'Taproot_Template_Classes' ) )
 				$classes[] = 'taproot-nav-hidden-when-fixed';
 			}
 
-			if( get_theme_mod( 'taproot_navbar_enable_dropdown_pointers', true ) )
+			if( get_theme_mod( 'taproot_navbar_enable_dropdown_pointers' ) )
 			{
 				$classes[] = 'has-pointers';
 			}
@@ -447,11 +432,6 @@ if( !class_exists( 'Taproot_Template_Classes' ) )
 			if( get_theme_mod( 'taproot_navbar_hide_when_mobile') ) 
 			{
 				$classes[] = 'taproot-nav-hidden-when-mobile';
-			}	
-
-			if( get_theme_mod( 'taproot_navbar_hide_when_mobile_bar') ) 
-			{
-				$classes[] = 'taproot-nav-hidden-when-mobile-bar';
 			}			
 
 			if( get_theme_mod( 'taproot_navbar_hide_when_not_mobile') ) 
@@ -496,17 +476,12 @@ if( !class_exists( 'Taproot_Template_Classes' ) )
 				$classes[] = 'taproot-nav-hidden-when-mobile';
 			}
 
-			if( get_theme_mod( 'taproot_topnav_hide_when_mobile_bar') ) 
-			{
-				$classes[] = 'taproot-nav-hidden-when-mobile-bar';
-			}
-
 			if( get_theme_mod( 'taproot_topnav_hide_when_not_mobile') ) 
 			{
 				$classes[] = 'taproot-nav-hidden-when-not-mobile';
 			}	
 				
-			$classes[] = sprintf( 'topnav--%s', get_theme_mod( 'taproot_topnav_mobile_breakpoint', 'bp-ml' ) );
+			$classes[] = sprintf( 'topnav--%s', get_theme_mod( 'taproot_topnav_mobile_breakpoint' ) );
 			
 			return $classes;
 		}

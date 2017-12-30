@@ -14,7 +14,7 @@
 ));
 
     // Tabs: Top Nav
-    $rootstrap->customizer_tabs( $wp_customize, 'taproot_nav_topnav', array(
+    rootstrap_tabs( $wp_customize, 'taproot_nav_topnav', array(
         'title' => esc_html__( 'Top Nav', 'taproot' ),
         'priority' => 10,
         'panel' => 'navigation',
@@ -227,19 +227,6 @@
         ));
 
 
-        // Setting: Hide Topnave When Mobile Bar Is Active
-        $wp_customize->add_setting( 'taproot_topnav_hide_when_mobile_bar', array(
-            'sanitize_callback' => 'taproot_sanitize_checkbox',
-            'transport' => 'postMessage',
-        ));
-
-        $wp_customize->add_control( 'taproot_topnav_hide_when_mobile_bar', array(
-            'type' => 'checkbox',
-            'section' => 'taproot_nav_topnav[mobile]',
-            'label' => esc_html__( 'Hide When Mobile Bar Is Active', 'taproot' ),
-        ));
-
-
         /*
         **  Tab: taproot_nav_topnav[fixed]
         */
@@ -280,7 +267,7 @@
 
 
     // Tabs: Header Nav
-    $rootstrap->customizer_tabs( $wp_customize, 'taproot_nav_header', array(
+    rootstrap_tabs( $wp_customize, 'taproot_nav_header', array(
         'title' => esc_html__( 'Header Nav', 'taproot' ),
         'priority' => 10,
         'panel' => 'navigation',
@@ -488,19 +475,6 @@
             'type' => 'checkbox',
             'section' => 'taproot_nav_header[mobile]',
             'label' => esc_html__( 'Hide Nav When Mobile', 'taproot' ),
-        ));
-
-
-        // Setting: Hide Header Nav when mobile bar
-        $wp_customize->add_setting( 'taproot_header_nav_hide_when_mobile_bar', array(
-            'sanitize_callback' => 'taproot_sanitize_checkbox',
-            'transport' => 'postMessage',
-        ));
-
-        $wp_customize->add_control( 'taproot_header_nav_hide_when_mobile_bar', array(
-            'type' => 'checkbox',
-            'label' => esc_html__( 'Hide When Mobile Bar Is Active', 'taproot' ),
-            'section' => 'taproot_nav_header[mobile]',
         ));
 
 
@@ -777,7 +751,7 @@
 
 
     // Tabs: Navbar
-    $rootstrap->customizer_tabs( $wp_customize, 'taproot_nav_navbar', array(
+    rootstrap_tabs( $wp_customize, 'taproot_nav_navbar', array(
         'title' => esc_html__( 'Navbar', 'taproot' ),
         'priority' => 10,
         'panel' => 'navigation',
@@ -997,19 +971,6 @@
             'type' => 'checkbox',
             'section' => 'taproot_nav_navbar[mobile]',
             'label' => esc_html__( 'Hide Nav When Mobile', 'taproot' ),
-        ));
-
-
-        // Setting: Hide Navbar when mobile bar 
-        $wp_customize->add_setting( 'taproot_navbar_hide_when_mobile_bar', array(
-            'sanitize_callback' => 'taproot_sanitize_checkbox',
-            'transport' => 'postMessage',
-        ));
-
-        $wp_customize->add_control( 'taproot_navbar_hide_when_mobile_bar', array(
-            'type' => 'checkbox',
-            'section' => 'taproot_nav_navbar[mobile]',
-            'label' => esc_html__( 'Hide When Mobile Bar Is Active', 'taproot' ),
         ));
 
 
@@ -1236,7 +1197,7 @@
     */
 
 
-    $rootstrap->customizer_tabs( $wp_customize, 'taproot_footer_nav', array(
+    rootstrap_tabs( $wp_customize, 'taproot_footer_nav', array(
         'title'    => esc_html__( 'Footer Nav', 'taproot' ),
         'priority' => 100,
         'panel' => 'navigation',

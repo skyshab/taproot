@@ -57,7 +57,7 @@ foreach ( $sidebars_widgets as $sidebar_id => $sidebar_widget_ids )
 
 
         // Rootstrap Tabs: Widget Styles
-        $rootstrap->customizer_tabs( $wp_customize, $section_id, array(
+        rootstrap_tabs( $wp_customize, $section_id, array(
             'priority' => 10,
             'panel' => 'widgets',
             'tabs' => array(
