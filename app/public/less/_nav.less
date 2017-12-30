@@ -171,6 +171,10 @@
         margin: 0 auto;
         margin-top: 2em;
 
+        .taproot-icon {
+            top: 0;
+        }
+
         .pages, .page-numbers {
             display: table-cell;
             text-decoration: none;
@@ -329,6 +333,13 @@
             }
         }
 
+        // if no logo or titles, fill the space and add padding. 
+        .header-nav--bp-@{screen}:first-child, .customize-preview .no-titles .header-nav--bp-@{screen} {
+            flex: 100%;
+            justify-content: flex-end;
+            padding: 1em 0;
+        }        
+
         // slide nav styles
         .header-nav--slide.header-nav--bp-@{screen},
         .navbar--slide.navbar--bp-@{screen} {
@@ -418,12 +429,18 @@
         }
 
         // hide when mobile if set in customizer
-        .topnav--bp-@{screen}, .header-nav--bp-@{screen}, .navbar--bp-@{screen} {
+        .topnav--bp-@{screen} .navbar--bp-@{screen} {
 
             &.taproot-nav-hidden-when-mobile {
                 display: none;
             }
         }
+
+        // hide header nav toggle when mobile if set in customizer
+        .header-nav--bp-@{screen}.taproot-nav-hidden-when-mobile .label-toggle {
+            display: none;
+        }
+
 
     } // end mixin
 
@@ -481,8 +498,10 @@
         }
 
         .topnav--bp-@{screen} {
-            .menu {
+            .topnav__menu {
                 width: auto;
+                flex: 100%;
+                justify-content: flex-end;                
             }
         }
 
