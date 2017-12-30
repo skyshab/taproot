@@ -7,7 +7,7 @@
  */
 if( !class_exists('WP_Rootstrap_Customizer_Tabs_Control') )
 {
-    class WP_Rootstrap_Customizer_Tabs_Control extends WP_Customize_Control
+    class WP_Rootstrap_Tabs_Control extends WP_Customize_Control
     {
         /**
          * Stores the control type
@@ -39,14 +39,15 @@ if( !class_exists('WP_Rootstrap_Customizer_Tabs_Control') )
          *
          * Filters are applied to the script uri. 
          * 
+         * @since 0.8.0
          */
-        public function enqueue() {
-
+        public function enqueue() 
+        {
             $scripts = get_template_directory_uri() . '/app/library/wp-rootstrap-tabs/js/wp-rootstrap-tabs.js';
-            wp_enqueue_script( 'wp-rootstrap-tabs', apply_filters( 'wp-rootstrap-tabs-scripts', $scripts ), array('jquery'), '1.0.0', true );
+            wp_enqueue_script( 'wp-rootstrap-tabs', apply_filters( 'wp-rootstrap-tabs-scripts', $scripts ), array('jquery'), ROOTSTRAP_TABS_VERSION, true );
 
             $styles = get_template_directory_uri() . '/app/library/wp-rootstrap-tabs/css/wp-rootstrap-tabs.css';
-            wp_enqueue_style( 'wp-rootstrap-tabs', apply_filters( 'wp-rootstrap-tabs-styles', $styles ), '', '1.0.0' );      
+            wp_enqueue_style( 'wp-rootstrap-tabs', apply_filters( 'wp-rootstrap-tabs-styles', $styles ), '', ROOTSTRAP_TABS_VERSION );    
         }
 
 

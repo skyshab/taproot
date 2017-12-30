@@ -51,13 +51,13 @@ if( !class_exists( 'WP_Rootstrap_Tabs' ) )
             /**
              * The file that contains our customizer control. 
              */             
-            require_once ROOTSTRAP_TABS_INC . 'class-wp-rootstrap-tabs-control.php';
+            require_once ROOTSTRAP_TABS . 'inc/class-wp-rootstrap-tabs-control.php';
 
 
             /**
              * The file that contains helper function for creating tabs. 
              */               
-            require_once ROOTSTRAP_TABS_INC . 'wp-rootstrap-tabs-functions.php';
+            require_once ROOTSTRAP_TABS . 'inc/wp-rootstrap-tabs-functions.php';
         }
 
 

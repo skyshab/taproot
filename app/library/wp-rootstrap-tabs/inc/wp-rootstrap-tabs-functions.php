@@ -73,7 +73,7 @@ if( !function_exists('rootstrap_tabs') )
 			));
 
 			// Control: create tabs control
-			$wp_customize->add_control( new WP_Rootstrap_Customizer_Tabs_Control ( $wp_customize, $setting_id, array(
+			$wp_customize->add_control( new WP_Rootstrap_Tabs_Control ( $wp_customize, $setting_id, array(
 				'section' => $section_id,
 				'tabs' => $tabs,
 				'default' => $root_id,
