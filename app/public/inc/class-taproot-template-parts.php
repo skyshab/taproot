@@ -66,25 +66,7 @@ if( !class_exists( 'Taproot_Template_Parts' ) )
 
 			// Set Read More content
 			$this->loader->add_filter( 'excerpt_more', $this, 'excerpt_readmore' );
-
-			// Add icon to sticky posts
-			$this->loader->add_filter( 'the_title', $this, 'sticky_title', 10, 2 );
-		} 
-
-
-		/**
-		 * Add icon to sticky post title
-		 * 
-		 * @since 0.8.2
-		 * @param string $title
-		 * @param int $id
-		 * @return string - Returns post title with icon prepended.
-		 */
-		public function sticky_title( $title, $id )
-		{	
-	    	if( !is_sticky( $id ) ) return $title;
-			return get_taproot_icon('thumb-tack') . $title;
-		}    
+		}   
 
 
 		/**
@@ -293,9 +275,9 @@ if( !class_exists( 'Taproot_Template_Parts' ) )
 				if( $logo ) 
 					$content .= sprintf( '<div class="logo-wrapper">%s</div>', $logo );
 
-				$display_title = get_theme_mod( 'taproot_display_title', true );
+				$display_title = get_theme_mod( 'taproot_display_title' );
 				$taproot_title = get_bloginfo( 'name' );
-				$display_tagline = get_theme_mod( 'taproot_display_tagline', false );
+				$display_tagline = get_theme_mod( 'taproot_display_tagline' );
 				$taproot_tagline = get_bloginfo( 'description' );
 
 				if( $display_title || $display_tagline || is_customize_preview() )
@@ -315,6 +297,9 @@ if( !class_exists( 'Taproot_Template_Parts' ) )
 
 	        $content .= '</a>';      
 			
+	        // if empty, don't print anything, unless we're in the customizer
+	        if( !is_customize_preview() && !$display_title && !$display_tagline && !$taproot_logo && !$svg_logo ) return;
+
 			echo apply_filters( 'taproot_template_header_content', $content );						
 		}
 
