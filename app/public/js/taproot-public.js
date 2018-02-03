@@ -8454,73 +8454,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		hasFixedHeader,
 		hasFixedFooter,
 		fixedHeaderType,
-		headerScroll,
-		parallaxScroll,
-		hasParallax,
-		parallaxImages = [];
-
-
-	/**
-	 * Parallax
-	 */
-	var parallax = function() {
-
-		$('.parallax').each(function() {
-
-			var $this = $(this);
-			var $img = $this.children("img").first();
-	  		if( $img.length ) {
-	  			$img.css('display', 'block');
-	  		}
-
-			var parallax = {};
-			parallax.el = $this;
-			parallax.container = $this.parent();
-			parallax.height = parallax.container.height();
-			parallaxImages.push(parallax);
-
-			var top = ( parallax.container.offset().top - $wrapper.offset().top ),
-				parallaxOffset;
-
-	  		if( top < 1 ) {
-	  		   	parallaxOffset = '0px';
-	  		}
-	  		else if(top > windowHeight) {
-	  		   	parallaxOffset = '-' + ( 100 * scrollRate ) + 'vh';
-				parallax.belowFold = true;
-	  		}
-
-			if( $img.length && top > windowHeight ) {
-	  			var imageHeight = 'calc(' + parallaxOffset.replace('-', '') + ' + ' + parallax.height + 'px)';
-				$img.css( 'height', imageHeight);
-				$this.css( 'margin-top', parallaxOffset );
-	  		}
-		});
-	}; 
-
-
-	/**
-	 * Update Parallax
-	 */
-	var parallaxUpdate = function() {
-
-		$.each(parallaxImages, function(index, parallax) {
-			var top = ( parallax.container.offset().top ),
-				scrollTop = $(window).scrollTop(),
-				windowBottom = scrollTop + windowHeight,
-				bottom = top + parallax.height,
-				lax = ( parallax.belowFold  )
-					? Math.round(((windowBottom - top ) * scrollRate))
-					: Math.round(( (scrollTop - top) * scrollRate));
-
-			lax = (lax >= 1 ) ? lax : 0;
-
-			if( ( bottom > scrollTop ) && ( top < windowBottom ) ) {
-				parallax.el.css('transform', "translate3D(0," + lax + "px, 0)");
-			}
-		});
-	}; 
-
+		headerScroll;
 
 	/**
 	 * Fixed Header Functionality
@@ -8913,44 +8847,6 @@ return /******/ (function(modules) { // webpackBootstrap
 			}
 		});
 
-
-		// mobile bar search toggle
-		$('#taproot-mobile-bar').on('click', '.search-toggle', function() {
-
-			var $initialContent = $('.mobile-bar__menu'),
-			$searchContainer = $('#taproot-mobile-bar .search-container');
-
-			if( $searchContainer.hasClass('search-not-active') ) {
-				$(this).find('.icon').velocity({rotateZ: '360deg', opacity: '0' }, {
-					duration: 500,
-				});
-
-				$initialContent.velocity( { opacity: '0' }, {
-					delay: 250,
-					duration: 400,
-					complete: function(el) {
-						$searchContainer.toggleClass('search-active search-not-active')
-							.velocity( { opacity: '1' }, { duration: 500 } );
-						$initialContent.find('.search-toggle .icon').css('opacity', '1').velocity({ rotateZ : '0deg' }, {duration: 0});
-					}
-				});
-
-			} else {
-				$(this).find('.icon').velocity({rotateZ: '360deg', opacity: '0' }, {
-					duration: 500,
-				});
-
-				$searchContainer.velocity( { opacity: '0'}, {
-					delay: 250,
-					duration: 400,
-					complete: function(el) {
-						$searchContainer.toggleClass('search-active search-not-active');
-						$initialContent.velocity( { opacity: '1'}, { duration: 500 } );
-						$searchContainer.find('.search-toggle .icon').css('opacity', '1').velocity({ rotateZ : '0deg' }, {duration: 0});
-					}
-				});
-			}
-		});
 	}; 
 
 
@@ -8966,15 +8862,6 @@ return /******/ (function(modules) { // webpackBootstrap
 					headerScroll = false;
 				}
 			}, 250);
-		}
-
-		if( hasParallax ) {
-			setInterval(function() {
-				if(parallaxScroll) {
-					window.requestAnimationFrame( parallaxUpdate );
-					parallaxScroll = false;
-				}
-			}, 20);
 		}
 	}; 
 
@@ -8997,69 +8884,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 	/**
-	 * Initiate light box modal galleries
-	 */	
-	var modalInit = function() {
-
- 		$('.gallery--modal').lightGallery({
- 			selector: '.gallery__item a', 
- 			download: false, 
- 			showThumbByDefault: false, 
- 			thumbMargin: 10 
- 		}); 
-	};
-
-
-	/**
-	 * Initiate flexslider galleries
-	 */		
-	var sliders = function() {
-
-		$(".flexslider--arrows, .flexslider--dots").each(function(){
-			$(this).flexslider({
-				animation: "slide",
-			    controlNav: $(this).data('controlnav'),
-			    slideshow: $(this).data('slideshow'),
-			    slideshowspeed: $(this).data('duration'),
-			    directionNav: $(this).data('directionnav'),
-			    customDirectionNav: $(this).find(".taproot-slider-navigation a"),
-			    useCSS: false			    
-			});
-		});
-
-		$('.flexslider--thumbs').each(function(){
-		  	var sliderId = "#" + $(this).attr('id');
-		  	var carId = sliderId.replace(/slider/, 'carousel');
-
-		  	// The slider being synced must be initialized first
-			$(carId).flexslider({
-				animation: "slide",
-				controlNav: false,
-				directionNav: true,
-			    customDirectionNav: $( carId + " .taproot-slider-navigation a" ),			
-				animationLoop: false,
-				slideshow: false,
-				itemWidth: 210,
-				itemMargin: 5,
-				minItems: $(this).data('minitems'),
-				maxItems: $(this).data('maxitems'),
-				asNavFor: sliderId,
-			});
-
-			$(sliderId).flexslider({
-				animation: "slide",
-				controlNav: false,
-				directionNav: false,
-				animationLoop: false,
-			    slideshow: $(this).data('slideshow'),
-			    slideshowspeed: $(this).data('duration'),
-			    sync: carId
-			});
-		});
-	};
-
-
-	/**
 	 * Define variables
 	 */
 	var vars = function() {
@@ -9068,14 +8892,12 @@ return /******/ (function(modules) { // webpackBootstrap
  		$wrapper = $body.find( '#wrapper' );
  		$header = $body.find( '#header' );
  		$footer = $body.find( '#footer' );
-		hasParallax = ( $body.find( '.parallax' ).length > 0 ) ? true : false;
  		hasStaticHeader = $body.hasClass('taproot-header-default');
  		hasFixedHeader = $header.hasClass('header--has-fixed');
  		hasFixedFooter = $footer.hasClass('footer--style-fixed');
 		windowHeight = window.innerHeight;
  		scrollRate = 0.25;
 		headerScroll = false;
-		parallaxScroll = false;
 
 		setFixedHeaderType();
 	}; 
@@ -9086,7 +8908,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 	var smoothscroll = function() {
 
-		$('a').click(function() { var href = $.attr(this, 'href'); var targetID = href.substr(href.indexOf("#") + 1); $('html').animate({ scrollTop: $("#" + targetID).offset().top }, 850, function() { window.location.hash = targetID; }); return false; });	};
+		var $root = $('html, body');
+
+		$('a[href*=\\#]').click( function() { 
+
+			var href = $.attr(this, 'href'); 
+			var targetID = href.substr(href.indexOf("#") + 1); 
+
+			$root.animate(
+				{ scrollTop: $("#" + targetID).offset().top }, 
+				850, 
+				function() { window.location.hash = targetID; }
+			); 
+
+			return false; 
+		});
+	};
 
 
 	/**
@@ -9097,7 +8934,6 @@ return /******/ (function(modules) { // webpackBootstrap
 		toggles();
 		intervals();
 		stickyHeaderInit();
-		modalInit();
 		smoothscroll();
 	});
 
@@ -9111,16 +8947,9 @@ return /******/ (function(modules) { // webpackBootstrap
 			fixedHeader();
 		}
 
-		if( hasParallax ) {
-			parallax();
-			parallaxUpdate();
-		}
-
 		if( hasFixedFooter ) {
 			fixedFooter();
 		}
-
-		sliders();	
 
 		svg4everybody();
 	});
@@ -9141,9 +8970,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 		if( $wrapper.hasClass('header-slide-nav') ) {
 			$('#header-menu-toggle').trigger('change');
+			//el.dispatchEvent(new Event('change'));
 		}
 		if( $wrapper.hasClass('navbar-slide-nav') ) {
 			$('#navbar-menu-toggle').trigger('change');
+			//el.dispatchEvent(new Event('change'));
 		}
 
 		// close mobile menus
@@ -9153,11 +8984,6 @@ return /******/ (function(modules) { // webpackBootstrap
 		if( hasFixedFooter ) {
 			fixedFooter();
 		}
-
-		if( hasParallax ) {
-			parallax();
-			parallaxUpdate();
-		}
 	});
 
 
@@ -9166,7 +8992,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */	
 	$(window).on( "scroll", function() {
 		headerScroll = true;
-		parallaxScroll = true;
 	});
 
 }( jQuery ));
