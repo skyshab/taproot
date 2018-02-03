@@ -644,6 +644,28 @@
 
 
 	/**
+	 * Smooth scrolling when clicking anchor links
+	 */
+	var smoothscroll = function() {
+
+		var $root = $('html, body');
+
+		$('a[href*=\\#]').click( function() { 
+
+			var href = $.attr(this, 'href'); 
+			var targetID = href.substr(href.indexOf("#") + 1); 
+
+			$root.animate({ 
+				scrollTop: $("#" + targetID).offset().top 
+			}, 850, function() { 
+				window.location.hash = targetID; }); 
+				return false; 
+			});	
+		};
+	};
+
+
+	/**
 	 * Run on document ready
 	 */
 	$(document).ready(function() {
@@ -652,6 +674,7 @@
 		intervals();
 		stickyHeaderInit();
 		modalInit();
+		smoothscroll();
 	});
 
 
@@ -694,9 +717,11 @@
 
 		if( $wrapper.hasClass('header-slide-nav') ) {
 			$('#header-menu-toggle').trigger('change');
+			//el.dispatchEvent(new Event('change'));
 		}
 		if( $wrapper.hasClass('navbar-slide-nav') ) {
 			$('#navbar-menu-toggle').trigger('change');
+			//el.dispatchEvent(new Event('change'));
 		}
 
 		// close mobile menus

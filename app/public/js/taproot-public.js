@@ -1304,8 +1304,8 @@ return /******/ (function(modules) { // webpackBootstrap
 		function generateBezier(mX1, mY1, mX2, mY2) {
 			var NEWTON_ITERATIONS = 4,
 					NEWTON_MIN_SLOPE = 0.001,
-					SUBTAPROOT_PRECISION = 0.0000001,
-					SUBTAPROOT_MAX_ITERATIONS = 10,
+					SUBDIVISION_PRECISION = 0.0000001,
+					SUBDIVISION_MAX_ITERATIONS = 10,
 					kSplineTableSize = 11,
 					kSampleStepSize = 1.0 / (kSplineTableSize - 1.0),
 					float32ArraySupported = "Float32Array" in window;
@@ -1380,7 +1380,7 @@ return /******/ (function(modules) { // webpackBootstrap
 					} else {
 						aA = currentT;
 					}
-				} while (Math.abs(currentX) > SUBTAPROOT_PRECISION && ++i < SUBTAPROOT_MAX_ITERATIONS);
+				} while (Math.abs(currentX) > SUBDIVISION_PRECISION && ++i < SUBDIVISION_MAX_ITERATIONS);
 
 				return currentT;
 			}
@@ -8438,14 +8438,12 @@ return /******/ (function(modules) { // webpackBootstrap
 });
 /**
  * Taproot Front End Functionality
-**/
-
+ */
 ( function($) {
 
 	/**
 	 * Variables available to our methods
-	**/
-
+	 */
 	var $body,
 		$wrapper,
 		$header,
@@ -8464,8 +8462,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Parallax
-	**/
-
+	 */
 	var parallax = function() {
 
 		$('.parallax').each(function() {
@@ -8504,8 +8501,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Update Parallax
-	**/
-
+	 */
 	var parallaxUpdate = function() {
 
 		$.each(parallaxImages, function(index, parallax) {
@@ -8528,8 +8524,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Fixed Header Functionality
-	**/
-
+	 */
 	 var fixedHeader = function() {
 
  		if( $body.outerWidth() < 981 ) { return; }
@@ -8589,8 +8584,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Sticky Header Init
-	**/
-
+	 */
 	 var stickyHeaderInit = function() {
 
 		 if( hasFixedHeader && fixedHeaderType === 'sticky' ) {
@@ -8609,8 +8603,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Fixed Footer
-	**/
-
+	 */
 	var fixedFooter = function() {
 
 		var	footerHeight = $footer.outerHeight(true),
@@ -8643,8 +8636,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Initialize search and menu toggles
-	**/
-
+	 */
 	var toggles = function() {
 
 		// header nav menu toggle actions
@@ -8964,8 +8956,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Scroll actions
-	**/
-
+	 */
 	var intervals = function() {
 
 		if( hasFixedHeader ) {
@@ -8988,7 +8979,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	}; 
 
 
-	// define header type
+	/**
+	 * Define header type
+	 */	
 	var setFixedHeaderType = function() {
 
 		if( $header.hasClass( 'header--has-fixed--sticky' ) ) {
@@ -9003,7 +8996,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-	// initiate light box modal galleries
+	/**
+	 * Initiate light box modal galleries
+	 */	
 	var modalInit = function() {
 
  		$('.gallery--modal').lightGallery({
@@ -9015,7 +9010,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-	// initiate flexslider galleries
+	/**
+	 * Initiate flexslider galleries
+	 */		
 	var sliders = function() {
 
 		$(".flexslider--arrows, .flexslider--dots").each(function(){
@@ -9064,8 +9061,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Define variables
-	**/
-
+	 */
 	var vars = function() {
 
 		$body = $('body');
@@ -9086,22 +9082,29 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 	/**
-	 * Run on document ready
-	**/
+	 * Smooth scrolling when clicking anchor links
+	 */
+	var smoothscroll = function() {
 
+		$('a').click(function() { var href = $.attr(this, 'href'); var targetID = href.substr(href.indexOf("#") + 1); $('html').animate({ scrollTop: $("#" + targetID).offset().top }, 850, function() { window.location.hash = targetID; }); return false; });	};
+
+
+	/**
+	 * Run on document ready
+	 */
 	$(document).ready(function() {
 		vars();
 		toggles();
 		intervals();
 		stickyHeaderInit();
 		modalInit();
+		smoothscroll();
 	});
 
 
 	/**
 	 * Run on window load
-	**/
-
+	 */
 	$(window).load(function() {
 
 		if( hasFixedHeader ) {
@@ -9125,8 +9128,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Run on window resize
-	**/
-
+	 */
 	$(window).on( "resize", function() {
 
 		windowHeight = window.innerHeight;
@@ -9161,8 +9163,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Run on window scroll
-	**/	
-
+	 */	
 	$(window).on( "scroll", function() {
 		headerScroll = true;
 		parallaxScroll = true;
