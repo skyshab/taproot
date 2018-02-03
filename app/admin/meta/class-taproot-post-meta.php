@@ -73,13 +73,32 @@ if( !class_exists( 'Taproot_Post_Meta' ) )
 
 
 		/**
+		 * Get Taproot Metabox Post Types
+		 *
+	 	 * @since 0.8.0
+	 	 * @return array - Returns array of post types
+		 */
+		public function get_taproot_metabox_post_types()
+		{
+		    return  apply_filters( 'taproot_metabox_post_types', array( "post", "page" ) );		    
+		}
+
+
+		/**
 		 * Create Taproot Settings metabox
 		 *
 	 	 * @since 0.8.0
 		 */
 		public function add_meta_boxes()
 		{
-		    add_meta_box( "taproot_settings_metabox", "Taproot Settings", array( $this, "taproot_settings_markup" ), "post", "side", "high", null);
+		    add_meta_box( "taproot_settings_metabox", 
+		    	"Taproot Settings", 
+		    	array( $this, "taproot_settings_markup" ), 
+		    	$this->get_taproot_metabox_post_types(), 
+		    	"side", 
+		    	"high", 
+		    	null
+		    );
 		}
 
 
@@ -131,16 +150,19 @@ if( !class_exists( 'Taproot_Post_Meta' ) )
 	        	$single_sidebar_options
 	        ); 
 
-		    // post template setting
-	        $metabox .= $this->build_select( $post->ID, 
-	        	'taproot_post_template', 
-	        	esc_html__('Template', 'taproot'), 
-	        	array(
-		            'default' => esc_html__( 'Default Template', 'taproot' ),
-		            'builder' => esc_html__( 'Builder Template', 'taproot' ),
-		            'blank' => esc_html__( 'Blank Template', 'taproot' ),
-	            ) 
-	        ); 
+	        if( "post" === $post->post_type )
+	        {
+			    // post template setting
+		        $metabox .= $this->build_select( $post->ID, 
+		        	'taproot_post_template', 
+		        	esc_html__('Template', 'taproot'), 
+		        	array(
+			            'default' => esc_html__( 'Default Template', 'taproot' ),
+			            'builder' => esc_html__( 'Builder Template', 'taproot' ),
+			            'blank' => esc_html__( 'Blank Template', 'taproot' ),
+		            ) 
+		        ); 	        	
+	        }
 
 		    // post template setting
 	        $metabox .= $this->build_select( $post->ID, 
@@ -185,14 +207,16 @@ if( !class_exists( 'Taproot_Post_Meta' ) )
 		    if( defined( "DOING_AUTOSAVE" ) && DOING_AUTOSAVE )
 		        return $post_id;
 
-		    $slug = "post";
-
-		    if( $slug != $post->post_type )
+		    if( !in_array( $post->post_type, $this->get_taproot_metabox_post_types() )  )
 		        return $post_id;
 
 		    $this->update_setting( 'taproot_single_layout', $post_id );
 		    $this->update_setting( 'taproot_single_sidebar', $post_id );
-		    $this->update_setting( 'taproot_post_template', $post_id );
+
+		   	if( "post" === $post->post_type )
+	        {
+		    	$this->update_setting( 'taproot_post_template', $post_id );
+		    }
 		    $this->update_setting( 'taproot_post_title', $post_id );	    
 		    $this->update_setting( 'taproot_enable_header_overlay', $post_id );
 		}
