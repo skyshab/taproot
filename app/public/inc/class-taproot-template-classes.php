@@ -149,6 +149,11 @@ if( !class_exists( 'Taproot_Template_Classes' ) )
 	            $classes[] = 'header--fullwidth';
 	        }
 
+	        if(	$this->get_post_meta( 'taproot_enable_header_overlay' ) )
+	        {
+	            $classes[] = 'header--hero--overlay';
+	        }	        
+
 	        return $classes;
 	    }
 
