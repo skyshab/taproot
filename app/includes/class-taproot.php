@@ -127,7 +127,7 @@ class Taproot
 		 */
 		require_once TAPROOT_ADMIN . '/class-taproot-admin.php';
 
-		$taproot_admin = new Taproot_Admin( $this->loader );
+		$taproot_admin = new Taproot_Admin( $this->rootstrap, $this->loader );
 	}
 
 
