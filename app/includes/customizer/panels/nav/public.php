@@ -14,7 +14,7 @@ $styles->set_style( array(
     'selector' => '.taproot-nav.top-nav',
     'styles' => array(
         'background: %s;' => get_theme_mod( 'taproot_topnav_background' ),
-        'font-family: "%s";' => taproot_get_font_family( get_theme_mod( 'taproot_topnav_font' ) ),
+        'font-family: %s;' => taproot_get_font_family( get_theme_mod( 'taproot_topnav_font' ) ),
         'font-size: %spx;' => get_theme_mod( 'taproot_topnav_font_size' ),
     ),
 ));
@@ -98,7 +98,7 @@ $styles->set_style( array(
 $styles->set_style( array(
     'selector' => '.header-nav',
     'styles' => array(
-        'font-family: "%s";' => taproot_get_font_family( get_theme_mod( 'taproot_header_nav_font' ) ),
+        'font-family: %s;' => taproot_get_font_family( get_theme_mod( 'taproot_header_nav_font' ) ),
         'font-size: %spx;' => get_theme_mod( 'taproot_header_nav_font_size' ),
     ),
 ));
@@ -342,7 +342,7 @@ $styles->set_style( array(
     'selector' => '.taproot-nav.navbar',
     'styles' => array(
         'background: %s;' => get_theme_mod( 'taproot_navbar_background' ),
-        'font-family: "%s";' => taproot_get_font_family( get_theme_mod( 'taproot_navbar_font' ) ),
+        'font-family: %s;' => taproot_get_font_family( get_theme_mod( 'taproot_navbar_font' ) ),
         'font-size: %spx;' => get_theme_mod( 'taproot_navbar_font_size' ),
     ),
 ));
@@ -514,7 +514,7 @@ $styles->set_style( array(
     'selector' => '.footer-nav',
     'styles' => array(
          'background: %s;' => get_theme_mod( 'taproot_footer_nav_background' ),
-         'font-family: "%s";' => taproot_get_font_family( get_theme_mod( 'taproot_footer_nav_font' ) ),
+         'font-family: %s;' => taproot_get_font_family( get_theme_mod( 'taproot_footer_nav_font' ) ),
      ),
 ));
 

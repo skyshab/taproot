@@ -10,7 +10,7 @@
 $styles->set_style( array(
     'selector' => 'body',
     'styles' => array(
-        'font-family: "%s";' => taproot_get_font_family( get_theme_mod( 'taproot_body_font' ) ),
+        'font-family: %s;' => taproot_get_font_family( get_theme_mod( 'taproot_body_font' ) ),
         'color: %s;' => get_theme_mod( 'taproot_text_color' ),
     ),
 ));
@@ -36,7 +36,7 @@ $styles->set_style( array(
 $styles->set_style( array(
     'selector' => 'h1, h2, h3, h4, h5, h6',
     'styles' => array(
-        'font-family: "%s";' => taproot_get_font_family( get_theme_mod( 'taproot_heading_font' ) ),
+        'font-family: %s;' => taproot_get_font_family( get_theme_mod( 'taproot_heading_font' ) ),
         'color: %s;' => get_theme_mod( 'taproot_heading_color' ),
         'line-height: %s;' => get_theme_mod( 'taproot_heading_line_height' ),
         taproot_get_font_styles( get_theme_mod( 'taproot_heading_font_style' ) ) => 'echo',
@@ -49,7 +49,7 @@ $post_title_line_height = get_theme_mod( 'taproot_title_line_height', 1.2 );
 $styles->set_style( array(
     'selector' => '.post-title',
     'styles' => array(
-        'font-family: "%s";' => taproot_get_font_family( get_theme_mod( 'taproot_post_title_font' ) ),
+        'font-family: %s;' => taproot_get_font_family( get_theme_mod( 'taproot_post_title_font' ) ),
         'color: %s;' => get_theme_mod( 'taproot_post_title_color' ),
         'line-height: %s;' => $post_title_line_height,
         'margin-top: -%sem;' => ( ( intval( $post_title_line_height ) - 1 ) / 2 ),

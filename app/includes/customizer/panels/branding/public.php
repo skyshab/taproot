@@ -11,7 +11,7 @@ $styles->set_style( array(
     'selector' => '.site-title',
     'styles' => array(
          'color: %s;' => get_theme_mod( 'taproot_title_font_color' ),
-         'font-family: "%s";' => taproot_get_font_family( get_theme_mod( 'taproot_site_title_font' ) ),
+         'font-family: %s;' => taproot_get_font_family( get_theme_mod( 'taproot_site_title_font' ) ),
          taproot_get_font_styles( get_theme_mod( 'taproot_site_title_font_style' ) ) => 'echo',
      ),
 ));
@@ -21,7 +21,7 @@ $styles->set_style( array(
     'selector' => '.site-description',
     'styles' => array(
          'color: %s;' => get_theme_mod( 'taproot_tagline_font_color' ),
-         'font-family: "%s";' => taproot_get_font_family( get_theme_mod( 'taproot_site_tagline_font' ) ),
+         'font-family: %s;' => taproot_get_font_family( get_theme_mod( 'taproot_site_tagline_font' ) ),
          taproot_get_font_styles( get_theme_mod( 'taproot_tagline_font_style' ) ) => 'echo',
      ),
 ));
