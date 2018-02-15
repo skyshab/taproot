@@ -29,7 +29,7 @@ if( !defined( 'WPINC' ) ) die;
 	 * @since 0.8.0
 	 * @var string
 	 */
-	define( 'TAPROOT_CURRENT_VERSION', '0.9.2' );
+	define( 'TAPROOT_CURRENT_VERSION', '0.9.3' );
 
 	/**
 	 * Stores the theme author name
@@ -126,6 +126,34 @@ if( !defined( 'WPINC' ) ) die;
 	 * @var string
 	 */	
 	define( 'TAPROOT_LIBRARY_URI', TAPROOT_APP_URI . 'library' );
+
+
+	/**
+	 * The code that runs during theme activation.
+	 * This action is documented in includes/class-taproot-activator.php
+	 * 
+	 * @since 0.9.3
+	 */
+	function activate_taproot() {
+		require_once TAPROOT_INCLUDES . '/class-taproot-activator.php';
+		Taproot_Activator::activate();
+	}
+
+	register_activation_hook( __FILE__, 'activate_taproot' );
+
+
+	/**
+	 * The code that runs during theme deactivation.
+	 * This action is documented in includes/class-taproot-deactivator.php
+	 * 
+	 * @since 0.9.3
+	 */
+	function deactivate_taproot() {
+		require_once TAPROOT_INCLUDES . '/class-taproot-deactivator.php';
+		Taproot_Deactivator::deactivate();
+	}
+	
+	register_deactivation_hook( __FILE__, 'deactivate_taproot' );
 
 
 /**

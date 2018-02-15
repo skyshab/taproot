@@ -62,3 +62,12 @@ GNU General Public License for more details.
 * 12/30/17
 * Bug Fixes - fixed various issues with customizer settings.
 * Defaults - updated default customizer settings. 
+
+
+= 0.9.3 =
+* 02/15/18
+* Bug Fixes - fixed various issues with customizer settings.
+* Child Theme CSS - CSS no longer loaded automatically. 
+* System Fonts - Added options for system fonts in customizer. 
+* Image Sizes - Set the image sizes in WP settings upon theme activation.
+* Clean up - Removed code that was moved to pro plugin.

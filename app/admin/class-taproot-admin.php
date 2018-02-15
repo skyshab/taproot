@@ -23,6 +23,14 @@ if( !class_exists( 'Taproot_Admin' ) )
 		 */			
 		public $loader;
 
+		/** 
+		 * Stores the rootstrap object
+		 *
+		 * @since 0.9.3
+		 * @var object
+		 */			
+		public $rootstrap;
+
 
 		/**
 		 * Initialize the class define actions.
@@ -30,8 +38,9 @@ if( !class_exists( 'Taproot_Admin' ) )
 	 	 * @since 0.8.0
 	 	 * @param object $loader
 		 */
-		public function __construct( $loader )
+		public function __construct( $rootstrap, $loader )
 		{ 
+			$this->rootstrap = $rootstrap;
 			$this->loader = $loader;
 			$this->actions();
 		}
@@ -61,6 +70,60 @@ if( !class_exists( 'Taproot_Admin' ) )
 
 			// Register setting to disable comments on pages
 			$this->loader->add_filter( 'admin_init', $this , 'comments_register_fields_filter' );
+
+			// setup image sizes after theme activation
+			$this->loader->add_action( 'after_switch_theme', $this, 'image_size_init', 100 );
+			
+		}
+
+
+		/**
+		 * Set the standard image sizes upon theme activation
+		 *
+	 	 * @since 0.9.3
+		 */
+		public function image_size_init()
+		{
+			$rootstrap = $this->rootstrap;
+			$thumb = $rootstrap->get_image_size_array('thumbnail');
+			$medium = $rootstrap->get_image_size_array('medium');
+			$large = $rootstrap->get_image_size_array('large');
+
+            if( $thumb )
+            {
+            	if( isset( $thumb['width'] ) )
+                	update_option( 'thumbnail_size_w', $thumb['width'] );
+
+            	if( isset( $thumb['height'] ) )
+                	update_option( 'thumbnail_size_h', $thumb['height'] );
+
+                if( isset( $thumb['crop'] ) )
+                	update_option( 'thumbnail_crop', $thumb['crop'] );  
+            }
+
+            if( $medium )
+            {
+            	if( isset( $medium['width'] ) )
+                	update_option( 'medium_size_w', $medium['width'] );
+
+            	if( isset( $medium['height'] ) )
+                	update_option( 'medium_size_h', $medium['height'] );
+
+                if( isset( $medium['crop'] ) )
+                	update_option( 'medium_crop', $medium['crop'] );  
+            }
+
+            if( $large )
+            {
+            	if( isset( $large['width'] ) )
+                	update_option( 'large_size_w', $large['width'] );
+
+            	if( isset( $large['height'] ) )
+                	update_option( 'large_size_h', $large['height'] );
+
+                if( isset( $large['crop'] ) )
+                	update_option( 'large_crop', $large['crop'] );  
+            }            
 		}
 
 

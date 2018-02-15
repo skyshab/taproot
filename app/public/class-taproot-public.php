@@ -314,12 +314,7 @@ if( !class_exists( 'Taproot_Public' ) )
 			}
 
 			// load base stylesheets
-	    	wp_enqueue_style( 'public-styles', get_template_directory_uri() . '/app/public/css/taproot-public.min.css', array(), TAPROOT_CURRENT_VERSION, 'all' );
-
-			if( is_child_theme() )
-			{
-				wp_enqueue_style( 'child-styles', get_stylesheet_directory_uri() . '/style.css', array(), TAPROOT_CURRENT_VERSION, 'all' );
-			}			
+	    	wp_enqueue_style( 'public-styles', get_template_directory_uri() . '/app/public/css/taproot-public.min.css', array(), TAPROOT_CURRENT_VERSION, 'all' );			
 		}
 
 

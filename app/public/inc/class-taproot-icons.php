@@ -69,7 +69,7 @@ if( !class_exists( 'Taproot_Icons' ) )
 		 */
 		private function svg_init() 
 		{
-			$child_theme_file = '/theme-icons.svg';
+			$child_theme_file = '/images/theme-icons.svg';
 			$child_theme_path = get_stylesheet_directory() . $child_theme_file;
 			$child_theme_url = get_stylesheet_directory_uri() . $child_theme_file;
 
@@ -102,16 +102,16 @@ if( !class_exists( 'Taproot_Icons' ) )
 			$aria_hidden = '';
 
 			if( true === $args['aria_hidden'] ) 
-				$aria_hidden = ' aria-hidden="true"';
+				$aria_hidden = 'true';
 
 			// Set ARIA.
 			$aria_labelledby = '';
 
 			if( $args['title'] && $args['desc'] ) 
-				$aria_labelledby = ' aria-labelledby="title desc"';
+				$aria_labelledby = 'title desc';
 
 			// Begin SVG markup.
-			$svg = sprintf( '<svg class="taproot-icon taproot-icon--%s %s" role="img" %s %s>', esc_attr( $args['icon'] ), esc_attr( $args['class'] ), esc_attr( $aria_hidden ), esc_attr( $aria_labelledby ) );
+			$svg = sprintf( '<svg class="taproot-icon taproot-icon--%s %s" role="presentation" aria-hidden="%s" aria-labelledby="%s" alt="">', esc_attr( $args['icon'] ), esc_attr( $args['class'] ), esc_attr( $aria_hidden ), esc_attr( $aria_labelledby ) );
 
 			// If there is a title, display it.
 			if( $args['title'] ) 

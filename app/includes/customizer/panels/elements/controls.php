@@ -307,16 +307,21 @@ $wp_customize->add_panel( 'taproot_elements', array(
             'transport' => 'postMessage',
         ));
 
+        $taproot_breadcrumbs_location_choices = array(
+            'content' => esc_html__( 'Inside Content', 'taproot' ),                
+            'top-bar' => esc_html__( 'Inside Top Bar', 'taproot' ),
+            'hide' => esc_html__( "Don't Show", 'taproot' ),
+        );
+
+        // if pro, add option for hero area
+        if( is_taproot_pro() ) 
+            $taproot_breadcrumbs_location_choices['hero'] = esc_html__( 'Hero Overlay', 'taproot' );
+
         $wp_customize->add_control( 'taproot_breadcrumbs_location', array(
             'type' => 'select',
             'section' => 'taproot_breadcrumbs',
             'label' => esc_html__( 'Breadcrumbs Location', 'taproot' ),
-            'choices' => array(
-                'content' => esc_html__( 'Inside Content', 'taproot' ),                
-                'top-bar' => esc_html__( 'Inside Top Bar', 'taproot' ),
-                'hero' => esc_html__( 'Hero Overlay', 'taproot' ),                
-                'hide' => esc_html__( "Don't Show", 'taproot' ),
-            ),
+            'choices' => $taproot_breadcrumbs_location_choices,
         ));
 
 

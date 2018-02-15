@@ -85,7 +85,7 @@ function taproot_get_post_thumbnail_size()
     }
     else
     {
-        $featured_image_size = get_theme_mod( 'taproot_post_box_featured_image_size' );
+        $featured_image_size = rootstrap_post_meta( 'taproot_post_box_featured_image_size', get_theme_mod( 'taproot_post_box_featured_image_size' ) );
 
         if( $featured_image_size )
         {

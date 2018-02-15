@@ -104,7 +104,7 @@ if( !class_exists( 'Taproot_Template_Classes' ) )
 			}
 			else
 			{
-				$post_box_image_size = get_theme_mod( 'taproot_post_box_featured_image_size' );	
+				$post_box_image_size = taproot_get_post_thumbnail_size();	
 
 				if( $post_box_image_size )
 				{
@@ -148,6 +148,11 @@ if( !class_exists( 'Taproot_Template_Classes' ) )
 	        {
 	            $classes[] = 'header--fullwidth';
 	        }
+
+	        if(	$this->get_post_meta( 'taproot_enable_header_overlay' ) )
+	        {
+	            $classes[] = 'header--hero--overlay';
+	        }	        
 
 	        return $classes;
 	    }
@@ -526,7 +531,7 @@ if( !class_exists( 'Taproot_Template_Classes' ) )
 		    }
 		    else
 		    {
-		        $featured_image_size = get_theme_mod( 'taproot_post_box_featured_image_size' );
+		        $featured_image_size = taproot_get_post_thumbnail_size();
 
 		        if( $featured_image_size && 'large' !== $featured_image_size )
 		        {

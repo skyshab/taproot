@@ -15,7 +15,7 @@ $styles->set_style( array(
          'border-color: %s;' => get_theme_mod( 'taproot_button_border_color'),
          'border-radius: %sem;' => get_theme_mod( 'taproot_button_border_radius'),
          'border-width: %spx;' => get_theme_mod( 'taproot_button_border_width'),
-         'font-family: "%s";' => taproot_get_font_family( get_theme_mod( 'taproot_button_font' ) ),
+         'font-family: %s;' => taproot_get_font_family( get_theme_mod( 'taproot_button_font' ) ),
      ),
 ));
 
@@ -50,7 +50,7 @@ $styles->set_style( array(
         'border-radius: %sem;' => get_theme_mod( 'taproot_secondary_button_border_radius'),
         'border-width: %spx;' => get_theme_mod( 'taproot_secondary_button_border_width'),
         taproot_get_font_styles( get_theme_mod( 'taproot_secondary_button_font_style' ) ) => 'echo',
-        'font-family: "%s";' => taproot_get_font_family( get_theme_mod( 'taproot_secondary_button_font' ) ),
+        'font-family: %s;' => taproot_get_font_family( get_theme_mod( 'taproot_secondary_button_font' ) ),
      ),
 ));
 

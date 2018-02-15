@@ -193,8 +193,8 @@ class WP_Rootstrap
         add_action( 'customize_preview_init', array( $this, 'customize_preview_init' ), 10 );
         add_filter( 'customize_previewable_devices', array( $this, 'customize_previewable_devices' ) );
         add_action( 'customize_controls_print_styles', array( $this, 'customize_controls_print_styles' ) );    
-        add_action( 'after_setup_theme', array( $this, 'register_images' ) );    
-        add_action( 'image_size_names_choose', array( $this, 'image_size_names_choose' ) ); 
+        add_action( 'after_setup_theme', array( $this, 'register_images' ), 500 );    
+        add_action( 'image_size_names_choose', array( $this, 'image_size_names_choose' ), 500 ); 
 
         // apply customizer output filters for defaults 
         add_action( 'wp', array( $this, 'customizer_default_filters' ), 100 );  
@@ -280,6 +280,32 @@ class WP_Rootstrap
 
 
     /**
+     * Get Registered Image Sizes
+     * 
+     * @since 0.9.3
+     * @return array - Returns array of image size data
+     */
+    public function get_registered_images()
+    {
+        return $this->images;
+    }
+
+
+    /**
+     * Get Registered Image Sizes
+     * 
+     * @since 0.9.3
+     * @return array - Returns array of image size data
+     */
+    public function get_image_size_array( $name = false )
+    {
+        $sizes = $this->images;
+        
+        return ( isset( $sizes[$name] ) ) ? $sizes[$name] : false;
+    }
+
+
+    /**
      * Register Image Sizes
      * 
      * @since 0.8.0
@@ -293,8 +319,9 @@ class WP_Rootstrap
             $height = ( isset( $args['height'] ) ) ? $args['height'] : 0;
             $crop = ( isset( $args['crop'] ) ) ? $args['crop'] : 0;
 
-            add_image_size( $image, $width, $height, $crop );
-        }
+            add_image_size( $image, $width, $height, $crop );                
+
+        } // end foreach
     }
 
 

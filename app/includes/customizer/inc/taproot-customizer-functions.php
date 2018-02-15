@@ -465,15 +465,29 @@
      */
     function taproot_get_font_choices()
     {
-        $font_code = get_theme_mod( 'taproot_google_fonts', rootstrap_get_default('taproot_google_fonts') );
+        $default_system_fonts = array(
+             '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif' => 'System Sans-Serif',
+            '"Apple Garamond", "Baskerville", "Times New Roman", "Droid Serif", "Times","Source Serif Pro", serif' => 'System Serif',
+            '"SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace' => 'System Monospace',
+        );
+
+        $system_font_stacks = apply_filters( 'taproot_system_fonts', $default_system_fonts );
+
+        $font_code = get_theme_mod( 'taproot_google_fonts' );
         $fonts = explode("|", $font_code);
         $font_choices = array('default' => 'Default');
+
         foreach( $fonts as $font )
         {
+            if( '' === $font ) continue;
+
             $font_id = strstr($font, ':', true) ?: $font;
             $font_name = str_replace( '+', ' ', $font_id );
             $font_choices[$font_name] = $font_name;
         }
+
+        // combine system font stacks with web fonts
+        $font_choices = array_merge( $font_choices, $system_font_stacks );
 
         return $font_choices;
     }
@@ -493,9 +507,13 @@
         {
             return false;
         }
-        else
+        elseif( strpos( $font, '"') !== false )
         {
             return $font;
+        }
+        else
+        {
+            return sprintf( '"%s"', $font );            
         }
     }
 
@@ -545,5 +563,5 @@
      */  
     function taproot_bottom_bar_default_content()
     {
-        return esc_html__( '&#169;2017, My Awesome Site', 'taproot' );
+        return esc_html__( '&#169;2018, My Awesome Site', 'taproot' );
     }    

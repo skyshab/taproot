@@ -1177,7 +1177,7 @@ if( !class_exists( 'Taproot_Template_Parts' ) )
 				'footer-4' => 'Footer Sidebar 4'
 			);
 
-			return $footer_sidebars;
+			return apply_filters( 'taproot_footer_sidebars', $footer_sidebars );
 		}
 
 
