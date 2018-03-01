@@ -1,6 +1,6 @@
 # Taproot WordPress Theme
 
-Taproot is a WordPress theme that compliments page builder plugins such as Elementor, Beaver Builder or Divi. 
+Taproot is a mutipurpose WordPress theme that can be used alone or to compliment page builder plugins such as Elementor, Beaver Builder or Divi. 
 
 ## Installation
 
@@ -25,7 +25,6 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
-
 
 ##  Changelog 
 
@@ -63,7 +62,6 @@ GNU General Public License for more details.
 * Bug Fixes - fixed various issues with customizer settings.
 * Defaults - updated default customizer settings. 
 
-
 = 0.9.3 =
 * 02/15/18
 * Bug Fixes - fixed various issues with customizer settings.
@@ -71,3 +69,9 @@ GNU General Public License for more details.
 * System Fonts - Added options for system fonts in customizer. 
 * Image Sizes - Set the image sizes in WP settings upon theme activation.
 * Clean up - Removed code that was moved to pro plugin.
+
+= 0.9.4 =
+* 03/01/18
+* Bug Fixes and code refactoring based on Theme Review feedback.
+* Image Sizes - Removed custom image dimensions for default image sizes.
+* Image Sizes - Adjusted image CSS for new size dimensions. 
