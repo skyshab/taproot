@@ -66,64 +66,7 @@ if( !class_exists( 'Taproot_Admin' ) )
 			$this->loader->add_action( 'after_setup_theme', $this, 'theme_support', 100 );
 
 			// register post meta
-			$this->loader->add_action( 'init', $this, 'post_meta' );	
-
-			// Register setting to disable comments on pages
-			$this->loader->add_filter( 'admin_init', $this , 'comments_register_fields_filter' );
-
-			// setup image sizes after theme activation
-			$this->loader->add_action( 'after_switch_theme', $this, 'image_size_init', 100 );
-			
-		}
-
-
-		/**
-		 * Set the standard image sizes upon theme activation
-		 *
-	 	 * @since 0.9.3
-		 */
-		public function image_size_init()
-		{
-			$rootstrap = $this->rootstrap;
-			$thumb = $rootstrap->get_image_size_array('thumbnail');
-			$medium = $rootstrap->get_image_size_array('medium');
-			$large = $rootstrap->get_image_size_array('large');
-
-            if( $thumb )
-            {
-            	if( isset( $thumb['width'] ) )
-                	update_option( 'thumbnail_size_w', $thumb['width'] );
-
-            	if( isset( $thumb['height'] ) )
-                	update_option( 'thumbnail_size_h', $thumb['height'] );
-
-                if( isset( $thumb['crop'] ) )
-                	update_option( 'thumbnail_crop', $thumb['crop'] );  
-            }
-
-            if( $medium )
-            {
-            	if( isset( $medium['width'] ) )
-                	update_option( 'medium_size_w', $medium['width'] );
-
-            	if( isset( $medium['height'] ) )
-                	update_option( 'medium_size_h', $medium['height'] );
-
-                if( isset( $medium['crop'] ) )
-                	update_option( 'medium_crop', $medium['crop'] );  
-            }
-
-            if( $large )
-            {
-            	if( isset( $large['width'] ) )
-                	update_option( 'large_size_w', $large['width'] );
-
-            	if( isset( $large['height'] ) )
-                	update_option( 'large_size_h', $large['height'] );
-
-                if( isset( $large['crop'] ) )
-                	update_option( 'large_crop', $large['crop'] );  
-            }            
+			$this->loader->add_action( 'init', $this, 'post_meta' );			
 		}
 
 
@@ -240,31 +183,6 @@ if( !class_exists( 'Taproot_Admin' ) )
 			// instantiate the class		
 			$taproot_post_meta = new Taproot_Post_Meta();
 		}
-
-
-	    /**
-	     * Register comments post types.
-		 *
-	 	 * @since 0.8.0
-		 */	    
-	    public function comments_register_fields_filter() 
-	    {
-	        register_setting( 'discussion', 'taproot_disable_comments_pages', 'esc_attr' );
-	        add_settings_field('disable_comments_pages', esc_html__( 'Comments Post Types', 'taproot' ), array( $this, 'comments_fields_fields_html' ) , 'discussion' );
-	    }
-
-
-	    /**
-	     * Print the comments post types field markup.
-		 *
-	 	 * @since 0.8.0
-		 */	 	    
-	    public function comments_fields_html() 
-	    {
-	        $disable_comments_pages = get_option( 'taproot_disable_comments_pages' );
-
-	        printf( "<label for='taproot_disable_comments_pages'><input name='taproot_disable_comments_pages' type='checkbox' id='taproot_disable_comments_pages' value='1' %s> Disable comments on pages </label>", esc_attr( checked( $disable_comments_pages, 1, false ) ) );
-	    }
 
 	} // end class Taproot_Admin()
 

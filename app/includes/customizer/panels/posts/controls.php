@@ -157,9 +157,9 @@ $wp_customize->add_panel( 'taproot_posts', array(
             'section' => 'taproot_post_box',
             'label' => esc_html__( 'Default Thumbnail Size', 'taproot' ),
             'choices' => array(
-                'tiny' => esc_html__( 'Tiny', 'taproot' ), 
+                'taproot-tiny' => esc_html__( 'Tiny', 'taproot' ), 
                 'thumbnail' => esc_html__( 'Thumbnail', 'taproot' ),
-                'small' => esc_html__( 'Small', 'taproot' ),
+                'taproot-small' => esc_html__( 'Small', 'taproot' ),
                 'medium' => esc_html__( 'Medium', 'taproot' ),
                 'large' => esc_html__( 'Large', 'taproot' ),
                 'full' => esc_html__( 'Full', 'taproot' ),
@@ -379,9 +379,9 @@ $wp_customize->add_panel( 'taproot_posts', array(
             'full' => esc_html__( 'Full Size', 'taproot' ),
             'large' => esc_html__( 'Large', 'taproot' ),
             'medium' => esc_html__( 'Medium', 'taproot' ),
-            'small' => esc_html__( 'Small', 'taproot' ),
+            'taproot-small' => esc_html__( 'Small', 'taproot' ),
             'thumbnail' => esc_html__( 'Thumbnail', 'taproot' ),
-            'tiny' => esc_html__( 'Tiny', 'taproot' ),                
+            'taproot-tiny' => esc_html__( 'Tiny', 'taproot' ),                
         ),     
     ));
 

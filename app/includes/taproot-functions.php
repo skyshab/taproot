@@ -165,11 +165,19 @@ function taproot_pagination()
             'next_text' => do_taproot_icon('paginate_next'),
         );
 
-        printf( '<div class="taproot-pagenavi"><span class="pages">Page %s of %s</span>%s</div>', 
-            esc_html( $current ), 
-            esc_html( $total ), 
-            paginate_links( $pagenavi_args ) 
-        );        
+        $pagenavi_content = sprintf( __( 'Page %1$s of %2$s', 'taproot'),  $current, $total );
+
+        // printf( '<div class="taproot-pagenavi"><span class="pages">%s</span>%s</div>', 
+        //     esc_html( $pagenavi_content ), 
+        //     paginate_links( $pagenavi_args ) 
+        // );  
+
+        // or 
+
+        printf( '<div class="taproot-pagenavi"><span class="pages">%s</span>%s</div>', 
+            esc_html( $pagenavi_content ), 
+            get_the_posts_pagination( $pagenavi_args ) 
+        );  
     }
 }
 

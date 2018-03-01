@@ -245,9 +245,9 @@ if( !class_exists( 'Taproot_Post_Meta' ) )
 				    'full' => esc_html__( 'Full Size', 'taproot' ),
 				    'large' => esc_html__( 'Large', 'taproot' ),
 				    'medium' => esc_html__( 'Medium', 'taproot' ),
-				    'small' => esc_html__( 'Small', 'taproot' ),
+				    'taproot-small' => esc_html__( 'Small', 'taproot' ),
 				    'thumbnail' => esc_html__( 'Thumbnail', 'taproot' ),
-				    'tiny' => esc_html__( 'Tiny', 'taproot' ), 
+				    'taproot-tiny' => esc_html__( 'Tiny', 'taproot' ), 
 	            ) 
 	        ); 
 
@@ -281,9 +281,9 @@ if( !class_exists( 'Taproot_Post_Meta' ) )
 	        	esc_html__('Post Box Image Size', 'taproot'), 
 	        	array(
 		            'default' => esc_html__( 'Default', 'taproot' ),
-				    'tiny' =>  esc_html__( 'Tiny', 'taproot' ),                                
+				    'taproot-tiny' =>  esc_html__( 'Tiny', 'taproot' ),                                
 				    'thumbnail' => esc_html__( 'Thumbnail', 'taproot' ),
-				    'small' => esc_html__( 'Small', 'taproot' ),
+				    'taproot-small' => esc_html__( 'Small', 'taproot' ),
 				    'medium' => esc_html__( 'Medium', 'taproot' ),
 				    'large' => esc_html__( 'Large', 'taproot' ),
 				    'full' => esc_html__( 'Full', 'taproot' ),
@@ -347,10 +347,9 @@ if( !class_exists( 'Taproot_Post_Meta' ) )
 			$clean_name = str_replace( 'taproot_', '', $id );
 			$clean_name = str_replace( '_', '-', $clean_name );		
 			$setting_class = sprintf( 'taproot-metabox__setting--%s',  $clean_name);
-
-			$content = sprintf( '<p class="taproot-metabox__setting %s">', $setting_class );
-			$content .= sprintf( '<label for="%s" class="taproot-metabox__setting__label">%s</label>', $id, $label );
-			$content .= sprintf( '<select name="%s" class="taproot-metabox__setting__select">', $id );
+			$content = sprintf( '<p class="taproot-metabox__setting %s">', esc_attr( $setting_class ) );
+			$content .= sprintf( '<label for="%s" class="taproot-metabox__setting__label">%s</label>', esc_attr( $id ), $label );
+			$content .= sprintf( '<select name="%s" class="taproot-metabox__setting__select">', esc_attr( $id ) );
 
 	        foreach( $options as $value => $option_label ) 
 	        {
@@ -381,9 +380,9 @@ if( !class_exists( 'Taproot_Post_Meta' ) )
 			$setting_class = sprintf( 'taproot-metabox__setting--%s',  $clean_name);
 	        $checked = ( "true" === get_post_meta( $post_id, $id, true ) ) ? 'checked' : '';
 
-			$content = sprintf( '<p class="taproot-metabox__setting %s">', $setting_class );
-			$content .= sprintf( '<label for="%s" class="taproot-metabox__setting__label">%s</label>', $id, $label );
-	        $content .= sprintf( '<input name="%s" class="taproot-metabox__setting__checkbox" type="checkbox" value="true" %s>', $id, $checked );              	
+			$content = sprintf( '<p class="taproot-metabox__setting %s">', esc_attr( $setting_class ) );
+			$content .= sprintf( '<label for="%s" class="taproot-metabox__setting__label">%s</label>', esc_attr( $id ), $label );
+	        $content .= sprintf( '<input name="%s" class="taproot-metabox__setting__checkbox" type="checkbox" value="true" %s>', esc_attr( $id ), esc_attr( $checked ) );              	
 		    $content .= '</p>';
 
 		    return $content;        
