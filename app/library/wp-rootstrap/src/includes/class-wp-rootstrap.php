@@ -43,6 +43,15 @@ class WP_Rootstrap
 
 
     /**
+     * Stores image sizes to display
+     * 
+     * @since 0.9.4
+     * @var array
+     */ 
+    private $image_sizes_select;
+
+
+    /**
      * Stores default sidebars
      * 
      * @since 0.8.0
@@ -138,6 +147,7 @@ class WP_Rootstrap
         $this->load_screens();
         $this->load_defaults();  
         $this->load_images();
+        $this->load_image_sizes_display();        
         $this->load_sidebars();              
         $this->actions();
     }
@@ -243,6 +253,19 @@ class WP_Rootstrap
 
 
     /**
+     * Store image size display
+     * 
+     * @since 0.9.4
+     * @return void
+     */
+    private function load_image_sizes_display()
+    {
+        if( isset( $this->config['image_sizes_select'] ) && is_array( $this->config['image_sizes_select'] ) )
+            $this->image_sizes_select = $this->config['image_sizes_select'];
+    }   
+
+
+    /**
      * Store default sidebars
      * 
      * @since 0.8.0
@@ -280,32 +303,6 @@ class WP_Rootstrap
 
 
     /**
-     * Get Registered Image Sizes
-     * 
-     * @since 0.9.3
-     * @return array - Returns array of image size data
-     */
-    public function get_registered_images()
-    {
-        return $this->images;
-    }
-
-
-    /**
-     * Get Registered Image Sizes
-     * 
-     * @since 0.9.3
-     * @return array - Returns array of image size data
-     */
-    public function get_image_size_array( $name = false )
-    {
-        $sizes = $this->images;
-        
-        return ( isset( $sizes[$name] ) ) ? $sizes[$name] : false;
-    }
-
-
-    /**
      * Register Image Sizes
      * 
      * @since 0.8.0
@@ -327,30 +324,25 @@ class WP_Rootstrap
 
     /**
      * Filter Images Choices available in admin
-     * We are just ignoring defaults for now. maybe add filter in future
+     * Use defaults set in theme if defined,
+     * add extras to the end of the list
      * 
      * @since 0.8.0
      * @return array
      */
     public function image_size_names_choose( $sizes )
     {   
-        $image_choices = array();
+        $theme_sizes_to_display = $this->image_sizes_select;
 
-        foreach ( $this->images as $image => $args ) 
+        foreach ( $sizes as $size => $label ) 
         {
-            if( isset( $args['display'] ) && $args['display'] === false ) continue;
-
-            if( isset( $args['label'] ) && '' !== $args['label'] )
-                $label = $args['label'];
-            else 
-                $label = ucwords( $image );
-
-            $image_choices[$image] = $label;
+            if( isset( $theme_sizes_to_display[$size] )  )
+                continue;
+            else
+                $theme_sizes_to_display[$size] = $label;
         }
 
-        $image_choices['full'] = esc_html__('Original Size', 'taproot');
-
-        return $image_choices;
+        return $theme_sizes_to_display;
     }
 
 

@@ -57,49 +57,34 @@ $rootstrap_settings = array();
 
 
     /* Define image sizes */
-    $rootstrap_image_sizes = array();
+    $rootstrap_custom_image_sizes = array();
 
-        $rootstrap_image_sizes['tiny'] = array(
-            'width' => 100,
-            'height' => 100,
+        $rootstrap_custom_image_sizes['taproot-tiny'] = array(
+            'width' => 80,
+            'height' => 80,
             'crop' => true,
-            'display' => true,
-            'label' => ''
         );
 
-        $rootstrap_image_sizes['thumbnail'] = array(
+        $rootstrap_custom_image_sizes['taproot-small'] = array(
             'width' => 200,
-            'height' => 200,
-            'crop' => true,
-            'display' => true,
-            'label' => ''
-        );
-
-        $rootstrap_image_sizes['small'] = array(
-            'width' => 320,
             'height' => 0,
             'crop' => 0,
-            'display' => true,
-            'label' => ''
         );
 
-        $rootstrap_image_sizes['medium'] = array(
-            'width' => 480,
-            'height' => 0,
-            'crop' => 0,
-            'display' => true,
-            'label' => ''
-        );
+    $rootstrap_settings['image_sizes'] = $rootstrap_custom_image_sizes;
 
-        $rootstrap_image_sizes['large'] = array(
-            'width' => 1024,
-            'height' => 0,
-            'crop' => 0,
-            'display' => true,
-            'label' => ''
-        );
 
-    $rootstrap_settings['image_sizes'] = $rootstrap_image_sizes;
+    /* Define the images that are available in the media selectors */
+    $rootstrap_image_sizes_select = array(
+        'taproot-tiny' => esc_html__('Tiny Thumbnail', 'taproot'),
+        'thumbnail' => esc_html__('Thumbnail', 'taproot'),
+        'taproot-small' => esc_html__('Small', 'taproot'),
+        'medium' => esc_html__('Medium', 'taproot'),
+        'large' => esc_html__('Large', 'taproot'),
+        'full' => esc_html__('Original Size', 'taproot')
+    );
+
+    $rootstrap_settings['image_sizes_select'] = $rootstrap_image_sizes_select;
 
 
     /* Define default sidebars */
@@ -397,7 +382,7 @@ $rootstrap_settings = array();
        "taproot_post_box_meta_color" => "",
        "taproot_post_box_meta_icon_color" => "",
        "taproot_post_box_link_style" => "link",
-       "taproot_post_box_link_position" => "left",
+       "taproot_post_box_link_position" => "right",
        "taproot_post_box_link_color" => "",
        "taproot_post_box_excerpt_length" => 0,
        "taproot_top_bar_background_color" => "#ff6f02",
