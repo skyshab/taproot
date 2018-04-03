@@ -519,6 +519,24 @@
 
 
     /**
+     * Sanitize Google Fonts
+     * 
+     * Extract font list if full embed code is entered.
+     *
+     * @since 0.9.5
+     * 
+     * @param string $fonts
+     * @return string - Returns a list of fonts in Google Font API format
+     */
+    function sanitize_google_fonts( $fonts )
+    {
+        preg_match('/family=([\s\S]*?)"/', $fonts, $matches);
+
+        return ( $matches ) ? sanitize_text_field( $matches[1] ) : sanitize_text_field( $fonts );
+    }
+
+
+    /**
      * Get Heading Font Sizes
      *
      * @since 0.8.0

@@ -95,7 +95,7 @@ $wp_customize->add_panel( 'general_settings', array(
 
         // Setting: Google Fonts
         $wp_customize->add_setting( 'taproot_google_fonts', array(
-            'sanitize_callback' => 'sanitize_text_field',
+            'sanitize_callback' => 'sanitize_google_fonts',
         ));
 
         $wp_customize->add_control( 'taproot_google_fonts', array(
