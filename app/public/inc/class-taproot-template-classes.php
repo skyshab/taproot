@@ -6,7 +6,7 @@
  * @since 0.8.0
  */
 
-if( !class_exists( 'Taproot_Template_Classes' ) )
+if( class_exists('Taproot_Template') && !class_exists( 'Taproot_Template_Classes' ) )
 {
 	/**
 	 * The class that manages the CSS classes that are output in our templates.
@@ -93,7 +93,7 @@ if( !class_exists( 'Taproot_Template_Classes' ) )
 		{
 			if( get_post_format( get_the_ID() ) ) return $classes;
 
-			if( is_single() )
+			if( is_singular() )
 			{
 				$featured_size = get_theme_mod( 'taproot_featured_image_size' );
 
