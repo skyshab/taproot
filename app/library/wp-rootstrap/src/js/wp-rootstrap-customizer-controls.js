@@ -51,39 +51,6 @@ var rootstrapControls = ( function($){
 
 
     /**
-     * Set active preview button and preview screen for a specified device
-     *
-     * @param  string screen - the id of the screen to activate
-    **/
-    var activateDevice = function( screen ){
-
-       var overlay = $( '.wp-full-overlay' ),
-           footerActions = $( '#customize-footer-actions' ),
-           deviceClass = 'preview-' + screen,
-           deviceClasses = '';
-
-        // deactivate all device buttons
-        footerActions.find( '.devices button' )
-           .removeClass( 'active' )
-           .attr( 'aria-pressed', false );
-
-        // activate current device button
-        footerActions.find( '.devices .' + deviceClass )
-            .addClass( 'active' )
-            .attr( 'aria-pressed', true );
-
-        // create list of all device classes
-        $.each( api.settings.previewableDevices, function( device ){
-            deviceClasses += ' preview-' + device;
-        } );
-
-        // remove all device classes and add current device class
-        overlay.removeClass( deviceClasses ).addClass( deviceClass );
-
-    }; // end activateDevice
-
-
-    /**
      * Get the device id that matches the current preview screen width
     **/
     var getCurrentDevice = function(){
@@ -123,7 +90,6 @@ var rootstrapControls = ( function($){
         init: init,
         getDeviceList: getDeviceList,
         getDevice: getDevice,
-        activateDevice: activateDevice,
         getCurrentDevice: getCurrentDevice,
         getPreviewWidth: getPreviewWidth,
     };

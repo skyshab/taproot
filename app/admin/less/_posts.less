@@ -15,14 +15,15 @@
     }
 
     .taproot-metabox__setting {
+        display: flex;
+        align-items: center;        
         border-bottom: 1px solid #eeeeee;
         padding: 0;
         margin: 0;
     }
 
     .taproot-metabox__setting__label {
-        display: inline-block!important;
-        box-sizing: border-box;
+        box-sizing: border-box!important;
         font-weight: bold;
         background-color: #fff;
         margin: 0!important;
@@ -32,11 +33,9 @@
     }
 
     .taproot-metabox__setting__select {
-        display: inline-block!important;
         box-sizing: border-box;
         color: #a0a5aa;
-        margin-right: 5%;
-        width: 53%;
+        width: 56%;
         border: none;
         box-shadow: none;
         outline: none;
@@ -70,4 +69,12 @@
         input[value="-1"] + .taproot-metabox { 
             display: none;
         }
-    }    
+    }  
+    
+    // Gutenberg specific
+
+    .edit-post-sidebar .taproot--gutenberg-featured-image--title {
+        padding: 0.8em 1em;
+        margin: 0;
+        border-bottom: 1px solid #eee;    
+    }

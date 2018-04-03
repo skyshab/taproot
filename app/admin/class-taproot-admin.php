@@ -151,6 +151,10 @@ if( !class_exists( 'Taproot_Admin' ) )
 			 */
 			add_theme_support( 'custom-background' );
 
+			/*
+			 * Enable support for wide images in Gutenberg
+			 */
+			add_theme_support( 'gutenberg', array( 'wide-images' => true ));
 
 			/*
 			 * Define editor stylesheet

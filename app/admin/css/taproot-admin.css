@@ -577,13 +577,16 @@ body .wp-full-overlay #customize-preview iframe.resizing {
   margin: 0;
 }
 .taproot-metabox__setting {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
   border-bottom: 1px solid #eeeeee;
   padding: 0;
   margin: 0;
 }
 .taproot-metabox__setting__label {
-  display: inline-block !important;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
   font-weight: bold;
   background-color: #fff;
   margin: 0!important;
@@ -592,11 +595,9 @@ body .wp-full-overlay #customize-preview iframe.resizing {
   border-right: 1px solid #eeeeee;
 }
 .taproot-metabox__setting__select {
-  display: inline-block !important;
   box-sizing: border-box;
   color: #a0a5aa;
-  margin-right: 5%;
-  width: 53%;
+  width: 56%;
   border: none;
   box-shadow: none;
   outline: none;
@@ -618,6 +619,11 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 }
 #postimagediv input[value="-1"] + .taproot-metabox {
   display: none;
+}
+.edit-post-sidebar .taproot--gutenberg-featured-image--title {
+  padding: 0.8em 1em;
+  margin: 0;
+  border-bottom: 1px solid #eee;
 }
 /**
  * Sidebar form styles

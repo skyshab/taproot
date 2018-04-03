@@ -60,31 +60,24 @@
             }
 
             // open device specific control section when clicking preview button
-            $( '#customize-footer-actions' ).on( 'click', '.devices', function(event){
+            $( '#customize-footer-actions' ).on( 'click', '.devices button', function(event){
 
-                // only do this in responsive panels
-                if( ! $( '.current-panel' ).hasClass( 'control-panel-responsive' ) ) return false;
-
+                // only do this in responsive sections 
+                if( ! $( '.control-section.open' ).hasClass( 'control-section-responsive' ) ) return false;
+                
                 var size = $( event.target ).data( 'device' ),
                 targetSection = $('.current-panel [id$=' + size.replace( '-', '_' ) + ']').attr('id').replace( 'accordion-section-', '' );
 
                 api.section( targetSection ).activate();
                 api.section( targetSection ).focus();
-
-                rootstrap.activateDevice( size );
-            });
-
-            // reset preview to 100% when exiting screen settings section
-            $( '#customize-theme-controls' ).on( 'click', '.control-panel-responsive.current-panel .customize-section-title button', function(){
-                rootstrap.activateDevice( 'desktop' );
             });
 
             // set max-width on preview iframe when opening branding screen sections
-            $( '#customize-theme-controls' ).on( 'click', '.control-panel-responsive.current-panel .accordion-section-title', function(){
+            $( '#customize-theme-controls' ).on( 'click', '.control-panel-responsive.current-panel .control-section-responsive .accordion-section-title', function(){
 
                 var targetSection = $(this).parent( '.control-section' ).data( 'screen' );
 
-                rootstrap.activateDevice( targetSection );
+                api.previewedDevice.set( targetSection );
             });
 
             // set max-width on preview iframe when clicking on screen nav links
@@ -98,7 +91,7 @@
                     api.section( targetSection ).focus();
 
                     var screen = $('#accordion-section-' + targetSection).data( 'screen' );
-                    rootstrap.activateDevice( screen );
+                    api.previewedDevice.set( screen );
                 }
             });
 
@@ -271,7 +264,7 @@
 
             api.section( sectionId ).focus();
 
-            rootstrap.activateDevice( device );
+            api.previewedDevice.set( device );
 
         }; // end updatePreview
 

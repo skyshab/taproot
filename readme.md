@@ -75,3 +75,15 @@ GNU General Public License for more details.
 * Bug Fixes and code refactoring based on Theme Review feedback.
 * Image Sizes - Removed custom image dimensions for default image sizes.
 * Image Sizes - Adjusted image CSS for new size dimensions. 
+
+= 0.9.5 =
+* 04/03/18
+* General - Updated theme description and screenshot
+* Customizer - Refactored js to show/hide group titles
+* Branding - Changed default tagline top margin to 0
+* Google Fonts - Added support for extracting font data from URL in entry
+* Typography - style improvements to lists and blockquotes
+* Feature - Added Gutenberg support for wide and fullwidth blocks
+* Bug Fix - Fix for page featured image support
+* Bug Fix - Fixed bug with tagline output
+* Bug Fix - Fixed issues with responsive customizer sections and device buttons

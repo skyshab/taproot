@@ -6,7 +6,7 @@
  * @since 0.8.0
  */
 ?>
-<article>
+<article <?php post_class(); ?> >
 
     <?php taproot_entry_header(); ?>
 

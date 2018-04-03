@@ -90,6 +90,7 @@ hr {
 
 blockquote {
     position: relative;
+    clear: both;
     font-size: 110%;
     font-style: italic;
     padding: 0.8em 0.8em 0.8em 3em;
@@ -179,7 +180,7 @@ q {
 
 ul,
 ol {
-    // margin: 0 0 1.5em;
+    list-style-position: outside;
     padding: 0;
 }
 
@@ -204,6 +205,13 @@ dt {
 dd {
     margin: 0 1.5em 1.5em;
 }
+
+// add to lists inside content for better styling
+// can this be automated without a class? 
+// .entry-content ul ?
+// .tr-list {
+//     padding-left: 1em;
+// }
 
 // tables
 

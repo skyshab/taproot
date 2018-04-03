@@ -290,7 +290,7 @@ if( !class_exists( 'Taproot_Template_Parts' ) )
 	                    $content .= sprintf( '<h1 class="site-title" style="%s">%s</h1>', esc_attr( $hide_title_if_preview ), get_bloginfo( 'name' ) );
 	                
 	                if( $display_tagline || is_customize_preview() )
-	                    $content .= sprintf( '<div class="site-description" style="display:none;">%s</div>', esc_attr( $hide_tagline_if_preview ) , get_bloginfo( 'description' ) );
+	                    $content .= sprintf( '<div class="site-description" style="%s">%s</div>', esc_attr( $hide_tagline_if_preview ) , get_bloginfo( 'description' ) );
 
 	        	if( $display_title || $display_tagline || is_customize_preview() )
 	            	$content .= '</div>';

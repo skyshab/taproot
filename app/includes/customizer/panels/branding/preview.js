@@ -7,30 +7,38 @@
 
     // title controls
     var taprootTitleControls = [
-        'title_font_size_mobile',
-        'title_spacing_mobile',
-        'title_line_height_mobile',
-        'title_font_size_mobile_landscape',
-        'title_spacing_mobile_landscape',
-        'title_line_height_mobile_landscape',
-        'title_font_size_tablet',
-        'title_spacing_tablet',
-        'title_line_height_tablet',
-        'title_font_size_laptop',
-        'title_spacing_laptop',
-        'title_line_height_laptop',
-        'title_font_size_desktop',
-        'title_spacing_desktop',
-        'title_line_height_desktop',
-        'title_font_size_laptop_fixed',
-        'title_spacing_laptop_fixed',
-        'title_line_height_laptop_fixed',
-        'title_font_size_desktop_fixed',
-        'title_spacing_desktop_fixed',
-        'title_line_height_desktop_fixed',
-        'hide_site_title_laptop_fixed',
-        'hide_site_title_desktop_fixed'
+        'taproot_title_font_size_mobile',
+        'taproot_title_spacing_mobile',
+        'taproot_title_line_height_mobile',
+        'taproot_title_font_size_mobile_landscape',
+        'taproot_title_spacing_mobile_landscape',
+        'taproot_title_line_height_mobile_landscape',
+        'taproot_title_font_size_tablet',
+        'taproot_title_spacing_tablet',
+        'taproot_title_line_height_tablet',
+        'taproot_title_font_size_laptop',
+        'taproot_title_spacing_laptop',
+        'taproot_title_line_height_laptop',
+        'taproot_title_font_size_desktop',
+        'taproot_title_spacing_desktop',
+        'taproot_title_line_height_desktop',
+        'taproot_title_font_size_laptop_fixed',
+        'taproot_title_spacing_laptop_fixed',
+        'taproot_title_line_height_laptop_fixed',
+        'taproot_title_font_size_desktop_fixed',
+        'taproot_title_spacing_desktop_fixed',
+        'taproot_title_line_height_desktop_fixed',
+        'taproot_hide_site_title_laptop_fixed',
+        'taproot_hide_site_title_desktop_fixed',
+        'option_group_title_mobile',
+        'option_group_title_mobile_landscape',                
+        'option_group_title_tablet',
+        'option_group_title_laptop',        
+        'option_group_title_desktop',
+        'option_group_title_laptop_fixed',
+        'option_group_title_desktop_fixed'                
     ];
+
 
     // // display title
     wp.customize( 'taproot_display_title', function( value ) {
@@ -41,8 +49,8 @@
 
                 // show all title controls
                 taprootTitleControls.forEach(function(item){
-                    if( parent.wp.customize.control('taproot_' + item) ){
-                        parent.wp.customize.control('taproot_' + item).activate();
+                    if( parent.wp.customize.control(item) ){
+                        parent.wp.customize.control(item).activate();
                     }
                 })
 
@@ -57,8 +65,8 @@
 
                 // hide all title controls
                 taprootTitleControls.forEach(function(item){
-                    if( parent.wp.customize.control('taproot_' + item) ) {
-                        parent.wp.customize.control('taproot_' + item).deactivate();
+                    if( parent.wp.customize.control(item) ) {
+                        parent.wp.customize.control(item).deactivate();
                     }
                 })
             }
@@ -107,38 +115,44 @@
 
     // tagline controls
     var taprootTaglineControls = [
-        'tagline_font_size_mobile',
-        'tagline_spacing_mobile',
-        'tagline_line_height_mobile',
-        'tagline_top_margin_mobile',
-        'tagline_font_size_mobile_landscape',
-        'tagline_spacing_mobile_landscape',
-        'tagline_line_height_mobile_landscape',
-        'tagline_top_margin_mobile_landscape',
-        'tagline_font_size_tablet',
-        'tagline_spacing_tablet',
-        'tagline_line_height_tablet',
-        'tagline_top_margin_tablet',
-        'tagline_font_size_laptop',
-        'tagline_spacing_laptop',
-        'tagline_line_height_laptop',
-        'tagline_top_margin_laptop',
-        'tagline_font_size_desktop',
-        'tagline_spacing_desktop',
-        'tagline_line_height_desktop',
-        'tagline_top_margin_desktop',
-        'tagline_font_size_laptop_fixed',
-        'tagline_spacing_laptop_fixed',
-        'tagline_line_height_laptop_fixed',
-        'tagline_top_margin_laptop_fixed',
-        'tagline_font_size_desktop_fixed',
-        'tagline_spacing_desktop_fixed',
-        'tagline_line_height_desktop_fixed',
-        'tagline_top_margin_desktop_fixed',
-        'hide_site_tagline_laptop_fixed',
-        'hide_site_tagline_desktop_fixed'
+        'taproot_tagline_font_size_mobile',
+        'taproot_tagline_spacing_mobile',
+        'taproot_tagline_line_height_mobile',
+        'taproot_tagline_top_margin_mobile',
+        'taproot_tagline_font_size_mobile_landscape',
+        'taproot_tagline_spacing_mobile_landscape',
+        'taproot_tagline_line_height_mobile_landscape',
+        'taproot_tagline_top_margin_mobile_landscape',
+        'taproot_tagline_font_size_tablet',
+        'taproot_tagline_spacing_tablet',
+        'taproot_tagline_line_height_tablet',
+        'taproot_tagline_top_margin_tablet',
+        'taproot_tagline_font_size_laptop',
+        'taproot_tagline_spacing_laptop',
+        'taproot_tagline_line_height_laptop',
+        'taproot_tagline_top_margin_laptop',
+        'taproot_tagline_font_size_desktop',
+        'taproot_tagline_spacing_desktop',
+        'taproot_tagline_line_height_desktop',
+        'taproot_tagline_top_margin_desktop',
+        'taproot_tagline_font_size_laptop_fixed',
+        'taproot_tagline_spacing_laptop_fixed',
+        'taproot_tagline_line_height_laptop_fixed',
+        'taproot_tagline_top_margin_laptop_fixed',
+        'taproot_tagline_font_size_desktop_fixed',
+        'taproot_tagline_spacing_desktop_fixed',
+        'taproot_tagline_line_height_desktop_fixed',
+        'taproot_tagline_top_margin_desktop_fixed',
+        'taproot_hide_site_tagline_laptop_fixed',
+        'taproot_hide_site_tagline_desktop_fixed',
+        'option_group_tagline_mobile',
+        'option_group_tagline_mobile_landscape',                
+        'option_group_tagline_tablet',
+        'option_group_tagline_laptop',        
+        'option_group_tagline_desktop',
+        'option_group_tagline_laptop_fixed',      
+        'option_group_tagline_desktop_fixed'         
     ];
-
 
     // display tagline
     wp.customize( 'taproot_display_tagline', function( value ) {
@@ -149,8 +163,8 @@
 
                 // show all tagline controls
                 taprootTaglineControls.forEach(function(item){
-                    if( parent.wp.customize.control('taproot_' + item) ){
-                        parent.wp.customize.control('taproot_' + item).activate();
+                    if( parent.wp.customize.control(item) ){
+                        parent.wp.customize.control(item).activate();
                     }
                 });
 
@@ -165,8 +179,8 @@
 
                 // hide all tagline controls
                 taprootTaglineControls.forEach(function(item){
-                    if( parent.wp.customize.control('taproot_' + item) ){
-                        parent.wp.customize.control('taproot_' + item).deactivate();
+                    if( parent.wp.customize.control(item) ){
+                        parent.wp.customize.control(item).deactivate();
                     }
                 });
             }
