@@ -110,7 +110,7 @@ if( !class_exists( 'Taproot_Post_Meta' ) )
 	 	 * @param object $post 
 		 */
 		public function taproot_settings_markup( $post )
-		{
+		{			
 		    wp_nonce_field( basename( __FILE__ ), "taproot-settings-metabox-nonce" );
 
 		    $metabox = '<div class="taproot-metabox">';
@@ -178,6 +178,14 @@ if( !class_exists( 'Taproot_Post_Meta' ) )
 	        // post title display setting
 	        $metabox .= $this->build_checkbox( $post->ID, 'taproot_enable_header_overlay', esc_html__('Header Overlay', 'taproot') ); 
 
+			// if Gutenberg, add featured image controls too
+			// this doesn't work when gutenberg is not enabled. doh!
+			// if ( ! isset( $_REQUEST['classic-editor'] ) ) 
+			// {
+			// 	$metabox .= sprintf('<h3 class="taproot--gutenberg-featured-image--title">%s</h3>', esc_html__( 'Featured Image Settings', 'taproot' ) );
+			// 	$metabox .= $this->get_featured_image_controls( $post->ID );
+			// }
+
 	        // close metabox
 		    $metabox .= '</div>';
 
@@ -218,7 +226,16 @@ if( !class_exists( 'Taproot_Post_Meta' ) )
 		    	$this->update_setting( 'taproot_post_template', $post_id );
 		    }
 		    $this->update_setting( 'taproot_post_title', $post_id );	    
-		    $this->update_setting( 'taproot_enable_header_overlay', $post_id );
+			$this->update_setting( 'taproot_enable_header_overlay', $post_id );
+			
+
+			// if Gutenberg, update the featured image settings
+			// Need a conditional that works here?
+			// $this->update_setting( 'taproot_featured_image_size', $post_id );
+			// $this->update_setting( 'taproot_featured_image_location', $post_id );
+			// $this->update_setting( 'taproot_featured_image_position', $post_id );
+			// $this->update_setting( 'taproot_post_box_featured_image_size', $post_id );	 			
+							
 		}
 
 
@@ -235,6 +252,28 @@ if( !class_exists( 'Taproot_Post_Meta' ) )
 		{
 		    $metabox = '<div class="taproot-metabox">';
 			$metabox .= wp_nonce_field( basename( __FILE__ ), "taproot-featured-image-metabox-nonce", true, false );
+
+		    // featured image settings
+	        $metabox .= $this->get_featured_image_controls( $post_id );
+
+	        // close metabox
+			$metabox .= '</div>';
+		       
+			// return original content plus our custom meta	       
+		    return $content . $metabox;
+		}
+
+
+	    /**
+		 * Get the markup for the featured image controls.
+		 *
+	 	 * @since 0.9.5
+	 	 * 
+	 	 * @return string Returns the featured image controls markup. 
+		 */
+		private function get_featured_image_controls( $post_id )
+		{
+			$metabox = '';
 
 		    // featured image size setting
 	        $metabox .= $this->build_select( $post_id, 
@@ -288,15 +327,10 @@ if( !class_exists( 'Taproot_Post_Meta' ) )
 				    'large' => esc_html__( 'Large', 'taproot' ),
 				    'full' => esc_html__( 'Full', 'taproot' ),
 	            ) 
-	        ); 
+	        ); 			
 
-	        // close metabox
-			$metabox .= '</div>';
-		       
-			// return original content plus our custom meta	       
-		    return $content . $metabox;
+			return $metabox;
 		}
-
 
 		/**
 		 * Save Taproot Settings Values
