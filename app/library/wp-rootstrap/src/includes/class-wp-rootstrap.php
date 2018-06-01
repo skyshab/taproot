@@ -378,15 +378,13 @@ class WP_Rootstrap
      */
     public function register_defaults( $wp_customize )
     {
-        $defaults = $this->get_defaults();
-
-        foreach ( $defaults as $id => $default )
+        foreach ( $this->get_defaults() as $id => $default )
         {
             $setting = $wp_customize->get_setting( $id );
 
             // if setting exists, default isn't already defined with value, set the control default
             if( $setting && !$setting->default && isset( $default ) )
-                $setting->default = $default;
+                $setting->default = $default;             
         }
     }  
 
@@ -406,7 +404,7 @@ class WP_Rootstrap
             add_filter( "theme_mod_{$id}", function( $value ) use ( $default ) 
             { 
                 return ( $value && '' !==  $value ) ? $value : $default;
-            });
+            });  
         }
     } 
 
