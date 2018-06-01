@@ -247,7 +247,7 @@ $wp_customize->add_panel( 'taproot_footer', array(
         // Setting: Bottom Bar Content
         $wp_customize->add_setting( 'taproot_bottom_bar_content', array(
             'type' => 'option',
-            'sanitize_callback' => 'sanitize_text_field',
+            'sanitize_callback' => 'wp_kses_post',
             'transport' => 'postMessage',
             'default' => taproot_bottom_bar_default_content()
         ));

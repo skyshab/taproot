@@ -12,6 +12,8 @@
 
     <main id="main" <?php taproot_class( 'main' ); ?>>
 
+		<?php do_action( 'taproot_title' ); ?>
+
 		<?php 
 		if ( have_posts() ) :
 

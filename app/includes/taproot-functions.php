@@ -227,6 +227,11 @@ function taproot_get_sidebar()
 
         $sidebar = ($sidebar) ? $sidebar : get_theme_mod('taproot_blog_page_sidebar', 'sidebar-1');
     }
+    elseif( is_search() )
+    {
+        $default_sidebar = get_theme_mod( 'taproot_blog_page_sidebar', 'sidebar-1' );
+        $sidebar = get_theme_mod( 'taproot_search_results_page_sidebar', $default_sidebar );
+    }    
     else
     {
         $sidebar = ( 'full' === get_theme_mod( 'taproot_single_layout' ) ) 
@@ -251,6 +256,10 @@ function taproot_get_layout()
     {
         $layout = get_theme_mod('taproot_blog_layout');
     }
+    elseif( is_search() )
+    {
+        $layout = 'right';
+    }    
     else
     {
         $layout = get_theme_mod( 'taproot_single_layout' );
@@ -350,3 +359,31 @@ function taproot_post_box_link()
     printf( '<a href="%s" class="%s"><span class="visuallyhidden">%s</span>%s</a>',  esc_url( get_permalink() ), esc_attr( $link_class ), get_the_title(), esc_html( $pb_link_text ) );
     echo '</p>';
 }
+
+
+// add_action('customize_register', 'my_test_function');
+// function my_test_function( $wp_customize )
+// {
+//     // Setting: Enable Fixed Header
+//     $wp_customize->add_setting( 'my_test_setting_1', array(
+//         'sanitize_callback' => 'taproot_sanitize_checkbox',
+//         'transport' => 'postMessage',
+//         'default' => 1,            
+//     ));
+
+//     $wp_customize->add_control( 'my_test_setting_1', array(
+//         'type' => 'checkbox',
+//         'section' => 'taproot_header_styles[fixed]',
+//         'label' => esc_html__( 'Enable Test Setting', 'taproot' ),       
+//     ));
+
+// }
+
+
+// add_action('taproot_torso_omega', 'my_test_function_2');
+// function my_test_function_2( )
+// {
+//     $test_var = get_theme_mod( 'my_test_setting_1' );
+//     printf( '<a href="#" class="%s">Click Here Buddy</a>', $test_var );
+
+// }

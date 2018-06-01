@@ -87,3 +87,12 @@ GNU General Public License for more details.
 * Bug Fix - Fix for page featured image support
 * Bug Fix - Fixed bug with tagline output
 * Bug Fix - Fixed issues with responsive customizer sections and device buttons
+
+= 0.9.6 =
+* 06/01/18
+* Bug Fix - Fix for fixed header not being disabled per the customizer setting
+* Bug Fix - Fix for readmore text links on blog page
+* Bug Fix - Fix for logo stretching on mobile view
+* Bug Fix - Fix for html being stripped from bottom bar content
+* Bug Fix - Fix for page title not showing on search results page
+* Feature - Added customizer controls for search page layout and sidebar

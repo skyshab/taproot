@@ -313,6 +313,7 @@ if( !class_exists( 'Taproot_Template_Parts' ) )
 		public function print_sidebar()
 		{
 			$sidebar = taproot_get_sidebar();
+			$content = false;
 
 			if( is_active_sidebar( $sidebar ) && function_exists('dynamic_sidebar') )
 		    {
@@ -329,7 +330,9 @@ if( !class_exists( 'Taproot_Template_Parts' ) )
 			        $content .= $ob_output;
 
 		        $content .= "</div></aside>";
-		    }
+			}
+			
+			if( !$content ) return;
 			
 			echo apply_filters( 'taproot_template_sidebar', $content );						
 		}
@@ -394,8 +397,8 @@ if( !class_exists( 'Taproot_Template_Parts' ) )
 		    }
 		    elseif( is_search() )
 			{
-		        $content .= esc_html__( 'Search results for ', 'taproot' ) . get_search_query();
-		    }
+		        $content .= esc_html__( 'Search results for ', 'taproot' ) . sprintf( '&ldquo;%s&rdquo;',  get_search_query() );
+		    } 
 		    elseif( is_404() )
 			{
 		        $content .= esc_html__( 'Not Found', 'taproot' );
@@ -1292,11 +1295,12 @@ if( !class_exists( 'Taproot_Template_Parts' ) )
 		 */
 	    public function excerpt_readmore( $more ) 
 	    {
-	        $pb_link_style = get_theme_mod('taproot_post_box_link_style');
+			$pb_link_style = get_theme_mod('taproot_post_box_link_style');
+			$pb_link_text = get_theme_mod('taproot_post_box_link_text', $more );
+			
 	        if( 'inline' !== $pb_link_style ) return $more;
 
-	        return sprintf( ' ... <a href="%s" class="read-more--inline"><span class="visuallyhidden">%s</span>%s</a>',  esc_url( get_permalink() ), esc_html(get_the_title() ), esc_html( taproot_get_post_link_text() ) );
-
+	        return sprintf( ' ... <a href="%s" class="read-more--inline"><span class="visuallyhidden">%s</span>%s</a>',  esc_url( get_permalink() ), esc_html(get_the_title() ), esc_html( $pb_link_text ) );
 	    }
 
 
@@ -1311,7 +1315,7 @@ if( !class_exists( 'Taproot_Template_Parts' ) )
 		 */
 		function has_fixed_header()
 		{
-		    if( get_theme_mod( 'taproot_main_header_display_when_fixed', false )
+		    if( 'enabled' === get_theme_mod( 'taproot_main_header_display_when_fixed' )
 		    ||	get_theme_mod( 'taproot_topnav_display_when_fixed', false )
 		    ||	get_theme_mod( 'taproot_navbar_display_when_fixed', false ) )
 		    {
