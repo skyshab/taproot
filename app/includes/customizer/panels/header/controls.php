@@ -67,16 +67,39 @@ $wp_customize->add_panel( 'taproot_header', array(
 
 
         // Setting: Enable Fixed Header
+        // $wp_customize->add_setting( 'taproot_main_header_display_when_fixed', array(
+        //     'sanitize_callback' => 'taproot_sanitize_checkbox',
+        //     'transport' => 'postMessage',
+        //     'default' => 1,            
+        // ));
+
+        // $wp_customize->add_control( 'taproot_main_header_display_when_fixed', array(
+        //     'type' => 'checkbox',
+        //     'section' => 'taproot_header_styles[fixed]',
+        //     'label' => esc_html__( 'Enable Fixed Header', 'taproot' ),       
+        // ));
+
+        // Setting: Fixed Header Type
         $wp_customize->add_setting( 'taproot_main_header_display_when_fixed', array(
-            'sanitize_callback' => 'taproot_sanitize_checkbox',
-            'transport' => 'postMessage',
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'refresh',
         ));
 
         $wp_customize->add_control( 'taproot_main_header_display_when_fixed', array(
-            'type' => 'checkbox',
+            'type' => 'select',
             'section' => 'taproot_header_styles[fixed]',
-            'label' => esc_html__( 'Enable Fixed Header', 'taproot' ),       
+            'label' => esc_html__( 'Fixed Header', 'taproot' ),
+            'choices' => array(
+                'disabled' => esc_html__( 'Disabled', 'taproot' ),
+                'enabled' => esc_html__( 'Enabled', 'taproot' ),
+            ),       
         ));
+
+
+
+
+
+
 
 
         // Setting: Fixed Header Type

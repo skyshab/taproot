@@ -555,7 +555,7 @@ if( class_exists('Taproot_Template') && !class_exists( 'Taproot_Template_Classes
 		 */
 		function has_fixed_header()
 		{
-		    if( get_theme_mod( 'taproot_main_header_display_when_fixed', false )
+		    if( 'enabled' === get_theme_mod( 'taproot_main_header_display_when_fixed' )
 		    ||	get_theme_mod( 'taproot_topnav_display_when_fixed', false )
 		    ||	get_theme_mod( 'taproot_navbar_display_when_fixed', false ) )
 		    {
