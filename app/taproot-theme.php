@@ -29,7 +29,7 @@ if( !defined( 'WPINC' ) ) die;
 	 * @since 0.8.0
 	 * @var string
 	 */
-	define( 'TAPROOT_CURRENT_VERSION', '0.9.5' );
+	define( 'TAPROOT_CURRENT_VERSION', '0.9.6' );
 
 	/**
 	 * Stores the theme author name
