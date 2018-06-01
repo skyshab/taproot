@@ -394,8 +394,8 @@ if( !class_exists( 'Taproot_Template_Parts' ) )
 		    }
 		    elseif( is_search() )
 			{
-		        $content .= esc_html__( 'Search results for ', 'taproot' ) . get_search_query();
-		    }
+		        $content .= esc_html__( 'Search results for ', 'taproot' ) . sprintf( '&ldquo;%s&rdquo;',  get_search_query() );
+		    } 
 		    elseif( is_404() )
 			{
 		        $content .= esc_html__( 'Not Found', 'taproot' );

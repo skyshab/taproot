@@ -43,9 +43,9 @@ $wp_customize->add_panel( 'taproot_posts', array(
         $taproot_sidebars = array();
         $taproot_sidebars[0] = esc_html__( "Select a Sidebar", 'taproot' );
 
-        foreach($sidebars as $sidebar)
+        foreach($sidebars as $sidebar) 
         {
-            if( strpos($sidebar['name'],'Footer Sidebar') !== false ) continue;
+            if( strpos($sidebar['name'],'Footer Widgets') !== false ) continue;
             $taproot_sidebars[ $sidebar['id'] ] = $sidebar['name'];
         }
 
@@ -575,3 +575,44 @@ $wp_customize->add_panel( 'taproot_posts', array(
             'section' => 'taproot_post_navigation[bottom]',
             'label' => esc_html__( 'Next Post Label', 'taproot' ),      
         ));    
+
+
+    // Section: Search Results Page Settings
+    $wp_customize->add_section( 'taproot_search_results_settings' , array(
+        'panel' => 'taproot_posts',
+        'title' => esc_html__( 'Search Results Page', 'taproot' ),
+        'priority' => 510,
+    ));
+
+        // Setting: Blog Page Layout
+        $wp_customize->add_setting( 'taproot_search_results_page_layout', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'default' => 0             
+        ));
+
+        $wp_customize->add_control( 'taproot_search_results_page_layout', array(
+            'type' => 'select',
+            'section' => 'taproot_search_results_settings',
+            'label' => esc_html__( 'Search Results Page Layout', 'taproot' ),
+            'choices' => array(
+                0 => esc_html__( 'Select a layout', 'taproot' ),                
+                'right' => esc_html__( 'Right Sidebar', 'taproot' ),
+                'left' => esc_html__( 'Left Sidebar', 'taproot' ),
+                'full' => esc_html__( 'Full Width', 'taproot' ),
+            ),      
+        ));
+
+
+
+        // Setting: Search Results Page Sidebar
+        $wp_customize->add_setting( 'taproot_search_results_page_sidebar', array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'default' => 0            
+        ));
+
+        $wp_customize->add_control( 'taproot_search_results_page_sidebar', array(
+            'label' => esc_html__( 'Search Results Page Sidebar', 'taproot' ),
+            'section' => 'taproot_search_results_settings',
+            'type' => 'select',
+            'choices' => $taproot_sidebars,
+        ));
