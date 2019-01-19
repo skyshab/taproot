@@ -1,0 +1,23 @@
+////
+/// Table block.
+///
+/// @group  Blocks
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+.wp-block-table {
+
+    //wtf is this for?
+    // &.has-fixed-layout {}
+
+    tr:first-of-type, &.is-style-stripes tr:nth-child( odd ) {
+        background-color: var( --colors--theme--meta-light, defaultColor( meta-light ) );
+    }
+
+    tr:first-of-type {
+        font-weight: bold;
+    }
+
+}

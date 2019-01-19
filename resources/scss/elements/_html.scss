@@ -1,0 +1,14 @@
+////
+/// html base styles
+///
+/// @group  Elements
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+html {
+    background-color: white;    
+    font-size: var( --typography--body--font-size );
+    line-height: var( --typography--body--line-height );  
+}

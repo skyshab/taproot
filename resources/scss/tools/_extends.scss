@@ -1,0 +1,25 @@
+////
+/// Custom extends.
+///
+/// @group  Tools
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+
+// create a basic white box with subtle shadow
+%shadow-box {
+    border-radius: 0;
+    background-color: white;
+    outline: none;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+%clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}

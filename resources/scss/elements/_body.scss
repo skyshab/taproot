@@ -1,0 +1,22 @@
+////
+/// Body styles
+///
+/// @group  Elements
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+body {
+    overflow-x: hidden;
+    color: var( --colors--theme--text-color ); 
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    
+    // used to layer slide in mobile navigation
+    z-index: 1;
+
+    // used for mobile navigation
+    &.noscroll {
+        overflow: hidden;
+    }    
+}

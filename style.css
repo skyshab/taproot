@@ -1,13 +1,14 @@
-/*
-Theme Name: Taproot
-Theme URI: https://taproot-theme.com
-Author: Sky Shabatura
-Author URI: http://sky.camp
-Description: Taproot is a lightweight yet powerful starter theme that can be customized and extended to fit a wide variety of needs. Global site layouts, settings, and colors can be easily configured in the many options in the Customizer. Single pages and posts have options for the layout, title, sidebars, featured image and header. Custom sidebars can be created right in the Widgets interface. There are plenty of actions and filters for developers to be able to change or extend the theme components without requiring custom theme templates. Whether you need something clean, simple and ready to go, or a base for a feature rich custom site, Taproot may be just what you're looking for.
-Version: 0.9.6
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, two-columns, right-sidebar, left-sidebar, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, post-formats, threaded-comments
-Text Domain: taproot
-*/
-
+/*!
+ * Theme Name: Taproot
+ * Theme URI:    https://taproot-theme.com
+ * Description:  Taproot is a multipurpose theme built on Hybrid Core and the Mythic started theme
+ * Version:      1.0.0
+ * Author:       Sky Shabatura
+ * Author URI:   https://sky.camp
+ * Tags:         custom-background, custom-colors, custom-menu, featured-images, one-column, post-formats, rtl-language-support, theme-options, threaded-comments, translation-ready
+ * Text Domain: taproot
+ * Domain Path:  /resources/lang
+ * Requires PHP: 5.6
+ * License:      GNU General Public License v2.0 or later
+ * License URI:  https://www.gnu.org/licenses/gpl-2.0.html
+ */

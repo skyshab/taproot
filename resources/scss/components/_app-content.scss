@@ -1,0 +1,17 @@
+////
+/// App content component.
+///
+/// This component generally wraps the `<main>` section and the sidebar.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.app-content {
+
+    // we were only doing this on fullwidth layouts on desktop. 
+    // will this work as a base style with boxed layout? 
+    background-color: white;
+
+}

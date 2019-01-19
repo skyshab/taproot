@@ -1,0 +1,16 @@
+////
+/// HR styles
+///
+/// @group  Elements
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+hr {
+    height: 1px;
+    border: 0;
+    margin: var( --typography--body--block-spacing ) 0;
+    background: currentColor;
+    color: var( --colors--theme--meta-medium );
+}

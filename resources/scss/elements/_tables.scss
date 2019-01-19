@@ -1,0 +1,31 @@
+////
+/// table styles
+///
+/// @group  Elements
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid var( --colors--theme--meta-medium );
+}
+
+thead {
+    background-color: var( --colors--theme--meta-light );
+}
+
+thead, tr:not(:last-child) {
+    border-bottom: 1px solid var( --colors--theme--meta-medium );
+}
+
+th, td {
+    padding: 0.4em;
+    border: none;
+    text-align: left;
+
+    &:not(:last-child) {
+        border-right: 1px solid var( --colors--theme--meta-medium );
+    }
+}

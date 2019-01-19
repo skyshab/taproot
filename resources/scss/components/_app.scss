@@ -1,0 +1,61 @@
+////
+/// App component.
+///
+/// This is the wrapper for the entire page layout.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.app {
+
+    // center in body
+    margin: 0 auto;
+
+    // so the slide navigation can work
+    position: relative;
+
+    // so the slide navigation layers properly
+    // see also the z-index for the body and the menu__list
+    z-index: 2;
+}
+
+
+
+.app-main {
+    background: white;
+}
+
+.app-content__container {
+    display: flex;
+}
+
+
+
+.container {
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+
+    // customize default setting
+    max-width: 1200px;
+}
+
+.app-content {
+    margin: 0 auto;
+}
+
+
+
+@include screen('tablet-and-under') {
+    .app-content__container {
+        flex-direction: column;
+    }
+};
+
+
+// !!!!! don't forget to remove this!!!
+.customize-partial-edit-shortcut-button {
+	display: none;
+}

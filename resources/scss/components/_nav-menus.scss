@@ -1,0 +1,281 @@
+////
+/// Nav menu component.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+.menu {
+
+    &__items {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        z-index: 98;
+    }
+
+    &__items, &__sub-menu {
+        display: flex;        
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }    
+
+    &__item {
+        position: relative;
+        flex: 0 1 auto;
+        margin: 0;
+
+        &.has-children .menu--header__link, &.has-children .menu--navbar__link  {
+            display: flex;
+            align-items: center;
+        }        
+    }
+    
+    &__link {
+        display: block;
+        position: relative;
+        text-decoration: none;    
+        transition: color .5s ease-in-out, background-color .4s ease-in-out;
+    
+        &:hover {
+            text-decoration: none;
+            transition: color .5s ease-in-out, background-color .4s ease-in-out;
+        }
+    }
+
+    &__sub-menu {
+        flex-direction: column;
+    }
+
+    &--toggle {
+        cursor: pointer;
+        display: block;
+        height: 1em;
+        line-height: 1;
+        width: 1.2em;
+        opacity: 1;
+        text-align: center;
+        fill: currentColor;
+        transition: color .5s ease-in-out;
+        margin: 0;
+        &:active {
+            opacity: 0.4;
+        }
+    } 
+
+} // end .menu
+
+
+// Submenu Dropdown
+.dropdown-target {
+    padding-left: 0.4em;
+    display: inline-flex;
+}
+
+// Animated menu toggle styles 
+.taproot-hamburger-top, .taproot-hamburger-bottom {
+    transform-origin: 50% 50% 0px;
+}
+
+
+
+// mixin to generate mobile nav styles
+@mixin menu-mobile-styles( $screen ) {
+
+    &.mobile-at-#{$screen} {
+
+        display: flex;
+        align-items: center;
+
+        .menu__item {
+            width: 100%;
+        }
+
+        // slide nav styles
+        &.mobile-type-slide {
+
+            .menu__items {
+                position: fixed;
+                display: none;
+                width: 300px;
+                height: 100%;
+                top: 0;
+                z-index: -1;
+
+                & > .menu__item:last-of-type {
+                    border-bottom-width: 1px;
+                    border-bottom-style: solid;
+                }
+            }
+        }
+
+        // fullscreen nav styles
+        &.mobile-type-fullscreen {
+
+            .menu__items {
+                position: fixed;
+                display: none;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                padding: 15%;
+                z-index: 100;
+            }
+
+            .menu--toggle {
+                z-index: 101;
+                position: relative;
+            }
+        }
+
+        // dropdown nav styles
+        &.mobile-type-dropdown-slide,
+        &.mobile-type-dropdown-fade {
+
+            .menu__items {
+                position: absolute;
+                top: 100%;
+                height: auto;
+                display: none;
+                box-shadow: 0 1px 0px 1px rgba(175,175,175,.2);
+            }
+
+            .menu--toggle.open ~ .menu__items {
+                display: flex;
+            }
+        }
+    }
+}
+
+
+// mixin to generate desktop nav styles
+@mixin menu-desktop-styles( $screen ) {
+
+    &.mobile-at-#{$screen} {
+
+        .menu {
+
+            &__items {
+                flex-direction: row;  
+                
+                & > .menu__item {
+                    &:first-of-type {
+                        &> a {
+                            padding-left: 0;
+                        }
+                    }
+                    &:last-of-type {
+                        &> a {
+                            padding-right: 0;
+                        }
+                    }                    
+                }
+            }
+            
+            &--toggle {
+                display: none;
+            }
+    
+            &__sub-menu {
+
+                z-index: 2;
+
+                .menu__sub-menu {
+                    top: -0.6em;
+                    left: 100%;
+                    width: 100%;
+                }  
+                
+                .menu__item.has-children {
+
+                    .dropdown-target--icon {
+                        transition: transform .3s ease-in-out;
+                        transform: rotate(0deg);
+                    }
+            
+                    &:hover .dropdown-target--icon {
+                        transition: transform .3s ease-in-out;
+                        transform: rotate(-90deg);
+                    }
+                } 
+            }   
+
+            &__item {
+
+                &.has-children {
+
+                    .menu__sub-menu {
+                        position: absolute;
+                        visibility: hidden;
+                        opacity: 0;
+                        transition: all .5s ease-in-out;
+                    }
+            
+                    &:hover > .menu__sub-menu {
+                        visibility: visible;
+                        opacity: 1;
+                        transition: all .5s ease-in-out;
+                    }   
+                }
+            }
+        }
+        
+        .submenus-open-left .menu__sub-menu {
+
+            .menu__sub-menu {
+                right: 100%;
+                left: auto;
+            }            
+            
+            .menu__item.has-children:hover .dropdown-target--icon {
+                transform: rotate(90deg);
+            }
+        }
+                
+        .dropdown-target {
+            padding-left: .4em;
+            margin-right: -1em;
+            text-align: center;
+        }
+    }
+}
+
+// Global Menu Styles
+.menu--top, .menu--header, .menu--navbar, .menu--footer {
+
+    // Mobile Styles
+
+    // always mobile
+    @include menu-mobile-styles( 'always' );
+
+    // mobile only styles 
+    @include screen('mobile') {
+        @include menu-mobile-styles( 'mobile' );       
+    };
+
+    // tablet and under styles 
+    @include screen('tablet-and-under') {
+        @include menu-mobile-styles( 'tablet-and-under' );
+    };    
+
+    // Desktop Styles
+
+    // never mobile styles
+    @include menu-desktop-styles( 'never' );
+
+    // mobile only styles 
+    @include screen('tablet-and-up') {
+        @include menu-desktop-styles( 'mobile' );
+    };    
+
+    // tablet and under styles 
+    @include screen('desktop') {
+        @include menu-desktop-styles( 'tablet-and-under' );
+    };
+}
