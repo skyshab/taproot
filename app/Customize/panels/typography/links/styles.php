@@ -16,28 +16,28 @@ use function Rootstrap\get_theme_mod;
 
 
 // Var: Link color
-$styles->var([
+$styles->add_var([
     'name' => 'typography--links--color',
     'value' => get_theme_mod( 'typography--links--color' ),
 ]);
 
 
 // Var: Link color visited
-$styles->var([
+$styles->add_var([
     'name' => 'typography--links--color--visited',
     'value' => get_theme_mod( 'typography--links--color--visited' ),
 ]);
 
 
 // Var: Link color hover
-$styles->var([
+$styles->add_var([
     'name' => 'typography--links--color--hover',
     'value' => get_theme_mod( 'typography--links--color--hover' ),
 ]);
 
 
 // Var: Link color hover
-$styles->var([
+$styles->add_var([
     'name' => 'typography--links--color--active',
     'value' => get_theme_mod( 'typography--links--color--active' ),
 ]);

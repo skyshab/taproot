@@ -118,7 +118,7 @@ if( has_nav_menu( 'header' ) ) {
 
 
     // Var: font size
-    $styles->var([
+    $styles->add_var([
         'name' => 'nav--header--font-size',
         'value' => get_theme_mod( 'nav--header-mobile--font-size' ),
         'screen' => $mobile_screen,
@@ -126,7 +126,7 @@ if( has_nav_menu( 'header' ) ) {
 
 
     // Var: line height
-    $styles->var([
+    $styles->add_var([
         'name' => 'nav--header--line-height',
         'value' => get_theme_mod( 'nav--header-mobile--line-height' ),
         'screen' => $mobile_screen,

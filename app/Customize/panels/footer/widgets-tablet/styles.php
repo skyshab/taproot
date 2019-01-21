@@ -56,14 +56,14 @@ switch( $footer_layout ) {
 }
 
 // Var: Widgets Layout
-$styles->var([
+$styles->add_var([
     'name' => 'footer--widgets--layout',
     'value' => $footer_widget_styles,
     'screen' => 'tablet-and-up',
 ]);
 
 // Var: Title Font Size
-$styles->var([
+$styles->add_var([
     'name' => 'footer--widgets--title--font-size',
     'value' => get_theme_mod( 'footer--widgets-tablet--title--font-size' ),
     'screen' => 'tablet-and-up',
@@ -71,7 +71,7 @@ $styles->var([
 
 
 // Var: Title Line Height
-$styles->var([
+$styles->add_var([
     'name' => 'footer--widgets--title--line-height',
     'value' => get_theme_mod( 'footer--widgets-tablet--title--line-height' ),
     'screen' => 'tablet-and-up',
@@ -79,7 +79,7 @@ $styles->var([
 
 
 // Var: Text Font Size
-$styles->var([
+$styles->add_var([
     'name' => 'footer--widgets--color',
     'value' => get_theme_mod( 'footer--widgets-tablet--color' ),
     'screen' => 'tablet-and-up',
@@ -87,7 +87,7 @@ $styles->var([
 
 
 // Var: Text Line Height
-$styles->var([
+$styles->add_var([
     'name' => 'footer--widgets--line-height',
     'value' => get_theme_mod( 'footer--widgets-tablet--line-height' ),
     'screen' => 'tablet-and-up',
@@ -95,7 +95,7 @@ $styles->var([
 
 
 // Var: Widgets Spacing
-$styles->var([
+$styles->add_var([
     'name' => 'footer--widgets--gutter',
     'value' => get_theme_mod( 'footer--widgets-tablet--gutter' ),
     'screen' => 'tablet-and-up',

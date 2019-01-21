@@ -16,7 +16,7 @@ use function Rootstrap\get_theme_mod;
 
 
 // Var: Heading Font Size
-$styles->var([
+$styles->add_var([
     'name' => 'typography--h3--font-size',
     'value' => get_theme_mod( 'typography--h3-mobile--font-size' ),
     'screen' => 'default',
@@ -24,7 +24,7 @@ $styles->var([
 
 
 // Var: Heading Line Height
-$styles->var([
+$styles->add_var([
     'name' => 'typography--h3--line-height',
     'value' => get_theme_mod( 'typography--h3-mobile--line-height' ),
     'screen' => 'default',

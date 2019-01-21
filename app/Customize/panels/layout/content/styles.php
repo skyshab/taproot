@@ -16,7 +16,7 @@ use function Rootstrap\get_theme_mod;
 
 
 // max width
-$styles->var([
+$styles->add_var([
     'name' => 'layout--content--max-width',
     'value' => get_theme_mod( 'layout--content--max-width' ),
     'screen' => 'desktop',

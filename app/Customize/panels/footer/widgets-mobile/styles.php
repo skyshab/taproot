@@ -32,7 +32,7 @@ switch( $footer_layout ) {
 }
 
 // Var: Widgets Layout
-$styles->var([
+$styles->add_var([
     'name' => 'footer--widgets--layout',
     'value' => $footer_widget_styles,
     'screen' => 'default',
@@ -40,7 +40,7 @@ $styles->var([
 
 
 // Var: Title Font Size
-$styles->var([
+$styles->add_var([
     'name' => 'footer--widgets--title--font-size',
     'value' => get_theme_mod( 'footer--widgets-mobile--title--font-size' ),
     'screen' => 'default',
@@ -48,7 +48,7 @@ $styles->var([
 
 
 // Var: Title Line Height
-$styles->var([
+$styles->add_var([
     'name' => 'footer--widgets--title--line-height',
     'value' => get_theme_mod( 'footer--widgets-mobile--title--line-height' ),
     'screen' => 'default',
@@ -56,7 +56,7 @@ $styles->var([
 
 
 // Var: Text Font Size
-$styles->var([
+$styles->add_var([
     'name' => 'footer--widgets--color',
     'value' => get_theme_mod( 'footer--widgets-mobile--color' ),
     'screen' => 'default',
@@ -64,7 +64,7 @@ $styles->var([
 
 
 // Var: Text Line Height
-$styles->var([
+$styles->add_var([
     'name' => 'footer--widgets--line-height',
     'value' => get_theme_mod( 'footer--widgets-mobile--line-height' ),
     'screen' => 'default',
@@ -72,7 +72,7 @@ $styles->var([
 
 
 // Var: Widgets Spacing
-$styles->var([
+$styles->add_var([
     'name' => 'footer--widgets--gutter',
     'value' => get_theme_mod( 'footer--widgets-mobile--gutter' ),
     'screen' => 'default',

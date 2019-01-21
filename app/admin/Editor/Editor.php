@@ -66,32 +66,7 @@ class Editor implements Bootable {
         if( $google_fonts = get_theme_mod( 'taproot-google-fonts' ) ) {
             $google_link = sprintf( '//fonts.googleapis.com/css?family=%s', esc_attr( $google_fonts ) );
             wp_enqueue_style('taproot-google-fonts', esc_url( $google_link ) );
-        }
-
-
-
-
-
-
-
-
-
-
-
-        // register script for extending button block
-        wp_register_script(
-            'taproot-extend-button-block',
-            asset( 'js/buttons.js' ),
-            array( 'wp-editor', 'wp-hooks', 'wp-element' )
-        );
-
-        wp_enqueue_script( 'taproot-extend-button-block' );
-
-
-
-
-        
-
+        }        
     }   
 
 

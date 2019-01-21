@@ -12,6 +12,11 @@
 namespace Taproot\Customize;
 
 
+use Taproot\Customize\Controls\Color;
+use Taproot\Customize\Controls\Group_Title;
+use Taproot\Customize\Controls\Range;
+
+
 /**
  * Utility function for adding color control
  *
@@ -48,7 +53,7 @@ function color( $manager, $id, $args = [] ) {
 /**
  * Function for adding control group titles in the Customizer.
  * 
- * @since 0.8.0
+ * @since 1.0.0
  * @param object    $wp_customize
  * @param array     $args - the control args
  */
@@ -65,7 +70,7 @@ function group_title( $manager, $args ) {
 /**
  * Get Font Choices
  *
- * @since 0.8.0
+ * @since 1.0.0
  * 
  * @return array
  */
@@ -102,7 +107,7 @@ function get_font_choices() {
 /**
  * Get default bottom bar content. 
  *
- * @since 0.8.0
+ * @since 1.0.0
  * @return string
  */  
 function bottom_bar_default_content() {

@@ -17,7 +17,7 @@ namespace Taproot\Customize;
 
 use WP_Customize_Manager;
 use Hybrid\Contracts\Bootable;
-use Taproot\Customize\Panels;
+use Taproot\Customize\Panels\Panels;
 use Rootstrap\Modules\Styles\Styles;
 use function Rootstrap\Modules\Screens\screens;
 use function Taproot\asset;
@@ -86,7 +86,7 @@ class Customize implements Bootable {
      */
     public function load_panels() {
         $panels = $this->panels;
-        include_once 'panels/panels.php'; 
+        include_once 'Panels/register-panels.php'; 
     }
 
    
@@ -101,7 +101,6 @@ class Customize implements Bootable {
      * @return void
 	 */
     public function customize_register( WP_Customize_Manager $manager ) {
-        include_once 'controls/controls.php';
         include_once 'functions/functions-controls.php';        
         include_once 'functions/functions-sanitize.php';
         include_once 'functions/functions-partials.php';

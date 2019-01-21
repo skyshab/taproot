@@ -39,21 +39,21 @@ if( get_theme_mod( 'branding--tagline-desktop--hide-tagline' ) ) {
 else {
 
     // Var: Tagline Font Size
-    $styles->var([
+    $styles->add_var([
         'name' => 'branding--tagline--font-size',
         'value' => get_theme_mod( 'branding--tagline-desktop--font-size' ),
         'screen' => 'desktop'
     ]);
 
     // Var: Tagline Line Height
-    $styles->var([
+    $styles->add_var([
         'name' => 'branding--tagline--line-height',
         'value' => get_theme_mod( 'branding--tagline-desktop--line-height' ),
         'screen' => 'desktop'
     ]);
 
     // Var: Tagline Gutter
-    $styles->var([
+    $styles->add_var([
         'name' => 'branding--tagline--gutter',
         'value' => get_theme_mod( 'branding--tagline-desktop--gutter' ),
         'screen' => 'desktop'

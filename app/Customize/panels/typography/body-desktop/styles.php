@@ -16,7 +16,7 @@ use function Rootstrap\get_theme_mod;
 use function Taproot\Customize\maybe_convert_to_em;
 
 // Var: Body Font Size
-$styles->var([
+$styles->add_var([
     'name' => 'typography--body--font-size',
     'value' => get_theme_mod( 'typography--body-desktop--font-size' ),
     'screen' => 'desktop',
@@ -24,7 +24,7 @@ $styles->var([
 
 
 // Var: Body Line Height
-$styles->var([
+$styles->add_var([
     'name' => 'typography--body--line-height',
     'value' => get_theme_mod( 'typography--body-desktop--line-height' ),
     'screen' => 'desktop',
@@ -32,7 +32,7 @@ $styles->var([
 
 
 // Var: Body Block Spacing
-$styles->var([
+$styles->add_var([
     'name' => 'typography--body--block-spacing',
     'value' =>  maybe_convert_to_em( get_theme_mod( 'typography--body-desktop--line-height' ) ),
     'screen' => 'desktop',

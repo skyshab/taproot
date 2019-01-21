@@ -12,7 +12,7 @@
  */
 
 
-use Taproot\Customize\Font_styles;
+use Taproot\Customize\Controls\Font_Styles;
 use function Taproot\Customize\color;
 use function Taproot\Customize\range;
 use function Taproot\Customize\range_atts;

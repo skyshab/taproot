@@ -15,7 +15,7 @@ use function Rootstrap\get_theme_mod;
 
 
 // Var: Link Font Size
-$styles->var([
+$styles->add_var([
     'name' => 'blog--archive-link--font-size',
     'value' => get_theme_mod( 'blog--archive-link--font-size' ),
 ]);

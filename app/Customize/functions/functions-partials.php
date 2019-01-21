@@ -13,7 +13,7 @@
 /**
  * Render the site logo for the selective refresh partial.
  *
- * @since 0.8.0
+ * @since 1.0.0
  * 
  * @return void
  */
@@ -27,7 +27,7 @@ function taproot_customize_partial_logo() {
 /**
  * Render the site title for the selective refresh partial.
  *
- * @since 0.8.0
+ * @since 1.0.0
  * 
  * @return void
  */
@@ -39,7 +39,7 @@ function taproot_customize_partial_blogname() {
 /**
  * Render the site tagline for the selective refresh partial.
  *
- * @since 0.8.0
+ * @since 1.0.0
  * 
  * @return void
  */
@@ -51,7 +51,7 @@ function taproot_customize_partial_blogdescription() {
 /**
  * Render the phone info for the selective refresh partial.
  *
- * @since 0.8.0
+ * @since 1.0.0
  * 
  * @return void
  */
@@ -65,7 +65,7 @@ function taproot_customize_partial_phone_info() {
 /**
  * Render the phone info for the selective refresh partial.
  *
- * @since 0.8.0
+ * @since 1.0.0
  * 
  * @return void
  */
@@ -79,7 +79,7 @@ function taproot_customize_partial_email_info() {
 /**
  * Render the bottom bar content for the selective refresh partial.
  *
- * @since 0.8.0
+ * @since 1.0.0
  * 
  * @return void
  */

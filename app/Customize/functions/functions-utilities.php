@@ -38,7 +38,7 @@ function is_boxed_layout() {
 /**
  * Get a screen from breakpoint data
  *
- * @since 0.8.0
+ * @since 1.0.0
  * 
  * @param string $bp
  * @param bool $mobile
@@ -69,7 +69,7 @@ function get_screen_from_bp( $bp = 'bp-t', $mobile = true ) {
 /**
  * Get mobile screen from setting
  *
- * @since 0.8.0
+ * @since 1.0.0
  * 
  * @param string $screen
  * @return string
@@ -81,7 +81,7 @@ function get_mobile_screen( $screen = 'default' ) {
 /**
  * Get mobile screen from setting
  *
- * @since 0.8.0
+ * @since 1.0.0
  * 
  * @param string $screen
  * @return string
@@ -102,7 +102,7 @@ function get_desktop_screen( $screen = 'default' ) {
 /**
  * Get Font Styles
  *
- * @since 0.8.0
+ * @since 1.0.0
  * 
  * @param array $styles
  * @return string
@@ -146,7 +146,7 @@ function get_font_styles( $id ) {
 /**
  * Get Font Family if not set to default
  *
- * @since 0.8.0
+ * @since 1.0.0
  * 
  * @param string $font
  * @return string

@@ -77,22 +77,22 @@ add_action( 'after_setup_theme', function() {
 	// `resources/scss/settings/_colors.scss` file.
 	add_theme_support( 'editor-color-palette', [
 		[
-			'name'  => __( 'Charcoal' ),
+			'name'  => __( 'Charcoal', 'taproot' ),
 			'slug'  => 'charcoal',
 			'color' => '#282c34'
 		],
 		[
-			'name'  => __( 'Regent' ),
+			'name'  => __( 'Regent', 'taproot' ),
 			'slug'  => 'regent',
 			'color' => '#8c97a7',
 		],
 		[
-			'name'  => __( 'Husk' ),
+			'name'  => __( 'Husk', 'taproot' ),
 			'slug'  => 'husk',
 			'color' => '#B9A364',
 		],
 		[
-			'name'  => __( 'Red Stage' ),
+			'name'  => __( 'Red Stage', 'taproot' ),
 			'slug'  => 'red-stage',
 			'color' => '#b15330',
 		]
@@ -102,26 +102,26 @@ add_action( 'after_setup_theme', function() {
 	// `resources/scss/settings/_fonts.scss` file.
 	add_theme_support( 'editor-font-sizes', [
 		[
-			'name'      => __( 'Small' ),
-			'shortName' => __( 'S' ),
+			'name'      => __( 'Small', 'taproot' ),
+			'shortName' => __( 'S', 'taproot' ),
 			'size'      => 12,
 			'slug'      => 'small'
 		],
 		[
-			'name'      => __( 'Regular' ),
-			'shortName' => __( 'M' ),
+			'name'      => __( 'Regular', 'taproot' ),
+			'shortName' => __( 'M', 'taproot' ),
 			'size'      => 16,
 			'slug'      => 'regular'
 		],
 		[
-			'name'      => __( 'Large' ),
-			'shortName' => __( 'L' ),
+			'name'      => __( 'Large', 'taproot' ),
+			'shortName' => __( 'L', 'taproot' ),
 			'size'      => 36,
 			'slug'      => 'large'
 		],
 		[
-			'name'      => __( 'Larger' ),
-			'shortName' => __( 'XL' ),
+			'name'      => __( 'Larger', 'taproot' ),
+			'shortName' => __( 'XL', 'taproot' ),
 			'size'      => 48,
 			'slug'      => 'larger'
 		]

@@ -15,21 +15,21 @@ use function Rootstrap\get_theme_mod;
 
 
 // Var: Blog Pagination Color
-$styles->var([
+$styles->add_var([
     'name' => 'blog--pagination-hover--link--color',
     'value' => get_theme_mod( 'blog--pagination-hover--link--color' ),
 ]);
 
 
 // Color Setting: Pagination Numbers Background
-$styles->var([
+$styles->add_var([
     'name' => 'blog--pagination-hover--background-color',
     'value' => get_theme_mod( 'blog--pagination-hover--background-color' ),
 ]);
 
 
 // Color Setting: Pagination Numbers Color
-$styles->var([
+$styles->add_var([
     'name' => 'blog--pagination-hover--color',
     'value' => get_theme_mod( 'blog--pagination-hover--color' ),
 ]);

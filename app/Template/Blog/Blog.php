@@ -43,7 +43,7 @@ class Blog implements Bootable {
     /**
      *  Add classes to posts
      * 
-     * @since 0.8.0
+     * @since 1.0.0
      * @return void
      */
     public function entry_classes( $classes ) {
@@ -57,7 +57,7 @@ class Blog implements Bootable {
     /**
      *  Add "read more" link to post archives
      * 
-     * @since 0.8.0
+     * @since 1.0.0
      * @return void
      */
     public function excerpt_more( $more ) {

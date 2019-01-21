@@ -57,7 +57,7 @@ switch( $footer_layout ) {
 
 
 // Var: Widgets Layout
-$styles->var([
+$styles->add_var([
     'name' => 'footer--widgets--layout',
     'value' => $footer_widget_styles,
     'screen' => 'desktop',
@@ -65,7 +65,7 @@ $styles->var([
 
 
 // Var: Title Font Size
-$styles->var([
+$styles->add_var([
     'name' => 'footer--widgets--title--font-size',
     'value' => get_theme_mod( 'footer--widgets-desktop--title--font-size' ),
     'screen' => 'desktop',
@@ -73,7 +73,7 @@ $styles->var([
 
 
 // Var: Title Line Height
-$styles->var([
+$styles->add_var([
     'name' => 'footer--widgets--title--line-height',
     'value' => get_theme_mod( 'footer--widgets-desktop--title--line-height' ),
     'screen' => 'desktop',
@@ -81,7 +81,7 @@ $styles->var([
 
 
 // Var: Text Font Size
-$styles->var([
+$styles->add_var([
     'name' => 'footer--widgets--color',
     'value' => get_theme_mod( 'footer--widgets-desktop--color' ),
     'screen' => 'desktop',
@@ -89,7 +89,7 @@ $styles->var([
 
 
 // Var: Text Line Height
-$styles->var([
+$styles->add_var([
     'name' => 'footer--widgets--line-height',
     'value' => get_theme_mod( 'footer--widgets-desktop--line-height' ),
     'screen' => 'desktop',
@@ -97,7 +97,7 @@ $styles->var([
 
 
 // Var: Widgets Spacing
-$styles->var([
+$styles->add_var([
     'name' => 'footer--widgets--gutter',
     'value' => get_theme_mod( 'footer--widgets-desktop--gutter' ),
     'screen' => 'desktop',

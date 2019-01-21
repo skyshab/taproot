@@ -15,3 +15,7 @@
 
 // Archive Entry Font Style
 $defaults->add( 'blog--title--font-styles', 'capitalize' );
+
+
+// Default title for Blog page
+$defaults->add( 'blog--title--title', 'Blog' );

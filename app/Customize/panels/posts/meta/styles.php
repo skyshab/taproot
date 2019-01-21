@@ -16,21 +16,21 @@ use function Rootstrap\get_theme_mod;
 
 
 // Var: Meta Color
-$styles->var([
+$styles->add_var([
     'name' => 'posts--meta--color',
     'value' => get_theme_mod( 'posts--meta--color' ),
 ]);
 
 
 // Var: Meta Icon Color
-$styles->var([
+$styles->add_var([
     'name' => 'posts--meta--icon--color',
     'value' => get_theme_mod( 'posts--meta--icon--color' ),
 ]);
 
 
 // Var: Meta Font Size
-$styles->var([
+$styles->add_var([
     'name' => 'posts--meta--font-size',
     'value' => get_theme_mod( 'posts--meta--font-size' ),
 ]);

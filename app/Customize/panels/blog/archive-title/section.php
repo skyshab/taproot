@@ -11,7 +11,7 @@
  * @link      https://taproot-theme.com
  */
 
-use Taproot\Customize\Font_Styles;
+use Taproot\Customize\Controls\Font_Styles;
 use function Taproot\Customize\range;
 use function Taproot\Customize\range_atts;
 use function Taproot\Customize\color;

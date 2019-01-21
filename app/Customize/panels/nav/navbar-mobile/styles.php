@@ -127,7 +127,7 @@ if( has_nav_menu( 'navbar' ) ) {
 
 
     // Var: font size
-    $styles->var([
+    $styles->add_var([
         'name' => 'nav--navbar--font-size',
         'value' => get_theme_mod( 'nav--navbar-mobile--font-size' ),
         'screen' => $mobile_screen,
@@ -135,7 +135,7 @@ if( has_nav_menu( 'navbar' ) ) {
 
 
     // Var: line height
-    $styles->var([
+    $styles->add_var([
         'name' => 'nav--navbar--line-height',
         'value' => get_theme_mod( 'nav--navbar-mobile--line-height' ),
         'screen' => $mobile_screen,

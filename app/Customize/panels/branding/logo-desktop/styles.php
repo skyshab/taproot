@@ -16,7 +16,7 @@ use function Rootstrap\get_theme_mod;
 
 
 // Var: Logo Width
-$styles->var([
+$styles->add_var([
     'name' => 'branding--logo--width',
     'value' => get_theme_mod( 'branding--logo-desktop--width' ),
     'screen' => 'desktop'
@@ -24,7 +24,7 @@ $styles->var([
 
 
 // Var: Logo Gutter
-$styles->var([
+$styles->add_var([
     'name' => 'branding--logo--gutter',
     'value' => get_theme_mod( 'branding--logo-desktop--gutter' ),
     'screen' => 'desktop'

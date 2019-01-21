@@ -16,7 +16,7 @@ use function Rootstrap\get_theme_mod;
 
 
 // Var: Content Gutter
-$styles->var([
+$styles->add_var([
     'name' => 'layout--content--padding',
     'value' => get_theme_mod( 'layout--content-mobile--padding' ),
 ]);

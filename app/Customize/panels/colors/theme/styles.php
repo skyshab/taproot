@@ -16,42 +16,42 @@ use function Rootstrap\get_theme_mod;
 
 
 // Var: Body Text Color
-$styles->var([
+$styles->add_var([
     'name' => 'colors--theme--text-color',
     'value' => get_theme_mod( 'colors--theme--text-color' ),
 ]);
 
 
 // Var: Accent Color
-$styles->var([
+$styles->add_var([
     'name' => 'colors--theme--accent',
     'value' => get_theme_mod( 'colors--theme--accent' ),
 ]);
 
 
 // Var: Accent Contrast Color
-$styles->var([
+$styles->add_var([
     'name' => 'colors--theme--accent-contrast',
     'value' => get_theme_mod( 'colors--theme--accent-contrast' ),
 ]);
 
 
 // Var: Meta Light
-$styles->var([
+$styles->add_var([
     'name' => 'colors--theme--meta-light',
     'value' => get_theme_mod( 'colors--theme--meta-light' ),
 ]);
 
 
 // Var: Meta Medium
-$styles->var([
+$styles->add_var([
     'name' => 'colors--theme--meta-medium',
     'value' => get_theme_mod( 'colors--theme--meta-medium' ),
 ]);
 
 
 // Var: Meta Dark
-$styles->var([
+$styles->add_var([
     'name' => 'colors--theme--meta-dark',
     'value' => get_theme_mod( 'colors--theme--meta-dark' ),
 ]);

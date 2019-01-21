@@ -87,7 +87,7 @@ if( has_nav_menu( 'top' ) ) {
 
 
     // Var: font size
-    $styles->var([
+    $styles->add_var([
         'name' => 'nav--top--font-size',
         'value' => get_theme_mod( 'nav--top--font-size', null, true ),
         'screen' => $top_nav_desktop_screen,
@@ -95,7 +95,7 @@ if( has_nav_menu( 'top' ) ) {
 
 
     // Var: line height
-    $styles->var([
+    $styles->add_var([
         'name' => 'nav--top--line-height',
         'value' => get_theme_mod( 'nav--top--line-height', null, true ),
         'screen' => $top_nav_desktop_screen,

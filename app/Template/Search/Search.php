@@ -41,7 +41,7 @@ class Search implements Bootable {
     /**
      *  Get search form markup
      * 
-     * @since 0.8.0
+     * @since 1.0.0
      * @return void
      */
     public function searchform( $form ) {

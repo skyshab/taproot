@@ -491,50 +491,6 @@
         ]
     },
     {
-        "name": "samikeijonen/phpcs-composer",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/samikeijonen/phpcs-composer.git",
-            "reference": "d3116bdc9aed16cb46a01f1e3286ecd958897258"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/samikeijonen/phpcs-composer/zipball/d3116bdc9aed16cb46a01f1e3286ecd958897258",
-            "reference": "d3116bdc9aed16cb46a01f1e3286ecd958897258",
-            "shasum": ""
-        },
-        "require": {
-            "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
-            "php": ">=5.6",
-            "phpcompatibility/phpcompatibility-wp": "^2",
-            "wp-coding-standards/wpcs": "^1"
-        },
-        "time": "2018-12-31T10:03:49+00:00",
-        "type": "phpcodesniffer-standard",
-        "installation-source": "source",
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "GPL-2.0-or-later"
-        ],
-        "authors": [
-            {
-                "name": "Sami Keijonen",
-                "email": "sami.keijonen@foxnet.fi",
-                "homepage": "https://foxland.fi",
-                "role": "Developer"
-            }
-        ],
-        "description": "Custom PHPCS ruleset.",
-        "homepage": "https://github.com/samikeijonen/phpcs-composer",
-        "keywords": [
-            "phpcs",
-            "standards",
-            "wordpress"
-        ]
-    },
-    {
         "name": "skyshab/rootstrap",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -676,6 +632,78 @@
         "keywords": [
             "phpcs",
             "standards",
+            "wordpress"
+        ]
+    },
+    {
+        "name": "wptrt/wpthemereview",
+        "version": "0.1.0",
+        "version_normalized": "0.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/WPTRT/WPThemeReview.git",
+            "reference": "d9fa0dfff3e842efa9d7f804c9ec241408fd3c19"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/WPTRT/WPThemeReview/zipball/d9fa0dfff3e842efa9d7f804c9ec241408fd3c19",
+            "reference": "d9fa0dfff3e842efa9d7f804c9ec241408fd3c19",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4",
+            "phpcompatibility/phpcompatibility-wp": "^2.0",
+            "squizlabs/php_codesniffer": "^3.3.0",
+            "wp-coding-standards/wpcs": "^1.0.0"
+        },
+        "require-dev": {
+            "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
+            "phpcompatibility/php-compatibility": "^9.0",
+            "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0",
+            "roave/security-advisories": "dev-master"
+        },
+        "suggest": {
+            "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3 || This Composer plugin will sort out the PHPCS 'installed_paths' automatically."
+        },
+        "time": "2018-10-31T17:02:38+00:00",
+        "type": "phpcodesniffer-standard",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Theme Review Team",
+                "homepage": "https://make.wordpress.org/themes/handbook/",
+                "role": "Strategy and rule setting"
+            },
+            {
+                "name": "Ulrich Pogson",
+                "homepage": "https://github.com/grappler",
+                "role": "Lead developer"
+            },
+            {
+                "name": "Juliette Reinders Folmer",
+                "homepage": "https://github.com/jrfnl",
+                "role": "Lead developer"
+            },
+            {
+                "name": "Denis Žoljom",
+                "homepage": "https://github.com/dingo-d",
+                "role": "Plugin integration lead"
+            },
+            {
+                "name": "Contributors",
+                "homepage": "https://github.com/WPTRT/WPThemeReview/graphs/contributors"
+            }
+        ],
+        "description": "PHP_CodeSniffer rules (sniffs) to verify theme compliance with the rules for theme hosting on wordpress.org",
+        "homepage": "https://make.wordpress.org/themes/handbook/review/",
+        "keywords": [
+            "phpcs",
+            "standards",
+            "themes",
             "wordpress"
         ]
     }

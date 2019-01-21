@@ -26,7 +26,7 @@ if( get_theme_mod( 'branding--title-desktop--hide-title' ) ) {
 else {
 
     // Var: Title Font Size
-    $styles->var([
+    $styles->add_var([
         'name' => 'branding--title--font-size',
         'value' => get_theme_mod( 'branding--title-desktop--font-size' ),
         'screen' => 'desktop'
@@ -34,7 +34,7 @@ else {
 
     
     // Var: Title Line Height
-    $styles->var([
+    $styles->add_var([
         'name' => 'branding--title--line-height',
         'value' => get_theme_mod( 'branding--title-desktop--line-height' ),
         'screen' => 'desktop'

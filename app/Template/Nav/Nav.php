@@ -59,19 +59,19 @@ class Nav implements Bootable {
     function register_nav_menus() {
 
         register_nav_menus( [
-            'header' => esc_html_x( 'Header', 'nav menu location' )
+            'header' => esc_html_x( 'Header', 'nav menu location', 'taproot' )
         ]);
 
         register_nav_menus( [
-            'navbar' => esc_html_x( 'Navbar', 'nav menu location' )
+            'navbar' => esc_html_x( 'Navbar', 'nav menu location', 'taproot' )
         ]);
         
         register_nav_menus( [
-            'top' => esc_html_x( 'Top Nav', 'nav menu location' )
+            'top' => esc_html_x( 'Top Nav', 'nav menu location', 'taproot' )
         ]);
         
         register_nav_menus( [
-            'footer' => esc_html_x( 'Footer Nav', 'nav menu location' )
+            'footer' => esc_html_x( 'Footer Nav', 'nav menu location', 'taproot' )
         ]);
     }
 
@@ -79,7 +79,7 @@ class Nav implements Bootable {
     /**
      *  Add classes to nav areas
      * 
-     * @since 0.8.0
+     * @since 1.0.0
      * @return void
      */
     public function nav_classes( $classes, $context) {
@@ -104,7 +104,7 @@ class Nav implements Bootable {
     /**
      * Get Header Nav Classes
      * 
-     * @since 0.8.0
+     * @since 1.0.0
      * 
      * @param array $classes
      * @return array - Returns array of classes for the header nav.
@@ -132,7 +132,7 @@ class Nav implements Bootable {
     /**
      * Get Navbar Classes
      * 
-     * @since 0.8.0
+     * @since 1.0.0
      * 
      * @param array $classes
      * @return array - Returns array of classes for the navbar.
@@ -160,7 +160,7 @@ class Nav implements Bootable {
     /**
      * Get Topnav Classes
      * 
-     * @since 0.8.0
+     * @since 1.0.0
      * 
      * @param array $classes
      * @return array - Returns array of classes for the top nav.
@@ -184,7 +184,7 @@ class Nav implements Bootable {
     /**
      * Get Footer Nav Classes
      * 
-     * @since 0.8.0
+     * @since 1.0.0
      * 
      * @param array $classes
      * @return array - Returns array of classes for the top nav.
@@ -201,7 +201,7 @@ class Nav implements Bootable {
     /**
      *  Add Mobile Menu Toggle
      * 
-     * @since 0.8.0
+     * @since 1.0.0
      * @param string $location
      * @param string $markup 
      * @return string

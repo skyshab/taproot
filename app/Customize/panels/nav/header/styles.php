@@ -83,7 +83,7 @@ if( has_nav_menu( 'header' ) ) {
 
 
     // Var: font size
-    $styles->var([
+    $styles->add_var([
         'name' => 'nav--header--font-size',
         'value' => get_theme_mod( 'nav--header--font-size', null, true ),
         'screen' => $header_nav_desktop_screen,
@@ -91,7 +91,7 @@ if( has_nav_menu( 'header' ) ) {
 
 
     // Var: line height
-    $styles->var([
+    $styles->add_var([
         'name' => 'nav--header--line-height',
         'value' => get_theme_mod( 'nav--header--height', null, true ),
         'screen' => $header_nav_desktop_screen,

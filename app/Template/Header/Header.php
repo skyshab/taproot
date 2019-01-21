@@ -41,7 +41,7 @@ class Header implements Bootable {
     /**
      *  Add classes to header
      * 
-     * @since 0.8.0
+     * @since 1.0.0
      * @return void
      */
     public function header_classes( $classes, $context) {

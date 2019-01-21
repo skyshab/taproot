@@ -33,24 +33,24 @@ $panel->sequence([
                 'link' => false
             ],
             'next' => [
-                'label' => __('tablet'),
+                'label' => __('tablet', 'taproot'),
             ],
         ],
         'header--padding-tablet' => [ 
             'device' => 'tablet',
             'hide' => true,
             'prev' => [
-                'label' => __('mobile'),
+                'label' => __('mobile', 'taproot'),
             ],
             'next' => [
-                'label' => __('desktop'),
+                'label' => __('desktop', 'taproot'),
             ],
         ],
         'header--padding-desktop' => [ 
             'device' => 'desktop',
             'hide' => true,
             'prev' => [
-                'label' => __('tablet'),
+                'label' => __('tablet', 'taproot'),
             ],
             'next' => [
                 'link' => false
@@ -60,7 +60,7 @@ $panel->sequence([
             'device' => 'desktop',
             'hide' => true,
             'prev' => [
-                'label' => __('tablet'),
+                'label' => __('tablet', 'taproot'),
                 'link' => 'header--padding-tablet'
             ],
             'next' => [

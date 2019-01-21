@@ -25,35 +25,35 @@ $panel->sequence([
         'pages--title' => [ 
             'hide' => false,
             'next' => [
-                'label' => __('mobile'),
+                'label' => __('mobile', 'taproot'),
             ],        
         ],        
         'pages--title-mobile' => [ 
             'device' => 'mobile',
             'hide' => true,
             'prev' => [
-                'label' => __('general'),
+                'label' => __('general', 'taproot'),
                 'device' => 'desktop'
             ],
             'next' => [
-                'label' => __('tablet'),
+                'label' => __('tablet', 'taproot'),
             ],
         ],
         'pages--title-tablet' => [ 
             'device' => 'tablet',
             'hide' => true,
             'prev' => [
-                'label' => __('mobile'),
+                'label' => __('mobile', 'taproot'),
             ],
             'next' => [
-                'label' => __('desktop'),
+                'label' => __('desktop', 'taproot'),
             ],
         ],
         'pages--title-desktop' => [ 
             'device' => 'desktop',
             'hide' => true,
             'prev' => [
-                'label' => __('tablet'),
+                'label' => __('tablet', 'taproot'),
             ],
             'next' => [
                 'link' => false

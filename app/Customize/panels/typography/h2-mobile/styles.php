@@ -16,14 +16,14 @@ use function Rootstrap\get_theme_mod;
 
 
 // Var: Heading Font Size
-$styles->var([
+$styles->add_var([
     'name' => 'typography--h2--font-size',
     'value' => get_theme_mod( 'typography--h2-mobile--font-size' ),
     'screen' => 'default',
 ]);
 
 // Var: Heading Line Height
-$styles->var([
+$styles->add_var([
     'name' => 'typography--h2--line-height',
     'value' => get_theme_mod( 'typography--h2-mobile--line-height' ),
     'screen' => 'default',

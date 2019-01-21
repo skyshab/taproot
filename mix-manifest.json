@@ -1,16 +1,14 @@
 {
-    "/dist/js/app.js": "/dist/js/app.js?id=81c17d08131ea94d602c",
-    "/dist/css/editor.css": "/dist/css/editor.css?id=e2f6c678cb4a1cdf8f43",
-    "/dist/css/customize-controls.css": "/dist/css/customize-controls.css?id=42bffb4ba3efbe52ca2f",
-    "/dist/js/app.js.map": "/dist/js/app.js.map?id=3398b3292dff60a269ec",
-    "/dist/css/editor.css.map": "/dist/css/editor.css.map?id=d20105c997e399160062",
-    "/dist/css/customize-controls.css.map": "/dist/css/customize-controls.css.map?id=39941ec3f030e52cdf42",
-    "/dist/js/customize-preview.js": "/dist/js/customize-preview.js?id=9149c85add3293f295f9",
-    "/dist/js/customize-preview.js.map": "/dist/js/customize-preview.js.map?id=3682642ad7d82b5670ba",
-    "/dist/js/customize-controls.js": "/dist/js/customize-controls.js?id=ba6f147a6851ed837845",
-    "/dist/js/customize-controls.js.map": "/dist/js/customize-controls.js.map?id=009fb0186a1d0bbf1b31",
-    "/dist/js/buttons.js": "/dist/js/buttons.js?id=424f9472e3596a036fba",
-    "/dist/js/buttons.js.map": "/dist/js/buttons.js.map?id=fc8036e8762766ef8d45",
-    "/dist/css/screen.css": "/dist/css/screen.css?id=29efa4ff96d43c68b609",
-    "/dist/css/screen.css.map": "/dist/css/screen.css.map?id=cab68b76a0310f08ab02"
+    "/dist/js/app.js": "/dist/js/app.js?id=bdf697cfd0551d16a78e",
+    "/dist/css/screen.css": "/dist/css/screen.css?id=97ca0e3734b6dccc9f5d",
+    "/dist/css/editor.css": "/dist/css/editor.css?id=e9e3fd8f8d15bb5662bc",
+    "/dist/css/customize-controls.css": "/dist/css/customize-controls.css?id=afb0484baf4a642debe5",
+    "/dist/js/app.js.map": "/dist/js/app.js.map?id=84d015e1dbef9ac364d9",
+    "/dist/css/screen.css.map": "/dist/css/screen.css.map?id=a55461af47170770b500",
+    "/dist/css/editor.css.map": "/dist/css/editor.css.map?id=c48ac82315a7674f0cf6",
+    "/dist/css/customize-controls.css.map": "/dist/css/customize-controls.css.map?id=a54ad358b191d281c3cb",
+    "/dist/js/customize-controls.js": "/dist/js/customize-controls.js?id=aa8ec17ccfc7adafc50e",
+    "/dist/js/customize-controls.js.map": "/dist/js/customize-controls.js.map?id=ee9bb18f215320163c00",
+    "/dist/js/customize-preview.js": "/dist/js/customize-preview.js?id=22f30680f87e02270138",
+    "/dist/js/customize-preview.js.map": "/dist/js/customize-preview.js.map?id=1609d3ac16eed126bab5"
 }

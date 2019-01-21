@@ -29,7 +29,7 @@ function sep( $sep = '' ) {
 		'taproot/sep',
 		sprintf(
 			' <span class="sep">%s</span> ',
-			$sep ?: esc_html_x( '&middot;', 'meta separator' )
+			$sep ?: esc_html_x( '&middot;', 'meta separator', 'taproot' )
 		)
 	);
 }

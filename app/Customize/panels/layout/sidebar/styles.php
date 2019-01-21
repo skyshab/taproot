@@ -16,21 +16,21 @@ use function Rootstrap\get_theme_mod;
 
 
 // Var: Sidebar Background Color
-$styles->var([
+$styles->add_var([
     'name' => 'layout--sidebar--background-color',
     'value' => get_theme_mod( 'layout--sidebar--background-color' ),
 ]);
 
 
 // Var: Sidebar Width
-$styles->var([
+$styles->add_var([
     'name' => 'layout--sidebar--width',
     'value' => get_theme_mod( 'layout--sidebar--width' ),
     'screen' => 'desktop'
 ]);
 
 // Var: Sidebar Max Content Width
-$styles->var([
+$styles->add_var([
     'name' => 'layout--sidebar--content--max-width',
     'value' => get_theme_mod( 'layout--sidebar--content--max-width' ),
 ]);

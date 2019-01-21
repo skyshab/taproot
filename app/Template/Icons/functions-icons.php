@@ -43,6 +43,21 @@ function location( $location, $args = [] ) {
 
 
 /**
+ * Print icon at specific location
+ *
+ * @since  1.0.0
+ * @access public
+ * @param string - required
+ * @param array - optional
+ * @return string
+ */
+function render_location( $location, $args = [] ) {
+    echo location( $location, $args );
+}
+
+
+
+/**
  * Get icon by name or args
  *
  * @since  1.0.0

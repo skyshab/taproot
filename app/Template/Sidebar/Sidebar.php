@@ -61,7 +61,7 @@ class Sidebar implements Bootable {
 
         register_sidebar( [
             'id'   => 'primary',
-            'name' => esc_html_x( 'Primary', 'sidebar' )
+            'name' => esc_html_x( 'Primary', 'sidebar', 'taproot' )
         ] + $args );
         
 
@@ -76,18 +76,19 @@ class Sidebar implements Bootable {
         for($i = 1; $i <= 4; $i++) {
             register_sidebar( [
                 'id'   => "footer-{$i}",
-                'name' => esc_html_x( "Footer {$i}", 'sidebar' )
+                /* translators: name of each footer widget area */                
+                'name' => sprintf( esc_html__( 'Footer %s', 'taproot' ), $i )
             ] + $footer_args );        
         }
 
     }
-
+  
 
 
     /**
      *  Display Sidebar?
      * 
-     * @since 0.8.0
+     * @since 1.0.0
      * @return void
      */
     public function display( $hierarchy ) {
@@ -104,7 +105,7 @@ class Sidebar implements Bootable {
     /**
      *  Sidebar Classes
      * 
-     * @since 0.8.0
+     * @since 1.0.0
      * @return void
      */
     public function classes( $classes ) {

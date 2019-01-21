@@ -16,7 +16,7 @@ use function Rootstrap\get_theme_mod;
 
 
 // Var: Main Font Size
-$styles->var([
+$styles->add_var([
     'name' => 'typography--main-two-col--font-size',
     'value' => get_theme_mod( 'typography--main-desktop-two-col--font-size' ),
     'screen' => 'desktop',
@@ -24,7 +24,7 @@ $styles->var([
 
 
 // Var: Main Line Height
-$styles->var([
+$styles->add_var([
     'name' => 'typography--main-two-col--line-height',
     'value' => get_theme_mod( 'typography--main-desktop-two-col--line-height' ),
     'screen' => 'desktop',

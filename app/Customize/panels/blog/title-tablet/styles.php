@@ -16,7 +16,7 @@ use function Rootstrap\get_theme_mod;
 
 
 // Var: Blog Title Font Size
-$styles->var([
+$styles->add_var([
     'name' =>'blog--title--font-size',
     'value' => get_theme_mod( 'blog--title-tablet--font-size' ),
     'screen' => 'tablet-and-up'
@@ -24,7 +24,7 @@ $styles->var([
 
 
 // Var: Blog Title Line Height
-$styles->var([
+$styles->add_var([
     'name' =>'blog--title--line-height',
     'value' => get_theme_mod( 'blog--title-tablet--line-height' ),
     'screen' => 'tablet-and-up'

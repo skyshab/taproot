@@ -9,7 +9,7 @@
  * @link      https://taproot-theme.com
  */
 
-namespace Taproot\Customize;
+namespace Taproot\Customize\Controls;
 
 use WP_Customize_Control;
 
@@ -17,7 +17,7 @@ use WP_Customize_Control;
 /** 
  * Range-based sliding value picker for Customizer.
  *
- * @since 0.8.0
+ * @since 1.0.0
  */
 class Range extends WP_Customize_Control {
 
@@ -25,7 +25,7 @@ class Range extends WP_Customize_Control {
     /**
      * Stores control type.
      *
-     * @since 0.8.0
+     * @since 1.0.0
      * @var string
      */     
     public $type = 'taproot-range';
@@ -40,7 +40,7 @@ class Range extends WP_Customize_Control {
     /**
      * Render control markup.
      *
-     * @since 0.8.0
+     * @since 1.0.0
      */ 
     public function render_content() {     
 
@@ -96,13 +96,13 @@ class Range extends WP_Customize_Control {
             <div class="range-group">
 
                 <input type="checkbox" class="taproot-range-enable" value="<?php echo esc_attr( $this->value(1) ); ?>" <?php $this->link(1); ?> <?php checked( $this->value(1), 1 ); ?> />
-                <span class="taproot-range-enable-message"> <?php echo __('click to enable', 'taproot'); ?> </span>
+                <span class="taproot-range-enable-message"> <?php echo esc_html__('click to enable', 'taproot'); ?> </span>
                 <input type="range" class="taproot-range" <?php echo $initial_atts; ?> value="<?php echo esc_attr( $numeric_value ); ?>" data-reset_value="<?php echo esc_attr( $default_number ); ?>" />
                 <input type="number" class="taproot-range-input" <?php echo $initial_atts; ?> value="<?php echo esc_attr( $numeric_value ); ?>" />
                 
                 <?php $disabled = ( 1 === count($attributes) ) ? 'disabled' : ''; ?>
 
-                <select class="taproot-unit" data-reset_value="<?php echo esc_attr( $default_unit ); ?>" <?php echo $disabled; ?> >
+                <select class="taproot-unit" data-reset_value="<?php echo esc_attr( $default_unit ); ?>" <?php echo esc_attr( $disabled ) ?> >
                     <?php
                     foreach( $attributes as $unit => $atts ) {
                         $a_list = $this->get_attributes( $atts );  
@@ -112,9 +112,8 @@ class Range extends WP_Customize_Control {
                 </select>
 
                 <input type="hidden" class="taproot-range-value" <?php $this->input_attrs(); ?> value="<?php echo esc_attr( $this->value(0) ); ?>" <?php $this->link(); ?> />
-
                 <span class="taproot-reset-slider"></span>
-                <span class="taproot-range-disable"><?php echo __('disable', 'taproot'); ?></span>
+                <span class="taproot-range-disable"><?php echo esc_html__('disable', 'taproot'); ?></span>
             </div>
     <?php
     }
@@ -125,7 +124,7 @@ class Range extends WP_Customize_Control {
     /**
      * Get Attributes markup
      *
-     * @since 0.8.0
+     * @since 1.0.0
      */ 
     public function get_attributes( $atts ) {
 

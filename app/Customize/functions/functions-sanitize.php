@@ -29,7 +29,7 @@ function sanitize_google_fonts( $fonts ) {
 /**
  * Sanitize checkbox value
  *
- * @since 0.8.0
+ * @since 1.0.0
  * 
  * @param string $input
  * @return int 1 if checked, empty string if not
@@ -42,7 +42,7 @@ function taproot_sanitize_checkbox( $input ){
 /**
  * Sanitize numeric range slider value
  *
- * @since 0.8.0
+ * @since 1.0.0
  * 
  * @param mixed $input
  * @return int
@@ -55,7 +55,7 @@ function taproot_sanitize_range_slider_value( $input ) {
 /**
  * Sanitize enable mobile bar checkbox value
  *
- * @since 0.8.0
+ * @since 1.0.0
  * 
  * @param string $input
  * @return int 1 if checked, empty string if not
@@ -68,7 +68,7 @@ function taproot_sanitize_enable_mobilebar_mobile_checkbox( $input ) {
 /**
  * Sanitize color value
  *
- * @since 0.8.0
+ * @since 1.0.0
  * 
  * @param string $color
  * @return string

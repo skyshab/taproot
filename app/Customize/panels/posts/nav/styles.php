@@ -34,7 +34,7 @@ $styles->add([
 
 
 // Var: Link Font Size
-$styles->var([
+$styles->add_var([
     'name' => 'posts--nav--font-size',
     'value' => get_theme_mod( 'posts--nav--font-size' ),
 ]);

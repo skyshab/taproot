@@ -43,7 +43,7 @@ class Main implements Bootable {
     /**
      *  Main ID
      * 
-     * @since 0.8.0
+     * @since 1.0.0
      * @return void
      */
     public function attr( $attr ) {
@@ -57,7 +57,7 @@ class Main implements Bootable {
     /**
      *  Main Classes
      * 
-     * @since 0.8.0
+     * @since 1.0.0
      * @return void
      */
     public function classes( $classes ) {

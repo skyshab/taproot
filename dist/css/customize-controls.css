@@ -1,4 +1,5 @@
-.customize-control-select select, .customize-control-text input[type="text"], .customize-control-taproot-range .range-group, .customize-control-checkbox .customize-inside-control-row, .customize-control-taproot-font-styles .taproot-font-styles {
+@charset "UTF-8";
+.customize-control-taproot-font-styles .taproot-font-styles, .customize-control-checkbox .customize-inside-control-row, .customize-control-taproot-range .range-group, .customize-control-text input[type=text], .customize-control-select select {
 	border-radius: 0;
 	background-color: white;
 	outline: none;
@@ -14,7 +15,8 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 }
 
 .devices .preview-mobile-landscape:before {
-	transform: rotate(90deg) scaleY(-1);
+	-webkit-transform: rotate(90deg) scaleY(-1);
+	        transform: rotate(90deg) scaleY(-1);
 }
 
 .customize-control-select select {
@@ -34,7 +36,6 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	background-repeat: no-repeat;
 	background-position: right 10px center;
 }
-
 .customize-control-select select:focus {
 	border: none;
 	outline: none;
@@ -43,7 +44,6 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 .customize-control-radio .customize-control-title {
 	margin-bottom: 4px;
 }
-
 .customize-control-radio .customize-inside-control-row {
 	background: white;
 	margin: 0;
@@ -55,23 +55,20 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	align-items: center;
 	flex-direction: row-reverse;
 }
-
 .customize-control-radio .customize-inside-control-row label {
 	margin: 0;
 	line-height: 36px;
 	flex: 100%;
 }
-
 .customize-control-radio .customize-inside-control-row input {
 	margin: 0;
 	line-height: 36px;
 }
-
 .customize-control-radio .customize-inside-control-row:last-child {
 	margin-bottom: 0;
 }
 
-.customize-control-text input[type="text"] {
+.customize-control-text input[type=text] {
 	width: 100%;
 	font-size: 14px;
 	height: 36px;
@@ -86,7 +83,6 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	margin: 0;
 	max-width: 100%;
 }
-
 .customize-control-alpha-color .wp-picker-container .iris-picker {
 	width: calc(100% - 2px) !important;
 	max-width: 275px;
@@ -94,59 +90,48 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	padding-bottom: 25px !important;
 	margin-top: 12px;
 }
-
 .customize-control-alpha-color .wp-picker-container .iris-picker.iris-border {
 	border-radius: 0;
 	border: 1px solid #dddddd;
 }
-
 .customize-control-alpha-color .wp-picker-container .iris-picker .iris-strip {
 	height: 206px !important;
 	width: 24px !important;
 }
-
 .customize-control-alpha-color .wp-picker-container .iris-picker .iris-strip .ui-slider-handle {
 	border-radius: 0 !important;
 	border-color: rgba(0, 0, 0, 0.2) !important;
 	box-shadow: none;
 }
-
 .customize-control-alpha-color .wp-picker-container .iris-picker .iris-strip .ui-slider-handle:before {
 	border-radius: 0;
 }
-
 .customize-control-alpha-color .wp-picker-container .iris-picker .iris-palette-container {
 	width: 100%;
 	display: flex;
 	height: 20px;
 	width: 186px;
 }
-
 .customize-control-alpha-color .wp-picker-container .iris-picker .iris-palette {
 	width: 20px !important;
 	height: 20px !important;
 	float: none;
 	margin: 0 5px 0 0 !important;
 }
-
 .customize-control-alpha-color .wp-picker-container .iris-square {
 	height: 175px !important;
 	margin-right: 10px !important;
 }
-
 .customize-control-alpha-color .wp-picker-container .iris-square-value:focus {
 	box-shadow: none;
 }
-
 .customize-control-alpha-color .wp-picker-container .iris-picker .iris-palette, .customize-control-alpha-color .wp-picker-container .iris-square-inner, .customize-control-alpha-color .wp-picker-container .iris-slider, .customize-control-alpha-color .wp-picker-container .alpha-color-picker-wrapper, .customize-control-alpha-color .wp-picker-container .alpha-color-picker-wrapper .transparency {
 	box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1) !important;
 	border-radius: 0 !important;
 }
-
 .customize-control-alpha-color .wp-picker-container input[type=text] {
 	padding: 8px 10px;
 }
-
 .customize-control-alpha-color .wp-picker-container .wp-color-result {
 	height: 36px;
 	margin: 0;
@@ -157,28 +142,23 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	border-radius: 0;
 	background: white;
 }
-
 .customize-control-alpha-color .wp-picker-container .wp-color-result.wp-picker-open {
 	margin-bottom: 12px;
 }
-
 .customize-control-alpha-color .wp-picker-container .wp-color-result.wp-picker-open ~ .wp-picker-holder .alpha-color-picker-wrapper {
 	display: block;
 }
-
 .customize-control-alpha-color .wp-picker-container .wp-color-result.wp-picker-open + .wp-picker-input-wrap {
 	width: 100%;
 	max-width: 275px;
 	display: flex;
 	justify-content: space-between;
 }
-
 .customize-control-alpha-color .wp-picker-container .wp-color-result:active, .customize-control-alpha-color .wp-picker-container .wp-color-result:focus {
 	border: none;
 	outline: none;
 	box-shadow: none;
 }
-
 .customize-control-alpha-color .wp-picker-container .wp-color-result .wp-color-result-text {
 	background: rgba(0, 0, 0, 0.22);
 	color: white;
@@ -190,7 +170,6 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	display: inline-block;
 	width: 100%;
 }
-
 .customize-control-alpha-color .wp-picker-input-wrap .button {
 	margin-left: 0;
 	float: right;
@@ -206,16 +185,13 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	box-shadow: none;
 	transition: background-color 0.4s ease-in-out;
 }
-
 .customize-control-alpha-color .wp-picker-input-wrap .button:hover {
 	background-color: #666;
 }
-
-.customize-control-alpha-color .wp-picker-input-wrap input[type="text"].alpha-color-control {
+.customize-control-alpha-color .wp-picker-input-wrap input[type=text].alpha-color-control {
 	float: left;
 	width: 195px;
 }
-
 .customize-control-alpha-color .alpha-color-picker-wrapper {
 	background: #FFF;
 	padding: 0;
@@ -224,14 +200,12 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	float: left;
 	margin-left: 10px;
 }
-
 .customize-control-alpha-color .alpha-color-picker-wrapper .ui-widget-content,
 .customize-control-alpha-color .alpha-color-picker-wrapper .ui-widget-header,
 .customize-control-alpha-color .alpha-color-picker-wrapper .ui-state-focus {
 	background: transparent;
 	border: none;
 }
-
 .customize-control-alpha-color .alpha-color-picker-wrapper .ui-slider {
 	position: relative;
 	z-index: 1;
@@ -239,11 +213,10 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	height: 188px !important;
 	margin: 9px 0;
 }
-
 .customize-control-alpha-color .alpha-color-picker-wrapper .ui-slider-handle {
-	transform: translateY(50%);
+	-webkit-transform: translateY(50%);
+	        transform: translateY(50%);
 }
-
 .customize-control-alpha-color .alpha-color-picker-wrapper .ui-slider-handle, .customize-control-alpha-color .alpha-color-picker-wrapper .ui-state-default {
 	height: 18px;
 	width: 28px;
@@ -263,7 +236,6 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	text-decoration: none;
 	cursor: ns-resize;
 }
-
 .customize-control-alpha-color .alpha-color-picker-wrapper .transparency {
 	position: absolute;
 	top: 0;
@@ -288,7 +260,6 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	height: 36px;
 	position: relative;
 }
-
 .customize-control-taproot-range .taproot-unit {
 	min-width: 25px !important;
 	width: 25px !important;
@@ -306,19 +277,16 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	font-weight: 500;
 	background: transparent;
 }
-
 .customize-control-taproot-range .taproot-unit:focus {
 	border: none;
 	outline: none;
 	box-shadow: none;
 }
-
 .customize-control-taproot-range .taproot-unit:disabled {
 	color: inherit;
 }
-
 .customize-control-taproot-range .taproot-range {
-	transition: background .5s;
+	transition: background 0.5s;
 	-webkit-appearance: none;
 	background-color: #cacaca;
 	height: 5px;
@@ -327,12 +295,10 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	margin-right: 5px;
 	border-radius: 3px;
 }
-
 .customize-control-taproot-range .taproot-range:focus {
 	box-shadow: none !important;
 	outline: none !important;
 }
-
 .customize-control-taproot-range .taproot-range::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	width: 15px;
@@ -341,16 +307,13 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	border-radius: 15px;
 	background-color: #2e86b9;
 }
-
 .customize-control-taproot-range .taproot-range::-moz-range-track {
 	border: inherit;
 	background: transparent;
 }
-
 .customize-control-taproot-range .taproot-range::-moz-focus-outer {
 	border: 0;
 }
-
 .customize-control-taproot-range .taproot-range::-moz-range-thumb {
 	width: 15px;
 	height: 15px;
@@ -358,21 +321,17 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	border-radius: 15px;
 	background-color: #2e86b9;
 }
-
 .customize-control-taproot-range .taproot-range::-ms-track {
 	border: inherit;
 	color: transparent;
 	background: transparent;
 }
-
 .customize-control-taproot-range .taproot-range::-ms-fill-lower, .customize-control-taproot-range .taproot-range::-ms-fill-upper {
 	background: transparent;
 }
-
 .customize-control-taproot-range .taproot-range::-ms-tooltip {
 	display: none;
 }
-
 .customize-control-taproot-range .taproot-range::-ms-thumb {
 	width: 15px;
 	height: 15px;
@@ -380,7 +339,6 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	border: 0;
 	background-color: #2e86b9;
 }
-
 .customize-control-taproot-range .taproot-range-input {
 	width: 36px !important;
 	text-align: center;
@@ -396,12 +354,10 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	-moz-appearance: textfield;
 	text-align: right;
 }
-
 .customize-control-taproot-range .taproot-range-input::-webkit-outer-spin-button, .customize-control-taproot-range .taproot-range-input::-webkit-inner-spin-button {
 	-webkit-appearance: none;
 	margin: 0;
 }
-
 .customize-control-taproot-range .taproot-reset-slider {
 	width: 18px;
 	height: 28px;
@@ -410,41 +366,34 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	position: relative;
 	vertical-align: middle;
 }
-
 .customize-control-taproot-range .taproot-reset-slider:after {
-	font-family: 'Dashicons';
+	font-family: "Dashicons";
 	content: "\F531";
 	font-size: 18px;
 	line-height: 28px;
 	color: #cacaca;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	transition: background .5s;
+	transition: background 0.5s;
 }
-
 .customize-control-taproot-range .taproot-reset-slider:hover:after {
 	color: #A7A7A7;
 }
-
 .customize-control-taproot-range .taproot-range-enable {
 	background: #ddd;
 	box-shadow: none;
 	border: none;
 	margin: 0 10px 0 0;
 }
-
 .customize-control-taproot-range .taproot-range-enable:not(:checked) + .taproot-range-enable-message ~ * {
 	display: none;
 }
-
 .customize-control-taproot-range .taproot-range-enable:checked, .customize-control-taproot-range .taproot-range-enable:checked + .taproot-range-enable-message {
 	display: none;
 }
-
 .customize-control-taproot-range .taproot-range-enable-message {
 	color: #ccc;
 }
-
 .customize-control-taproot-range .taproot-range-disable {
 	position: absolute;
 	right: 0;
@@ -454,11 +403,9 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	transition: opacity 0.4s ease-in-out;
 	cursor: pointer;
 }
-
 .customize-control-taproot-range:hover .taproot-range-disable {
 	opacity: 0.5;
 }
-
 .customize-control-taproot-range:hover .taproot-range-disable:hover {
 	opacity: 0.8;
 }
@@ -469,14 +416,12 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	text-transform: uppercase;
 	margin-top: 0.6em;
 }
-
 .customize-control-checkbox .customize-inside-control-row {
 	display: flex;
 	align-items: center;
 	margin-left: 0;
 	padding: 10px;
 }
-
 .customize-control-checkbox input[type=checkbox] {
 	margin: 0;
 	margin-right: 10px;
@@ -487,7 +432,6 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	box-shadow: none;
 	background: #EEEEEE;
 }
-
 .customize-control-checkbox input[type=checkbox]:checked:before {
 	margin: 0;
 	width: inherit;
@@ -504,7 +448,6 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	display: flex;
 	padding: 10px;
 }
-
 .customize-control-taproot-font-styles .taproot-font-styles--item, .customize-control-taproot-font-styles .taproot-control-reset {
 	flex: 1 1 100%;
 	height: 34px;
@@ -521,65 +464,52 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	color: #A7A7A7;
 	transition: background 0.5s ease-in-out;
 }
-
 .customize-control-taproot-font-styles .taproot-font-styles--item:hover, .customize-control-taproot-font-styles .taproot-control-reset:hover {
 	color: white;
 }
-
 .customize-control-taproot-font-styles .taproot-font-styles--item:before, .customize-control-taproot-font-styles .taproot-control-reset:before {
 	font-size: 16px;
 	line-height: 34px;
 	display: inline-block;
 	vertical-align: middle;
 	speak: none;
-	transition: color .5s;
+	transition: color 0.5s;
 }
-
 .customize-control-taproot-font-styles .taproot-font-styles--item:not(.taproot-font-style-checked):hover, .customize-control-taproot-font-styles .taproot-control-reset:not(.taproot-font-style-checked):hover {
 	background: #cacaca;
 }
-
 .customize-control-taproot-font-styles .taproot-font-styles--item:last-child, .customize-control-taproot-font-styles .taproot-control-reset:last-child {
 	margin-right: 0;
 }
-
 .customize-control-taproot-font-styles .taproot-font-styles--item.taproot-font-style-checked, .customize-control-taproot-font-styles .taproot-font-styles--item:active {
 	background: #2e86b9;
 	color: #FFF;
 }
-
 .customize-control-taproot-font-styles .taproot-font-styles--item .taproot-font-style-checkbox {
 	display: none;
 }
-
 .customize-control-taproot-font-styles .taproot-font-styles--item.taproot-font-styles--bold:before {
 	content: "B";
 	font-weight: bold;
 }
-
 .customize-control-taproot-font-styles .taproot-font-styles--item.taproot-font-styles--italic:before {
 	content: "I";
 	font-style: italic;
 }
-
 .customize-control-taproot-font-styles .taproot-font-styles--item.taproot-font-styles--underline:before {
 	content: "U";
 	text-decoration: underline;
 }
-
 .customize-control-taproot-font-styles .taproot-font-styles--item.taproot-font-styles--uppercase:before {
 	content: "TT";
 }
-
 .customize-control-taproot-font-styles .taproot-font-styles--item.taproot-font-styles--capitalize:before {
 	content: "Tt";
 }
-
 .customize-control-taproot-font-styles .taproot-control-reset:before {
-	font-family: 'Dashicons';
+	font-family: "Dashicons";
 	content: "\F531";
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-
 /*# sourceMappingURL=customize-controls.css.map*/

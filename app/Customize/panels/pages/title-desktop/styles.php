@@ -16,7 +16,7 @@ use function Rootstrap\get_theme_mod;
 
 
 // Var: Title Font Size
-$styles->var([
+$styles->add_var([
     'name' => 'pages--title--font-size',
     'value' => get_theme_mod( 'pages--title-desktop--font-size' ),
     'screen' => 'desktop'
@@ -24,7 +24,7 @@ $styles->var([
 
 
 // Var: Title Line Height
-$styles->var([
+$styles->add_var([
     'name' => 'pages--title--line-height',
     'value' => get_theme_mod( 'pages--title-desktop--line-height' ),
     'screen' => 'desktop'

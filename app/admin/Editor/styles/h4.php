@@ -32,7 +32,7 @@ $styles->add([
 
 
 // Mobile default
-$styles->var([
+$styles->add_var([
     'name' => 'typography--h4--font-size',
     'value' => get_theme_mod('typography--h4-mobile--font-size'),
     'selector' => '.editor-styles-wrapper .wp-block',
@@ -40,7 +40,7 @@ $styles->var([
 
 
 // tablet size when settings panel closed, use mobile when open
-$styles->var([
+$styles->add_var([
     'name' => 'typography--h4--font-size',
     'value' => get_theme_mod('typography--h4-tablet--font-size'),
     'screen' => 'editor-tablet',
@@ -49,7 +49,7 @@ $styles->var([
 
 
 // tablet size when settings panel open
-$styles->var([
+$styles->add_var([
     'name' => 'typography--h4--font-size',
     'value' => get_theme_mod('typography--h4-tablet--font-size'),
     'screen' => 'editor-desktop',
@@ -58,7 +58,7 @@ $styles->var([
 
 
 // desktop size when settings panel closed
-$styles->var([
+$styles->add_var([
     'name' => 'typography--h4--font-size',
     'value' => get_theme_mod('typography--h4-desktop--font-size'),
     'screen' => 'editor-desktop',
@@ -72,7 +72,7 @@ $styles->var([
 
 
 // mobile default
-$styles->var([
+$styles->add_var([
     'name' => 'typography--h4--line-height',
     'value' => get_theme_mod('typography--h4-mobile--line-height'),
     'selector' => '.editor-styles-wrapper .wp-block',
@@ -80,7 +80,7 @@ $styles->var([
 
 
 // tablet size when settings panel closed, use mobile when open
-$styles->var([
+$styles->add_var([
     'name' => 'typography--h4--line-height',
     'value' => get_theme_mod('typography--h4-tablet--line-height'),
     'screen' => 'editor-tablet',
@@ -89,7 +89,7 @@ $styles->var([
 
 
 // tablet size when settings panel open
-$styles->var([
+$styles->add_var([
     'name' => 'typography--h4--line-height',
     'value' => get_theme_mod('typography--h4-tablet--line-height'),
     'screen' => 'editor-desktop',
@@ -98,7 +98,7 @@ $styles->var([
 
 
 // desktop size when settings panel closed
-$styles->var([
+$styles->add_var([
     'name' => 'typography--h4--line-height',
     'value' => get_theme_mod('typography--h4-desktop--line-height'),
     'screen' => 'editor-desktop',

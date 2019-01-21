@@ -9,7 +9,7 @@
  * @link      https://taproot-theme.com
  */
 
-namespace Taproot\Customize;
+namespace Taproot\Customize\Controls;
 
 use WP_Customize_Control;
 
@@ -17,7 +17,7 @@ use WP_Customize_Control;
 /**
  * Font style control for Customizer.
  * 
- * @since 0.8.0
+ * @since 1.0.0
  */
 class Font_Styles extends WP_Customize_Control {
 
@@ -25,7 +25,7 @@ class Font_Styles extends WP_Customize_Control {
     /**
      * Stores control type.
      *
-     * @since 0.8.0
+     * @since 1.0.0
      * @var string
      */     
     public $type = 'taproot-font-styles';
@@ -34,7 +34,7 @@ class Font_Styles extends WP_Customize_Control {
     /**
      * Render control markup.
      *
-     * @since 0.8.0
+     * @since 1.0.0
      */ 
     public function render_content() 
     { ?>

@@ -9,10 +9,10 @@
  * @link      https://taproot-theme.com
  */
 
-namespace Taproot\Customize;
+namespace Taproot\Customize\Panels;
 
 use WP_Customize_Manager;
-
+use function Taproot\Customize\path;
 
 /**
  * Panel class
@@ -72,7 +72,7 @@ class Panel  {
     /**
      * Set up our object
      *
-     * @since 0.8.0
+     * @since 1.0.0
      * 
      * @param  string $id
      * @param  array $args
@@ -108,7 +108,7 @@ class Panel  {
 	 * @return void
 	 */
 	public function setup() {
-        $file = path( 'panels', $this->id, 'panel.php' );
+        $file = path( $this->id, 'panel.php' );
         $panel = $this;
         include_once $file;        
     }
@@ -132,8 +132,8 @@ class Panel  {
         foreach ( $this->sections as $section ) {  
 
             // load defaults.php
-            $file = path( 'panels', $panel, $section, 'defaults.php' );
-            $path = get_parent_theme_file_path( path( 'app', 'Customize', $file ) );
+            $file = path( $panel, $section, 'defaults.php' );
+            $path = get_parent_theme_file_path( path( 'app', 'Customize', 'Panels', $file ) );
             if( file_exists( $path ) ) include_once $file;              
         }
     }
@@ -159,13 +159,13 @@ class Panel  {
         foreach ( $this->sections as $section ) {  
 
             // load section.php
-            $file = path( 'panels', $panel, $section, 'section.php' );
-            $path = get_parent_theme_file_path( path( 'app', 'Customize', $file ) );
+            $file = path( $panel, $section, 'section.php' );
+            $path = get_parent_theme_file_path( path( 'app', 'Customize', 'Panels', $file ) );
             if( file_exists( $path ) ) include_once $file;  
             
             // load partials.php
             if ( isset( $manager->selective_refresh ) ) {
-                $partials_file = path( 'panels', $panel, $section, 'partials.php' );
+                $partials_file = path( $panel, $section, 'partials.php' );
                 $partials_path = get_parent_theme_file_path( path( 'app', 'Customize', $partials_file ) );
                 if( file_exists( $partials_path ) ) include_once $partials_file;  
             }
@@ -197,8 +197,8 @@ class Panel  {
 	public function styles( $styles ) {
         $panel = $this->id;
         foreach( $this->sections as $section ) {
-            $file = path( 'panels', $panel, $section, 'styles.php' );
-            $path = get_parent_theme_file_path( path( 'app', 'Customize', $file ) );
+            $file = path( $panel, $section, 'styles.php' );
+            $path = get_parent_theme_file_path( path( 'app', 'Customize', 'Panels', $file ) );
             if( file_exists( $path ) ) include_once $file;                
         }
     } 

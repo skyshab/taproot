@@ -16,14 +16,14 @@ use function Rootstrap\get_theme_mod;
 
 
 // Var: Main Font Size
-$styles->var([
+$styles->add_var([
     'name' => 'typography--main--font-size',
     'value' => get_theme_mod( 'typography--main-desktop--font-size' ),
     'screen' => 'desktop',
 ]);
 
 // Var: Main Line Height
-$styles->var([
+$styles->add_var([
     'name' => 'typography--main--line-height',
     'value' => get_theme_mod( 'typography--main-desktop--line-height' ),
     'screen' => 'desktop',

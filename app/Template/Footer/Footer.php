@@ -43,7 +43,7 @@ class Footer implements Bootable {
     /**
      *  Add classes to footer
      * 
-     * @since 0.8.0
+     * @since 1.0.0
      * @return void
      */
     public function footer_classes( $classes, $context ) {
@@ -66,7 +66,7 @@ class Footer implements Bootable {
     /**
      *  Get Array of Footer Sidebars
      * 
-     * @since 0.8.0
+     * @since 1.0.0
      * @return array - Returns an array of footer sidebar ids and Names
      */
     public function get_footer_sidebars() {
@@ -85,7 +85,7 @@ class Footer implements Bootable {
     /**
      *  Has Active Footer Sidebars?
      * 
-     * @since 0.8.0
+     * @since 1.0.0
      * @return bool
      */
     public function has_active_footer_sidebars() {
@@ -106,43 +106,35 @@ class Footer implements Bootable {
     /**
      *  Get Footer Sidebars
      * 
-     * @since 0.8.0
+     * @since 1.0.0
      * @return void
      */
-    public function footer_sidebars() {
+    public function footer_sidebars() { 
 
-        $content = '';
+        if( $this->has_active_footer_sidebars() ): ?>
+           <div class="app-footer__widgets">
+        <?php endif; ?>
 
-        if( $this->has_active_footer_sidebars() ):
-            $content .= '<div class="app-footer__widgets">';
-        endif;
+        <?php foreach ( $this->get_footer_sidebars() as $sidebar => $name ): ?>
+            <?php if( is_active_sidebar( $sidebar ) && function_exists( 'dynamic_sidebar' ) ): ?>
 
-        foreach ( $this->get_footer_sidebars() as $sidebar => $name ) {
-            if( is_active_sidebar( $sidebar ) && function_exists( 'dynamic_sidebar' ) ) {
+                <aside id="<?php echo esc_attr( $sidebar ) ?>" class="app-footer__sidebar <?php echo esc_attr( $sidebar ) ?>" role="complementary">                  
+                    <?php dynamic_sidebar( $sidebar ); ?>
+                </aside>
 
-                $content .= sprintf( '<aside id="%s" class="app-footer__sidebar %s" role="complementary">', esc_attr( $sidebar ), esc_attr( $sidebar ) );
-                    
-                    ob_start();
-                    dynamic_sidebar( $sidebar );
-                    $ob_output = ob_get_contents();
-                    ob_end_clean();		        	
+            <?php endif; ?>
+        <?php endforeach ?>
 
-                    $content .= $ob_output;
-
-                $content .= "</aside>";
-            }
-        }
-
-        if( $this->has_active_footer_sidebars() ):
-            $content .= '</div>';
-        endif;
-
-        echo $content;				
+        <?php if( $this->has_active_footer_sidebars() ): ?>
+            </div>
+        <?php endif;
     }
 
 
     /**
      * Output Footer Credits
+     * 
+     * We need to run this through kses filter with allwoances for certain html and shortcodes
      *
      * @since 1.0.0
      * @return string

@@ -34,27 +34,27 @@ $panel->sequence([
             'device' => 'mobile',
             'hide' => true,
             'prev' => [
-                'label' => esc_html__('styles'),
+                'label' => esc_html__('styles', 'taproot'),
             ],
             'next' => [
-                'label' => esc_html__('tablet'),
+                'label' => esc_html__('tablet', 'taproot'),
             ],
         ],
         'typography--body-tablet' => [ 
             'device' => 'tablet',
             'hide' => true,
             'prev' => [
-                'label' => esc_html__('mobile'),
+                'label' => esc_html__('mobile', 'taproot'),
             ],
             'next' => [
-                'label' => esc_html__('desktop'),
+                'label' => esc_html__('desktop', 'taproot'),
             ],
         ],
         'typography--body-desktop' => [ 
             'device' => 'desktop',
             'hide' => true,
             'prev' => [
-                'label' => esc_html__('tablet'),
+                'label' => esc_html__('tablet', 'taproot'),
             ],
             'next' => [
                 'link' => false
@@ -67,11 +67,11 @@ $panel->sequence([
 $heading_sequence_tabs_array = [ 
     'hide' => true,
     'prev' => [
-        'label' => esc_html__('headings'),
+        'label' => esc_html__('headings', 'taproot'),
         'link' => 'typography--headings'
     ],
     'next' => [
-        'label' => esc_html__('mobile'),
+        'label' => esc_html__('mobile', 'taproot'),
         'link' => 'typography--h1-mobile'
     ],
 ];
@@ -107,12 +107,12 @@ $panel->tabs([
 $mobile_heading_sequence_tabs_array = [ 
     'hide' => true,
     'prev' => [
-        'label' => esc_html__('styles'),
+        'label' => esc_html__('styles', 'taproot'),
         'link' => 'typography--h1',
         'device' => 'desktop',
     ],
     'next' => [
-        'label' => esc_html__('tablet'),
+        'label' => esc_html__('tablet', 'taproot'),
         'link' => 'typography--h1-tablet'
     ],
     'device' => 'mobile'
@@ -148,11 +148,11 @@ $panel->tabs([
 $tablet_heading_sequence_tabs_array = [ 
     'hide' => true,
     'prev' => [
-        'label' => esc_html__('mobile'),
+        'label' => esc_html__('mobile', 'taproot'),
         'link' => 'typography--h1-mobile'
     ],
     'next' => [
-        'label' => esc_html__('desktop'),
+        'label' => esc_html__('desktop', 'taproot'),
         'link' => 'typography--h1-desktop'
     ],
     'device' => 'tablet'
@@ -192,7 +192,7 @@ $panel->tabs([
 $desktop_heading_sequence_tabs_array = [ 
     'hide' => true,
     'prev' => [
-        'label' => esc_html__('tablet'),
+        'label' => esc_html__('tablet', 'taproot'),
         'link' => 'typography--h1-tablet'
     ],
     'next' => [
@@ -237,27 +237,27 @@ $panel->sequence([
             'device' => 'mobile',
             'hide' => false,
             'prev' => [
-                'label' => esc_html__('styles'),
+                'label' => esc_html__('styles', 'taproot'),
             ],
             'next' => [
-                'label' => esc_html__('tablet'),
+                'label' => esc_html__('tablet', 'taproot'),
             ],
         ],
         'typography--main-tablet' => [ 
             'device' => 'tablet',
             'hide' => true,
             'prev' => [
-                'label' => esc_html__('mobile'),
+                'label' => esc_html__('mobile', 'taproot'),
             ],
             'next' => [
-                'label' => esc_html__('desktop'),
+                'label' => esc_html__('desktop', 'taproot'),
             ],
         ],
         'typography--main-desktop' => [ 
             'device' => 'desktop',
             'hide' => true,
             'prev' => [
-                'label' => esc_html__('tablet'),
+                'label' => esc_html__('tablet', 'taproot'),
             ],
             'next' => [
                 'link' => false
@@ -267,7 +267,7 @@ $panel->sequence([
             'device' => 'desktop',
             'hide' => true,
             'prev' => [
-                'label' => esc_html__('tablet'),
+                'label' => esc_html__('tablet', 'taproot'),
                 'link' => 'typography--main-tablet',
             ],
             'next' => [
@@ -305,24 +305,24 @@ $panel->sequence([
                 'label' => false,
             ],
             'next' => [
-                'label' => esc_html__('tablet'),
+                'label' => esc_html__('tablet', 'taproot'),
             ],
         ],
         'typography--sidebar-tablet' => [ 
             'device' => 'tablet',
             'hide' => true,
             'prev' => [
-                'label' => esc_html__('mobile'),
+                'label' => esc_html__('mobile', 'taproot'),
             ],
             'next' => [
-                'label' => esc_html__('desktop'),
+                'label' => esc_html__('desktop', 'taproot'),
             ],
         ],
         'typography--sidebar-desktop' => [ 
             'device' => 'desktop',
             'hide' => true,
             'prev' => [
-                'label' => esc_html__('tablet'),
+                'label' => esc_html__('tablet', 'taproot'),
             ],
             'next' => [
                 'link' => false

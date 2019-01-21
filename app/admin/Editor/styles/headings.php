@@ -23,7 +23,7 @@ use function Rootstrap\get_theme_mod;
 
 
 // Var: Heading Color
-$styles->var([
+$styles->add_var([
     'name' => 'typography--headings--text-color',
     'value' => get_theme_mod( 'typography--headings--text-color' ),
 ]);
@@ -35,7 +35,7 @@ $styles->var([
 
 
 // Var: Font Family
-$styles->var([
+$styles->add_var([
     'name' => 'typography--headings--font-family',
     'value' => get_font_family( get_theme_mod( 'typography--headings--font-family' ) ),
 ]);

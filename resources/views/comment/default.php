@@ -8,7 +8,7 @@
             <?php Hybrid\Comment\display_permalink( [
                 'text' => sprintf(
                     // Translators: 1 is the comment date and 2 is the time.
-                    esc_html__( '%1$s at %2$s' ),
+                    esc_html__( '%1$s at %2$s', 'taproot' ),
                     Hybrid\Comment\render_date(),
                     Hybrid\Comment\render_time()
                 )
@@ -22,7 +22,7 @@
             <?php if ( ! Hybrid\Comment\is_approved() ) : ?>
 
                 <p class="comment__moderation">
-                    <?php esc_html_e( 'Your comment is awaiting moderation.' ) ?>
+                    <?php esc_html_e( 'Your comment is awaiting moderation.', 'taproot' ) ?>
                 </p>
 
             <?php endif ?>

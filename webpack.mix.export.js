@@ -13,8 +13,9 @@
  */
 
 // Import required packages.
-const { mix } = require( 'laravel-mix' );
+const mix     = require( 'laravel-mix' );
 const rimraf  = require( 'rimraf' );
+const fs      = require( 'fs' );
 
 // Folder name to export the files to.
 let exportPath = 'taproot';
@@ -27,6 +28,7 @@ let files = [
 	'index.php',
 	'license.md',
 	'readme.md',
+	'readme.txt',        // Required for WordPress.org theme review.
 	'screenshot.png'
 ];
 
@@ -35,8 +37,8 @@ let folders = [
 	'app',
 	'dist',
 	'resources/lang',
-//	'resources/js',      // Required for WordPress.org theme review.
-//	'resources/scss',    // Required for WordPress.org theme review.
+	'resources/js',      // Required for WordPress.org theme review.
+	'resources/scss',    // Required for WordPress.org theme review.
 	'resources/views',
 	'vendor'
 ];
@@ -46,12 +48,18 @@ rimraf.sync( exportPath );
 
 // Loop through the root files and copy them over.
 files.forEach( file => {
-	mix.copy( file, `${exportPath}/${file}` );
+
+	if ( fs.existsSync( file ) ) {
+		mix.copy( file, `${exportPath}/${file}` );
+	}
 } );
 
 // Loop through the folders and copy them over.
 folders.forEach( folder => {
-	mix.copyDirectory( folder, `${exportPath}/${folder}` );
+
+	if ( fs.existsSync( folder ) ) {
+		mix.copyDirectory( folder, `${exportPath}/${folder}` );
+	}
 } );
 
 // Delete the `vendor/bin` and `vendor/composer/installers` folder, which can

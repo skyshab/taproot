@@ -13,7 +13,7 @@
 
 
 use function Taproot\Customize\color;
-use Taproot\Customize\Font_Styles;
+use Taproot\Customize\Controls\Font_Styles;
 
 
 # =======================================================

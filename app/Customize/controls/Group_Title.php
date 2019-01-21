@@ -9,7 +9,7 @@
  * @link      https://taproot-theme.com
  */
 
-namespace Taproot\Customize;
+namespace Taproot\Customize\Controls;
 
 use WP_Customize_Control;
 
@@ -17,7 +17,7 @@ use WP_Customize_Control;
 /**
  * Adds Title for a group of controls.
  * 
- * @since 0.8.0
+ * @since 1.0.0
  */
 class Group_Title extends WP_Customize_Control {
 
@@ -25,7 +25,7 @@ class Group_Title extends WP_Customize_Control {
     /**
      * Stores control type.
      *
-     * @since 0.8.0
+     * @since 1.0.0
      * @var string
      */     
     public $type = 'taproot-option-group';
@@ -34,7 +34,7 @@ class Group_Title extends WP_Customize_Control {
     /**
      * Render control markup.
      *
-     * @since 0.8.0
+     * @since 1.0.0
      */ 
     public function render_content() {
         if( !empty( $this->label ) ) :

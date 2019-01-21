@@ -15,7 +15,7 @@
  */
 
 // Import required packages.
-const { mix }           = require( 'laravel-mix' );
+const mix               = require( 'laravel-mix' );
 const ImageminPlugin    = require( 'imagemin-webpack-plugin' ).default;
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const imageminMozjpeg   = require( 'imagemin-mozjpeg' );
@@ -142,10 +142,7 @@ mix.webpackConfig( {
             'hybrid-customize' : path.resolve( __dirname, 'vendor/justintadlock/hybrid-customize/resources/' ),
             
             // alias for customize-preview directory
-            'customize-preview' : path.resolve( __dirname, 'resources/js/customize-preview/' ),
-
-            // allow us to link to our customizer panel directories
-            'panels' : path.resolve( __dirname, 'app/Customize/panels/' ),           
+            'customize-preview' : path.resolve( __dirname, 'resources/js/customize-preview/' ),          
 		}
 	},
 	plugins     : [

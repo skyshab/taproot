@@ -3,11 +3,10 @@
  * Template for displaying post navigation
  *
  * @package taproot
- * @since 0.8.0
+ * @since 1.0.0
  */
-?>
 
-<?php Taproot\Template\Postnav\display( 'default', [
+Taproot\Template\Postnav\display( 'default', [
     'prev_icon' => Taproot\Template\Icons\location('postnav-prev', ['icon' => 'chevron-right', 'class' => 'flip-h']),    
     'next_icon' => Taproot\Template\Icons\location('postnav-next', ['icon' => 'chevron-right']),
-])?>
+]);

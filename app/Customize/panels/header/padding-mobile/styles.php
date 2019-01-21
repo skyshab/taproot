@@ -16,7 +16,7 @@ use function Rootstrap\get_theme_mod;
 
 
 // Var: Padding
-$styles->var([
+$styles->add_var([
     'name' => 'header--padding',
     'value' => get_theme_mod( 'header--padding-mobile--padding' ),
 ]);

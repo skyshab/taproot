@@ -40,7 +40,7 @@ function archive_link() {
     printf( '<a href="%s" class="%s"><span class="visuallyhidden">%s</span>%s</a>',  
         esc_url( get_permalink() ), 
         esc_attr( $link_class ), 
-        get_the_title(), 
+        esc_html( get_the_title() ), 
         esc_html( $link_text ) 
     );
 }
@@ -54,6 +54,5 @@ function archive_link() {
  * @return void
  */
 function blog_title() {
-    $blog_title = get_theme_mod('blog--title--title', 'Blog' );
-    echo esc_html__( $blog_title, 'taproot' );
+    echo esc_html( get_theme_mod( 'blog--title--title', null, true ) );
 }

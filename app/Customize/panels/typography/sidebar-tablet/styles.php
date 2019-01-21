@@ -17,7 +17,7 @@ use function Taproot\Customize\maybe_convert_to_em;
 
 
 // Var: Sidebar Font Size
-$styles->var([
+$styles->add_var([
     'name' => 'typography--sidebar--font-size',
     'value' => get_theme_mod( 'typography--sidebar-tablet--font-size' ),
     'screen' => 'desktop',
@@ -25,7 +25,7 @@ $styles->var([
 
 
 // Var: Sidebar Line Height
-$styles->var([
+$styles->add_var([
     'name' => 'typography--sidebar--line-height',
     'value' => get_theme_mod( 'typography--sidebar-tablet--line-height' ),
     'screen' => 'desktop',
@@ -33,7 +33,7 @@ $styles->var([
 
 
 // Var: Sidebar Block Spacing
-$styles->var([
+$styles->add_var([
     'name' => 'typography--sidebar--block-spacing',
     'value' =>  maybe_convert_to_em( get_theme_mod( 'typography--sidebar-tablet--line-height' ) ),
     'screen' => 'tablet-and-up',

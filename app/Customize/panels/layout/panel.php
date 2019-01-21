@@ -22,40 +22,40 @@ $panel->sections([
 
 // layout sequence
 $panel->sequence([ 
-    'title' => __('Content'),
+    'title' => __('Content', 'taproot'),
     'sections' => [
         'layout--content' => [ 
             'hide' => false,
             'next' => [
-                'label' => __('mobile'),
+                'label' => __('mobile', 'taproot'),
             ],
         ],        
         'layout--content-mobile' => [ 
             'device' => 'mobile',
             'hide' => true,
             'prev' => [
-                'label' => __('general'),
+                'label' => __('general', 'taproot'),
                 'device' => 'desktop'
             ],            
             'next' => [
-                'label' => __('tablet'),
+                'label' => __('tablet', 'taproot'),
             ],
         ],
         'layout--content-tablet' => [ 
             'device' => 'tablet',
             'hide' => true,
             'prev' => [
-                'label' => __('mobile'),
+                'label' => __('mobile', 'taproot'),
             ],
             'next' => [
-                'label' => __('desktop'),
+                'label' => __('desktop', 'taproot'),
             ],
         ],
         'layout--content-desktop' => [ 
             'device' => 'desktop',
             'hide' => true,
             'prev' => [
-                'label' => __('tablet'),
+                'label' => __('tablet', 'taproot'),
             ],
             'next' => [
                 'link' => false

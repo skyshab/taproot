@@ -11,7 +11,7 @@
  * @link      https://taproot-theme.com
  */
 
-namespace Taproot\Customize;
+namespace Taproot\Customize\Controls;
 
 use WP_Customize_Control;
 
