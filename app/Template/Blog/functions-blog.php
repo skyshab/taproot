@@ -54,5 +54,16 @@ function archive_link() {
  * @return void
  */
 function blog_title() {
-    echo esc_html( get_theme_mod( 'blog--title--title', null, true ) );
+
+    // define allowed html
+    $allowed = [
+        'em' => [],
+        'strong' => [],  
+        'i' => [
+            'class' => []
+        ]          
+    ];
+
+    // echol filtered blog title content
+    echo wp_kses( get_theme_mod( 'blog--title--title', null, true ), $allowed );
 }

@@ -19,3 +19,7 @@ $defaults->add( 'layout--site--max-width', '1200px' );
 
 // // Enable boxed layout
 // $defaults->add( 'layout--site--boxed-layout', 0 );
+
+
+// Boxed Layout Padding
+$defaults->add( 'layout--site--boxed-layout--padding', '4vw' );

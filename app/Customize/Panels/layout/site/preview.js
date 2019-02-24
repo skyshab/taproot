@@ -14,9 +14,16 @@
 wp.customize( 'layout--site--max-width', function( value ) {
     value.bind( function( to ) {
 
+        var styleSelector;
         var isBoxed = wp.customize.instance('layout--site--boxed-layout');
         isBoxed = ( isBoxed ) ? isBoxed.get() : false;
-        var styleSelector = ( isBoxed ) ? '.app' : '.container';
+
+        if(isBoxed ) {
+            styleSelector = ".app, .boxed-layout.app-header--has-fixed, .boxed-layout.app-footer--has-fixed";
+        }
+        else {
+            styleSelector = ".container";
+        }
 
         rootstrap.style({
             id: 'layout--site--max-width',
@@ -40,11 +47,20 @@ wp.customize( 'layout--site--boxed-layout--padding', function( value ) {
         if( isBoxed ) {
             rootstrap.style({
                 id: 'layout--site--boxed-layout--padding',
-                selector: 'body',
+                selector: 'body.boxed-layout',
                 styles:  {
                     'padding': to,
                 },
                 screen: 'tablet-and-up',
+            });
+
+            rootstrap.style({
+                id: 'layout--site--boxed-layout--padding--header',
+                selector: '.app-header--fixed, .app-header--sticky, .app-footer--fixed',
+                styles:  {
+                    'width': 'calc(100vw - (2 * ' + to + '))',
+                },
+                screen: 'desktop',
             });
         }
     });

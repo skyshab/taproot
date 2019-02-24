@@ -38,7 +38,7 @@ add_action( 'wp_enqueue_scripts', function() {
 	}
 
 	// Enqueue theme scripts.
-	wp_enqueue_script( 'taproot-app', asset( 'js/app.js' ), ['jquery'], null, true );
+	wp_enqueue_script( 'taproot-app', asset( 'js/app.js' ), null, null, true );
 
     // Enqueue theme styles with filters for caching
     rootstrap_register_styles( 'taproot-screen', asset( 'css/screen.css' ), null, null );

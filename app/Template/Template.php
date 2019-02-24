@@ -43,6 +43,7 @@ class Template implements Bootable {
             $instance = new $component_class();
             $instance->boot();
         },[
+            'Body',
             'Header',
             'Branding',
             'Main',

@@ -13,14 +13,6 @@
  */
 
 
-// Enable Fixed footer
-$defaults->add( 'footer--styles--fixed', 1 );
-
-
-// Enable Fullwidth footer
-// $defaults->add( 'footer--styles--fullwidth', 0 );
-
-
 // Background Color
 $defaults->add( 'footer--styles--background-color', '#232323' );    
 

@@ -35,6 +35,7 @@ class Header implements Bootable {
 	 */
 	public function boot() {
         add_filter( 'hybrid/attr/app-header/class', [ $this, 'header_classes' ], 10, 2  );
+        add_filter( 'theme_mod_header_image', [ $this, 'custom_header' ] );    
     }
     
 
@@ -46,11 +47,20 @@ class Header implements Bootable {
      */
     public function header_classes( $classes, $context) {
 
-        // fixed header
-        if( get_theme_mod( 'header--styles-fixed--fixed', null, true ) )
-            $classes[] = 'app-header--has-fixed';
-            $classes[] = 'app-header--static';
-            $classes[] = sprintf( 'fixed-type--%s', get_theme_mod( 'header--styles-fixed--type', null, true ) );
+        // fixed header - don't do sticky headers on custom header pages
+        if( get_theme_mod( 'header--styles-fixed--fixed', null, true ) ) {
+            $fixed_type = get_theme_mod( 'header--styles-fixed--type', null, true );
+
+            if( $this->hasCustomHeader() && 'sticky' === $fixed_type ) {
+            
+            }
+            // if( !$this->hasCustomHeader() || 'sticky' !== $fixed_type ) {
+            else {
+                $classes[] = 'app-header--has-fixed';
+                $classes[] = 'app-header--static';
+                $classes[] = sprintf( 'fixed-type--%s', $fixed_type );
+            }
+        }
 
         // fullwidth header
         if( get_theme_mod( 'header--styles--fullwidth' ) )
@@ -82,5 +92,32 @@ class Header implements Bootable {
 
         return $classes;
     } 
+
+
+    /**
+     * Filter for Custom Header Image display
+     * 
+     * Only display header image on front page
+     * 
+     * @since 1.0.0
+     * @return void
+     */
+    public function custom_header( $value ) {
+        return ( is_front_page() ) ? $value : 'remove-header';
+    }
+
+
+    /**
+     * Does the page have a custom header?
+     * 
+     * @since 1.0.0
+     * @return void
+     */
+    public function hasCustomHeader() {
+        if( get_theme_mod('header_image') && get_theme_mod('header_image') !== 'remove-header' ) {
+            return true;
+        }
+        else return false;
+    }    
 
 }

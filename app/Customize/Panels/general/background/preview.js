@@ -15,8 +15,10 @@ wp.customize( 'general--background--background-color', function( value ) {
     value.bind( function( to ) {
         rootstrap.style({
             id: 'general--background--background-color',
-            styles: 'body { background-color: {{value}}; }',
-            value: to
+            selector: 'html',
+            styles:  {
+                'background-color': to
+            },            
         });
     });
 });

@@ -17,20 +17,12 @@
 $defaults->add( 'nav--navbar-mobile--breakpoint', 'mobile' );
 
 
-// hide when mobile
-// $defaults->add( 'nav--navbar-mobile--hide', 0 );
-
-
 // mobile type
 $defaults->add( 'nav--navbar-mobile--type', 'dropdown-slide' );
 
 
 // Navbar background color
 $defaults->add( 'nav--navbar-mobile--background-color', '#000000' );
-
-
-// Navbar height
-$defaults->add( 'nav--navbar-mobile--height', '3em' );
 
 
 // Menu background color

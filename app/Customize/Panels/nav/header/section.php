@@ -133,7 +133,6 @@ range( $manager, 'nav--header--padding', [
 $manager->add_setting( 'nav--header--align', [
     'sanitize_callback' => 'sanitize_text_field',
     'transport' => 'postMessage',
-    'default' => 'center'
 ]);
 
 $manager->add_control( 'nav--header--align', [

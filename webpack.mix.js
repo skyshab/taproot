@@ -90,9 +90,9 @@ mix.version();
  * @link https://laravel.com/docs/5.6/mix#working-with-scripts
  */
 
-mix.js( `${devPath}/js/app.js`,                'dist/js' )
-   .js( `${devPath}/js/customize-controls.js`, 'dist/js' )
-   .js( `${devPath}/js/customize-preview.js`,  'dist/js' );
+mix.react( `${devPath}/js/app.js`,                'dist/js' )
+   .react( `${devPath}/js/customize-controls.js`, 'dist/js' )
+   .react( `${devPath}/js/customize-preview.js`,  'dist/js' );
 
 // testing adding react components to the mix
 // mix.react( `${devPath}/js/editor/buttons.js`,     'dist/js' );

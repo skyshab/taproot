@@ -32,6 +32,7 @@
 		"url": "https://github.com/skyshab/taproot/issues"
 	},
 	"devDependencies": {
+		"@babel/preset-react": "^7.0.0",
 		"browser-sync": "^2.26.3",
 		"browser-sync-webpack-plugin": "2.2.2",
 		"copy-webpack-plugin": "^4.6.0",

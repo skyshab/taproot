@@ -102,7 +102,7 @@ if( has_nav_menu( 'header' ) ) {
     $styles->add([
         'selector' => '.menu--header__items',
         'styles' => [
-            'justify-content' => get_theme_mod( 'nav--header--align' ),
+            'justify-content' => get_theme_mod( 'nav--header--align', null, true ),
             'flex-direction' => 'row',
         ],
         'screen' => $header_nav_desktop_screen,

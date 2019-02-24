@@ -22,7 +22,6 @@ if( has_nav_menu( 'navbar' ) ) {
 
     $mobile_screen = get_mobile_screen( get_theme_mod( 'nav--navbar-mobile--breakpoint', null, true ) );
 
-
     // Hide when mobile
     if( get_theme_mod( 'nav--navbar-mobile--hide' ) ) {
         $styles->add([
@@ -38,7 +37,16 @@ if( has_nav_menu( 'navbar' ) ) {
         'selector' => '.menu--navbar',
         'styles' => array(
             'background-color' => get_theme_mod( 'nav--navbar-mobile--background-color', null, true ),
-            'height' => get_theme_mod( 'nav--navbar-mobile--height', null, true ),
+        ),
+        'screen' => $mobile_screen,
+    ]);
+
+
+    // Navbar height
+    $styles->add([
+        'selector' => '.menu--navbar__container',
+        'styles' => array(
+            'height' => get_theme_mod( 'nav--navbar-mobile--height' ),
         ),
         'screen' => $mobile_screen,
     ]);
@@ -74,7 +82,6 @@ if( has_nav_menu( 'navbar' ) ) {
         ),
         'screen' => $mobile_screen,
     ]);
-
 
 
     // Link Styles

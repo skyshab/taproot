@@ -99,6 +99,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _customize_preview_custom_header__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_customize_preview_custom_header__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var customize_preview_functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! customize-preview/functions-customize-preview.js */ "./resources/js/customize-preview/functions-customize-preview.js");
 /* harmony import */ var _customize_preview_panels_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./customize-preview/panels.js */ "./resources/js/customize-preview/panels.js");
+/* harmony import */ var _customize_preview_footer_monitor_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./customize-preview/footer-monitor.js */ "./resources/js/customize-preview/footer-monitor.js");
+/* harmony import */ var _customize_preview_footer_monitor_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_customize_preview_footer_monitor_js__WEBPACK_IMPORTED_MODULE_3__);
 /**
  * Customize preview script.
  *
@@ -114,6 +116,7 @@ __webpack_require__.r(__webpack_exports__);
  */
 
  // import 'panels/**/**/preview.js';
+
 
 
 
@@ -166,6 +169,37 @@ wp.customize('header_textcolor', function (value) {
     });
   });
 });
+
+/***/ }),
+
+/***/ "./resources/js/customize-preview/footer-monitor.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/customize-preview/footer-monitor.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Fixed Footer Monitor
+ *
+ * This file handles the JavaScript for detecting changes in the height
+ * of the footer when "fixed footer" is enabled. This currently only works
+ * in Chrome. There is a polyfill, that can be added for advanced support.
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2018 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://taproot-theme.com
+ */
+var taprootFooter = document.querySelector('.app-footer');
+
+if (taprootFooter.classList.contains('app-footer--has-fixed')) {
+  var taprootFooterObserver = new ResizeObserver(function () {
+    window.dispatchEvent(new Event('resize'));
+  });
+  taprootFooterObserver.observe(taprootFooter);
+}
 
 /***/ }),
 
@@ -1839,8 +1873,10 @@ wp.customize('general--background--background-color', function (value) {
   value.bind(function (to) {
     rootstrap.style({
       id: 'general--background--background-color',
-      styles: 'body { background-color: {{value}}; }',
-      value: to
+      selector: 'html',
+      styles: {
+        'background-color': to
+      }
     });
   });
 });
@@ -2035,9 +2071,16 @@ wp.customize('layout--content--max-width', function (value) {
 
 wp.customize('layout--site--max-width', function (value) {
   value.bind(function (to) {
+    var styleSelector;
     var isBoxed = wp.customize.instance('layout--site--boxed-layout');
     isBoxed = isBoxed ? isBoxed.get() : false;
-    var styleSelector = isBoxed ? '.app' : '.container';
+
+    if (isBoxed) {
+      styleSelector = ".app, .boxed-layout.app-header--has-fixed, .boxed-layout.app-footer--has-fixed";
+    } else {
+      styleSelector = ".container";
+    }
+
     rootstrap.style({
       id: 'layout--site--max-width',
       selector: styleSelector,
@@ -2057,11 +2100,19 @@ wp.customize('layout--site--boxed-layout--padding', function (value) {
     if (isBoxed) {
       rootstrap.style({
         id: 'layout--site--boxed-layout--padding',
-        selector: 'body',
+        selector: 'body.boxed-layout',
         styles: {
           'padding': to
         },
         screen: 'tablet-and-up'
+      });
+      rootstrap.style({
+        id: 'layout--site--boxed-layout--padding--header',
+        selector: '.app-header--fixed, .app-header--sticky, .app-footer--fixed',
+        styles: {
+          'width': 'calc(100vw - (2 * ' + to + '))'
+        },
+        screen: 'desktop'
       });
     }
   });
@@ -4633,7 +4684,7 @@ wp.customize('nav--navbar--font-size', function (value) {
 wp.customize('nav--navbar--height', function (value) {
   value.bind(function (to) {
     rootstrap.var({
-      name: 'nav--navbar--height',
+      name: 'nav--navbar--line-height',
       value: to,
       screen: customize_preview_functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getDesktopScreen"](wp.customize.instance('nav--navbar-mobile--breakpoint').get())
     });

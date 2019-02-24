@@ -57,24 +57,14 @@ $styles->add([
 
 
 // if boxed layout and fixed footer
-if( is_boxed_layout() && get_theme_mod( 'footer--styles--fixed', null, true ) ) {
-    $fixed_footer_width = sprintf( 'calc( 100vw - (2 * %s) )', get_theme_mod( 'layout--site--boxed-layout--padding' ) );
+if( is_boxed_layout() && get_theme_mod( 'footer--styles--fixed' ) ) {
     $styles->add([
         'selector' => '.app-footer--fixed',
         'styles' => [
-            'width' => $fixed_footer_width,
+            'width' => sprintf( 'calc( 100vw - (2 * %s) )', get_theme_mod( 'layout--site--boxed-layout--padding', null, true ) ),
             'max-width' => get_theme_mod( 'layout--site--max-content-width' ),
-            'margin-bottom' => get_theme_mod( 'layout--site--boxed-layout--padding' )
+            'margin-bottom' => get_theme_mod( 'layout--site--boxed-layout--padding', null, true )
         ],
         'screen' => 'desktop'
     ]);
-
-    $styles->add([
-        'selector' => '.app-footer--has-fixed',
-        'styles' => [
-            'margin-bottom' => get_theme_mod( 'layout--site--boxed-layout--padding' )
-        ],
-        'screen' => 'desktop'
-    ]);
-
 }

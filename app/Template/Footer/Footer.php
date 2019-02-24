@@ -47,9 +47,11 @@ class Footer implements Bootable {
      * @return void
      */
     public function footer_classes( $classes, $context ) {
-        if( get_theme_mod( 'footer--styles--fixed', null, true ) )
+
+        if( get_theme_mod( 'footer--styles--fixed' ) ) {
             $classes[] = 'app-footer--has-fixed';
             $classes[] = 'app-footer--fixed';
+        }
 
         if( get_theme_mod( 'footer--styles--fullwidth' ) )
             $classes[] = 'app-footer--fullwidth';
@@ -140,7 +142,23 @@ class Footer implements Bootable {
      * @return string
      */
     public function footer_credits() {
-        echo get_theme_mod( 'footer--bottom-bar--content', null, true );
+
+        // define allowed html
+        $allowed = [
+            'a' => [
+                'href' => [],
+                'title' => [],
+                'class' => []
+            ],
+            'br' => [],
+            'em' => [],
+            'strong' => [],  
+            'i' => [
+                'class' => []
+            ]          
+        ];
+
+        echo wp_kses( get_theme_mod( 'footer--bottom-bar--content', null, true ), $allowed );
     }      
     
 }

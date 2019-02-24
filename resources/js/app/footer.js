@@ -14,84 +14,68 @@
 
 
 /**
- * Taproot Front End Functionality
+ * Navigation Menu Interactions
  */
-( function($) {
+class TaprootFooter {
 
-	/**
-	 * Variables available to our methods
-	 */
-	var $body,
-        $wrapper,
-        $header,
-		$footer,
-		windowHeight,
-		hasFixedFooter;
+    /**
+     * Initiate class
+     */
+    constructor() {
+        this.body = document.querySelector('body');
+        this.app = document.querySelector('.app');  
+        this.header = document.querySelector('.app-header');
+        this.footer = document.querySelector('.app-footer');         
+        this.hasFixedFooter = this.footer.classList.contains('app-footer--has-fixed');
+        this.windowHeight = window.innerHeight;   
 
-
-	/**
-	 * Fixed Footer
-	 */
-	var fixedFooter = function() {
-
-		var	footerHeight = $footer.outerHeight(true),
-			headerHeight = $header.outerHeight(),
- 			maxFooterHeight;
-
-		if( $body.outerWidth() < 1025 ) {
-			$body.css('padding-bottom', '' );
-			$footer.removeClass( 'app-footer--fixed' );
-			return;
-		}
-
-		if( $body.outerWidth() > 1024 ) {
-			maxFooterHeight = windowHeight - headerHeight;
-		}
-
-		if( footerHeight <= maxFooterHeight  && ( ( $wrapper.outerHeight() - footerHeight ) > windowHeight ) ) {
-            $body.css('padding-bottom', Math.floor( footerHeight ) );
-			$footer.addClass( 'app-footer--fixed' );
-		}
-		else {
-			$body.css('padding-bottom', '' );
-			$footer.removeClass( 'app-footer--fixed' );
-		}
-	}; 
+        if( this.hasFixedFooter ) {
+            this.listeners();
+        }
+    }
 
 
-	/**
-	 * Run on document ready
-	 */
-	$(document).ready(function() {
-		$body = $('body');
- 		$wrapper = $body.find( '.app' );
- 		$header = $body.find( '.app-header' );
- 		$footer = $body.find( '.app-footer' );
- 		hasFixedFooter = $footer.hasClass('app-footer--has-fixed');
-        windowHeight = window.innerHeight;	
-    });
+    /**
+     * Add event listeners
+     */    
+    listeners() {
+        window.addEventListener('load', () => {
+            this.fixedFooter();
+        });
+        window.addEventListener('resize', () => {
+            this.windowHeight = window.innerHeight;
+            this.fixedFooter();
+        }); 
+    }
+    
+
+    /**
+     * Fixed footer toggle
+     */     
+    fixedFooter() {
+		const footerHeight = this.footer.offsetHeight;
+
+		if( this.body.offsetWidth < 1025 ) {
+			this.app.style.marginBottom = '';
+			this.footer.classList.remove( 'app-footer--fixed' );
+        }
+        else {  
+            if( footerHeight + 250 < this.windowHeight ) {
+                this.app.style.marginBottom = Math.floor( footerHeight ) + 'px';
+                this.footer.classList.add( 'app-footer--fixed' );
+            }
+            else {
+                this.app.style.marginBottom = '';
+                this.footer.classList.remove( 'app-footer--fixed' );
+            }
+        }
+	}
+}
 
 
-	/**
-	 * Run on window load
-	 */
-	$(window).load(function() {
-		if( hasFixedFooter ) {
-			fixedFooter();
-		}
-	});
-
-
-	/**
-	 * Run on window resize
-	 */
-	$(window).on( "resize", function() {
-
-		windowHeight = window.innerHeight;
-
-		if( hasFixedFooter ) {
-			fixedFooter();
-		}
-	});
-
-}( jQuery ));
+/**
+ * Run on document ready
+ */
+document.addEventListener("DOMContentLoaded", () => {
+    const taprootFooter = new TaprootFooter(); 
+});

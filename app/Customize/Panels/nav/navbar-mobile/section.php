@@ -70,7 +70,7 @@ $manager->add_control( 'nav--navbar-mobile--hide', [
 // Setting: Mobile Menu Type
 $manager->add_setting( 'nav--navbar-mobile--type', [
     'sanitize_callback' => 'sanitize_text_field',
-    'transport' => 'postMessage',
+    'transport' => 'refresh',
 ]);
 
 $manager->add_control( 'nav--navbar-mobile--type', [
@@ -106,6 +106,24 @@ range( $manager, 'nav--navbar-mobile--height', [
             'max' => 6,
         ],                 
     ]
+]);
+
+
+// Setting: Toggle Side
+$manager->add_setting( 'nav--navbar-mobile--side', [
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'refresh',
+    'default' => 'left'
+]);
+
+$manager->add_control( 'nav--navbar-mobile--side', [
+    'type' => 'select',
+    'section' => 'nav--navbar-mobile',
+    'label' => esc_html__( 'Mobile Toggle Side', 'taproot' ),
+    'choices' => [
+        'left' => esc_html__( 'Left', 'taproot' ),
+        'right' => esc_html__( 'Right', 'taproot' ),
+    ],       
 ]);
 
 

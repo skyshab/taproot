@@ -71,7 +71,7 @@ if( has_nav_menu( 'header' ) ) {
     $styles->add([
         'selector' => '.menu--header__item',
         'styles' => [
-            'border-color' => get_theme_mod( 'nav--header-mobile--separator-color' ),
+            'border-color' => get_theme_mod( 'nav--header-mobile--separator-color', null, true ),
         ],
         'screen' => $mobile_screen,
     ]);

@@ -42,4 +42,4 @@ $defaults->add( 'nav--navbar--link-color', '#ffffff' );
 
 
 // dropdown background color
-$defaults->add( 'nav--navbar--dropdown--background-color', get_theme_mod( 'colors--theme--accent' ) );
+// $defaults->add( 'nav--navbar--dropdown--background-color', get_theme_mod( 'colors--theme--accent' ) );

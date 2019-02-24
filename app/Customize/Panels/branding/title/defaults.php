@@ -14,4 +14,4 @@
 
 
 // Show Title by default
-$defaults->add( 'branding--title--display-title', 1 );
+$defaults->add( 'branding--title--display-title', true );

@@ -10,51 +10,7 @@
 // mixin to generate mobile nav styles
 @mixin menu-header-mobile-styles( $screen ) {
 
-    // global mobile nav styles
     &.mobile-at-#{$screen} {
-
-        .menu__items > .menu__item:not(:first-of-type), .menu__sub-menu .menu__item {
-            border-top-width: 1px;
-            border-top-style: solid;
-        }
-
-        .menu__sub-menu a:before {
-            content: '';
-            display: inline-block;
-            width: 1.25em;
-        }
-
-        .menu__sub-menu .menu__sub-menu a:before {
-            width: 2.5em;
-        }
-
-        .menu__items .menu__item.has-children > a {
-            padding-right: 4em;
-        }
-
-        .menu__sub-menu {
-            display: none;
-        }
-
-        .dropdown-target {
-            position: absolute;
-            right: 0;
-            top: 0;
-            height: 100%;
-            width: 4em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        &.mobile-type-slide .menu__items {
-            right: 0;
-        }
-    
-        // hide header nav toggle when mobile if set in customizer
-        &.hidden-when-mobile .menu--toggle {
-            display: none;
-        }
 
         // if no logo or titles, fill the space and add padding. 
         &:first-child {
@@ -87,35 +43,7 @@
 @mixin menu-header-desktop-styles( $screen ) {
 
     &.mobile-at-#{$screen} {
-
         flex: 1 1 100%;
-
-        .menu__items > .menu__item > .menu__sub-menu {
-            transform: translateX(-50%);
-            left: 50%;
-            width: 10em;
-            min-width: 100%;
-            padding: 0.5em 1em;
-
-            &:before {
-                content: " ";
-                position: absolute;
-                width: 0;
-                height: 0;
-                z-index: 1000;
-                left: 50%;
-                bottom: 100%;
-                margin-left: -7px;
-                border: 7px solid transparent;
-                border-bottom-color: inherit;
-            }
-
-            .menu--header__link {
-                line-height: 1.2em;
-                padding: 0.5em 0;
-                font-size: 0.9em
-            }
-        }
     }
 }
 

@@ -14,6 +14,7 @@
 namespace Taproot\Template\Branding;
 
 use Hybrid\Contracts\Bootable;
+use function Rootstrap\get_theme_mod;
 
 
 /**

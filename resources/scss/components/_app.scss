@@ -37,10 +37,13 @@
     margin: 0 auto;
     position: relative;
     width: 100%;
+}
 
-    // customize default setting
+// customize default setting
+.container, .boxed-layout.app-header--has-fixed, .boxed-layout.app-footer--has-fixed {
     max-width: 1200px;
 }
+
 
 .app-content {
     margin: 0 auto;

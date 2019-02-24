@@ -323,13 +323,7 @@ function range_atts( $type = 'text' ) {
             'max' => 100,
         ];
 
-        $atts['%'] = [
-            'default' => 5,
-            'max' => 10
-        ];
-
         $atts['vw'] = [
-            'default' => 5,
             'max' => 10
         ];        
     }    

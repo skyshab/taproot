@@ -118,10 +118,14 @@ class Nav implements Bootable {
         if( get_theme_mod( 'nav--header-mobile--hide' ) ) {
             $classes[] = 'hidden-when-mobile';
         }		
+        // add classes for navbar type
+        $mobile_type = get_theme_mod( 'nav--header-mobile--type', null, true );
 
-        // add class for header nav type
-        $classes[] = sprintf( 'mobile-type-%s', get_theme_mod( 'nav--header-mobile--type', null, true ) );
+        $classes[] = sprintf( 'mobile-type-%s', $mobile_type );
 
+        // add class for toggle side
+        $classes[] = 'menu--right';
+        
         // add class for header nav breakpoint
         $classes[] = sprintf( 'mobile-at-%s', get_theme_mod( 'nav--header-mobile--breakpoint', null, true ) );
 
@@ -139,16 +143,28 @@ class Nav implements Bootable {
      */
     public function nav_navbar_classes( $classes ) {
 
+        // add class to hide when not mobile
         if( get_theme_mod( 'nav--navbar--hide' ) ) {
             $classes[] = 'hidden-when-not-mobile';
         }	
 
+        // add class to hide when mobile
         if( get_theme_mod( 'nav--navbar-mobile--hide' ) ) {
             $classes[] = 'hidden-when-mobile';
         }			
 
-        // add class for navbar type
-        $classes[] = sprintf( 'mobile-type-%s', get_theme_mod( 'nav--navbar-mobile--type', null, true ) );
+        // add classes for navbar type
+        $mobile_type = get_theme_mod( 'nav--navbar-mobile--type', null, true );
+        $classes[] = sprintf( 'mobile-type-%s', $mobile_type );
+
+        // add class for toggle side
+        $toggle_side = get_theme_mod('nav--navbar-mobile--side', 'right');
+        if( 'right' === $toggle_side ) {
+            $classes[] = 'menu--right';
+        }
+        elseif( 'left' === $toggle_side ) {
+            $classes[] = 'menu--left';
+        }
 
         // add class for navbar breakpoint
         $classes[] = sprintf( 'mobile-at-%s', get_theme_mod( 'nav--navbar-mobile--breakpoint', null, true ) );

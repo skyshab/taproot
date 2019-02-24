@@ -11,6 +11,8 @@
 
     background-color: var( --colors--theme--accent );
     color: var( --colors--theme--accent-contrast );
+    width: 100%;
+    position: relative;
 
 	// Wrapper around the title and description.
 	&__branding {
@@ -111,6 +113,23 @@
                 flex-direction: column;
             }             
         }
+
+        &.fixed-type--sticky {
+            transition: background 0.5s ease-in-out;
+            position: sticky;
+            z-index: 2;    
+            top: 0;    
+            
+            .admin-bar & {
+                top: 32px;
+            }            
+        }
+
+        // .admin-bar & {
+        //     &.fixed-type--sticky {
+        //         top: 32px;
+        //     }            
+        // }
     }
 
 	// Output from the `custom-logo` feature.
@@ -159,26 +178,20 @@
         margin-top: var( --branding--tagline--gutter );
     }
 
+    &--fixed {
 
-    // Fixed Header Styles
-    &--fixed, &.fixed-type--sticky {           
-
-        @include screen('desktop') {        
+        @include screen('desktop') {    
             position: fixed;
             width: 100%;
             z-index: 2;
-            top: 0;
-
+            top: 0;   
+            transform: translateZ(0);         
+            
             // customize defaults
             background-color: #000000;               
             color: #ffffff;
-
-            .admin-bar & {
-                top: 32px;
-            }
-        };
+        };          
     }
-
     
     // Container
     &__container {
@@ -191,7 +204,7 @@
 
     &--standard-width {
         
-        .app-header__container, .menu--top__container, .menu--navbar__container {
+        .app-header__container, .menu--top__container, .menu--navbar {
 
             @include screen('mobile') {        
                 padding-left: var( --header--padding );
@@ -206,7 +219,7 @@
 
         &.boxed-layout {
 
-            .app-header__container, .menu--top__container, .menu--navbar__container {
+            .app-header__container, .menu--top__container, .menu--navbar {
 
                 @include screen('desktop') {        
                     padding-left: var( --layout--content--padding );
@@ -218,7 +231,7 @@
 
     &--fullwidth {
 
-        .app-header__container, .menu--top__container, .menu--navbar__container {
+        .app-header__container, .menu--top__container, .menu--navbar {
             width: 100%;
             max-width: 100%;
             padding-left: var( --header--padding );

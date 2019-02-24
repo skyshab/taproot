@@ -12,11 +12,8 @@
  * @link      https://taproot-theme.com
  */
 
-import './velocity.min.js';
+
 import './app/header.js';
-import './app/nav-header.js';
-import './app/nav-navbar.js';
-import './app/nav-toggle.js';
-import './app/nav-dropdowns.js';
 import './app/footer.js';
-import './app/general.js';
+import './app/nav-menus.js';
+// import './app/smooth-scroll.js';

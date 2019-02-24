@@ -13,6 +13,8 @@
 
         <a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'taproot' ) ?></a>
         
+        <?php the_custom_header_markup() ?>
+
         <?php Hybrid\View\display( 'nav/menu', 'top', [ 'location' => 'top' ] ) ?>
 
         <div class="app-header__container container">
@@ -22,9 +24,7 @@
                 <?php Hybrid\Site\display_title() ?>
                 <?php Hybrid\Site\display_description() ?>
             </div>
-    
-            <?php the_custom_header_markup() ?>
-    
+        
             <?php Hybrid\View\display( 'nav/menu', 'header', [ 'location' => 'header' ] ) ?>
 
         </div>

@@ -108,7 +108,7 @@ if( has_nav_menu( 'navbar' ) ) {
     $styles->add([
         'selector' => '.menu--navbar__items',
         'styles' => [
-            'justify-content' => get_theme_mod( 'nav--navbar--align' ),
+            'justify-content' => get_theme_mod( 'nav--navbar--align', null, true ),
             'flex-direction' => 'row',
         ],
         'screen' => $navbar_desktop_screen,

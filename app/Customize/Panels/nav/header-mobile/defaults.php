@@ -14,15 +14,19 @@
 
 
 // mobile breakpoint
-$defaults->add( 'nav--header-mobile--breakpoint', 'tablet' );
+$defaults->add( 'nav--header-mobile--breakpoint', 'tablet-and-under' );
 
 
-// hide when mobile
-// $defaults->add( 'nav--header-mobile--hide', 0 );
+// mobile menu type
+$defaults->add( 'nav--header-mobile--type', 'dropdown-slide' );
 
 
 // menu background color
 $defaults->add( 'nav--header-mobile--background-color', '#424242' );
+
+
+// menu separator color
+$defaults->add( 'nav--header-mobile--separator-color', 'rgba(209,209,209,0.4)' );
 
 
 // menu item font size

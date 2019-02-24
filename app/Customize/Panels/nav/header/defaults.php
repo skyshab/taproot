@@ -16,6 +16,9 @@
 // hide when not mobile
 // $defaults->add( 'nav--header--hide', 0 );
 
+// menu items align
+$defaults->add( 'nav--header--align', 'flex-end' );
+
 
 // menu item side padding
 $defaults->add( 'nav--header--padding', '1em' );
@@ -31,4 +34,3 @@ $defaults->add( 'nav--header--height', '4em' );
 
 // dropdown background color
 $defaults->add( 'nav--header--dropdown--background-color', '#424242' );
-

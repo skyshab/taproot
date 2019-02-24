@@ -72,8 +72,7 @@ $manager->add_control( 'nav--header-mobile--hide', [
 // Setting: Mobile Menu Type
 $manager->add_setting( 'nav--header-mobile--type', [
     'sanitize_callback' => 'sanitize_text_field',
-    'transport' => 'postMessage',
-    'default' => 'dropdown-slide'
+    'transport' => 'refresh',
 ]);
 
 $manager->add_control( 'nav--header-mobile--type', [

@@ -105,7 +105,7 @@ wp.customize( 'nav--navbar--font-size', function( value ) {
 wp.customize( 'nav--navbar--height', function( value ) {
     value.bind( function( to ) {
         rootstrap.var({
-            name: 'nav--navbar--height',
+            name: 'nav--navbar--line-height',
             value: to,
             screen: utils.getDesktopScreen( wp.customize.instance('nav--navbar-mobile--breakpoint').get()),            
         });
