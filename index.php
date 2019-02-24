@@ -1,33 +1,11 @@
 <?php
 /**
- * The default template for the index page
+ * Index template.
  *
- * @package taproot
- * @since 0.8.0
+ * This template should never be loaded on a site unless a plugin is doing
+ * something that it shouldn't be doing or something weird is going on. We're
+ * leaving the below code as an absolue fallback in case this file is loaded.
+ * All it does is correctly load up our `resources/views/index.php` template.
  */
-?>
-<div <?php taproot_class( 'main-container', 'container' ); ?>>
 
-    <?php do_action( 'taproot_main_before' ); ?>
-
-    <main id="main" <?php taproot_class( 'main' ); ?>>
-		<?php 
-		if ( have_posts() ):
-
-			taproot_title();
-
-			while ( have_posts() ) : the_post();
-				get_template_part( 'partials/content', get_post_type() != 'post' ? get_post_type() : get_post_format() );
-			endwhile;
-
-			taproot_pagination();
-			
-		else:
-			get_template_part( 'template-parts/content', 'none' );
-		endif;
-		?>
-    </main>
-
-    <?php do_action( 'taproot_main_after' ); ?>
-
-</div>
+Hybrid\View\display( 'index' );

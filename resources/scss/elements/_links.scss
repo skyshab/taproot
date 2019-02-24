@@ -1,0 +1,34 @@
+////
+/// Link colors
+///
+/// @group  Elements
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+ a {
+
+    color: var( --typography--links--color );
+
+    // customizer default
+    text-decoration: none;
+
+    &:visited {
+        color: var( --typography--links--color--visited );
+    }
+
+    &:hover {
+        color: var( --typography--links--color--hover );
+    }
+
+    &:active {
+        color: var( --typography--links--color--active );
+    }
+
+    // customizer default
+    &:hover, &:active {
+        text-decoration: underline;
+    }
+
+ }
+ 

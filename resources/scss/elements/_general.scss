@@ -1,0 +1,40 @@
+////
+/// General elements styles.
+///
+/// @group  Elements
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+p, ul, ol, pre, blockquote, address, figure, dt, table {
+    margin-bottom: var( --typography--body--block-spacing );
+}
+
+
+pre {
+    max-width: 100%;
+    overflow: auto;
+    padding: 2em;   
+    font-size: 0.862em;
+    
+    & > :first-child {
+        padding-top: 0;
+        margin-top: 0;
+    }
+}
+
+
+pre,
+code,
+kbd,
+tt,
+var {
+    background-color: var( --colors--theme--meta-light );
+}
+
+
+abbr,
+acronym {
+    border-bottom: 1px dotted var( --colors--theme--meta-medium );
+}

@@ -1,0 +1,33 @@
+////
+/// Body styles
+///
+/// @group  Elements
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+body {
+    overflow-x: hidden;
+    color: var( --colors--theme--text-color ); 
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    
+    // prevent elastic scrolling in Chrome.
+    // This does not work yet in Safari
+    overscroll-behavior: none;
+
+    // used to layer slide in mobile navigation
+    z-index: 1;
+
+    // used for mobile navigation
+    &.noscroll {
+        overflow: hidden;
+    }   
+    
+    // customize default
+    &.boxed-layout {
+        @include screen('tablet-and-up') {
+            padding: 4vw;
+        } 
+    }
+}

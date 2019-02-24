@@ -1,0 +1,41 @@
+////
+/// Component imports.
+///
+/// Components make up the bulk of the actual theme design. Nearly every piece
+/// of the design is some type of component, whether it's a one-off or reusable
+/// block of code.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+@import 'app';
+@import 'app-header';
+@import 'app-content';
+@import 'app-main';
+@import 'app-footer';
+@import 'archive-header';
+@import 'comments';
+@import 'comment';
+@import 'comment-respond';
+@import 'custom-header';
+@import 'entry';
+@import 'entry--archive';
+@import 'entry--single';
+@import 'entry--page';
+@import 'gallery';
+@import 'media-meta';
+@import 'nav-menus';
+@import 'nav-menu--toggle';
+@import 'nav-menu--top';
+@import 'nav-menu--header';
+@import 'nav-menu--navbar';
+@import 'nav-menu--footer';
+@import 'nav-breadcrumbs';
+@import 'nav-pagination';
+@import 'nav-postnav';
+@import 'sidebar';
+@import 'searchform';
+@import 'widget';
+@import 'icons';

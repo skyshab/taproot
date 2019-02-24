@@ -1,0 +1,17 @@
+////
+/// Button block.
+///
+/// @group  Blocks
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.wp-block-button {
+
+    // extend theme button styles
+    &__link {
+        @extend .taproot-button;
+    }
+
+    margin-bottom: var( --typography--body--block-spacing );    
+}

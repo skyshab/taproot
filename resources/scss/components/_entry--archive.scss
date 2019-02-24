@@ -1,0 +1,101 @@
+////
+/// Entry Archive Component.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+.entry {
+
+    &--archive {
+        border-top: 1px solid var( --colors--theme--meta-medium );
+        padding-top: 2rem;
+
+        &:last-of-type {
+            border-bottom: 1px solid var( --colors--theme--meta-medium );
+        }        
+    }
+    
+	// Sticky posts.
+	&.sticky {}
+
+	// Featured image.
+	&__image--archive {
+        margin-bottom: 1em;
+    }
+
+	// Header wrapper.
+	&__header--archive {
+        margin-bottom: 1em;
+    }
+
+	// Entry title.
+	&__title--archive {
+        padding-top: 0;
+        margin-bottom: 0.2em;
+        font-size: 1.8em;
+        line-height: 1.13em;
+
+        a, a:visited, a:hover {
+            color: inherit;
+        }
+    }
+
+	// Full entry content.
+	&__content--archive {
+        
+    }
+
+	// Summary/Excerpt.
+	&__summary--archive { 
+    
+    }
+
+	&__content--archive, &__summary--archive {
+        &:last-child :last-child {
+            margin-bottom: 2rem;
+        }
+    }
+
+
+
+	// Meta wrappers.
+	&__byline--archive {
+
+        color: var( --colors--theme--meta-dark );
+
+        a:link, a:visited {
+            color: inherit;
+        }
+
+        a:hover {
+            color: var( --colors--theme--accent );
+        }
+
+        .taproot-icon {
+            color: inherit;
+        }                  
+    }
+
+	&__footer--archive {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+
+    &__link.taproot-button {
+        font-size: 0.8em;
+    }    
+
+	// Individual metadata items.
+	&__author--archive {}
+
+	&__published--archive {}
+
+	&__comments--archive {}
+
+    &__terms--archive {}
+    
+}

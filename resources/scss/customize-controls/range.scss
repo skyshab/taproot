@@ -1,0 +1,156 @@
+////
+/// Customize controls styles.
+///
+/// Styles should focus on the customize controls panel. This covers panels,
+/// sections, and controls.
+///
+/// @group  CustomizeControls
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+.customize-control-taproot-range {
+    
+    .range-group {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        @extend %shadow-box;
+        padding: 0 10px;
+        height: 36px;  
+        position: relative;
+    }
+
+    .taproot-unit {
+        min-width: 25px!important;
+        width: 25px!important;
+        outline: none;
+        border: none;
+        border-radius: 0!important;
+        box-shadow: none;         
+        height: 36px!important;
+        line-height: 36px!important;
+        margin: 0!important;  
+        -webkit-appearance: none;
+        -moz-appearance: none;  
+        padding: 1px 0 0 3px!important;
+        font-size: 12px;
+        font-weight: 500;
+        background: transparent;
+
+        &:focus {
+            border: none;
+            outline: none;
+            box-shadow: none;   
+        }
+
+        &:disabled {
+            color: inherit
+        }        
+    }
+
+    .taproot-range {
+
+        transition: background .5s;
+        -webkit-appearance: none;
+        background-color: #cacaca;
+        height: 5px;
+        width: 100%;
+        padding: 0;
+        margin-right: 5px;
+        border-radius: 3px;
+
+        &:focus { box-shadow: none !important; outline: none !important; }
+        &::-webkit-slider-thumb { -webkit-appearance: none; width: 15px; height: 15px; border: none; border-radius: 15px; background-color: #2e86b9; }
+        &::-moz-range-track { border: inherit; background: transparent; }
+        &::-moz-focus-outer { border: 0; }
+        &::-moz-range-thumb { width: 15px; height: 15px; border: none; border-radius: 15px; background-color: #2e86b9; }
+        &::-ms-track { border: inherit; color: transparent; background: transparent; }
+        &::-ms-fill-lower, &::-ms-fill-upper { background: transparent; }
+        &::-ms-tooltip { display: none; }
+        &::-ms-thumb { width: 15px; height: 15px; border-radius: 15px; border: 0; background-color: #2e86b9; }
+    }
+
+    .taproot-range-input {
+        width: 36px!important;
+        text-align: center;
+        margin-left: 4px;
+        border: none;
+        box-shadow: none;        
+        background: #ffffff;
+        padding: 0!important;
+        font-size: 12px;
+        line-height: 36px;
+        font-weight: 500;
+        color: #555;
+        -moz-appearance:textfield;
+        text-align: right;
+
+        &::-webkit-outer-spin-button, &::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    }
+
+    // reset button
+    .taproot-reset-slider { 
+
+        width: 18px; 
+        height: 28px; 
+        margin-left: 5px; 
+        display: inline-block; 
+        position: relative; 
+        vertical-align: middle; 
+
+        &:after { 
+            font-family: 'Dashicons'; 
+            content: "\f531"; 
+            font-size: 18px; 
+            line-height: 28px; 
+            color: #cacaca; 
+            -webkit-font-smoothing: antialiased; 
+            -moz-osx-font-smoothing: grayscale; 
+            transition: background .5s;
+        }
+
+        &:hover:after { 
+            color: #A7A7A7; 
+        }    
+    }
+
+    // enable/disable checkbox
+    .taproot-range-enable {
+        background: #ddd;
+        box-shadow: none;
+        border: none;
+        margin: 0 10px 0 0;
+
+        &:not(:checked) + .taproot-range-enable-message ~ * {
+            display: none;
+        }
+          
+        &:checked, &:checked + .taproot-range-enable-message {
+            display: none;            
+        }
+          
+        &-message {
+            color: #ccc;
+        }        
+    }
+
+    .taproot-range-disable {
+        position: absolute;
+        right: 0;
+        top: -24px;
+        font-size: 11px;
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out;
+        cursor: pointer;
+    }
+  
+    &:hover .taproot-range-disable {
+        opacity: 0.5; 
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }      
+}

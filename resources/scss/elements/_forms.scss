@@ -1,0 +1,123 @@
+////
+/// Form element styles
+///
+/// @group  Elements
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+// Fieldsets.
+fieldset {
+	margin:  0 0 1.5rem;
+	padding: 1.5rem 1.5rem 0;
+	border:  1px solid var( --colors--theme--meta-medium );
+}
+
+// Legends.
+legend {
+	padding: 0.375rem 1.5rem;
+	font: {
+		size: 0.8em;
+		weight: 700;
+	}
+	background-color: var( --colors--theme--meta-light );
+	border: 1px solid var( --colors--theme--meta-medium );
+}
+
+// Labels.
+label {
+	font: {
+		weight: 400;
+	}
+	cursor: pointer;
+}
+
+
+// Inputs.
+input {
+	display: block;
+
+	&[type="checkbox"],
+	&[type="radio"] { display: inline-block; }
+}
+
+input,
+textarea,
+button,
+select { font-family: inherit; }
+
+label,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] { cursor: pointer; }
+
+textarea,
+select,
+input {
+    color: var( --colors--theme--meta-dark );
+}
+
+input[type="number"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+textarea,
+select,
+option {
+    padding: 0.625em 1em;
+    width: 100%;
+    background: rgba( 255, 255, 255, 0.5 );
+    border: 1px solid var( --colors--theme--meta-medium );
+    box-sizing: border-box;
+
+    &:focus {
+        background: #ffffff;
+    }
+}
+
+input[type="number"] { width: auto; }
+
+input[name="post_password"] { margin-bottom: 1.5rem; }
+
+
+select[disabled],
+input[disabled] { background: transparent; }
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+    // @extend %transition;
+    display:        inline-block;
+    // padding:        1rem;
+    // font-size:      16px;
+    // font-weight:    400;
+    // color:          $color_white;
+    // background:     $color_dark;
+    // border:         none;
+    // border-radius:  0;
+    // box-sizing:     border-box;
+    text-shadow:    none;
+
+    &:hover,
+    &:focus,
+    &.is-selected {
+        // background:     $color_dark_lighter;
+        // text-decoration: underline;
+    }
+}
+
+textarea {
+	min-height:  200px;
+}

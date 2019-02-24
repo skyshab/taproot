@@ -1,0 +1,34 @@
+////
+/// Get CSS Vars wrapped in media queries.
+///
+/// These are imported into the theme css file
+///
+/// @group  Settings
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+:root {
+
+    // defaults 
+    @import 'default'; 
+
+    // colors 
+    @import 'colors'; 
+
+    // mobile vars 
+    @import 'mobile';    
+
+    
+    // tablet vars 
+    @media ( min-width: $tr-tablet-min ) {
+        @import 'tablet';    
+    }
+
+
+    // desktop vars 
+    @media ( min-width: $tr-desktop-min ) {
+        @import 'desktop';    
+    }   
+}
