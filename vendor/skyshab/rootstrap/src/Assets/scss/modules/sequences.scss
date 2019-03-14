@@ -1,0 +1,63 @@
+/*
+ * Styles for sequence navigation controls
+ */
+
+.customize-control-rootstrap-sequence {
+    box-sizing: border-box;
+    margin: -15px -12px 12px -12px;
+    width: calc(100% + 24px);
+    padding: 10px 8px;
+    background: white;
+    border-bottom: 1px solid #ddd;    
+}
+    
+.rootstrap-nav-link__sequence {
+
+    font-size: 20px;
+    height: 1em;
+    position: relative;
+    text-decoration: none;
+    display: flex;
+    color: #a0a5aa;
+    transition: color 0.5s ease-in-out;
+
+    &:hover {
+        color: #1F87B6;
+    }
+    
+    &--previous {
+        padding-left: 20px;
+    }
+    
+    &--next {
+        padding-right: 20px;
+    }
+    
+    &--previous:after, &--next:before {
+        font: 400 1em dashicons;
+        position: absolute;
+        top: 50%;
+        margin-top: -0.5em;
+    }
+    
+    &--previous:focus, &--next:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    
+    &--previous:after {
+        content: "\f341";
+        left: 0;    
+    }
+    
+    &--next:before {
+        content: "\f345";
+        right: 0;
+    }
+    
+    span {
+        font-size: 13px;
+        vertical-align: middle;
+        line-height: 20px;
+    }    
+}
