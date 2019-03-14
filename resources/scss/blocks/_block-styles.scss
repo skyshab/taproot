@@ -1,0 +1,95 @@
+////
+/// General Block Styles
+///
+/// Utility styles for setting heights on image based blocks.
+///
+/// @group  Blocks
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+// global layout styles
+.fullscreen-layout, .boxed-layout {
+    .has-height {
+        &-short {                
+            @include screen('mobile') {
+                height: 35vw;
+            }                             
+        }          
+        &-standard {
+            @include screen('mobile') {
+                height: 50vw;
+            }                  
+        }
+        &-tall {
+            @include screen('mobile') {
+                height: 64vw;
+            }                
+        }
+        &-fullscreen {
+            height: 100vh;
+        }  
+    }
+}
+
+// Full screen only styles
+.fullscreen-layout {        
+    .has-height {
+        &-short {                
+            @include screen('tablet') {
+                height: 300px;    
+            }    
+            @include screen('desktop') {
+                height: 325px;    
+            }                             
+        }              
+        &-standard {
+            @include screen('tablet') {
+                height: 375px;    
+            }    
+            @include screen('desktop') {
+                height: 425px;    
+            }                   
+        }
+        &-tall {
+            @include screen('tablet') {
+                height: 450px;    
+            }    
+            @include screen('desktop') {
+                height: 500px;    
+            }                   
+        }          
+    }
+}
+
+// boxed layout only styles
+.boxed-layout {
+    .has-height {
+        &-short {                
+            @include screen('tablet') {
+                height: 275px;    
+            }    
+            @include screen('desktop') {
+                height: 325px;    
+            }                             
+        }                           
+        &-standard {
+            @include screen('tablet') {
+                height: 375px;    
+            }    
+            @include screen('desktop') {
+                height: 425px;    
+            }                   
+        }
+        &-tall {
+            @include screen('tablet') {
+                height: 450px;    
+            }    
+            @include screen('desktop') {
+                height: 500px;    
+            }                 
+        }          
+    }        
+}
+

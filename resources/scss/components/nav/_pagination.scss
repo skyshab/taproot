@@ -1,0 +1,93 @@
+////
+/// Pagination component.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.pagination {
+
+    margin-top: 2em;
+
+	// Header/Title element.
+	&__title {}
+
+	// The list of items.
+	&__items {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+
+        // if rounded items active
+        &--rounded {
+            .pagination__item {
+                &--dots, &--number, &--current {
+                    border-radius: 50%;
+                } 
+            }
+        }
+    }
+
+	// Individual items.
+	&__item {
+        margin: 0 0.3em;
+        text-decoration: none;
+        height: 2em;
+        text-align: center;
+        color: inherit;
+        transition: all .4s ease-in-out;                
+        
+		&--prev, &--next {
+
+            .pagination__anchor {
+
+                color: var( --colors--theme--meta-dark );
+
+                &:hover {
+                    color: var( --colors--theme--accent );
+                }  
+            }          
+        }
+
+		&--prev {
+            padding-right: 0.3em;
+        } 
+
+        &--next {
+            padding-left: 0.3em;
+        }        
+
+		&--dots, &--number, &--current {
+            width: 2em;            
+
+            .pagination__anchor:hover {
+                text-decoration: none;              
+            }
+        }  
+        
+		&--number, &--dots {
+
+            background-color: var( --colors--theme--meta-medium );
+
+            .pagination__anchor {
+                color: var( --colors--theme--accent-contrast );              
+            }
+        }
+
+		&--number:hover, &--current {
+            background-color: var( --colors--theme--accent );
+            color: var( --colors--theme--accent-contrast );     
+        }
+	}
+
+	// The link or span element.
+	&__anchor {
+        line-height: 2em;   
+        
+        &--link {
+            display: block;
+        }
+	}
+}
