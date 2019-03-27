@@ -7,16 +7,17 @@
 ////
 
 // The cover image `<div>` element. The image is added as a background.
-.wp-block-cover-image {
+.wp-block-cover {
 	position:            relative;
 	background-size:     cover;
 	background-position: 50%;
-	min-height:          430px;
+    height:              420px;
+    max-height:          100vh;
 	width:               100%;
-	margin:              0 0 1.5em;
+	margin:              2em 0;
 	display:             flex;
 	justify-content:     center;
-	align-items:         center;
+    align-items:         center;
 
 	// Parallax images should have a fixed background so that the image
 	// stays in place while everything else scrolls.
@@ -57,36 +58,48 @@
 	&.alignright {
 		max-width: content-width() / 2;
 		width:     100%;
-	}
+    }
 }
 
 // Paragraph of text shown within the cover image element.
-.wp-block-cover-image-text {
-	color:         color( white );
-	font-size:     2em;
-	line-height:   1.25;
-	z-index:       1;
-	margin-bottom: 0;
-	max-width:     content-width();
-	padding:       14px;
-	text-align:    center;
+.wp-block-cover-text {
+    color: white;
+    font-size: 2em;
+	line-height: 1.4;
 
 	a,
 	a:hover,
 	a:focus,
 	a:active {
-		color: color( white );
-	}
-}
+		color: white;
+    }
+    
+    .has-dark-text & {
+        color: black;  
 
-// Left-aligned text.
-.has-left-content .wp-block-cover-image-text {
-	margin-left: 0;
-	text-align:  left;
-}
+        a,
+        a:hover,
+        a:focus,
+        a:active {
+            color: black;
+        }        
+    }  
+    
+    p {
+        margin-bottom: 1em;
+    }
 
-// Right-aligned text.
-.has-right-content .wp-block-cover-image-text {
-	margin-right: 0;
-	text-align:   right;
+    &:last-child {
+        margin-bottom: 0;
+    }  
+        
+    // Left-aligned text.
+    .has-left-content & {
+        text-align: left;
+    }
+
+    // Right-aligned text.
+    .has-right-content & {
+        text-align: right;
+    }
 }

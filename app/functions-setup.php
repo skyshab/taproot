@@ -104,7 +104,7 @@ add_action( 'after_setup_theme', function() {
 		[
 			'name'      => __( 'Small', 'taproot' ),
 			'shortName' => __( 'S', 'taproot' ),
-			'size'      => 12,
+			'size'      => 14,
 			'slug'      => 'small'
 		],
 		[
@@ -116,13 +116,13 @@ add_action( 'after_setup_theme', function() {
 		[
 			'name'      => __( 'Large', 'taproot' ),
 			'shortName' => __( 'L', 'taproot' ),
-			'size'      => 36,
+			'size'      => 23,
 			'slug'      => 'large'
 		],
 		[
 			'name'      => __( 'Larger', 'taproot' ),
 			'shortName' => __( 'XL', 'taproot' ),
-			'size'      => 48,
+			'size'      => 32,
 			'slug'      => 'larger'
 		]
 	] );
@@ -216,8 +216,8 @@ add_action( 'init', function() {
 
 /**
  * Register location to the Rootstrap resources directory.
- * 
- * This is uses to load scripts in the Customizer interface. 
+ *
+ * This is uses to load scripts in the Customizer interface.
  *
  * @since  1.0.0
  * @access public
@@ -227,4 +227,25 @@ add_action( 'init', function(){
     add_filter( 'rootstrap/resources/location', function(){
         return get_template_directory_uri() . '/vendor/skyshab/rootstrap/resources';
     });
+});
+
+
+
+/**
+ * Add template for page builders.
+ *
+ * This adds a blank template with no container as a custom template.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return void
+ */
+add_action( 'hybrid/templates/register', function( $templates ) {
+	$templates->add(
+		'page-builder.php',
+		[
+			'label'      => __( 'Page Builder', 'taproot' ),
+			'post_types' => [ 'page', 'post' ]
+		]
+	);
 });

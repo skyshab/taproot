@@ -29,6 +29,8 @@
 
         </div>
 
+        <?php Taproot\Template\additional_content() ?>
+
         <?php Hybrid\View\display( 'nav/menu', 'navbar', [ 'location' => 'navbar' ] ) ?>
 
 	</header>

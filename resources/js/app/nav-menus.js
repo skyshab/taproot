@@ -27,69 +27,69 @@ class NavMenus {
         this.app = document.querySelector('.app');
         this.header = document.querySelector('.app-header');
         this.isBoxedLayout = this.header.classList.contains('boxed-layout');
-        this.hasAdminBar = this.body.classList.contains('admin-bar') ;    
+        this.hasAdminBar = this.body.classList.contains('admin-bar') ;
         this.scrollElems = document.querySelectorAll('.menu__item--current > a[href*=\\#]');
 
         this.slideWidth = 300;
         this.animation = null;
-        this.startTime = null;  
+        this.startTime = null;
 
         this.dropdowns();
-        this.toggles();        
-        this.listeners();         
+        this.toggles();
+        this.listeners();
     }
 
 
     /**
      * Run event listeners
-     */     
+     */
     listeners() {
         const self = this;
 
         window.addEventListener('resize', () => {
             self.clear();
-        });          
+        });
 
-        self.scrollElems.forEach( el => {   
+        self.scrollElems.forEach( el => {
             el.addEventListener('click', e => {
-                const targetId = e.target.href.split('#')[1]; 
+                const targetId = e.target.href.split('#')[1];
                 const target = document.getElementById(targetId);
-                if(!target) return;
-                e.preventDefault();  
-                
+                if ( ! target ) {
+                    return;
+                }
+                e.preventDefault();
+
                 const nav = e.target.closest('nav');
                 const menu = e.target.closest('.menu__items');
                 const toggle = nav.querySelector('.menu--toggle');
                 const isSlideNav = nav.classList.contains('mobile-type-slide');
                 const isOpen = menu.classList.contains('is-open');
 
-                if( isSlideNav && isOpen ) {
+                if ( isSlideNav && isOpen ) {
                     const slideSide = ( nav.classList.contains('menu--right') ) ? 'right' : 'left';
-                    if( slideSide === 'left' ) {
+                    if ( 'left' === slideSide ) {
                         self.slideClosedLeft(menu, 500, () => {
-                            toggle.classList.remove('is-open');  
+                            toggle.classList.remove('is-open');
+                            self.scrollTo(target);
+                        });
+                    } else {
+                        self.slideClosedRight(menu, 500, () => {
+                            toggle.classList.remove('is-open');
                             self.scrollTo(target);
                         });
                     }
-                    else {
-                        self.slideClosedRight(menu, 500, () => {
-                            toggle.classList.remove('is-open');  
-                            self.scrollTo(target);
-                        });                            
-                    }
-                }
-                else {
+                } else {
                     self.scrollTo(target);
                 }
-            })
-        })
-    } 
+            });
+        });
+    }
 
 
     /**
      * Submenu Dropdowns
      */
-    dropdowns() { 
+    dropdowns() {
         const self = this;
         document.querySelectorAll('.dropdown-target').forEach( elem => {
             elem.addEventListener('click', e => {
@@ -99,17 +99,18 @@ class NavMenus {
                         subMenu     = parentItem.querySelector('.menu__sub-menu');
 
                 // if we're already animating the submenu, don't run again
-                if( subMenu.classList.contains('is-animating') ) return;
+                if ( subMenu.classList.contains('is-animating') ) {
+                    return;
+                }
 
                 parentItem.classList.toggle('is-open');
                 theTarget.classList.toggle('is-open');
 
-                if(parentItem.classList.contains('is-open')) {
-                    self.slideOpen(subMenu, 600);
+                if (parentItem.classList.contains('is-open')) {
+                    self.slideOpen(subMenu, 500);
+                } else {
+                    self.slideClosed(subMenu, 500);
                 }
-                else {
-                    self.slideClosed(subMenu, 600);
-                }                
             });
         });
     }
@@ -118,9 +119,10 @@ class NavMenus {
     /**
      * Menu Toggles
      */
-    toggles() { 
+    toggles() {
         const self = this;
         const togglesArray = document.querySelectorAll('.menu--toggle');
+        const animationTime = 500;
         togglesArray.forEach( elem => {
             elem.addEventListener( 'click', e => {
                 const toggle = e.currentTarget,
@@ -128,53 +130,46 @@ class NavMenus {
                       nav = toggle.closest('nav');
 
                 // if we're already animating the menu, don't run again
-                if( menu.classList.contains('is-animating') ) return;
-
-                toggle.classList.toggle('is-open');  
-
-                if( nav.classList.contains('mobile-type-dropdown-slide') ) {
-                    if ( toggle.classList.contains('is-open') ) {
-                        self.slideOpen( menu, 500 );                        
-                    }
-                    else {
-                        self.slideClosed( menu, 500 );
-                    } 
+                if ( menu.classList.contains('is-animating') ) {
+                    return;
                 }
-                else if( nav.classList.contains('mobile-type-dropdown-fade') ) {
+
+                toggle.classList.toggle('is-open');
+
+                if ( nav.classList.contains('mobile-type-dropdown-slide') ) {
                     if ( toggle.classList.contains('is-open') ) {
-                        self.fadeIn( menu, 500 );                        
+                        self.slideOpen( menu, animationTime );
+                    } else {
+                        self.slideClosed( menu, animationTime );
                     }
-                    else {
-                        self.fadeOut( menu, 500 );
-                    } 
-                }
-                else if( nav.classList.contains('mobile-type-slide') ) {
+                } else if ( nav.classList.contains('mobile-type-dropdown-fade') ) {
+                    if ( toggle.classList.contains('is-open') ) {
+                        self.fadeIn( menu, animationTime );
+                    } else {
+                        self.fadeOut( menu, animationTime );
+                    }
+                } else if ( nav.classList.contains('mobile-type-slide') ) {
                     const slideSide = ( nav.classList.contains('menu--right') ) ? 'right' : 'left';
-            
-                    if( toggle.classList.contains('is-open') ) {
-                        if( slideSide === 'left' ) {
-                            self.slideOpenLeft(menu, 700);
-                        }
-                        else {
-                            self.slideOpenRight(menu, 700);
-                        }
-                    }
-                    else {               
-                        if( slideSide === 'left' ) {
-                            self.slideClosedLeft(menu, 700);
-                        }
-                        else {
-                            self.slideClosedRight(menu, 700);
-                        }                       
-                    }
-                }
-                else if( nav.classList.contains('mobile-type-fullscreen') ) {
+
                     if ( toggle.classList.contains('is-open') ) {
-                        self.fadeIn( menu, 500 ); 
+                        if ( 'left' === slideSide ) {
+                            self.slideOpenLeft(menu, animationTime);
+                        } else {
+                            self.slideOpenRight(menu, animationTime);
+                        }
+                    } else {
+                        if ( 'left' === slideSide ) {
+                            self.slideClosedLeft(menu, animationTime);
+                        } else {
+                            self.slideClosedRight(menu, animationTime);
+                        }
                     }
-                    else {
-                        self.fadeOut( menu, 500 );
-                    }                     
+                } else if ( nav.classList.contains('mobile-type-fullscreen') ) {
+                    if ( toggle.classList.contains('is-open') ) {
+                        self.fadeIn( menu, animationTime );
+                    } else {
+                        self.fadeOut( menu, animationTime );
+                    }
                 }
             });
         });
@@ -183,31 +178,34 @@ class NavMenus {
 
     /**
      * Slide element open
-     */    
+     */
     slideOpen( el, duration ) {
         const self = this;
         const height = self.getHeight(el);
-        let startTime = null;           
+        let startTime = null;
 
         el.style.height = '0px';
         el.classList.add('is-open');
         el.classList.add('is-animating');
 
         const slide = currentTime => {
-            if(startTime === null) startTime = currentTime;
+            if (null === startTime) {
+                startTime = currentTime;
+            }
             const timeElapsed = currentTime - startTime;
 
             // add next animation style
             el.style.height = self.ease(timeElapsed, 0, height, duration) + 'px';
 
             // if we're still in the timeframe of the animation, call it again
-            if(timeElapsed < duration) requestAnimationFrame(slide);
             // otherwise, remove animating flag
-            else  {
+            if (timeElapsed < duration) {
+                requestAnimationFrame(slide);
+            } else  {
                 el.style.height = '';
                 el.classList.remove('is-animating');
             }
-        }
+        };
 
         self.animation = requestAnimationFrame(slide);
     }
@@ -215,30 +213,33 @@ class NavMenus {
 
     /**
      * Slide element closed
-     */      
+     */
     slideClosed( el, duration ) {
         const self = this;
-        const startHeight = el.scrollHeight;           
-        let startTime = null;  
+        const startHeight = el.scrollHeight;
+        let startTime = null;
 
         el.classList.add('is-animating');
-        
+
         const slide = currentTime => {
-            if(startTime === null) startTime = currentTime;
-            const timeElapsed = currentTime - startTime; 
+            if (null === startTime) {
+                startTime = currentTime;
+            }
+            const timeElapsed = currentTime - startTime;
 
             // add next animation style
             el.style.height = self.ease(timeElapsed, startHeight, ( -1 * startHeight ), duration) + 'px';
 
             // if we're still in the timeframe of the animation, call it again
-            if(timeElapsed < duration) requestAnimationFrame(slide);
             // otherwise, clean up before leaving
-            else {
+            if (timeElapsed < duration) {
+                requestAnimationFrame(slide);
+            } else {
                 el.classList.remove('is-open');
                 el.style.height = '';
                 el.classList.remove('is-animating');
             }
-        }  
+        };
 
         self.animation = requestAnimationFrame(slide);
     }
@@ -246,10 +247,10 @@ class NavMenus {
 
     /**
      * Fade element in
-     */    
+     */
     fadeIn(el, duration) {
         const self = this;
-        let startTime = null;           
+        let startTime = null;
 
         self.body.classList.add('noscroll');
         el.classList.add('is-animating');
@@ -257,20 +258,23 @@ class NavMenus {
         el.style.opacity = '0';
 
         const fade = currentTime => {
-            if(startTime === null) startTime = currentTime;
+            if (null === startTime) {
+                startTime = currentTime;
+            }
             const timeElapsed = currentTime - startTime;
 
             // add next animation style
             el.style.opacity = self.ease(timeElapsed, 0, 1, duration);
 
             // if we're still in the timeframe of the animation, call it again
-            if(timeElapsed < duration) requestAnimationFrame(fade);
-            // otherwise, clean up before leaving            
-            else {
+            // otherwise, clean up before leaving
+            if (timeElapsed < duration) {
+                requestAnimationFrame(fade);
+            } else {
                 el.style.opacity = '';
                 el.classList.remove('is-animating');
             }
-        }
+        };
 
         self.animation = requestAnimationFrame(fade);
     }
@@ -278,31 +282,34 @@ class NavMenus {
 
     /**
      * Fade element out
-     */      
+     */
     fadeOut(el, duration) {
         const self = this;
-        let startTime = null;  
+        let startTime = null;
 
         // add animating flag
         el.classList.add('is-animating');
-        
+
         const fade = currentTime => {
-            if(startTime === null) startTime = currentTime;
+            if (null === startTime) {
+                startTime = currentTime;
+            }
             const timeElapsed = currentTime - startTime;
 
             // add the next animation style
             el.style.opacity = self.ease(timeElapsed, 1, -1, duration);
 
             // if we're still in the timeframe of the animation, call it again
-            if(timeElapsed < duration) requestAnimationFrame(fade);
             // otherwise, clean up before leaving
-            else {
+            if (timeElapsed < duration) {
+                requestAnimationFrame(fade);
+            } else {
                 el.classList.remove('is-open');
                 el.style.opacity = '';
                 self.body.classList.remove('noscroll');
                 el.classList.remove('is-animating');
             }
-        }  
+        };
 
         self.animation = requestAnimationFrame(fade);
     }
@@ -310,20 +317,19 @@ class NavMenus {
 
     /**
      * Slide open left
-     */  
+     */
     slideOpenLeft(el, duration) {
         const self = this;
-        let startTime = null;                   
+        let startTime = null;
         const topSpace = self.app.getBoundingClientRect().top - self.body.getBoundingClientRect().top;
         const maxHeight = self.app.offsetHeight + self.app.getBoundingClientRect().top - self.adminBarOffset();
 
         self.body.classList.add('noscroll');
         el.classList.add('is-animating');
 
-        if(maxHeight <= window.innerHeight) {
+        if (maxHeight <= window.innerHeight) {
             el.style.maxHeight = maxHeight + 'px';
-        }
-        else {
+        } else {
             el.style.maxHeight = window.innerHeight - self.adminBarOffset() + 'px';
         }
 
@@ -332,74 +338,75 @@ class NavMenus {
         el.classList.add('is-open');
 
         const slide = currentTime => {
-            if(startTime === null) startTime = currentTime;
+            if (null === startTime) {
+                startTime = currentTime;
+            }
             const timeElapsed = currentTime - startTime;
             const currentDistance = self.ease(timeElapsed, 0, self.slideWidth, duration);
 
-            if(currentDistance <= self.slideWidth) {
+            if (currentDistance <= self.slideWidth) {
                 el.style.transform = 'translateX(-' + currentDistance + 'px)';
                 self.app.style.transform = 'translateX(' + currentDistance + 'px)';
-            }
-            else {
+            } else {
                 el.style.transform = 'translateX(-' + self.slideWidth + 'px)';
                 self.app.style.transform = 'translateX(' + self.slideWidth + 'px)';
             }
 
             // if we're still in the timeframe of the animation, call it again
-            if(timeElapsed < duration) requestAnimationFrame(slide);
             // otherwise, clean up before leaving
-            else {
+            if (timeElapsed < duration) {
+                requestAnimationFrame(slide);
+            } else {
                 el.classList.remove('is-animating');
             }
-        }
+        };
 
         self.animation = requestAnimationFrame(slide);
     }
 
 
-
     /**
      * Slide closed left
-     */  
+     */
     slideClosedLeft(el, duration, callback = {} ) {
         const self = this;
-        let startTime = null;                   
+        let startTime = null;
         const slide = currentTime => {
-            if(startTime === null) startTime = currentTime;
+            if (null === startTime) {
+                startTime = currentTime;
+            }
             const timeElapsed = currentTime - startTime;
             const currentDistance = self.ease(timeElapsed, self.slideWidth, (-1 * self.slideWidth), duration);
 
             // add animating flag
             el.classList.add('is-animating');
-            
-            if(currentDistance >= 0) {
+
+            if ( 0 <= currentDistance ) {
                 el.style.transform = 'translateX(-' + currentDistance + 'px)';
                 self.app.style.transform = 'translateX(' + currentDistance + 'px)';
-            }
-            else {
+            } else {
                 el.style.transform = 'translateX(0)';
                 self.app.style.transform = 'translateX(0)';
             }
 
             // if we're still in the timeframe of the animation, call it again
-            if(timeElapsed < duration) { 
-                requestAnimationFrame(slide);
-            }
             // otherwise, clean up before leaving
-            else {                
+            if (timeElapsed < duration) {
+                requestAnimationFrame(slide);
+            } else {
                 el.style.top = '';
                 el.style.maxHeight = '';
                 self.app.style.transform = '';
-                el.classList.remove('is-open');  
-                self.body.classList.remove('noscroll');  
+                el.classList.remove('is-open');
+                self.body.classList.remove('noscroll');
                 el.classList.remove('is-animating');
 
                 // Run callback if it is a function
-                if(typeof callback === "function") {
+                if ('function' === typeof callback) {
                     callback();
                 }
             }
-        }
+        };
 
         self.animation = requestAnimationFrame(slide);
     }
@@ -407,20 +414,19 @@ class NavMenus {
 
     /**
      * Slide open right
-     */  
+     */
     slideOpenRight(el, duration) {
         const self = this;
-        let startTime = null;                   
+        let startTime = null;
         const topSpace = self.app.getBoundingClientRect().top - self.body.getBoundingClientRect().top;
         const maxHeight = self.app.offsetHeight + self.app.getBoundingClientRect().top - self.adminBarOffset();
 
         self.body.classList.add('noscroll');
         el.classList.add('is-animating');
 
-        if(maxHeight <= window.innerHeight) {
+        if (maxHeight <= window.innerHeight) {
             el.style.maxHeight = maxHeight + 'px';
-        }
-        else {
+        } else {
             el.style.maxHeight = window.innerHeight - self.adminBarOffset() + 'px';
         }
 
@@ -429,25 +435,27 @@ class NavMenus {
         el.classList.add('is-open');
 
         const slide = currentTime => {
-            if(startTime === null) startTime = currentTime;
+            if (null === startTime) {
+                startTime = currentTime;
+            }
             const timeElapsed = currentTime - startTime;
             const currentDistance = self.ease(timeElapsed, 0, self.slideWidth, duration);
 
-            if(currentDistance <= self.slideWidth) {
+            if (currentDistance <= self.slideWidth) {
                 el.style.transform = 'translateX(' + currentDistance + 'px)';
                 self.app.style.transform = 'translateX(-' + currentDistance + 'px)';
-            }
-            else {
+            } else {
                 el.style.transform = 'translateX(' + self.slideWidth + 'px)';
                 self.app.style.transform = 'translateX(-' + self.slideWidth + 'px)';
             }
 
             // if we're still in the timeframe of the animation, call it again
-            if(timeElapsed < duration) requestAnimationFrame(slide);
-            else {
+            if (timeElapsed < duration) {
+                requestAnimationFrame(slide);
+            } else {
                 el.classList.remove('is-animating');
             }
-        }
+        };
 
         self.animation = requestAnimationFrame(slide);
     }
@@ -455,65 +463,69 @@ class NavMenus {
 
     /**
      * Slide closed right
-     */  
+     */
     slideClosedRight(el, duration, callback = {} ) {
         const self = this;
-        let startTime = null;                   
+        let startTime = null;
         const slide = currentTime => {
-            if(startTime === null) startTime = currentTime;
+            if (null === startTime) {
+                startTime = currentTime;
+            }
             const timeElapsed = currentTime - startTime;
             const currentDistance = self.ease(timeElapsed, self.slideWidth, (-1 * self.slideWidth), duration);
 
             // add animating flag
             el.classList.add('is-animating');
 
-            if(currentDistance >= 0) {
+            if ( 0 <= currentDistance ) {
                 el.style.transform = 'translateX(' + currentDistance + 'px)';
                 self.app.style.transform = 'translateX(-' + currentDistance + 'px)';
-            }
-            else {
+            } else {
                 el.style.transform = 'translateX(0)';
                 self.app.style.transform = 'translateX(0)';
             }
 
             // if we're still in the timeframe of the animation, call it again
-            if(timeElapsed < duration) { 
-                requestAnimationFrame(slide);
-            }
             // otherwise, clean up before leaving
-            else {                
+            if (timeElapsed < duration) {
+                requestAnimationFrame(slide);
+            } else {
                 el.style.top = '';
                 el.style.maxHeight = '';
                 self.app.style.transform = '';
-                self.body.classList.remove('noscroll');   
-                el.classList.remove('is-open');  
+                self.body.classList.remove('noscroll');
+                el.classList.remove('is-open');
                 el.classList.remove('is-animating');
 
                 // Run callback if is a function
-                if(typeof callback === "function") {
+                if ( 'function' === typeof callback ) {
                     callback();
-                }                
+                }
             }
-        }
+        };
 
         self.animation = requestAnimationFrame(slide);
     }
-    
+
 
     /**
      * Smooth scroll page to the top of the element
-     */  
+     */
     scrollTo(target) {
         const self = this;
         const startPosition = window.pageYOffset;
         const scrollTarget = target.getBoundingClientRect().top - self.getScrollOffset();
         let startTime = null;
         const scroll = currentTime => {
-            if(startTime === null) startTime = currentTime;
+            if (null === startTime) {
+                startTime = currentTime;
+            }
             const timeElapsed = currentTime - startTime;
             window.scrollTo( 0, self.ease(timeElapsed, startPosition, scrollTarget, 1000) );
-            if(timeElapsed < 1000) requestAnimationFrame(scroll);
-        }
+            if (1000 > timeElapsed) {
+                requestAnimationFrame(scroll);
+            }
+        };
 
         self.animation = requestAnimationFrame(scroll);
     }
@@ -523,51 +535,39 @@ class NavMenus {
      * Calculate scroll offset
      */
     getScrollOffset() {
-        const isFixedHeader = this.header.classList.contains('app-header--has-fixed'); 
+        const isFixedHeader = this.header.classList.contains('app-header--has-fixed');
 
         // if admin bar, include admin bar height
-        let offset = ( this.hasAdminBar ) ? this.html.offsetTop : 0; 
+        let offset = ( this.hasAdminBar ) ? this.html.offsetTop : 0;
 
         // if fixed header, include header height
-        if( isFixedHeader ) {
+        if ( isFixedHeader && 1025 <= window.innerWidth ) {
             offset = offset + this.header.offsetHeight;
         }
 
         return offset;
-    }  
+    }
 
 
     /**
      * easing function
      * Uses easeInOutCubic
-     */     
-    // ease(t, b, c, d) {
-    //     t /= d/2;
-    //     if (t < 1) return c/2*t*t*t + b;
-    //     t -= 2;
-    //     return c/2*(t*t*t + 2) + b;
-    // }
-
-
-
-
-    /**
-     * easing function
-     * Uses easeInOutCubic
-     */     
+     */
     ease(t, b, c, d) {
-        t /= d/2;
-        if (t < 1) return c/2*t*t*t + b;
+        t /= d / 2;
+        if (1 > t) {
+            return c / 2 * t * t * t + b;
+        }
         t -= 2;
-        return c/2*(t*t*t + 2) + b;
+        return c / 2 * (t * t * t + 2) + b;
     }
 
 
     /**
      * get element height
-     */  
+     */
     getHeight(el) {
-        el.style.display = 'flex';        
+        el.style.display = 'flex';
         const height = el.scrollHeight;
         el.style.display = '';
         return height;
@@ -577,21 +577,21 @@ class NavMenus {
     /**
      * Calculate admin bar height
      */
-    adminBarOffset() {           
-        return ( this.hasAdminBar ) ? this.html.offsetTop : 0;        
+    adminBarOffset() {
+        return ( this.hasAdminBar ) ? this.html.offsetTop : 0;
     }
 
 
     /**
      * Clear animation styles and classes
-     */      
+     */
     clear() {
         document.querySelectorAll('.is-open').forEach( el => {
             el.classList.remove('is-open');
         });
         document.querySelectorAll('.menu__items').forEach( el => {
             el.style.transform = '';
-        });        
+        });
         this.app.style.transform = '';
         this.body.classList.remove('noscroll');
     }
@@ -601,6 +601,6 @@ class NavMenus {
 /**
  * Instantiate our class to handle nav menus on document ready
  */
-document.addEventListener("DOMContentLoaded", () => {
-    const navMenus = new NavMenus();   
+document.addEventListener('DOMContentLoaded', () => {
+    const navMenus = new NavMenus();
 });

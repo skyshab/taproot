@@ -51,7 +51,7 @@ class Template implements Bootable {
             'Nav',
             'Breadcrumbs',
             'Footer',
-            'Blog',
+            'Post',
             'Search'
         ]);  
     }
@@ -72,7 +72,8 @@ class Template implements Bootable {
         }, [
             'Utilities/functions-utilities',
             'Icons/functions-icons',
-            'Blog/functions-blog',
+            'Post/functions-post',
+            'Header/functions-header',
             'Branding/functions-branding',
             'Footer/functions-footer',
             'Nav/functions-nav',

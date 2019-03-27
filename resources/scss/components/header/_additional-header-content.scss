@@ -29,26 +29,22 @@
 
         a {
             color: inherit;
-        }
+        }        
     }
-
+      
     &__author {
         margin-right: 1em;
         display: flex;
         align-items: center;
     }
 
-    .custom-header & {
-        align-self: center;
-        flex: 1 1 100%;
-        justify-content: center;
-        display: flex;
-        flex-direction: column;
-        padding-bottom: 7vw;
-    }
-
-    .custom-header  .app-header--fixed & {
+    .app-header--fixed & {
         display: none;
     }
 
+    .custom-header & {
+        align-self: center;
+        text-align: center;
+        padding-bottom: 7vw;
+    }
 }

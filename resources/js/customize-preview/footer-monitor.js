@@ -15,11 +15,11 @@
 
 const taprootFooter = document.querySelector('.app-footer');
 
-if( taprootFooter.classList.contains('app-footer--has-fixed') ) {
+if ( taprootFooter.classList.contains('app-footer--has-fixed') ) {
 
     const taprootFooterObserver = new ResizeObserver( () => {
         window.dispatchEvent(new Event('resize'));
     });
-    
+
     taprootFooterObserver.observe(taprootFooter);
 }

@@ -13,25 +13,10 @@
     // center in body
     margin: 0 auto;
 
-    // so the slide navigation can work
+    // styles for the slide navigation
     position: relative;
-
-    // so the slide navigation layers properly
-    // see also the z-index for the body and the menu__list
     z-index: 2;
 }
-
-
-
-.app-main {
-    background: white;
-}
-
-.app-content__container {
-    display: flex;
-}
-
-
 
 .container {
     margin: 0 auto;
@@ -42,23 +27,4 @@
 // customize default setting
 .container, .boxed-layout.app-header--has-fixed, .boxed-layout.app-footer--has-fixed {
     max-width: 1200px;
-}
-
-
-.app-content {
-    margin: 0 auto;
-}
-
-
-
-@include screen('tablet-and-under') {
-    .app-content__container {
-        flex-direction: column;
-    }
-};
-
-
-// !!!!! don't forget to remove this!!!
-.customize-partial-edit-shortcut-button {
-	display: none;
 }

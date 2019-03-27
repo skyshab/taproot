@@ -19,7 +19,8 @@ $panel->sections([
     'padding-mobile',    
     'padding-tablet',    
     'padding-desktop',     
-    'padding-fixed',     
+    'padding-fixed',  
+    'image'   
 ]);
 
 

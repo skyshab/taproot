@@ -48,6 +48,19 @@ $manager->add_control( 'nav--header-fixed--fixed', [
 ]);
 
 
+// Setting: Hide When Not Fixed 
+$manager->add_setting( 'nav--header-fixed--hide-when-not-fixed', [
+    'sanitize_callback' => 'taproot_sanitize_checkbox',
+    'transport' => 'refresh',
+]);
+
+$manager->add_control( 'nav--header-fixed--hide-when-not-fixed', [
+    'label'     => esc_html__( 'Hide When Not Fixed', 'taproot' ),
+    'section'   => 'nav--header-fixed',
+    'type'      => 'checkbox'
+]);
+
+
 // Color Setting: Link Color
 color( $manager, 'nav--header-fixed--link-color', [
     'label'   => esc_html__( 'Link Color', 'taproot' ),

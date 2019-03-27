@@ -9,9 +9,15 @@
 ////
 
 .app-content {
-
-    // we were only doing this on fullwidth layouts on desktop. 
-    // will this work as a base style with boxed layout? 
     background-color: white;
+    margin: 0 auto;
+    // needed this for safari, to prevent the sidebar in fullwidth layout from going off screen
+    overflow: hidden;
 
+    &__container {
+        display: flex;
+        @include screen('tablet-and-under') {
+            flex-direction: column;
+        }           
+    } 
 }

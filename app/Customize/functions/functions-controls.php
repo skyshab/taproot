@@ -311,10 +311,6 @@ function range_atts( $type = 'text' ) {
     }
     elseif( $type === 'layout-padding' ) {
 
-        $atts['em'] = [
-            'max' => 5,
-        ];
-
         $atts['rem'] = [
             'max' => 5,
         ];

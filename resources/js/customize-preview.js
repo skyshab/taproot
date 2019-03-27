@@ -14,12 +14,6 @@
 
 
 import { customHeader } from './customize-preview/custom-header';
-
 import * as utils from 'customize-preview/functions-customize-preview.js';
-
-
-// import 'panels/**/**/preview.js';
-
 import './customize-preview/panels.js';
-
 import './customize-preview/footer-monitor.js';

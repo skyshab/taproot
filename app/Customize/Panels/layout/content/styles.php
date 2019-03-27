@@ -19,7 +19,7 @@ use function Rootstrap\get_theme_mod;
 $styles->add_var([
     'name' => 'layout--content--max-width',
     'value' => get_theme_mod( 'layout--content--max-width' ),
-    'screen' => 'desktop',
+    'screen' => 'tablet-and-up',
 ]);
 
 

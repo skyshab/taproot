@@ -21,7 +21,6 @@ $panel->sections([
     'h1-tablet','h2-tablet','h3-tablet','h4-tablet','h5-tablet','h6-tablet',
     'h1-desktop','h2-desktop','h3-desktop','h4-desktop','h5-desktop','h6-desktop',
     'links',
-    'main-mobile', 'main-tablet', 'main-desktop', 'main-desktop-two-col',
     'sidebar-mobile', 'sidebar-tablet', 'sidebar-desktop',
 ]);
 

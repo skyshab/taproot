@@ -25,6 +25,6 @@ namespace Taproot\Template;
  */
 function branding_class( $class ) {
     $class_array = explode(' ', $class );
-    $classes = apply_filters( 'taproot/branding/class', $class_array );        
-    printf( 'class="%s"', implode(' ', $classes ) );
+    $classes = apply_filters( 'taproot/branding/class', $class_array );
+    printf( 'class="%s"', implode(' ', esc_attr( $classes ) ) );
 }

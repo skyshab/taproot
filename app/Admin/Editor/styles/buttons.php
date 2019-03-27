@@ -58,12 +58,13 @@ $styles->add([
 
 
 // Button Hover Styles
-$styles->add([
-    'selector' => '.editor-styles-wrapper .wp-block-button .wp-block-button__link:hover, .editor-styles-wrapper .taproot-button:hover',
-    'styles' => [ 
-        'color'             =>  get_theme_mod( 'elements--buttons-hover--color' ),
-        'background-color'  =>  get_theme_mod( 'elements--buttons-hover--background-color' ),
-        'border-color'      =>  get_theme_mod( 'elements--buttons-hover--border-color' ),
-    ]
-]);
+// removing this until we figure out how to add hover styles to the block editor buttons
+// $styles->add([
+//     'selector' => '.editor-styles-wrapper .wp-block-button .wp-block-button__link:hover, .editor-styles-wrapper .taproot-button:hover',
+//     'styles' => [ 
+//         'color'             =>  get_theme_mod( 'elements--buttons-hover--color' ),
+//         'background-color'  =>  get_theme_mod( 'elements--buttons-hover--background-color' ),
+//         'border-color'      =>  get_theme_mod( 'elements--buttons-hover--border-color' ),
+//     ]
+// ]);
 

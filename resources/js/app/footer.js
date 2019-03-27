@@ -23,13 +23,13 @@ class TaprootFooter {
      */
     constructor() {
         this.body = document.querySelector('body');
-        this.app = document.querySelector('.app');  
+        this.app = document.querySelector('.app');
         this.header = document.querySelector('.app-header');
-        this.footer = document.querySelector('.app-footer');         
+        this.footer = document.querySelector('.app-footer');
         this.hasFixedFooter = this.footer.classList.contains('app-footer--has-fixed');
-        this.windowHeight = window.innerHeight;   
+        this.windowHeight = window.innerHeight;
 
-        if( this.hasFixedFooter ) {
+        if ( this.hasFixedFooter ) {
             this.listeners();
         }
     }
@@ -37,7 +37,7 @@ class TaprootFooter {
 
     /**
      * Add event listeners
-     */    
+     */
     listeners() {
         window.addEventListener('load', () => {
             this.fixedFooter();
@@ -45,26 +45,24 @@ class TaprootFooter {
         window.addEventListener('resize', () => {
             this.windowHeight = window.innerHeight;
             this.fixedFooter();
-        }); 
+        });
     }
-    
+
 
     /**
      * Fixed footer toggle
-     */     
+     */
     fixedFooter() {
 		const footerHeight = this.footer.offsetHeight;
 
-		if( this.body.offsetWidth < 1025 ) {
+		if ( 1025 > this.body.offsetWidth ) {
 			this.app.style.marginBottom = '';
 			this.footer.classList.remove( 'app-footer--fixed' );
-        }
-        else {  
-            if( footerHeight + 250 < this.windowHeight ) {
+        } else {
+            if ( footerHeight + 250 < this.windowHeight ) {
                 this.app.style.marginBottom = Math.floor( footerHeight ) + 'px';
                 this.footer.classList.add( 'app-footer--fixed' );
-            }
-            else {
+            } else {
                 this.app.style.marginBottom = '';
                 this.footer.classList.remove( 'app-footer--fixed' );
             }
@@ -76,6 +74,6 @@ class TaprootFooter {
 /**
  * Run on document ready
  */
-document.addEventListener("DOMContentLoaded", () => {
-    const taprootFooter = new TaprootFooter(); 
+document.addEventListener('DOMContentLoaded', () => {
+    const taprootFooter = new TaprootFooter();
 });

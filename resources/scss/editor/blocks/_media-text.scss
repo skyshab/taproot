@@ -11,6 +11,10 @@
 
 .wp-block-media-text {
     grid-template-areas: "media-text-media media-text-content" "resizer resizer";
+      
+    .editor-inner-blocks {
+        padding: 0 2em;
+    }          
 
     .components-resizable-box__container {
         height: 100%!important;
@@ -25,6 +29,6 @@
     }
 
     &.has-media-on-the-right {
-        grid-template-areas: "media-text-content media-text-media" "resizer resizer";
-    }
+        grid-template-areas: "media-text-content media-text-media" "resizer resizer";                 
+    }  
 }

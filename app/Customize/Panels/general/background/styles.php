@@ -19,6 +19,6 @@ use function Rootstrap\get_theme_mod;
 $styles->add([
     'selector' => 'html',
     'styles' => [
-        'background-color' => get_theme_mod( 'general--background--background-color' )
+        'background-color' => get_theme_mod( 'general--background--background-color', null, true )
     ]
 ]);

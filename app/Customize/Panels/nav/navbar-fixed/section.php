@@ -48,6 +48,19 @@ $manager->add_control( 'nav--navbar-fixed--fixed', [
 ]);
 
 
+// Setting: Hide When Not Fixed 
+$manager->add_setting( 'nav--navbar-fixed--hide-when-not-fixed', [
+    'sanitize_callback' => 'taproot_sanitize_checkbox',
+    'transport' => 'refresh',
+]);
+
+$manager->add_control( 'nav--navbar-fixed--hide-when-not-fixed', [
+    'label'     => esc_html__( 'Hide When Not Fixed', 'taproot' ),
+    'section'   => 'nav--navbar-fixed',
+    'type'      => 'checkbox'
+]);
+
+
 // Color Setting: Background Color
 color( $manager, 'nav--navbar-fixed--background-color', [
     'label'   => esc_html__( 'Background Color', 'taproot' ),

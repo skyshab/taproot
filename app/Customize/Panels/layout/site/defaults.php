@@ -14,12 +14,7 @@
 
 
 // Max Content Width
-$defaults->add( 'layout--site--max-width', '1200px' );
-
-
-// // Enable boxed layout
-// $defaults->add( 'layout--site--boxed-layout', 0 );
-
+$defaults->add( 'layout--site--max-width', '1060px' );
 
 // Boxed Layout Padding
 $defaults->add( 'layout--site--boxed-layout--padding', '4vw' );

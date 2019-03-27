@@ -67,10 +67,6 @@ range( $manager, 'layout--site--max-width', [
             'min'   => 10,
             'max'   => 100,
             'default' => 62
-        ],
-        '%' => [
-            'min' => 50,
-            'default' => 80
-        ],                  
+        ],                 
     ]
 ]);

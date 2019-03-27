@@ -3,7 +3,7 @@
  *
  * This file handles the JavaScript for the custom color picker control
  * that adds an opacity slider and allows for RGBA color values
- * 
+ *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
  * @copyright 2018 Sky Shabatura
@@ -15,6 +15,7 @@
  * Add support to the stock color.js toString() for RGBa
  */
 Color.prototype.toString = function( flag ) {
+	var hex = parseInt( this._color, 10 ).toString( 16 );
 
 	// If our no-alpha flag has been passed in, output RGBa value with 100% opacity
 	if ( 'no-alpha' == flag ) {
@@ -27,9 +28,11 @@ Color.prototype.toString = function( flag ) {
 	}
 
 	// Proceed with stock color.js hex output
-	var hex = parseInt( this._color, 10 ).toString( 16 );
-	if ( this.error ) { return ''; }
-	if ( hex.length < 6 ) {
+	if ( this.error ) {
+        return '';
+    }
+
+	if ( 6 > hex.length ) {
 		for ( var i = 6 - hex.length - 1; i >= 0; i-- ) {
 			hex = '0' + hex;
 		}
@@ -46,7 +49,9 @@ class AlphaColor {
 
     constructor( control ) {
 
-        if( !control ) return false;
+        if ( ! control ) {
+            return false;
+        }
 
         // Set up our attributes
         this.control        = jQuery(control.selector).find('.alpha-color-control');
@@ -63,30 +68,27 @@ class AlphaColor {
         this.addAlpha();
 
         // Set up event handlers
-        this.handlers();  
+        this.handlers();
     }
 
 
     /**
      * Get palette settings
-     */  
+     */
     paletteSettings() {
-
-		if ( this.paletteInput.indexOf( '|' ) !== -1 ) {
+		if ( -1 !== this.paletteInput.indexOf( '|' ) ) {
 			return this.paletteInput.split( '|' );
-        } 
-        else if ( 'false' == this.paletteInput ) {
+        } else if ( 'false' == this.paletteInput ) {
 			return false;
-        } 
-        else {
+        } else {
 			return true;
-        }          
+        }
     }
 
 
     /**
      * Get control container
-     */  
+     */
     getContainer() {
         return this.control.parents( '.wp-picker-container:first' );
     }
@@ -94,22 +96,22 @@ class AlphaColor {
 
     /**
      * Setup color picker control
-     */  
+     */
     setupControl() {
 
         const self = this;
 
 		const colorPickerOptions = {
-			change: function( e, ui ) {                
+			change: function( e, ui ) {
 				var key, value, alpha;
 				key = self.control.attr( 'data-customize-setting-link' );
 				value = self.control.wpColorPicker( 'color' );
 
 				// Update slider handle when the default button is clicked
-				if ( self.defaultColor == value ) {
-                    
+				if ( value == self.defaultColor ) {
+
                     alpha = self.getAlpha( value );
-                    
+
                     const $container = self.getContainer();
                     const $alphaSlider = $container.find( '.alpha-slider' );
 
@@ -134,10 +136,12 @@ class AlphaColor {
 
     /**
      * Setup alpha slider control
-     */  
+     */
     addAlpha() {
 
-        if( this.hideAlpha ) return false;
+        if ( this.hideAlpha ) {
+            return false;
+        }
         const startingColor = this.startingColor;
         const colorObject = new Color(startingColor);
         const container = this.getContainer();
@@ -148,10 +152,10 @@ class AlphaColor {
                 '<div class="alpha-slider"></div>' +
                 '<div class="transparency"></div>' +
             '</div>' ).appendTo( container.find( '.iris-picker-inner' ) );
-        
+
         // Create alpha slider using jquery ui
         container.find( '.alpha-slider' ).slider({
-            orientation: "vertical",
+            orientation: 'vertical',
             create: function() {
                 var value = $( this ).slider( 'value' );
                 $( this ).find( '.ui-slider-handle' ).text( Math.round(value * 100) );
@@ -162,16 +166,16 @@ class AlphaColor {
             step: 0.01,
             min: 0,
             max: 1,
-            animate: 300				
+            animate: 300
         });
     }
 
 
     /**
      * Setup color picker event handlers
-     */    
+     */
     handlers() {
-        
+
         const $container = this.getContainer();
         const $alphaSlider = $container.find( '.alpha-slider' );
 
@@ -184,7 +188,7 @@ class AlphaColor {
 			this.updateAlphaSlider( alpha, $alphaSlider );
 
 			// Round the opacity value on RGBa colors and save to the color picker object
-			if ( alpha != 100 ) {
+			if ( 100 !== alpha ) {
 				color = color.replace( /[^,]+(?=\))/, ( alpha / 100 ).toFixed( 2 ) );
 			}
 
@@ -232,7 +236,7 @@ class AlphaColor {
 		});
     }
 
-    
+
     /**
      * Get alpha value from RGBa, RGB, or hex colors
      */
@@ -246,8 +250,7 @@ class AlphaColor {
         if ( value.match( /rgba\(\d+\,\d+\,\d+\,([^\)]+)\)/ ) ) {
             alphaVal = parseFloat( value.match( /rgba\(\d+\,\d+\,\d+\,([^\)]+)\)/ )[1] ).toFixed(2) * 100;
             alphaVal = parseInt( alphaVal );
-        } 
-        else {
+        } else {
             alphaVal = 100;
         }
 
@@ -257,7 +260,7 @@ class AlphaColor {
     /**
      * Update the color picker object and maybe the alpha slider
      */
-    updateControl( alpha, $control, $alphaSlider, update_slider ) {
+    updateControl( alpha, $control, $alphaSlider, updateSlider ) {
 
         const iris = $control.data( 'a8cIris' );
         const colorPicker = $control.data( 'wpWpColorPicker' );
@@ -277,7 +280,7 @@ class AlphaColor {
         });
 
         // Maybe update the alpha slider
-        if ( update_slider ) {
+        if ( updateSlider ) {
             this.updateAlphaSlider( alpha, $alphaSlider );
         }
 
@@ -295,7 +298,7 @@ class AlphaColor {
 }
 
 /**
- * Initiate Alpha Color 
+ * Initiate Alpha Color
  */
 wp.customize.controlConstructor['alpha-color'] = wp.customize.Control.extend( {
 	ready: function() {

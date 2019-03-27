@@ -12,7 +12,7 @@
  * @link      https://taproot-theme.com
  */
 
- 
+
 import './customize-controls/Color.js';
 import './customize-controls/Range.js';
 import './customize-controls/FontStyles.js';

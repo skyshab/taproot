@@ -190,3 +190,35 @@ function maybe_convert_to_em( $value = false ) {
         return sprintf( '%sem',  (float) filter_var( $value, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION ) );
     }
 }
+
+
+/**
+ * Get Boxed Layout breakpoint
+ * 
+ * Utility to calculate the sceensize when the site is the full
+ * width when using boxed layout. Used to create media query for 
+ * fullwidth blocks.
+ *
+ * @since  1.0.0
+ * @return string
+ */
+function get_boxed_layout_bp( $site_max, $boxed_layout_padding, $font_size ) {
+
+    $max_width_int = (int) filter_var($site_max, FILTER_SANITIZE_NUMBER_INT);
+    $boxed_layout_padding_int = (int) filter_var($boxed_layout_padding, FILTER_SANITIZE_NUMBER_INT);
+    $min_width = false;
+
+    if(strpos($boxed_layout_padding, 'vw') !== false) {
+        $percentage = (100 - (2 * $boxed_layout_padding_int) ) / 100;
+        $min_width = $max_width_int / $percentage;
+    }
+    elseif(strpos($boxed_layout_padding, 'px') !== false) {
+        $min_width = $max_width_int + (2 * $boxed_layout_padding_int);
+    }
+    elseif(strpos($boxed_layout_padding, 'rem') !== false) {
+        $desktop_font_size_int = (int) filter_var($font_size, FILTER_SANITIZE_NUMBER_INT);
+        $min_width = $max_width_int + (2 * $boxed_layout_padding_int * $desktop_font_size_int);
+    }
+
+    return $min_width;
+}

@@ -1,27 +1,8 @@
 <article <?php Hybrid\Attr\display( 'entry' ) ?>>
 
-    <?php Hybrid\Carbon\Image::display( 'featured', [
-        'size' => 'full',
-        'class' => 'entry__image'
-    ]); ?>
+    <?php Taproot\Template\featured_image(['class' => 'entry_image'], 'post'); ?>
 
-	<header class="entry__header entry__header--single">
-
-        <?php Hybrid\Post\display_title(['class' => 'entry__title entry__title--single']) ?>
-        
-		<p class="entry__byline entry__byline--single">
-			<?php Hybrid\Post\display_author([
-                'class' => 'entry__author entry__author--single',
-                'before' => Taproot\Template\Icons\location( 'author', ['icon' => 'user'] ) 
-            ])?>
-
-			<?php Hybrid\Post\display_date([
-                'before' => Taproot\Template\Icons\location( 'date', ['icon' => 'calendar'] ), 
-                'class' => 'entry__published entry__published--single'
-            ])?>
-        </p>
-
-	</header>
+    <?php Hybrid\View\display( 'entry/header', 'post' );?>
 
 	<div class="entry__content entry__content--single">
 		<?php the_content() ?>

@@ -8,17 +8,40 @@
 
 .wp-block-columns {
 	display: flex;
-
-	// Add styles based on the number of columns. Supports 2-6 columns.
-	&.has-2-columns {}
+    flex-direction: column;    
+        
+    &.alignfull {
+        padding: 0 2em;
+    }       
 }
 
 // Individual columns.
 .wp-block-column {
-	flex: 1;
+    flex: 1;
 }
+  
 
 // Editor specific styling. Make sure columns span correctly.
 .editor-inner-blocks {
 	flex: 1;
 }
+
+@include screen('tablet-and-up') {
+
+    .wp-block-columns {
+        flex-direction: row;
+         
+        // Add styles based on the number of columns. Supports 2-6 columns.
+        &.has-2-columns {}
+   
+    }
+
+    // Individual columns.
+    .wp-block-column {
+        margin-right: 2em;
+        &:last-child {
+            margin-right: 0;
+        }
+    }    
+}
+  

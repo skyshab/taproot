@@ -17,6 +17,7 @@
     --typography--body--line-height: 1.5;  
     --typography--body--block-spacing: 1.5em;
 
+    
     // Heading font sizes
     --typography--h1--font-size: 2em;
     --typography--h2--font-size: 1.63em;
@@ -25,6 +26,7 @@
     --typography--h5--font-size: 1em;  
     --typography--h6--font-size: 1em;  
 
+
     // Heading line heights
     --typography--h1--line-height: 1.05;    
     --typography--h2--line-height: 1.25;
@@ -32,17 +34,6 @@
     --typography--h4--line-height: 1.22;
     --typography--h5--line-height: 1.05;
     --typography--h6--line-height: 1.05;
-
-
-    // main
-    --typography--main--font-size: var( --typography--body--font-size );
-    --typography--main--line-height: var( --typography--body--line-height );
-    --typography--main--block-spacing: var( --typography--body--block-spacing );
-
-    // main two col
-    --typography--main-two-col--font-size: var( --typography--main--font-size );
-    --typography--main-two-col--line-height: var( --typography--main--line-height ); 
-    --typography--main-two-col--block-spacing: var( --typography--main--block-spacing );
 
 
     // post title defaults
@@ -58,6 +49,7 @@
     // blog title
     --blog--title--font-size: var( --typography--h1--font-size );
     --blog--title--line-height: var( --typography--h1--line-height );     
+
 
     // post meta
     --posts--meta--font-size: 1em;

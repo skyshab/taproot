@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Taproot 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/taproot\n"
-"POT-Creation-Date: 2019-02-22 21:01:12+00:00\n"
+"POT-Creation-Date: 2019-03-11 12:42:26+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -89,9 +89,9 @@ msgstr ""
 #: app/Customize/Panels/nav/footer/section.php:142
 #: app/Customize/Panels/nav/footer-mobile/section.php:95
 #: app/Customize/Panels/nav/header/section.php:144
-#: app/Customize/Panels/nav/header-fixed/section.php:143
+#: app/Customize/Panels/nav/header-fixed/section.php:156
 #: app/Customize/Panels/nav/navbar/section.php:85
-#: app/Customize/Panels/nav/navbar-fixed/section.php:85
+#: app/Customize/Panels/nav/navbar-fixed/section.php:98
 #: app/Customize/Panels/nav/navbar-mobile/section.php:125
 #: app/Customize/Panels/nav/top/section.php:71
 #: app/Customize/Panels/nav/top-fixed/section.php:142
@@ -104,9 +104,9 @@ msgstr ""
 #: app/Customize/Panels/nav/footer/section.php:141
 #: app/Customize/Panels/nav/footer-mobile/section.php:94
 #: app/Customize/Panels/nav/header/section.php:143
-#: app/Customize/Panels/nav/header-fixed/section.php:142
+#: app/Customize/Panels/nav/header-fixed/section.php:155
 #: app/Customize/Panels/nav/navbar/section.php:84
-#: app/Customize/Panels/nav/navbar-fixed/section.php:84
+#: app/Customize/Panels/nav/navbar-fixed/section.php:97
 #: app/Customize/Panels/nav/navbar-mobile/section.php:124
 #: app/Customize/Panels/nav/top/section.php:70
 #: app/Customize/Panels/nav/top-fixed/section.php:141
@@ -262,18 +262,18 @@ msgstr ""
 #: app/Customize/Panels/branding/panel.php:195
 #: app/Customize/Panels/footer/panel.php:41
 #: app/Customize/Panels/footer/panel.php:80
-#: app/Customize/Panels/header/panel.php:43
+#: app/Customize/Panels/header/panel.php:44
 #: app/Customize/Panels/layout/panel.php:30
 #: app/Customize/Panels/layout/panel.php:48
 #: app/Customize/Panels/pages/panel.php:28
 #: app/Customize/Panels/pages/panel.php:46
 #: app/Customize/Panels/posts/panel.php:30
 #: app/Customize/Panels/posts/panel.php:48
-#: app/Customize/Panels/typography/panel.php:47
-#: app/Customize/Panels/typography/panel.php:74
-#: app/Customize/Panels/typography/panel.php:151
-#: app/Customize/Panels/typography/panel.php:250
-#: app/Customize/Panels/typography/panel.php:315
+#: app/Customize/Panels/typography/panel.php:46
+#: app/Customize/Panels/typography/panel.php:73
+#: app/Customize/Panels/typography/panel.php:150
+#: app/Customize/Panels/typography/panel.php:249
+#: app/Customize/Panels/typography/panel.php:314
 msgid "mobile"
 msgstr ""
 
@@ -301,24 +301,24 @@ msgstr ""
 #: app/Customize/Panels/footer/panel.php:51
 #: app/Customize/Panels/footer/panel.php:73
 #: app/Customize/Panels/footer/panel.php:90
-#: app/Customize/Panels/header/panel.php:36
-#: app/Customize/Panels/header/panel.php:53
-#: app/Customize/Panels/header/panel.php:63
+#: app/Customize/Panels/header/panel.php:37
+#: app/Customize/Panels/header/panel.php:54
+#: app/Customize/Panels/header/panel.php:64
 #: app/Customize/Panels/layout/panel.php:41
 #: app/Customize/Panels/layout/panel.php:58
 #: app/Customize/Panels/pages/panel.php:39
 #: app/Customize/Panels/pages/panel.php:56
 #: app/Customize/Panels/posts/panel.php:41
 #: app/Customize/Panels/posts/panel.php:58
-#: app/Customize/Panels/typography/panel.php:40
-#: app/Customize/Panels/typography/panel.php:57
-#: app/Customize/Panels/typography/panel.php:115
-#: app/Customize/Panels/typography/panel.php:195
-#: app/Customize/Panels/typography/panel.php:243
-#: app/Customize/Panels/typography/panel.php:260
-#: app/Customize/Panels/typography/panel.php:270
-#: app/Customize/Panels/typography/panel.php:308
-#: app/Customize/Panels/typography/panel.php:325
+#: app/Customize/Panels/typography/panel.php:39
+#: app/Customize/Panels/typography/panel.php:56
+#: app/Customize/Panels/typography/panel.php:114
+#: app/Customize/Panels/typography/panel.php:194
+#: app/Customize/Panels/typography/panel.php:242
+#: app/Customize/Panels/typography/panel.php:259
+#: app/Customize/Panels/typography/panel.php:269
+#: app/Customize/Panels/typography/panel.php:307
+#: app/Customize/Panels/typography/panel.php:324
 msgid "tablet"
 msgstr ""
 
@@ -329,14 +329,14 @@ msgstr ""
 #: app/Customize/Panels/branding/panel.php:198
 #: app/Customize/Panels/footer/panel.php:44
 #: app/Customize/Panels/footer/panel.php:83
-#: app/Customize/Panels/header/panel.php:46
+#: app/Customize/Panels/header/panel.php:47
 #: app/Customize/Panels/layout/panel.php:51
 #: app/Customize/Panels/pages/panel.php:49
 #: app/Customize/Panels/posts/panel.php:51
-#: app/Customize/Panels/typography/panel.php:50
-#: app/Customize/Panels/typography/panel.php:155
-#: app/Customize/Panels/typography/panel.php:253
-#: app/Customize/Panels/typography/panel.php:318
+#: app/Customize/Panels/typography/panel.php:49
+#: app/Customize/Panels/typography/panel.php:154
+#: app/Customize/Panels/typography/panel.php:252
+#: app/Customize/Panels/typography/panel.php:317
 msgid "desktop"
 msgstr ""
 
@@ -489,9 +489,9 @@ msgstr ""
 #: app/Customize/Panels/elements/buttons/section.php:133
 #: app/Customize/Panels/nav/footer/section.php:82
 #: app/Customize/Panels/nav/header/section.php:77
-#: app/Customize/Panels/nav/header-fixed/section.php:75
+#: app/Customize/Panels/nav/header-fixed/section.php:88
 #: app/Customize/Panels/nav/navbar/section.php:102
-#: app/Customize/Panels/nav/navbar-fixed/section.php:102
+#: app/Customize/Panels/nav/navbar-fixed/section.php:115
 #: app/Customize/Panels/nav/top/section.php:88
 #: app/Customize/Panels/nav/top-fixed/section.php:83
 #: app/Customize/Panels/typography/body/section.php:45
@@ -510,10 +510,10 @@ msgstr ""
 #: app/Customize/Panels/elements/buttons/section.php:145
 #: app/Customize/Panels/nav/footer/section.php:94
 #: app/Customize/Panels/nav/header/section.php:89
-#: app/Customize/Panels/nav/header-fixed/section.php:87
+#: app/Customize/Panels/nav/header-fixed/section.php:100
 #: app/Customize/Panels/nav/header-mobile/section.php:146
 #: app/Customize/Panels/nav/navbar/section.php:114
-#: app/Customize/Panels/nav/navbar-fixed/section.php:114
+#: app/Customize/Panels/nav/navbar-fixed/section.php:127
 #: app/Customize/Panels/nav/navbar-mobile/section.php:159
 #: app/Customize/Panels/nav/top/section.php:100
 #: app/Customize/Panels/nav/top-fixed/section.php:95
@@ -549,7 +549,7 @@ msgstr ""
 #: app/Customize/Panels/nav/footer/section.php:101
 #: app/Customize/Panels/nav/footer-mobile/section.php:70
 #: app/Customize/Panels/nav/header/section.php:96
-#: app/Customize/Panels/nav/header-fixed/section.php:94
+#: app/Customize/Panels/nav/header-fixed/section.php:107
 #: app/Customize/Panels/nav/header-mobile/section.php:153
 #: app/Customize/Panels/nav/navbar/section.php:135
 #: app/Customize/Panels/nav/top/section.php:121
@@ -577,10 +577,6 @@ msgstr ""
 #: app/Customize/Panels/typography/h6-desktop/section.php:38
 #: app/Customize/Panels/typography/h6-mobile/section.php:38
 #: app/Customize/Panels/typography/h6-tablet/section.php:38
-#: app/Customize/Panels/typography/main-desktop/section.php:38
-#: app/Customize/Panels/typography/main-desktop-two-col/section.php:38
-#: app/Customize/Panels/typography/main-mobile/section.php:38
-#: app/Customize/Panels/typography/main-tablet/section.php:38
 #: app/Customize/Panels/typography/sidebar-desktop/section.php:38
 #: app/Customize/Panels/typography/sidebar-mobile/section.php:39
 #: app/Customize/Panels/typography/sidebar-tablet/section.php:38
@@ -625,10 +621,6 @@ msgstr ""
 #: app/Customize/Panels/typography/h6-desktop/section.php:46
 #: app/Customize/Panels/typography/h6-mobile/section.php:46
 #: app/Customize/Panels/typography/h6-tablet/section.php:46
-#: app/Customize/Panels/typography/main-desktop/section.php:46
-#: app/Customize/Panels/typography/main-desktop-two-col/section.php:46
-#: app/Customize/Panels/typography/main-mobile/section.php:46
-#: app/Customize/Panels/typography/main-tablet/section.php:46
 #: app/Customize/Panels/typography/sidebar-desktop/section.php:46
 #: app/Customize/Panels/typography/sidebar-mobile/section.php:47
 #: app/Customize/Panels/typography/sidebar-tablet/section.php:46
@@ -726,9 +718,9 @@ msgstr ""
 #: app/Customize/Panels/nav/footer/section.php:143
 #: app/Customize/Panels/nav/footer-mobile/section.php:96
 #: app/Customize/Panels/nav/header/section.php:145
-#: app/Customize/Panels/nav/header-fixed/section.php:144
+#: app/Customize/Panels/nav/header-fixed/section.php:157
 #: app/Customize/Panels/nav/navbar/section.php:86
-#: app/Customize/Panels/nav/navbar-fixed/section.php:86
+#: app/Customize/Panels/nav/navbar-fixed/section.php:99
 #: app/Customize/Panels/nav/top/section.php:72
 #: app/Customize/Panels/nav/top-fixed/section.php:143
 #: app/Customize/Panels/nav/top-mobile/section.php:99
@@ -757,7 +749,7 @@ msgstr ""
 #: app/Customize/Panels/layout/sidebar/section.php:37
 #: app/Customize/Panels/nav/footer/section.php:53
 #: app/Customize/Panels/nav/navbar/section.php:53
-#: app/Customize/Panels/nav/navbar-fixed/section.php:53
+#: app/Customize/Panels/nav/navbar-fixed/section.php:66
 #: app/Customize/Panels/nav/top-fixed/section.php:53
 msgid "Background Color"
 msgstr ""
@@ -767,6 +759,7 @@ msgid "Border Color"
 msgstr ""
 
 #: app/Customize/Panels/elements/buttons/section.php:71
+#: app/Customize/Panels/header/image/section.php:55
 msgid "Height"
 msgstr ""
 
@@ -880,10 +873,10 @@ msgstr ""
 #: app/Customize/Panels/footer/widgets/section.php:50
 #: app/Customize/Panels/nav/footer/section.php:60
 #: app/Customize/Panels/nav/header/section.php:54
-#: app/Customize/Panels/nav/header-fixed/section.php:53
+#: app/Customize/Panels/nav/header-fixed/section.php:66
 #: app/Customize/Panels/nav/header-mobile/section.php:127
 #: app/Customize/Panels/nav/navbar/section.php:120
-#: app/Customize/Panels/nav/navbar-fixed/section.php:120
+#: app/Customize/Panels/nav/navbar-fixed/section.php:133
 #: app/Customize/Panels/nav/navbar-mobile/section.php:179
 #: app/Customize/Panels/nav/top/section.php:106
 #: app/Customize/Panels/nav/top-fixed/section.php:60
@@ -966,6 +959,14 @@ msgstr ""
 msgid "Background"
 msgstr ""
 
+#: app/Customize/Panels/header/image/section.php:63
+msgid "Max Height"
+msgstr ""
+
+#: app/Customize/Panels/header/image/section.php:71
+msgid "Min Height"
+msgstr ""
+
 #: app/Customize/Panels/header/padding-fixed/section.php:25
 msgid "Padding - Fixed"
 msgstr ""
@@ -974,7 +975,7 @@ msgstr ""
 msgid "Header Padding"
 msgstr ""
 
-#: app/Customize/Panels/header/panel.php:94
+#: app/Customize/Panels/header/panel.php:95
 #: app/Customize/Panels/header/styles/section.php:24
 msgid "Header Styles"
 msgstr ""
@@ -1082,10 +1083,10 @@ msgstr ""
 
 #: app/Customize/Panels/nav/footer/section.php:67
 #: app/Customize/Panels/nav/header/section.php:61
-#: app/Customize/Panels/nav/header-fixed/section.php:60
+#: app/Customize/Panels/nav/header-fixed/section.php:73
 #: app/Customize/Panels/nav/header-mobile/section.php:134
 #: app/Customize/Panels/nav/navbar/section.php:127
-#: app/Customize/Panels/nav/navbar-fixed/section.php:127
+#: app/Customize/Panels/nav/navbar-fixed/section.php:140
 #: app/Customize/Panels/nav/navbar-mobile/section.php:186
 #: app/Customize/Panels/nav/top/section.php:113
 #: app/Customize/Panels/nav/top-fixed/section.php:67
@@ -1094,7 +1095,7 @@ msgstr ""
 
 #: app/Customize/Panels/nav/footer/section.php:117
 #: app/Customize/Panels/nav/header/section.php:120
-#: app/Customize/Panels/nav/header-fixed/section.php:118
+#: app/Customize/Panels/nav/header-fixed/section.php:131
 #: app/Customize/Panels/nav/header-mobile/section.php:186
 #: app/Customize/Panels/nav/navbar/section.php:143
 #: app/Customize/Panels/nav/top/section.php:137
@@ -1105,9 +1106,9 @@ msgstr ""
 #: app/Customize/Panels/nav/footer/section.php:139
 #: app/Customize/Panels/nav/footer-mobile/section.php:92
 #: app/Customize/Panels/nav/header/section.php:141
-#: app/Customize/Panels/nav/header-fixed/section.php:140
+#: app/Customize/Panels/nav/header-fixed/section.php:153
 #: app/Customize/Panels/nav/navbar/section.php:82
-#: app/Customize/Panels/nav/navbar-fixed/section.php:82
+#: app/Customize/Panels/nav/navbar-fixed/section.php:95
 #: app/Customize/Panels/nav/top/section.php:68
 #: app/Customize/Panels/nav/top-fixed/section.php:139
 #: app/Customize/Panels/nav/top-mobile/section.php:95
@@ -1116,9 +1117,9 @@ msgstr ""
 
 #: app/Customize/Panels/nav/footer/section.php:144
 #: app/Customize/Panels/nav/header/section.php:146
-#: app/Customize/Panels/nav/header-fixed/section.php:145
+#: app/Customize/Panels/nav/header-fixed/section.php:158
 #: app/Customize/Panels/nav/navbar/section.php:87
-#: app/Customize/Panels/nav/navbar-fixed/section.php:87
+#: app/Customize/Panels/nav/navbar-fixed/section.php:100
 #: app/Customize/Panels/nav/top/section.php:73
 #: app/Customize/Panels/nav/top-fixed/section.php:144
 msgid "Fill"
@@ -1185,28 +1186,28 @@ msgid "Header Nav"
 msgstr ""
 
 #: app/Customize/Panels/nav/header/section.php:104
-#: app/Customize/Panels/nav/header-fixed/section.php:102
+#: app/Customize/Panels/nav/header-fixed/section.php:115
 msgid "Menu Height"
 msgstr ""
 
 #: app/Customize/Panels/nav/header/section.php:153
-#: app/Customize/Panels/nav/header-fixed/section.php:152
+#: app/Customize/Panels/nav/header-fixed/section.php:165
 #: app/Customize/Panels/nav/navbar/section.php:157
-#: app/Customize/Panels/nav/navbar-fixed/section.php:157
+#: app/Customize/Panels/nav/navbar-fixed/section.php:170
 msgid "Dropdown Background Color"
 msgstr ""
 
 #: app/Customize/Panels/nav/header/section.php:160
-#: app/Customize/Panels/nav/header-fixed/section.php:159
+#: app/Customize/Panels/nav/header-fixed/section.php:172
 #: app/Customize/Panels/nav/navbar/section.php:164
-#: app/Customize/Panels/nav/navbar-fixed/section.php:164
+#: app/Customize/Panels/nav/navbar-fixed/section.php:177
 msgid "Dropdown Link Color"
 msgstr ""
 
 #: app/Customize/Panels/nav/header/section.php:167
-#: app/Customize/Panels/nav/header-fixed/section.php:166
+#: app/Customize/Panels/nav/header-fixed/section.php:179
 #: app/Customize/Panels/nav/navbar/section.php:171
-#: app/Customize/Panels/nav/navbar-fixed/section.php:171
+#: app/Customize/Panels/nav/navbar-fixed/section.php:184
 msgid "Dropdown Link Color: Hover"
 msgstr ""
 
@@ -1218,6 +1219,11 @@ msgstr ""
 #: app/Customize/Panels/nav/navbar-fixed/section.php:45
 #: app/Customize/Panels/nav/top-fixed/section.php:45
 msgid "Show When Fixed"
+msgstr ""
+
+#: app/Customize/Panels/nav/header-fixed/section.php:58
+#: app/Customize/Panels/nav/navbar-fixed/section.php:58
+msgid "Hide When Not Fixed"
 msgstr ""
 
 #: app/Customize/Panels/nav/header-mobile/section.php:29
@@ -1275,7 +1281,7 @@ msgid "Navbar"
 msgstr ""
 
 #: app/Customize/Panels/nav/navbar/section.php:60
-#: app/Customize/Panels/nav/navbar-fixed/section.php:61
+#: app/Customize/Panels/nav/navbar-fixed/section.php:74
 #: app/Customize/Panels/nav/navbar-mobile/section.php:99
 msgid "Navbar Height"
 msgstr ""
@@ -1284,12 +1290,12 @@ msgstr ""
 msgid "Navbar - Fixed"
 msgstr ""
 
-#: app/Customize/Panels/nav/navbar-fixed/section.php:135
+#: app/Customize/Panels/nav/navbar-fixed/section.php:148
 #: app/Customize/Panels/nav/navbar-mobile/section.php:194
 msgid "Link Font Size"
 msgstr ""
 
-#: app/Customize/Panels/nav/navbar-fixed/section.php:143
+#: app/Customize/Panels/nav/navbar-fixed/section.php:156
 #: app/Customize/Panels/nav/navbar-mobile/section.php:220
 msgid "Link Padding"
 msgstr ""
@@ -1571,47 +1577,34 @@ msgstr ""
 msgid "On Hover"
 msgstr ""
 
-#: app/Customize/Panels/typography/main-desktop/section.php:25
-#: app/Customize/Panels/typography/panel.php:283
-msgid "Main - Desktop"
-msgstr ""
-
-#: app/Customize/Panels/typography/main-desktop-two-col/section.php:25
-msgid "Main - Desktop - Two Col"
-msgstr ""
-
-#: app/Customize/Panels/typography/main-mobile/section.php:25
-msgid "Main"
-msgstr ""
-
-#: app/Customize/Panels/typography/main-tablet/section.php:25
-msgid "Main - Tablet"
-msgstr ""
-
-#: app/Customize/Panels/typography/panel.php:37
-#: app/Customize/Panels/typography/panel.php:110
-#: app/Customize/Panels/typography/panel.php:240
+#: app/Customize/Panels/typography/panel.php:36
+#: app/Customize/Panels/typography/panel.php:109
+#: app/Customize/Panels/typography/panel.php:239
 msgid "styles"
 msgstr ""
 
-#: app/Customize/Panels/typography/panel.php:70
+#: app/Customize/Panels/typography/panel.php:69
 msgid "headings"
 msgstr ""
 
-#: app/Customize/Panels/typography/panel.php:95
+#: app/Customize/Panels/typography/panel.php:94
 msgid "Heading Styles"
 msgstr ""
 
-#: app/Customize/Panels/typography/panel.php:135
+#: app/Customize/Panels/typography/panel.php:134
 msgid "Mobile Sizes"
 msgstr ""
 
-#: app/Customize/Panels/typography/panel.php:176
+#: app/Customize/Panels/typography/panel.php:175
 msgid "Tablet Sizes"
 msgstr ""
 
-#: app/Customize/Panels/typography/panel.php:221
+#: app/Customize/Panels/typography/panel.php:220
 msgid "Desktop Sizes"
+msgstr ""
+
+#: app/Customize/Panels/typography/panel.php:282
+msgid "Main - Desktop"
 msgstr ""
 
 #: app/Customize/Panels/typography/sidebar-desktop/section.php:25
@@ -1634,11 +1627,11 @@ msgstr ""
 msgid "Please define an icon name."
 msgstr ""
 
-#: app/Template/Nav/Nav.php:320
+#: app/Template/Nav/Nav.php:329
 msgid "&lt; prev"
 msgstr ""
 
-#: app/Template/Nav/Nav.php:321
+#: app/Template/Nav/Nav.php:330
 msgid "next &gt;"
 msgstr ""
 
@@ -1717,6 +1710,10 @@ msgstr ""
 
 #: app/functions-setup.php:124
 msgid "XL"
+msgstr ""
+
+#: app/functions-setup.php:247
+msgid "Page Builder"
 msgstr ""
 
 #: resources/views/comment/default.php:11 resources/views/comment/ping.php:8
@@ -1841,12 +1838,11 @@ msgstr ""
 msgid "Video Info"
 msgstr ""
 
-#: resources/views/entry/single/page.php:21
-#: resources/views/entry/single/post.php:35
+#: resources/views/entry/single/post.php:16
 msgid "Categories"
 msgstr ""
 
-#: resources/views/entry/single/post.php:40
+#: resources/views/entry/single/post.php:21
 msgid "Tags"
 msgstr ""
 

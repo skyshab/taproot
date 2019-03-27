@@ -10,6 +10,10 @@
 /// @link   https://taproot-theme.com
 ////
 
+
+// import global block styles
+@import 'block-styles';
+
 // Import core blocks.
 @import 'core/paragraph';
 @import 'core/audio';
@@ -30,3 +34,4 @@
 @import 'core/subhead';
 @import 'core/table';
 @import 'core/verse';
+@import 'core/text-media';

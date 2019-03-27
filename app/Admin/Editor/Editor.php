@@ -36,6 +36,7 @@ class Editor implements Bootable {
 	 */
 	public function boot() {
         add_action( 'enqueue_block_editor_assets', [ $this, 'assets' ] );
+        add_action( 'init', [ $this, 'register_post_meta' ] );
     }
 
 
@@ -66,7 +67,14 @@ class Editor implements Bootable {
         if( $google_fonts = get_theme_mod( 'taproot-google-fonts' ) ) {
             $google_link = sprintf( '//fonts.googleapis.com/css?family=%s', esc_attr( $google_fonts ) );
             wp_enqueue_style('taproot-google-fonts', esc_url( $google_link ) );
-        }        
+        }   
+        
+        // Register Sidebar Panel Scripts
+        wp_enqueue_script(
+            'taproot-editor-sidebar-js',
+            asset( 'js/editor.js' ),
+            array( 'wp-plugins', 'wp-edit-post', 'wp-element', 'wp-components', 'wp-data', 'wp-editor' )
+        );        
     }   
 
 
@@ -97,4 +105,37 @@ class Editor implements Bootable {
         return $styles->get_styles();
     }          
 
+
+    /**
+     * Register post meta fields for the editor sidebar
+     * 
+     * @since 1.0.0
+     * @return string - Returns CSS string 
+     */
+    public function register_post_meta() {
+
+        register_meta( 'post', 'taproot_custom_header_image', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'string',
+        ]); 
+    
+        register_meta( 'post', 'taprooot_page_layout', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'string',
+        ]); 
+    
+        register_meta( 'post', 'taprooot_post_title_display', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'string',
+        ]); 
+    
+        register_meta( 'post', 'taprooot_use_featured_image_for_header', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'integer',
+        ]); 
+    }
 }

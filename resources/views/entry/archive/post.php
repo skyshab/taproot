@@ -1,9 +1,12 @@
 <article <?php Hybrid\Attr\display( 'entry' ) ?>>
 
-	<?php the_post_thumbnail( 'taproot-medium', ['class' => 'entry__image entry__image--archive'] ) ?>
+    <?php Taproot\Template\featured_image([
+        'class' => 'entry__image entry__image--archive',
+        'size'  => 'taproot-medium',
+        'link'  => true,
+    ],  'archive'); ?>
 
 	<header class="entry__header entry__header--archive">
-        
 		<?php Hybrid\Post\display_title(['class' => 'entry__title entry__title--archive']) ?>
 
 		<div class="entry__byline entry__byline--archive">

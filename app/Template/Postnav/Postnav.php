@@ -28,7 +28,7 @@ use function Taproot\Icons\location as location;
  * @access public
  */
 class Postnav {
-    
+
 
     /**
 	 * Stores the postnav context
@@ -61,11 +61,11 @@ class Postnav {
 
         $defaults = [
             'prev_text' => $prev_text,
-            'prev_icon' => '<',    
+            'prev_icon' => '<',
             'next_text' => $next_text,
             'next_icon' => '>',
             'nav_class' => 'postnav',
-            'link_class' => 'postnav__link'            
+            'link_class' => 'postnav__link'
         ];
 
         $this->args = wp_parse_args( $args, $defaults );
@@ -106,7 +106,7 @@ class Postnav {
 	 * @return void
 	 */
 	private function has_content() {
-    
+
         if( !get_theme_mod( 'posts--nav--enable', null, true ) ) return false;
 
         if( !$this->has_prev_link() && !$this->has_next_link() ) return false;
@@ -128,8 +128,8 @@ class Postnav {
         if( !$this->has_prev_link() ) {
             return sprintf( '<div class="%1$s %1$s--prev"></div>', $this->args['link_class']);
         }
-        
-        $prev_post = get_previous_post();        
+
+        $prev_post = get_previous_post();
         $prev_content = sprintf('<span class="screen-reader-text">%s</span>', $prev_post->post_title );
         $prev_content .= $this->args['prev_icon'];
 
@@ -155,8 +155,8 @@ class Postnav {
 	private function get_next() {
 
         if( !$this->has_next_link() ) return '';
-        
-        $next_post = get_next_post();  
+
+        $next_post = get_next_post();
         $next_content = sprintf('<span class="screen-reader-text">%s</span>', $next_post->post_title );
 
         if( $this->args['next_text'] ) {
@@ -165,7 +165,7 @@ class Postnav {
 
         $next_content .= $this->args['next_icon'];
 
-        $content = sprintf( '<div class="%1$s %1$s--next">', $this->args['link_class']);
+        $content = sprintf( '<div class="%1$s %1$s--next">', esc_attr( $this->args['link_class'] ) );
             $content .= get_next_post_link( '%link', $next_content );
         $content .= '</div>';
 
@@ -183,10 +183,10 @@ class Postnav {
 	private function allowed() {
         return [
             'em' => [],
-            'strong' => [],  
+            'strong' => [],
             'i' => [
                 'class' => []
-            ]          
+            ]
         ];
     }
 
@@ -201,7 +201,7 @@ class Postnav {
 	private function classes() {
 
         $classes = 'postnav';
-    
+
         if( $this->context ) {
             $classes .= sprintf( ' postnav--%s ', $this->context );
         }
@@ -220,18 +220,18 @@ class Postnav {
 	public function render( $context = 'default', $args = [] ) {
 
         if( !$this->has_content() ) return;
-    
+
         $this->init( $context, $args );
 
         // open post nav
         $content = sprintf( '<div class="%s">', esc_attr( $this->classes() ) );
-    
-            $content .= $this->get_prev();  
-            $content .= $this->get_next();          	
-            
+
+            $content .= $this->get_prev();
+            $content .= $this->get_next();
+
         // close post nav
         $content .= '</div>';
-                
+
         return $content;
     }
 
@@ -245,6 +245,6 @@ class Postnav {
 	 */
 	public function display( $context = 'default', $args = [] ) {
         echo $this->render( $context, $args );
-    }        
+    }
 
 }

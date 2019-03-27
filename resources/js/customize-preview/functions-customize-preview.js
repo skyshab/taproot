@@ -10,28 +10,28 @@
 
 // build font style from our font style control values
 export function taprootFontStyles( value ) {
-    var font_styles = value.split( '|' ),
+    var fontStyles = value.split( '|' ),
         styles = {},
         $ = jQuery.noConflict();
 
-    if( $.inArray( 'bold', font_styles ) >= 0 ) {
+    if ( 0 <= $.inArray( 'bold', fontStyles ) ) {
         styles['font-weight'] = 'bold';
-    } 
+    }
 
-    if( $.inArray( 'italic', font_styles ) >= 0 ) {
+    if ( 0 <= $.inArray( 'italic', fontStyles ) ) {
         styles['font-style'] = 'italic';
-    } 
-    
-    if( $.inArray( 'underline', font_styles ) >= 0 ) {
-        styles['text-decoration'] = 'underline';
-    } 
+    }
 
-    if( $.inArray( 'uppercase', font_styles ) >= 0 ) {
+    if ( 0 <= $.inArray( 'underline', fontStyles ) ) {
+        styles['text-decoration'] = 'underline';
+    }
+
+    if ( 0 <= $.inArray( 'uppercase', fontStyles ) ) {
         styles['text-transform'] = 'uppercase';
 
-    } else if( $.inArray( 'capitalize', font_styles ) >= 0 ) {
+    } else if ( 0 <= $.inArray( 'capitalize', fontStyles ) ) {
         styles['text-transform'] = 'capitalize';
-    } 
+    }
 
     return styles;
 };
@@ -40,18 +40,18 @@ export function taprootFontStyles( value ) {
 // Get mobile screen from setting value
 export function getMobileScreen( screen = 'default' ) {
     return ( 'never' === screen ) ? false : screen;
-} 
+}
 
 
 // Get Desktop screen from mobile setting value
 export function getDesktopScreen( screen = 'default' ) {
 
     const screens = {
-        'never' : 'default',
-        'mobile' : 'tablet-and-up',
-        'tablet-and-under' : 'desktop',
-        'always' : false,
+        'never': 'default',
+        'mobile': 'tablet-and-up',
+        'tablet-and-under': 'desktop',
+        'always': false
     };
 
     return ( screens[screen] ) ? screens[screen] : false;
-} 
+}

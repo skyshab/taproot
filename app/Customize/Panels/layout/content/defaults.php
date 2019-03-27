@@ -14,4 +14,4 @@
 
 
 // Max Content Width
-$defaults->add( 'layout--content--max-width', '980px' );
+$defaults->add( 'layout--content--max-width', '42em' );

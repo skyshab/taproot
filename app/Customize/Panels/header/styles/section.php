@@ -67,7 +67,7 @@ color( $manager, 'header--styles--default-color--hover', [
 
 
 // move header image control to header styles section
-if( $manager->get_section( 'header_image' ) ) {
-	$manager->get_section( 'header_image' )->panel = 'header';
-	$manager->get_section( 'header_image' )->priority = 500;
-}
+// if( $manager->get_section( 'header_image' ) ) {
+// 	$manager->get_section( 'header_image' )->panel = 'header';
+// 	$manager->get_section( 'header_image' )->priority = 500;
+// }

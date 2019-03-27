@@ -9,9 +9,6 @@
 
 .wp-block-table {
 
-    //wtf is this for?
-    // &.has-fixed-layout {}
-
     tr:first-of-type, &.is-style-stripes tr:nth-child( odd ) {
         background-color: var( --colors--theme--meta-light, defaultColor( meta-light ) );
     }
@@ -19,5 +16,28 @@
     tr:first-of-type {
         font-weight: bold;
     }
+}
 
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid var( --colors--theme--meta-medium );
+}
+
+thead {
+    background-color: var( --colors--theme--meta-light );
+}
+
+thead, tr:not(:last-child) {
+    border-bottom: 1px solid var( --colors--theme--meta-medium );
+}
+
+th, td {
+    padding: 0.4em;
+    border: none;
+    text-align: left;
+
+    &:not(:last-child) {
+        border-right: 1px solid var( --colors--theme--meta-medium );
+    }
 }

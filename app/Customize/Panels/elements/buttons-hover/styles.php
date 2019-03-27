@@ -11,9 +11,7 @@
  * @link      https://taproot-theme.com
  */
 
-
-use function Taproot\Customize\get_font_family;
-use function Taproot\Customize\get_font_styles;
+ 
 use function Rootstrap\get_theme_mod;
 
 
@@ -21,8 +19,8 @@ use function Rootstrap\get_theme_mod;
 $styles->add([
     'selector' => '.taproot-button:hover, .comment-respond__submit:hover',
     'styles' => [ 
-        'color'             =>  get_theme_mod( 'elements--buttons--color' ),
-        'background-color'  =>  get_theme_mod( 'elements--buttons--background-color' ),
-        'border-color'      =>  get_theme_mod( 'elements--buttons--border-color' ),
+        'color'             =>  get_theme_mod( 'elements--buttons-hover--color' ),
+        'background-color'  =>  get_theme_mod( 'elements--buttons-hover--background-color' ),
+        'border-color'      =>  get_theme_mod( 'elements--buttons-hover--border-color' ),
     ]
 ]);

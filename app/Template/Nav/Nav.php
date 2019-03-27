@@ -117,7 +117,12 @@ class Nav implements Bootable {
 
         if( get_theme_mod( 'nav--header-mobile--hide' ) ) {
             $classes[] = 'hidden-when-mobile';
-        }		
+        }	
+        
+        if( get_theme_mod( 'nav--header-fixed--hide-when-not-fixed' ) ) {
+            $classes[] = 'hidden-when-not-fixed';
+        }        
+
         // add classes for navbar type
         $mobile_type = get_theme_mod( 'nav--header-mobile--type', null, true );
 
@@ -152,6 +157,10 @@ class Nav implements Bootable {
         if( get_theme_mod( 'nav--navbar-mobile--hide' ) ) {
             $classes[] = 'hidden-when-mobile';
         }			
+        
+        if( get_theme_mod( 'nav--navbar-fixed--hide-when-not-fixed' ) ) {
+            $classes[] = 'hidden-when-not-fixed';
+        }        
 
         // add classes for navbar type
         $mobile_type = get_theme_mod( 'nav--navbar-mobile--type', null, true );

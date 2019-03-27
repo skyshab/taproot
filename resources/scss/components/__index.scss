@@ -11,31 +11,15 @@
 ////
 
 @import 'app';
-@import 'app-header';
 @import 'app-content';
 @import 'app-main';
 @import 'app-footer';
+@import 'header/_index';
+@import 'comments/_index';
+@import 'entry/_index';
+@import 'media/_index';
+@import 'nav/_index';
 @import 'archive-header';
-@import 'comments';
-@import 'comment';
-@import 'comment-respond';
-@import 'custom-header';
-@import 'entry';
-@import 'entry--archive';
-@import 'entry--single';
-@import 'entry--page';
-@import 'gallery';
-@import 'media-meta';
-@import 'nav-menus';
-@import 'nav-menu--toggle';
-@import 'nav-menu--top';
-@import 'nav-menu--header';
-@import 'nav-menu--navbar';
-@import 'nav-menu--footer';
-@import 'nav-breadcrumbs';
-@import 'nav-pagination';
-@import 'nav-postnav';
 @import 'sidebar';
 @import 'searchform';
 @import 'widget';
-@import 'icons';
