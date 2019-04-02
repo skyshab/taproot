@@ -8,12 +8,12 @@
 
 .wp-block-audio {
 
-	margin: 0;
+	margin: 2em 0;
 
 	audio {
 		width: 100%;
     }
-    
+
     // Set the background in Chrome.
     // Every browser has it's own interface for this
     audio::-webkit-media-controls-panel {

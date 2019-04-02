@@ -29,9 +29,9 @@
 
         a {
             color: inherit;
-        }        
+        }
     }
-      
+
     &__author {
         margin-right: 1em;
         display: flex;
@@ -43,8 +43,11 @@
     }
 
     .custom-header & {
+        display: flex;
         align-self: center;
         text-align: center;
+        align-items: center;
+        height: 100%;
         padding-bottom: 7vw;
     }
 }

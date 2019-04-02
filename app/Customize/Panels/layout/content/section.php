@@ -2,7 +2,7 @@
 /**
  * Section setup.
  *
- * This file adds the section, settings and controls to the customizer. 
+ * This file adds the section, settings and controls to the customizer.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
@@ -34,37 +34,18 @@ $manager->add_section( 'layout--content', [
 // Content Max Width
 range( $manager, 'layout--content--max-width', [
     'section' => 'layout--content',
-    'label' => esc_html__('Max Content Width', 'taproot'), 
+    'label' => esc_html__('Max Content Width', 'taproot'),
     'atts'  => [
         'px' => [
             'max'   => 1600,
             'default' => 980
-        ],        
+        ],
         'em' => [
             'max'   => 50,
             'default' => 42
         ],
         '%' => [
             'default' => 100
-        ],                  
+        ],
     ]
 ]);
-
-
-// Setting: Content Align
-// $manager->add_setting( 'layout--content--align', [
-//     'sanitize_callback' => 'sanitize_text_field',
-//     'default' => 'center',
-//     'transport' => 'postMessage',
-// ]);
-
-// $manager->add_control( 'layout--content--align', [
-//     'type' => 'select',
-//     'section' => 'layout--content',
-//     'label' => esc_html__( 'Content Align', 'taproot' ),
-//     'choices' => array(
-//         'left' => esc_html__( 'Left', 'taproot' ),
-//         'center' => esc_html__( 'Center', 'taproot' ),
-//         'right' => esc_html__( 'Right', 'taproot' ),
-//     ),       
-// ]);

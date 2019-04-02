@@ -73,30 +73,38 @@ add_action( 'after_setup_theme', function() {
 		'header-text' => ''
 	] );
 
+
 	// Editor color palette. These colors are also defined in the
 	// `resources/scss/settings/_colors.scss` file.
-	add_theme_support( 'editor-color-palette', [
-		[
-			'name'  => __( 'Charcoal', 'taproot' ),
-			'slug'  => 'charcoal',
-			'color' => '#282c34'
-		],
-		[
-			'name'  => __( 'Regent', 'taproot' ),
-			'slug'  => 'regent',
-			'color' => '#8c97a7',
-		],
-		[
-			'name'  => __( 'Husk', 'taproot' ),
-			'slug'  => 'husk',
-			'color' => '#B9A364',
-		],
-		[
-			'name'  => __( 'Red Stage', 'taproot' ),
-			'slug'  => 'red-stage',
-			'color' => '#b15330',
-		]
-	] );
+    add_theme_support( 'editor-color-palette', [
+        [
+            'name'  => __( 'Text Color', 'taproot' ),
+            'slug'  => 'theme-text',
+            'color' => get_theme_mod( 'colors--theme--text', '#8c8c8c' )
+        ],
+        [
+            'name'  => __( 'Accent Color', 'taproot' ),
+            'slug'  => 'theme-accent',
+            'color' => get_theme_mod( 'colors--theme--accent', '#dd9933' )
+        ],
+        [
+            'name'  => __( 'Meta Light', 'taproot' ),
+            'slug'  => 'theme-meta-light',
+            'color' => get_theme_mod( 'colors--theme--meta-light', '#f4f4f4' )
+        ],
+        [
+            'name'  => __( 'Meta Medium', 'taproot' ),
+            'slug'  => 'theme-meta-medium',
+            'color' => get_theme_mod( 'colors--theme--meta-medium', '#d8d8d8' )
+        ],
+        [
+            'name'  => __( 'Meta Dark', 'taproot' ),
+            'slug'  => 'theme-meta-dark',
+            'color' => get_theme_mod( 'colors--theme--meta-dark', '#a5a5a5' )
+        ]
+    ]);
+
+
 
 	// Editor block font sizes. These font sizes are also defined in the
 	// `resources/scss/settings/_fonts.scss` file.
@@ -174,8 +182,8 @@ add_action( 'after_setup_theme', function() {
 	add_theme_support( 'custom-header', [
 		'default-image'          => '',
 		'random-default'         => false,
-		'width'                  => 1440,
-		'height'                 => 900,
+		'width'                  => 2000,
+		'height'                 => 1200,
 		'flex-height'            => true,
 		'flex-width'             => true,
 		'default-text-color'     => '',
@@ -192,32 +200,30 @@ add_action( 'after_setup_theme', function() {
 
 
 /**
- * Register image sizes. Even if adding no custom image sizes or not adding
- * "thumbnails," it's still important to call `set_post_thumbnail_size()` so
- * that plugins that utilize the `post-thumbnail` size will have a properly-sized
- * thumbnail that matches the theme design.
+ * Add the "medium large" image size in the list of sizes to choose from.
+ * We are returning the entire list here to be able to output in a logical order.
  *
- * @link   https://developer.wordpress.org/reference/functions/set_post_thumbnail_size/
- * @link   https://developer.wordpress.org/reference/functions/add_image_size/
  * @since  1.0.0
  * @access public
- * @return void
+ * @return array
  */
-add_action( 'init', function() {
+add_filter( 'image_size_names_choose', function( $sizes ) {
+    $new_sizes = [
+        'thumbnail' => __( 'Thumbnail', 'taproot' ),
+        'medium' => __( 'Medium', 'taproot' ),
+        'medium_large' => __( 'Medium Large', 'taproot' ),
+        'large' => __( 'Large', 'taproot' ),
+        'full' => __( 'Full', 'taproot' ),
+    ];
+    return array_merge( $new_sizes, $sizes );
+});
 
-	// Set the `post-thumbnail` size.
-	set_post_thumbnail_size( 178, 100, true );
-
-	// Register custom image sizes.
-	add_image_size( 'taproot-medium', 750, 422, true );
-
-}, 5 );
 
 
 /**
  * Register location to the Rootstrap resources directory.
  *
- * This is uses to load scripts in the Customizer interface.
+ * This is used to load scripts in the Customizer interface.
  *
  * @since  1.0.0
  * @access public

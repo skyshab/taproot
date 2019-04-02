@@ -46,15 +46,15 @@ function get_layout() {
 
     if( is_home() || is_archive() ) {
         $layout = get_theme_mod( 'blog--layout--layout', null, true );
-    }       
+    }
     elseif( is_single() ) {
         $default = get_theme_mod( 'posts--layout--layout', null, true );
-        $layout = get_post_meta( get_the_ID(), 'taprooot_page_layout', true );
+        $layout = get_post_meta( get_the_ID(), '_taproot_page_layout', true );
         $layout = ($layout) ? $layout : $default;
     }
     elseif( is_page() ) {
         $default = get_theme_mod( 'pages--layout--layout', null, true );
-        $layout = get_post_meta( get_the_ID(), 'taprooot_page_layout', true );
+        $layout = get_post_meta( get_the_ID(), '_taproot_page_layout', true );
         $layout = ($layout) ? $layout : $default;
     }
     else {

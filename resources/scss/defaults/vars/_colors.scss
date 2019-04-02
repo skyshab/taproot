@@ -10,8 +10,8 @@
 ////
 
 
-& {    
-    --colors--theme--text-color: #8c8c8c;
+& {
+    --colors--theme--text: #8c8c8c;
     --colors--theme--accent: #dd9933;
     --colors--theme--accent-contrast: #ffffff;
     --colors--theme--meta-light: #f4f4f4;
@@ -21,5 +21,5 @@
     --typography--links--color--visited: var( --typography--links--color );
     --typography--links--color--hover: var( --typography--links--color );
     --typography--links--color--active: var( --typography--links--color--hover );
-    --layout--sidebar--background-color: var( --colors--theme--meta-light );   
+    --layout--sidebar--background-color: var( --colors--theme--meta-light );
 }

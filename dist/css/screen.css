@@ -329,7 +329,7 @@ dd {
 	--layout--sidebar--content--max-width: 400px;
 }
 :root {
-	--colors--theme--text-color: #8c8c8c;
+	--colors--theme--text: #8c8c8c;
 	--colors--theme--accent: #dd9933;
 	--colors--theme--accent-contrast: #ffffff;
 	--colors--theme--meta-light: #f4f4f4;
@@ -443,7 +443,7 @@ html {
 body {
 	overflow-x: hidden;
 	color: #8c8c8c;
-	color: var(--colors--theme--text-color);
+	color: var(--colors--theme--text);
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	-ms-scroll-chaining: auto none;
 	    overscroll-behavior: auto none;
@@ -1103,16 +1103,16 @@ li > ul, li > ol {
 	display: flex;
 	align-items: center;
 }
-.custom-header .additional-header-content {
-	align-self: center;
-	flex: 1 1 100%;
-	justify-content: center;
-	display: flex;
-	flex-direction: column;
-	padding-bottom: 7vw;
-}
-.custom-header .app-header--fixed .additional-header-content {
+.app-header--fixed .additional-header-content {
 	display: none;
+}
+.custom-header .additional-header-content {
+	display: flex;
+	align-self: center;
+	text-align: center;
+	align-items: center;
+	height: 100%;
+	padding-bottom: 7vw;
 }
 
 .comments__list {
@@ -2573,7 +2573,7 @@ p.has-background {
 }
 
 .wp-block-audio {
-	margin: 0;
+	margin: 2em 0;
 }
 .wp-block-audio audio {
 	width: 100%;
@@ -3053,7 +3053,7 @@ hr {
 
 .wp-block-table tr:first-of-type, .wp-block-table.is-style-stripes tr:nth-child(odd) {
 	background-color: #f4f4f4;
-	background-color: var(--colors--theme--meta-light, #f4f4f4);
+	background-color: var(--colors--theme--meta-light, defaultColor(meta-light));
 }
 .wp-block-table tr:first-of-type {
 	font-weight: bold;
@@ -3245,36 +3245,64 @@ th:not(:last-child), td:not(:last-child) {
 	}
 }
 
-.has-charcoal-color {
-	color: #282c34;
+.has-theme-text-color {
+	color: #8c8c8c;
+	color: var(--colors--theme--text, #8c8c8c);
 }
 
-.has-charcoal-background-color {
-	background-color: #282c34;
+.has-theme-text-background-color {
+	background-color: #8c8c8c;
+	background-color: var(--colors--theme--text, #8c8c8c);
 }
 
-.has-regent-color {
-	color: #8c97a7;
+.has-theme-accent-color {
+	color: #dd9933;
+	color: var(--colors--theme--accent, #dd9933);
 }
 
-.has-regent-background-color {
-	background-color: #8c97a7;
+.has-theme-accent-background-color {
+	background-color: #dd9933;
+	background-color: var(--colors--theme--accent, #dd9933);
 }
 
-.has-husk-color {
-	color: #b9a364;
+.has-theme-accent-contrast-color {
+	color: #ffffff;
+	color: var(--colors--theme--accent-contrast, #ffffff);
 }
 
-.has-husk-background-color {
-	background-color: #b9a364;
+.has-theme-accent-contrast-background-color {
+	background-color: #ffffff;
+	background-color: var(--colors--theme--accent-contrast, #ffffff);
 }
 
-.has-red-stage-color {
-	color: #b15330;
+.has-theme-meta-light-color {
+	color: #f4f4f4;
+	color: var(--colors--theme--meta-light, #f4f4f4);
 }
 
-.has-red-stage-background-color {
-	background-color: #b15330;
+.has-theme-meta-light-background-color {
+	background-color: #f4f4f4;
+	background-color: var(--colors--theme--meta-light, #f4f4f4);
+}
+
+.has-theme-meta-medium-color {
+	color: #d8d8d8;
+	color: var(--colors--theme--meta-medium, #d8d8d8);
+}
+
+.has-theme-meta-medium-background-color {
+	background-color: #d8d8d8;
+	background-color: var(--colors--theme--meta-medium, #d8d8d8);
+}
+
+.has-theme-meta-dark-color {
+	color: #a5a5a5;
+	color: var(--colors--theme--meta-dark, #a5a5a5);
+}
+
+.has-theme-meta-dark-background-color {
+	background-color: #a5a5a5;
+	background-color: var(--colors--theme--meta-dark, #a5a5a5);
 }
 
 .has-small-font-size {

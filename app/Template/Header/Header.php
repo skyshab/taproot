@@ -112,24 +112,19 @@ class Header implements Bootable {
      * @return void
      */
     public function custom_header( $value ) {
-        $post_custom_header = get_post_meta( get_the_ID(), 'taproot_custom_header_image', true );
-        $use_featured = get_post_meta( get_the_ID(), 'taprooot_use_featured_image_for_header', true );
+        $post_custom_header = get_post_meta( get_the_ID(), '_taproot_custom_header_image', true );
+        $use_featured = get_post_meta( get_the_ID(), '_taproot_use_featured_image_for_header', true );
 
-        if( is_front_page() ) {
+        if( is_front_page() || is_admin() ) {
             return $value;
         }
-        elseif( !is_singular() ) {
-            return false;
-        }
-
-        if( $use_featured && '' !== $use_featured ) {
-            return get_featured_url( featured_id( get_the_ID() ), 'full', false )[0];
-        }
-        elseif( $post_custom_header ) {
-            return $post_custom_header;
-        }
-        else {
-            return ( is_front_page() ) ? $value : 'remove-header';
+        elseif( is_singular() ) {
+            if( $use_featured && '' !== $use_featured ) {
+                return get_featured_url( featured_id( get_the_ID() ), 'full', false )[0];
+            }
+            elseif( $post_custom_header ) {
+                return $post_custom_header;
+            }
         }
     }
 
@@ -141,7 +136,7 @@ class Header implements Bootable {
      * @return void
      */
     public function hasCustomHeader() {
-        $post_custom_header = get_post_meta( get_the_ID(), 'taproot_custom_header_image', true );
+        $post_custom_header = get_post_meta( get_the_ID(), '_taproot_custom_header_image', true );
         if( $post_custom_header ) {
             return true;
         }
@@ -161,7 +156,7 @@ class Header implements Bootable {
      */
     public function additional_content( $content ) {
 
-        $display = get_post_meta( get_the_ID(), 'taprooot_post_title_display', true );
+        $display = get_post_meta( get_the_ID(), '_taproot_post_title_display', true );
         if( 'header' !== $display || !is_singular() ) return $content;
 
         $post_type = get_post_type( get_the_ID() );

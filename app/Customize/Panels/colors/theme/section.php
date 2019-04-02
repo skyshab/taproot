@@ -2,7 +2,7 @@
 /**
  * Section setup.
  *
- * This file adds the section, settings and controls to the customizer. 
+ * This file adds the section, settings and controls to the customizer.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
@@ -32,38 +32,38 @@ $manager->add_section( 'colors--theme', [
 
 
 // Color Setting: Text Color
-color( $manager, 'colors--theme--text-color', [
+color( $manager, 'colors--theme--text', [
     'label'   => esc_html__( 'Text Color', 'taproot' ),
-    'section' => 'colors--theme', 
-]); 
+    'section' => 'colors--theme',
+]);
 
 
 // Color Setting: Accent Color
 color( $manager, 'colors--theme--accent', [
     'label'   => esc_html__( 'Accent Color', 'taproot' ),
-    'section' => 'colors--theme',  
-]); 
+    'section' => 'colors--theme',
+]);
 
 // Color Setting: Accent Contrast Color
 color( $manager, 'colors--theme--accent-contrast', [
     'label'   => esc_html__( 'Accent Contrast Color', 'taproot' ),
-    'section' => 'colors--theme', 
-]); 
+    'section' => 'colors--theme',
+]);
 
 // Color Setting: Meta Color Light
 color( $manager, 'colors--theme--meta-light', [
     'label'   => esc_html__( 'Meta Color - Light', 'taproot' ),
-    'section' => 'colors--theme',  
-]); 
+    'section' => 'colors--theme',
+]);
 
 // Color Setting: Meta Color Light
 color( $manager, 'colors--theme--meta-medium', [
     'label'   => esc_html__( 'Meta Color - Medium', 'taproot' ),
     'section' => 'colors--theme',
-]); 
+]);
 
 // Color Setting: Meta Color Light
 color( $manager, 'colors--theme--meta-dark', [
     'label'   => esc_html__( 'Meta Color - Dark', 'taproot' ),
-    'section' => 'colors--theme', 
-]); 
+    'section' => 'colors--theme',
+]);

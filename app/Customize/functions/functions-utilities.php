@@ -39,7 +39,7 @@ function is_boxed_layout() {
  * Get a screen from breakpoint data
  *
  * @since 1.0.0
- * 
+ *
  * @param string $bp
  * @param bool $mobile
  * @return string
@@ -63,26 +63,26 @@ function get_screen_from_bp( $bp = 'bp-t', $mobile = true ) {
     $screens = ( $mobile ) ? $mobile_screens_array : $screens_array;
 
     return ( isset($screens[$bp]) && $screens[$bp] ) ? $screens[$bp] : false;
-} 
+}
 
 
 /**
  * Get mobile screen from setting
  *
  * @since 1.0.0
- * 
+ *
  * @param string $screen
  * @return string
  */
 function get_mobile_screen( $screen = 'default' ) {
     return ( 'never' === $screen ) ? false : $screen;
-} 
+}
 
 /**
  * Get mobile screen from setting
  *
  * @since 1.0.0
- * 
+ *
  * @param string $screen
  * @return string
  */
@@ -96,14 +96,14 @@ function get_desktop_screen( $screen = 'default' ) {
     ];
 
     return ( isset( $screens_array[$screen] ) ) ? $screens_array[$screen] : false;
-} 
+}
 
 
 /**
  * Get Font Styles
  *
  * @since 1.0.0
- * 
+ *
  * @param array $styles
  * @return string
  */
@@ -116,27 +116,27 @@ function get_font_styles( $id ) {
 
     // Font weight
     if( in_array( 'bold', $styles_array ) ) {
-        $styles['font-weight'] = 'bold'; 
+        $styles['font-weight'] = 'bold';
     }
 
     // Font style
     if( in_array( 'italic', $styles_array ) ) {
-        $styles['font-style'] = 'italic'; 
+        $styles['font-style'] = 'italic';
     }
 
     // Underline
     if( in_array( 'underline', $styles_array ) ) {
-        $styles['text-decoration'] = 'underline'; 
+        $styles['text-decoration'] = 'underline';
     }
 
     // Uppercase
     if( in_array( 'uppercase', $styles_array ) ) {
-        $styles['text-transform'] = 'uppercase'; 
+        $styles['text-transform'] = 'uppercase';
     }
 
     // Capitalize
     elseif( in_array( 'capitalize', $styles_array ) ) {
-        $styles['text-transform'] = 'capitalize'; 
+        $styles['text-transform'] = 'capitalize';
     }
 
     return $styles;
@@ -147,7 +147,7 @@ function get_font_styles( $id ) {
  * Get Font Family if not set to default
  *
  * @since 1.0.0
- * 
+ *
  * @param string $font
  * @return string
  */
@@ -160,16 +160,16 @@ function get_font_family( $font ) {
         return $font;
     }
     else {
-        return sprintf( '"%s"', $font );            
+        return sprintf( '"%s"', $font );
     }
 }
 
 
 /**
  * Maybe convert to em?
- * 
+ *
  * Utility to convert unitless values to em.
- * Used to define block spacing that maintains vertical rhythm. 
+ * Used to define block spacing that maintains vertical rhythm.
  *
  * @since  1.0.0
  * @param string    $value - the value to maybe convert
@@ -194,9 +194,9 @@ function maybe_convert_to_em( $value = false ) {
 
 /**
  * Get Boxed Layout breakpoint
- * 
+ *
  * Utility to calculate the sceensize when the site is the full
- * width when using boxed layout. Used to create media query for 
+ * width when using boxed layout. Used to create media query for
  * fullwidth blocks.
  *
  * @since  1.0.0
@@ -221,4 +221,26 @@ function get_boxed_layout_bp( $site_max, $boxed_layout_padding, $font_size ) {
     }
 
     return $min_width;
+}
+
+
+/**
+ * Get Palette Color From Slug
+ *
+ * Utility to get a registered theme color from the color slug name.
+ *
+ * @since  1.0.0
+ * @return string
+ */
+function get_palette_color( $slug ) {
+
+    $colors = current( (array) get_theme_support( 'editor-color-palette' ) );
+
+    foreach( $colors as $color => $args ) {
+        if( $slug === $args['slug'] ) {
+            return $args['color'];
+        }
+    }
+
+    return false;
 }

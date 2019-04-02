@@ -2,7 +2,7 @@
  * Block Editor Custom Settings Panel.
  *
  * This file handles the JavaScript for creating a custom panel
- * in the block editor for post level settings. 
+ * in the block editor for post level settings.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
@@ -18,10 +18,10 @@ import {HeaderImagePicker} from './HeaderImagePicker.js';
 
 ( wp => {
 
-    const { 
+    const {
         PluginSidebar,
-        PluginSidebarMoreMenuItem 
-    } = wp.editPost;   
+        PluginSidebarMoreMenuItem
+    } = wp.editPost;
     const { registerPlugin } = wp.plugins;
     const { Fragment } = wp.element;
     const { PanelBody } = wp.components;
@@ -42,9 +42,9 @@ import {HeaderImagePicker} from './HeaderImagePicker.js';
                         icon="carrot"
                         title={ __( 'Taproot Page Settings' ) } >
                         <PanelBody>
-                            <LayoutPicker fieldName='taprooot_page_layout' />
-                            <PostTitleOptions fieldName='taprooot_post_title_display' />
-                            <HeaderImagePicker fieldName='taproot_custom_header_image' />                      
+                            <LayoutPicker fieldName='_taproot_page_layout' />
+                            <PostTitleOptions fieldName='_taproot_post_title_display' />
+                            <HeaderImagePicker fieldName='_taproot_custom_header_image' />
                         </PanelBody>
                     </PluginSidebar>
                 </Fragment>

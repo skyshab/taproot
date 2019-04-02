@@ -1,8 +1,8 @@
 <?php
 /**
- * Styles output on block editor admin pages. 
- * 
- * This file adds customizer setting styles to the block editor. 
+ * Styles output on block editor admin pages.
+ *
+ * This file adds customizer setting styles to the block editor.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
@@ -22,8 +22,8 @@ use function Rootstrap\get_theme_mod;
 
 // Var: Body Text Color
 $styles->add_var([
-    'name' => 'colors--theme--text-color',
-    'value' => get_theme_mod( 'colors--theme--text-color' ),
+    'name' => 'colors--theme--text',
+    'value' => get_theme_mod( 'colors--theme--text' ),
 ]);
 
 

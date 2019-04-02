@@ -99,7 +99,7 @@ class Post implements Bootable {
      * @return array.
      */
     public function post_header_display( $hierarchy ) {
-        $display = get_post_meta( get_the_ID(), 'taprooot_post_title_display', true );
+        $display = get_post_meta( get_the_ID(), '_taproot_post_title_display', true );
         if( 'header' === $display ) {
             return [];
         }
@@ -119,7 +119,7 @@ class Post implements Bootable {
      */
     public function featured_image_display( $display, $type ) {
         if( is_singular() ) {
-            $featured_in_header = get_post_meta( get_the_ID(), 'taprooot_use_featured_image_for_header', true );
+            $featured_in_header = get_post_meta( get_the_ID(), '_taproot_use_featured_image_for_header', true );
             if( $featured_in_header && 'header' !== $type ) {
                 return false;
             }

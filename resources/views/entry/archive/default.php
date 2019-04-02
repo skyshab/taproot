@@ -2,7 +2,7 @@
 
     <?php Taproot\Template\featured_image([
         'class' => 'entry__image entry__image--archive',
-        'size'  => 'taproot-medium',
+        'size'  => 'large',
         'link'  => true,
     ],  'archive') ?>
 

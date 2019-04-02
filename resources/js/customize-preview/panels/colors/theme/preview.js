@@ -11,10 +11,10 @@
 
 
 // Text Color
-wp.customize( 'colors--theme--text-color', function( value ) {
+wp.customize( 'colors--theme--text', function( value ) {
     value.bind( function( to ) {
         rootstrap.var({
-            name: 'colors--theme--text-color',
+            name: 'colors--theme--text',
             value: to
         });
     });

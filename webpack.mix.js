@@ -92,10 +92,8 @@ mix.version();
 
 mix.react( `${devPath}/js/app.js`,                'dist/js' )
    .react( `${devPath}/js/customize-controls.js`, 'dist/js' )
-   .react( `${devPath}/js/customize-preview.js`,  'dist/js' );
-
-// testing adding react components to the mix
-// mix.react( `${devPath}/js/editor/buttons.js`,     'dist/js' );
+   .react( `${devPath}/js/customize-preview.js`,  'dist/js' )
+   .react( `${devPath}/js/editor.js`,             'dist/js' );
 
 
 /*
@@ -140,9 +138,9 @@ mix.webpackConfig( {
 			// Alias for Hybrid Customize assets.
 			// Import from `hybrid-customize/js` or `~hybrid-customize/scss`.
             'hybrid-customize' : path.resolve( __dirname, 'vendor/justintadlock/hybrid-customize/resources/' ),
-            
+
             // alias for customize-preview directory
-            'customize-preview' : path.resolve( __dirname, 'resources/js/customize-preview/' ),          
+            'customize-preview' : path.resolve( __dirname, 'resources/js/customize-preview/' ),
 		}
 	},
 	plugins     : [

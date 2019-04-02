@@ -2,7 +2,7 @@
  * Layout Picker Component
  *
  * This file handles the JavaScript for creating a layout picker
- * control in the block editor theme sidebar panel. 
+ * control in the block editor theme sidebar panel.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
@@ -12,7 +12,7 @@
  */
 
 
-const { 
+const {
     withSelect,
     withDispatch
 } = wp.data;
@@ -35,17 +35,18 @@ export const LayoutPicker = compose(
         }
     })
 )( props => {
-    return ( 
-        <SelectControl 
+    return (
+        <SelectControl
             label={ __('Page Layout') }
             value={ props.metaFieldValue }
             options={[
+                { label: __('Default'), value: 'default' },
                 { label: __('Full (No Sidebar)'), value: 'full' },
                 { label: __('Sidebar on Right'), value: 'right' },
                 { label: __('Sidebar on Left'), value: 'left' }
-            ]}        
+            ]}
             onChange={ content => {
                 props.setMetaFieldValue( content );
             }} />
-    )  
+    )
 })

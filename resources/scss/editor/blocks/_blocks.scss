@@ -17,17 +17,17 @@
     // body styles
     font-family: var( --typography--body--font-family, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif );
     font-size: var(--typography--body--font-size);
-    line-height: var(--typography--body--line-height);  
-    color: var( --colors--theme--text-color, defaultColor( text-color )); 
+    line-height: var(--typography--body--line-height);
+    color: var( --colors--theme--text, defaultColor( text-color ));
 
     p {
         font-size: var(--typography--body--font-size);
-        line-height: var(--typography--body--line-height);              
+        line-height: var(--typography--body--line-height);
     }
 
     p, ul, ol, hr, pre, blockquote, address, figure, dd, table {
         margin-bottom: var( --typography--body--block-spacing );
-    }         
+    }
 }
 
 // wide and full block styles
@@ -44,7 +44,7 @@
     // force image to fill space
     img {
         width: 100%;
-    }    
+    }
 }
 
 // full block styles
@@ -54,7 +54,7 @@
 }
 
 // wide block styles
-.editor-block-list__block[data-align=wide],   
+.editor-block-list__block[data-align=wide],
 .alignwide {
     max-width: 100%;
-}  
+}
