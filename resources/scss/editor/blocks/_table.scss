@@ -1,0 +1,16 @@
+////
+/// Editor - Table Styles
+///
+/// These styles apply to the table block only in the editor.
+///
+/// @group  Styles
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+// we'll use our own table padding and line height in the form 
+.wp-block-table__cell-content {
+    padding: 0;
+    line-height: inherit;
+}

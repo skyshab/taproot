@@ -1,0 +1,22 @@
+////
+/// Editor - General Styles
+///
+/// These styles apply to all block types in the editor.
+///
+/// @group  Styles
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+figure {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}
+
+
+// featured image control
+.editor-post-featured-image .components-responsive-wrapper__content {
+    width: 100%;
+}

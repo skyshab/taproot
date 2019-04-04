@@ -1,0 +1,68 @@
+////
+/// Set up and define colors.
+///
+/// @group  Settings
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+/// Returns a map of colors in name-value format. This function also merges
+/// with the `block-colors()` map to create a map of all colors.
+///
+/// @since  1.0.0
+/// @access public
+/// @return {map}  Map of defined colors.
+
+@function colors() {
+
+	$colors : (
+		white : #fff,
+		black : #000
+	);
+
+	@return map-merge( $colors, block-colors() );
+}
+
+/// Returns a map of block colors in name-value format. These are the colors
+/// defined via the `editor-color-palette` setting in `app/functions-setup.php`
+/// for the WordPress editor.
+///
+/// @since  1.0.0
+/// @access public
+/// @return {map}  Map of defined colors.
+
+@function block-colors() {
+
+	@return (
+        theme-text            : var(--colors--theme--text,              #8c8c8c),
+		theme-accent          : var(--colors--theme--accent,            #dd9933),
+		theme-accent-contrast : var(--colors--theme--accent-contrast,   #ffffff),
+		theme-meta-light      : var(--colors--theme--meta-light,        #f4f4f4),
+        theme-meta-medium     : var(--colors--theme--meta-medium,       #d8d8d8),
+        theme-meta-dark       : var(--colors--theme--meta-dark,         #a5a5a5)
+	);
+}
+
+/// Returns a single color value by name.
+///
+/// @since  1.0.0
+/// @access public
+/// @param  {string}  $name  Color name.
+/// @return {string}         Color value.
+
+@function color( $name ) {
+
+	@return map-get( colors(), $name );
+}
+
+/// Returns a single block color value by name.
+///
+/// @since  1.0.0
+/// @access public
+/// @param  {string}  $name  Color name.
+/// @return {string}         Color value.
+
+@function block-color( $name ) {
+
+	@return map-get( block-colors(), $name );
+}

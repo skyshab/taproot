@@ -1,0 +1,23 @@
+////
+/// App content component.
+///
+/// This component generally wraps the `<main>` section and the sidebar.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.app-content {
+    background-color: white;
+    margin: 0 auto;
+    // needed this for safari, to prevent the sidebar in fullwidth layout from going off screen
+    overflow: hidden;
+
+    &__container {
+        display: flex;
+        @include screen('tablet-and-under') {
+            flex-direction: column;
+        }           
+    } 
+}

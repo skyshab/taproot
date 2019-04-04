@@ -1,0 +1,96 @@
+////
+/// Alignment classes.
+///
+/// Primarily, we use this to build out style rules for the core WordPress
+/// `.align*` classes.
+///
+/// @group  Utilities
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+// Left alignment.
+.alignleft {
+	@media( min-width: 480px ) {
+		float:     left;
+		margin:    0 var( --typography--body--block-spacing ) var( --typography--body--block-spacing ) 0;
+		max-width: 50%;
+	}
+}
+
+
+// Right alignment.
+.alignright {
+	@media( min-width: 480px ) {
+		float:     right;
+		margin:    0 0 var( --typography--body--block-spacing ) var( --typography--body--block-spacing );
+		max-width: 50%;
+	}
+}
+
+// Center alignment.
+.aligncenter {
+	display:      block;
+	margin-left:  auto;
+	margin-right: auto;
+	clear:        both;
+}
+
+
+
+.alignfull,
+.alignwide {
+	width: auto;
+    max-width: 100vw;
+    margin-top: 2em;
+    margin-bottom: 2em;
+
+    // force image to fill space
+    img {
+        width: 100%;
+    }    
+}
+
+.alignfull {
+
+    $fullOffset: calc( 50% - 50vw );
+ 
+    @include screen('tablet-and-under') {
+        margin-left  : $fullOffset;
+        margin-right : $fullOffset;
+    }
+
+    @include screen('desktop') {
+        .app-main--full & {
+            margin-left  : $fullOffset;
+            margin-right : $fullOffset;
+        }
+    }    
+}
+
+
+.alignwide {
+
+    $wideOffset: calc( 25% - 25vw );
+
+    @include screen('tablet') {
+        margin-left: $wideOffset;
+        margin-right: $wideOffset;
+
+        .app-main.boxed-layout & {
+            margin-left: 0;
+            margin-right: 0;
+        }         
+    }
+
+    @include screen('desktop') {
+        .app-main--full & {
+            margin-left: $wideOffset;
+            margin-right: $wideOffset;
+        }
+        .app-main--full.boxed-layout & {
+            margin-left: calc( -50vw + var(--layout--content--padding) + ( var(--layout--content--max-width) / 2) );
+            margin-right: calc( -50vw + var(--layout--content--padding) + ( var(--layout--content--max-width) / 2) );
+        }        
+    }    
+}

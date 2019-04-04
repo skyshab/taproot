@@ -1,0 +1,25 @@
+////
+/// Default CSS Vars
+///
+/// These are used in both the theme css file
+/// and the block editor styles
+///
+/// @group  Defaults
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+& {
+    --colors--theme--text: #8c8c8c;
+    --colors--theme--accent: #dd9933;
+    --colors--theme--accent-contrast: #ffffff;
+    --colors--theme--meta-light: #f4f4f4;
+    --colors--theme--meta-medium: #d8d8d8;
+    --colors--theme--meta-dark: #a5a5a5;
+    --typography--links--color: var( --colors--theme--accent );
+    --typography--links--color--visited: var( --typography--links--color );
+    --typography--links--color--hover: var( --typography--links--color );
+    --typography--links--color--active: var( --typography--links--color--hover );
+    --layout--sidebar--background-color: var( --colors--theme--meta-light );
+}

@@ -1,0 +1,115 @@
+////
+/// Mobile CSS Vars
+///
+/// These are used in both the theme css file
+/// and the block editor styles
+///
+/// @group  Defaults
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+& {
+
+    // base body styles
+    --typography--body--font-size: 16px;
+    --typography--body--line-height: 1.5;  
+    --typography--body--block-spacing: 1.5em;
+
+    
+    // Heading font sizes
+    --typography--h1--font-size: 2em;
+    --typography--h2--font-size: 1.63em;
+    --typography--h3--font-size: 1.38em;
+    --typography--h4--font-size: 1.13em;  
+    --typography--h5--font-size: 1em;  
+    --typography--h6--font-size: 1em;  
+
+
+    // Heading line heights
+    --typography--h1--line-height: 1.05;    
+    --typography--h2--line-height: 1.25;
+    --typography--h3--line-height: 1.25;
+    --typography--h4--line-height: 1.22;
+    --typography--h5--line-height: 1.05;
+    --typography--h6--line-height: 1.05;
+
+
+    // post title defaults
+    --posts--title--font-size: 2em;
+    --posts--title--line-height: 1.2;
+
+
+    // page title defaults
+    --pages--title--font-size: 2em;
+    --pages--title--line-height: 1.05;    
+
+
+    // blog title
+    --blog--title--font-size: var( --typography--h1--font-size );
+    --blog--title--line-height: var( --typography--h1--line-height );     
+
+
+    // post meta
+    --posts--meta--font-size: 1em;
+    --posts--meta--color: var( --colors--theme--meta-dark );
+    --posts--meta--icon--color: inherit;                
+
+
+    // layout padding
+    --layout--content--padding: 2rem;   
+
+
+    // branding
+    --branding--logo--width: 60px;   
+    --branding--logo--gutter: 1em;    
+    --branding--title--font-size: 1.5em;  
+    --branding--title--line-height: 1;    
+    --branding--tagline--font-size: 1em;
+    --branding--tagline--line-height: 1;
+    --branding--tagline--gutter: 0em;
+
+
+    // header padding
+    --header--padding: 1rem;
+
+
+    // nav
+
+    // footer nav
+    --nav--footer--font-size: 1em;
+    --nav--footer--line-height: 2;
+
+    // header nav
+    --nav--header--font-size: 1em;
+    --nav--header--line-height: 2.5;
+
+    // navbar
+    --nav--navbar--font-size: 1em;
+    --nav--navbar--line-height: 2.5;
+
+    // top nav
+    --nav--top--font-size: 1em;
+    --nav--top--line-height: 1.5;
+
+    // posts nav
+    --posts--nav--font-size: 1em;
+
+
+    // sidebar
+    --typography--sidebar--font-size: var( --typography--body--font-size );
+    --typography--sidebar--line-height: var( --typography--body--line-height );
+    --typography--sidebar--block-spacing: var( --typography--body--block-spacing );
+
+
+    // footer
+    --footer--widgets--layout: 100%;
+    --footer--padding: 2rem;
+    --footer--widgets--gutter: 1em;
+    --footer--widgets--font-size: 16px;
+    --footer--widgets--line-height: 1.4;
+    --footer--widgets--title--font-size: 1.2em; 
+    --footer--widgets--title--line-height: 1.2;     
+
+}

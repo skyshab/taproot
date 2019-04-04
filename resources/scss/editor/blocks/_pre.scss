@@ -1,0 +1,18 @@
+////
+/// Editor - Pre Block Styles
+///
+/// These styles apply to the pre block only in the editor.
+///
+/// @group  Styles
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+.wp-block-preformatted {
+    pre {
+        color: inherit;
+        padding: 2em;
+        font-size: 0.862em;        
+    }
+}

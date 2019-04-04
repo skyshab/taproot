@@ -1,0 +1,39 @@
+////
+/// App main component.
+///
+/// Wraps the page's main output. This is generally the post list or a single
+/// post and its comments.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.app-main {
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    order: 1;
+    padding: var( --layout--content--padding );
+    max-width: var( --layout--content--max-width );
+
+    // desktop styles 
+    @include screen('desktop') {
+        &--sidebar-right {
+            &.fullscreen-layout {
+                padding-left: 0;
+            }
+        }
+        &--sidebar-left {
+            &.fullscreen-layout {
+                padding-right: 0;
+            }            
+        }  
+        &--full {
+            &.fullscreen-layout {
+                padding-left: 0;
+                padding-right: 0;
+            } 
+        }  
+    }
+}

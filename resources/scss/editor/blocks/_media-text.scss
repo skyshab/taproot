@@ -1,0 +1,34 @@
+////
+/// Editor - Media + Text Styles
+///
+/// These styles apply to the media + text block only in the editor.
+///
+/// @group  Styles
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+.wp-block-media-text {
+    grid-template-areas: "media-text-media media-text-content" "resizer resizer";
+      
+    .editor-inner-blocks {
+        padding: 0 2em;
+    }          
+
+    .components-resizable-box__container {
+        height: 100%!important;
+    }
+
+    .block-library-media-text__media-container {
+        margin-bottom: 0;
+        img {
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+
+    &.has-media-on-the-right {
+        grid-template-areas: "media-text-content media-text-media" "resizer resizer";                 
+    }  
+}

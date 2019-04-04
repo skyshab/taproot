@@ -1,0 +1,306 @@
+[
+    {
+        "name": "composer/installers",
+        "version": "v1.6.0",
+        "version_normalized": "1.6.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/composer/installers.git",
+            "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/composer/installers/zipball/cfcca6b1b60bc4974324efb5783c13dca6932b5b",
+            "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b",
+            "shasum": ""
+        },
+        "require": {
+            "composer-plugin-api": "^1.0"
+        },
+        "replace": {
+            "roundcube/plugin-installer": "*",
+            "shama/baton": "*"
+        },
+        "require-dev": {
+            "composer/composer": "1.0.*@dev",
+            "phpunit/phpunit": "^4.8.36"
+        },
+        "time": "2018-08-27T06:10:37+00:00",
+        "type": "composer-plugin",
+        "extra": {
+            "class": "Composer\\Installers\\Plugin",
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Composer\\Installers\\": "src/Composer/Installers"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Kyle Robinson Young",
+                "email": "kyle@dontkry.com",
+                "homepage": "https://github.com/shama"
+            }
+        ],
+        "description": "A multi-framework Composer library installer",
+        "homepage": "https://composer.github.io/installers/",
+        "keywords": [
+            "Craft",
+            "Dolibarr",
+            "Eliasis",
+            "Hurad",
+            "ImageCMS",
+            "Kanboard",
+            "Lan Management System",
+            "MODX Evo",
+            "Mautic",
+            "Maya",
+            "OXID",
+            "Plentymarkets",
+            "Porto",
+            "RadPHP",
+            "SMF",
+            "Thelia",
+            "WolfCMS",
+            "agl",
+            "aimeos",
+            "annotatecms",
+            "attogram",
+            "bitrix",
+            "cakephp",
+            "chef",
+            "cockpit",
+            "codeigniter",
+            "concrete5",
+            "croogo",
+            "dokuwiki",
+            "drupal",
+            "eZ Platform",
+            "elgg",
+            "expressionengine",
+            "fuelphp",
+            "grav",
+            "installer",
+            "itop",
+            "joomla",
+            "kohana",
+            "laravel",
+            "lavalite",
+            "lithium",
+            "magento",
+            "majima",
+            "mako",
+            "mediawiki",
+            "modulework",
+            "modx",
+            "moodle",
+            "osclass",
+            "phpbb",
+            "piwik",
+            "ppi",
+            "puppet",
+            "pxcms",
+            "reindex",
+            "roundcube",
+            "shopware",
+            "silverstripe",
+            "sydes",
+            "symfony",
+            "typo3",
+            "wordpress",
+            "yawik",
+            "zend",
+            "zikula"
+        ]
+    },
+    {
+        "name": "justintadlock/hybrid-breadcrumbs",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/justintadlock/hybrid-breadcrumbs.git",
+            "reference": "9e06be3b12ac3855b58f4c97f352c7916dd6f91b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/justintadlock/hybrid-breadcrumbs/zipball/9e06be3b12ac3855b58f4c97f352c7916dd6f91b",
+            "reference": "9e06be3b12ac3855b58f4c97f352c7916dd6f91b",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6"
+        },
+        "time": "2018-10-23T19:57:54+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Hybrid\\Breadcrumbs\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Justin Tadlock",
+                "email": "justintadlock@gmail.com",
+                "homepage": "https://themehybrid.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "A powerful breadcrumb script for inclusion with WordPress themes.",
+        "homepage": "https://github.com/justintadlock/hybrid-breadcrumbs",
+        "keywords": [
+            "wordpress"
+        ]
+    },
+    {
+        "name": "justintadlock/hybrid-carbon",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/justintadlock/hybrid-carbon.git",
+            "reference": "3d18efe73325e9426cfde1e9033f11689c55cf6e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/justintadlock/hybrid-carbon/zipball/3d18efe73325e9426cfde1e9033f11689c55cf6e",
+            "reference": "3d18efe73325e9426cfde1e9033f11689c55cf6e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6"
+        },
+        "time": "2018-09-14T21:56:50+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Hybrid\\Carbon\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Justin Tadlock",
+                "email": "justintadlock@gmail.com",
+                "homepage": "http://justintadlock.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "God-like post featured image script.",
+        "homepage": "https://github.com/justintadlock/hybrid-carbon",
+        "keywords": [
+            "wordpress"
+        ]
+    },
+    {
+        "name": "justintadlock/hybrid-core",
+        "version": "5.0.1",
+        "version_normalized": "5.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/justintadlock/hybrid-core.git",
+            "reference": "051ff5109c45dda640f28b343a2bf179a5bbfd10"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/justintadlock/hybrid-core/zipball/051ff5109c45dda640f28b343a2bf179a5bbfd10",
+            "reference": "051ff5109c45dda640f28b343a2bf179a5bbfd10",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6"
+        },
+        "time": "2018-12-11T16:06:07+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Hybrid\\": "src/"
+            },
+            "files": [
+                "src/bootstrap-hybrid.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Justin Tadlock",
+                "email": "justintadlock@gmail.com",
+                "homepage": "http://justintadlock.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "Hybrid Core: A theme framework for developing modern WordPress themes.",
+        "homepage": "https://themehybrid.com/hybrid-core",
+        "keywords": [
+            "wordpress"
+        ]
+    },
+    {
+        "name": "skyshab/rootstrap",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/skyshab/rootstrap.git",
+            "reference": "669992855ff9714edb31fc498a50d7ad5f6a749c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/skyshab/rootstrap/zipball/669992855ff9714edb31fc498a50d7ad5f6a749c",
+            "reference": "669992855ff9714edb31fc498a50d7ad5f6a749c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6"
+        },
+        "time": "2019-03-13T21:04:42+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Rootstrap\\": "src/"
+            },
+            "files": [
+                "src/rootstrap-init.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Sky Shabatura",
+                "email": "github@sky.camp",
+                "homepage": "https://github.com/skyshab",
+                "role": "Developer"
+            }
+        ],
+        "description": "Rootstrap is a collection of utilities for managing WordPress Customizer controls, settings, responsive breakpoints and styles.",
+        "homepage": "https://github.com/skyshab/rootstrap",
+        "keywords": [
+            "wordpress"
+        ]
+    }
+]

@@ -1,0 +1,23 @@
+/**
+ * Searchform
+ */
+
+.searchform {
+    
+    &__inputs {
+        display: flex;                                 
+    }  
+
+    input[type="search"] {
+        border-right: none;    
+        max-width: calc(100% - 2.75em);            
+    }
+
+    &__submit {
+        border: transparent;
+        flex: 0 0 2.75em;        
+        padding: 0;   
+        background-color: var( --colors--theme--accent );
+        color: var( --colors--theme--accent-contrast );             
+    }
+}

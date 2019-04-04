@@ -1,0 +1,145 @@
+////
+/// Helper classes.
+///
+/// @group  Utilities
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+/// Loops through the theme colors and adds utility classes for them. Primarily,
+/// these are the `.has-{$color}-color` and `.has-{$color}-background-color`
+/// classes added via Gutenberg. However, they are useful elsewhere.
+
+@each $color-name, $color-value in block-colors() {
+
+	.has-#{ $color-name }-color {
+		color : #{ $color-value };
+	}
+
+	.has-#{ $color-name }-background-color {
+		background-color: #{ $color-value };
+	}
+}
+
+/// Loops through the editor font sizes and adds utility classes for them. This
+/// handles the `.has-{$size}-font-size` classes added via Gutenberg, which may
+/// be useful elsewhere.
+
+@each $font-size-name, $font-size-value in editor-font-sizes() {
+
+	.has-#{ $font-size-name }-font-size {
+		font-size: #{ $font-size-value };
+	}
+}
+
+
+
+.screen-reader-text, .visuallyhidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute !important;
+    top: auto;
+    left: -999em;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+.screen-reader-text:focus, .visuallyhidden:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000; /* Above WP toolbar. */
+}
+
+
+
+.app-header .skip-link {
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
+}
+
+.app-header .skip-link:focus {
+    position: fixed!important;
+    background-color: #ffffff;
+    clip: auto !important;
+    display: block;
+    padding: 1em;
+    border-radius: 0;
+    text-align: center;
+    outline: none;
+    box-shadow: none;
+    text-decoration: none;
+    top: 0;
+    left: 0;
+    transform: translateY(0px);
+    width: 100%;
+    z-index: 100000;
+}
+
+.admin-bar .app-header:not(.app-header--fixed) .skip-link:focus {
+
+    @media (max-width: 782px) {
+        transform: translateY(46px);
+    }
+
+    @media (min-width: 783px) {
+        transform: translateY(32px);
+    }
+}
+
+
+.align-self--right {
+    align-self: flex-end;
+}
+
+.align-self--center {
+    align-self: center;
+}
+
+.pad-l {
+    padding-left: 0.25em;
+}
+
+.pad-r {
+    padding-right: 0.25em;
+}
+
+.push-l {
+    margin-left: 0.25em;
+}
+
+.push-r {
+    margin-right: 0.25em;
+}
+
+.flip-h {
+    transform: scale(-1, 1);
+}
+
+.flip-v {
+    transform: scale(1, -1);
+}
+
+.rotate-90 {
+    transform: rotate(90deg);
+}
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+.rotate-270 {
+    transform: rotate(270deg);
+}

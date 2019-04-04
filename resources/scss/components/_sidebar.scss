@@ -1,0 +1,70 @@
+////
+/// Sidebar component.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+.sidebar {
+    z-index: 1;
+    order: 2;
+    position: relative;
+    flex: 1 0 100%;
+    padding: var( --layout--content--padding );
+    font-size: var( --typography--sidebar--font-size );
+    line-height: var( --typography--sidebar--line-height );
+    background-color: var( --layout--sidebar--background-color );
+ 
+    // Desktop Styles
+    @include screen('desktop') {
+
+        max-width: var( --layout--sidebar--width, 35% );
+    
+        &.fullscreen-layout:before {
+            content: " ";
+            background-color: var( --layout--sidebar--background-color );
+            position: absolute;
+            width: 100vw;
+            height: 100%;
+            top: 0;
+            z-index: -1;        
+        } 
+
+        &--right {
+            order: 2;
+            &:before {
+                right: auto;
+                left: 0;
+            } 
+            &.fullscreen-layout {
+                padding-right: 0;
+            }            
+        }
+
+        &--left {
+            order: 0;
+            &:before {
+                right: 0;
+                left: auto;
+            } 
+            &.fullscreen-layout {
+                padding-left: 0;
+            }            
+        }
+    };
+
+    .widget {
+        max-width: var( --layout--sidebar--content--max-width );
+    }
+}
+
+
+@include screen('desktop') {
+    .app-main {
+        &--sidebar-right, &--sidebar-left {
+            max-width: calc( 100% - var( --layout--sidebar--width ) );            
+        }
+    }
+}

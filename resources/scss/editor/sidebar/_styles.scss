@@ -1,0 +1,22 @@
+////
+/// Editor - Table Styles
+///
+/// These styles apply to the table block only in the editor.
+///
+/// @group  Styles
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+// editor theme panel styles
+.taproot-sidebar-content {
+    padding: 16px;
+}
+
+// allow the carrot icon for our panel show all the details without the stroke
+#editor .edit-post-pinned-plugins .components-icon-button {
+    .dashicons-carrot, .dashicons-carrot * {
+        stroke: none!important;
+    }
+}

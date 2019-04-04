@@ -1,0 +1,34 @@
+////
+/// Pullquote block.
+///
+/// @group  Blocks
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.wp-block-pullquote {
+
+    padding: 0;   
+
+    &.alignright, &.alignleft {
+        max-width: 42%;
+    }
+    
+    blockquote {
+        margin: 0;
+    }
+
+    p {
+        font-size: 1.625em;
+        line-height: 1.125;
+        margin-bottom: 0;
+    } 
+	cite,
+	footer {
+		position: relative;
+	}      
+    cite {
+        display: inline-block;
+        margin-top: 0.4em;
+    }   
+}

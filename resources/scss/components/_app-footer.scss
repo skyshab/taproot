@@ -1,0 +1,119 @@
+////
+/// App footer component.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+.app-footer {
+
+    display: flex;
+    flex-direction: column;
+
+    // customize defaults
+    background-color: #232323;
+    color: white;
+
+    &__credit { margin: 0;}
+    
+    &--boxed {
+        width: auto;
+    }
+
+    &--fixed {
+        @include screen('desktop') {
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            z-index: -1;
+        }; 
+    }
+
+    // Container
+    &__container {
+        order: 2;
+    }
+
+
+    &--standard-width {
+        
+        .app-footer__container, .menu--footer__container, .bottom-bar__container {
+
+            @include screen('mobile') {        
+                padding-left: var( --footer--padding );
+                padding-right: var( --footer--padding );
+            };  
+
+            @include screen('tablet') {        
+                padding-left: var( --layout--content--padding );
+                padding-right: var( --layout--content--padding );
+            };              
+        }
+
+        &.boxed-layout {
+
+            .app-footer__container, .menu--footer__container, .bottom-bar__container {
+
+                @include screen('desktop') {        
+                    padding-left: var( --layout--content--padding );
+                    padding-right: var( --layout--content--padding );
+                };  
+            }          
+        }
+    }
+
+    &--fullwidth {
+
+        .app-footer__container, .menu--footer__container, .bottom-bar__container {
+            width: 100%;
+            max-width: 100%;
+            padding-left: var( --footer--padding );
+            padding-right: var( --footer--padding );
+
+        }
+    }
+
+    &__sidebar {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+    }
+
+    &__widgets {
+        display: grid;
+        grid-column-gap: var( --footer--widgets--gutter );
+        grid-row-gap: var( --footer--widgets--gutter );
+        grid-template-columns: var( --footer--widgets--layout );
+        padding-top: var( --footer--padding );
+        padding-bottom: var( --footer--padding );
+    }
+
+    // widget styles
+    &__widget {
+
+        font-size: var( --footer--widgets--font-size );
+        line-height: var( --footer--widgets--line-height );
+    
+        &__title {
+    
+            padding: 0;
+            margin-bottom: 0.5em;
+    
+            font-size: var( --footer--widgets--title--font-size );
+            line-height: var( --footer--widgets--title--line-height );        
+        }
+    }
+
+}
+
+// bottom bar styles
+.bottom-bar {
+    order: 5;
+    padding: 0.6em 0;
+
+    // customize defaults
+    background-color: #000000;
+    color: white;
+}

@@ -1,0 +1,53 @@
+////
+/// Custom header component.
+///
+/// This handles the output of `the_custom_header_markup()` from core WP's
+/// `custom-header` feature.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+.additional-header-content {
+    z-index: 2;
+
+    &__title {
+        margin-bottom: 12px;
+    }
+
+    &__meta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: inherit;
+
+        svg {
+            margin-right: 0.3em;
+        }
+
+        a {
+            color: inherit;
+        }
+    }
+
+    &__author {
+        margin-right: 1em;
+        display: flex;
+        align-items: center;
+    }
+
+    .app-header--fixed & {
+        display: none;
+    }
+
+    .custom-header & {
+        display: flex;
+        align-self: center;
+        text-align: center;
+        align-items: center;
+        height: 100%;
+        padding-bottom: 7vw;
+    }
+}
