@@ -3,3 +3,10 @@
 node_modules
 build
 *.node
+
+
+# Windows Thumbs
+Thumbs.db
+
+# Ignore PhpStorm files
+.idea/
