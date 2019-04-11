@@ -1,5 +1,6 @@
 .DS_Store
-*.log
-node_modules
-build
-*.node
+/node_modules
+/composer.lock
+/package-lock.json
+/phpcs.xml
+/.phpcs.xml

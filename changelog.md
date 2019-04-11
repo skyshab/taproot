@@ -1,5 +1,14 @@
 # Change Log
 
+= 1.0.1 =
+* 04/10/19
+* Bug Fix - Updated gitignore file to allow vendor files to be included in repo.
+* General - Updated readme to include information about included packages.
+
+= 1.0.0 =
+* 04/04/19
+* Complete rebuild of theme based on Mythic starter theme.
+* This release contains breaking changes. If updating from a previous version, please test on a staging site to see how this will affect your site before updating a live site.
 
 = 0.9.6 =
 * 06/01/18
@@ -26,20 +35,20 @@
 * 03/01/18
 * Bug Fixes and code refactoring based on Theme Review feedback.
 * Image Sizes - Removed custom image dimensions for default image sizes.
-* Image Sizes - Adjusted image CSS for new size dimensions. 
+* Image Sizes - Adjusted image CSS for new size dimensions.
 
 = 0.9.3 =
 * 02/15/18
 * Bug Fixes - fixed various issues with customizer settings.
-* Child Theme CSS - CSS no longer loaded automatically. 
-* System Fonts - Added options for system fonts in customizer. 
+* Child Theme CSS - CSS no longer loaded automatically.
+* System Fonts - Added options for system fonts in customizer.
 * Image Sizes - Set the image sizes in WP settings upon theme activation.
 * Clean up - Removed code that was moved to pro plugin.
 
 = 0.9.2 =
 * 12/30/17
 * Bug Fixes - fixed various issues with customizer settings.
-* Defaults - updated default customizer settings. 
+* Defaults - updated default customizer settings.
 
 = 0.9.1 =
 * 12/11/17
@@ -50,23 +59,23 @@
 
 = 0.9.0 =
 * 12/09/17
-* Changes - renamed from Division to Taproot for compatibility with the repository. 
+* Changes - renamed from Division to Taproot for compatibility with the repository.
 * Changes - removed other features as required by the theme review team.
-* Changes - new screenshot. 
+* Changes - new screenshot.
 
 = 0.8.3 =
 * 11/29/17
-* Changes - preparing for submission to the WordPress theme repository. 
+* Changes - preparing for submission to the WordPress theme repository.
 
 = 0.8.2 =
 * 08/12/17
 * Bug Fixes - various color picker bugs and performance issues.
 
 = 0.8.1 =
-* 08/01/17 
+* 08/01/17
 * Lots of changes.
 
 = 0.8.0 =
-* 02/01/17 
+* 02/01/17
 * Initial release in this format.
 
