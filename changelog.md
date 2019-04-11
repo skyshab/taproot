@@ -1,5 +1,9 @@
 # Change Log
 
+= 1.0.2 =
+* 04/11/19
+* Bug Fix - Fix for missing icons svg file
+
 = 1.0.1 =
 * 04/10/19
 * Bug Fix - Updated gitignore file to allow vendor files to be included in repo.
