@@ -19,7 +19,7 @@ class SVG extends Icons {
 
     /**
      * Stores the url to the SVG sprite file.
-     * 
+     *
      * @since 1.0.0
      * @var string
      */
@@ -28,7 +28,7 @@ class SVG extends Icons {
 
     /**
      * Define file location
-     * 
+     *
      * @since 1.0.0
      */
     public function __construct() {
@@ -37,7 +37,7 @@ class SVG extends Icons {
         $child_theme_path = get_stylesheet_directory() . $child_theme_file;
         $child_theme_url = get_stylesheet_directory_uri() . $child_theme_file;
 
-        $parent_theme_file = '/resources/img/theme-icons.svg';
+        $parent_theme_file = '/dist/img/theme-icons.svg';
         $parent_theme_path = get_parent_theme_file_path( $parent_theme_file );
         $parent_theme_url = get_parent_theme_file_uri( $parent_theme_file );
 
@@ -45,16 +45,16 @@ class SVG extends Icons {
             $this->url = $child_theme_url;
         }
         elseif( file_exists( $parent_theme_path ) ) {
-            $this->url = $parent_theme_url;			
+            $this->url = $parent_theme_url;
         }
     }
 
 
     /**
      * Get SVG icon markup
-     * 
+     *
      * @since 1.0.0
-     * 
+     *
      * @param array $args - attributes used to construct the SVG
      * @return string - Returns SVG markup
      */
@@ -62,9 +62,9 @@ class SVG extends Icons {
 
         // if just passed the icon id, create an array
         if( $args && !is_array( $args ) ) $args = array('icon' => $args);
-        
+
         // Define an icon.
-        if( false === array_key_exists( 'icon', $args ) ) 
+        if( false === array_key_exists( 'icon', $args ) )
             return esc_html__( 'Please define an icon name.', 'taproot' );
 
         // Parse args.
@@ -73,24 +73,24 @@ class SVG extends Icons {
         // Set aria hidden.
         $aria_hidden = '';
 
-        if( true === $args['aria_hidden'] ) 
+        if( true === $args['aria_hidden'] )
             $aria_hidden = 'true';
 
         // Set ARIA.
         $aria_labelledby = '';
 
-        if( $args['title'] && $args['desc'] ) 
+        if( $args['title'] && $args['desc'] )
             $aria_labelledby = 'title desc';
 
         // Begin SVG markup.
         $svg = sprintf( '<svg class="taproot-icon taproot-icon--%s %s" role="presentation" aria-hidden="%s" aria-labelledby="%s" alt="">', esc_attr( $args['icon'] ), esc_attr( $args['class'] ), esc_attr( $aria_hidden ), esc_attr( $aria_labelledby ) );
 
         // If there is a title, display it.
-        if( $args['title'] ) 
+        if( $args['title'] )
             $svg .= '<title>' . esc_html( $args['title'] ) . '</title>';
 
         // If there is a description, display it.
-        if( $args['desc'] ) 
+        if( $args['desc'] )
             $svg .= '<desc>' . esc_html( $args['desc'] ) . '</desc>';
 
         // Generate use element to point to sprite in the main icon file
