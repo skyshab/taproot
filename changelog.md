@@ -1,13 +1,14 @@
 # Change Log
 
+= 1.0.1 =
+* 04/10/19
+* Bug Fix - Updated gitignore file to allow vendor files to be included in repo.
+* General - Updated readme to include information about included packages.
+
 = 1.0.0 =
 * 04/04/19
-* Breaking Changes - rebuilt theme on Mythic theme framework.
-* Added support for block editor.
-
-Note: this update will require reconfiguring customizer and single post settings.
-Please test on staging site to see how this will affect your site if already using
-a previous version of the theme.
+* Complete rebuild of theme based on Mythic starter theme.
+* This release contains breaking changes. If updating from a previous version, please test on a staging site to see how this will affect your site before updating a live site.
 
 = 0.9.6 =
 * 06/01/18
