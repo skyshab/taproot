@@ -13,7 +13,7 @@
  * @link      https://taproot-theme.com
  */
 
-namespace Taproot\Providers;
+namespace Taproot;
 
 use Hybrid\Tools\ServiceProvider;
 use Rootstrap\Rootstrap;
@@ -44,9 +44,9 @@ class AppServiceProvider extends ServiceProvider {
 
 		// Bind a single instance of our customizer class.
         $this->app->singleton( Customize::class );
-        
+
         // Bind SVG icons to our icons class
-        $this->app->bind( 'Taproot\Template\Icons', 'Taproot\Template\Icons\SVG' );        
+        $this->app->bind( 'Taproot\Template\Icons', 'Taproot\Template\Icons\SVG' );
 
 		// Bind the Laravel Mix manifest for cache-busting.
 		$this->app->singleton( 'taproot/mix', function() {
@@ -71,12 +71,12 @@ class AppServiceProvider extends ServiceProvider {
 
 		// Boot the customizer class instance.
         $this->app->resolve( Customize::class )->boot();
-        
+
 		// Boot the Editor class
         $this->app->resolve( Editor::class )->boot();
-        
+
 		// Boot the Template class
-        $this->app->resolve( Template::class )->boot();         
+        $this->app->resolve( Template::class )->boot();
 
 	}
 }

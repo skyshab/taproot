@@ -30,7 +30,7 @@ $taproot = new \Hybrid\Core\Application();
 # for running the theme. Service providers are essentially the backbone of the
 # bootstrapping process.
 
-$taproot->provider( \Taproot\Providers\AppServiceProvider::class );
+$taproot->provider( \Taproot\AppServiceProvider::class );
 
 
 # ------------------------------------------------------------------------------
