@@ -55,3 +55,17 @@ export function getDesktopScreen( screen = 'default' ) {
 
     return ( screens[screen] ) ? screens[screen] : false;
 }
+
+
+// calculate padding from a width
+export function getPaddingFromWidth( width, unit = false ) {
+
+    width = width.replace(/[^0-9]/g,'');
+    var padding = (100 - width) / 2;
+
+    if(unit) {
+        padding += unit;
+    }
+
+    return padding;
+}

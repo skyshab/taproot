@@ -9,9 +9,10 @@
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
 
+import * as utils from '../../../functions-customize-preview.js';
+
 
 const headingsSelector = 'h1, h2, h3, h4, h5, h6';
-
 
 // Text Color
 wp.customize( 'typography--headings--text-color', function( value ) {

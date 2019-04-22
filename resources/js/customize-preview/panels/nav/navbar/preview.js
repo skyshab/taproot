@@ -9,6 +9,8 @@
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
 
+import * as utils from '../../../functions-customize-preview.js';
+
 
 // Navbar Hide
 wp.customize( 'nav--navbar--hide', function( value ) {

@@ -10,7 +10,6 @@
  * @link      https://taproot-theme.com
  */
 
-
 import './panels/site-identity/panel.js';
 import './panels/general/panel.js';
 import './panels/layout/panel.js';
