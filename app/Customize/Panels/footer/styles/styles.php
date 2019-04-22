@@ -2,7 +2,7 @@
 /**
  * Styles for our section.
  *
- * This file creates the front end styles for our customizer controls. 
+ * This file creates the front end styles for our customizer controls.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
@@ -61,9 +61,7 @@ if( is_boxed_layout() && get_theme_mod( 'footer--styles--fixed' ) ) {
     $styles->add([
         'selector' => '.app-footer--fixed',
         'styles' => [
-            'width' => sprintf( 'calc( 100vw - (2 * %s) )', get_theme_mod( 'layout--site--boxed-layout--padding', null, true ) ),
-            'max-width' => get_theme_mod( 'layout--site--max-content-width' ),
-            'margin-bottom' => get_theme_mod( 'layout--site--boxed-layout--padding', null, true )
+            'margin-bottom' => get_theme_mod( 'layout--boxed--outer-padding', null, true )
         ],
         'screen' => 'desktop'
     ]);

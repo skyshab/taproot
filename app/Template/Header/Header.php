@@ -96,7 +96,7 @@ class Header implements Bootable {
             $classes[] = 'app-header--desktop--horizontal';
 
         // boxed layout
-        if( get_theme_mod( 'layout--site--boxed-layout' ) )
+        if( get_theme_mod( 'layout--boxed--enable' ) )
             $classes[] = 'boxed-layout';
 
         return $classes;

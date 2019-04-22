@@ -13,5 +13,5 @@
  */
 
 
-// Content Padding
-$defaults->add( 'layout--content-mobile--padding', '2rem' );
+// Container Width
+$defaults->add( 'layout--container-tablet--width', '90%' );

@@ -2,7 +2,7 @@
 /**
  * Section setup.
  *
- * This file adds the section, settings and controls to the customizer. 
+ * This file adds the section, settings and controls to the customizer.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
@@ -21,8 +21,8 @@ use function Taproot\Customize\range_atts;
 # =======================================================
 
 
-$manager->add_section( 'layout--content-tablet', [
-    'title' => esc_html__( 'Content', 'taproot' ),
+$manager->add_section( 'layout--container', [
+    'title' => esc_html__( 'Container', 'taproot' ),
     'panel' => 'layout',
 ]);
 
@@ -32,9 +32,20 @@ $manager->add_section( 'layout--content-tablet', [
 # =======================================================
 
 
-// Content Gutter
-range( $manager, 'layout--content-tablet--padding', [
-    'section' => 'layout--content-tablet',
-    'label' => esc_html__('Content Padding', 'taproot'), 
-    'atts' => range_atts('layout-padding')
+// Max Container Width
+range( $manager, 'layout--container--max-width', [
+    'section' => 'layout--container',
+    'label' => esc_html__('Max Container Width', 'taproot'),
+    'atts'  => [
+        'px' => [
+            'min'   => 600,
+            'max'   => 1600,
+            'default' => 1060
+        ],
+        'rem' => [
+            'min'   => 10,
+            'max'   => 100,
+            'default' => 62
+        ],
+    ]
 ]);

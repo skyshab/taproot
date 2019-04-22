@@ -30,7 +30,6 @@
 
 // Center alignment.
 .aligncenter {
-	display:      block;
 	margin-left:  auto;
 	margin-right: auto;
 	clear:        both;
@@ -48,13 +47,13 @@
     // force image to fill space
     img {
         width: 100%;
-    }    
+    }
 }
 
 .alignfull {
 
     $fullOffset: calc( 50% - 50vw );
- 
+
     @include screen('tablet-and-under') {
         margin-left  : $fullOffset;
         margin-right : $fullOffset;
@@ -65,32 +64,24 @@
             margin-left  : $fullOffset;
             margin-right : $fullOffset;
         }
-    }    
+    }
 }
 
 
-.alignwide {
+.app-main--full .alignwide {
 
-    $wideOffset: calc( 25% - 25vw );
-
-    @include screen('tablet') {
-        margin-left: $wideOffset;
-        margin-right: $wideOffset;
-
-        .app-main.boxed-layout & {
-            margin-left: 0;
-            margin-right: 0;
-        }         
+    @include screen('tablet-and-up') {
+        width: var(--layout--container--width);
+        max-width: var(--layout--container--max-width);
+        margin-left: calc( (var(--layout--container--width) - 100%) / -2 );
     }
+}
+
+
+.app-main--full.boxed-layout .alignwide {
 
     @include screen('desktop') {
-        .app-main--full & {
-            margin-left: $wideOffset;
-            margin-right: $wideOffset;
-        }
-        .app-main--full.boxed-layout & {
-            margin-left: calc( -50vw + var(--layout--content--padding) + ( var(--layout--content--max-width) / 2) );
-            margin-right: calc( -50vw + var(--layout--content--padding) + ( var(--layout--content--max-width) / 2) );
-        }        
-    }    
+        width: calc( (100vw - (2 * var(--layout--boxed--outer-padding) ) ) * var(--layout--container--width-as-decimal) );
+        margin-left: calc( (( (100vw - (2 * var(--layout--boxed--outer-padding) ) ) * var(--layout--container--width-as-decimal)) - 100%) / -2);
+    }
 }

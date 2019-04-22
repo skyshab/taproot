@@ -17,7 +17,9 @@
 	--layout--sidebar--background-color: var( --colors--theme--meta-light );
 }
 :root {
-	--layout--content--max-width: 980px;
+	--layout--container--width: 90vw;
+	--layout--container--max-width: 1060px;
+	--layout--content--max-width: 680px;
 	--layout--sidebar--content--max-width: 400px;
 }
 :root {
@@ -755,7 +757,7 @@
 	}
 }
 .editor-styles-wrapper .wp-block {
-	max-width: 980px;
+	max-width: 680px;
 	max-width: var(--layout--content--max-width);
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	font-family: var(--typography--body--font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);

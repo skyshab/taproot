@@ -9,13 +9,22 @@
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
 
+import * as utils from '../../../functions-customize-preview.js';
 
-// Max Content Width
-wp.customize( 'layout--content--max-width', function( value ) {
+
+// Container Width
+wp.customize( 'layout--container-mobile--width', function( value ) {
     value.bind( function( to ) {
+
         rootstrap.var({
-            name: 'layout--content--max-width',
-            value: to,
+            name: 'layout--container--width',
+            value: to
         });
+
+        rootstrap.var({
+            name: 'layout--container--padding',
+            value: utils.getPaddingFromWidth(to, 'vw')
+        });
+
     });
 });

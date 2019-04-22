@@ -13,5 +13,5 @@
  */
 
 
-// Content Padding
-$defaults->add( 'layout--content-desktop--padding', '3rem' );
+// Boxed Layout Padding - Outer
+$defaults->add( 'layout--boxed--outer-padding', '4vw' );

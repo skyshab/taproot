@@ -35,14 +35,14 @@ class Main implements Bootable {
 	 * @return void
 	 */
 	public function boot() {
-        add_filter( 'hybrid/attr/app-main', [ $this, 'attr' ] );     
-        add_filter( 'hybrid/attr/app-main/class', [ $this, 'classes' ] );        
+        add_filter( 'hybrid/attr/app-main', [ $this, 'attr' ] );
+        add_filter( 'hybrid/attr/app-main/class', [ $this, 'classes' ] );
     }
-    
+
 
     /**
      *  Main ID
-     * 
+     *
      * @since 1.0.0
      * @return void
      */
@@ -51,12 +51,12 @@ class Main implements Bootable {
         $attr['id'] = "main";
 
         return $attr;
-    }  
+    }
 
 
     /**
      *  Main Classes
-     * 
+     *
      * @since 1.0.0
      * @return void
      */
@@ -64,15 +64,15 @@ class Main implements Bootable {
 
         if( 'full' ===  get_layout() )
             $classes[] = 'app-main--full';
-        else 
+        else
             $classes[] = sprintf( ' app-main--sidebar-%s', get_layout() );
 
-        if( get_theme_mod( 'layout--site--boxed-layout' ) )
-            $classes[] = 'boxed-layout'; 
+        if( get_theme_mod( 'layout--boxed--enable' ) )
+            $classes[] = 'boxed-layout';
         else
-            $classes[] = 'fullscreen-layout'; 
+            $classes[] = 'fullscreen-layout';
 
         return $classes;
-    }    
+    }
 
 }

@@ -17,7 +17,7 @@
     color: white;
 
     &__credit { margin: 0;}
-    
+
     &--boxed {
         width: auto;
     }
@@ -28,40 +28,12 @@
             width: 100%;
             bottom: 0;
             z-index: -1;
-        }; 
+        };
     }
 
     // Container
     &__container {
         order: 2;
-    }
-
-
-    &--standard-width {
-        
-        .app-footer__container, .menu--footer__container, .bottom-bar__container {
-
-            @include screen('mobile') {        
-                padding-left: var( --footer--padding );
-                padding-right: var( --footer--padding );
-            };  
-
-            @include screen('tablet') {        
-                padding-left: var( --layout--content--padding );
-                padding-right: var( --layout--content--padding );
-            };              
-        }
-
-        &.boxed-layout {
-
-            .app-footer__container, .menu--footer__container, .bottom-bar__container {
-
-                @include screen('desktop') {        
-                    padding-left: var( --layout--content--padding );
-                    padding-right: var( --layout--content--padding );
-                };  
-            }          
-        }
     }
 
     &--fullwidth {
@@ -71,7 +43,6 @@
             max-width: 100%;
             padding-left: var( --footer--padding );
             padding-right: var( --footer--padding );
-
         }
     }
 
@@ -95,17 +66,16 @@
 
         font-size: var( --footer--widgets--font-size );
         line-height: var( --footer--widgets--line-height );
-    
+
         &__title {
-    
+
             padding: 0;
             margin-bottom: 0.5em;
-    
+
             font-size: var( --footer--widgets--title--font-size );
-            line-height: var( --footer--widgets--title--line-height );        
+            line-height: var( --footer--widgets--title--line-height );
         }
     }
-
 }
 
 // bottom bar styles

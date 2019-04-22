@@ -13,5 +13,5 @@
  */
 
 
-// Max Content Width
-$defaults->add( 'layout--content--max-width', '680px' );
+// Container Width
+$defaults->add( 'layout--container-desktop--width', '90%' );

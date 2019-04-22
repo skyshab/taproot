@@ -2,7 +2,7 @@
 /**
  * Styles for our section.
  *
- * This file creates the front end styles for our customizer controls. 
+ * This file creates the front end styles for our customizer controls.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
@@ -12,11 +12,12 @@
  */
 
 
+use function Taproot\Customize\is_boxed_layout;
 use function Rootstrap\get_theme_mod;
 
 
-// Var: Content Gutter
 $styles->add_var([
-    'name' => 'layout--content--padding',
-    'value' => get_theme_mod( 'layout--content-mobile--padding' ),
+    'name' => 'layout--boxed--outer-padding',
+    'value' => get_theme_mod( 'layout--boxed--outer-padding', null, true ),
+    'callback' => is_boxed_layout(),
 ]);

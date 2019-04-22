@@ -13,8 +13,5 @@
  */
 
 
-// Max Content Width
-$defaults->add( 'layout--site--max-width', '1060px' );
-
-// Boxed Layout Padding
-$defaults->add( 'layout--site--boxed-layout--padding', '4vw' );
+// Container Max Width
+$defaults->add( 'layout--containter--max-width', '1060px' );

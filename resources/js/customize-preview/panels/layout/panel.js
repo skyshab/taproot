@@ -11,9 +11,10 @@
  */
 
 
-import './site/preview.js'
+import './boxed/preview.js'
+import './container/preview.js'
+import './container-mobile/preview.js'
+import './container-tablet/preview.js'
+import './container-desktop/preview.js'
 import './content/preview.js'
-import './content-mobile/preview.js'
-import './content-tablet/preview.js'
-import './content-desktop/preview.js'
 import './sidebar/preview.js'

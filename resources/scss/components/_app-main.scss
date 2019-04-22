@@ -14,26 +14,22 @@
     margin: 0 auto;
     background-color: white;
     order: 1;
-    padding: var( --layout--content--padding );
-    max-width: var( --layout--content--max-width );
+    padding: var(--layout--container--padding) 0;
 
-    // desktop styles 
+
+    // desktop styles
     @include screen('desktop') {
+        padding: var(--layout--container--padding);
+
         &--sidebar-right {
-            &.fullscreen-layout {
-                padding-left: 0;
-            }
+            padding-left: 0;
         }
         &--sidebar-left {
-            &.fullscreen-layout {
-                padding-right: 0;
-            }            
-        }  
+            padding-right: 0;
+        }
         &--full {
-            &.fullscreen-layout {
-                padding-left: 0;
-                padding-right: 0;
-            } 
-        }  
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 }

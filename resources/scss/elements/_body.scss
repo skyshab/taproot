@@ -26,8 +26,8 @@ body {
 
     // customize default
     &.boxed-layout {
-        @include screen('tablet-and-up') {
-            padding: 4vw;
+        @include screen('desktop') {
+            padding: var(--layout--boxed--outer-padding);
         }
     }
 }

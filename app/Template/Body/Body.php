@@ -34,24 +34,24 @@ class Body implements Bootable {
 	 * @return void
 	 */
 	public function boot() {
-        add_filter( 'body_class', [ $this, 'body_classes' ] );        
+        add_filter( 'body_class', [ $this, 'body_classes' ] );
     }
-    
-       
+
+
     /**
      *  Add classes to body
-     * 
+     *
      * @since 1.0.0
      * @return void
      */
     public function body_classes( $classes ) {
 
         // add class for boxed layout
-        if( get_theme_mod( 'layout--site--boxed-layout' ) ) {
-            $classes[] = 'boxed-layout'; 
+        if( get_theme_mod('layout--boxed--enable') ) {
+            $classes[] = 'boxed-layout';
         }
 
         return $classes;
-    }      
-    
+    }
+
 }
