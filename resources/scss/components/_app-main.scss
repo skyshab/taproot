@@ -10,26 +10,27 @@
 ////
 
 .app-main {
-    width: 100%;
-    margin: 0 auto;
     background-color: white;
+    margin: 0 auto;
     order: 1;
+    width: 100%;
+    min-width: 0; // this is to fix problems with flexbox and pre elements breaking the layout
+    max-width: var( --layout--content--max-width );
     padding: var(--layout--container--padding) 0;
-
 
     // desktop styles
     @include screen('desktop') {
-        padding: var(--layout--container--padding);
+        box-sizing: content-box;
+        flex: 0 1 var(--layout--content--max-width);
 
         &--sidebar-right {
-            padding-left: 0;
+            padding: var(--layout--container--padding) var(--layout--container--padding) var(--layout--container--padding) 0;
         }
         &--sidebar-left {
-            padding-right: 0;
+            padding: var(--layout--container--padding) 0 var(--layout--container--padding) var(--layout--container--padding);
         }
         &--full {
-            padding-left: 0;
-            padding-right: 0;
+            padding: var(--layout--container--padding) 0;
         }
     }
 }

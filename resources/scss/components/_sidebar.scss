@@ -12,11 +12,10 @@
     order: 2;
     position: relative;
     flex: 1 0 100%;
+    padding: var(--layout--container--padding) 0;
     font-size: var( --typography--sidebar--font-size );
     line-height: var( --typography--sidebar--line-height );
     background-color: var( --layout--sidebar--background-color );
-    padding: var(--layout--container--padding) 0;
-
 
     &:before {
         content: " ";
@@ -33,8 +32,10 @@
     // Desktop Styles
     @include screen('desktop') {
 
+        box-sizing: content-box;
+        flex: 1 0 var(--layout--sidebar--min-width);
         padding: var(--layout--container--padding);
-        max-width: var( --layout--sidebar--width );
+
 
         &--right {
             padding-right: 0;
@@ -56,18 +57,9 @@
     }
 
     .widget {
-        max-width: var(--layout--content--max-width);
         margin-bottom: var( --typography--sidebar--block-spacing );
+        max-width: var(--layout--content--max-width);
         margin-left: auto;
         margin-right: auto;
-    }
-}
-
-
-@include screen('desktop') {
-    .app-main {
-        &--sidebar-right, &--sidebar-left {
-            max-width: calc( 100% - var( --layout--sidebar--width ) );
-        }
     }
 }

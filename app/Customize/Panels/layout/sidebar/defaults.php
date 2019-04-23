@@ -7,16 +7,11 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
 
 
-// Sidebar Width
-$defaults->add( 'layout--sidebar--width', '35%' );
-
-
-// Sidebar content max width
-$defaults->add( 'layout--sidebar--content--max-width', '400px' );
-
+// Sidebar Min Width
+$defaults->add( 'layout--sidebar--min-width', '260px' );
