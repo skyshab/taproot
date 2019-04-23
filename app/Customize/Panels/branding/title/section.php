@@ -2,11 +2,11 @@
 /**
  * Section setup.
  *
- * This file adds the section, settings and controls to the customizer. 
+ * This file adds the section, settings and controls to the customizer.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -48,15 +48,15 @@ $manager->add_setting( 'branding--title--display-title', [
 $manager->add_control( 'branding--title--display-title', [
     'type' => 'checkbox',
     'section' => 'branding--title',
-    'label' => esc_html__( 'Display Site Title', 'taproot' ),       
+    'label' => esc_html__( 'Display Site Title', 'taproot' ),
 ]);
 
 
 // Title Color
 color( $manager, 'branding--title--color', [
     'label'   => esc_html__( 'Title Color', 'taproot' ),
-    'section' => 'branding--title', 
-]); 
+    'section' => 'branding--title',
+]);
 
 
 // Font Family
@@ -70,7 +70,7 @@ $manager->add_control( 'branding--title--font-family', [
     'type' => 'select',
     'section' => 'branding--title',
     'label' => esc_html__( 'Font Family', 'taproot' ),
-    'choices' => get_font_choices(),       
+    'choices' => get_font_choices(),
 ]);
 
 

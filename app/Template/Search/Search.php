@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -36,11 +36,11 @@ class Search implements Bootable {
 	public function boot() {
         add_filter( 'get_search_form', [ $this, 'searchform' ] );
     }
-    
-       
+
+
     /**
      *  Get search form markup
-     * 
+     *
      * @since 1.0.0
      * @return void
      */

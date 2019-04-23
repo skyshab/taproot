@@ -2,11 +2,11 @@
 /**
  * Styles for our section.
  *
- * This file creates the front end styles for our customizer controls. 
+ * This file creates the front end styles for our customizer controls.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -27,15 +27,15 @@ switch( $footer_layout ) {
         $footer_widget_styles = 'repeat(3, 1fr)';
         break;
 
-    case 'halves':      
+    case 'halves':
         $footer_widget_styles = 'repeat(2, 1fr)';
         break;
 
-    case 'full':       
+    case 'full':
         $footer_widget_styles = '100%';
         break;
 
-    case 'one-third-two-thirds':       
+    case 'one-third-two-thirds':
         $footer_widget_styles = '1fr 2fr';
         break;
 
@@ -49,7 +49,7 @@ switch( $footer_layout ) {
 
     case 'half-quarter-quarter':
         $footer_widget_styles = '2fr 1fr 1fr';
-        break;   
+        break;
 
     default:
         $footer_widget_styles = false;

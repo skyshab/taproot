@@ -2,11 +2,11 @@
 /**
  * Styles for our section.
  *
- * This file creates the front end styles for our customizer controls. 
+ * This file creates the front end styles for our customizer controls.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -39,9 +39,9 @@ $show_tagline = get_theme_mod( 'branding--tagline--display-tagline', null, true 
 if( !$show_tagline ) {
     $styles->add([
         'selector' => '.app-header__title',
-        'styles' => [ 
+        'styles' => [
             'grid-row-end' => 'span 2',
-            'align-self' => 'center', 
+            'align-self' => 'center',
         ],
-    ]);    
+    ]);
 }

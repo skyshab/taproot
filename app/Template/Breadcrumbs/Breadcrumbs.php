@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -37,9 +37,9 @@ class Breadcrumbs implements Bootable {
 	 */
 	public function boot() {
         add_filter( 'hybrid/breadcrumbs/trail', [ $this, 'breadcrumbs_home_icon' ] );
-        add_action( 'taproot/template/breadcrumbs', [ $this, 'render' ] );        
+        add_action( 'taproot/template/breadcrumbs', [ $this, 'render' ] );
     }
-    
+
 
     /**
      * Add breadcrumbs home icon
@@ -64,6 +64,6 @@ class Breadcrumbs implements Bootable {
     function render( $args ) {
         if( !get_theme_mod( 'elements--breadcrumbs--enable', null, true ) ) return;
         Trail::display();
-    }    
+    }
 
 }

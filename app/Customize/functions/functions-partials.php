@@ -4,7 +4,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -14,7 +14,7 @@
  * Render the site logo for the selective refresh partial.
  *
  * @since 1.0.0
- * 
+ *
  * @return void
  */
 function taproot_customize_partial_logo() {
@@ -28,7 +28,7 @@ function taproot_customize_partial_logo() {
  * Render the site title for the selective refresh partial.
  *
  * @since 1.0.0
- * 
+ *
  * @return void
  */
 function taproot_customize_partial_blogname() {
@@ -40,7 +40,7 @@ function taproot_customize_partial_blogname() {
  * Render the site tagline for the selective refresh partial.
  *
  * @since 1.0.0
- * 
+ *
  * @return void
  */
 function taproot_customize_partial_blogdescription() {
@@ -52,7 +52,7 @@ function taproot_customize_partial_blogdescription() {
  * Render the phone info for the selective refresh partial.
  *
  * @since 1.0.0
- * 
+ *
  * @return void
  */
 function taproot_customize_partial_phone_info() {
@@ -66,7 +66,7 @@ function taproot_customize_partial_phone_info() {
  * Render the phone info for the selective refresh partial.
  *
  * @since 1.0.0
- * 
+ *
  * @return void
  */
 function taproot_customize_partial_email_info() {
@@ -80,11 +80,11 @@ function taproot_customize_partial_email_info() {
  * Render the bottom bar content for the selective refresh partial.
  *
  * @since 1.0.0
- * 
+ *
  * @return void
  */
 function taproot_customize_partial_bottom_bar_content() {
     $bb_content  = get_option( 'taproot_bottom_bar_content', false );
     if( ! $bb_content ) return;
     echo wp_kses_post( $bb_content );
-}   
+}

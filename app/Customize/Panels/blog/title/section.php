@@ -2,11 +2,11 @@
 /**
  * Section setup.
  *
- * This file adds the section, settings and controls to the customizer. 
+ * This file adds the section, settings and controls to the customizer.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -33,7 +33,7 @@ $manager->add_section( 'blog--title', [
 # =======================================================
 
 
-// Setting: Blog Page Title       
+// Setting: Blog Page Title
 $manager->add_setting( 'blog--title--title', [
     'sanitize_callback' => 'sanitize_text_field',
     'transport' => 'refresh',
@@ -42,15 +42,15 @@ $manager->add_setting( 'blog--title--title', [
 $manager->add_control( 'blog--title--title', [
     'type' => 'text',
     'section' => 'blog--title',
-    'label' => esc_html__( 'Blog Page Title', 'taproot' ),        
+    'label' => esc_html__( 'Blog Page Title', 'taproot' ),
 ]);
 
 
 // Color Setting: Title Color
 color( $manager, 'blog--title--color', [
     'label'   => esc_html__( 'Title Color', 'taproot' ),
-    'section' => 'blog--title',  
-]);  
+    'section' => 'blog--title',
+]);
 
 
 // Font Styles
@@ -58,7 +58,7 @@ $manager->add_setting( 'blog--title--font-styles', [
     'transport' => 'postMessage'
 ]);
 
-$manager->add_control( new Font_Styles( $manager, 
+$manager->add_control( new Font_Styles( $manager,
     'blog--title--font-styles', [
         'section'   => 'blog--title',
         'label'     => esc_html__( 'Title Font Styles', 'taproot' ),

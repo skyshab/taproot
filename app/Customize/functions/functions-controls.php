@@ -4,7 +4,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -111,7 +111,7 @@ function get_font_choices() {
  * @return string
  */
 function bottom_bar_default_content() {
-    return esc_html__( '&#169;2018, My Awesome Site', 'taproot' );
+    return esc_html__( '&#169;2019, My Awesome Site', 'taproot' );
 }
 
 

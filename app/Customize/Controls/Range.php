@@ -4,7 +4,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -14,7 +14,7 @@ namespace Taproot\Customize\Controls;
 use WP_Customize_Control;
 
 
-/** 
+/**
  * Range-based sliding value picker for Customizer.
  *
  * @since 1.0.0
@@ -27,7 +27,7 @@ class Range extends WP_Customize_Control {
      *
      * @since 1.0.0
      * @var string
-     */     
+     */
     public $type = 'taproot-range';
 
 
@@ -41,37 +41,37 @@ class Range extends WP_Customize_Control {
      * Render control markup.
      *
      * @since 1.0.0
-     */ 
-    public function render_content() {     
+     */
+    public function render_content() {
 
         $default_value = $this->settings[0]->default;
         $default_number = floatval( $default_value );
 
         // process the unit value
         $default_unit = preg_replace('/\d/', '', $default_value );
-        $default_unit = str_replace('.', '', $default_unit); 
-        $default_unit = ('' != $default_unit ) ? $default_unit : 'unitless';    
+        $default_unit = str_replace('.', '', $default_unit);
+        $default_unit = ('' != $default_unit ) ? $default_unit : 'unitless';
 
         // is control enabled?
         $control_enabled = ( null !== $this->value(1) ) ? $this->value(1) : 1;
 
         // set default values
-        $value = '';          
+        $value = '';
         $numeric_value = '';
-        $unit_value = ''; 
+        $unit_value = '';
 
         // if a value is set
         if( $this->value(0) ) {
             $value = $this->value(0);
-            $numeric_value = floatval( $value ); 
+            $numeric_value = floatval( $value );
             $unit_value = preg_replace('/\d/', '', $value );
-            $unit_value = str_replace('.', '', $unit_value);             
-            $unit_value = ('' != $unit_value ) ? $unit_value : 'unitless';                
-        } 
+            $unit_value = str_replace('.', '', $unit_value);
+            $unit_value = ('' != $unit_value ) ? $unit_value : 'unitless';
+        }
         // otherwise, is there a default?
-        elseif( $default_value ) {    
-            $value = $default_value;                
-        }           
+        elseif( $default_value ) {
+            $value = $default_value;
+        }
 
         $attributes = $this->atts;
         $input_attrs = isset( $attributes[$unit_value] ) ? $attributes[$unit_value] : [];
@@ -99,14 +99,14 @@ class Range extends WP_Customize_Control {
                 <span class="taproot-range-enable-message"> <?php echo esc_html__('click to enable', 'taproot'); ?> </span>
                 <input type="range" class="taproot-range" <?php echo $initial_atts; ?> value="<?php echo esc_attr( $numeric_value ); ?>" data-reset_value="<?php echo esc_attr( $default_number ); ?>" />
                 <input type="number" class="taproot-range-input" <?php echo $initial_atts; ?> value="<?php echo esc_attr( $numeric_value ); ?>" />
-                
+
                 <?php $disabled = ( 1 === count($attributes) ) ? 'disabled' : ''; ?>
 
                 <select class="taproot-unit" data-reset_value="<?php echo esc_attr( $default_unit ); ?>" <?php echo esc_attr( $disabled ) ?> >
                     <?php
                     foreach( $attributes as $unit => $atts ) {
-                        $a_list = $this->get_attributes( $atts );  
-                        $unit_name = ( 'unitless' === $unit ) ? '' : $unit;                     
+                        $a_list = $this->get_attributes( $atts );
+                        $unit_name = ( 'unitless' === $unit ) ? '' : $unit;
                         printf( '<option value="%s" %s %s>%s</option>', $unit, selected($unit_value, $unit, false), $a_list, $unit_name );
                     } ?>
                 </select>
@@ -125,7 +125,7 @@ class Range extends WP_Customize_Control {
      * Get Attributes markup
      *
      * @since 1.0.0
-     */ 
+     */
     public function get_attributes( $atts ) {
 
         $attributes = '';
@@ -136,15 +136,15 @@ class Range extends WP_Customize_Control {
 
         if( isset( $atts['max'] ) ) {
             $attributes .= sprintf( 'max="%s" ', $atts['max'] );
-        }    
-        
+        }
+
         if( isset( $atts['step'] ) ) {
             $attributes .= sprintf( 'step="%s" ', $atts['step'] );
-        }     
-        
+        }
+
         if( isset( $atts['default'] ) ) {
             $attributes .= sprintf( 'default="%s" ', $atts['default'] );
-        } 
+        }
 
         return $attributes;
     }

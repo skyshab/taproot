@@ -2,11 +2,11 @@
 /**
  * Styles for our section.
  *
- * This file creates the front end styles for our customizer controls. 
+ * This file creates the front end styles for our customizer controls.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -72,7 +72,7 @@ if( has_nav_menu( 'navbar' ) ) {
             'styles' => array(
                 'font-family' => get_font_family( get_theme_mod( 'nav--navbar-fixed--font-family' ) ),
             ),
-            'screen' => 'desktop', 
+            'screen' => 'desktop',
         ]);
 
 
@@ -82,7 +82,7 @@ if( has_nav_menu( 'navbar' ) ) {
             'styles' => array(
                 'color' => get_theme_mod( 'nav--navbar-fixed--link-color' ),
             ),
-            'screen' => 'desktop', 
+            'screen' => 'desktop',
         ]);
 
 
@@ -139,4 +139,4 @@ if( has_nav_menu( 'navbar' ) ) {
 
     } // end if show when fixed
 
-}    
+}

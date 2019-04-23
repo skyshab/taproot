@@ -4,7 +4,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -26,46 +26,46 @@ class Panel  {
 
     /**
      * Stores panel id
-     * 
+     *
      * @since 1.0.0
      * @var string
-     */ 
+     */
     private $id = false;
 
 
     /**
      * Stores sections
-     * 
+     *
      * @since 1.0.0
      * @var array
-     */ 
+     */
     private $args = false;
 
 
     /**
      * Stores sections
-     * 
+     *
      * @since 1.0.0
      * @var array
-     */ 
+     */
     private $sections = false;
 
 
     /**
      * Stores tabs
-     * 
+     *
      * @since 1.0.0
      * @var array
-     */ 
+     */
     private $tabs = [];
 
 
     /**
      * Stores sequences
-     * 
+     *
      * @since 1.0.0
      * @var array
-     */ 
+     */
     private $sequences = [];
 
 
@@ -73,12 +73,12 @@ class Panel  {
      * Set up our object
      *
      * @since 1.0.0
-     * 
+     *
      * @param  string $id
      * @param  array $args
      */
     public function __construct( $id, $args ) {
-        $this->id = $id; 
+        $this->id = $id;
         $this->args = $args;
         $this->boot();
     }
@@ -98,7 +98,7 @@ class Panel  {
         add_filter( 'rootstrap/tabs', [ $this, 'customize_tabs_filter' ] );
         add_action( 'customize_register', [ $this, 'customize_register' ] );
     }
-    
+
 
 	/**
 	 * Setup panels and sections
@@ -110,7 +110,7 @@ class Panel  {
 	public function setup() {
         $file = path( $this->id, 'panel.php' );
         $panel = $this;
-        include_once $file;        
+        include_once $file;
     }
 
 
@@ -129,12 +129,12 @@ class Panel  {
 
         if( ! $this->sections ) return;
 
-        foreach ( $this->sections as $section ) {  
+        foreach ( $this->sections as $section ) {
 
             // load defaults.php
             $file = path( $panel, $section, 'defaults.php' );
             $path = get_parent_theme_file_path( path( 'app', 'Customize', 'Panels', $file ) );
-            if( file_exists( $path ) ) include_once $file;              
+            if( file_exists( $path ) ) include_once $file;
         }
     }
 
@@ -152,22 +152,22 @@ class Panel  {
         $panel = $this->id;
 
         if( !empty( $this->args ) )
-            $manager->add_panel( $panel, $this->args );  
+            $manager->add_panel( $panel, $this->args );
 
         if( ! $this->sections ) return;
 
-        foreach ( $this->sections as $section ) {  
+        foreach ( $this->sections as $section ) {
 
             // load section.php
             $file = path( $panel, $section, 'section.php' );
             $path = get_parent_theme_file_path( path( 'app', 'Customize', 'Panels', $file ) );
-            if( file_exists( $path ) ) include_once $file;  
-            
+            if( file_exists( $path ) ) include_once $file;
+
             // load partials.php
             if ( isset( $manager->selective_refresh ) ) {
                 $partials_file = path( $panel, $section, 'partials.php' );
                 $partials_path = get_parent_theme_file_path( path( 'app', 'Customize', $partials_file ) );
-                if( file_exists( $partials_path ) ) include_once $partials_file;  
+                if( file_exists( $partials_path ) ) include_once $partials_file;
             }
         }
     }
@@ -184,7 +184,7 @@ class Panel  {
         if( $sections && is_array( $sections ) ) $this->sections = $sections;
         else return $this->sections;
     }
-    
+
 
 	/**
 	 * Load section styles
@@ -199,9 +199,9 @@ class Panel  {
         foreach( $this->sections as $section ) {
             $file = path( $panel, $section, 'styles.php' );
             $path = get_parent_theme_file_path( path( 'app', 'Customize', 'Panels', $file ) );
-            if( file_exists( $path ) ) include_once $file;                
+            if( file_exists( $path ) ) include_once $file;
         }
-    } 
+    }
 
 
 	/**
@@ -226,8 +226,8 @@ class Panel  {
 	 * @return array
 	 */
 	public function customize_tabs_filter( array $tabs ) {
-        return array_merge( $tabs, $this->tabs ); 
-    }  
+        return array_merge( $tabs, $this->tabs );
+    }
 
 
 	/**
@@ -252,7 +252,7 @@ class Panel  {
 	 * @return array
 	 */
 	public function customize_sequences_filter( $sequences ) {
-        return array_merge( $sequences, $this->sequences ); 
-    }     
+        return array_merge( $sequences, $this->sequences );
+    }
 
 }

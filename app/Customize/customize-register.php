@@ -1,12 +1,12 @@
 <?php
 /**
  * Customize Register
- * 
- * Add any additional customize register actions here. 
+ *
+ * Add any additional customize register actions here.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -89,7 +89,7 @@ if( $manager->get_control( 'display_header_text' ) ) {
 
 // If the selective refresh component is available
 if ( isset( $manager->selective_refresh ) ) {
-        
+
     // Selectively refreshes the title in the header when the core
     // WP `blogname` setting changes.
     $manager->selective_refresh->add_partial( 'blogname', [
@@ -98,7 +98,7 @@ if ( isset( $manager->selective_refresh ) ) {
             return get_bloginfo( 'name', 'display' );
         }
     ]);
-    
+
     // Selectively refreshes the description in the header when the
     // core WP `blogdescription` setting changes.
     $manager->selective_refresh->add_partial( 'blogdescription', [
@@ -107,7 +107,7 @@ if ( isset( $manager->selective_refresh ) ) {
             return get_bloginfo( 'description', 'display' );
         }
     ]);
-    
+
     // Selectively refreshes the custom header if it doesn't support
     // videos. Core WP won't properly refresh output from its own
     // `the_custom_header_markup()` function unless video is supported.

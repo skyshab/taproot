@@ -41,8 +41,8 @@
 .alignwide {
 	width: auto;
     max-width: 100vw;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-top: var(--layout--block-spacing--large);
+    margin-bottom: var(--layout--block-spacing--large);
 
     // force image to fill space
     img {

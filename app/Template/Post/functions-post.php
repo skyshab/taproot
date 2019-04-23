@@ -7,7 +7,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -28,7 +28,7 @@ function archive_link() {
 
     $link_style = get_theme_mod( 'blog--archive-link--style', null, true );
 
-    if( get_theme_mod('taproot_post_show_all') || 'inline' === $link_style || 'none' === $link_style ) 
+    if( get_theme_mod('taproot_post_show_all') || 'inline' === $link_style || 'none' === $link_style )
         return false;
 
     $link_text = get_theme_mod( 'blog--archive-link--text', null, true );
@@ -37,11 +37,11 @@ function archive_link() {
     $link_class .= ( 'right' === $link_position ) ? 'align-self--right ' : '';
     $link_class .= 'entry__link';
 
-    printf( '<a href="%s" class="%s"><span class="visuallyhidden">%s</span>%s</a>',  
-        esc_url( get_permalink() ), 
-        esc_attr( $link_class ), 
-        esc_html( get_the_title() ), 
-        esc_html( $link_text ) 
+    printf( '<a href="%s" class="%s"><span class="visuallyhidden">%s</span>%s</a>',
+        esc_url( get_permalink() ),
+        esc_attr( $link_class ),
+        esc_html( get_the_title() ),
+        esc_html( $link_text )
     );
 }
 
@@ -58,10 +58,10 @@ function blog_title() {
     // define allowed html
     $allowed = [
         'em' => [],
-        'strong' => [],  
+        'strong' => [],
         'i' => [
             'class' => []
-        ]          
+        ]
     ];
 
     // echol filtered blog title content
@@ -123,14 +123,14 @@ function render_author( array $args = [] ) {
  * @since  1.0.0
  * @param  array  $args
  * @return string
- */    
+ */
 function featured_image( $args = [], $type = '' ) {
 
     if( !apply_filters( 'taproot/template/featured-image/display', true, $type ) ) return;
 
     $args = wp_parse_args( $args, [
         'size' => 'full',
-    ]);    
+    ]);
 
     Featured_Image::display( 'featured', $args );
 }

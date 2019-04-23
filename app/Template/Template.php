@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -23,8 +23,8 @@ use Hybrid\Contracts\Bootable;
  * @access public
  */
 class Template implements Bootable {
-    
-     
+
+
 	/**
 	 * Load dependencies and boot our Template component classes
 	 *
@@ -33,9 +33,9 @@ class Template implements Bootable {
 	 * @return void
 	 */
 	public function boot() {
-        
+
         // load dependencies
-        $this->load_dependencies();       
+        $this->load_dependencies();
 
         // boot component classes
         array_map( function( $component ) {
@@ -53,7 +53,7 @@ class Template implements Bootable {
             'Footer',
             'Post',
             'Search'
-        ]);  
+        ]);
     }
 
 
@@ -65,7 +65,7 @@ class Template implements Bootable {
 	 * @return void
 	 */
 	private function load_dependencies() {
-        
+
         // load template functions
         array_map( function( $file ) {
             require_once( get_parent_theme_file_path( "app/Template/{$file}.php" ) );

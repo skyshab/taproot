@@ -2,11 +2,11 @@
 /**
  * Section setup.
  *
- * This file adds the section, settings and controls to the customizer. 
+ * This file adds the section, settings and controls to the customizer.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -34,22 +34,22 @@ $manager->add_section( 'footer--bottom-bar', [
 // Color Setting: Background Color
 color( $manager, 'footer--bottom-bar--background-color', [
     'label'   => esc_html__( 'Bottom Bar Background Color', 'taproot' ),
-    'section' => 'footer--bottom-bar',  
-]); 
+    'section' => 'footer--bottom-bar',
+]);
 
 
 // Color Setting: Bottom Bar Default Color
 color( $manager, 'footer--bottom-bar--default-color', [
     'label'   => esc_html__( 'Bottom Bar Default Color', 'taproot' ),
-    'section' => 'footer--bottom-bar',  
-]); 
+    'section' => 'footer--bottom-bar',
+]);
 
 
 // Color Setting: Bottom Bar Default Color
 color( $manager, 'footer--bottom-bar--default-color--hover', [
     'label'   => esc_html__( 'Bottom Bar Default Color: Hover', 'taproot' ),
-    'section' => 'footer--bottom-bar',  
-]); 
+    'section' => 'footer--bottom-bar',
+]);
 
 
 // Setting: Bottom Bar Content

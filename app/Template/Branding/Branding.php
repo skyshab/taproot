@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -37,7 +37,7 @@ class Branding implements Bootable {
         add_filter( 'hybrid/site/title', [ $this, 'site_title' ]  );
         add_filter( 'hybrid/site/description', [ $this, 'site_description' ]  );
     }
-       
+
 
     /**
      * Display Site Title filter
@@ -47,11 +47,11 @@ class Branding implements Bootable {
      * @return string
      */
     public function site_title( $title ) {
-        if( get_theme_mod( 'branding--title--display-title', null, true ) ) 
+        if( get_theme_mod( 'branding--title--display-title', null, true ) )
             return $title;
-        
+
         return false;
-    }    
+    }
 
 
     /**
@@ -64,8 +64,8 @@ class Branding implements Bootable {
     public function site_description( $description ) {
         if( get_theme_mod( 'branding--tagline--display-tagline', null, true ) )
             return $description;
-        
+
         return false;
-    }  
+    }
 
 }

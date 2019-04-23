@@ -2,11 +2,11 @@
 /**
  * Section setup.
  *
- * This file adds the section, settings and controls to the customizer. 
+ * This file adds the section, settings and controls to the customizer.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -42,27 +42,27 @@ $manager->add_setting( 'posts--nav--enable', [
 $manager->add_control( 'posts--nav--enable', [
     'type' => 'checkbox',
     'section' => 'posts--nav',
-    'label' => esc_html__( 'Enable Post Nav', 'taproot' ),      
+    'label' => esc_html__( 'Enable Post Nav', 'taproot' ),
 ]);
 
 
 // Color Setting: Navigation Bar Postnav Link Color
 color( $manager, 'posts--nav--color', [
     'label'   => esc_html__( 'Link Color', 'taproot' ),
-    'section' => 'posts--nav',  
-]); 
+    'section' => 'posts--nav',
+]);
 
 
 // Color Setting: Navigation Bar Postnav Link Color
 color( $manager, 'posts--nav--color--hover', [
     'label'   => esc_html__( 'Link Color - Hover', 'taproot' ),
-    'section' => 'posts--nav',  
+    'section' => 'posts--nav',
 ]);
 
 // Setting: Post Navigation Font Size
 range( $manager, 'posts--nav--font-size', [
     'section' => 'posts--nav',
-    'label' => esc_html__('Font Size', 'taproot'),    
+    'label' => esc_html__('Font Size', 'taproot'),
     'atts' => range_atts( 'text' )
 ]);
 
@@ -76,8 +76,8 @@ $manager->add_setting( 'posts--nav--prev', [
 $manager->add_control( 'posts--nav--prev', [
     'type' => 'text',
     'section' => 'posts--nav',
-    'label' => esc_html__( 'Previous Post Text', 'taproot' ),       
-]);      
+    'label' => esc_html__( 'Previous Post Text', 'taproot' ),
+]);
 
 
 // Setting: Post Navigation "next" content
@@ -89,5 +89,5 @@ $manager->add_setting( 'posts--nav--next', [
 $manager->add_control( 'posts--nav--next', [
     'type' => 'text',
     'section' => 'posts--nav',
-    'label' => esc_html__( 'Next Post Text', 'taproot' ),      
-]);    
+    'label' => esc_html__( 'Next Post Text', 'taproot' ),
+]);

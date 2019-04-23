@@ -2,11 +2,11 @@
 /**
  * Section setup.
  *
- * This file adds the section, settings and controls to the customizer. 
+ * This file adds the section, settings and controls to the customizer.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -35,7 +35,7 @@ $manager->add_section( 'blog--pagination', [
 // Setting: Pagination Size
 range( $manager, 'blog--pagination--font-size', [
     'section' => 'blog--pagination',
-    'label' => esc_html__('Pagination Size', 'taproot'),    
+    'label' => esc_html__('Pagination Size', 'taproot'),
     'atts' => range_atts()
 ]);
 
@@ -43,24 +43,24 @@ range( $manager, 'blog--pagination--font-size', [
 // Setting: Pagination Spacing
 range( $manager, 'blog--pagination--spacing', [
     'section' => 'blog--pagination',
-    'label' => esc_html__('Pagination Spacing', 'taproot'),    
+    'label' => esc_html__('Pagination Spacing', 'taproot'),
     'atts' => [
         'px' => [
             'max' => 32,
             'default' => 5
-        ],   
+        ],
         'em' => [
             'max' => 2,
             'default' => 0.3
-        ], 
+        ],
         '%' => [
             'default' => 2
-        ],                       
+        ],
     ]
 ]);
 
 
-// Setting: Circular Pagination 
+// Setting: Circular Pagination
 $manager->add_setting( 'blog--pagination--rounded', [
     'sanitize_callback' => 'taproot_sanitize_checkbox',
     'transport' => 'postMessage',
@@ -76,19 +76,19 @@ $manager->add_control( 'blog--pagination--rounded', [
 // Color Setting: Pagination Link Color
 color( $manager, 'blog--pagination--link--color', [
     'label'   => esc_html__( 'Pagination Link Color', 'taproot' ),
-    'section' => 'blog--pagination',  
-]); 
+    'section' => 'blog--pagination',
+]);
 
 
 // Color Setting: Pagination Numbers Background
 color( $manager, 'blog--pagination--background-color', [
     'label'   => esc_html__( 'Pagination Background Color', 'taproot' ),
-    'section' => 'blog--pagination',  
-]); 
+    'section' => 'blog--pagination',
+]);
 
 
 // Color Setting: Pagination Numbers Color
 color( $manager, 'blog--pagination--color', [
     'label'   => esc_html__( 'Pagination Color', 'taproot' ),
-    'section' => 'blog--pagination',  
-]); 
+    'section' => 'blog--pagination',
+]);

@@ -2,11 +2,11 @@
 /**
  * Section setup.
  *
- * This file adds the section, settings and controls to the customizer. 
+ * This file adds the section, settings and controls to the customizer.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -34,8 +34,8 @@ $manager->add_section( 'nav--navbar', [
 # Add Settings & Controls
 # =======================================================
 
-   
-// Setting: Hide when not mobile 
+
+// Setting: Hide when not mobile
 $manager->add_setting( 'nav--navbar--hide', [
     'sanitize_callback' => 'taproot_sanitize_checkbox',
     'transport' => 'refresh',
@@ -51,21 +51,21 @@ $manager->add_control( 'nav--navbar--hide', [
 // Color Setting: Background Color
 color( $manager, 'nav--navbar--background-color', [
     'label'   => esc_html__( 'Background Color', 'taproot' ),
-    'section' => 'nav--navbar',  
-]); 
+    'section' => 'nav--navbar',
+]);
 
 // Setting: Navbar Height
 range( $manager, 'nav--navbar--height', [
     'section' => 'nav--navbar',
-    'label' => esc_html__('Navbar Height', 'taproot'), 
+    'label' => esc_html__('Navbar Height', 'taproot'),
     'atts'  => [
         'px' => [
             'max' => 100,
             'default' => 50,
-        ],        
+        ],
         'em' => [
             'max' => 6,
-        ],                 
+        ],
     ]
 ]);
 
@@ -85,7 +85,7 @@ $manager->add_control( 'nav--navbar--align', [
         'flex-end' => esc_html__( 'Right', 'taproot' ),
         'center' => esc_html__( 'Center', 'taproot' ),
         'space-between' => esc_html__( 'Fill', 'taproot' ),
-    ]       
+    ]
 ]);
 
 
@@ -100,7 +100,7 @@ $manager->add_control( 'nav--navbar--font-family', [
     'type' => 'select',
     'section' => 'nav--navbar',
     'label' => esc_html__( 'Font Family', 'taproot' ),
-    'choices' => get_font_choices(),       
+    'choices' => get_font_choices(),
 ]);
 
 
@@ -118,21 +118,21 @@ $manager->add_control( new Font_Styles( $manager, 'nav--navbar--font-styles', [
 // Color Setting: Link Color
 color( $manager, 'nav--navbar--link-color', [
     'label'   => esc_html__( 'Link Color', 'taproot' ),
-    'section' => 'nav--navbar',  
-]); 
+    'section' => 'nav--navbar',
+]);
 
 
 // Color Setting: Link Color Hover
 color( $manager, 'nav--navbar--link-color--hover', [
     'label'   => esc_html__( 'Link Color: Hover', 'taproot' ),
-    'section' => 'nav--navbar',  
-]); 
+    'section' => 'nav--navbar',
+]);
 
 
 // Setting: Menu Item Font Size
 range( $manager, 'nav--navbar--font-size', [
     'section' => 'nav--navbar',
-    'label' => esc_html__('Font Size', 'taproot'), 
+    'label' => esc_html__('Font Size', 'taproot'),
     'atts' => range_atts('text')
 ]);
 
@@ -140,14 +140,14 @@ range( $manager, 'nav--navbar--font-size', [
 // menu item padding
 range( $manager, 'nav--navbar--padding', [
     'section' => 'nav--navbar',
-    'label' => esc_html__('Menu Item Padding', 'taproot'), 
+    'label' => esc_html__('Menu Item Padding', 'taproot'),
     'atts'  => [
         'px' => [
             'max' => 64,
-        ],        
+        ],
         'em' => [
             'max' => 4,
-        ],                        
+        ],
     ]
 ]);
 
@@ -155,19 +155,19 @@ range( $manager, 'nav--navbar--padding', [
 // Color Setting: Dropdown Background Color
 color( $manager, 'nav--navbar--dropdown--background-color', [
     'label'   => esc_html__( 'Dropdown Background Color', 'taproot' ),
-    'section' => 'nav--navbar',  
-]); 
+    'section' => 'nav--navbar',
+]);
 
 
 // Color Setting: Dropdown Link Color
 color( $manager, 'nav--navbar--dropdown--link--color', [
     'label'   => esc_html__( 'Dropdown Link Color', 'taproot' ),
-    'section' => 'nav--navbar',  
-]); 
+    'section' => 'nav--navbar',
+]);
 
 
 // Color Setting: Dropdown Link Color Hover
 color( $manager, 'nav--navbar--dropdown--link--color--hover', [
     'label'   => esc_html__( 'Dropdown Link Color: Hover', 'taproot' ),
-    'section' => 'nav--navbar',  
-]); 
+    'section' => 'nav--navbar',
+]);

@@ -2,11 +2,11 @@
 /**
  * Styles for our section.
  *
- * This file creates the front end styles for our customizer controls. 
+ * This file creates the front end styles for our customizer controls.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -20,7 +20,7 @@ use function Rootstrap\get_theme_mod;
 // Button Styles
 $styles->add([
     'selector' => '.taproot-button, .comment-respond__submit',
-    'styles' => [ 
+    'styles' => [
         'border-color'      =>  get_theme_mod( 'elements--buttons--border-color' ),
         'border-width'      =>  get_theme_mod( 'elements--buttons--border-width' ),
         'border-radius'     =>  get_theme_mod( 'elements--buttons--border-radius' ),
@@ -35,7 +35,7 @@ $styles->add([
 // Button Background
 $styles->add([
     'selector' => '.taproot-button, .comment-respond__submit',
-    'styles' => [ 
+    'styles' => [
         'background-color' => get_theme_mod( 'elements--buttons--background-color' ),
     ]
 ]);
@@ -44,7 +44,7 @@ $styles->add([
 // Text Color
 $styles->add([
     'selector' => '.taproot-button:link, .taproot-button:visited, .comment-respond__submit',
-    'styles' => [ 
+    'styles' => [
         'color' =>  get_theme_mod( 'elements--buttons--color' ),
     ]
 ]);

@@ -2,11 +2,11 @@
 /**
  * Section setup.
  *
- * This file adds the section, settings and controls to the customizer. 
+ * This file adds the section, settings and controls to the customizer.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -33,7 +33,7 @@ $manager->add_section( 'elements--breadcrumbs', [
 # =======================================================
 
 
-// Setting: Enable Breadcrumbs  
+// Setting: Enable Breadcrumbs
 $manager->add_setting( 'elements--breadcrumbs--enable', [
     'sanitize_callback' => 'taproot_sanitize_checkbox',
     'transport' => 'refresh',
@@ -67,12 +67,12 @@ $manager->add_control( 'elements--breadcrumbs--align', [
 // Setting: Breadcrumb font size
 range( $manager, 'elements--breadcrumbs--font-size', [
     'section' => 'elements--breadcrumbs',
-    'label' => esc_html__('Breadcrumbs Font Size', 'taproot'), 
+    'label' => esc_html__('Breadcrumbs Font Size', 'taproot'),
     'atts' => range_atts()
 ]);
 
 
-// Setting: Use Home Icon  
+// Setting: Use Home Icon
 $manager->add_setting( 'elements--breadcrumbs--home-icon', [
     'sanitize_callback' => 'taproot_sanitize_checkbox',
     'transport' => 'refresh',
@@ -88,12 +88,12 @@ $manager->add_control( 'elements--breadcrumbs--home-icon', [
 // Color Setting: Text Color
 color( $manager, 'elements--breadcrumbs--color', [
     'label'   => esc_html__( 'Text Color', 'taproot' ),
-    'section' => 'elements--breadcrumbs',  
-]); 
+    'section' => 'elements--breadcrumbs',
+]);
 
 
 // Color Setting: Text Color Hover
 color( $manager, 'elements--breadcrumbs--color--hover', [
     'label'   => esc_html__( 'Hover Color', 'taproot' ),
-    'section' => 'elements--breadcrumbs',  
-]); 
+    'section' => 'elements--breadcrumbs',
+]);

@@ -2,11 +2,11 @@
 /**
  * Section setup.
  *
- * This file adds the section, settings and controls to the customizer. 
+ * This file adds the section, settings and controls to the customizer.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -52,7 +52,7 @@ $manager->add_control( 'footer--widgets-mobile--layout', [
 // Setting: Font Size
 range( $manager, 'footer--widgets-mobile--font-size', [
     'section' => 'footer--widgets-mobile',
-    'label' => esc_html__('Font Size', 'taproot'), 
+    'label' => esc_html__('Font Size', 'taproot'),
     'atts' => range_atts('text')
 ]);
 
@@ -60,7 +60,7 @@ range( $manager, 'footer--widgets-mobile--font-size', [
 // Setting: Line Height
 range( $manager, 'footer--widgets-mobile--line-height', [
     'section' => 'footer--widgets-mobile',
-    'label' => esc_html__('Line Height', 'taproot'), 
+    'label' => esc_html__('Line Height', 'taproot'),
     'atts' => range_atts('line-height')
 ]);
 
@@ -68,7 +68,7 @@ range( $manager, 'footer--widgets-mobile--line-height', [
 // Setting: Title Font Size
 range( $manager, 'footer--widgets-mobile--title--font-size', [
     'section' => 'footer--widgets-mobile',
-    'label' => esc_html__('Title Font Size', 'taproot'), 
+    'label' => esc_html__('Title Font Size', 'taproot'),
     'atts' => range_atts('heading')
 ]);
 
@@ -76,7 +76,7 @@ range( $manager, 'footer--widgets-mobile--title--font-size', [
 // Setting: Title Line Height
 range( $manager, 'footer--widgets-mobile--title--line-height', [
     'section' => 'footer--widgets-mobile',
-    'label' => esc_html__('Title Line Height', 'taproot'), 
+    'label' => esc_html__('Title Line Height', 'taproot'),
     'atts' => range_atts('line-height')
 ]);
 
@@ -84,6 +84,6 @@ range( $manager, 'footer--widgets-mobile--title--line-height', [
 // Setting: Widget Spacing
 range( $manager, 'footer--widgets-mobile--gutter', [
     'section' => 'footer--widgets-mobile',
-    'label' => esc_html__('Widgets Spacing', 'taproot'), 
+    'label' => esc_html__('Widgets Spacing', 'taproot'),
     'atts' => range_atts('layout-padding')
 ]);

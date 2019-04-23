@@ -2,11 +2,11 @@
 /**
  * Section setup.
  *
- * This file adds the section, settings and controls to the customizer. 
+ * This file adds the section, settings and controls to the customizer.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -34,8 +34,8 @@ $manager->add_section( 'nav--top', [
 # Add Settings & Controls
 # =======================================================
 
-   
-// Setting: Hide when not mobile 
+
+// Setting: Hide when not mobile
 $manager->add_setting( 'nav--top--hide', [
     'sanitize_callback' => 'taproot_sanitize_checkbox',
     'transport' => 'refresh',
@@ -51,8 +51,8 @@ $manager->add_control( 'nav--top--hide', [
 // Color Setting: Background Color
 color( $manager, 'nav--top--background-color', [
     'label'   => esc_html__( 'Nav Background Color', 'taproot' ),
-    'section' => 'nav--top',  
-]); 
+    'section' => 'nav--top',
+]);
 
 
 // Nav Align
@@ -71,7 +71,7 @@ $manager->add_control( 'nav--top--align', [
         'flex-end' => esc_html__( 'Right', 'taproot' ),
         'center' => esc_html__( 'Center', 'taproot' ),
         'space-between' => esc_html__( 'Fill', 'taproot' ),
-    ]       
+    ]
 ]);
 
 
@@ -86,7 +86,7 @@ $manager->add_control( 'nav--top--font-family', [
     'type' => 'select',
     'section' => 'nav--top',
     'label' => esc_html__( 'Font Family', 'taproot' ),
-    'choices' => get_font_choices(),       
+    'choices' => get_font_choices(),
 ]);
 
 
@@ -104,21 +104,21 @@ $manager->add_control( new Font_Styles( $manager, 'nav--top--font-styles', [
 // Color Setting: Link Color
 color( $manager, 'nav--top--link-color', [
     'label'   => esc_html__( 'Link Color', 'taproot' ),
-    'section' => 'nav--top',  
-]); 
+    'section' => 'nav--top',
+]);
 
 
 // Color Setting: Link Color Hover
 color( $manager, 'nav--top--link-color--hover', [
     'label'   => esc_html__( 'Link Color: Hover', 'taproot' ),
-    'section' => 'nav--top',  
-]); 
+    'section' => 'nav--top',
+]);
 
 
 // Setting: Menu Item Font Size
 range( $manager, 'nav--top--font-size', [
     'section' => 'nav--top',
-    'label' => esc_html__('Font Size', 'taproot'), 
+    'label' => esc_html__('Font Size', 'taproot'),
     'atts' => range_atts('text')
 ]);
 
@@ -126,7 +126,7 @@ range( $manager, 'nav--top--font-size', [
 // Setting: Menu Item Line Height
 range( $manager, 'nav--top--line-height', [
     'section' => 'nav--top',
-    'label' => esc_html__('Line Height', 'taproot'), 
+    'label' => esc_html__('Line Height', 'taproot'),
     'atts' => range_atts('line-height')
 ]);
 
@@ -134,14 +134,14 @@ range( $manager, 'nav--top--line-height', [
 // menu item padding
 range( $manager, 'nav--top--padding', [
     'section' => 'nav--top',
-    'label' => esc_html__('Menu Item Padding', 'taproot'), 
+    'label' => esc_html__('Menu Item Padding', 'taproot'),
     'atts'  => [
         'px' => [
             'max' => 64,
-        ],        
+        ],
         'em' => [
             'max' => 4,
-        ],                        
+        ],
     ]
 ]);
 

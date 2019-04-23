@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -71,8 +71,8 @@ function get( $icon ) {
 
 
 /**
- * Print icon 
- * 
+ * Print icon
+ *
  * Accepts the name of the icon to render
  * or an array of attributes. The array
  * must include the "name" attribute

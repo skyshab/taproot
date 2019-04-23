@@ -2,11 +2,11 @@
 /**
  * Styles for our section.
  *
- * This file creates the front end styles for our customizer controls. 
+ * This file creates the front end styles for our customizer controls.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -18,7 +18,7 @@ use function Rootstrap\get_theme_mod;
 
 
 if( has_nav_menu( 'top' ) ) {
-        
+
     // Show when fixed?
     $show_when_fixed = get_theme_mod( 'nav--top-fixed--fixed' );
 
@@ -30,7 +30,7 @@ if( has_nav_menu( 'top' ) ) {
         ]);
     }
     else {
-        
+
         // Background Color
         $styles->add([
             'selector' => '.app-header--fixed .menu--top',
@@ -40,7 +40,7 @@ if( has_nav_menu( 'top' ) ) {
             'screen' => 'desktop',
         ]);
 
-        
+
         // Desktop Link Styles
         $styles->add([
             'selector' => '.app-header--fixed .menu--top__link',
@@ -53,7 +53,7 @@ if( has_nav_menu( 'top' ) ) {
             ),
             'screen' => 'desktop',
         ]);
-        
+
 
         // Font Styles
         $styles->add([
@@ -61,7 +61,7 @@ if( has_nav_menu( 'top' ) ) {
             'styles' => get_font_styles( 'nav--top-fixed--font-styles' ),
             'screen' => 'desktop',
         ]);
-        
+
 
         // Link Color Hover
         $styles->add([
@@ -70,8 +70,8 @@ if( has_nav_menu( 'top' ) ) {
                 'color' => get_theme_mod( 'nav--top-fixed--link-color' ),
             ),
             'screen' => 'desktop',
-        ]);    
-        
+        ]);
+
 
         // Link Color Hover
         $styles->add([
@@ -81,7 +81,7 @@ if( has_nav_menu( 'top' ) ) {
             ),
             'screen' => 'desktop',
         ]);
-        
+
 
         // Align
         $styles->add([
@@ -92,8 +92,8 @@ if( has_nav_menu( 'top' ) ) {
             ),
             'screen' => 'desktop',
         ]);
-        
-        
+
+
         $styles->add([
             'selector' => '.app-header--fixed .menu--top__container ',
             'styles' => [

@@ -2,11 +2,11 @@
 /**
  * Styles for our section.
  *
- * This file creates the front end styles for our customizer controls. 
+ * This file creates the front end styles for our customizer controls.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -106,8 +106,8 @@ if( has_nav_menu( 'navbar' ) ) {
     // Font Family
     $styles->add([
         'selector' => '.menu--navbar__link',
-        'styles' => [ 
-            'font-family' => get_font_family( get_theme_mod( 'nav--navbar-mobile--font-family' ) ) 
+        'styles' => [
+            'font-family' => get_font_family( get_theme_mod( 'nav--navbar-mobile--font-family' ) )
         ],
         'screen' => $mobile_screen,
     ]);
@@ -116,8 +116,8 @@ if( has_nav_menu( 'navbar' ) ) {
     // Link Color
     $styles->add([
         'selector' => '.menu--navbar__link:link, .menu--navbar__link:visited',
-        'styles' => [ 
-            'color' => get_theme_mod( 'nav--navbar-mobile--link-color' ) 
+        'styles' => [
+            'color' => get_theme_mod( 'nav--navbar-mobile--link-color' )
         ],
         'screen' => $mobile_screen,
     ]);
@@ -126,8 +126,8 @@ if( has_nav_menu( 'navbar' ) ) {
     // Link Color: Hover
     $styles->add([
         'selector' => '.menu--navbar__link:hover',
-        'styles' => [ 
-            'color' => get_theme_mod( 'nav--navbar-mobile--link-color--hover' ) 
+        'styles' => [
+            'color' => get_theme_mod( 'nav--navbar-mobile--link-color--hover' )
         ],
         'screen' => $mobile_screen,
     ]);

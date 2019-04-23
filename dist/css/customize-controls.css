@@ -510,4 +510,8 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+
+#customize-control-header_image .customize-control-description {
+	display: none;
+}
 /*# sourceMappingURL=customize-controls.css.map*/

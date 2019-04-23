@@ -2,11 +2,11 @@
 /**
  * Panels
  *
- * This class extends the `Collection` class for handling panels. 
+ * This class extends the `Collection` class for handling panels.
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2018, Sky Shabatura
+ * @copyright Copyright (c) 2019, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */

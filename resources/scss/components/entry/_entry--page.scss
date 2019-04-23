@@ -11,7 +11,7 @@
 
 	// Header wrapper
 	&__header--page {
-        margin-bottom: 2em;
+        margin-bottom: var(--layout--block-spacing--large);
     }
 
 	// Entry title
@@ -24,6 +24,6 @@
 
 
     &__footer--page {
-        margin-bottom: 2em;
-    }    
+        margin-bottom: var(--layout--block-spacing--large);
+    }
 }

@@ -1,12 +1,12 @@
 <?php
 /**
  * Color control
- * 
- * Creates color picker with alpha channel. 
+ *
+ * Creates color picker with alpha channel.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -58,7 +58,7 @@ class Color extends WP_Customize_Control {
 		// Process the palette
 		if ( is_array( $this->palette ) ) {
 			$palette = implode( '|', $this->palette );
-        } 
+        }
         else {
 			$palette = ( false === $this->palette || 'false' === $this->palette ) ? 'false' : 'true';
 		}
@@ -74,7 +74,7 @@ class Color extends WP_Customize_Control {
 		// Output the description if passed in
 		if ( isset( $this->description ) && '' !== $this->description ) {
 			echo '<span class="description customize-control-description">' . esc_html( $this->description ) . '</span>';
-		} 
+		}
 		?>
 		<div class="customize-control-content">
 			<label>
@@ -83,5 +83,5 @@ class Color extends WP_Customize_Control {
 		</div>
 		<?php
     }
-    
+
 }

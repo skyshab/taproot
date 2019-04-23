@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -36,17 +36,17 @@ class Nav implements Bootable {
 	 * @return void
 	 */
 	public function boot() {
-        add_action( 'init', [ $this, 'register_nav_menus' ], 5 );    
+        add_action( 'init', [ $this, 'register_nav_menus' ], 5 );
         add_filter( 'hybrid/attr/menu/class', [ $this, 'nav_classes' ], 100, 2  );
-        add_filter( 'nav_menu_css_class', [ $this, 'menu_item_classes' ], 10, 3 );    
+        add_filter( 'nav_menu_css_class', [ $this, 'menu_item_classes' ], 10, 3 );
         add_filter( 'nav_menu_item_args', [ $this, 'menu_item_dropdowns' ], 10, 2 );
         add_filter( 'taproot/template/menu-toggle', [ $this, 'menu_toggle' ], 10, 2  );
         add_filter( 'nav_menu_link_attributes', [ $this, 'nav_menu_link_attributes' ], 10, 3  );
-        add_filter( 'hybrid/pagination/posts/args', [ $this, 'pagination' ] );   
-        add_filter( 'hybrid/pagination/post/args', [ $this, 'pagination' ] );            
-        add_filter( 'hybrid/pagination/comments/args', [ $this, 'pagination' ] );            
+        add_filter( 'hybrid/pagination/posts/args', [ $this, 'pagination' ] );
+        add_filter( 'hybrid/pagination/post/args', [ $this, 'pagination' ] );
+        add_filter( 'hybrid/pagination/comments/args', [ $this, 'pagination' ] );
     }
-    
+
 
     /**
      * Register menus.
@@ -65,11 +65,11 @@ class Nav implements Bootable {
         register_nav_menus( [
             'navbar' => esc_html_x( 'Navbar', 'nav menu location', 'taproot' )
         ]);
-        
+
         register_nav_menus( [
             'top' => esc_html_x( 'Top Nav', 'nav menu location', 'taproot' )
         ]);
-        
+
         register_nav_menus( [
             'footer' => esc_html_x( 'Footer Nav', 'nav menu location', 'taproot' )
         ]);
@@ -78,7 +78,7 @@ class Nav implements Bootable {
 
     /**
      *  Add classes to nav areas
-     * 
+     *
      * @since 1.0.0
      * @return void
      */
@@ -86,7 +86,7 @@ class Nav implements Bootable {
 
         if( 'top' === $context ) {
             $classes = $this->nav_top_classes( $classes );
-        }        
+        }
         elseif( 'header' === $context ) {
             $classes = $this->nav_header_classes( $classes );
         }
@@ -103,9 +103,9 @@ class Nav implements Bootable {
 
     /**
      * Get Header Nav Classes
-     * 
+     *
      * @since 1.0.0
-     * 
+     *
      * @param array $classes
      * @return array - Returns array of classes for the header nav.
      */
@@ -117,11 +117,11 @@ class Nav implements Bootable {
 
         if( get_theme_mod( 'nav--header-mobile--hide' ) ) {
             $classes[] = 'hidden-when-mobile';
-        }	
-        
+        }
+
         if( get_theme_mod( 'nav--header-fixed--hide-when-not-fixed' ) ) {
             $classes[] = 'hidden-when-not-fixed';
-        }        
+        }
 
         // add classes for navbar type
         $mobile_type = get_theme_mod( 'nav--header-mobile--type', null, true );
@@ -130,7 +130,7 @@ class Nav implements Bootable {
 
         // add class for toggle side
         $classes[] = 'menu--right';
-        
+
         // add class for header nav breakpoint
         $classes[] = sprintf( 'mobile-at-%s', get_theme_mod( 'nav--header-mobile--breakpoint', null, true ) );
 
@@ -140,9 +140,9 @@ class Nav implements Bootable {
 
     /**
      * Get Navbar Classes
-     * 
+     *
      * @since 1.0.0
-     * 
+     *
      * @param array $classes
      * @return array - Returns array of classes for the navbar.
      */
@@ -151,16 +151,16 @@ class Nav implements Bootable {
         // add class to hide when not mobile
         if( get_theme_mod( 'nav--navbar--hide' ) ) {
             $classes[] = 'hidden-when-not-mobile';
-        }	
+        }
 
         // add class to hide when mobile
         if( get_theme_mod( 'nav--navbar-mobile--hide' ) ) {
             $classes[] = 'hidden-when-mobile';
-        }			
-        
+        }
+
         if( get_theme_mod( 'nav--navbar-fixed--hide-when-not-fixed' ) ) {
             $classes[] = 'hidden-when-not-fixed';
-        }        
+        }
 
         // add classes for navbar type
         $mobile_type = get_theme_mod( 'nav--navbar-mobile--type', null, true );
@@ -184,9 +184,9 @@ class Nav implements Bootable {
 
     /**
      * Get Topnav Classes
-     * 
+     *
      * @since 1.0.0
-     * 
+     *
      * @param array $classes
      * @return array - Returns array of classes for the top nav.
      */
@@ -198,37 +198,37 @@ class Nav implements Bootable {
 
         if( get_theme_mod( 'nav--top--hide' ) ) {
             $classes[] = 'hidden-when-not-mobile';
-        }	
-            
+        }
+
         $classes[] = sprintf( 'mobile-at-%s', get_theme_mod( 'nav--top-mobile--breakpoint', null, true ) );
-        
+
         return $classes;
     }
 
 
     /**
      * Get Footer Nav Classes
-     * 
+     *
      * @since 1.0.0
-     * 
+     *
      * @param array $classes
      * @return array - Returns array of classes for the top nav.
      */
-    public function nav_footer_classes( $classes ) {      
-        
+    public function nav_footer_classes( $classes ) {
+
         // add class for footer nav breakpoint
         $classes[] = sprintf( 'mobile-at-%s', get_theme_mod( 'nav--footer-mobile--breakpoint', null, true ) );
-        
+
         return $classes;
     }
 
 
     /**
      *  Add Mobile Menu Toggle
-     * 
+     *
      * @since 1.0.0
      * @param string $location
-     * @param string $markup 
+     * @param string $markup
      * @return string
      */
     public function menu_toggle( $location ) {
@@ -237,16 +237,16 @@ class Nav implements Bootable {
             $toggle = '<span class="menu--toggle">';
             $toggle .= '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1.25em" height="1em"><g class="taproot-hamburger"><rect class="taproot-hamburger-top" width="100%" height="20%" y="0%" rx="1" ry="1"></rect><rect class="taproot-hamburger-middle" y="40%" width="100%" height="20%" rx="1" ry="1"></rect><rect class="taproot-hamburger-bottom" y="80%" width="100%" height="20%" rx="1" ry="1"></rect></g></svg>';
             $toggle .=  '</span>';
-            
+
             return $toggle;
         }
         return '';
     }
 
 
-    /** 
+    /**
      * Add additional nav classes to menu items
-     * 
+     *
      * @since  1.0.0
      * @access public
      * @return void
@@ -255,15 +255,15 @@ class Nav implements Bootable {
 
         if( $args->theme_location ) {
             $classes[] = sprintf( 'menu--%s__item', $args->theme_location );
-        }    
+        }
 
         return $classes;
     }
 
 
-    /** 
+    /**
      * Add menu dropdown icons
-     * 
+     *
      * @since  1.0.0
      * @access public
      * @return void
@@ -284,7 +284,7 @@ class Nav implements Bootable {
         return $args;
 
     }
-    
+
 
     /**
      * Set nav link classes
@@ -294,10 +294,10 @@ class Nav implements Bootable {
     public function nav_menu_link_attributes( $atts, $item, $args ) {
         if( $args->theme_location ) {
             $atts['class'] .= sprintf( ' menu--%s__link', $args->theme_location );
-        } 
+        }
         return $atts;
     }
-    
+
 
     /**
      * Add custom pagination attributes
@@ -348,9 +348,9 @@ class Nav implements Bootable {
 			// 'aria_current'       => 'page'
         ];
 
-        if( get_theme_mod( 'blog--pagination--rounded', null, true ) ) 
+        if( get_theme_mod( 'blog--pagination--rounded', null, true ) )
             $custom['list_class'] = 'pagination__items pagination__items--rounded';
-        
+
         return array_merge( $args, $custom );
     }
 

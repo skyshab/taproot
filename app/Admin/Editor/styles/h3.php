@@ -1,12 +1,12 @@
 <?php
 /**
- * Styles output on block editor admin pages. 
- * 
- * This file adds customizer setting styles to the block editor. 
+ * Styles output on block editor admin pages.
+ *
+ * This file adds customizer setting styles to the block editor.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -54,7 +54,7 @@ $styles->add_var([
     'value' => get_theme_mod('typography--h3-tablet--font-size'),
     'screen' => 'editor-desktop',
     'selector' => '.editor-styles-wrapper .wp-block',
-]);        
+]);
 
 
 // desktop size when settings panel closed
@@ -63,7 +63,7 @@ $styles->add_var([
     'value' => get_theme_mod('typography--h3-desktop--font-size'),
     'screen' => 'editor-desktop',
     'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
-]);        
+]);
 
 
 # =======================================================
@@ -94,7 +94,7 @@ $styles->add_var([
     'value' => get_theme_mod('typography--h3-tablet--line-height'),
     'screen' => 'editor-desktop',
     'selector' => '.editor-styles-wrapper .wp-block',
-]);        
+]);
 
 
 // desktop size when settings panel closed
@@ -103,4 +103,4 @@ $styles->add_var([
     'value' => get_theme_mod('typography--h3-desktop--line-height'),
     'screen' => 'editor-desktop',
     'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
-]);        
+]);

@@ -2,11 +2,11 @@
 /**
  * Styles for our section.
  *
- * This file creates the front end styles for our customizer controls. 
+ * This file creates the front end styles for our customizer controls.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -19,11 +19,11 @@ $footer_layout = get_theme_mod( 'footer--widgets-mobile--layout' );
 
 switch( $footer_layout ) {
 
-    case 'halves':      
+    case 'halves':
         $footer_widget_styles = 'repeat(2, 1fr)';
         break;
 
-    case 'full':       
+    case 'full':
         $footer_widget_styles = '100%';
         break;
 
