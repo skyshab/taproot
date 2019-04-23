@@ -1,0 +1,13 @@
+////
+/// General Customizer Styles
+///
+/// @group  CustomizeControls
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+// hide the default description for the custom header image.
+// We'll provide our own.
+#customize-control-header_image .customize-control-description {
+    display: none;
+}
