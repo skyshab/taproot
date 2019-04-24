@@ -10,9 +10,9 @@
 
 	&__title {
         padding-top: 0;
-        margin-bottom: 2rem;
+        margin-bottom: var(--layout--block-spacing--large);
         font-size: var( --blog--title--font-size );
-        line-height: var( --blog--title--line-height );  
+        line-height: var( --blog--title--line-height );
     }
 
 	&__description {}

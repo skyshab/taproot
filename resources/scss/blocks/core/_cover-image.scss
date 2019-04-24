@@ -14,7 +14,7 @@
     height:              420px;
     max-height:          100vh;
 	width:               100%;
-	margin:              2em 0;
+	margin:              var(--layout--block-spacing--large) 0;
 	display:             flex;
 	justify-content:     center;
     align-items:         center;
@@ -73,26 +73,26 @@
 	a:active {
 		color: white;
     }
-    
+
     .has-dark-text & {
-        color: black;  
+        color: black;
 
         a,
         a:hover,
         a:focus,
         a:active {
             color: black;
-        }        
-    }  
-    
+        }
+    }
+
     p {
         margin-bottom: 1em;
     }
 
     &:last-child {
         margin-bottom: 0;
-    }  
-        
+    }
+
     // Left-aligned text.
     .has-left-content & {
         text-align: left;

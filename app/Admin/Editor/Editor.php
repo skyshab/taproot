@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -16,7 +16,7 @@ namespace Taproot\Admin\Editor;
 use Hybrid\Contracts\Bootable;
 use Rootstrap\Modules\Styles\Styles;
 use function Taproot\asset;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 /**
@@ -65,7 +65,7 @@ class Editor implements Bootable {
         wp_register_style( 'wp-block-library-theme', '' );
 
         // Google Fonts
-        if( $google_fonts = get_theme_mod( 'taproot-google-fonts' ) ) {
+        if( $google_fonts = theme_mod( 'taproot-google-fonts' ) ) {
             $google_link = sprintf( '//fonts.googleapis.com/css?family=%s', esc_attr( $google_fonts ) );
             wp_enqueue_style('taproot-google-fonts', esc_url( $google_link ) );
         }

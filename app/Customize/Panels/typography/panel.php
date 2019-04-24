@@ -6,12 +6,12 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
 
- 
+
 // define sections
 $panel->sections([
     'fonts',
@@ -26,10 +26,10 @@ $panel->sections([
 
 
 // body sequence
-$panel->sequence([ 
+$panel->sequence([
     'sections' => [
-        'typography--body' => [ 'hide' => false ],        
-        'typography--body-mobile' => [ 
+        'typography--body' => [ 'hide' => false ],
+        'typography--body-mobile' => [
             'device' => 'mobile',
             'hide' => true,
             'prev' => [
@@ -39,7 +39,7 @@ $panel->sequence([
                 'label' => esc_html__('tablet', 'taproot'),
             ],
         ],
-        'typography--body-tablet' => [ 
+        'typography--body-tablet' => [
             'device' => 'tablet',
             'hide' => true,
             'prev' => [
@@ -49,7 +49,7 @@ $panel->sequence([
                 'label' => esc_html__('desktop', 'taproot'),
             ],
         ],
-        'typography--body-desktop' => [ 
+        'typography--body-desktop' => [
             'device' => 'desktop',
             'hide' => true,
             'prev' => [
@@ -58,12 +58,12 @@ $panel->sequence([
             'next' => [
                 'link' => false
             ],
-        ],           
+        ],
     ],
 ]);
 
 
-$heading_sequence_tabs_array = [ 
+$heading_sequence_tabs_array = [
     'hide' => true,
     'prev' => [
         'label' => esc_html__('headings', 'taproot'),
@@ -76,21 +76,21 @@ $heading_sequence_tabs_array = [
 ];
 
 // headings sequence
-$panel->sequence([ 
+$panel->sequence([
     'sections' => [
-        'typography--headings' => [ 'hide' => false ],        
+        'typography--headings' => [ 'hide' => false ],
         'typography--h1' => $heading_sequence_tabs_array,
         'typography--h2' => $heading_sequence_tabs_array,
         'typography--h3' => $heading_sequence_tabs_array,
         'typography--h4' => $heading_sequence_tabs_array,
         'typography--h5' => $heading_sequence_tabs_array,
-        'typography--h6' => $heading_sequence_tabs_array,      
+        'typography--h6' => $heading_sequence_tabs_array,
     ],
 ]);
 
 
 // headings tabs
-$panel->tabs([ 
+$panel->tabs([
     'title' => esc_html__('Heading Styles', 'taproot'),
     'sections' => [
         'typography--h1' => [ 'label' => 'h1', 'hide' => true ],
@@ -99,11 +99,11 @@ $panel->tabs([
         'typography--h4' => [ 'label' => 'h4', 'hide' => true ],
         'typography--h5' => [ 'label' => 'h5', 'hide' => true ],
         'typography--h6' => [ 'label' => 'h6', 'hide' => true ],
-    ], 
+    ],
 ]);
 
 
-$mobile_heading_sequence_tabs_array = [ 
+$mobile_heading_sequence_tabs_array = [
     'hide' => true,
     'prev' => [
         'label' => esc_html__('styles', 'taproot'),
@@ -118,19 +118,19 @@ $mobile_heading_sequence_tabs_array = [
 ];
 
 // mobile headings sequence
-$panel->sequence([ 
+$panel->sequence([
     'sections' => [
         'typography--h1-mobile' => $mobile_heading_sequence_tabs_array,
         'typography--h2-mobile' => $mobile_heading_sequence_tabs_array,
         'typography--h3-mobile' => $mobile_heading_sequence_tabs_array,
         'typography--h4-mobile' => $mobile_heading_sequence_tabs_array,
         'typography--h5-mobile' => $mobile_heading_sequence_tabs_array,
-        'typography--h6-mobile' => $mobile_heading_sequence_tabs_array        
+        'typography--h6-mobile' => $mobile_heading_sequence_tabs_array
     ],
 ]);
 
 // mobile headings tabs
-$panel->tabs([ 
+$panel->tabs([
     'title' => esc_html__('Mobile Sizes', 'taproot'),
     'sections' => [
         'typography--h1-mobile' => [ 'label' => 'h1', 'hide' => true ],
@@ -139,12 +139,12 @@ $panel->tabs([
         'typography--h4-mobile' => [ 'label' => 'h4', 'hide' => true ],
         'typography--h5-mobile' => [ 'label' => 'h5', 'hide' => true ],
         'typography--h6-mobile' => [ 'label' => 'h6', 'hide' => true ],
-    ], 
+    ],
 ]);
 
 
 
-$tablet_heading_sequence_tabs_array = [ 
+$tablet_heading_sequence_tabs_array = [
     'hide' => true,
     'prev' => [
         'label' => esc_html__('mobile', 'taproot'),
@@ -158,20 +158,20 @@ $tablet_heading_sequence_tabs_array = [
 ];
 
 // tablet headings sequence
-$panel->sequence([ 
+$panel->sequence([
     'sections' => [
         'typography--h1-tablet' => $tablet_heading_sequence_tabs_array,
         'typography--h2-tablet' => $tablet_heading_sequence_tabs_array,
         'typography--h3-tablet' => $tablet_heading_sequence_tabs_array,
         'typography--h4-tablet' => $tablet_heading_sequence_tabs_array,
         'typography--h5-tablet' => $tablet_heading_sequence_tabs_array,
-        'typography--h6-tablet' => $tablet_heading_sequence_tabs_array        
+        'typography--h6-tablet' => $tablet_heading_sequence_tabs_array
     ],
 ]);
 
 
 // tablet headings tabs
-$panel->tabs([ 
+$panel->tabs([
     'title' => esc_html__('Tablet Sizes', 'taproot'),
     'sections' => [
         'typography--h1-tablet' => [ 'label' => 'h1', 'hide' => true ],
@@ -180,7 +180,7 @@ $panel->tabs([
         'typography--h4-tablet' => [ 'label' => 'h4', 'hide' => true ],
         'typography--h5-tablet' => [ 'label' => 'h5', 'hide' => true ],
         'typography--h6-tablet' => [ 'label' => 'h6', 'hide' => true ],
-    ], 
+    ],
 ]);
 
 
@@ -188,7 +188,7 @@ $panel->tabs([
 
 
 
-$desktop_heading_sequence_tabs_array = [ 
+$desktop_heading_sequence_tabs_array = [
     'hide' => true,
     'prev' => [
         'label' => esc_html__('tablet', 'taproot'),
@@ -197,26 +197,26 @@ $desktop_heading_sequence_tabs_array = [
     'next' => [
         'label' => false,
         'link' => false
-    ],    
+    ],
     'device' => 'desktop'
 ];
 
 // desktop headings sequence
-$panel->sequence([ 
+$panel->sequence([
     'sections' => [
         'typography--h1-desktop' => $desktop_heading_sequence_tabs_array,
         'typography--h2-desktop' => $desktop_heading_sequence_tabs_array,
         'typography--h3-desktop' => $desktop_heading_sequence_tabs_array,
         'typography--h4-desktop' => $desktop_heading_sequence_tabs_array,
         'typography--h5-desktop' => $desktop_heading_sequence_tabs_array,
-        'typography--h6-desktop' => $desktop_heading_sequence_tabs_array        
+        'typography--h6-desktop' => $desktop_heading_sequence_tabs_array
     ],
     'next' => false
 ]);
 
 
 // desktop headings tabs
-$panel->tabs([ 
+$panel->tabs([
     'title' => esc_html__('Desktop Sizes', 'taproot'),
     'sections' => [
         'typography--h1-desktop' => [ 'label' => 'h1', 'hide' => true ],
@@ -225,14 +225,14 @@ $panel->tabs([
         'typography--h4-desktop' => [ 'label' => 'h4', 'hide' => true ],
         'typography--h5-desktop' => [ 'label' => 'h5', 'hide' => true ],
         'typography--h6-desktop' => [ 'label' => 'h6', 'hide' => true ],
-    ], 
+    ],
 ]);
 
 
 // Main sequence
-$panel->sequence([ 
+$panel->sequence([
     'sections' => [
-        'typography--main-mobile' => [ 
+        'typography--main-mobile' => [
             'device' => 'mobile',
             'hide' => false,
             'prev' => [
@@ -242,7 +242,7 @@ $panel->sequence([
                 'label' => esc_html__('tablet', 'taproot'),
             ],
         ],
-        'typography--main-tablet' => [ 
+        'typography--main-tablet' => [
             'device' => 'tablet',
             'hide' => true,
             'prev' => [
@@ -252,7 +252,7 @@ $panel->sequence([
                 'label' => esc_html__('desktop', 'taproot'),
             ],
         ],
-        'typography--main-desktop' => [ 
+        'typography--main-desktop' => [
             'device' => 'desktop',
             'hide' => true,
             'prev' => [
@@ -261,8 +261,8 @@ $panel->sequence([
             'next' => [
                 'link' => false
             ],
-        ],  
-        'typography--main-desktop-two-col' => [ 
+        ],
+        'typography--main-desktop-two-col' => [
             'device' => 'desktop',
             'hide' => true,
             'prev' => [
@@ -272,32 +272,32 @@ $panel->sequence([
             'next' => [
                 'link' => false
             ],
-        ],                    
+        ],
     ],
 ]);
 
 
 // Main tabs
-$panel->tabs([ 
+$panel->tabs([
     'title' => esc_html__('Main - Desktop', 'taproot'),
     'sections' => [
-        'typography--main-desktop' => [ 
-            'label' => 'Full', 
-            'hide' => true 
+        'typography--main-desktop' => [
+            'label' => 'Full',
+            'hide' => true
         ],
-        'typography--main-desktop-two-col' => [ 
-            'label' => 'Two Col', 
-            'hide' => true 
+        'typography--main-desktop-two-col' => [
+            'label' => 'Two Col',
+            'hide' => true
         ],
-    ], 
+    ],
 ]);
 
 
 
 // Sidebar sequence
-$panel->sequence([ 
+$panel->sequence([
     'sections' => [
-        'typography--sidebar-mobile' => [ 
+        'typography--sidebar-mobile' => [
             'device' => 'mobile',
             'hide' => false,
             'prev' => [
@@ -307,7 +307,7 @@ $panel->sequence([
                 'label' => esc_html__('tablet', 'taproot'),
             ],
         ],
-        'typography--sidebar-tablet' => [ 
+        'typography--sidebar-tablet' => [
             'device' => 'tablet',
             'hide' => true,
             'prev' => [
@@ -317,7 +317,7 @@ $panel->sequence([
                 'label' => esc_html__('desktop', 'taproot'),
             ],
         ],
-        'typography--sidebar-desktop' => [ 
+        'typography--sidebar-desktop' => [
             'device' => 'desktop',
             'hide' => true,
             'prev' => [
@@ -326,6 +326,6 @@ $panel->sequence([
             'next' => [
                 'link' => false
             ],
-        ],            
+        ],
     ],
 ]);

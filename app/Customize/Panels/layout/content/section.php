@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -40,12 +40,9 @@ range( $manager, 'layout--content--max-width', [
             'max'   => 1600,
             'default' => 980
         ],
-        'em' => [
+        'rem' => [
             'max'   => 50,
             'default' => 42
-        ],
-        '%' => [
-            'default' => 100
-        ],
+        ]
     ]
 ]);

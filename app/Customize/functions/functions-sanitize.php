@@ -4,7 +4,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -12,11 +12,11 @@
 
 /**
  * Sanitize Google Fonts
- * 
+ *
  * Extract font list if full embed code is entered.
  *
  * @since 1.0.0
- * 
+ *
  * @param string $fonts
  * @return string - Returns a list of fonts in Google Font API format
  */
@@ -30,7 +30,7 @@ function sanitize_google_fonts( $fonts ) {
  * Sanitize checkbox value
  *
  * @since 1.0.0
- * 
+ *
  * @param string $input
  * @return int 1 if checked, empty string if not
  */
@@ -43,10 +43,10 @@ function taproot_sanitize_checkbox( $input ){
  * Sanitize numeric range slider value
  *
  * @since 1.0.0
- * 
+ *
  * @param mixed $input
  * @return int
- */    
+ */
 function taproot_sanitize_range_slider_value( $input ) {
     return filter_var( $input, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION );
 }
@@ -56,7 +56,7 @@ function taproot_sanitize_range_slider_value( $input ) {
  * Sanitize enable mobile bar checkbox value
  *
  * @since 1.0.0
- * 
+ *
  * @param string $input
  * @return int 1 if checked, empty string if not
  */
@@ -69,7 +69,7 @@ function taproot_sanitize_enable_mobilebar_mobile_checkbox( $input ) {
  * Sanitize color value
  *
  * @since 1.0.0
- * 
+ *
  * @param string $color
  * @return string
  */
@@ -102,7 +102,7 @@ function taproot_sanitize_color_value( $color ) {
         if( ( $red >= 0 && $red <= 255 ) &&
             ( $green >= 0 && $green <= 255 ) &&
             ( $blue >= 0 && $blue <= 255 ) &&
-            ( $alpha >= 0 ) && 
+            ( $alpha >= 0 ) &&
             ( $alpha <= 1 )
         ) {
             return "rgba({$red},{$green},{$blue},{$alpha})";
@@ -111,4 +111,4 @@ function taproot_sanitize_color_value( $color ) {
 
     // nothing matched
     return '';
-} 
+}

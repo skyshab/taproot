@@ -2,28 +2,28 @@
 /**
  * Styles for our section.
  *
- * This file creates the front end styles for our customizer controls. 
+ * This file creates the front end styles for our customizer controls.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
-$footer_layout = get_theme_mod( 'footer--widgets-mobile--layout' );
+$footer_layout = theme_mod( 'footer--widgets-mobile--layout' );
 
 switch( $footer_layout ) {
 
-    case 'halves':      
+    case 'halves':
         $footer_widget_styles = 'repeat(2, 1fr)';
         break;
 
-    case 'full':       
+    case 'full':
         $footer_widget_styles = '100%';
         break;
 
@@ -42,7 +42,7 @@ $styles->add_var([
 // Var: Title Font Size
 $styles->add_var([
     'name' => 'footer--widgets--title--font-size',
-    'value' => get_theme_mod( 'footer--widgets-mobile--title--font-size' ),
+    'value' => theme_mod( 'footer--widgets-mobile--title--font-size' ),
     'screen' => 'default',
 ]);
 
@@ -50,7 +50,7 @@ $styles->add_var([
 // Var: Title Line Height
 $styles->add_var([
     'name' => 'footer--widgets--title--line-height',
-    'value' => get_theme_mod( 'footer--widgets-mobile--title--line-height' ),
+    'value' => theme_mod( 'footer--widgets-mobile--title--line-height' ),
     'screen' => 'default',
 ]);
 
@@ -58,7 +58,7 @@ $styles->add_var([
 // Var: Text Font Size
 $styles->add_var([
     'name' => 'footer--widgets--color',
-    'value' => get_theme_mod( 'footer--widgets-mobile--color' ),
+    'value' => theme_mod( 'footer--widgets-mobile--color' ),
     'screen' => 'default',
 ]);
 
@@ -66,7 +66,7 @@ $styles->add_var([
 // Var: Text Line Height
 $styles->add_var([
     'name' => 'footer--widgets--line-height',
-    'value' => get_theme_mod( 'footer--widgets-mobile--line-height' ),
+    'value' => theme_mod( 'footer--widgets-mobile--line-height' ),
     'screen' => 'default',
 ]);
 
@@ -74,6 +74,6 @@ $styles->add_var([
 // Var: Widgets Spacing
 $styles->add_var([
     'name' => 'footer--widgets--gutter',
-    'value' => get_theme_mod( 'footer--widgets-mobile--gutter' ),
+    'value' => theme_mod( 'footer--widgets-mobile--gutter' ),
     'screen' => 'default',
 ]);

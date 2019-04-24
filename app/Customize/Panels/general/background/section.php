@@ -2,11 +2,11 @@
 /**
  * Section setup.
  *
- * This file adds the section, settings and controls to the customizer. 
+ * This file adds the section, settings and controls to the customizer.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -34,8 +34,8 @@ $manager->add_section( 'general--background', [
 // Color Setting: Background Color
 color( $manager, 'general--background--background-color', [
     'label'   => esc_html__( 'Background Color', 'taproot' ),
-    'section' => 'general--background', 
-]);  
+    'section' => 'general--background',
+]);
 
 
 // move background control to our custom section

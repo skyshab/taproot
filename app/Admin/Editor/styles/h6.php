@@ -1,18 +1,18 @@
 <?php
 /**
- * Styles output on block editor admin pages. 
- * 
- * This file adds customizer setting styles to the block editor. 
+ * Styles output on block editor admin pages.
+ *
+ * This file adds customizer setting styles to the block editor.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 # =======================================================
@@ -22,7 +22,7 @@ use function Rootstrap\get_theme_mod;
 
 $styles->add([
     'selector' => 'h6',
-    'styles' => [ 'color' => get_theme_mod( 'typography--h6--color' ) ],
+    'styles' => [ 'color' => theme_mod( 'typography--h6--color' ) ],
 ]);
 
 
@@ -34,7 +34,7 @@ $styles->add([
 // Mobile default
 $styles->add_var([
     'name' => 'typography--h6--font-size',
-    'value' => get_theme_mod('typography--h6-mobile--font-size'),
+    'value' => theme_mod('typography--h6-mobile--font-size'),
     'selector' => '.editor-styles-wrapper .wp-block',
 ]);
 
@@ -42,7 +42,7 @@ $styles->add_var([
 // tablet size when settings panel closed, use mobile when open
 $styles->add_var([
     'name' => 'typography--h6--font-size',
-    'value' => get_theme_mod('typography--h6-tablet--font-size'),
+    'value' => theme_mod('typography--h6-tablet--font-size'),
     'screen' => 'editor-tablet',
     'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
 ]);
@@ -51,19 +51,19 @@ $styles->add_var([
 // tablet size when settings panel open
 $styles->add_var([
     'name' => 'typography--h6--font-size',
-    'value' => get_theme_mod('typography--h6-tablet--font-size'),
+    'value' => theme_mod('typography--h6-tablet--font-size'),
     'screen' => 'editor-desktop',
     'selector' => '.editor-styles-wrapper .wp-block',
-]);        
+]);
 
 
 // desktop size when settings panel closed
 $styles->add_var([
     'name' => 'typography--h6--font-size',
-    'value' => get_theme_mod('typography--h6-desktop--font-size'),
+    'value' => theme_mod('typography--h6-desktop--font-size'),
     'screen' => 'editor-desktop',
     'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
-]);        
+]);
 
 
 # =======================================================
@@ -74,7 +74,7 @@ $styles->add_var([
 // mobile default
 $styles->add_var([
     'name' => 'typography--h6--line-height',
-    'value' => get_theme_mod('typography--h6-mobile--line-height'),
+    'value' => theme_mod('typography--h6-mobile--line-height'),
     'selector' => '.editor-styles-wrapper .wp-block',
 ]);
 
@@ -82,7 +82,7 @@ $styles->add_var([
 // tablet size when settings panel closed, use mobile when open
 $styles->add_var([
     'name' => 'typography--h6--line-height',
-    'value' => get_theme_mod('typography--h6-tablet--line-height'),
+    'value' => theme_mod('typography--h6-tablet--line-height'),
     'screen' => 'editor-tablet',
     'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
 ]);
@@ -91,16 +91,16 @@ $styles->add_var([
 // tablet size when settings panel open
 $styles->add_var([
     'name' => 'typography--h6--line-height',
-    'value' => get_theme_mod('typography--h6-tablet--line-height'),
+    'value' => theme_mod('typography--h6-tablet--line-height'),
     'screen' => 'editor-desktop',
     'selector' => '.editor-styles-wrapper .wp-block',
-]);        
+]);
 
 
 // desktop size when settings panel closed
 $styles->add_var([
     'name' => 'typography--h6--line-height',
-    'value' => get_theme_mod('typography--h6-desktop--line-height'),
+    'value' => theme_mod('typography--h6-desktop--line-height'),
     'screen' => 'editor-desktop',
     'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
-]);        
+]);

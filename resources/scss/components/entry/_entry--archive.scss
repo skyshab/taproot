@@ -11,13 +11,13 @@
 
     &--archive {
         border-top: 1px solid var( --colors--theme--meta-medium );
-        padding-top: 2rem;
+        padding-top: var(--layout--block-spacing--large);
 
         &:last-of-type {
             border-bottom: 1px solid var( --colors--theme--meta-medium );
-        }        
+        }
     }
-    
+
 	// Sticky posts.
 	&.sticky {
         border: 1px solid var( --colors--theme--meta-medium );
@@ -49,17 +49,17 @@
 
 	// Full entry content.
 	&__content--archive {
-        
+
     }
 
 	// Summary/Excerpt.
-	&__summary--archive { 
-    
+	&__summary--archive {
+
     }
 
 	&__content--archive, &__summary--archive {
         &:last-child :last-child {
-            margin-bottom: 2rem;
+            margin-bottom: var(--layout--block-spacing--large);
         }
     }
 
@@ -80,18 +80,18 @@
 
         .taproot-icon {
             color: inherit;
-        }                  
+        }
     }
 
 	&__footer--archive {
         display: flex;
         flex-direction: column;
-        margin-bottom: 2rem;
+        margin-bottom: var(--layout--block-spacing--large);
     }
 
     &__link.taproot-button {
         font-size: 0.8em;
-    }    
+    }
 
 	// Individual metadata items.
 	&__author--archive {}
@@ -101,5 +101,5 @@
 	&__comments--archive {}
 
     &__terms--archive {}
-    
+
 }

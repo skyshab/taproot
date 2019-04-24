@@ -2,11 +2,11 @@
 /**
  * Section setup.
  *
- * This file adds the section, settings and controls to the customizer. 
+ * This file adds the section, settings and controls to the customizer.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -35,8 +35,8 @@ $manager->add_section( 'typography--h2', [
 // Text Color
 color( $manager, 'typography--h2--color', [
     'label'   => esc_html__( 'Text Color', 'taproot' ),
-    'section' => 'typography--h2', 
-]); 
+    'section' => 'typography--h2',
+]);
 
 
 // Font Family
@@ -50,7 +50,7 @@ $manager->add_control( 'typography--h2--font-family', [
     'type' => 'select',
     'section' => 'typography--h2',
     'label' => esc_html__( 'Font Family', 'taproot' ),
-    'choices' => get_font_choices(),       
+    'choices' => get_font_choices(),
 ]);
 
 

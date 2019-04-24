@@ -6,42 +6,43 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
 
- 
+
 // define sections
 $panel->sections([
-    'site',
-    'content', 'content-mobile',  'content-tablet', 'content-desktop',
+    'boxed',
+    'container', 'container-mobile',  'container-tablet', 'container-desktop',
+    'content',
     'sidebar'
 ]);
 
 
 // layout sequence
-$panel->sequence([ 
-    'title' => __('Content', 'taproot'),
+$panel->sequence([
+    'title' => __('Container', 'taproot'),
     'sections' => [
-        'layout--content' => [ 
+        'layout--container' => [
             'hide' => false,
             'next' => [
                 'label' => __('mobile', 'taproot'),
             ],
-        ],        
-        'layout--content-mobile' => [ 
+        ],
+        'layout--container-mobile' => [
             'device' => 'mobile',
             'hide' => true,
             'prev' => [
                 'label' => __('general', 'taproot'),
                 'device' => 'desktop'
-            ],            
+            ],
             'next' => [
                 'label' => __('tablet', 'taproot'),
             ],
         ],
-        'layout--content-tablet' => [ 
+        'layout--container-tablet' => [
             'device' => 'tablet',
             'hide' => true,
             'prev' => [
@@ -51,7 +52,7 @@ $panel->sequence([
                 'label' => __('desktop', 'taproot'),
             ],
         ],
-        'layout--content-desktop' => [ 
+        'layout--container-desktop' => [
             'device' => 'desktop',
             'hide' => true,
             'prev' => [
@@ -60,6 +61,6 @@ $panel->sequence([
             'next' => [
                 'link' => false
             ],
-        ],     
+        ],
     ],
 ]);

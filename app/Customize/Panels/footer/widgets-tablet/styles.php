@@ -2,20 +2,20 @@
 /**
  * Styles for our section.
  *
- * This file creates the front end styles for our customizer controls. 
+ * This file creates the front end styles for our customizer controls.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
-$footer_layout = get_theme_mod( 'footer--widgets-tablet--layout' );
+$footer_layout = theme_mod( 'footer--widgets-tablet--layout' );
 
 switch( $footer_layout ) {
 
@@ -27,15 +27,15 @@ switch( $footer_layout ) {
         $footer_widget_styles = 'repeat(3, 1fr)';
         break;
 
-    case 'halves':      
+    case 'halves':
         $footer_widget_styles = 'repeat(2, 1fr)';
         break;
 
-    case 'full':       
+    case 'full':
         $footer_widget_styles = '100%';
         break;
 
-    case 'one-third-two-thirds':       
+    case 'one-third-two-thirds':
         $footer_widget_styles = '1fr 2fr';
         break;
 
@@ -49,7 +49,7 @@ switch( $footer_layout ) {
 
     case 'half-quarter-quarter':
         $footer_widget_styles = '2fr 1fr 1fr';
-        break;   
+        break;
 
     default:
         $footer_widget_styles = false;
@@ -65,7 +65,7 @@ $styles->add_var([
 // Var: Title Font Size
 $styles->add_var([
     'name' => 'footer--widgets--title--font-size',
-    'value' => get_theme_mod( 'footer--widgets-tablet--title--font-size' ),
+    'value' => theme_mod( 'footer--widgets-tablet--title--font-size' ),
     'screen' => 'tablet-and-up',
 ]);
 
@@ -73,7 +73,7 @@ $styles->add_var([
 // Var: Title Line Height
 $styles->add_var([
     'name' => 'footer--widgets--title--line-height',
-    'value' => get_theme_mod( 'footer--widgets-tablet--title--line-height' ),
+    'value' => theme_mod( 'footer--widgets-tablet--title--line-height' ),
     'screen' => 'tablet-and-up',
 ]);
 
@@ -81,7 +81,7 @@ $styles->add_var([
 // Var: Text Font Size
 $styles->add_var([
     'name' => 'footer--widgets--color',
-    'value' => get_theme_mod( 'footer--widgets-tablet--color' ),
+    'value' => theme_mod( 'footer--widgets-tablet--color' ),
     'screen' => 'tablet-and-up',
 ]);
 
@@ -89,7 +89,7 @@ $styles->add_var([
 // Var: Text Line Height
 $styles->add_var([
     'name' => 'footer--widgets--line-height',
-    'value' => get_theme_mod( 'footer--widgets-tablet--line-height' ),
+    'value' => theme_mod( 'footer--widgets-tablet--line-height' ),
     'screen' => 'tablet-and-up',
 ]);
 
@@ -97,6 +97,6 @@ $styles->add_var([
 // Var: Widgets Spacing
 $styles->add_var([
     'name' => 'footer--widgets--gutter',
-    'value' => get_theme_mod( 'footer--widgets-tablet--gutter' ),
+    'value' => theme_mod( 'footer--widgets-tablet--gutter' ),
     'screen' => 'tablet-and-up',
 ]);

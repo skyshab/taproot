@@ -12,59 +12,54 @@
     order: 2;
     position: relative;
     flex: 1 0 100%;
-    padding: var( --layout--content--padding );
+    padding: var(--layout--container--padding) 0;
     font-size: var( --typography--sidebar--font-size );
     line-height: var( --typography--sidebar--line-height );
     background-color: var( --layout--sidebar--background-color );
- 
+
+    &:before {
+        content: " ";
+        background-color: var( --layout--sidebar--background-color );
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        top: 0;
+        left: calc( 50% - 50vw );
+        z-index: -1;
+    }
+
+
     // Desktop Styles
     @include screen('desktop') {
 
-        max-width: var( --layout--sidebar--width, 35% );
-    
-        &.fullscreen-layout:before {
-            content: " ";
-            background-color: var( --layout--sidebar--background-color );
-            position: absolute;
-            width: 100vw;
-            height: 100%;
-            top: 0;
-            z-index: -1;        
-        } 
+        box-sizing: content-box;
+        flex: 1 0 var(--layout--sidebar--min-width);
+        padding: var(--layout--container--padding);
+
 
         &--right {
+            padding-right: 0;
             order: 2;
             &:before {
                 right: auto;
                 left: 0;
-            } 
-            &.fullscreen-layout {
-                padding-right: 0;
-            }            
+            }
         }
 
         &--left {
+            padding-left: 0;
             order: 0;
             &:before {
                 right: 0;
                 left: auto;
-            } 
-            &.fullscreen-layout {
-                padding-left: 0;
-            }            
+            }
         }
-    };
+    }
 
     .widget {
-        max-width: var( --layout--sidebar--content--max-width );
-    }
-}
-
-
-@include screen('desktop') {
-    .app-main {
-        &--sidebar-right, &--sidebar-left {
-            max-width: calc( 100% - var( --layout--sidebar--width ) );            
-        }
+        margin-bottom: var( --typography--sidebar--block-spacing );
+        max-width: var(--layout--content--max-width);
+        margin-left: auto;
+        margin-right: auto;
     }
 }

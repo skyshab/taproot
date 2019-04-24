@@ -5,7 +5,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
 
@@ -22,23 +22,12 @@ wp.customize( 'layout--sidebar--background-color', function( value ) {
 
 
 // Sidebar Width
-wp.customize( 'layout--sidebar--width', function( value ) {
+wp.customize( 'layout--sidebar--min-width', function( value ) {
     value.bind( function( to ) {
         rootstrap.var({
-            name: 'layout--sidebar--width',
+            name: 'layout--sidebar--min-width',
             value: to,
             screen: 'desktop'
-        });
-    });
-});
-
-
-// Max Content Width
-wp.customize( 'layout--sidebar--content--max-width', function( value ) {
-    value.bind( function( to ) {
-        rootstrap.var({
-            name: 'layout--sidebar--content--max-width',
-            value: to
         });
     });
 });

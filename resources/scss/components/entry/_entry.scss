@@ -8,6 +8,9 @@
 
 .entry {
 
+    margin-left: auto;
+    margin-right: auto;
+
 	// Type of entry/post.
 	&--type-post {}
 
@@ -50,7 +53,7 @@
 	&__comments {}
 
     &__terms {}
-    
+
 
     &-term-group {
         display: inline-block;
@@ -65,10 +68,10 @@
 
         .taproot-icon {
             margin-right: 0.2em;
-        }                  
+        }
     }
 
     &__author, &__published, &__comments {
         margin-right: 0.8em
-    }  
+    }
 }

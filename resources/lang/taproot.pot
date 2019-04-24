@@ -1620,7 +1620,7 @@ msgid "Site Icon"
 msgstr ""
 
 #: app/Customize/functions/functions-controls.php:114
-msgid "&#169;2018, My Awesome Site"
+msgid "&#169;2019, My Awesome Site"
 msgstr ""
 
 #: app/Template/Icons/FA.php:36 app/Template/Icons/SVG.php:68

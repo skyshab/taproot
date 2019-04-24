@@ -2,11 +2,11 @@
 /**
  * Section setup.
  *
- * This file adds the section, settings and controls to the customizer. 
+ * This file adds the section, settings and controls to the customizer.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -44,10 +44,10 @@ $manager->add_control( 'blog--archive-link--style', [
     'label' => esc_html__( 'Post Link Style', 'taproot' ),
     'choices' => [
         'none' => esc_html__('None', 'taproot'),
-        'inline' => esc_html__('Inline', 'taproot'), 
+        'inline' => esc_html__('Inline', 'taproot'),
         'link' => esc_html__('Link', 'taproot'),
         'button' => esc_html__('Button', 'taproot'),
-    ],       
+    ],
 ]);
 
 
@@ -64,7 +64,7 @@ $manager->add_control( 'blog--archive-link--position', [
     'choices' => [
         'right' => esc_html__('Right', 'taproot'),
         'left' => esc_html__('Left', 'taproot'),
-    ],      
+    ],
 ]);
 
 
@@ -77,13 +77,13 @@ $manager->add_setting( 'blog--archive-link--text', [
 $manager->add_control( 'blog--archive-link--text', [
     'type' => 'text',
     'section' => 'blog--archive-link',
-    'label' => esc_html__( 'Read More Text', 'taproot' ),      
+    'label' => esc_html__( 'Read More Text', 'taproot' ),
 ]);
 
 
 // Setting: Link Font Size
 range( $manager, 'blog--archive-link--font-size', [
     'section' => 'blog--archive-link',
-    'label' => esc_html__('Button Link Font Size', 'taproot'),    
+    'label' => esc_html__('Button Link Font Size', 'taproot'),
     'atts' => range_atts()
 ]);

@@ -4,7 +4,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -31,7 +31,7 @@ function path( ...$item ) {
  * @return bool
  */
 function is_boxed_layout() {
-    return ( get_theme_mod( 'layout--site--boxed-layout' ) ) ? true : false;
+    return ( get_theme_mod( 'layout--boxed--enable' ) ) ? true : false;
 }
 
 
@@ -192,36 +192,107 @@ function maybe_convert_to_em( $value = false ) {
 }
 
 
+
 /**
- * Get Boxed Layout breakpoint
+ * Get Layout breakpoint
  *
- * Utility to calculate the sceensize when the site is the full
- * width when using boxed layout. Used to create media query for
- * fullwidth blocks.
+ * Utility to calculate the width when containers reach their full size
  *
- * @since  1.0.0
+ * @since  1.1.0
+ * @return int
+ */
+function get_full_layout_width() {
+
+    $max_width = theme_mod( 'layout--container--max-width', true );
+    $max_width_int = (int) filter_var($max_width, FILTER_SANITIZE_NUMBER_INT);
+
+    if( is_boxed_layout() ) {
+        $layout_padding = theme_mod('layout--boxed--outer-padding', true);
+    } else {
+        $site_width = get_layout_width('desktop', 'vw');
+        $layout_padding = get_padding_from_width( $site_width, 'vw' );
+    }
+
+    $layout_padding_int = (int) filter_var($layout_padding, FILTER_SANITIZE_NUMBER_INT);
+
+    $width = false;
+
+    if(strpos($layout_padding, 'vw') !== false) {
+        $percentage = (100 - (2 * $layout_padding_int) ) / 100;
+        $width = $max_width_int / $percentage;
+    }
+    elseif(strpos($layout_padding, 'px') !== false) {
+        $width = $max_width_int + (2 * $layout_padding_int);
+    }
+
+    if( $width <= 1025 ) {
+        return 1025;
+    }
+
+    return round($width);
+}
+
+
+/**
+ * Get Full Layout Padding
+ *
+ * Utility to calculate the padding in px when a layout reaches its max width
+ *
+ * @since  1.1.0
  * @return string
  */
-function get_boxed_layout_bp( $site_max, $boxed_layout_padding, $font_size ) {
-
-    $max_width_int = (int) filter_var($site_max, FILTER_SANITIZE_NUMBER_INT);
-    $boxed_layout_padding_int = (int) filter_var($boxed_layout_padding, FILTER_SANITIZE_NUMBER_INT);
-    $min_width = false;
-
-    if(strpos($boxed_layout_padding, 'vw') !== false) {
-        $percentage = (100 - (2 * $boxed_layout_padding_int) ) / 100;
-        $min_width = $max_width_int / $percentage;
-    }
-    elseif(strpos($boxed_layout_padding, 'px') !== false) {
-        $min_width = $max_width_int + (2 * $boxed_layout_padding_int);
-    }
-    elseif(strpos($boxed_layout_padding, 'rem') !== false) {
-        $desktop_font_size_int = (int) filter_var($font_size, FILTER_SANITIZE_NUMBER_INT);
-        $min_width = $max_width_int + (2 * $boxed_layout_padding_int * $desktop_font_size_int);
-    }
-
-    return $min_width;
+function get_full_layout_padding() {
+    $portion = (1 - get_layout_width('desktop') ) / 2;
+    $width = (int) get_full_layout_width();
+    return $portion * $width . 'px';
 }
+
+
+/**
+ * Get Layout Width
+ *
+ * Utility to get container layout width and format in vw, %, or as a decimal
+ *
+ * @since  1.1.0
+ * @return string
+ */
+function get_layout_width( $screen = 'mobile', $unit = 'decimal' ) {
+    $width = theme_mod( sprintf('layout--container-%s--width', $screen), null, true );
+    $width_int = (int) filter_var($width, FILTER_SANITIZE_NUMBER_INT);
+
+    if( 'decimal' === $unit ) {
+        return $width_int / 100;
+    }
+
+    return $width_int . $unit;
+}
+
+
+/**
+ * Get Padding from Width
+ *
+ * Utility to calculate side padding values
+ * from a width defined in vw or %.
+ *
+ * @since  1.1.0
+ * @param mixed $width - the width in vw, %, or unitless value
+ * @param string $unit - unit to add to the returned string
+ * @return string
+ */
+function get_padding_from_width( $width, $unit = false ) {
+
+    $width_int = (int) filter_var($width, FILTER_SANITIZE_NUMBER_INT);
+    if(!$width_int) return '';
+
+    $padding = (100 - $width_int) / 2;
+
+    if($unit) {
+        $padding .= $unit;
+    }
+
+    return $padding;
+}
+
 
 
 /**
@@ -243,4 +314,20 @@ function get_palette_color( $slug ) {
     }
 
     return false;
+}
+
+
+/**
+ * Get theme mod value
+ *
+ * Wrapper for Rootstrap's get_theme_mod() function.
+ * Omits the fallback argument, since we're not using it.
+ *
+ * @since  1.1.0
+ * @return mixed
+ */
+function theme_mod( $id, $display_default = false ) {
+
+    return \Rootstrap\get_theme_mod($id, null, $display_default);
+
 }

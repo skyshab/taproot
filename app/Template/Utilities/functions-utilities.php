@@ -6,14 +6,14 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
 
 namespace Taproot\Template;
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 /**
  * Returns the metadata separator.
@@ -45,15 +45,15 @@ function sep( $sep = '' ) {
 function get_layout() {
 
     if( is_home() || is_archive() ) {
-        $layout = get_theme_mod( 'blog--layout--layout', null, true );
+        $layout = theme_mod( 'blog--layout--layout', true );
     }
     elseif( is_single() ) {
-        $default = get_theme_mod( 'posts--layout--layout', null, true );
+        $default = theme_mod( 'posts--layout--layout', true );
         $layout = get_post_meta( get_the_ID(), '_taproot_page_layout', true );
         $layout = ($layout) ? $layout : $default;
     }
     elseif( is_page() ) {
-        $default = get_theme_mod( 'pages--layout--layout', null, true );
+        $default = theme_mod( 'pages--layout--layout', true );
         $layout = get_post_meta( get_the_ID(), '_taproot_page_layout', true );
         $layout = ($layout) ? $layout : $default;
     }

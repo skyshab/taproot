@@ -2,11 +2,11 @@
 /**
  * Section setup.
  *
- * This file adds the section, settings and controls to the customizer. 
+ * This file adds the section, settings and controls to the customizer.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -36,21 +36,21 @@ $manager->add_section( 'blog--archive-title', [
 // Color Setting: Title Color
 color( $manager, 'blog--archive-title--color', [
     'label'   => esc_html__( 'Title Color', 'taproot' ),
-    'section' => 'blog--archive-title',  
-]); 
+    'section' => 'blog--archive-title',
+]);
 
 
 // Color Setting: Title Color Hover
 color( $manager, 'blog--archive-title--color--hover', [
     'label'   => esc_html__( 'Title Color Hover', 'taproot' ),
-    'section' => 'blog--archive-title',  
-]); 
+    'section' => 'blog--archive-title',
+]);
 
 
 // Setting: Title Font Size
 range( $manager, 'blog--archive-title--font-size', [
     'section'   => 'blog--archive-title',
-    'label'     => esc_html__('Title Font Size', 'taproot'),    
+    'label'     => esc_html__('Title Font Size', 'taproot'),
     'atts' => range_atts('heading')
 ]);
 

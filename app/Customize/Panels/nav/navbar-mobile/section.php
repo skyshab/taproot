@@ -2,11 +2,11 @@
 /**
  * Section setup.
  *
- * This file adds the section, settings and controls to the customizer. 
+ * This file adds the section, settings and controls to the customizer.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -34,8 +34,8 @@ $manager->add_section( 'nav--navbar-mobile', [
 # Add Settings & Controls
 # =======================================================
 
-   
-// Setting: Navbar Mobile Breakpoint       
+
+// Setting: Navbar Mobile Breakpoint
 $manager->add_setting( 'nav--navbar-mobile--breakpoint', array(
     'sanitize_callback' => 'sanitize_text_field',
     'transport' => 'refresh',
@@ -50,11 +50,11 @@ $manager->add_control( 'nav--navbar-mobile--breakpoint', array(
         'mobile' => esc_html__( 'Mobile Only', 'taproot' ),
         'tablet-and-under' => esc_html__( 'Tablet and under', 'taproot' ),
         'default' => esc_html__( 'Always Mobile', 'taproot' ),
-    ),       
+    ),
 ));
 
 
-// Setting: Hide when mobile 
+// Setting: Hide when mobile
 $manager->add_setting( 'nav--navbar-mobile--hide', [
     'sanitize_callback' => 'taproot_sanitize_checkbox',
     'transport' => 'refresh',
@@ -82,29 +82,29 @@ $manager->add_control( 'nav--navbar-mobile--type', [
         'dropdown-fade' => esc_html__( 'Dropdown - Fade', 'taproot' ),
         'slide' => esc_html__( 'Slide In', 'taproot' ),
         'fullscreen' => esc_html__( 'Fullscreen', 'taproot' ),
-    ],       
+    ],
 ]);
 
 
 // Color Setting: Navbar Background Color
 color( $manager, 'nav--navbar-mobile--background-color', [
     'label'   => esc_html__( 'Navbar Background Color', 'taproot' ),
-    'section' => 'nav--navbar-mobile',  
-]); 
+    'section' => 'nav--navbar-mobile',
+]);
 
 
 // Setting: Navbar Height
 range( $manager, 'nav--navbar-mobile--height', [
     'section' => 'nav--navbar-mobile',
-    'label' => esc_html__('Navbar Height', 'taproot'), 
+    'label' => esc_html__('Navbar Height', 'taproot'),
     'atts'  => [
         'px' => [
             'max' => 100,
             'default' => 50,
-        ],        
+        ],
         'em' => [
             'max' => 6,
-        ],                 
+        ],
     ]
 ]);
 
@@ -123,28 +123,28 @@ $manager->add_control( 'nav--navbar-mobile--side', [
     'choices' => [
         'left' => esc_html__( 'Left', 'taproot' ),
         'right' => esc_html__( 'Right', 'taproot' ),
-    ],       
+    ],
 ]);
 
 
 // Color Setting: Icon Color
 color( $manager, 'nav--navbar-mobile--icon-color', [
     'label'   => esc_html__( 'Icon Color', 'taproot' ),
-    'section' => 'nav--navbar-mobile',  
-]); 
+    'section' => 'nav--navbar-mobile',
+]);
 
 
 // Setting: Mobile Menu Icon Size
 range( $manager, 'nav--navbar-mobile--icon-size', [
     'section' => 'nav--navbar-mobile',
-    'label' => esc_html__('Icon Size', 'taproot'), 
+    'label' => esc_html__('Icon Size', 'taproot'),
     'atts' => [
         'px' => [
             'max' => 48,
-        ],        
+        ],
         'em' => [
             'max' => 3,
-        ],         
+        ],
     ]
 ]);
 
@@ -163,35 +163,35 @@ $manager->add_control( new Font_Styles( $manager, 'nav--navbar-mobile--font-styl
 // Color Setting: Menu Background Color
 color( $manager, 'nav--navbar-mobile--menu-background-color', [
     'label'   => esc_html__( 'Menu Background Color', 'taproot' ),
-    'section' => 'nav--navbar-mobile',  
-]); 
+    'section' => 'nav--navbar-mobile',
+]);
 
 
 // Color Setting: Separator Color
 color( $manager, 'nav--navbar-mobile--separator-color', [
     'label'   => esc_html__( 'Menu Separator Color', 'taproot' ),
-    'section' => 'nav--navbar-mobile',  
-]); 
+    'section' => 'nav--navbar-mobile',
+]);
 
 
 // Color Setting: Link Color
 color( $manager, 'nav--navbar-mobile--link-color', [
     'label'   => esc_html__( 'Link Color', 'taproot' ),
-    'section' => 'nav--navbar-mobile',  
-]); 
+    'section' => 'nav--navbar-mobile',
+]);
 
 
 // Color Setting: Link Color Hover
 color( $manager, 'nav--navbar-mobile--link-color--hover', [
     'label'   => esc_html__( 'Link Color: Hover', 'taproot' ),
-    'section' => 'nav--navbar-mobile',  
-]); 
+    'section' => 'nav--navbar-mobile',
+]);
 
 
 // Setting: Menu Item Font Size
 range( $manager, 'nav--navbar-mobile--font-size', [
     'section' => 'nav--navbar-mobile',
-    'label' => esc_html__('Link Font Size', 'taproot'), 
+    'label' => esc_html__('Link Font Size', 'taproot'),
     'atts' => range_atts('text')
 ]);
 
@@ -199,17 +199,17 @@ range( $manager, 'nav--navbar-mobile--font-size', [
 // Setting: Menu Item Line Height
 range( $manager, 'nav--navbar-mobile--line-height', [
     'section' => 'nav--navbar-mobile',
-    'label' => esc_html__('Link Line Height', 'taproot'), 
+    'label' => esc_html__('Link Line Height', 'taproot'),
     'atts'  => [
         'px' => [
             'max' => 64,
-        ],        
+        ],
         'em' => [
             'max' => 5,
-        ],  
+        ],
         'rem' => [
             'max' => 5,
-        ],                 
+        ],
     ]
 ]);
 
@@ -217,13 +217,13 @@ range( $manager, 'nav--navbar-mobile--line-height', [
 // menu item padding
 range( $manager, 'nav--navbar-mobile--padding', [
     'section' => 'nav--navbar-mobile',
-    'label' => esc_html__('Link Padding', 'taproot'), 
+    'label' => esc_html__('Link Padding', 'taproot'),
     'atts'  => [
         'px' => [
             'max' => 32,
-        ],        
+        ],
         'em' => [
             'max' => 2,
-        ],                        
+        ],
     ]
 ]);
