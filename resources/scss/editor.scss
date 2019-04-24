@@ -19,38 +19,38 @@
 // var defaults
 :root {
     // colors
-    @import 'defaults/vars/colors';   
+    @import 'custom-properties/colors';
 
     // global vars
-    @import 'defaults/vars/default';  
+    @import 'custom-properties/default';
 
     // mobile vars
-    @import 'defaults/vars/mobile';      
+    @import 'custom-properties/mobile';
 }
 
-// tablet vars 
+// tablet vars
 @media ( min-width: 768px ) {
     // use tablet vars when sidebar closed
     .edit-post-layout:not(.is-sidebar-opened) {
-        @import 'defaults/vars/tablet';    
+        @import 'custom-properties/tablet';
     }
 }
 
-// desktop vars 
+// desktop vars
 @media (min-width: 960px) {
     // use tablet vars when settings sidebar is open
     :root {
-        @import 'defaults/vars/tablet';    
+        @import 'custom-properties/tablet';
     }
 
     // use desktop vars when settings sidebar is closed
     .edit-post-layout:not(.is-sidebar-opened) {
-        @import 'defaults/vars/desktop';    
+        @import 'custom-properties/desktop';
     }
 }
 
 
-// Prefix all of the block styles with `.editor-styles-wrapper` 
+// Prefix all of the block styles with `.editor-styles-wrapper`
 .editor-styles-wrapper {
     // get our block styles
     @import 'blocks/_index';

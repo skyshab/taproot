@@ -4,7 +4,7 @@
 /// These are used in both the theme css file
 /// and the block editor styles
 ///
-/// @group  Defaults
+/// @group  custom-properties
 /// @author Sky Shabatura <theme@sky.camp>
 /// @link   https://taproot-theme.com
 ////
@@ -12,15 +12,15 @@
 
 & {
     // Body base styles
-    --typography--body--font-size: 18px; 
-    --typography--body--line-height: 1.6;  
-    --typography--body--block-spacing: 1.6em;       
+    --typography--body--font-size: 18px;
+    --typography--body--line-height: 1.6;
+    --typography--body--block-spacing: 1.6em;
 
     // Heading font sizes
     --typography--h1--font-size: 2.5em;
     --typography--h2--font-size: 2em;
     --typography--h3--font-size: 1.5em;
-    --typography--h4--font-size: 1.13em;  
+    --typography--h4--font-size: 1.13em;
 
     // post title defaults
     --posts--title--font-size: 2.5em;
@@ -31,7 +31,7 @@
     // layout content padding
     --layout--content--padding: 2.5rem;
 
-    // footer 
+    // footer
     --footer--widgets--layout: repeat(2, 1fr);
     --footer--widgets--gutter: 1.5em;
 

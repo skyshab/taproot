@@ -1,0 +1,32 @@
+////
+/// Get CSS custom properties wrapped in media queries.
+///
+/// These are imported into the theme css file
+///
+/// @group  custom-properties
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+:root {
+
+    // defaults
+    @import 'default';
+
+    // colors
+    @import 'colors';
+
+    // mobile vars
+    @import 'mobile';
+
+    // tablet vars
+    @include screen('tablet-and-up') {
+        @import 'tablet';
+    }
+
+    // desktop vars
+    @include screen('desktop') {
+        @import 'desktop';
+    }
+}

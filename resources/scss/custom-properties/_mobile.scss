@@ -4,7 +4,7 @@
 /// These are used in both the theme css file
 /// and the block editor styles
 ///
-/// @group  Defaults
+/// @group  custom-properties
 /// @author Sky Shabatura <theme@sky.camp>
 /// @link   https://taproot-theme.com
 ////
@@ -14,21 +14,21 @@
 
     // base body styles
     --typography--body--font-size: 16px;
-    --typography--body--line-height: 1.5;  
+    --typography--body--line-height: 1.5;
     --typography--body--block-spacing: 1.5em;
 
-    
+
     // Heading font sizes
     --typography--h1--font-size: 2em;
     --typography--h2--font-size: 1.63em;
     --typography--h3--font-size: 1.38em;
-    --typography--h4--font-size: 1.13em;  
-    --typography--h5--font-size: 1em;  
-    --typography--h6--font-size: 1em;  
+    --typography--h4--font-size: 1.13em;
+    --typography--h5--font-size: 1em;
+    --typography--h6--font-size: 1em;
 
 
     // Heading line heights
-    --typography--h1--line-height: 1.05;    
+    --typography--h1--line-height: 1.05;
     --typography--h2--line-height: 1.25;
     --typography--h3--line-height: 1.25;
     --typography--h4--line-height: 1.22;
@@ -43,29 +43,29 @@
 
     // page title defaults
     --pages--title--font-size: 2em;
-    --pages--title--line-height: 1.05;    
+    --pages--title--line-height: 1.05;
 
 
     // blog title
     --blog--title--font-size: var( --typography--h1--font-size );
-    --blog--title--line-height: var( --typography--h1--line-height );     
+    --blog--title--line-height: var( --typography--h1--line-height );
 
 
     // post meta
     --posts--meta--font-size: 1em;
     --posts--meta--color: var( --colors--theme--meta-dark );
-    --posts--meta--icon--color: inherit;                
+    --posts--meta--icon--color: inherit;
 
 
     // layout padding
-    --layout--content--padding: 2rem;   
+    --layout--content--padding: 2rem;
 
 
     // branding
-    --branding--logo--width: 60px;   
-    --branding--logo--gutter: 1em;    
-    --branding--title--font-size: 1.5em;  
-    --branding--title--line-height: 1;    
+    --branding--logo--width: 60px;
+    --branding--logo--gutter: 1em;
+    --branding--title--font-size: 1.5em;
+    --branding--title--line-height: 1;
     --branding--tagline--font-size: 1em;
     --branding--tagline--line-height: 1;
     --branding--tagline--gutter: 0em;
@@ -109,7 +109,7 @@
     --footer--widgets--gutter: 1em;
     --footer--widgets--font-size: 16px;
     --footer--widgets--line-height: 1.4;
-    --footer--widgets--title--font-size: 1.2em; 
-    --footer--widgets--title--line-height: 1.2;     
+    --footer--widgets--title--font-size: 1.2em;
+    --footer--widgets--title--line-height: 1.2;
 
 }
