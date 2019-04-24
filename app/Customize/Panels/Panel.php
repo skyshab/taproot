@@ -129,12 +129,13 @@ class Panel  {
 
         if( ! $this->sections ) return;
 
+        // load the defaults
         foreach ( $this->sections as $section ) {
-
-            // load defaults.php
             $file = path( $panel, $section, 'defaults.php' );
             $path = get_parent_theme_file_path( path( 'app', 'Customize', 'Panels', $file ) );
-            if( file_exists( $path ) ) include_once $file;
+            if( file_exists( $path ) ) {
+                include_once $file;
+            }
         }
     }
 
@@ -151,23 +152,18 @@ class Panel  {
 
         $panel = $this->id;
 
-        if( !empty( $this->args ) )
+        if( !empty( $this->args ) ) {
             $manager->add_panel( $panel, $this->args );
+        }
 
         if( ! $this->sections ) return;
 
+        // load each section file
         foreach ( $this->sections as $section ) {
-
-            // load section.php
             $file = path( $panel, $section, 'section.php' );
             $path = get_parent_theme_file_path( path( 'app', 'Customize', 'Panels', $file ) );
-            if( file_exists( $path ) ) include_once $file;
-
-            // load partials.php
-            if ( isset( $manager->selective_refresh ) ) {
-                $partials_file = path( $panel, $section, 'partials.php' );
-                $partials_path = get_parent_theme_file_path( path( 'app', 'Customize', $partials_file ) );
-                if( file_exists( $partials_path ) ) include_once $partials_file;
+            if( file_exists( $path ) ) {
+                include_once $file;
             }
         }
     }
@@ -181,8 +177,11 @@ class Panel  {
 	 * @return void
 	 */
 	public function sections( $sections = false ) {
-        if( $sections && is_array( $sections ) ) $this->sections = $sections;
-        else return $this->sections;
+        if( $sections && is_array( $sections ) ) {
+            $this->sections = $sections;
+        } else {
+            return $this->sections;
+        }
     }
 
 
@@ -199,7 +198,9 @@ class Panel  {
         foreach( $this->sections as $section ) {
             $file = path( $panel, $section, 'styles.php' );
             $path = get_parent_theme_file_path( path( 'app', 'Customize', 'Panels', $file ) );
-            if( file_exists( $path ) ) include_once $file;
+            if( file_exists( $path ) ) {
+                include_once $file;
+            }
         }
     }
 

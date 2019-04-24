@@ -30,9 +30,18 @@ if( $manager->get_section( 'header_image' ) ) {
     $manager->get_section( 'header_image' )->description = esc_html__('Choose a custom header image for the homepage. If using a static homepage, the page settings will be used instead.', 'taproot');
 }
 
+
 # =======================================================
 # Add Settings & Controls
 # =======================================================
+
+
+// Update the transform property
+if( $manager->get_setting( 'header_image' ) ) {
+    $manager->get_setting( 'header_image' )->transport = 'postMessage';
+    $manager->get_setting( 'header_image_data' )->transport = 'postMessage';
+}
+
 
 if( $manager->get_section( 'header_image' ) ) {
 
@@ -74,4 +83,25 @@ if( $manager->get_section( 'header_image' ) ) {
         'atts' => $header_image_height_atts
     ]);
 
+}
+
+
+# =======================================================
+# Selective Refresh
+# =======================================================
+
+
+// If the selective refresh component is available
+if ( isset( $manager->selective_refresh ) ) {
+
+    // Selectively refreshes the custom header if it doesn't support
+    // videos. Core WP won't properly refresh output from its own
+    // `the_custom_header_markup()` function unless video is supported.
+    if ( ! current_theme_supports( 'custom-header', 'video' ) ) {
+        $manager->selective_refresh->add_partial( 'header_image', [
+            'selector'            => '#wp-custom-header',
+            'render_callback'     => 'the_custom_header_markup',
+            'container_inclusive' => true,
+        ]);
+    }
 }

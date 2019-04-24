@@ -34,10 +34,11 @@ $manager->add_section( 'branding--title', [
 
 
 // Move the header image section to the header panel
+// and change the transport method
 if( $manager->get_control( 'blogname' ) ) {
     $manager->get_control( 'blogname' )->section = 'branding--title';
+    $manager->get_setting( 'blogname' )->transport = 'postMessage';
 }
-
 
 // Setting: Display Site Title
 $manager->add_setting( 'branding--title--display-title', [
@@ -83,3 +84,22 @@ $manager->add_control( new Font_Styles( $manager, 'branding--title--font-styles'
     'section' => 'branding--title',
     'label'   => esc_html__( 'Font Styles', 'taproot' ),
 ]));
+
+
+# =======================================================
+# Selective Refresh
+# =======================================================
+
+
+// If the selective refresh component is available
+if ( isset( $manager->selective_refresh ) ) {
+
+    // Selectively refreshes the title in the header
+    // when the core WP blogname setting is changed.
+    $manager->selective_refresh->add_partial( 'blogname', [
+        'selector' => '.app-header__title-link',
+        'render_callback' => function() {
+            return get_bloginfo( 'name', 'display' );
+        }
+    ]);
+}

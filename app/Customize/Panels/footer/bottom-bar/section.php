@@ -66,11 +66,11 @@ $manager->add_control( 'footer--bottom-bar--content', [
 ]);
 
 
-// selective refresh for bottom bar content
-// if( isset( $manager->selective_refresh ) ) {
-//     $manager->selective_refresh->add_partial( 'footer--bottom-bar--content', array(
-//         'selector' => '.bottom-bar__container',
-//         'container_inclusive' => true,
-//         'render_callback' => 'taproot_customize_partial_bottom_bar_content',
-//     ));
-// }
+//selective refresh for bottom bar content
+if( isset( $manager->selective_refresh ) ) {
+    $manager->selective_refresh->add_partial( 'footer--bottom-bar--content', array(
+        'selector' => '.bottom-bar__container',
+        'container_inclusive' => false,
+        'render_callback' => 'taproot_customize_partial_bottom_bar_content',
+    ));
+}

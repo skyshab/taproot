@@ -104,7 +104,49 @@ class Customize implements Bootable {
         include_once 'functions/functions-controls.php';
         include_once 'functions/functions-sanitize.php';
         include_once 'functions/functions-partials.php';
-        include_once 'customize-register.php';
+
+        // change menus priority
+        if( $manager->get_panel( 'nav_menus' ) ) {
+            $manager->get_panel( 'nav_menus' )->priority = 45;
+        }
+
+        // make footer sidebars appear in the customizer last
+        if( $manager->get_section( 'sidebar-widgets-footer-1' ) ) {
+            $manager->get_section( 'sidebar-widgets-footer-1' )->priority = 500;
+        }
+
+        if( $manager->get_section( 'sidebar-widgets-footer-2' ) ) {
+            $manager->get_section( 'sidebar-widgets-footer-2' )->priority = 510;
+        }
+
+        if( $manager->get_section( 'sidebar-widgets-footer-3' ) ) {
+            $manager->get_section( 'sidebar-widgets-footer-3' )->priority = 520;
+        }
+
+        if( $manager->get_section( 'sidebar-widgets-footer-4' ) ) {
+            $manager->get_section( 'sidebar-widgets-footer-4' )->priority = 530;
+        }
+
+        // Hide the default colors section
+        if( $manager->get_section( 'colors' ) ) {
+            $manager->remove_section( 'colors' );
+        }
+
+        // Rename site icon section
+        if( $manager->get_section( 'title_tagline' ) ) {
+            $manager->get_section( 'title_tagline' )->title = __('Site Icon', 'taproot');
+            $manager->get_section( 'title_tagline' )->panel = 'general';
+        }
+
+        // move to the general settings panel
+        if( $manager->get_section( 'static_front_page' ) ) {
+            $manager->get_section( 'static_front_page' )->panel = 'general';
+        }
+
+        // Hide the default show title/tagline controls
+        if( $manager->get_control( 'display_header_text' ) ) {
+            $manager->remove_control( 'display_header_text' );
+        }
 	}
 
 
