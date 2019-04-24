@@ -9,87 +9,147 @@
 ////
 
 
-// global layout styles
+// block alignment classes
+
+.alignfull,
+.alignwide {
+    margin-top: var(--layout--block-spacing--large);
+    margin-bottom: var(--layout--block-spacing--large);
+
+    // force image to fill space
+    img {
+        width: 100%;
+    }
+}
+
+.alignfull {
+
+    @include screen('tablet-and-under') {
+        width: 100vw;
+        margin-left: calc( 50% - 50vw );
+    }
+
+    @include screen('desktop') {
+        .app-main--full & {
+            width: 100vw;
+            margin-left: calc( 50% - 50vw );
+        }
+    }
+}
+
+
+.alignwide {
+
+    .app-main--sidebar-right &, .app-main--sidebar-left & {
+
+        @include screen('tablet') {
+            width: var(--layout--container--width);
+            max-width: var(--layout--container--max-width);
+            margin-left: calc( (var(--layout--container--width) - 100%) / -2 );
+        }
+    }
+
+    .app-main--full & {
+
+        @include screen('tablet-and-up') {
+            width: var(--layout--container--width);
+            max-width: var(--layout--container--max-width);
+            margin-left: calc( (var(--layout--container--width) - 100%) / -2 );
+        }
+    }
+
+    .app-main--full.boxed-layout & {
+
+        @include screen('desktop') {
+            width: calc( (100vw - (2 * var(--layout--boxed--outer-padding) ) ) * var(--layout--container--width-as-decimal) );
+            margin-left: calc( (( (100vw - (2 * var(--layout--boxed--outer-padding) ) ) * var(--layout--container--width-as-decimal)) - 100%) / -2);
+        }
+    }
+
+}
+
+
+// global block height styles
 .fullscreen-layout, .boxed-layout {
     .has-height {
-        &-short {                
+        &-short {
             @include screen('mobile') {
                 height: 35vw;
-            }                             
-        }          
+            }
+        }
         &-standard {
             @include screen('mobile') {
                 height: 50vw;
-            }                  
+            }
         }
         &-tall {
             @include screen('mobile') {
                 height: 64vw;
-            }                
+            }
         }
         &-fullscreen {
             height: 100vh;
-        }  
+        }
     }
 }
 
 // Full screen only styles
-.fullscreen-layout {        
+.fullscreen-layout {
     .has-height {
-        &-short {                
+        &-short {
             @include screen('tablet') {
-                height: 300px;    
-            }    
+                height: 300px;
+            }
             @include screen('desktop') {
-                height: 325px;    
-            }                             
-        }              
+                height: 325px;
+            }
+        }
         &-standard {
             @include screen('tablet') {
-                height: 375px;    
-            }    
+                height: 375px;
+            }
             @include screen('desktop') {
-                height: 425px;    
-            }                   
+                height: 425px;
+            }
         }
         &-tall {
             @include screen('tablet') {
-                height: 450px;    
-            }    
+                height: 450px;
+            }
             @include screen('desktop') {
-                height: 500px;    
-            }                   
-        }          
+                height: 500px;
+            }
+        }
     }
 }
 
 // boxed layout only styles
 .boxed-layout {
     .has-height {
-        &-short {                
+        &-short {
             @include screen('tablet') {
-                height: 275px;    
-            }    
+                height: 275px;
+            }
             @include screen('desktop') {
-                height: 325px;    
-            }                             
-        }                           
+                height: 325px;
+            }
+        }
         &-standard {
             @include screen('tablet') {
-                height: 375px;    
-            }    
+                height: 375px;
+            }
             @include screen('desktop') {
-                height: 425px;    
-            }                   
+                height: 425px;
+            }
         }
         &-tall {
             @include screen('tablet') {
-                height: 450px;    
-            }    
+                height: 450px;
+            }
             @include screen('desktop') {
-                height: 500px;    
-            }                 
-        }          
-    }        
+                height: 500px;
+            }
+        }
+    }
 }
 

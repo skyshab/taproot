@@ -11,9 +11,6 @@
 ////
 
 
-// import global block styles
-@import 'block-styles';
-
 // Import core blocks.
 @import 'core/paragraph';
 @import 'core/audio';
@@ -35,3 +32,6 @@
 @import 'core/table';
 @import 'core/verse';
 @import 'core/text-media';
+
+// import global block styles
+@import 'block-styles';
