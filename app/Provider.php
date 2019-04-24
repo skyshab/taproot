@@ -3,8 +3,8 @@
  * App service provider.
  *
  * Service providers are essentially the bootstrapping code for your theme.
- * They allow you to add bindings to the container on registration and boot them
- * once everything has been registered.
+ * They allow you to add bindings to the container on registration
+ * and boot them once everything has been registered.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
@@ -17,9 +17,6 @@ namespace Taproot;
 
 use Hybrid\Tools\ServiceProvider;
 use Rootstrap\Rootstrap;
-use Taproot\Customize\Customize;
-use Taproot\Template\Template;
-use Taproot\Admin\Editor\Editor;
 
 /**
  * App service provider.
@@ -27,7 +24,7 @@ use Taproot\Admin\Editor\Editor;
  * @since  1.0.0
  * @access public
  */
-class AppServiceProvider extends ServiceProvider {
+class Provider extends ServiceProvider {
 
 
 	/**
@@ -41,12 +38,6 @@ class AppServiceProvider extends ServiceProvider {
 
 		// Bind a single instance of the main Roostrap class.
 		$this->app->singleton( Rootstrap::class, Rootstrap::instance() );
-
-		// Bind a single instance of our customizer class.
-        $this->app->singleton( Customize::class );
-
-        // Bind SVG icons to our icons class
-        $this->app->bind( 'Taproot\Template\Icons', 'Taproot\Template\Icons\SVG' );
 
 		// Bind the Laravel Mix manifest for cache-busting.
 		$this->app->singleton( 'taproot/mix', function() {
@@ -67,16 +58,7 @@ class AppServiceProvider extends ServiceProvider {
 	public function boot() {
 
         // Boot the Rootstrap class instance.
-		$this->app->resolve( Rootstrap::class )->boot();
-
-		// Boot the customizer class instance.
-        $this->app->resolve( Customize::class )->boot();
-
-		// Boot the Editor class
-        $this->app->resolve( Editor::class )->boot();
-
-		// Boot the Template class
-        $this->app->resolve( Template::class )->boot();
+        $this->app->resolve( Rootstrap::class )->boot();
 
 	}
 }

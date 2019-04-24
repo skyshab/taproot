@@ -47,7 +47,6 @@ range( $manager, 'branding--logo-desktop--width', [
 ]);
 
 
-
 // Setting: Logo Gutter
 range( $manager, 'branding--logo-desktop--gutter', [
     'section' => 'branding--logo-desktop',

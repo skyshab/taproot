@@ -15,7 +15,6 @@ namespace Taproot\Template;
 
 use Hybrid\Contracts\Bootable;
 
-
 /**
  * Manages Template Classes
  *
