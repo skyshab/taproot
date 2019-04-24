@@ -11,11 +11,11 @@
  * @link      https://taproot-theme.com
  */
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Var: Link Font Size
 $styles->add_var([
     'name' => 'blog--archive-link--font-size',
-    'value' => get_theme_mod( 'blog--archive-link--font-size' ),
+    'value' => theme_mod( 'blog--archive-link--font-size' ),
 ]);

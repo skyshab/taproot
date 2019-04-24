@@ -14,7 +14,7 @@
 
 use function Taproot\Customize\get_font_family;
 use function Taproot\Customize\get_font_styles;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 # =======================================================
@@ -26,15 +26,15 @@ use function Rootstrap\get_theme_mod;
 $styles->add([
     'selector' => '.editor-styles-wrapper .wp-block-button .wp-block-button__link, .editor-styles-wrapper .taproot-button',
     'styles' => [
-        'color'             =>  get_theme_mod( 'elements--buttons--color', get_theme_mod( 'colors--theme--accent-contrast', true ) ),
-        'background-color'  =>  get_theme_mod( 'elements--buttons--background-color', get_theme_mod( 'colors--theme--accent', true ) ),
-        'border-color'      =>  get_theme_mod( 'elements--buttons--border-color' ),
-        'border-width'      =>  get_theme_mod( 'elements--buttons--border-width' ),
-        'border-radius'     =>  get_theme_mod( 'elements--buttons--border-radius' ),
-        'font-family'       =>  get_font_family( get_theme_mod( 'elements--buttons--font-family' ) ),
-        'font-size'         =>  get_theme_mod( 'elements--buttons--font-size', true ),
-        'padding-left'      =>  get_theme_mod( 'elements--buttons--padding', true ),
-        'padding-right'     =>  get_theme_mod( 'elements--buttons--padding', true ),
+        'color'             =>  theme_mod( 'elements--buttons--color', theme_mod( 'colors--theme--accent-contrast', true ) ),
+        'background-color'  =>  theme_mod( 'elements--buttons--background-color', theme_mod( 'colors--theme--accent', true ) ),
+        'border-color'      =>  theme_mod( 'elements--buttons--border-color' ),
+        'border-width'      =>  theme_mod( 'elements--buttons--border-width' ),
+        'border-radius'     =>  theme_mod( 'elements--buttons--border-radius' ),
+        'font-family'       =>  get_font_family( theme_mod( 'elements--buttons--font-family' ) ),
+        'font-size'         =>  theme_mod( 'elements--buttons--font-size', true ),
+        'padding-left'      =>  theme_mod( 'elements--buttons--padding', true ),
+        'padding-right'     =>  theme_mod( 'elements--buttons--padding', true ),
         'padding-top'       => '0px',
         'padding-bottom'    => '0px',
     ]
@@ -45,7 +45,7 @@ $styles->add([
 $styles->add([
     'selector' => '.editor-styles-wrapper .wp-block-button .wp-block-button__link, .editor-styles-wrapper .wp-block-button .mce-content-body, .editor-styles-wrapper .taproot-button',
     'styles' => [
-        'line-height' => get_theme_mod( 'elements--buttons--height', true )
+        'line-height' => theme_mod( 'elements--buttons--height', true )
     ]
 ]);
 
@@ -62,9 +62,9 @@ $styles->add([
 // $styles->add([
 //     'selector' => '.editor-styles-wrapper .wp-block-button .wp-block-button__link:hover, .editor-styles-wrapper .taproot-button:hover',
 //     'styles' => [
-//         'color'             =>  get_theme_mod( 'elements--buttons-hover--color' ),
-//         'background-color'  =>  get_theme_mod( 'elements--buttons-hover--background-color' ),
-//         'border-color'      =>  get_theme_mod( 'elements--buttons-hover--border-color' ),
+//         'color'             =>  theme_mod( 'elements--buttons-hover--color' ),
+//         'background-color'  =>  theme_mod( 'elements--buttons-hover--background-color' ),
+//         'border-color'      =>  theme_mod( 'elements--buttons-hover--border-color' ),
 //     ]
 // ]);
 

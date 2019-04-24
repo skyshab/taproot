@@ -15,7 +15,7 @@ namespace Taproot\Template\Main;
 
 use Hybrid\Contracts\Bootable;
 use function Taproot\Template\get_layout;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 /**
@@ -67,7 +67,7 @@ class Main implements Bootable {
         else
             $classes[] = sprintf( ' app-main--sidebar-%s', get_layout() );
 
-        if( get_theme_mod( 'layout--boxed--enable' ) )
+        if( theme_mod( 'layout--boxed--enable' ) )
             $classes[] = 'boxed-layout';
         else
             $classes[] = 'fullscreen-layout';

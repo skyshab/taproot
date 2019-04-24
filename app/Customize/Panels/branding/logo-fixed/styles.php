@@ -12,11 +12,11 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Hide when fixed?
-$hide_when_fixed = get_theme_mod( 'branding--logo-fixed--hide' );
+$hide_when_fixed = theme_mod( 'branding--logo-fixed--hide' );
 
 if( $hide_when_fixed ) {
     $styles->add([
@@ -28,10 +28,10 @@ if( $hide_when_fixed ) {
 else {
 
     $logo_styles = [];
-    $logo_styles['width'] = get_theme_mod( 'branding--logo-fixed--width' );
-    $logo_gutter = get_theme_mod( 'branding--logo-fixed--gutter' );
+    $logo_styles['width'] = theme_mod( 'branding--logo-fixed--width' );
+    $logo_gutter = theme_mod( 'branding--logo-fixed--gutter' );
 
-    if( 'horizontal' === get_theme_mod( 'branding--layout-desktop--layout', null, true ) && $logo_gutter ) {
+    if( 'horizontal' === theme_mod( 'branding--layout-desktop--layout', true ) && $logo_gutter ) {
         $logo_styles['margin'] = sprintf( '0 %s 0 0', $logo_gutter );
     }
     elseif( $logo_gutter ) {

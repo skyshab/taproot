@@ -13,27 +13,27 @@
 
 
 use function Taproot\Customize\get_font_styles;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Archive Entry Title Color
 $styles->add([
     'selector' => '.entry__title--archive',
-    'styles' => [ 'color' => get_theme_mod( 'blog--archive-title--color' ) ]
+    'styles' => [ 'color' => theme_mod( 'blog--archive-title--color' ) ]
 ]);
 
 
 // Archive Entry Title Color Hover
 $styles->add([
     'selector' => '.entry__title--archive:hover',
-    'styles' => [ 'color' => get_theme_mod( 'blog--archive-title--color--hover' ) ]
+    'styles' => [ 'color' => theme_mod( 'blog--archive-title--color--hover' ) ]
 ]);
 
 
 // Var: Archive Entry Title Size
 $styles->add([
     'selector' => '.entry__title--archive',
-    'styles' => [ 'font-size' => get_theme_mod( 'blog--archive-title--font-size' ) ]
+    'styles' => [ 'font-size' => theme_mod( 'blog--archive-title--font-size' ) ]
 ]);
 
 

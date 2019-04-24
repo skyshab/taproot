@@ -14,7 +14,7 @@
 
 namespace Taproot\Template;
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 use Hybrid\Carbon\Image as Featured_Image;
 
 /**
@@ -26,13 +26,13 @@ use Hybrid\Carbon\Image as Featured_Image;
  */
 function archive_link() {
 
-    $link_style = get_theme_mod( 'blog--archive-link--style', null, true );
+    $link_style = theme_mod( 'blog--archive-link--style', true );
 
-    if( get_theme_mod('taproot_post_show_all') || 'inline' === $link_style || 'none' === $link_style )
+    if( theme_mod('taproot_post_show_all') || 'inline' === $link_style || 'none' === $link_style )
         return false;
 
-    $link_text = get_theme_mod( 'blog--archive-link--text', null, true );
-    $link_position = get_theme_mod( 'blog--archive-link--position', null, true );
+    $link_text = theme_mod( 'blog--archive-link--text', true );
+    $link_position = theme_mod( 'blog--archive-link--position', true );
     $link_class = ( 'button' === $link_style ) ? 'taproot-button ' : '';
     $link_class .= ( 'right' === $link_position ) ? 'align-self--right ' : '';
     $link_class .= 'entry__link';
@@ -65,7 +65,7 @@ function blog_title() {
     ];
 
     // echol filtered blog title content
-    echo wp_kses( get_theme_mod( 'blog--title--title', null, true ), $allowed );
+    echo wp_kses( theme_mod( 'blog--title--title', true ), $allowed );
 }
 
 

@@ -14,13 +14,13 @@
 
 use function Taproot\Customize\get_font_family;
 use function Taproot\Customize\get_font_styles;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 if( has_nav_menu( 'top' ) ) {
 
     // Show when fixed?
-    $show_when_fixed = get_theme_mod( 'nav--top-fixed--fixed' );
+    $show_when_fixed = theme_mod( 'nav--top-fixed--fixed' );
 
     if( !$show_when_fixed ) {
         $styles->add([
@@ -35,7 +35,7 @@ if( has_nav_menu( 'top' ) ) {
         $styles->add([
             'selector' => '.app-header--fixed .menu--top',
             'styles' => array(
-                'background-color' => get_theme_mod( 'nav--top-fixed--background-color' ),
+                'background-color' => theme_mod( 'nav--top-fixed--background-color' ),
             ),
             'screen' => 'desktop',
         ]);
@@ -45,11 +45,11 @@ if( has_nav_menu( 'top' ) ) {
         $styles->add([
             'selector' => '.app-header--fixed .menu--top__link',
             'styles' => array(
-                'font-size' => get_theme_mod( 'nav--top-fixed--font-size' ),
-                'line-height' => get_theme_mod( 'nav--top-fixed--line-height' ),
-                'padding-left' => get_theme_mod( 'nav--top-fixed--padding' ),
-                'padding-right' => get_theme_mod( 'nav--top-fixed--padding' ),
-                'font-family' => get_font_family( get_theme_mod( 'nav--top-fixed--font-family' ) ),
+                'font-size' => theme_mod( 'nav--top-fixed--font-size' ),
+                'line-height' => theme_mod( 'nav--top-fixed--line-height' ),
+                'padding-left' => theme_mod( 'nav--top-fixed--padding' ),
+                'padding-right' => theme_mod( 'nav--top-fixed--padding' ),
+                'font-family' => get_font_family( theme_mod( 'nav--top-fixed--font-family' ) ),
             ),
             'screen' => 'desktop',
         ]);
@@ -67,7 +67,7 @@ if( has_nav_menu( 'top' ) ) {
         $styles->add([
             'selector' => '.app-header--fixed .menu--top__link:link, .app-header--fixed .menu--top__link:visited',
             'styles' => array(
-                'color' => get_theme_mod( 'nav--top-fixed--link-color' ),
+                'color' => theme_mod( 'nav--top-fixed--link-color' ),
             ),
             'screen' => 'desktop',
         ]);
@@ -77,7 +77,7 @@ if( has_nav_menu( 'top' ) ) {
         $styles->add([
             'selector' => '.app-header--fixed .menu--top__link:hover',
             'styles' => array(
-                'color' => get_theme_mod( 'nav--top-fixed--link-color--hover' ),
+                'color' => theme_mod( 'nav--top-fixed--link-color--hover' ),
             ),
             'screen' => 'desktop',
         ]);
@@ -87,7 +87,7 @@ if( has_nav_menu( 'top' ) ) {
         $styles->add([
             'selector' => '.app-header--fixed .menu--top__items',
             'styles' => array(
-                'justify-content' => get_theme_mod( 'nav--top-fixed--align' ),
+                'justify-content' => theme_mod( 'nav--top-fixed--align' ),
                 'flex-direction' => 'row',
             ),
             'screen' => 'desktop',

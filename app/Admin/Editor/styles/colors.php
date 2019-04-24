@@ -12,7 +12,7 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 # =======================================================
@@ -23,40 +23,40 @@ use function Rootstrap\get_theme_mod;
 // Var: Body Text Color
 $styles->add_var([
     'name' => 'colors--theme--text',
-    'value' => get_theme_mod( 'colors--theme--text' ),
+    'value' => theme_mod( 'colors--theme--text' ),
 ]);
 
 
 // Var: Accent Color
 $styles->add_var([
     'name' => 'colors--theme--accent',
-    'value' => get_theme_mod( 'colors--theme--accent' ),
+    'value' => theme_mod( 'colors--theme--accent' ),
 ]);
 
 
 // Var: Accent Contrast Color
 $styles->add_var([
     'name' => 'colors--theme--accent-contrast',
-    'value' => get_theme_mod( 'colors--theme--accent-contrast' ),
+    'value' => theme_mod( 'colors--theme--accent-contrast' ),
 ]);
 
 
 // Var: Meta Light
 $styles->add_var([
     'name' => 'colors--theme--meta-light',
-    'value' => get_theme_mod( 'colors--theme--meta-light' ),
+    'value' => theme_mod( 'colors--theme--meta-light' ),
 ]);
 
 
 // Var: Meta Medium
 $styles->add_var([
     'name' => 'colors--theme--meta-medium',
-    'value' => get_theme_mod( 'colors--theme--meta-medium' ),
+    'value' => theme_mod( 'colors--theme--meta-medium' ),
 ]);
 
 
 // Var: Meta Dark
 $styles->add_var([
     'name' => 'colors--theme--meta-dark',
-    'value' => get_theme_mod( 'colors--theme--meta-dark' ),
+    'value' => theme_mod( 'colors--theme--meta-dark' ),
 ]);

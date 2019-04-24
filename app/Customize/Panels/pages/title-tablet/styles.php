@@ -12,13 +12,13 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Var: Title Font Size
 $styles->add_var([
     'name' => 'pages--title--font-size',
-    'value' => get_theme_mod( 'pages--title-tablet--font-size' ),
+    'value' => theme_mod( 'pages--title-tablet--font-size' ),
     'screen' => 'tablet-and-up'
 ]);
 
@@ -26,6 +26,6 @@ $styles->add_var([
 // Var: Title Line Height
 $styles->add_var([
     'name' => 'pages--title--line-height',
-    'value' => get_theme_mod( 'pages--title-tablet--line-height' ),
+    'value' => theme_mod( 'pages--title-tablet--line-height' ),
     'screen' => 'tablet-and-up'
 ]);

@@ -12,14 +12,14 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Breadcrumbs Styles
 $styles->add([
     'selector' => '.breadcrumbs',
     'styles' => [
-        'font-size' => get_theme_mod( 'elements--breadcrumbs--font-size' ),
+        'font-size' => theme_mod( 'elements--breadcrumbs--font-size' ),
     ],
 ]);
 
@@ -28,7 +28,7 @@ $styles->add([
 $styles->add([
     'selector' => '.breadcrumbs__crumb',
     'styles' => [
-        'color' => get_theme_mod( 'elements--breadcrumbs--color' ),
+        'color' => theme_mod( 'elements--breadcrumbs--color' ),
     ],
 ]);
 
@@ -37,7 +37,7 @@ $styles->add([
 $styles->add([
     'selector' => '.breadcrumbs__crumb a:hover',
     'styles' => [
-        'color' => get_theme_mod( 'elements--breadcrumbs--color--hover' ),
+        'color' => theme_mod( 'elements--breadcrumbs--color--hover' ),
     ],
 ]);
 
@@ -46,6 +46,6 @@ $styles->add([
 $styles->add([
     'selector' => '.breadcrumbs__trail',
     'styles' => [
-        'justify-content' => get_theme_mod( 'elements--breadcrumbs--align' ),
+        'justify-content' => theme_mod( 'elements--breadcrumbs--align' ),
     ],
 ]);

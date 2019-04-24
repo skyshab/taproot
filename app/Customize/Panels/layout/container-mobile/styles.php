@@ -13,10 +13,10 @@
 
 
 use function Taproot\Customize\get_padding_from_width;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
-$site_width = get_theme_mod('layout--container-mobile--width', null, true);
+$site_width = theme_mod('layout--container-mobile--width', true);
 $layout_padding = get_padding_from_width( $site_width, 'vw' );
 
 $styles->add_var([

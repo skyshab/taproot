@@ -12,19 +12,19 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Var: Heading Font Size
 $styles->add_var([
     'name' => 'typography--h5--font-size',
-    'value' => get_theme_mod( 'typography--h5-tablet--font-size' ),
+    'value' => theme_mod( 'typography--h5-tablet--font-size' ),
     'screen' => 'tablet-and-up',
 ]);
 
 // Var: Heading Line Height
 $styles->add_var([
     'name' => 'typography--h5--line-height',
-    'value' => get_theme_mod( 'typography--h5-tablet--line-height' ),
+    'value' => theme_mod( 'typography--h5-tablet--line-height' ),
     'screen' => 'tablet-and-up',
 ]);

@@ -14,7 +14,7 @@
 namespace Taproot\Template\Branding;
 
 use Hybrid\Contracts\Bootable;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 /**
@@ -47,7 +47,7 @@ class Branding implements Bootable {
      * @return string
      */
     public function site_title( $title ) {
-        if( get_theme_mod( 'branding--title--display-title', null, true ) )
+        if( theme_mod( 'branding--title--display-title', true ) )
             return $title;
 
         return false;
@@ -62,7 +62,7 @@ class Branding implements Bootable {
      * @return string
      */
     public function site_description( $description ) {
-        if( get_theme_mod( 'branding--tagline--display-tagline', null, true ) )
+        if( theme_mod( 'branding--tagline--display-tagline', true ) )
             return $description;
 
         return false;

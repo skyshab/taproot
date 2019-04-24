@@ -13,13 +13,13 @@
 
 
 use function Taproot\Customize\get_font_styles;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Blog Title Color
 $styles->add([
     'selector' => '.entry__title--page',
-    'styles' => [ 'color' => get_theme_mod( 'pages--title--color' ) ]
+    'styles' => [ 'color' => theme_mod( 'pages--title--color' ) ]
 ]);
 
 

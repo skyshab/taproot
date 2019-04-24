@@ -14,7 +14,7 @@
 
 use function Taproot\Customize\get_font_family;
 use function Taproot\Customize\get_font_styles;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 # =======================================================
@@ -25,7 +25,7 @@ use function Rootstrap\get_theme_mod;
 // Var: Heading Color
 $styles->add_var([
     'name' => 'typography--headings--text-color',
-    'value' => get_theme_mod( 'typography--headings--text-color' ),
+    'value' => theme_mod( 'typography--headings--text-color' ),
 ]);
 
 
@@ -37,7 +37,7 @@ $styles->add_var([
 // Var: Font Family
 $styles->add_var([
     'name' => 'typography--headings--font-family',
-    'value' => get_font_family( get_theme_mod( 'typography--headings--font-family' ) ),
+    'value' => get_font_family( theme_mod( 'typography--headings--font-family' ) ),
 ]);
 
 

@@ -14,7 +14,7 @@
 namespace Taproot\Template\Body;
 
 use Hybrid\Contracts\Bootable;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 /**
@@ -47,7 +47,7 @@ class Body implements Bootable {
     public function body_classes( $classes ) {
 
         // add class for boxed layout
-        if( get_theme_mod('layout--boxed--enable') ) {
+        if( theme_mod('layout--boxed--enable') ) {
             $classes[] = 'boxed-layout';
         }
 

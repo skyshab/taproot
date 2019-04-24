@@ -12,13 +12,13 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Var: Heading Font Size
 $styles->add_var([
     'name' => 'typography--h3--font-size',
-    'value' => get_theme_mod( 'typography--h3-tablet--font-size' ),
+    'value' => theme_mod( 'typography--h3-tablet--font-size' ),
     'screen' => 'tablet-and-up',
 ]);
 
@@ -26,6 +26,6 @@ $styles->add_var([
 // Var: Heading Line Height
 $styles->add_var([
     'name' => 'typography--h3--line-height',
-    'value' => get_theme_mod( 'typography--h3-tablet--line-height' ),
+    'value' => theme_mod( 'typography--h3-tablet--line-height' ),
     'screen' => 'tablet-and-up',
 ]);

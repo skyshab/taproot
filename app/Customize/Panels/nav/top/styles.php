@@ -15,16 +15,16 @@
 use function Taproot\Customize\get_font_family;
 use function Taproot\Customize\get_font_styles;
 use function Taproot\Customize\get_desktop_screen;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 if( has_nav_menu( 'top' ) ) {
 
-    $top_nav_desktop_screen = get_desktop_screen( get_theme_mod( 'nav--top-mobile--breakpoint', null, true ) );
+    $top_nav_desktop_screen = get_desktop_screen( theme_mod( 'nav--top-mobile--breakpoint', true ) );
 
 
     // Hide when not mobile
-    if( get_theme_mod( 'nav--top--hide' ) ) {
+    if( theme_mod( 'nav--top--hide' ) ) {
         $styles->add([
             'selector' => '.menu--top',
             'styles' => ['display' => 'none'],
@@ -36,7 +36,7 @@ if( has_nav_menu( 'top' ) ) {
     $styles->add([
         'selector' => '.menu--top',
         'styles' => array(
-            'background-color' => get_theme_mod( 'nav--top--background-color', null, true ),
+            'background-color' => theme_mod( 'nav--top--background-color', true ),
         ),
     ]);
 
@@ -52,7 +52,7 @@ if( has_nav_menu( 'top' ) ) {
     $styles->add([
         'selector' => '.menu--top__link',
         'styles' => [
-            'font-family' => get_font_family( get_theme_mod( 'nav--top--font-family' ) ),
+            'font-family' => get_font_family( theme_mod( 'nav--top--font-family' ) ),
         ],
     ]);
 
@@ -61,7 +61,7 @@ if( has_nav_menu( 'top' ) ) {
     $styles->add([
         'selector' => '.menu--top__link:link, .menu--top__link:visited',
         'styles' => [
-            'color' => get_theme_mod( 'nav--top--link-color', null, true ),
+            'color' => theme_mod( 'nav--top--link-color', true ),
         ],
     ]);
 
@@ -70,7 +70,7 @@ if( has_nav_menu( 'top' ) ) {
     $styles->add([
         'selector' => '.menu--top__link:hover',
         'styles' => [
-            'color' => get_theme_mod( 'nav--top--link-color--hover' ),
+            'color' => theme_mod( 'nav--top--link-color--hover' ),
         ],
     ]);
 
@@ -79,8 +79,8 @@ if( has_nav_menu( 'top' ) ) {
     $styles->add([
         'selector' => '.menu--top__link',
         'styles' => array(
-            'padding-left' => get_theme_mod( 'nav--top--padding', null, true ),
-            'padding-right' => get_theme_mod( 'nav--top--padding', null, true ),
+            'padding-left' => theme_mod( 'nav--top--padding', true ),
+            'padding-right' => theme_mod( 'nav--top--padding', true ),
         ),
         'screen' => $top_nav_desktop_screen,
     ]);
@@ -89,7 +89,7 @@ if( has_nav_menu( 'top' ) ) {
     // Var: font size
     $styles->add_var([
         'name' => 'nav--top--font-size',
-        'value' => get_theme_mod( 'nav--top--font-size', null, true ),
+        'value' => theme_mod( 'nav--top--font-size', true ),
         'screen' => $top_nav_desktop_screen,
     ]);
 
@@ -97,7 +97,7 @@ if( has_nav_menu( 'top' ) ) {
     // Var: line height
     $styles->add_var([
         'name' => 'nav--top--line-height',
-        'value' => get_theme_mod( 'nav--top--line-height', null, true ),
+        'value' => theme_mod( 'nav--top--line-height', true ),
         'screen' => $top_nav_desktop_screen,
     ]);
 
@@ -106,7 +106,7 @@ if( has_nav_menu( 'top' ) ) {
     $styles->add([
         'selector' => '.menu--top__items',
         'styles' => array(
-            'justify-content' => get_theme_mod( 'nav--top--align' ),
+            'justify-content' => theme_mod( 'nav--top--align' ),
             'flex-direction' => 'row',
         ),
         'screen' => $top_nav_desktop_screen,

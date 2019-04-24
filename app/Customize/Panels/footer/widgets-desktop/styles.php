@@ -12,10 +12,10 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
-$footer_layout = get_theme_mod( 'footer--widgets-desktop--layout' );
+$footer_layout = theme_mod( 'footer--widgets-desktop--layout' );
 
 switch( $footer_layout ) {
 
@@ -67,7 +67,7 @@ $styles->add_var([
 // Var: Title Font Size
 $styles->add_var([
     'name' => 'footer--widgets--title--font-size',
-    'value' => get_theme_mod( 'footer--widgets-desktop--title--font-size' ),
+    'value' => theme_mod( 'footer--widgets-desktop--title--font-size' ),
     'screen' => 'desktop',
 ]);
 
@@ -75,7 +75,7 @@ $styles->add_var([
 // Var: Title Line Height
 $styles->add_var([
     'name' => 'footer--widgets--title--line-height',
-    'value' => get_theme_mod( 'footer--widgets-desktop--title--line-height' ),
+    'value' => theme_mod( 'footer--widgets-desktop--title--line-height' ),
     'screen' => 'desktop',
 ]);
 
@@ -83,7 +83,7 @@ $styles->add_var([
 // Var: Text Font Size
 $styles->add_var([
     'name' => 'footer--widgets--color',
-    'value' => get_theme_mod( 'footer--widgets-desktop--color' ),
+    'value' => theme_mod( 'footer--widgets-desktop--color' ),
     'screen' => 'desktop',
 ]);
 
@@ -91,7 +91,7 @@ $styles->add_var([
 // Var: Text Line Height
 $styles->add_var([
     'name' => 'footer--widgets--line-height',
-    'value' => get_theme_mod( 'footer--widgets-desktop--line-height' ),
+    'value' => theme_mod( 'footer--widgets-desktop--line-height' ),
     'screen' => 'desktop',
 ]);
 
@@ -99,6 +99,6 @@ $styles->add_var([
 // Var: Widgets Spacing
 $styles->add_var([
     'name' => 'footer--widgets--gutter',
-    'value' => get_theme_mod( 'footer--widgets-desktop--gutter' ),
+    'value' => theme_mod( 'footer--widgets-desktop--gutter' ),
     'screen' => 'desktop',
 ]);

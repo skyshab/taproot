@@ -12,12 +12,12 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Var: Padding
 $styles->add_var([
     'name' => 'footer--padding',
-    'value' => get_theme_mod( 'footer--padding-tablet--padding' ),
+    'value' => theme_mod( 'footer--padding-tablet--padding' ),
     'screen' => 'tablet-and-up'
 ]);

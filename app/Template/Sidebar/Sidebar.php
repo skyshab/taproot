@@ -15,7 +15,7 @@ namespace Taproot\Template\Sidebar;
 
 use Hybrid\Contracts\Bootable;
 use function Taproot\Template\get_layout;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 /**
  * Handles front end logic
@@ -113,7 +113,7 @@ class Sidebar implements Bootable {
         if( get_layout() !== 'full' )
             $classes[] = sprintf( 'sidebar--%s', get_layout() );
 
-        if( get_theme_mod( 'layout--boxed--enable' ) )
+        if( theme_mod( 'layout--boxed--enable' ) )
             $classes[] = 'boxed-layout';
         else
             $classes[] = 'fullscreen-layout';

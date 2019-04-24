@@ -12,11 +12,11 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Var: Padding
 $styles->add_var([
     'name' => 'header--padding',
-    'value' => get_theme_mod( 'header--padding-mobile--padding' ),
+    'value' => theme_mod( 'header--padding-mobile--padding' ),
 ]);

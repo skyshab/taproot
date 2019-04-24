@@ -13,14 +13,14 @@
 
 
 use function Taproot\Customize\is_boxed_layout;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Fixed Header Styles
 $styles->add([
     'selector' => '.app-header--fixed',
     'styles' => [
-        'background-color' => get_theme_mod( 'header--styles-fixed--background-color' ),
+        'background-color' => theme_mod( 'header--styles-fixed--background-color' ),
     ],
     'screen' => 'desktop'
 ]);
@@ -30,7 +30,7 @@ $styles->add([
 $styles->add([
     'selector' => '.app-header--fixed',
     'styles' => [
-        'color' => get_theme_mod( 'header--styles-fixed--default-color' ),
+        'color' => theme_mod( 'header--styles-fixed--default-color' ),
     ],
     'screen' => 'desktop'
 ]);
@@ -40,20 +40,20 @@ $styles->add([
 $styles->add([
     'selector' => '.app-header--fixed .menu--toggle:hover',
     'styles' => [
-        'color' => get_theme_mod( 'header--styles-fixed--default-color-hover' ),
+        'color' => theme_mod( 'header--styles-fixed--default-color-hover' ),
     ],
     'screen' => 'desktop'
 ]);
 
 
 // if boxed layout and fixed header
-if( is_boxed_layout() && get_theme_mod( 'header--styles-fixed--fixed', null, true ) ) {
-    $fixed_header_width = sprintf( 'calc( 100vw - (2 * %s) )', get_theme_mod( 'layout--site--boxed-layout--padding', null, true ) );
+if( is_boxed_layout() && theme_mod( 'header--styles-fixed--fixed', true ) ) {
+    $fixed_header_width = sprintf( 'calc( 100vw - (2 * %s) )', theme_mod( 'layout--site--boxed-layout--padding', true ) );
     $styles->add([
         'selector' => '.app-header--fixed, .app-header--sticky',
         'styles' => array(
             'width' => $fixed_header_width,
-            'max-width' => get_theme_mod( 'layout--site--max-content-width' )
+            'max-width' => theme_mod( 'layout--site--max-content-width' )
         ),
         'screen' => 'desktop'
     ]);

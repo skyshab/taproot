@@ -13,16 +13,16 @@
 
 
 use function Taproot\Customize\get_mobile_screen;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 if( has_nav_menu( 'top' ) ) {
 
-    $mobile_screen = get_mobile_screen( get_theme_mod( 'nav--top-mobile--breakpoint', null, true ) );
+    $mobile_screen = get_mobile_screen( theme_mod( 'nav--top-mobile--breakpoint', true ) );
 
 
     // Hide when mobile
-    if( get_theme_mod( 'nav--top-mobile--hide' ) ) {
+    if( theme_mod( 'nav--top-mobile--hide' ) ) {
         $styles->add([
             'selector' => '.menu--top',
             'styles' => ['display' => 'none'],
@@ -35,7 +35,7 @@ if( has_nav_menu( 'top' ) ) {
     $styles->add([
         'selector' => '.menu--top__link',
         'styles' => array(
-            'text-align' => get_theme_mod( 'nav--top-mobile--align' ),
+            'text-align' => theme_mod( 'nav--top-mobile--align' ),
         ),
         'screen' => $mobile_screen,
     ]);
@@ -44,7 +44,7 @@ if( has_nav_menu( 'top' ) ) {
     // Var: font size
     $styles->add_var([
         'name' => 'nav--top--font-size',
-        'value' => get_theme_mod( 'nav--top-mobile--font-size', null, true ),
+        'value' => theme_mod( 'nav--top-mobile--font-size', true ),
         'screen' => $mobile_screen,
     ]);
 
@@ -52,7 +52,7 @@ if( has_nav_menu( 'top' ) ) {
     // Var: line height
     $styles->add_var([
         'name' => 'nav--top--line-height',
-        'value' => get_theme_mod( 'nav--top-mobile--line-height', null, true ),
+        'value' => theme_mod( 'nav--top-mobile--line-height', true ),
         'screen' => $mobile_screen,
     ]);
 

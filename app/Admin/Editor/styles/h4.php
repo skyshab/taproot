@@ -12,7 +12,7 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 # =======================================================
@@ -22,7 +22,7 @@ use function Rootstrap\get_theme_mod;
 
 $styles->add([
     'selector' => 'h4',
-    'styles' => [ 'color' => get_theme_mod( 'typography--h4--color' ) ],
+    'styles' => [ 'color' => theme_mod( 'typography--h4--color' ) ],
 ]);
 
 
@@ -34,7 +34,7 @@ $styles->add([
 // Mobile default
 $styles->add_var([
     'name' => 'typography--h4--font-size',
-    'value' => get_theme_mod('typography--h4-mobile--font-size'),
+    'value' => theme_mod('typography--h4-mobile--font-size'),
     'selector' => '.editor-styles-wrapper .wp-block',
 ]);
 
@@ -42,7 +42,7 @@ $styles->add_var([
 // tablet size when settings panel closed, use mobile when open
 $styles->add_var([
     'name' => 'typography--h4--font-size',
-    'value' => get_theme_mod('typography--h4-tablet--font-size'),
+    'value' => theme_mod('typography--h4-tablet--font-size'),
     'screen' => 'editor-tablet',
     'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
 ]);
@@ -51,7 +51,7 @@ $styles->add_var([
 // tablet size when settings panel open
 $styles->add_var([
     'name' => 'typography--h4--font-size',
-    'value' => get_theme_mod('typography--h4-tablet--font-size'),
+    'value' => theme_mod('typography--h4-tablet--font-size'),
     'screen' => 'editor-desktop',
     'selector' => '.editor-styles-wrapper .wp-block',
 ]);
@@ -60,7 +60,7 @@ $styles->add_var([
 // desktop size when settings panel closed
 $styles->add_var([
     'name' => 'typography--h4--font-size',
-    'value' => get_theme_mod('typography--h4-desktop--font-size'),
+    'value' => theme_mod('typography--h4-desktop--font-size'),
     'screen' => 'editor-desktop',
     'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
 ]);
@@ -74,7 +74,7 @@ $styles->add_var([
 // mobile default
 $styles->add_var([
     'name' => 'typography--h4--line-height',
-    'value' => get_theme_mod('typography--h4-mobile--line-height'),
+    'value' => theme_mod('typography--h4-mobile--line-height'),
     'selector' => '.editor-styles-wrapper .wp-block',
 ]);
 
@@ -82,7 +82,7 @@ $styles->add_var([
 // tablet size when settings panel closed, use mobile when open
 $styles->add_var([
     'name' => 'typography--h4--line-height',
-    'value' => get_theme_mod('typography--h4-tablet--line-height'),
+    'value' => theme_mod('typography--h4-tablet--line-height'),
     'screen' => 'editor-tablet',
     'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
 ]);
@@ -91,7 +91,7 @@ $styles->add_var([
 // tablet size when settings panel open
 $styles->add_var([
     'name' => 'typography--h4--line-height',
-    'value' => get_theme_mod('typography--h4-tablet--line-height'),
+    'value' => theme_mod('typography--h4-tablet--line-height'),
     'screen' => 'editor-desktop',
     'selector' => '.editor-styles-wrapper .wp-block',
 ]);
@@ -100,7 +100,7 @@ $styles->add_var([
 // desktop size when settings panel closed
 $styles->add_var([
     'name' => 'typography--h4--line-height',
-    'value' => get_theme_mod('typography--h4-desktop--line-height'),
+    'value' => theme_mod('typography--h4-desktop--line-height'),
     'screen' => 'editor-desktop',
     'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
 ]);

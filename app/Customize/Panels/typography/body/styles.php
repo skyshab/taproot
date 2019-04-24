@@ -13,13 +13,13 @@
 
 
 use function Taproot\Customize\get_font_family;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Body Font Family
 $styles->add([
     'selector' => 'body',
     'styles' => [
-        'font-family' => get_font_family( get_theme_mod( 'typography--body--font-family', 'default' ) )
+        'font-family' => get_font_family( theme_mod( 'typography--body--font-family', 'default' ) )
     ],
 ]);

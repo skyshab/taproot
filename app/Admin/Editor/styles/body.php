@@ -13,7 +13,7 @@
 
 
 use function Taproot\Customize\get_font_family;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 # =======================================================
@@ -23,7 +23,7 @@ use function Rootstrap\get_theme_mod;
 
 $styles->add_var([
     'name' => 'layout--content--max-width',
-    'value' => get_theme_mod('layout--content--max-width'),
+    'value' => theme_mod('layout--content--max-width'),
 ]);
 
 
@@ -34,7 +34,7 @@ $styles->add_var([
 
 $styles->add_var([
     'name' => 'typography--body--text-color',
-    'value' => get_theme_mod('typography--body--text-color'),
+    'value' => theme_mod('typography--body--text-color'),
 ]);
 
 
@@ -45,7 +45,7 @@ $styles->add_var([
 
 $styles->add_var([
     'name' => 'typography--body--font-family',
-    'value' => get_font_family( get_theme_mod( 'typography--body--font-family' ) ),
+    'value' => get_font_family( theme_mod( 'typography--body--font-family' ) ),
 ]);
 
 
@@ -57,7 +57,7 @@ $styles->add_var([
 // mobile default
 $styles->add_var([
     'name' => 'typography--body--font-size',
-    'value' => get_theme_mod('typography--body-mobile--font-size'),
+    'value' => theme_mod('typography--body-mobile--font-size'),
     'selector' => '.editor-styles-wrapper .wp-block',
 ]);
 
@@ -65,7 +65,7 @@ $styles->add_var([
 // tablet size when settings panel closed, use mobile when open
 $styles->add_var([
     'name' => 'typography--body--font-size',
-    'value' => get_theme_mod('typography--body-tablet--font-size'),
+    'value' => theme_mod('typography--body-tablet--font-size'),
     'screen' => 'editor-tablet',
     'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
 ]);
@@ -74,7 +74,7 @@ $styles->add_var([
 // tablet size when settings panel open
 $styles->add_var([
     'name' => 'typography--body--font-size',
-    'value' => get_theme_mod('typography--body-tablet--font-size'),
+    'value' => theme_mod('typography--body-tablet--font-size'),
     'screen' => 'editor-desktop',
     'selector' => '.editor-styles-wrapper .wp-block',
 ]);
@@ -83,7 +83,7 @@ $styles->add_var([
 // desktop size when settings panel closed
 $styles->add_var([
     'name' => 'typography--body--font-size',
-    'value' => get_theme_mod('typography--body-desktop--font-size'),
+    'value' => theme_mod('typography--body-desktop--font-size'),
     'screen' => 'editor-desktop',
     'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
 ]);
@@ -97,7 +97,7 @@ $styles->add_var([
 // Body line height default
 $styles->add_var([
     'name' => 'typography--body--line-height',
-    'value' => get_theme_mod('typography--body-mobile--line-height'),
+    'value' => theme_mod('typography--body-mobile--line-height'),
     'selector' => '.editor-styles-wrapper .wp-block',
 ]);
 
@@ -105,7 +105,7 @@ $styles->add_var([
 // tablet size when settings panel closed, use mobile when open
 $styles->add_var([
     'name' => 'typography--body--line-height',
-    'value' => get_theme_mod('typography--body-tablet--line-height'),
+    'value' => theme_mod('typography--body-tablet--line-height'),
     'screen' => 'editor-tablet',
     'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
 ]);
@@ -114,7 +114,7 @@ $styles->add_var([
 // tablet size when settings panel open
 $styles->add_var([
     'name' => 'typography--body--line-height',
-    'value' => get_theme_mod('typography--body-tablet--line-height'),
+    'value' => theme_mod('typography--body-tablet--line-height'),
     'screen' => 'editor-desktop',
     'selector' => '.editor-styles-wrapper .wp-block',
 ]);
@@ -123,7 +123,7 @@ $styles->add_var([
 // desktop size when settings panel closed
 $styles->add_var([
     'name' => 'typography--body--line-height',
-    'value' => get_theme_mod('typography--body-desktop--line-height'),
+    'value' => theme_mod('typography--body-desktop--line-height'),
     'screen' => 'editor-desktop',
     'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
 ]);

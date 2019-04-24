@@ -17,7 +17,7 @@ use function get_previous_post;
 use function get_previous_post_link;
 use function get_next_post;
 use function get_next_post_link;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 use function Taproot\Icons\location as location;
 
 
@@ -56,8 +56,8 @@ class Postnav {
 	 */
 	private function init( $context, $args ) {
 
-        $prev_text = get_theme_mod( 'posts--nav--prev', esc_html__('PREV', 'taproot'), true );
-        $next_text = get_theme_mod( 'posts--nav--next', esc_html__('NEXT', 'taproot'), true );
+        $prev_text = theme_mod( 'posts--nav--prev', esc_html__('PREV', 'taproot'), true );
+        $next_text = theme_mod( 'posts--nav--next', esc_html__('NEXT', 'taproot'), true );
 
         $defaults = [
             'prev_text' => $prev_text,
@@ -107,7 +107,7 @@ class Postnav {
 	 */
 	private function has_content() {
 
-        if( !get_theme_mod( 'posts--nav--enable', null, true ) ) return false;
+        if( !theme_mod( 'posts--nav--enable', true ) ) return false;
 
         if( !$this->has_prev_link() && !$this->has_next_link() ) return false;
 

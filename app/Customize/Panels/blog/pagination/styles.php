@@ -12,13 +12,13 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Blog Pagination Size
 $styles->add([
     'selector' => '.pagination__item',
-    'styles' => [ 'font-size' => get_theme_mod( 'blog--pagination--font-size' ) ],
+    'styles' => [ 'font-size' => theme_mod( 'blog--pagination--font-size' ) ],
 ]);
 
 
@@ -26,8 +26,8 @@ $styles->add([
 $styles->add([
     'selector' => '.pagination__item',
     'styles' => [
-        'margin-left' => get_theme_mod( 'blog--pagination--spacing' ),
-        'margin-right' => get_theme_mod( 'blog--pagination--spacing' )
+        'margin-left' => theme_mod( 'blog--pagination--spacing' ),
+        'margin-right' => theme_mod( 'blog--pagination--spacing' )
     ],
 ]);
 
@@ -35,19 +35,19 @@ $styles->add([
 // Pagination Link Color
 $styles->add([
     'selector' => '.pagination__item--prev .pagination__anchor, .pagination__item--next .pagination__anchor',
-    'styles' => [ 'color' => get_theme_mod( 'blog--pagination--link--color' ) ],
+    'styles' => [ 'color' => theme_mod( 'blog--pagination--link--color' ) ],
 ]);
 
 
 // Pagination Numbers Background
 $styles->add([
     'selector' => '.pagination__item--number .pagination__anchor, .pagination__item--dots .pagination__anchor',
-    'styles' => [ 'background-color' => get_theme_mod( 'blog--pagination--color' ) ],
+    'styles' => [ 'background-color' => theme_mod( 'blog--pagination--color' ) ],
 ]);
 
 
 // Pagination Numbers Color
 $styles->add([
     'selector' => '.pagination__item--number .pagination__anchor, .pagination__item--dots .pagination__anchor',
-    'styles' => [ 'color' => get_theme_mod( 'blog--pagination--color' ) ],
+    'styles' => [ 'color' => theme_mod( 'blog--pagination--color' ) ],
 ]);

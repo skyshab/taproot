@@ -13,11 +13,11 @@
 
 
 use function Taproot\Customize\is_boxed_layout;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 $styles->add_var([
     'name' => 'layout--boxed--outer-padding',
-    'value' => get_theme_mod( 'layout--boxed--outer-padding', null, true ),
+    'value' => theme_mod( 'layout--boxed--outer-padding', true ),
     'callback' => is_boxed_layout(),
 ]);

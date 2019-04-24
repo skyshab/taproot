@@ -12,14 +12,14 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 use function Taproot\Customize\maybe_convert_to_em;
 
 
 // Var: Sidebar Font Size
 $styles->add_var([
     'name' => 'typography--sidebar--font-size',
-    'value' => get_theme_mod( 'typography--sidebar-mobile--font-size' ),
+    'value' => theme_mod( 'typography--sidebar-mobile--font-size' ),
     'screen' => 'default',
 ]);
 
@@ -27,7 +27,7 @@ $styles->add_var([
 // Var: Sidebar Line Height
 $styles->add_var([
     'name' => 'typography--sidebar--line-height',
-    'value' => get_theme_mod( 'typography--sidebar-mobile--line-height' ),
+    'value' => theme_mod( 'typography--sidebar-mobile--line-height' ),
     'screen' => 'default',
 ]);
 
@@ -35,6 +35,6 @@ $styles->add_var([
 // Var: Sidebar Block Spacing
 $styles->add_var([
     'name' => 'typography--sidebar--block-spacing',
-    'value' =>  maybe_convert_to_em( get_theme_mod( 'typography--sidebar-mobile--line-height' ) ),
+    'value' =>  maybe_convert_to_em( theme_mod( 'typography--sidebar-mobile--line-height' ) ),
     'screen' => 'default',
 ]);

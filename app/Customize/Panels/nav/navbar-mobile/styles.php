@@ -15,15 +15,15 @@ use function Taproot\Customize\get_screen_from_bp;
 use function Taproot\Customize\get_mobile_screen;
 use function Taproot\Customize\get_font_family;
 use function Taproot\Customize\get_font_styles;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 if( has_nav_menu( 'navbar' ) ) {
 
-    $mobile_screen = get_mobile_screen( get_theme_mod( 'nav--navbar-mobile--breakpoint', null, true ) );
+    $mobile_screen = get_mobile_screen( theme_mod( 'nav--navbar-mobile--breakpoint', true ) );
 
     // Hide when mobile
-    if( get_theme_mod( 'nav--navbar-mobile--hide' ) ) {
+    if( theme_mod( 'nav--navbar-mobile--hide' ) ) {
         $styles->add([
             'selector' => '.menu--navbar',
             'styles' => ['display' => 'none'],
@@ -36,7 +36,7 @@ if( has_nav_menu( 'navbar' ) ) {
     $styles->add([
         'selector' => '.menu--navbar',
         'styles' => array(
-            'background-color' => get_theme_mod( 'nav--navbar-mobile--background-color', null, true ),
+            'background-color' => theme_mod( 'nav--navbar-mobile--background-color', true ),
         ),
         'screen' => $mobile_screen,
     ]);
@@ -46,7 +46,7 @@ if( has_nav_menu( 'navbar' ) ) {
     $styles->add([
         'selector' => '.menu--navbar__container',
         'styles' => array(
-            'height' => get_theme_mod( 'nav--navbar-mobile--height' ),
+            'height' => theme_mod( 'nav--navbar-mobile--height' ),
         ),
         'screen' => $mobile_screen,
     ]);
@@ -56,9 +56,9 @@ if( has_nav_menu( 'navbar' ) ) {
     $styles->add([
         'selector' => '.menu--navbar .menu--toggle',
         'styles' => [
-            'fill' => get_theme_mod( 'nav--navbar-mobile--icon-color' ),
-            'color' => get_theme_mod( 'nav--navbar-mobile--icon-color' ),
-            'font-size' => get_theme_mod( 'nav--navbar-mobile--icon-size' ),
+            'fill' => theme_mod( 'nav--navbar-mobile--icon-color' ),
+            'color' => theme_mod( 'nav--navbar-mobile--icon-color' ),
+            'font-size' => theme_mod( 'nav--navbar-mobile--icon-size' ),
         ],
         'screen' => $mobile_screen,
     ]);
@@ -68,7 +68,7 @@ if( has_nav_menu( 'navbar' ) ) {
     $styles->add([
         'selector' => '.menu--navbar__items',
         'styles' => array(
-            'background-color' => get_theme_mod( 'nav--navbar-mobile--menu-background-color', null, true ),
+            'background-color' => theme_mod( 'nav--navbar-mobile--menu-background-color', true ),
         ),
         'screen' => $mobile_screen,
     ]);
@@ -78,7 +78,7 @@ if( has_nav_menu( 'navbar' ) ) {
     $styles->add([
         'selector' => '.menu--navbar__item',
         'styles' => array(
-            'border-color' => get_theme_mod( 'nav--navbar-mobile--separator-color', null, true ),
+            'border-color' => theme_mod( 'nav--navbar-mobile--separator-color', true ),
         ),
         'screen' => $mobile_screen,
     ]);
@@ -88,8 +88,8 @@ if( has_nav_menu( 'navbar' ) ) {
     $styles->add([
         'selector' => '.menu--navbar__link',
         'styles' => array(
-            'padding-left' => get_theme_mod( 'nav--navbar-mobile--padding', null, true ),
-            'padding-right' => get_theme_mod( 'nav--navbar-mobile--padding', null, true ),
+            'padding-left' => theme_mod( 'nav--navbar-mobile--padding', true ),
+            'padding-right' => theme_mod( 'nav--navbar-mobile--padding', true ),
         ),
         'screen' => $mobile_screen,
     ]);
@@ -107,7 +107,7 @@ if( has_nav_menu( 'navbar' ) ) {
     $styles->add([
         'selector' => '.menu--navbar__link',
         'styles' => [
-            'font-family' => get_font_family( get_theme_mod( 'nav--navbar-mobile--font-family' ) )
+            'font-family' => get_font_family( theme_mod( 'nav--navbar-mobile--font-family' ) )
         ],
         'screen' => $mobile_screen,
     ]);
@@ -117,7 +117,7 @@ if( has_nav_menu( 'navbar' ) ) {
     $styles->add([
         'selector' => '.menu--navbar__link:link, .menu--navbar__link:visited',
         'styles' => [
-            'color' => get_theme_mod( 'nav--navbar-mobile--link-color' )
+            'color' => theme_mod( 'nav--navbar-mobile--link-color' )
         ],
         'screen' => $mobile_screen,
     ]);
@@ -127,7 +127,7 @@ if( has_nav_menu( 'navbar' ) ) {
     $styles->add([
         'selector' => '.menu--navbar__link:hover',
         'styles' => [
-            'color' => get_theme_mod( 'nav--navbar-mobile--link-color--hover' )
+            'color' => theme_mod( 'nav--navbar-mobile--link-color--hover' )
         ],
         'screen' => $mobile_screen,
     ]);
@@ -136,7 +136,7 @@ if( has_nav_menu( 'navbar' ) ) {
     // Var: font size
     $styles->add_var([
         'name' => 'nav--navbar--font-size',
-        'value' => get_theme_mod( 'nav--navbar-mobile--font-size' ),
+        'value' => theme_mod( 'nav--navbar-mobile--font-size' ),
         'screen' => $mobile_screen,
     ]);
 
@@ -144,7 +144,7 @@ if( has_nav_menu( 'navbar' ) ) {
     // Var: line height
     $styles->add_var([
         'name' => 'nav--navbar--line-height',
-        'value' => get_theme_mod( 'nav--navbar-mobile--line-height' ),
+        'value' => theme_mod( 'nav--navbar-mobile--line-height' ),
         'screen' => $mobile_screen,
     ]);
 

@@ -12,11 +12,11 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Hide Tagline
-if( get_theme_mod( 'branding--tagline-fixed--hide' ) ) {
+if( theme_mod( 'branding--tagline-fixed--hide' ) ) {
     $styles->add([
         'screen' => 'desktop',
         'selector' => '.app-header--fixed .app-header__description',
@@ -25,7 +25,7 @@ if( get_theme_mod( 'branding--tagline-fixed--hide' ) ) {
 
     // if we do hide the tagline, adjust title to use space accordingly.
     // only ouput if we're not hiding the title too
-    if( !get_theme_mod( 'branding--title-fixed--hide' ) ) {
+    if( !theme_mod( 'branding--title-fixed--hide' ) ) {
         $styles->add([
             'screen' => 'desktop',
             'selector' => '.app-header--fixed .app-header__title',
@@ -41,9 +41,9 @@ else {
         'screen' => 'desktop',
         'selector' => '.app-header--fixed .app-header__description',
         'styles' => [
-            'font-size'    => get_theme_mod( 'branding--tagline-fixed--font-size' ),
-            'line-height'  => get_theme_mod( 'branding--tagline-fixed--line-height' ),
-            'margin-top'   => get_theme_mod( 'branding--tagline-fixed--gutter' ),
+            'font-size'    => theme_mod( 'branding--tagline-fixed--font-size' ),
+            'line-height'  => theme_mod( 'branding--tagline-fixed--line-height' ),
+            'margin-top'   => theme_mod( 'branding--tagline-fixed--gutter' ),
         ],
     ]);
 }

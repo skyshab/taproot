@@ -12,14 +12,14 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 use function Taproot\Customize\maybe_convert_to_em;
 
 
 // Var: Body Font Size
 $styles->add_var([
     'name' => 'typography--body--font-size',
-    'value' => get_theme_mod( 'typography--body-mobile--font-size' ),
+    'value' => theme_mod( 'typography--body-mobile--font-size' ),
     'screen' => 'default',
 ]);
 
@@ -27,7 +27,7 @@ $styles->add_var([
 // Var: Body Line Height
 $styles->add_var([
     'name' => 'typography--body--line-height',
-    'value' => get_theme_mod( 'typography--body-mobile--line-height' ),
+    'value' => theme_mod( 'typography--body-mobile--line-height' ),
     'screen' => 'default',
 ]);
 
@@ -35,6 +35,6 @@ $styles->add_var([
 // Var: Body Block Spacing
 $styles->add_var([
     'name' => 'typography--body--block-spacing',
-    'value' =>  maybe_convert_to_em( get_theme_mod( 'typography--body-mobile--line-height' ) ),
+    'value' =>  maybe_convert_to_em( theme_mod( 'typography--body-mobile--line-height' ) ),
     'screen' => 'default',
 ]);

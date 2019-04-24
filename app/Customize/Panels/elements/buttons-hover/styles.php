@@ -12,15 +12,15 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Button Hover Styles
 $styles->add([
     'selector' => '.taproot-button:hover, .comment-respond__submit:hover',
     'styles' => [
-        'color'             =>  get_theme_mod( 'elements--buttons-hover--color' ),
-        'background-color'  =>  get_theme_mod( 'elements--buttons-hover--background-color' ),
-        'border-color'      =>  get_theme_mod( 'elements--buttons-hover--border-color' ),
+        'color'             =>  theme_mod( 'elements--buttons-hover--color' ),
+        'background-color'  =>  theme_mod( 'elements--buttons-hover--background-color' ),
+        'border-color'      =>  theme_mod( 'elements--buttons-hover--border-color' ),
     ]
 ]);

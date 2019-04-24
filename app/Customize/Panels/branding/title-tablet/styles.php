@@ -12,11 +12,11 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Hide Title
-if( get_theme_mod( 'branding--title-tablet--hide-title' ) ) {
+if( theme_mod( 'branding--title-tablet--hide-title' ) ) {
     $styles->add([
         'screen' => 'tablet',
         'selector' => '.app-header__title',
@@ -28,7 +28,7 @@ else {
     // Var: Title Font Size
     $styles->add_var([
         'name' => 'branding--title--font-size',
-        'value' => get_theme_mod( 'branding--title-tablet--font-size' ),
+        'value' => theme_mod( 'branding--title-tablet--font-size' ),
         'screen' => 'tablet-and-up'
     ]);
 
@@ -36,7 +36,7 @@ else {
     // Var: Title Line Height
     $styles->add_var([
         'name' => 'branding--title--line-height',
-        'value' => get_theme_mod( 'branding--title-tablet--line-height' ),
+        'value' => theme_mod( 'branding--title-tablet--line-height' ),
         'screen' => 'tablet-and-up'
     ]);
 }

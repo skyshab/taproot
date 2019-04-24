@@ -12,11 +12,11 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Hide Title
-if( get_theme_mod( 'branding--title-desktop--hide-title' ) ) {
+if( theme_mod( 'branding--title-desktop--hide-title' ) ) {
     $styles->add([
         'screen' => 'desktop',
         'selector' => '.app-header__title',
@@ -28,7 +28,7 @@ else {
     // Var: Title Font Size
     $styles->add_var([
         'name' => 'branding--title--font-size',
-        'value' => get_theme_mod( 'branding--title-desktop--font-size' ),
+        'value' => theme_mod( 'branding--title-desktop--font-size' ),
         'screen' => 'desktop'
     ]);
 
@@ -36,7 +36,7 @@ else {
     // Var: Title Line Height
     $styles->add_var([
         'name' => 'branding--title--line-height',
-        'value' => get_theme_mod( 'branding--title-desktop--line-height' ),
+        'value' => theme_mod( 'branding--title-desktop--line-height' ),
         'screen' => 'desktop'
     ]);
 }

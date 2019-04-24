@@ -12,13 +12,13 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Var: Logo Width
 $styles->add_var([
     'name' => 'branding--logo--width',
-    'value' => get_theme_mod( 'branding--logo-desktop--width' ),
+    'value' => theme_mod( 'branding--logo-desktop--width' ),
     'screen' => 'desktop'
 ]);
 
@@ -26,6 +26,6 @@ $styles->add_var([
 // Var: Logo Gutter
 $styles->add_var([
     'name' => 'branding--logo--gutter',
-    'value' => get_theme_mod( 'branding--logo-desktop--gutter' ),
+    'value' => theme_mod( 'branding--logo-desktop--gutter' ),
     'screen' => 'desktop'
 ]);

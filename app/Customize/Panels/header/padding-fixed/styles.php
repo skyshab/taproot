@@ -12,15 +12,15 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Fixed Header Styles
 $styles->add([
     'selector' => '.app-header--fixed .app-header__container',
     'styles' => [
-        'padding-top'    => get_theme_mod( 'header--padding-fixed--padding' ),
-        'padding-bottom' => get_theme_mod( 'header--padding-fixed--padding' ),
+        'padding-top'    => theme_mod( 'header--padding-fixed--padding' ),
+        'padding-bottom' => theme_mod( 'header--padding-fixed--padding' ),
     ],
     'screen' => 'desktop'
 ]);

@@ -13,20 +13,20 @@
 
 
 use function Taproot\Customize\is_boxed_layout;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Background Color
 $styles->add([
     'selector' => '.app-footer',
     'styles' => [
-        'background-color' => get_theme_mod( 'footer--styles--background-color' ),
+        'background-color' => theme_mod( 'footer--styles--background-color' ),
     ],
 ]);
 
 
 // if no footer background color, add a shadow
-$footer_bkg = get_theme_mod( 'footer--styles--background-color', null, true );
+$footer_bkg = theme_mod( 'footer--styles--background-color', true );
 
 if(  '#ffffff' === $footer_bkg || 'rgb(255,255,255)' === $footer_bkg ) {
     $styles->add([
@@ -42,7 +42,7 @@ if(  '#ffffff' === $footer_bkg || 'rgb(255,255,255)' === $footer_bkg ) {
 $styles->add([
     'selector' => '.app-footer, .app-footer a',
     'styles' => [
-        'color' => get_theme_mod( 'footer--styles--default-color' ),
+        'color' => theme_mod( 'footer--styles--default-color' ),
     ],
 ]);
 
@@ -51,17 +51,17 @@ $styles->add([
 $styles->add([
     'selector' => '.app-footer a:hover',
     'styles' => [
-        'color' => get_theme_mod( 'footer--styles--default-color--hover' ),
+        'color' => theme_mod( 'footer--styles--default-color--hover' ),
     ],
 ]);
 
 
 // if boxed layout and fixed footer
-if( is_boxed_layout() && get_theme_mod( 'footer--styles--fixed' ) ) {
+if( is_boxed_layout() && theme_mod( 'footer--styles--fixed' ) ) {
     $styles->add([
         'selector' => '.app-footer--fixed',
         'styles' => [
-            'margin-bottom' => get_theme_mod( 'layout--boxed--outer-padding', null, true )
+            'margin-bottom' => theme_mod( 'layout--boxed--outer-padding', true )
         ],
         'screen' => 'desktop'
     ]);

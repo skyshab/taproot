@@ -16,7 +16,7 @@ namespace Taproot\Template\Breadcrumbs;
 use Hybrid\Contracts\Bootable;
 use Hybrid\Breadcrumbs\Trail as Trail;
 use function Taproot\Template\Icons\get as icon;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 /**
@@ -49,7 +49,7 @@ class Breadcrumbs implements Bootable {
      * @return string
      */
     function breadcrumbs_home_icon( $html ) {
-        if( !get_theme_mod( 'elements--breadcrumbs--home-icon', null, true ) ) return $html;
+        if( !theme_mod( 'elements--breadcrumbs--home-icon', true ) ) return $html;
         return str_replace('<span itemprop="name">Home</span>', icon('home'), $html );
     }
 
@@ -62,7 +62,7 @@ class Breadcrumbs implements Bootable {
      * @return string
      */
     function render( $args ) {
-        if( !get_theme_mod( 'elements--breadcrumbs--enable', null, true ) ) return;
+        if( !theme_mod( 'elements--breadcrumbs--enable', true ) ) return;
         Trail::display();
     }
 

@@ -14,7 +14,7 @@
 namespace Taproot\Template\Footer;
 
 use Hybrid\Contracts\Bootable;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 /**
@@ -48,18 +48,18 @@ class Footer implements Bootable {
      */
     public function footer_classes( $classes, $context ) {
 
-        if( get_theme_mod( 'footer--styles--fixed' ) ) {
+        if( theme_mod( 'footer--styles--fixed' ) ) {
             $classes[] = 'app-footer--has-fixed';
             $classes[] = 'app-footer--fixed';
         }
 
-        if( get_theme_mod( 'footer--styles--fullwidth' ) ) {
+        if( theme_mod( 'footer--styles--fullwidth' ) ) {
             $classes[] = 'app-footer--fullwidth';
         } else {
             $classes[] = 'app-footer--standard-width';
         }
 
-        if( get_theme_mod( 'layout--boxed--enable' ) ) {
+        if( theme_mod( 'layout--boxed--enable' ) ) {
             $classes[] = 'boxed-layout';
         }
 
@@ -160,7 +160,7 @@ class Footer implements Bootable {
             ]
         ];
 
-        echo wp_kses( get_theme_mod( 'footer--bottom-bar--content', null, true ), $allowed );
+        echo wp_kses( theme_mod( 'footer--bottom-bar--content', true ), $allowed );
     }
 
 }

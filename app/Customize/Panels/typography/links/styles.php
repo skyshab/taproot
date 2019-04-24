@@ -12,39 +12,39 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Var: Link color
 $styles->add_var([
     'name' => 'typography--links--color',
-    'value' => get_theme_mod( 'typography--links--color' ),
+    'value' => theme_mod( 'typography--links--color' ),
 ]);
 
 
 // Var: Link color visited
 $styles->add_var([
     'name' => 'typography--links--color--visited',
-    'value' => get_theme_mod( 'typography--links--color--visited' ),
+    'value' => theme_mod( 'typography--links--color--visited' ),
 ]);
 
 
 // Var: Link color hover
 $styles->add_var([
     'name' => 'typography--links--color--hover',
-    'value' => get_theme_mod( 'typography--links--color--hover' ),
+    'value' => theme_mod( 'typography--links--color--hover' ),
 ]);
 
 
 // Var: Link color hover
 $styles->add_var([
     'name' => 'typography--links--color--active',
-    'value' => get_theme_mod( 'typography--links--color--active' ),
+    'value' => theme_mod( 'typography--links--color--active' ),
 ]);
 
 
 // Link Underline
-$link_underline = get_theme_mod( 'typography--links--underline' );
+$link_underline = theme_mod( 'typography--links--underline' );
 
 if( 'underline' === $link_underline ) {
     $styles->add([

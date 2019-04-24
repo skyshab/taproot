@@ -12,11 +12,11 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Hide when fixed?
-if( get_theme_mod( 'branding--title-fixed--hide' ) ) {
+if( theme_mod( 'branding--title-fixed--hide' ) ) {
     $styles->add([
         'selector' => '.app-header--fixed .app-header__title',
         'styles' => ['display' => 'none'],
@@ -27,8 +27,8 @@ else {
     $styles->add([
         'selector' => '.app-header--fixed .app-header__title',
         'styles' => [
-            'font-size' => get_theme_mod( 'branding--title-fixed--font-size' ),
-            'line-height' => get_theme_mod( 'branding--title-fixed--line-height' ),
+            'font-size' => theme_mod( 'branding--title-fixed--font-size' ),
+            'line-height' => theme_mod( 'branding--title-fixed--line-height' ),
         ],
         'screen' => 'desktop'
     ]);

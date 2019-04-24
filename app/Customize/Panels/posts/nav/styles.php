@@ -12,14 +12,14 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Link Color
 $styles->add([
     'selector' => '.postnav__link a:link, .postnav__link a:visited',
     'styles' => [
-        'color' => get_theme_mod( 'posts--nav--color' ),
+        'color' => theme_mod( 'posts--nav--color' ),
     ],
 ]);
 
@@ -28,7 +28,7 @@ $styles->add([
 $styles->add([
     'selector' => '.postnav__link a:hover',
     'styles' => [
-        'color' => get_theme_mod( 'posts--nav--color--hover' ),
+        'color' => theme_mod( 'posts--nav--color--hover' ),
     ],
 ]);
 
@@ -36,5 +36,5 @@ $styles->add([
 // Var: Link Font Size
 $styles->add_var([
     'name' => 'posts--nav--font-size',
-    'value' => get_theme_mod( 'posts--nav--font-size' ),
+    'value' => theme_mod( 'posts--nav--font-size' ),
 ]);

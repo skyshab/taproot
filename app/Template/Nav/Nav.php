@@ -16,7 +16,7 @@ namespace Taproot\Template\Nav;
 use Hybrid\Contracts\Bootable;
 use function Taproot\Template\Icons\location as icon_location;
 use function Taproot\Template\Icons\get as icon;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 /**
@@ -111,20 +111,20 @@ class Nav implements Bootable {
      */
     public function nav_header_classes( $classes ) {
 
-        if( get_theme_mod( 'nav--header--hide' ) ) {
+        if( theme_mod( 'nav--header--hide' ) ) {
             $classes[] = 'hidden-when-not-mobile';
         }
 
-        if( get_theme_mod( 'nav--header-mobile--hide' ) ) {
+        if( theme_mod( 'nav--header-mobile--hide' ) ) {
             $classes[] = 'hidden-when-mobile';
         }
 
-        if( get_theme_mod( 'nav--header-fixed--hide-when-not-fixed' ) ) {
+        if( theme_mod( 'nav--header-fixed--hide-when-not-fixed' ) ) {
             $classes[] = 'hidden-when-not-fixed';
         }
 
         // add classes for navbar type
-        $mobile_type = get_theme_mod( 'nav--header-mobile--type', null, true );
+        $mobile_type = theme_mod( 'nav--header-mobile--type', true );
 
         $classes[] = sprintf( 'mobile-type-%s', $mobile_type );
 
@@ -132,7 +132,7 @@ class Nav implements Bootable {
         $classes[] = 'menu--right';
 
         // add class for header nav breakpoint
-        $classes[] = sprintf( 'mobile-at-%s', get_theme_mod( 'nav--header-mobile--breakpoint', null, true ) );
+        $classes[] = sprintf( 'mobile-at-%s', theme_mod( 'nav--header-mobile--breakpoint', true ) );
 
         return $classes;
     }
@@ -149,25 +149,25 @@ class Nav implements Bootable {
     public function nav_navbar_classes( $classes ) {
 
         // add class to hide when not mobile
-        if( get_theme_mod( 'nav--navbar--hide' ) ) {
+        if( theme_mod( 'nav--navbar--hide' ) ) {
             $classes[] = 'hidden-when-not-mobile';
         }
 
         // add class to hide when mobile
-        if( get_theme_mod( 'nav--navbar-mobile--hide' ) ) {
+        if( theme_mod( 'nav--navbar-mobile--hide' ) ) {
             $classes[] = 'hidden-when-mobile';
         }
 
-        if( get_theme_mod( 'nav--navbar-fixed--hide-when-not-fixed' ) ) {
+        if( theme_mod( 'nav--navbar-fixed--hide-when-not-fixed' ) ) {
             $classes[] = 'hidden-when-not-fixed';
         }
 
         // add classes for navbar type
-        $mobile_type = get_theme_mod( 'nav--navbar-mobile--type', null, true );
+        $mobile_type = theme_mod( 'nav--navbar-mobile--type', true );
         $classes[] = sprintf( 'mobile-type-%s', $mobile_type );
 
         // add class for toggle side
-        $toggle_side = get_theme_mod('nav--navbar-mobile--side', 'right');
+        $toggle_side = theme_mod('nav--navbar-mobile--side', 'right');
         if( 'right' === $toggle_side ) {
             $classes[] = 'menu--right';
         }
@@ -176,7 +176,7 @@ class Nav implements Bootable {
         }
 
         // add class for navbar breakpoint
-        $classes[] = sprintf( 'mobile-at-%s', get_theme_mod( 'nav--navbar-mobile--breakpoint', null, true ) );
+        $classes[] = sprintf( 'mobile-at-%s', theme_mod( 'nav--navbar-mobile--breakpoint', true ) );
 
         return $classes;
     }
@@ -192,15 +192,15 @@ class Nav implements Bootable {
      */
     public function nav_top_classes( $classes ) {
 
-        if( get_theme_mod( 'nav--top-mobile--hide' ) ) {
+        if( theme_mod( 'nav--top-mobile--hide' ) ) {
             $classes[] = 'hidden-when-mobile';
         }
 
-        if( get_theme_mod( 'nav--top--hide' ) ) {
+        if( theme_mod( 'nav--top--hide' ) ) {
             $classes[] = 'hidden-when-not-mobile';
         }
 
-        $classes[] = sprintf( 'mobile-at-%s', get_theme_mod( 'nav--top-mobile--breakpoint', null, true ) );
+        $classes[] = sprintf( 'mobile-at-%s', theme_mod( 'nav--top-mobile--breakpoint', true ) );
 
         return $classes;
     }
@@ -217,7 +217,7 @@ class Nav implements Bootable {
     public function nav_footer_classes( $classes ) {
 
         // add class for footer nav breakpoint
-        $classes[] = sprintf( 'mobile-at-%s', get_theme_mod( 'nav--footer-mobile--breakpoint', null, true ) );
+        $classes[] = sprintf( 'mobile-at-%s', theme_mod( 'nav--footer-mobile--breakpoint', true ) );
 
         return $classes;
     }
@@ -348,7 +348,7 @@ class Nav implements Bootable {
 			// 'aria_current'       => 'page'
         ];
 
-        if( get_theme_mod( 'blog--pagination--rounded', null, true ) )
+        if( theme_mod( 'blog--pagination--rounded', true ) )
             $custom['list_class'] = 'pagination__items pagination__items--rounded';
 
         return array_merge( $args, $custom );

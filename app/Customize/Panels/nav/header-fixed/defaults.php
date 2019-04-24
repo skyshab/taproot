@@ -14,7 +14,7 @@
 
 
 // Show when fixed
-$defaults->add( 'nav--header-fixed--fixed', null, true );
+$defaults->add( 'nav--header-fixed--fixed', true );
 
 
 // menu item side padding

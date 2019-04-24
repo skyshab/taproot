@@ -16,10 +16,10 @@ use function Taproot\Customize\is_boxed_layout;
 use function Taproot\Customize\get_layout_width;
 use function Taproot\Customize\get_full_layout_width;
 use function Taproot\Customize\get_full_layout_padding;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
-$max_container_width = get_theme_mod( 'layout--container--max-width', null, true );
+$max_container_width = theme_mod( 'layout--container--max-width', true );
 
 $styles->add_var([
     'name' => 'layout--container--max-width',

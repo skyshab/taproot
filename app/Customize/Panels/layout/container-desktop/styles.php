@@ -15,7 +15,7 @@
 use function Taproot\Customize\get_padding_from_width;
 use function Taproot\Customize\is_boxed_layout;
 use function Taproot\Customize\get_layout_width;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 $site_width = get_layout_width('desktop', 'vw');

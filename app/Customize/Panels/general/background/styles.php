@@ -12,13 +12,13 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Background Color
 $styles->add([
     'selector' => 'html',
     'styles' => [
-        'background-color' => get_theme_mod( 'general--background--background-color', null, true )
+        'background-color' => theme_mod( 'general--background--background-color', true )
     ]
 ]);

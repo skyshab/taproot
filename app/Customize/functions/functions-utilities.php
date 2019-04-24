@@ -203,11 +203,11 @@ function maybe_convert_to_em( $value = false ) {
  */
 function get_full_layout_width() {
 
-    $max_width = \Rootstrap\get_theme_mod( 'layout--container--max-width', null, true );
+    $max_width = theme_mod( 'layout--container--max-width', true );
     $max_width_int = (int) filter_var($max_width, FILTER_SANITIZE_NUMBER_INT);
 
     if( is_boxed_layout() ) {
-        $layout_padding = \Rootstrap\get_theme_mod('layout--boxed--outer-padding', null, true);
+        $layout_padding = theme_mod('layout--boxed--outer-padding', true);
     } else {
         $site_width = get_layout_width('desktop', 'vw');
         $layout_padding = get_padding_from_width( $site_width, 'vw' );
@@ -257,7 +257,7 @@ function get_full_layout_padding() {
  * @return string
  */
 function get_layout_width( $screen = 'mobile', $unit = 'decimal' ) {
-    $width = \Rootstrap\get_theme_mod( sprintf('layout--container-%s--width', $screen), null, true );
+    $width = theme_mod( sprintf('layout--container-%s--width', $screen), null, true );
     $width_int = (int) filter_var($width, FILTER_SANITIZE_NUMBER_INT);
 
     if( 'decimal' === $unit ) {
@@ -314,4 +314,20 @@ function get_palette_color( $slug ) {
     }
 
     return false;
+}
+
+
+/**
+ * Get theme mod value
+ *
+ * Wrapper for Rootstrap's get_theme_mod() function.
+ * Omits the fallback argument, since we're not using it.
+ *
+ * @since  1.1.0
+ * @return mixed
+ */
+function theme_mod( $id, $display_default = false ) {
+
+    return \Rootstrap\get_theme_mod($id, null, $display_default);
+
 }

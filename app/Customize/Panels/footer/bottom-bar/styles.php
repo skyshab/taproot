@@ -12,14 +12,14 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Background Color
 $styles->add([
     'selector' => '.bottom-bar',
     'styles' => array(
-        'background-color' => get_theme_mod( 'footer--bottom-bar--background-color' )
+        'background-color' => theme_mod( 'footer--bottom-bar--background-color' )
     ),
 ]);
 
@@ -28,7 +28,7 @@ $styles->add([
 $styles->add([
     'selector' => '.app-footer, .app-footer a',
     'styles' => array(
-        'color' => get_theme_mod( 'footer--bottom-bar--default-color' ),
+        'color' => theme_mod( 'footer--bottom-bar--default-color' ),
     ),
 ]);
 
@@ -37,7 +37,7 @@ $styles->add([
 $styles->add([
     'selector' => '.app-footer a:hover',
     'styles' => array(
-        'color' => get_theme_mod( 'footer--bottom-bar--default-color--hover' ),
+        'color' => theme_mod( 'footer--bottom-bar--default-color--hover' ),
     ),
 ]);
 

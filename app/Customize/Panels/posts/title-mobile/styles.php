@@ -13,13 +13,13 @@
 
 
 use function Taproot\Customize\get_font_styles;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Var: Title Font Size
 $styles->add_var([
     'name' => 'posts--title--font-size',
-    'value' => get_theme_mod( 'posts--title-mobile--font-size' ),
+    'value' => theme_mod( 'posts--title-mobile--font-size' ),
     'screen' => 'default'
 ]);
 
@@ -27,6 +27,6 @@ $styles->add_var([
 // Var: Title Line Height
 $styles->add_var([
     'name' => 'posts--title--line-height',
-    'value' => get_theme_mod( 'posts--title-mobile--line-height' ),
+    'value' => theme_mod( 'posts--title-mobile--line-height' ),
     'screen' => 'default'
 ]);

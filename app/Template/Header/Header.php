@@ -14,7 +14,7 @@
 namespace Taproot\Template\Header;
 
 use Hybrid\Contracts\Bootable;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 use function Hybrid\View\render;
 use function Hybrid\Post\render_title;
 use function Hybrid\Post\render_date;
@@ -58,8 +58,8 @@ class Header implements Bootable {
     public function header_classes( $classes, $context) {
 
         // fixed header - don't do sticky headers on custom header pages
-        if( get_theme_mod( 'header--styles-fixed--fixed', null, true ) ) {
-            $fixed_type = get_theme_mod( 'header--styles-fixed--type', null, true );
+        if( theme_mod( 'header--styles-fixed--fixed', true ) ) {
+            $fixed_type = theme_mod( 'header--styles-fixed--type', true );
 
             if( $this->hasCustomHeader() && 'sticky' === $fixed_type ) {
                 $classes[] = 'app-header--static';
@@ -72,31 +72,31 @@ class Header implements Bootable {
         }
 
         // fullwidth header
-        if( get_theme_mod( 'header--styles--fullwidth' ) )
+        if( theme_mod( 'header--styles--fullwidth' ) )
             $classes[] = 'app-header--fullwidth';
         else
             $classes[] = 'app-header--standard-width';
 
         // branding mobile
-        if( get_theme_mod( 'branding--layout-mobile--layout', null, true ) === 'vertical' )
+        if( theme_mod( 'branding--layout-mobile--layout', true ) === 'vertical' )
             $classes[] = 'app-header--mobile--vertical';
         else
             $classes[] = 'app-header--mobile--horizontal';
 
         // branding tablet
-        if( get_theme_mod( 'branding--layout-tablet--layout', null, true ) === 'vertical' )
+        if( theme_mod( 'branding--layout-tablet--layout', true ) === 'vertical' )
             $classes[] = 'app-header--tablet--vertical';
         else
             $classes[] = 'app-header--tablet--horizontal';
 
         // branding desktop
-        if( get_theme_mod( 'branding--layout-desktop--layout', null, true ) === 'vertical' )
+        if( theme_mod( 'branding--layout-desktop--layout', true ) === 'vertical' )
             $classes[] = 'app-header--desktop--vertical';
         else
             $classes[] = 'app-header--desktop--horizontal';
 
         // boxed layout
-        if( get_theme_mod( 'layout--boxed--enable' ) )
+        if( theme_mod( 'layout--boxed--enable' ) )
             $classes[] = 'boxed-layout';
 
         return $classes;
@@ -140,7 +140,7 @@ class Header implements Bootable {
         if( $post_custom_header ) {
             return true;
         }
-        elseif( get_theme_mod('header_image') && get_theme_mod('header_image') !== 'remove-header' ) {
+        elseif( theme_mod('header_image') && theme_mod('header_image') !== 'remove-header' ) {
             return true;
         }
         return false;

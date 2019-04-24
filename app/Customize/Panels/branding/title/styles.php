@@ -14,15 +14,15 @@
 
 use function Taproot\Customize\get_font_family;
 use function Taproot\Customize\get_font_styles;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Title Styles
 $styles->add([
     'selector' => '.app-header__title',
     'styles' => [
-        'color' => get_theme_mod( 'branding--title--color' ),
-        'font-family' => get_font_family( get_theme_mod( 'branding--title--font-family' ) ),
+        'color' => theme_mod( 'branding--title--color' ),
+        'font-family' => get_font_family( theme_mod( 'branding--title--font-family' ) ),
     ]
 ]);
 

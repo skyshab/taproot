@@ -14,15 +14,15 @@
 
 use function Taproot\Customize\get_font_family;
 use function Taproot\Customize\get_font_styles;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Tagline Styles
 $styles->add([
     'selector' => '.app-header__description',
     'styles' => [
-        'color' => get_theme_mod( 'branding--tagline--color' ),
-        'font-family' => get_font_family( get_theme_mod( 'branding--tagline--font-family' ) ),
+        'color' => theme_mod( 'branding--tagline--color' ),
+        'font-family' => get_font_family( theme_mod( 'branding--tagline--font-family' ) ),
     ]
 ]);
 
@@ -35,7 +35,7 @@ $styles->add([
 
 
 // Center title when tagline is hidden
-$show_tagline = get_theme_mod( 'branding--tagline--display-tagline', null, true );
+$show_tagline = theme_mod( 'branding--tagline--display-tagline', true );
 if( !$show_tagline ) {
     $styles->add([
         'selector' => '.app-header__title',

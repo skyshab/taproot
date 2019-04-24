@@ -12,25 +12,25 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Meta Color
 $styles->add([
     'selector' => '.entry__byline--archive',
-    'styles' => [ 'color' => get_theme_mod( 'blog--archive-meta--color' ) ],
+    'styles' => [ 'color' => theme_mod( 'blog--archive-meta--color' ) ],
 ]);
 
 
 // Meta Icon Color
 $styles->add([
     'selector' => '.entry__byline--archive .taproot-icon',
-    'styles' => [ 'color' => get_theme_mod( 'blog--archive-meta--icon--color' ) ],
+    'styles' => [ 'color' => theme_mod( 'blog--archive-meta--icon--color' ) ],
 ]);
 
 
 // Meta Font Size
 $styles->add([
     'selector' => '.entry__byline--archive',
-    'styles' => [ 'font-size' => get_theme_mod( 'blog--archive-meta--font-size' ) ],
+    'styles' => [ 'font-size' => theme_mod( 'blog--archive-meta--font-size' ) ],
 ]);

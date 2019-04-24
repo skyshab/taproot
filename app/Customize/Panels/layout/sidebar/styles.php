@@ -12,19 +12,19 @@
  */
 
 
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 // Var: Sidebar Background Color
 $styles->add_var([
     'name' => 'layout--sidebar--background-color',
-    'value' => get_theme_mod( 'layout--sidebar--background-color' ),
+    'value' => theme_mod( 'layout--sidebar--background-color' ),
 ]);
 
 
 // Var: Sidebar Min Width
 $styles->add_var([
     'name' => 'layout--sidebar--min-width',
-    'value' => get_theme_mod( 'layout--sidebar--min-width', null, true ),
+    'value' => theme_mod( 'layout--sidebar--min-width', true ),
     'screen' => 'desktop'
 ]);
