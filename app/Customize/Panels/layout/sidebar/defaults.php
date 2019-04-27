@@ -14,4 +14,4 @@
 
 
 // Sidebar Min Width
-$defaults->add( 'layout--sidebar--min-width', '260px' );
+$defaults->add( 'layout--sidebar--min-width', '250px' );

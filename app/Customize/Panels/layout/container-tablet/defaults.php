@@ -14,4 +14,4 @@
 
 
 // Container Width
-$defaults->add( 'layout--container-tablet--width', '90%' );
+$defaults->add( 'layout--container-tablet--width', '90vw' );

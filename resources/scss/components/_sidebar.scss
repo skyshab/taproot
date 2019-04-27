@@ -54,6 +54,10 @@
                 left: auto;
             }
         }
+
+        * {
+            box-sizing: border-box;
+        }
     }
 
     .widget {

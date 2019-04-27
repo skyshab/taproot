@@ -14,4 +14,4 @@
 
 
 // Container Max Width
-$defaults->add( 'layout--containter--max-width', '1060px' );
+$defaults->add( 'layout--container--max-width', '1060px' );

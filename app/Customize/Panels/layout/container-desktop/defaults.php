@@ -14,4 +14,4 @@
 
 
 // Container Width
-$defaults->add( 'layout--container-desktop--width', '90%' );
+$defaults->add( 'layout--container-desktop--width', '90vw' );

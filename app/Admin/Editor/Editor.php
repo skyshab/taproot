@@ -115,25 +115,25 @@ class Editor implements Bootable {
      */
     public function register_post_meta() {
 
-        register_meta( 'post', '_taproot_custom_header_image', [
+        register_meta( 'post', 'taproot_custom_header_image', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'string',
         ]);
 
-        register_meta( 'post', '_taproot_page_layout', [
+        register_meta( 'post', 'taproot_page_layout', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'string',
         ]);
 
-        register_meta( 'post', '_taproot_post_title_display', [
+        register_meta( 'post', 'taproot_post_title_display', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'string',
         ]);
 
-        register_meta( 'post', '_taproot_use_featured_image_for_header', [
+        register_meta( 'post', 'taproot_use_featured_image_for_header', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'integer',

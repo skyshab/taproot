@@ -85,7 +85,7 @@ add_action( 'after_setup_theme', function() {
         [
             'name'  => __( 'Accent Color', 'taproot' ),
             'slug'  => 'theme-accent',
-            'color' => get_theme_mod( 'colors--theme--accent', '#dd9933' )
+            'color' => get_theme_mod( 'colors--theme--accent', '#00a0d1' )
         ],
         [
             'name'  => __( 'Meta Light', 'taproot' ),

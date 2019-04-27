@@ -2,7 +2,7 @@
  * Header Image Picker Component
  *
  * This file handles the JavaScript for creating an image
- * picker control in the block editor theme sidebar panel. 
+ * picker control in the block editor theme sidebar panel.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
@@ -13,7 +13,7 @@
 
 
 const { compose } = wp.compose;
-const { 
+const {
     withSelect,
     withDispatch
 } = wp.data;
@@ -30,29 +30,29 @@ export const HeaderImagePicker = compose(
             },
             setCheckboxValue: function( value ) {
                 dispatch('core/editor').editPost({ meta: { taprooot_use_featured_image_for_header: value } })
-            }                
+            }
         }
     }),
     withSelect( function( select, props ) {
         const { getMedia } = select('core');
-        const { getEditedPostAttribute } = select('core/editor'); 
+        const { getEditedPostAttribute } = select('core/editor');
         let featuredImageSrc = 0;
-        
+
         if ( getEditedPostAttribute('featured_media') ) {
             featuredImageSrc = getMedia( getEditedPostAttribute('featured_media') )
-        }            
+        }
         return {
             metaFieldValue: select('core/editor').getEditedPostAttribute('meta')[props.fieldName],
-            checkboxValue: select('core/editor').getEditedPostAttribute('meta')['taprooot_use_featured_image_for_header'],  
-            featuredImage: featuredImageSrc            
+            checkboxValue: select('core/editor').getEditedPostAttribute('meta')['taprooot_use_featured_image_for_header'],
+            featuredImage: featuredImageSrc
         }
     })
-)( props => { 
+)( props => {
 
     // create component title
-    const title = ( <span>{ __('Custom Header Image') }</span> );   
+    const title = ( <span>{ __('Custom Header Image') }</span> );
 
-    // create the image preview element        
+    // create the image preview element
     const preview = () => {
         let imageSource = false;
         if ( props.checkboxValue === 1 ) {
@@ -62,13 +62,13 @@ export const HeaderImagePicker = compose(
             imageSource = props.metaFieldValue
         }
         if ( imageSource ) return (
-            <img 
-                src={imageSource} 
-                style={{ marginTop: '6px' }} 
+            <img
+                src={imageSource}
+                style={{ marginTop: '6px' }}
                 class="media-preview" />
-        )          
+        )
     }
-    
+
     // create checkbox control for using featured image
     const checkbox = (
         <CheckboxControl
@@ -83,7 +83,7 @@ export const HeaderImagePicker = compose(
     // create the button to add an image
     const addImage = (open) => {
         if ( props.checkboxValue !== 1 ) return (
-            <button 
+            <button
                 class="components-button is-button is-default"
                 style={{marginRight: '10px' }}
                 onClick={open} >
@@ -93,19 +93,19 @@ export const HeaderImagePicker = compose(
     }
 
     // clear the saved image value
-    const reset = () => {            
+    const reset = () => {
         props.setMetaFieldValue('')
     }
 
     // button to clear the saved image value
     const imageReset = ( props.checkboxValue !== 1 && props.metaFieldValue ) ? (
-        <button 
+        <button
             class="components-button is-button is-default"
             onClick={reset} >
             { __('Clear') }
-        </button>          
+        </button>
     ) : null;
-    
+
     // return the custom header image picker component
     return (
         <MediaUpload
@@ -114,13 +114,13 @@ export const HeaderImagePicker = compose(
             value={ props.metaFieldValue }
             onSelect={ imageObject => {
                 if (imageObject.sizes) props.setMetaFieldValue(imageObject.sizes.full.url)
-            }}                
+            }}
             render={ ({open}) => [
                 title,
-                preview(),                    
+                preview(),
                 checkbox,
                 addImage(open),
-                imageReset                 
+                imageReset
             ]}
         />
     )

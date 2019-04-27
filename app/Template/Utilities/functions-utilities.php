@@ -49,12 +49,12 @@ function get_layout() {
     }
     elseif( is_single() ) {
         $default = theme_mod( 'posts--layout--layout', true );
-        $layout = get_post_meta( get_the_ID(), '_taproot_page_layout', true );
+        $layout = get_post_meta( get_the_ID(), 'taproot_page_layout', true );
         $layout = ($layout) ? $layout : $default;
     }
     elseif( is_page() ) {
         $default = theme_mod( 'pages--layout--layout', true );
-        $layout = get_post_meta( get_the_ID(), '_taproot_page_layout', true );
+        $layout = get_post_meta( get_the_ID(), 'taproot_page_layout', true );
         $layout = ($layout) ? $layout : $default;
     }
     else {

@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Taproot 1.0.0\n"
+"Project-Id-Version: Taproot 1.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/taproot\n"
-"POT-Creation-Date: 2019-03-11 12:42:26+00:00\n"
+"POT-Creation-Date: 2019-04-26 21:02:15+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -40,6 +40,10 @@ msgstr ""
 
 #: app/Customize/Controls/Range.php:116
 msgid "disable"
+msgstr ""
+
+#: app/Customize/Customize.php:137
+msgid "Site Icon"
 msgstr ""
 
 #: app/Customize/Panels/blog/archive-excerpt/section.php:24
@@ -147,7 +151,7 @@ msgstr ""
 
 #: app/Customize/Panels/blog/archive-title/section.php:38
 #: app/Customize/Panels/blog/title/section.php:51
-#: app/Customize/Panels/branding/title/section.php:57
+#: app/Customize/Panels/branding/title/section.php:58
 #: app/Customize/Panels/pages/title/section.php:37
 #: app/Customize/Panels/posts/title/section.php:37
 msgid "Title Color"
@@ -263,8 +267,8 @@ msgstr ""
 #: app/Customize/Panels/footer/panel.php:41
 #: app/Customize/Panels/footer/panel.php:80
 #: app/Customize/Panels/header/panel.php:44
-#: app/Customize/Panels/layout/panel.php:30
-#: app/Customize/Panels/layout/panel.php:48
+#: app/Customize/Panels/layout/panel.php:31
+#: app/Customize/Panels/layout/panel.php:49
 #: app/Customize/Panels/pages/panel.php:28
 #: app/Customize/Panels/pages/panel.php:46
 #: app/Customize/Panels/posts/panel.php:30
@@ -278,7 +282,7 @@ msgid "mobile"
 msgstr ""
 
 #: app/Customize/Panels/blog/panel.php:60
-#: app/Customize/Panels/layout/panel.php:37
+#: app/Customize/Panels/layout/panel.php:38
 #: app/Customize/Panels/pages/panel.php:35
 #: app/Customize/Panels/posts/panel.php:37
 msgid "general"
@@ -304,8 +308,8 @@ msgstr ""
 #: app/Customize/Panels/header/panel.php:37
 #: app/Customize/Panels/header/panel.php:54
 #: app/Customize/Panels/header/panel.php:64
-#: app/Customize/Panels/layout/panel.php:41
-#: app/Customize/Panels/layout/panel.php:58
+#: app/Customize/Panels/layout/panel.php:42
+#: app/Customize/Panels/layout/panel.php:59
 #: app/Customize/Panels/pages/panel.php:39
 #: app/Customize/Panels/pages/panel.php:56
 #: app/Customize/Panels/posts/panel.php:41
@@ -330,7 +334,7 @@ msgstr ""
 #: app/Customize/Panels/footer/panel.php:44
 #: app/Customize/Panels/footer/panel.php:83
 #: app/Customize/Panels/header/panel.php:47
-#: app/Customize/Panels/layout/panel.php:51
+#: app/Customize/Panels/layout/panel.php:52
 #: app/Customize/Panels/pages/panel.php:49
 #: app/Customize/Panels/posts/panel.php:51
 #: app/Customize/Panels/typography/panel.php:49
@@ -431,7 +435,7 @@ msgstr ""
 msgid "Logo Width"
 msgstr ""
 
-#: app/Customize/Panels/branding/logo-desktop/section.php:54
+#: app/Customize/Panels/branding/logo-desktop/section.php:53
 #: app/Customize/Panels/branding/logo-fixed/section.php:67
 #: app/Customize/Panels/branding/logo-mobile/section.php:53
 #: app/Customize/Panels/branding/logo-tablet/section.php:54
@@ -476,16 +480,16 @@ msgstr ""
 msgid "Tagline"
 msgstr ""
 
-#: app/Customize/Panels/branding/tagline/section.php:51
+#: app/Customize/Panels/branding/tagline/section.php:53
 msgid "Display Site Tagline"
 msgstr ""
 
-#: app/Customize/Panels/branding/tagline/section.php:57
+#: app/Customize/Panels/branding/tagline/section.php:59
 msgid "Tagline Color"
 msgstr ""
 
-#: app/Customize/Panels/branding/tagline/section.php:72
-#: app/Customize/Panels/branding/title/section.php:72
+#: app/Customize/Panels/branding/tagline/section.php:74
+#: app/Customize/Panels/branding/title/section.php:73
 #: app/Customize/Panels/elements/buttons/section.php:133
 #: app/Customize/Panels/nav/footer/section.php:82
 #: app/Customize/Panels/nav/header/section.php:77
@@ -505,8 +509,8 @@ msgstr ""
 msgid "Font Family"
 msgstr ""
 
-#: app/Customize/Panels/branding/tagline/section.php:84
-#: app/Customize/Panels/branding/title/section.php:84
+#: app/Customize/Panels/branding/tagline/section.php:86
+#: app/Customize/Panels/branding/title/section.php:85
 #: app/Customize/Panels/elements/buttons/section.php:145
 #: app/Customize/Panels/nav/footer/section.php:94
 #: app/Customize/Panels/nav/header/section.php:89
@@ -651,7 +655,7 @@ msgstr ""
 msgid "Tagline Tablet"
 msgstr ""
 
-#: app/Customize/Panels/branding/title/section.php:51
+#: app/Customize/Panels/branding/title/section.php:52
 msgid "Display Site Title"
 msgstr ""
 
@@ -679,10 +683,11 @@ msgstr ""
 #: app/Customize/Panels/typography/h5/section.php:37
 #: app/Customize/Panels/typography/h6/section.php:37
 #: app/Customize/Panels/typography/headings/section.php:39
+#: app/functions-setup.php:81
 msgid "Text Color"
 msgstr ""
 
-#: app/Customize/Panels/colors/theme/section.php:43
+#: app/Customize/Panels/colors/theme/section.php:43 app/functions-setup.php:86
 msgid "Accent Color"
 msgstr ""
 
@@ -759,7 +764,7 @@ msgid "Border Color"
 msgstr ""
 
 #: app/Customize/Panels/elements/buttons/section.php:71
-#: app/Customize/Panels/header/image/section.php:55
+#: app/Customize/Panels/header/image/section.php:66
 msgid "Height"
 msgstr ""
 
@@ -918,6 +923,7 @@ msgstr ""
 #: app/Customize/Panels/footer/widgets-desktop/section.php:49
 #: app/Customize/Panels/footer/widgets-mobile/section.php:47
 #: app/Customize/Panels/footer/widgets-tablet/section.php:49
+#: app/functions-setup.php:216
 msgid "Full"
 msgstr ""
 
@@ -959,11 +965,17 @@ msgstr ""
 msgid "Background"
 msgstr ""
 
-#: app/Customize/Panels/header/image/section.php:63
+#: app/Customize/Panels/header/image/section.php:30
+msgid ""
+"Choose a custom header image for the homepage. If using a static homepage, "
+"the page settings will be used instead."
+msgstr ""
+
+#: app/Customize/Panels/header/image/section.php:74
 msgid "Max Height"
 msgstr ""
 
-#: app/Customize/Panels/header/image/section.php:71
+#: app/Customize/Panels/header/image/section.php:82
 msgid "Min Height"
 msgstr ""
 
@@ -1025,23 +1037,42 @@ msgstr ""
 msgid "Sticky"
 msgstr ""
 
+#: app/Customize/Panels/layout/boxed/section.php:25
+msgid "Boxed Layout"
+msgstr ""
+
+#: app/Customize/Panels/layout/boxed/section.php:42
+msgid "Use a boxed layout"
+msgstr ""
+
+#: app/Customize/Panels/layout/boxed/section.php:51
+msgid "Outer Padding"
+msgstr ""
+
+#: app/Customize/Panels/layout/container/section.php:25
+#: app/Customize/Panels/layout/container-desktop/section.php:25
+#: app/Customize/Panels/layout/container-mobile/section.php:25
+#: app/Customize/Panels/layout/container-tablet/section.php:25
+#: app/Customize/Panels/layout/panel.php:26
+msgid "Container"
+msgstr ""
+
+#: app/Customize/Panels/layout/container/section.php:38
+msgid "Max Container Width"
+msgstr ""
+
+#: app/Customize/Panels/layout/container-desktop/section.php:38
+#: app/Customize/Panels/layout/container-mobile/section.php:38
+#: app/Customize/Panels/layout/container-tablet/section.php:38
+msgid "Container Width"
+msgstr ""
+
 #: app/Customize/Panels/layout/content/section.php:24
-#: app/Customize/Panels/layout/content-desktop/section.php:25
-#: app/Customize/Panels/layout/content-mobile/section.php:25
-#: app/Customize/Panels/layout/content-tablet/section.php:25
-#: app/Customize/Panels/layout/panel.php:25
 msgid "Content"
 msgstr ""
 
 #: app/Customize/Panels/layout/content/section.php:37
-#: app/Customize/Panels/layout/sidebar/section.php:62
 msgid "Max Content Width"
-msgstr ""
-
-#: app/Customize/Panels/layout/content-desktop/section.php:38
-#: app/Customize/Panels/layout/content-mobile/section.php:38
-#: app/Customize/Panels/layout/content-tablet/section.php:38
-msgid "Content Padding"
 msgstr ""
 
 #: app/Customize/Panels/layout/sidebar/section.php:25
@@ -1050,23 +1081,7 @@ msgid "Sidebar"
 msgstr ""
 
 #: app/Customize/Panels/layout/sidebar/section.php:45
-msgid "Sidebar Width"
-msgstr ""
-
-#: app/Customize/Panels/layout/site/section.php:25
-msgid "Site"
-msgstr ""
-
-#: app/Customize/Panels/layout/site/section.php:42
-msgid "Use a boxed layout"
-msgstr ""
-
-#: app/Customize/Panels/layout/site/section.php:51
-msgid "Boxed Layout Padding"
-msgstr ""
-
-#: app/Customize/Panels/layout/site/section.php:59
-msgid "Max Container Width"
+msgid "Sidebar Min Width"
 msgstr ""
 
 #: app/Customize/Panels/nav/footer/section.php:28
@@ -1615,10 +1630,6 @@ msgstr ""
 msgid "Sidebar - Tablet"
 msgstr ""
 
-#: app/Customize/customize-register.php:67
-msgid "Site Icon"
-msgstr ""
-
 #: app/Customize/functions/functions-controls.php:114
 msgid "&#169;2019, My Awesome Site"
 msgstr ""
@@ -1664,55 +1675,63 @@ msgid ""
 "Please upgrade and try again."
 msgstr ""
 
-#: app/functions-setup.php:80
-msgid "Charcoal"
+#: app/functions-setup.php:91
+msgid "Meta Light"
 msgstr ""
 
-#: app/functions-setup.php:85
-msgid "Regent"
+#: app/functions-setup.php:96
+msgid "Meta Medium"
 msgstr ""
 
-#: app/functions-setup.php:90
-msgid "Husk"
+#: app/functions-setup.php:101
+msgid "Meta Dark"
 msgstr ""
 
-#: app/functions-setup.php:95
-msgid "Red Stage"
-msgstr ""
-
-#: app/functions-setup.php:105
+#: app/functions-setup.php:113
 msgid "Small"
 msgstr ""
 
-#: app/functions-setup.php:106
+#: app/functions-setup.php:114
 msgid "S"
 msgstr ""
 
-#: app/functions-setup.php:111
+#: app/functions-setup.php:119
 msgid "Regular"
 msgstr ""
 
-#: app/functions-setup.php:112
+#: app/functions-setup.php:120
 msgid "M"
 msgstr ""
 
-#: app/functions-setup.php:117
+#: app/functions-setup.php:125 app/functions-setup.php:215
 msgid "Large"
 msgstr ""
 
-#: app/functions-setup.php:118
+#: app/functions-setup.php:126
 msgid "L"
 msgstr ""
 
-#: app/functions-setup.php:123
+#: app/functions-setup.php:131
 msgid "Larger"
 msgstr ""
 
-#: app/functions-setup.php:124
+#: app/functions-setup.php:132
 msgid "XL"
 msgstr ""
 
-#: app/functions-setup.php:247
+#: app/functions-setup.php:212
+msgid "Thumbnail"
+msgstr ""
+
+#: app/functions-setup.php:213
+msgid "Medium"
+msgstr ""
+
+#: app/functions-setup.php:214
+msgid "Medium Large"
+msgstr ""
+
+#: app/functions-setup.php:253
 msgid "Page Builder"
 msgstr ""
 
@@ -1846,7 +1865,7 @@ msgstr ""
 msgid "Tags"
 msgstr ""
 
-#: resources/views/header/default.php:14
+#: resources/views/header/default.php:16
 msgid "Skip to content"
 msgstr ""
 
@@ -1973,8 +1992,9 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Taproot is a multipurpose theme built on Hybrid Core and the Mythic started "
-"theme"
+"Taproot is a modern, full featured multipurpose theme for WordPress. "
+"Features include a variety of Customizer settings, hooks and filters for "
+"developers, and full support for the Gutenberg block editor."
 msgstr ""
 
 #. Author of the plugin/theme
@@ -2060,7 +2080,7 @@ msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: vendor/justintadlock/hybrid-core/src/Post/functions-post.php:328
+#: vendor/justintadlock/hybrid-core/src/Post/functions-post.php:334
 #. Translators: Separates tags, categories, etc. when displaying a post.
 msgctxt "taxonomy terms separator"
 msgid ", "

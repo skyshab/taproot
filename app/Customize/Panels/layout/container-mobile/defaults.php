@@ -14,4 +14,4 @@
 
 
 // Container Width
-$defaults->add( 'layout--container-mobile--width', '90%' );
+$defaults->add( 'layout--container-mobile--width', '90vw' );

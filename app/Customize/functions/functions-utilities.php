@@ -242,8 +242,14 @@ function get_full_layout_width() {
  * @return string
  */
 function get_full_layout_padding() {
+
+    if( ! get_layout_width('desktop') || ! get_full_layout_width() ) {
+        return false;
+    }
+
     $portion = (1 - get_layout_width('desktop') ) / 2;
     $width = (int) get_full_layout_width();
+
     return $portion * $width . 'px';
 }
 
@@ -257,7 +263,13 @@ function get_full_layout_padding() {
  * @return string
  */
 function get_layout_width( $screen = 'mobile', $unit = 'decimal' ) {
-    $width = theme_mod( sprintf('layout--container-%s--width', $screen), null, true );
+
+    $width = theme_mod( sprintf('layout--container-%s--width', $screen), true );
+
+    if( ! $width ) {
+        return false;
+    }
+
     $width_int = (int) filter_var($width, FILTER_SANITIZE_NUMBER_INT);
 
     if( 'decimal' === $unit ) {
@@ -281,9 +293,9 @@ function get_layout_width( $screen = 'mobile', $unit = 'decimal' ) {
  */
 function get_padding_from_width( $width, $unit = false ) {
 
-    $width_int = (int) filter_var($width, FILTER_SANITIZE_NUMBER_INT);
-    if(!$width_int) return '';
+    if( ! $width ) return false;
 
+    $width_int = (int) filter_var($width, FILTER_SANITIZE_NUMBER_INT);
     $padding = (100 - $width_int) / 2;
 
     if($unit) {
@@ -291,29 +303,6 @@ function get_padding_from_width( $width, $unit = false ) {
     }
 
     return $padding;
-}
-
-
-
-/**
- * Get Palette Color From Slug
- *
- * Utility to get a registered theme color from the color slug name.
- *
- * @since  1.0.0
- * @return string
- */
-function get_palette_color( $slug ) {
-
-    $colors = current( (array) get_theme_support( 'editor-color-palette' ) );
-
-    foreach( $colors as $color => $args ) {
-        if( $slug === $args['slug'] ) {
-            return $args['color'];
-        }
-    }
-
-    return false;
 }
 
 

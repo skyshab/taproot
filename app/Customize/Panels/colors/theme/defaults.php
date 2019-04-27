@@ -12,24 +12,22 @@
  * @link      https://taproot-theme.com
  */
 
-
-use function Taproot\Customize\get_palette_color;
-
+// these are also defined in functions-setup and in the CSS
 
 // Text Color
-$defaults->add( 'colors--theme--text', get_palette_color('theme-text') );
+$defaults->add( 'colors--theme--text', '#8c8c8c' );
 
 // Accent Color
-$defaults->add( 'colors--theme--accent', get_palette_color('theme-accent') );
+$defaults->add( 'colors--theme--accent', '#00a0d1' );
 
 // Accent Contrast Color
 $defaults->add( 'colors--theme--accent-contrast', '#ffffff' );
 
 // Meta Color Light
-$defaults->add( 'colors--theme--meta-light', get_palette_color('theme-meta-light') );
+$defaults->add( 'colors--theme--meta-light', '#f4f4f4' );
 
 // Meta Color Medium
-$defaults->add( 'colors--theme--meta-medium', get_palette_color('theme-meta-medium') );
+$defaults->add( 'colors--theme--meta-medium', '#d8d8d8' );
 
 // Meta Color Dark
-$defaults->add( 'colors--theme--meta-dark', get_palette_color('theme-meta-dark') );
+$defaults->add( 'colors--theme--meta-dark', '#a5a5a5' );

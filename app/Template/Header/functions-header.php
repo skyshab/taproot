@@ -23,9 +23,5 @@ namespace Taproot\Template;
  * @return string
  */
 function additional_content() {
-    $additional_content = apply_filters('taproot/header/additional-content', false );
-    if( !$additional_content ) return;
-    echo '<div class="additional-header-content">';
-        echo $additional_content;
-    echo '</div>';
+    do_action('taproot/header/additional-content');
 }

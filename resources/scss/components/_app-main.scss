@@ -32,5 +32,9 @@
         &--full {
             padding: var(--layout--container--padding) 0;
         }
+
+        * {
+            box-sizing: border-box;
+        }
     }
 }
