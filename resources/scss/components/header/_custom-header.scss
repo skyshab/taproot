@@ -25,32 +25,10 @@
         object-fit: cover;
         max-width: none;
         height: 100%;
-        width: 100%;        
-    }
-
-	// Header video.
-	video {}
-
-	// Video play/pause button.
-	&-video-button {}
-
-	// Specific play/pause classes. Note that the button in core WP will have
-	// the state of what's happening with the video rather than what action
-	// the button performs.  The `*-play` class is applied to the "Pause"
-	// button and the `*-pause` class is applied to the "Play" button.
-	&-video-play {}
-	&-video-pause {}
-}
-
-
-.app-header:not(.app-header--fixed) { 
-
-    .custom-header & {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        width: 100%;
     }
 }
+
 
 // fixed header styles
 .app-header--fixed {
@@ -63,3 +41,12 @@
 }
 
 
+/* top nav, header container, additional header content, navbar*/
+.app-header--has-custom-header {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    &.app-header--has-topnav {
+        grid-template-rows: auto auto 1fr auto;
+    }
+}

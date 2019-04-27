@@ -1,0 +1,23 @@
+////
+/// Default CSS Vars
+///
+/// These are used in both the theme css file
+/// and the block editor styles
+///
+/// @group  custom-properties
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+& {
+    --layout--container--width: 90vw;
+    --layout--container--width-as-decimal: 0.9;
+    --layout--container--width-as-vw: 90vw;
+    --layout--container--width-as-percentage: 90%;
+    --layout--container--max-width: 1060px;
+    --layout--container--padding: 5vw;
+    --layout--content--max-width: 640px;
+    --layout--sidebar--min-width: 250px;
+    --layout--block-spacing--large: 2rem;
+}

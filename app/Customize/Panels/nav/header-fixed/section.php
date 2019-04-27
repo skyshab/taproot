@@ -2,11 +2,11 @@
 /**
  * Section setup.
  *
- * This file adds the section, settings and controls to the customizer. 
+ * This file adds the section, settings and controls to the customizer.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -34,8 +34,8 @@ $manager->add_section( 'nav--header-fixed', [
 # Add Settings & Controls
 # =======================================================
 
-   
-// Setting: Show When Fixed 
+
+// Setting: Show When Fixed
 $manager->add_setting( 'nav--header-fixed--fixed', [
     'sanitize_callback' => 'taproot_sanitize_checkbox',
     'transport' => 'refresh',
@@ -48,7 +48,7 @@ $manager->add_control( 'nav--header-fixed--fixed', [
 ]);
 
 
-// Setting: Hide When Not Fixed 
+// Setting: Hide When Not Fixed
 $manager->add_setting( 'nav--header-fixed--hide-when-not-fixed', [
     'sanitize_callback' => 'taproot_sanitize_checkbox',
     'transport' => 'refresh',
@@ -64,15 +64,15 @@ $manager->add_control( 'nav--header-fixed--hide-when-not-fixed', [
 // Color Setting: Link Color
 color( $manager, 'nav--header-fixed--link-color', [
     'label'   => esc_html__( 'Link Color', 'taproot' ),
-    'section' => 'nav--header-fixed',  
-]); 
+    'section' => 'nav--header-fixed',
+]);
 
 
 // Color Setting: Link Color Hover
 color( $manager, 'nav--header-fixed--link-color--hover', [
     'label'   => esc_html__( 'Link Color: Hover', 'taproot' ),
-    'section' => 'nav--header-fixed',  
-]); 
+    'section' => 'nav--header-fixed',
+]);
 
 
 // Font Family
@@ -86,7 +86,7 @@ $manager->add_control( 'nav--header-fixed--font-family', [
     'type' => 'select',
     'section' => 'nav--header-fixed',
     'label' => esc_html__( 'Font Family', 'taproot' ),
-    'choices' => get_font_choices(),       
+    'choices' => get_font_choices(),
 ]);
 
 
@@ -104,7 +104,7 @@ $manager->add_control( new Font_Styles( $manager, 'nav--header-fixed--font-style
 // Setting: Menu Item Font Size
 range( $manager, 'nav--header-fixed--font-size', [
     'section' => 'nav--header-fixed',
-    'label' => esc_html__('Font Size', 'taproot'), 
+    'label' => esc_html__('Font Size', 'taproot'),
     'atts' => range_atts('text')
 ]);
 
@@ -112,15 +112,15 @@ range( $manager, 'nav--header-fixed--font-size', [
 // Setting: Menu Height
 range( $manager, 'nav--header-fixed--height', [
     'section' => 'nav--header-fixed',
-    'label' => esc_html__('Menu Height', 'taproot'), 
+    'label' => esc_html__('Menu Height', 'taproot'),
     'atts' => [
         'px' => [
             'max' => 100,
             'default' => 50,
-        ],        
+        ],
         'em' => [
             'max' => 6,
-        ],                        
+        ],
     ]
 ]);
 
@@ -128,14 +128,14 @@ range( $manager, 'nav--header-fixed--height', [
 // menu item padding
 range( $manager, 'nav--header-fixed--padding', [
     'section' => 'nav--header-fixed',
-    'label' => esc_html__('Menu Item Padding', 'taproot'), 
+    'label' => esc_html__('Menu Item Padding', 'taproot'),
     'atts'  => [
         'px' => [
             'max' => 64,
-        ],        
+        ],
         'em' => [
             'max' => 4,
-        ],                        
+        ],
     ]
 ]);
 
@@ -156,26 +156,26 @@ $manager->add_control( 'nav--header-fixed--align', [
         'flex-end' => esc_html__( 'Right', 'taproot' ),
         'center' => esc_html__( 'Center', 'taproot' ),
         'space-between' => esc_html__( 'Fill', 'taproot' ),
-    ]       
+    ]
 ]);
 
 
 // Color Setting: Link Color
 color( $manager, 'nav--header-fixed--dropdown--background-color', [
     'label'   => esc_html__( 'Dropdown Background Color', 'taproot' ),
-    'section' => 'nav--header-fixed',  
-]); 
+    'section' => 'nav--header-fixed',
+]);
 
 
 // Color Setting: Link Color
 color( $manager, 'nav--header-fixed--dropdown--link--color', [
     'label'   => esc_html__( 'Dropdown Link Color', 'taproot' ),
-    'section' => 'nav--header-fixed',  
-]); 
+    'section' => 'nav--header-fixed',
+]);
 
 
 // Color Setting: Link Color Hover
 color( $manager, 'nav--header-fixed--dropdown--link--color--hover', [
     'label'   => esc_html__( 'Dropdown Link Color: Hover', 'taproot' ),
-    'section' => 'nav--header-fixed',  
-]); 
+    'section' => 'nav--header-fixed',
+]);

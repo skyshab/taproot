@@ -42,9 +42,9 @@ import {HeaderImagePicker} from './HeaderImagePicker.js';
                         icon="carrot"
                         title={ __( 'Taproot Page Settings' ) } >
                         <PanelBody>
-                            <LayoutPicker fieldName='_taproot_page_layout' />
-                            <PostTitleOptions fieldName='_taproot_post_title_display' />
-                            <HeaderImagePicker fieldName='_taproot_custom_header_image' />
+                            <LayoutPicker fieldName='taproot_page_layout' />
+                            <PostTitleOptions fieldName='taproot_post_title_display' />
+                            <HeaderImagePicker fieldName='taproot_custom_header_image' />
                         </PanelBody>
                     </PluginSidebar>
                 </Fragment>

@@ -20,13 +20,15 @@
 
         .menu__items, .menu__item {
             width: 100%;
-        }       
+        }
     }
 }
 
 .menu--top {
-    
-    &__link {    
+
+    z-index: 2;
+
+    &__link {
         font-size: var(--nav--top--font-size );
         line-height: var(--nav--top--line-height );
     }
@@ -34,15 +36,15 @@
     // always mobile
     @include menu-top-mobile-styles( 'always' );
 
-    // mobile only styles 
+    // mobile only styles
     @include screen('mobile') {
-        @include menu-top-mobile-styles( 'mobile' );       
+        @include menu-top-mobile-styles( 'mobile' );
     };
 
-    // tablet and under styles 
+    // tablet and under styles
     @include screen('tablet-and-under') {
         @include menu-top-mobile-styles( 'tablet-and-under' );
-    };         
+    };
 }
 
 

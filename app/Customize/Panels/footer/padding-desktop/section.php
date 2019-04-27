@@ -2,11 +2,11 @@
 /**
  * Section setup.
  *
- * This file adds the section, settings and controls to the customizer. 
+ * This file adds the section, settings and controls to the customizer.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -30,11 +30,11 @@ $manager->add_section( 'footer--padding-desktop', [
 # =======================================================
 # Add Settings & Controls
 # =======================================================
- 
+
 
 // Setting: Padding
 range( $manager, 'footer--padding-desktop--padding', [
     'section' => 'footer--padding-desktop',
-    'label' => esc_html__('Padding', 'taproot'), 
+    'label' => esc_html__('Padding', 'taproot'),
     'atts' => range_atts('layout-padding')
 ]);

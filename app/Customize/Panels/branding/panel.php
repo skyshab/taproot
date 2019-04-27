@@ -6,12 +6,12 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
 
- 
+
 // define sections
 $panel->sections([
     'layout-mobile', 'layout-tablet', 'layout-desktop',
@@ -22,17 +22,17 @@ $panel->sections([
 
 
 // layout sequence
-$panel->sequence([ 
+$panel->sequence([
     'title' => esc_html__('Layout', 'taproot'),
     'sections' => [
-        'branding--layout-mobile' => [ 
+        'branding--layout-mobile' => [
             'device' => 'mobile',
             'hide' => false,
             'next' => [
                 'label' => esc_html__('tablet', 'taproot'),
             ],
         ],
-        'branding--layout-tablet' => [ 
+        'branding--layout-tablet' => [
             'device' => 'tablet',
             'hide' => true,
             'prev' => [
@@ -42,7 +42,7 @@ $panel->sequence([
                 'label' => esc_html__('desktop', 'taproot'),
             ],
         ],
-        'branding--layout-desktop' => [ 
+        'branding--layout-desktop' => [
             'device' => 'desktop',
             'hide' => true,
             'prev' => [
@@ -51,33 +51,33 @@ $panel->sequence([
             'next' => [
                 'link' => false
             ],
-        ],     
+        ],
     ],
 ]);
 
 
 
 // Logo sequence
-$panel->sequence([ 
+$panel->sequence([
     'sections' => [
-        'branding--logo' => [ 
+        'branding--logo' => [
             'hide' => false,
             'next' => [
                 'label' => esc_html__('mobile', 'taproot'),
             ],
-        ],        
-        'branding--logo-mobile' => [ 
+        ],
+        'branding--logo-mobile' => [
             'device' => 'mobile',
             'hide' => true,
             'prev' => [
                 'label' => esc_html__('logo', 'taproot'),
                 'device' => 'desktop',
-            ],            
+            ],
             'next' => [
                 'label' => esc_html__('tablet', 'taproot'),
             ],
         ],
-        'branding--logo-tablet' => [ 
+        'branding--logo-tablet' => [
             'device' => 'tablet',
             'hide' => true,
             'prev' => [
@@ -87,7 +87,7 @@ $panel->sequence([
                 'label' => esc_html__('desktop', 'taproot'),
             ],
         ],
-        'branding--logo-desktop' => [ 
+        'branding--logo-desktop' => [
             'device' => 'desktop',
             'hide' => true,
             'prev' => [
@@ -95,9 +95,9 @@ $panel->sequence([
             ],
             'next' => [
                 'link' => false
-            ],            
-        ],     
-        'branding--logo-fixed' => [ 
+            ],
+        ],
+        'branding--logo-fixed' => [
             'device' => 'desktop',
             'hide' => true,
             'prev' => [
@@ -106,34 +106,34 @@ $panel->sequence([
             ],
             'next' => [
                 'link' => false
-            ],            
-        ],          
+            ],
+        ],
     ],
 ]);
 
 
 
 // Title sequence
-$panel->sequence([ 
+$panel->sequence([
     'sections' => [
-        'branding--title' => [ 
+        'branding--title' => [
             'hide' => false,
             'next' => [
                 'label' => esc_html__('mobile', 'taproot'),
             ],
-        ],        
-        'branding--title-mobile' => [ 
+        ],
+        'branding--title-mobile' => [
             'device' => 'mobile',
             'hide' => true,
             'prev' => [
                 'label' => esc_html__('title', 'taproot'),
                 'device' => 'desktop',
-            ],            
+            ],
             'next' => [
                 'label' => esc_html__('tablet', 'taproot'),
             ],
         ],
-        'branding--title-tablet' => [ 
+        'branding--title-tablet' => [
             'device' => 'tablet',
             'hide' => true,
             'prev' => [
@@ -143,7 +143,7 @@ $panel->sequence([
                 'label' => esc_html__('desktop', 'taproot'),
             ],
         ],
-        'branding--title-desktop' => [ 
+        'branding--title-desktop' => [
             'device' => 'desktop',
             'hide' => true,
             'prev' => [
@@ -152,8 +152,8 @@ $panel->sequence([
             'next' => [
                 'link' => false
             ],
-        ],    
-        'branding--title-fixed' => [ 
+        ],
+        'branding--title-fixed' => [
             'device' => 'desktop',
             'hide' => true,
             'prev' => [
@@ -163,32 +163,32 @@ $panel->sequence([
             'next' => [
                 'link' => false
             ],
-        ],          
+        ],
     ],
 ]);
 
 
 // Tagline sequence
-$panel->sequence([ 
+$panel->sequence([
     'sections' => [
-        'branding--tagline' => [ 
+        'branding--tagline' => [
             'hide' => false,
             'next' => [
                 'label' => esc_html__('mobile', 'taproot'),
             ],
-        ],        
-        'branding--tagline-mobile' => [ 
+        ],
+        'branding--tagline-mobile' => [
             'device' => 'mobile',
             'hide' => true,
             'prev' => [
                 'label' => esc_html__('tagline', 'taproot'),
                 'device' => 'desktop',
-            ],            
+            ],
             'next' => [
                 'label' => esc_html__('tablet', 'taproot'),
             ],
         ],
-        'branding--tagline-tablet' => [ 
+        'branding--tagline-tablet' => [
             'device' => 'tablet',
             'hide' => true,
             'prev' => [
@@ -198,7 +198,7 @@ $panel->sequence([
                 'label' => esc_html__('desktop', 'taproot'),
             ],
         ],
-        'branding--tagline-desktop' => [ 
+        'branding--tagline-desktop' => [
             'device' => 'desktop',
             'hide' => true,
             'prev' => [
@@ -207,8 +207,8 @@ $panel->sequence([
             'next' => [
                 'link' => false
             ],
-        ],    
-        'branding--tagline-fixed' => [ 
+        ],
+        'branding--tagline-fixed' => [
             'device' => 'desktop',
             'hide' => true,
             'prev' => [
@@ -218,34 +218,34 @@ $panel->sequence([
             'next' => [
                 'link' => false
             ],
-        ],           
+        ],
     ],
 ]);
 
 
 // desktop logo tabs
-$panel->tabs([ 
+$panel->tabs([
     'title' => esc_html__('Logo - Desktop', 'taproot'),
     'sections' => [
         'branding--logo-desktop' => [ 'label' => 'default', 'hide' => false ],
         'branding--logo-fixed' => [ 'label' => 'fixed', 'hide' => true ],
-    ], 
+    ],
 ]);
 
 // desktop title tabs
-$panel->tabs([ 
+$panel->tabs([
     'title' => esc_html__('Title - Desktop', 'taproot'),
     'sections' => [
         'branding--title-desktop' => [ 'label' => 'default', 'hide' => false ],
         'branding--title-fixed' => [ 'label' => 'fixed', 'hide' => true ],
-    ], 
+    ],
 ]);
 
 // desktop tagline tabs
-$panel->tabs([ 
+$panel->tabs([
     'title' => esc_html__('Tagline - Desktop', 'taproot'),
     'sections' => [
         'branding--tagline-desktop' => [ 'label' => 'default', 'hide' => false ],
         'branding--tagline-fixed' => [ 'label' => 'fixed', 'hide' => true ],
-    ], 
+    ],
 ]);

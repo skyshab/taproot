@@ -2,11 +2,11 @@
 /**
  * Section setup.
  *
- * This file adds the section, settings and controls to the customizer. 
+ * This file adds the section, settings and controls to the customizer.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -34,8 +34,8 @@ $manager->add_section( 'nav--footer', [
 # Add Settings & Controls
 # =======================================================
 
-   
-// Setting: Hide when not mobile 
+
+// Setting: Hide when not mobile
 $manager->add_setting( 'nav--footer--hide', [
     'sanitize_callback' => 'taproot_sanitize_checkbox',
     'transport' => 'refresh',
@@ -51,22 +51,22 @@ $manager->add_control( 'nav--footer--hide', [
 // Color Setting: Background Color
 color( $manager, 'nav--footer--background-color', [
     'label'   => esc_html__( 'Background Color', 'taproot' ),
-    'section' => 'nav--footer',  
-]); 
+    'section' => 'nav--footer',
+]);
 
 
 // Color Setting: Link Color
 color( $manager, 'nav--footer--link-color', [
     'label'   => esc_html__( 'Link Color', 'taproot' ),
-    'section' => 'nav--footer',  
-]); 
+    'section' => 'nav--footer',
+]);
 
 
 // Color Setting: Link Color Hover
 color( $manager, 'nav--footer--link-color--hover', [
     'label'   => esc_html__( 'Link Color: Hover', 'taproot' ),
-    'section' => 'nav--footer',  
-]); 
+    'section' => 'nav--footer',
+]);
 
 
 // Font Family
@@ -80,7 +80,7 @@ $manager->add_control( 'nav--footer--font-family', [
     'type' => 'select',
     'section' => 'nav--footer',
     'label' => esc_html__( 'Font Family', 'taproot' ),
-    'choices' => get_font_choices(),       
+    'choices' => get_font_choices(),
 ]);
 
 
@@ -98,7 +98,7 @@ $manager->add_control( new Font_Styles( $manager, 'nav--footer--font-styles', [
 // Setting: Menu Item Font Size
 range( $manager, 'nav--footer--font-size', [
     'section' => 'nav--footer',
-    'label' => esc_html__('Font Size', 'taproot'), 
+    'label' => esc_html__('Font Size', 'taproot'),
     'atts' => range_atts('text')
 ]);
 
@@ -106,7 +106,7 @@ range( $manager, 'nav--footer--font-size', [
 // Setting: Menu Item Line Height
 range( $manager, 'nav--footer--line-height', [
     'section' => 'nav--footer',
-    'label' => esc_html__('Line Height', 'taproot'), 
+    'label' => esc_html__('Line Height', 'taproot'),
     'atts' => range_atts('line-height')
 ]);
 
@@ -114,14 +114,14 @@ range( $manager, 'nav--footer--line-height', [
 // menu item padding
 range( $manager, 'nav--footer--padding', [
     'section' => 'nav--footer',
-    'label' => esc_html__('Menu Item Padding', 'taproot'), 
+    'label' => esc_html__('Menu Item Padding', 'taproot'),
     'atts'  => [
         'px' => [
             'max' => 32,
-        ],        
+        ],
         'em' => [
             'max' => 2,
-        ],                         
+        ],
     ]
 ]);
 
@@ -142,7 +142,7 @@ $manager->add_control( 'nav--footer--align', [
         'flex-end' => esc_html__( 'Right', 'taproot' ),
         'center' => esc_html__( 'Center', 'taproot' ),
         'space-between' => esc_html__( 'Fill', 'taproot' ),
-    ]       
+    ]
 ]);
 
 
@@ -160,5 +160,5 @@ $manager->add_control( 'nav--footer--position', [
     'choices' => [
         'before' => esc_html__( 'Before Widget Area', 'taproot' ),
         'after' => esc_html__( 'After Widget Area', 'taproot' ),
-    ]       
+    ]
 ]);

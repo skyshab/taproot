@@ -4,7 +4,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -24,7 +24,7 @@ use Taproot\Customize\Controls\Range;
  * @param string    $path
  * @return string
  */
-function color( $manager, $id, $args = [] ) {   
+function color( $manager, $id, $args = [] ) {
 
     $default    = ( isset( $args['default'] ) ) ? $args['default']  : '';
     $label      = ( isset( $args['label']   ) ) ? $args['label']    : '';
@@ -33,7 +33,7 @@ function color( $manager, $id, $args = [] ) {
 
     $manager->add_setting( $id, array(
         'sanitize_callback' => 'taproot_sanitize_color_value',
-        'transport' => 'postMessage',  
+        'transport' => 'postMessage',
         'default' => $default,
     ));
 
@@ -41,25 +41,25 @@ function color( $manager, $id, $args = [] ) {
         'label' => $label,
         'section' => $section,
         'settings' => $id,
-        'hide_alpha' => $hide_alpha         
+        'hide_alpha' => $hide_alpha
     );
 
     if( isset( $args['priority'] ) && '' !== $args['priority'] ) $control['priority'] = $priority;
 
-    $manager->add_control( new Color( $manager, $id, $control ) ); 
+    $manager->add_control( new Color( $manager, $id, $control ) );
 }
 
 
 /**
  * Function for adding control group titles in the Customizer.
- * 
+ *
  * @since 1.0.0
  * @param object    $wp_customize
  * @param array     $args - the control args
  */
 function group_title( $manager, $args ) {
     $manager->add_setting( $args['id'], ['sanitize_callback' => 'sanitize_text_field'] );
-    $manager->add_control( new Group_Title( $manager, $args['id'], [ 
+    $manager->add_control( new Group_Title( $manager, $args['id'], [
         'label' => $args['label'],
         'section' => $args['section'],
         'type' => 'taproot-option-group',
@@ -71,7 +71,7 @@ function group_title( $manager, $args ) {
  * Get Font Choices
  *
  * @since 1.0.0
- * 
+ *
  * @return array
  */
 function get_font_choices() {
@@ -105,18 +105,18 @@ function get_font_choices() {
 
 
 /**
- * Get default bottom bar content. 
+ * Get default bottom bar content.
  *
  * @since 1.0.0
  * @return string
- */  
+ */
 function bottom_bar_default_content() {
-    return esc_html__( '&#169;2018, My Awesome Site', 'taproot' );
-}   
+    return esc_html__( '&#169;2019, My Awesome Site', 'taproot' );
+}
 
 
 /**
- * Create Range Control 
+ * Create Range Control
  *
  * @since 1.0.0
  * @return void
@@ -135,7 +135,7 @@ function range( $wp_customize, $id, $args = [] ) {
         'unitless' => [
             'min'   => 0,
             'max'   => 100,
-            'step'  => 1,            
+            'step'  => 1,
         ],
         'em' => [
             'min'   => 0,
@@ -148,7 +148,7 @@ function range( $wp_customize, $id, $args = [] ) {
             'max'   => 5,
             'step'  => 0.01,
             'default' => 1
-        ],                 
+        ],
         'px' => [
             'min'   => 0,
             'max'   => 100,
@@ -165,12 +165,12 @@ function range( $wp_customize, $id, $args = [] ) {
             'min'   => 0,
             'max'   => 100,
             'step'  => 1,
-        ],  
+        ],
         'vh' => [
             'min'   => 0,
             'max'   => 100,
             'step'  => 1,
-        ],                    
+        ],
     ];
 
     // first, merge defaults with user attributes
@@ -202,12 +202,12 @@ function range( $wp_customize, $id, $args = [] ) {
                 $atts[$unit]['default'] = round( $min + $median, 1 );
             }
         }
-    }    
+    }
 
     // if disabled or no default set, set the default value,
     if( 'disabled' === $default || !$default ) {
         \reset($atts);
-        $default_unit = \key($atts);        
+        $default_unit = \key($atts);
         $default_value = $atts[$default_unit]['default'];
         $default = $default_value . $default_unit;
     }
@@ -215,11 +215,11 @@ function range( $wp_customize, $id, $args = [] ) {
     // if disabled, disable control by default
     $default_enable = ( 'disabled' === $default ) ? 0 : 1;
 
-    
+
     // create setting
     $wp_customize->add_setting( $id, [
         'sanitize_callback' => 'sanitize_text_field',
-        'transport' => $transport,  
+        'transport' => $transport,
         'default'   => $default,
     ]);
 
@@ -227,7 +227,7 @@ function range( $wp_customize, $id, $args = [] ) {
     // create enabled/disabled setting
     $wp_customize->add_setting( "{$id}--enable", [
         'sanitize_callback' => 'sanitize_text_field',
-        'transport' => $transport,  
+        'transport' => $transport,
         'default'   => $default_enable,
     ]);
 
@@ -246,12 +246,12 @@ function range( $wp_customize, $id, $args = [] ) {
     }
 
     // create the control
-    $wp_customize->add_control( new Range( $wp_customize, $id, $control_array ) ); 
+    $wp_customize->add_control( new Range( $wp_customize, $id, $control_array ) );
 }
 
 
 /**
- * Range attribute default profiles 
+ * Range attribute default profiles
  *
  * @since 1.0.0
  * @param string    $type - profile to use
@@ -307,22 +307,18 @@ function range_atts( $type = 'text' ) {
         $atts['px'] = [
             'min' => 0,
             'max' => 72,
-        ];       
+        ];
     }
     elseif( $type === 'layout-padding' ) {
 
-        $atts['rem'] = [
-            'max' => 5,
+        $atts['vw'] = [
+            'max' => 20
         ];
 
         $atts['px'] = [
             'max' => 100,
         ];
-
-        $atts['vw'] = [
-            'max' => 10
-        ];        
-    }    
+    }
 
     return $atts;
 }

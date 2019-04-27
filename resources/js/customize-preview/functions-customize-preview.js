@@ -3,7 +3,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
 
@@ -54,4 +54,18 @@ export function getDesktopScreen( screen = 'default' ) {
     };
 
     return ( screens[screen] ) ? screens[screen] : false;
+}
+
+
+// calculate padding from a width
+export function getPaddingFromWidth( width, unit = false ) {
+
+    width = width.replace(/[^0-9]/g,'');
+    var padding = (100 - width) / 2;
+
+    if(unit) {
+        padding += unit;
+    }
+
+    return padding;
 }

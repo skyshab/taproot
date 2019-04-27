@@ -16,21 +16,28 @@
 
 	// Wrapper around the title and description.
 	&__branding {
-        flex-shrink: 0;
         display: grid;
         align-items: center;
-        grid-row-gap: 5px; 
+        grid-row-gap: 5px;
+
+        // prevent the branding from being squished when next to
+        // a header menu that is expanded.
+        // this can push the nav out of the container on mobile,
+        // so only do tablet and up
+        @include screen('tablet-and-up') {
+            flex-shrink: 0;
+        }
     }
 
-    @include screen('mobile') { 
+    @include screen('mobile') {
         &--mobile--horizontal {
 
             .app-header__branding {
-                @include branding_styles('horizontal');             
+                @include branding_styles('horizontal');
             }
 
-            .app-header__logo-link {       
-                margin: 0 var( --branding--logo--gutter ) 0 0; 
+            .app-header__logo-link {
+                margin: 0 var( --branding--logo--gutter ) 0 0;
             }
 
             .app-header__container {
@@ -40,89 +47,89 @@
         &--mobile--vertical {
 
             .app-header__branding {
-                @include branding_styles('vertical');             
+                @include branding_styles('vertical');
             }
 
-            .app-header__logo-link {       
-                margin: 0 0 var( --branding--logo--gutter ) 0; 
+            .app-header__logo-link {
+                margin: 0 0 var( --branding--logo--gutter ) 0;
             }
 
             .app-header__container {
                 flex-direction: column;
-            }            
+            }
         }
     }
 
-    @include screen('tablet-and-up') {       
+    @include screen('tablet-and-up') {
         &--tablet--horizontal {
-            
+
             .app-header__branding {
-                @include branding_styles('horizontal');             
+                @include branding_styles('horizontal');
             }
 
-            .app-header__logo-link {       
-                margin: 0 var( --branding--logo--gutter ) 0 0; 
+            .app-header__logo-link {
+                margin: 0 var( --branding--logo--gutter ) 0 0;
             }
 
             .app-header__container {
                 flex-direction: row;
-            }            
+            }
         }
         &--tablet--vertical {
 
             .app-header__branding {
-                @include branding_styles('vertical');             
+                @include branding_styles('vertical');
             }
 
-            .app-header__logo-link {       
-                margin: 0 0 var( --branding--logo--gutter ) 0; 
+            .app-header__logo-link {
+                margin: 0 0 var( --branding--logo--gutter ) 0;
             }
 
             .app-header__container {
                 flex-direction: column;
-            }             
+            }
         }
-    }   
-    
-    @include screen('desktop') {        
+    }
+
+    @include screen('desktop') {
         &--desktop--horizontal {
 
             .app-header__branding {
-                @include branding_styles('horizontal');             
+                @include branding_styles('horizontal');
             }
 
-            .app-header__logo-link {       
-                margin: 0 var( --branding--logo--gutter ) 0 0; 
+            .app-header__logo-link {
+                margin: 0 var( --branding--logo--gutter ) 0 0;
             }
 
             .app-header__container {
                 flex-direction: row;
-            }              
+            }
         }
         &--desktop--vertical {
 
             .app-header__branding {
-                @include branding_styles('vertical');             
+                @include branding_styles('vertical');
             }
 
-            .app-header__logo-link {       
-                margin: 0 0 var( --branding--logo--gutter ) 0; 
+            .app-header__logo-link {
+                margin: 0 0 var( --branding--logo--gutter ) 0;
             }
 
             .app-header__container {
                 flex-direction: column;
-            }             
+            }
         }
 
         &.fixed-type--sticky {
             transition: background 0.5s ease-in-out;
             position: sticky;
-            z-index: 2;    
-            top: 0;    
-            
+            z-index: 2;
+            top: 0;
+
             .admin-bar & {
                 top: 32px;
-            }            
+            }
         }
     }
 
@@ -132,14 +139,14 @@
 	// Logo link.
 	&__logo-link {
         grid-area: logo;
-        display: grid;        
+        display: grid;
         width:  var( --branding--logo--width );
     }
 
 
 	// The site title.
 	&__title {
-        grid-area: title;    
+        grid-area: title;
         align-self: end;
         margin: 0;
         padding: 0;
@@ -174,19 +181,19 @@
 
     &--fixed {
 
-        @include screen('desktop') {    
+        @include screen('desktop') {
             position: fixed;
             width: 100%;
             z-index: 2;
-            top: 0;   
-            transform: translateZ(0);         
-            
+            top: 0;
+            transform: translateZ(0);
+
             // customize defaults
-            background-color: #000000;               
+            background-color: #000000;
             color: #ffffff;
-        };          
+        };
     }
-    
+
     // Container
     &__container {
         display: flex;
@@ -194,33 +201,6 @@
         justify-content: space-between;
         padding-top: var( --header--padding );
         padding-bottom: var( --header--padding );
-    }
-
-    &--standard-width {
-        
-        .app-header__container, .menu--top__container, .menu--navbar {
-
-            @include screen('mobile') {        
-                padding-left: var( --header--padding );
-                padding-right: var( --header--padding );
-            };  
-
-            @include screen('tablet') {        
-                padding-left: var( --layout--content--padding );
-                padding-right: var( --layout--content--padding );
-            };              
-        }
-
-        &.boxed-layout {
-
-            .app-header__container, .menu--top__container, .menu--navbar {
-
-                @include screen('desktop') {        
-                    padding-left: var( --layout--content--padding );
-                    padding-right: var( --layout--content--padding );
-                };  
-            }          
-        }
     }
 
     &--fullwidth {

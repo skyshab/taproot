@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -14,7 +14,7 @@
 namespace Taproot\Template\Header;
 
 use Hybrid\Contracts\Bootable;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 use function Hybrid\View\render;
 use function Hybrid\Post\render_title;
 use function Hybrid\Post\render_date;
@@ -45,7 +45,7 @@ class Header implements Bootable {
 	public function boot() {
         add_filter( 'hybrid/attr/app-header/class', [ $this, 'header_classes' ], 10, 2 );
         add_filter( 'theme_mod_header_image', [ $this, 'custom_header' ] );
-        add_filter( 'taproot/header/additional-content', [ $this, 'additional_content' ] );
+        add_action( 'taproot/header/additional-content', [ $this, 'additional_content' ] );
     }
 
 
@@ -58,8 +58,8 @@ class Header implements Bootable {
     public function header_classes( $classes, $context) {
 
         // fixed header - don't do sticky headers on custom header pages
-        if( get_theme_mod( 'header--styles-fixed--fixed', null, true ) ) {
-            $fixed_type = get_theme_mod( 'header--styles-fixed--type', null, true );
+        if( theme_mod( 'header--styles-fixed--fixed', true ) ) {
+            $fixed_type = theme_mod( 'header--styles-fixed--type', true );
 
             if( $this->hasCustomHeader() && 'sticky' === $fixed_type ) {
                 $classes[] = 'app-header--static';
@@ -72,32 +72,40 @@ class Header implements Bootable {
         }
 
         // fullwidth header
-        if( get_theme_mod( 'header--styles--fullwidth' ) )
+        if( theme_mod( 'header--styles--fullwidth' ) )
             $classes[] = 'app-header--fullwidth';
         else
             $classes[] = 'app-header--standard-width';
 
         // branding mobile
-        if( get_theme_mod( 'branding--layout-mobile--layout', null, true ) === 'vertical' )
+        if( theme_mod( 'branding--layout-mobile--layout', true ) === 'vertical' )
             $classes[] = 'app-header--mobile--vertical';
         else
             $classes[] = 'app-header--mobile--horizontal';
 
         // branding tablet
-        if( get_theme_mod( 'branding--layout-tablet--layout', null, true ) === 'vertical' )
+        if( theme_mod( 'branding--layout-tablet--layout', true ) === 'vertical' )
             $classes[] = 'app-header--tablet--vertical';
         else
             $classes[] = 'app-header--tablet--horizontal';
 
         // branding desktop
-        if( get_theme_mod( 'branding--layout-desktop--layout', null, true ) === 'vertical' )
+        if( theme_mod( 'branding--layout-desktop--layout', true ) === 'vertical' )
             $classes[] = 'app-header--desktop--vertical';
         else
             $classes[] = 'app-header--desktop--horizontal';
 
         // boxed layout
-        if( get_theme_mod( 'layout--site--boxed-layout' ) )
+        if( theme_mod( 'layout--boxed--enable' ) )
             $classes[] = 'boxed-layout';
+
+        // if has topnav
+        if ( has_nav_menu( 'top' ) )
+            $classes[] = 'app-header--has-topnav';
+
+        // if has custom header image
+        if( $this->hasCustomHeader() )
+            $classes[] = 'app-header--has-custom-header';
 
         return $classes;
     }
@@ -109,15 +117,36 @@ class Header implements Bootable {
      * Only display header image on front page
      *
      * @since 1.0.0
-     * @return void
+     * @return string
      */
     public function custom_header( $value ) {
-        $post_custom_header = get_post_meta( get_the_ID(), '_taproot_custom_header_image', true );
-        $use_featured = get_post_meta( get_the_ID(), '_taproot_use_featured_image_for_header', true );
+        $post_custom_header = get_post_meta( get_the_ID(), 'taproot_custom_header_image', true );
+        $use_featured = get_post_meta( get_the_ID(), 'taproot_use_featured_image_for_header', true );
 
-        if( is_front_page() || is_admin() ) {
+        // Customizer uses this filter to get the current set image
+        if ( is_admin() ) {
             return $value;
         }
+
+        // Default homepage
+        if ( is_front_page() && is_home() ) {
+            return $value;
+        }
+
+        //Static homepage
+        elseif ( is_front_page() ) {
+            if($post_custom_header) {
+                return $post_custom_header;
+            }
+            return $value;
+        }
+
+        //Blog page
+        elseif ( is_home() ) {
+            return get_post_meta( get_option( 'page_for_posts' ), 'taproot_custom_header_image', true );
+        }
+
+        //everything else
         elseif( is_singular() ) {
             if( $use_featured && '' !== $use_featured ) {
                 return get_featured_url( featured_id( get_the_ID() ), 'full', false )[0];
@@ -136,11 +165,11 @@ class Header implements Bootable {
      * @return void
      */
     public function hasCustomHeader() {
-        $post_custom_header = get_post_meta( get_the_ID(), '_taproot_custom_header_image', true );
+        $post_custom_header = get_post_meta( get_the_ID(), 'taproot_custom_header_image', true );
         if( $post_custom_header ) {
             return true;
         }
-        elseif( get_theme_mod('header_image') && get_theme_mod('header_image') !== 'remove-header' ) {
+        elseif( theme_mod('header_image') ) {
             return true;
         }
         return false;
@@ -154,10 +183,10 @@ class Header implements Bootable {
      * @param string
      * @return string
      */
-    public function additional_content( $content ) {
+    public function additional_content() {
 
-        $display = get_post_meta( get_the_ID(), '_taproot_post_title_display', true );
-        if( 'header' !== $display || !is_singular() ) return $content;
+        $display = get_post_meta( get_the_ID(), 'taproot_post_title_display', true );
+        if( 'header' !== $display || !is_singular() ) return;
 
         $post_type = get_post_type( get_the_ID() );
 
@@ -178,7 +207,7 @@ class Header implements Bootable {
             $header_additional_content .=  '</p>';
         }
 
-        return $header_additional_content;
+        echo $header_additional_content;
     }
 
 }

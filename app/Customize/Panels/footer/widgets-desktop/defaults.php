@@ -7,27 +7,27 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
 
 
 // Footer Widgets Layout
-$defaults->add( 'footer--widgets-desktop--layout', 'thirds' );    
+$defaults->add( 'footer--widgets-desktop--layout', 'thirds' );
 
 
 // Widgets Spacing
 $defaults->add( 'footer--widgets-desktop--gutter', '2em' );
-    
+
 
 // Text Font Size
-$defaults->add( 'footer--widgets-desktop--font-size', '16px' );    
+$defaults->add( 'footer--widgets-desktop--font-size', '16px' );
 
 
 // Text Line Height
 $defaults->add( 'footer--widgets-desktop--line-height', '1.4' );
-    
+
 
 // Title Font Size
 $defaults->add( 'footer--widgets-desktop--title--font-size', '1.5em' );

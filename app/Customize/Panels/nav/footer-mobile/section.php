@@ -2,11 +2,11 @@
 /**
  * Section setup.
  *
- * This file adds the section, settings and controls to the customizer. 
+ * This file adds the section, settings and controls to the customizer.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -31,8 +31,8 @@ $manager->add_section( 'nav--footer-mobile', [
 # Add Settings & Controls
 # =======================================================
 
-   
-// Setting: Top Nav Mobile Breakpoint       
+
+// Setting: Top Nav Mobile Breakpoint
 $manager->add_setting( 'nav--footer-mobile--breakpoint', [
     'sanitize_callback' => 'sanitize_text_field',
     'transport' => 'refresh',
@@ -51,7 +51,7 @@ $manager->add_control( 'nav--footer-mobile--breakpoint', [
 ]);
 
 
-// Setting: Hide when mobile 
+// Setting: Hide when mobile
 $manager->add_setting( 'nav--footer-mobile--hide', [
     'sanitize_callback' => 'taproot_sanitize_checkbox',
     'transport' => 'refresh',
@@ -67,7 +67,7 @@ $manager->add_control( 'nav--footer-mobile--hide', [
 // Setting: Menu Item Font Size
 range( $manager, 'nav--footer-mobile--font-size', [
     'section' => 'nav--footer-mobile',
-    'label' => esc_html__('Font Size', 'taproot'), 
+    'label' => esc_html__('Font Size', 'taproot'),
     'atts' => range_atts('text')
 ]);
 
@@ -75,7 +75,7 @@ range( $manager, 'nav--footer-mobile--font-size', [
 // Setting: Menu Item Line Height
 range( $manager, 'nav--footer-mobile--line-height', [
     'section' => 'nav--footer-mobile',
-    'label' => esc_html__('Line Height', 'taproot'), 
+    'label' => esc_html__('Line Height', 'taproot'),
     'atts' => range_atts('line-height')
 ]);
 
@@ -94,5 +94,5 @@ $manager->add_control( 'nav--footer-mobile--align', [
         'left' => esc_html__( 'Left', 'taproot' ),
         'right' => esc_html__( 'Right', 'taproot' ),
         'center' => esc_html__( 'Center', 'taproot' ),
-    ]       
+    ]
 ]);

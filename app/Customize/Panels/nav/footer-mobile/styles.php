@@ -2,25 +2,25 @@
 /**
  * Styles for our section.
  *
- * This file creates the front end styles for our customizer controls. 
+ * This file creates the front end styles for our customizer controls.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
 
 
 use function Taproot\Customize\get_mobile_screen;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 if( has_nav_menu( 'footer' ) ) {
 
-    $mobile_screen = get_mobile_screen( get_theme_mod( 'nav--footer-mobile--breakpoint', null, true ) );
+    $mobile_screen = get_mobile_screen( theme_mod( 'nav--footer-mobile--breakpoint', true ) );
 
     // Hide when mobile
-    $hide_when_mobile = get_theme_mod( 'nav--footer-mobile--hide' );
+    $hide_when_mobile = theme_mod( 'nav--footer-mobile--hide' );
 
     if( $hide_when_mobile ) {
         $styles->add([
@@ -34,7 +34,7 @@ if( has_nav_menu( 'footer' ) ) {
     // mobile nav align
     $styles->add([
         'selector' => '.menu--footer__link',
-        'styles' => [ 'text-align' => get_theme_mod( 'nav--footer-mobile--align' ) ],
+        'styles' => [ 'text-align' => theme_mod( 'nav--footer-mobile--align' ) ],
         'screen' => $mobile_screen,
     ]);
 
@@ -42,7 +42,7 @@ if( has_nav_menu( 'footer' ) ) {
     // Var: Font Size
     $styles->add_var([
         'name' => 'nav--footer--font-size',
-        'value' => get_theme_mod( 'nav--footer-mobile--font-size' ),
+        'value' => theme_mod( 'nav--footer-mobile--font-size' ),
         'screen' => $mobile_screen,
     ]);
 
@@ -50,8 +50,8 @@ if( has_nav_menu( 'footer' ) ) {
     // Var: Line Height
     $styles->add_var([
         'name' => 'nav--footer--line-height',
-        'value' => get_theme_mod( 'nav--footer-mobile--line-height' ),
+        'value' => theme_mod( 'nav--footer-mobile--line-height' ),
         'screen' => $mobile_screen,
     ]);
-    
+
 }

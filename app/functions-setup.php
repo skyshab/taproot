@@ -12,7 +12,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -85,7 +85,7 @@ add_action( 'after_setup_theme', function() {
         [
             'name'  => __( 'Accent Color', 'taproot' ),
             'slug'  => 'theme-accent',
-            'color' => get_theme_mod( 'colors--theme--accent', '#dd9933' )
+            'color' => get_theme_mod( 'colors--theme--accent', '#00a0d1' )
         ],
         [
             'name'  => __( 'Meta Light', 'taproot' ),

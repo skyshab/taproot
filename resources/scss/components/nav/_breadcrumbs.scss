@@ -1,12 +1,12 @@
 
 .breadcrumbs {
 
-    word-wrap: break-word;
-	word-break: normal;
+    margin-bottom: var(--layout--block-spacing--large);
     padding: 0.4em 0;
-    margin-bottom: 2rem;
     border-top: 1px solid var( --colors--theme--meta-medium );
     border-bottom: 1px solid var( --colors--theme--meta-medium );
+    word-wrap: break-word;
+	word-break: normal;
     color: var( --colors--theme--meta-dark );
 
 	a:link, a:visited {
@@ -17,12 +17,6 @@
         color: var( --colors--theme--accent );
     }
 
-    // in mobile view, don't bother with the single post title display
-    @include screen('mobile') {
-		// &__crumb--post{ display: none; }
-    }
-
-
 	// The breadcrumb title
 	&__title {
 		display: none;// fix this to be good with screen reader text
@@ -32,7 +26,7 @@
 	&__trail {
         display: flex;
         align-items: flex-start;
-        flex-wrap: wrap;        
+        flex-wrap: wrap;
 		list-style : none;
 		margin: 0;
         padding: 0;
@@ -49,13 +43,13 @@
 			content      : "\00bb";
             margin-right : 0.75em;
             line-height: 1;
-            vertical-align: 1px;            
+            vertical-align: 1px;
 		}
 
         &:first-of-type::before { display: none; }
 
 	    // Home item
-	    &--home {        
+	    &--home {
             display: flex;
             align-self: center;
 

@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -14,7 +14,7 @@
 namespace Taproot\Template\Post;
 
 use Hybrid\Contracts\Bootable;
-use function Rootstrap\get_theme_mod;
+use function Taproot\Customize\theme_mod;
 
 
 /**
@@ -62,11 +62,11 @@ class Post implements Bootable {
      */
     public function excerpt_more( $more ) {
 
-        $link_style = get_theme_mod( 'blog--archive-link--style', null, true );
+        $link_style = theme_mod( 'blog--archive-link--style', true );
 
         if( 'inline' !== $link_style ) return esc_html(' ...');
 
-        $link_text = get_theme_mod( 'blog--archive-link--text', null, true );
+        $link_text = theme_mod( 'blog--archive-link--text', true );
 
         return sprintf( ' ... <a href="%s" class="read-more--inline"><span class="visuallyhidden">%s</span>%s</a>',
             esc_url( get_permalink() ),
@@ -83,7 +83,7 @@ class Post implements Bootable {
      * @return int - Returns custom excerpt length.
      */
     public function excerpt_length( $length ) {
-        $custom_length = get_theme_mod('blog--archive-excerpt--length');
+        $custom_length = theme_mod('blog--archive-excerpt--length');
         return ( $custom_length ) ? $custom_length : $length;
     }
 
@@ -99,7 +99,7 @@ class Post implements Bootable {
      * @return array.
      */
     public function post_header_display( $hierarchy ) {
-        $display = get_post_meta( get_the_ID(), '_taproot_post_title_display', true );
+        $display = get_post_meta( get_the_ID(), 'taproot_post_title_display', true );
         if( 'header' === $display ) {
             return [];
         }
@@ -119,7 +119,7 @@ class Post implements Bootable {
      */
     public function featured_image_display( $display, $type ) {
         if( is_singular() ) {
-            $featured_in_header = get_post_meta( get_the_ID(), '_taproot_use_featured_image_for_header', true );
+            $featured_in_header = get_post_meta( get_the_ID(), 'taproot_use_featured_image_for_header', true );
             if( $featured_in_header && 'header' !== $type ) {
                 return false;
             }

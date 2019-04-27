@@ -2,11 +2,11 @@
 /**
  * Section setup.
  *
- * This file adds the section, settings and controls to the customizer. 
+ * This file adds the section, settings and controls to the customizer.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2018 Sky Shabatura
+ * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -34,29 +34,29 @@ $manager->add_section( 'typography--links', [
 // Link Color
 color( $manager, 'typography--color', [
     'label'   => esc_html__( 'Link Color', 'taproot' ),
-    'section' => 'typography--links', 
-]); 
+    'section' => 'typography--links',
+]);
 
 
 // Link Color Visited
 color( $manager, 'typography--color--visited', [
     'label'   => esc_html__( 'Link Color Visited', 'taproot' ),
-    'section' => 'typography--links', 
-]); 
+    'section' => 'typography--links',
+]);
 
 
 // Link Color Hover
 color( $manager, 'typography--color--hover', [
     'label'   => esc_html__( 'Link Color Hover', 'taproot' ),
-    'section' => 'typography--links', 
-]); 
+    'section' => 'typography--links',
+]);
 
 
 // Link Color Active
 color( $manager, 'typography--color--active', [
     'label'   => esc_html__( 'Link Color Active', 'taproot' ),
-    'section' => 'typography--links', 
-]); 
+    'section' => 'typography--links',
+]);
 
 
 // Setting: Link Underline

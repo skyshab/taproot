@@ -1,5 +1,14 @@
 # Change Log
 
+= 1.1.0 =
+* 04/24/19
+* Bug Fix - Customizer live preview js was not importing utility functions.
+* General - Refactored app service provider and created separate providers for various theme components
+* General - Use percentage based width on containers instead of adding side padding.
+* General - Created wrapper function for rootstrap's advanced get_theme_mod function
+* Enhancement - Alignwide blocks now match the container width
+* Enhancement - Smarter main content and sidebar layout behavior. Main content max width and sidebar min width used to calculate layout widths
+
 = 1.0.2 =
 * 04/11/19
 * Bug Fix - Fix for missing icons svg file

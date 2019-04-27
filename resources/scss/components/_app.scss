@@ -16,15 +16,8 @@
     // styles for the slide navigation
     position: relative;
     z-index: 2;
-}
 
-.container {
-    margin: 0 auto;
-    position: relative;
-    width: 100%;
-}
-
-// customize default setting
-.container, .boxed-layout.app-header--has-fixed, .boxed-layout.app-footer--has-fixed {
-    max-width: 1200px;
+    .boxed-layout & {
+        max-width: var(--layout--container--max-width);
+    }
 }

@@ -11,7 +11,7 @@
 
 
 .additional-header-content {
-    z-index: 2;
+    z-index: 1;
 
     &__title {
         margin-bottom: 12px;
@@ -38,16 +38,17 @@
         align-items: center;
     }
 
-    .app-header--fixed & {
-        display: none;
-    }
-
     .custom-header & {
         display: flex;
-        align-self: center;
-        text-align: center;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
         height: 100%;
         padding-bottom: 7vw;
     }
+}
+
+// hide additional header content when fixed header
+.custom-header .app-header--fixed .additional-header-content {
+    display: none;
 }
