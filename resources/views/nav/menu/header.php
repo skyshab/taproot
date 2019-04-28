@@ -11,8 +11,8 @@
 		<?php wp_nav_menu( [
             'theme_location' => $data->location,
             'menu_id'        => '',
-			'container'      => false,             
-			'menu_class'     => 'menu__items menu--header__items',
+			'container'      => false,
+			'menu_class'     => 'menu__items menu--theme__items menu--header__items',
 			'items_wrap'     => '<ul class="%2$s">%3$s</ul>',
             'item_spacing'   => 'discard',
 		] ) ?>
