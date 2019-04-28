@@ -146,34 +146,10 @@ mix.webpackConfig( {
 	plugins     : [
 		// @link https://github.com/webpack-contrib/copy-webpack-plugin
 		new CopyWebpackPlugin( [
-			{ from : `${devPath}/img`,   to : 'dist/img'   },
 			{ from : `${devPath}/svg`,   to : 'dist/svg'   },
-			{ from : `${devPath}/fonts`, to : 'dist/fonts' }
-		] ),
-		// @link https://github.com/Klathmon/imagemin-webpack-plugin
-		new ImageminPlugin( {
-			test     : /\.(jpe?g|png|gif|svg)$/i,
-			disable  : process.env.NODE_ENV !== 'production',
-			optipng  : { optimizationLevel : 3 },
-			gifsicle : { optimizationLevel : 3 },
-			pngquant : {
-				quality : '65-90',
-				speed   : 4
-			},
-			svgo : {
-				plugins : [
-					{ cleanupIDs                : false },
-					{ removeViewBox             : false },
-					{ removeUnknownsAndDefaults : false }
-				]
-			},
-			plugins : [
-				// @link https://github.com/imagemin/imagemin-mozjpeg
-				imageminMozjpeg( { quality : 75 } )
-			]
-		} )
+		]),
 	]
-} );
+});
 
 if ( process.env.sync ) {
 
@@ -190,5 +166,5 @@ if ( process.env.sync ) {
 			'app/**/*.php',
 			'functions.php'
 		]
-	} );
+	});
 }
