@@ -33,11 +33,11 @@ class SVG extends Icons {
      */
     public function __construct() {
 
-        $child_theme_file = '/img/theme-icons.svg';
+        $child_theme_file = '/svg/theme-icons.svg';
         $child_theme_path = get_stylesheet_directory() . $child_theme_file;
         $child_theme_url = get_stylesheet_directory_uri() . $child_theme_file;
 
-        $parent_theme_file = '/dist/img/theme-icons.svg';
+        $parent_theme_file = '/dist/svg/theme-icons.svg';
         $parent_theme_path = get_parent_theme_file_path( $parent_theme_file );
         $parent_theme_url = get_parent_theme_file_uri( $parent_theme_file );
 
