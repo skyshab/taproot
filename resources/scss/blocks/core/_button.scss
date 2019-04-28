@@ -9,11 +9,15 @@
 .wp-block-button {
 
     // button block only
-    &__link:hover { 
-        color: var( --colors--theme--accent-contrast );          
-    }    
+    &__link:hover {
+        color: var( --colors--theme--accent-contrast );
+    }
 
-    margin-bottom: var( --typography--body--block-spacing );    
+    margin-bottom: var( --typography--body--block-spacing );
+
+    &.aligncenter {
+        text-align: center;
+    }
 }
 
 
@@ -30,15 +34,15 @@
     font-size:       0.9em;
     line-height:     2.5em;
     margin:          0;
-    padding:         0 1.25em;    
+    padding:         0 1.25em;
     transition: all 0.4s ease-in-out;
-    background-color: var( --colors--theme--accent );  
-    color: var( --colors--theme--accent-contrast );    
-    
+    background-color: var( --colors--theme--accent );
+    color: var( --colors--theme--accent-contrast );
+
     &:visited {
         color: var( --colors--theme--accent-contrast );
-    }        
+    }
     &:hover {
         text-decoration: none;
-    }        
+    }
 }
