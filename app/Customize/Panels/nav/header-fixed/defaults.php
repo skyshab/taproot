@@ -29,5 +29,9 @@ $defaults->add( 'nav--header-fixed--font-size--enable', false );
 $defaults->add( 'nav--header-fixed--height--enable', false );
 
 
+// menu item height
+$defaults->add( 'nav--header-fixed--height', '4em' );
+
+
 // dropdown background color
 $defaults->add( 'nav--header-fixed--dropdown--background-color', get_theme_mod( 'colors--theme--accent' ) );

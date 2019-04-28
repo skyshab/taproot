@@ -28,7 +28,12 @@ $panel->sections([
 // body sequence
 $panel->sequence([
     'sections' => [
-        'typography--body' => [ 'hide' => false ],
+        'typography--body' => [
+            'hide' => false,
+            'next' => [
+                'label' => esc_html__('mobile', 'taproot'),
+            ],
+        ],
         'typography--body-mobile' => [
             'device' => 'mobile',
             'hide' => true,
@@ -78,7 +83,12 @@ $heading_sequence_tabs_array = [
 // headings sequence
 $panel->sequence([
     'sections' => [
-        'typography--headings' => [ 'hide' => false ],
+        'typography--headings' => [
+            'hide' => false,
+            'next' => [
+                'label' => esc_html__('styles', 'taproot'),
+            ],
+        ],
         'typography--h1' => $heading_sequence_tabs_array,
         'typography--h2' => $heading_sequence_tabs_array,
         'typography--h3' => $heading_sequence_tabs_array,

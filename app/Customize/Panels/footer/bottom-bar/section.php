@@ -40,14 +40,14 @@ color( $manager, 'footer--bottom-bar--background-color', [
 
 // Color Setting: Bottom Bar Default Color
 color( $manager, 'footer--bottom-bar--default-color', [
-    'label'   => esc_html__( 'Bottom Bar Default Color', 'taproot' ),
+    'label'   => esc_html__( 'Bottom Bar Text Color', 'taproot' ),
     'section' => 'footer--bottom-bar',
 ]);
 
 
 // Color Setting: Bottom Bar Default Color
 color( $manager, 'footer--bottom-bar--default-color--hover', [
-    'label'   => esc_html__( 'Bottom Bar Default Color: Hover', 'taproot' ),
+    'label'   => esc_html__( 'Bottom Bar Hover Color', 'taproot' ),
     'section' => 'footer--bottom-bar',
 ]);
 

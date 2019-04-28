@@ -40,7 +40,7 @@ color( $manager, 'footer--widgets--headings-color', [
 
 // Color Setting: Widget Default Color
 color( $manager, 'footer--widgets--default-color', [
-    'label'   => esc_html__( 'Default Color', 'taproot' ),
+    'label'   => esc_html__( 'Text Color', 'taproot' ),
     'section' => 'footer--widgets',
 ]);
 

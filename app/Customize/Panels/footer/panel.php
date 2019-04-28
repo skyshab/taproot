@@ -61,7 +61,12 @@ $panel->sequence([
 // footer widgets sequence
 $panel->sequence([
     'sections' => [
-        'footer--widgets' => [ 'hide' => false ],
+        'footer--widgets' => [
+            'hide' => false,
+            'next' => [
+                'label' => esc_html__('mobile', 'taproot'),
+            ],
+        ],
         'footer--widgets-mobile' => [
             'device' => 'mobile',
             'hide' => true,
