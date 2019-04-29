@@ -1,5 +1,14 @@
 # Change Log
 
+= 1.1.1 =
+* 04/28/19
+* Fix - Nav menu widget styles
+* Fix - Button block aligncenter styles
+* Fix - Fixed fatal related to featured image class
+* General - Added missing Customizer labels
+* General - Moved SVG icons file
+* General - Removed unecessary menu class selectors
+
 = 1.1.0 =
 * 04/24/19
 * Bug Fix - Customizer live preview js was not importing utility functions.

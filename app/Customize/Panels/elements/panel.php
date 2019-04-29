@@ -21,7 +21,7 @@ $panel->sections([
 
 // Button tabs
 $panel->tabs([
-    'title' => __('Button', 'taproot'),
+    'title' => __('Buttons', 'taproot'),
     'sections' => [
         'elements--buttons' => [ 'label' => 'default', 'hide' => false ],
         'elements--buttons-hover' => [ 'label' => 'hover', 'hide' => true ],

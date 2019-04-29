@@ -3,7 +3,7 @@ Contributors: skyshab
 Tags: custom-background, custom-header, custom-colors, custom-menu, featured-images, one-column, two-column, theme-options, block-editor-styles, threaded-comments, translation-ready
 Requires at least: 5.0
 Tested up to: 5.1
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 
 A lightweight yet powerful all-purpose theme.
 
@@ -19,7 +19,6 @@ Taproot is a lightweight yet powerful starter theme that can be customized and e
 Taproot is based on the [Mythic](https://github.com/justintadlock/mythic) starter theme and contains the following resources:
 
 - [Hybrid Core](https://github.com/justintadlock/hybrid-core) by Justin Tadlock - [GNU GPL](https://www.gnu.org/licenses/gpl-2.0.html), version 2 or later.
-- [Hybrid Carbon](https://github.com/justintadlock/hybrid-carbon) by Justin Tadlock - [GNU GPL](https://www.gnu.org/licenses/gpl-2.0.html), version 2 or later.
 - [Hybrid Breadcrumbs](https://github.com/justintadlock/hybrid-breadcrumbs) by Justin Tadlock - [GNU GPL](https://www.gnu.org/licenses/gpl-2.0.html), version 2 or later.
 - [Rootstrap] (https://github.com/skyshab/rootstrap) by Sky Shabatura - [GNU GPL](https://www.gnu.org/licenses/gpl-2.0.html), version 2 or later.
 

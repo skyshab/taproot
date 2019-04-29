@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Taproot 1.1.0\n"
+"Project-Id-Version: Taproot 1.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/taproot\n"
-"POT-Creation-Date: 2019-04-26 21:02:15+00:00\n"
+"POT-Creation-Date: 2019-04-29 14:24:22+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -80,7 +80,6 @@ msgid "Link"
 msgstr ""
 
 #: app/Customize/Panels/blog/archive-link/section.php:49
-#: app/Customize/Panels/elements/panel.php:24
 msgid "Button"
 msgstr ""
 
@@ -265,7 +264,8 @@ msgstr ""
 #: app/Customize/Panels/branding/panel.php:177
 #: app/Customize/Panels/branding/panel.php:195
 #: app/Customize/Panels/footer/panel.php:41
-#: app/Customize/Panels/footer/panel.php:80
+#: app/Customize/Panels/footer/panel.php:67
+#: app/Customize/Panels/footer/panel.php:85
 #: app/Customize/Panels/header/panel.php:44
 #: app/Customize/Panels/layout/panel.php:31
 #: app/Customize/Panels/layout/panel.php:49
@@ -273,11 +273,12 @@ msgstr ""
 #: app/Customize/Panels/pages/panel.php:46
 #: app/Customize/Panels/posts/panel.php:30
 #: app/Customize/Panels/posts/panel.php:48
-#: app/Customize/Panels/typography/panel.php:46
-#: app/Customize/Panels/typography/panel.php:73
-#: app/Customize/Panels/typography/panel.php:150
-#: app/Customize/Panels/typography/panel.php:249
-#: app/Customize/Panels/typography/panel.php:314
+#: app/Customize/Panels/typography/panel.php:34
+#: app/Customize/Panels/typography/panel.php:51
+#: app/Customize/Panels/typography/panel.php:78
+#: app/Customize/Panels/typography/panel.php:160
+#: app/Customize/Panels/typography/panel.php:259
+#: app/Customize/Panels/typography/panel.php:324
 msgid "mobile"
 msgstr ""
 
@@ -303,8 +304,8 @@ msgstr ""
 #: app/Customize/Panels/branding/panel.php:215
 #: app/Customize/Panels/footer/panel.php:34
 #: app/Customize/Panels/footer/panel.php:51
-#: app/Customize/Panels/footer/panel.php:73
-#: app/Customize/Panels/footer/panel.php:90
+#: app/Customize/Panels/footer/panel.php:78
+#: app/Customize/Panels/footer/panel.php:95
 #: app/Customize/Panels/header/panel.php:37
 #: app/Customize/Panels/header/panel.php:54
 #: app/Customize/Panels/header/panel.php:64
@@ -314,15 +315,15 @@ msgstr ""
 #: app/Customize/Panels/pages/panel.php:56
 #: app/Customize/Panels/posts/panel.php:41
 #: app/Customize/Panels/posts/panel.php:58
-#: app/Customize/Panels/typography/panel.php:39
-#: app/Customize/Panels/typography/panel.php:56
-#: app/Customize/Panels/typography/panel.php:114
-#: app/Customize/Panels/typography/panel.php:194
-#: app/Customize/Panels/typography/panel.php:242
-#: app/Customize/Panels/typography/panel.php:259
+#: app/Customize/Panels/typography/panel.php:44
+#: app/Customize/Panels/typography/panel.php:61
+#: app/Customize/Panels/typography/panel.php:124
+#: app/Customize/Panels/typography/panel.php:204
+#: app/Customize/Panels/typography/panel.php:252
 #: app/Customize/Panels/typography/panel.php:269
-#: app/Customize/Panels/typography/panel.php:307
-#: app/Customize/Panels/typography/panel.php:324
+#: app/Customize/Panels/typography/panel.php:279
+#: app/Customize/Panels/typography/panel.php:317
+#: app/Customize/Panels/typography/panel.php:334
 msgid "tablet"
 msgstr ""
 
@@ -332,15 +333,15 @@ msgstr ""
 #: app/Customize/Panels/branding/panel.php:143
 #: app/Customize/Panels/branding/panel.php:198
 #: app/Customize/Panels/footer/panel.php:44
-#: app/Customize/Panels/footer/panel.php:83
+#: app/Customize/Panels/footer/panel.php:88
 #: app/Customize/Panels/header/panel.php:47
 #: app/Customize/Panels/layout/panel.php:52
 #: app/Customize/Panels/pages/panel.php:49
 #: app/Customize/Panels/posts/panel.php:51
-#: app/Customize/Panels/typography/panel.php:49
-#: app/Customize/Panels/typography/panel.php:154
-#: app/Customize/Panels/typography/panel.php:252
-#: app/Customize/Panels/typography/panel.php:317
+#: app/Customize/Panels/typography/panel.php:54
+#: app/Customize/Panels/typography/panel.php:164
+#: app/Customize/Panels/typography/panel.php:262
+#: app/Customize/Panels/typography/panel.php:327
 msgid "desktop"
 msgstr ""
 
@@ -676,6 +677,7 @@ msgstr ""
 #: app/Customize/Panels/colors/theme/section.php:36
 #: app/Customize/Panels/elements/breadcrumbs/section.php:90
 #: app/Customize/Panels/elements/buttons/section.php:55
+#: app/Customize/Panels/footer/widgets/section.php:43
 #: app/Customize/Panels/typography/h1/section.php:37
 #: app/Customize/Panels/typography/h2/section.php:37
 #: app/Customize/Panels/typography/h3/section.php:37
@@ -745,6 +747,7 @@ msgid "Hover Color"
 msgstr ""
 
 #: app/Customize/Panels/elements/buttons/section.php:28
+#: app/Customize/Panels/elements/panel.php:24
 msgid "Buttons"
 msgstr ""
 
@@ -817,11 +820,11 @@ msgid "Bottom Bar Background Color"
 msgstr ""
 
 #: app/Customize/Panels/footer/bottom-bar/section.php:43
-msgid "Bottom Bar Default Color"
+msgid "Bottom Bar Text Color"
 msgstr ""
 
 #: app/Customize/Panels/footer/bottom-bar/section.php:50
-msgid "Bottom Bar Default Color: Hover"
+msgid "Bottom Bar Hover Color"
 msgstr ""
 
 #: app/Customize/Panels/footer/bottom-bar/section.php:59
@@ -842,7 +845,7 @@ msgstr ""
 msgid "Padding - Tablet"
 msgstr ""
 
-#: app/Customize/Panels/footer/panel.php:69
+#: app/Customize/Panels/footer/panel.php:74
 msgid "widgets"
 msgstr ""
 
@@ -859,7 +862,6 @@ msgid "Enable Fullwidth Footer"
 msgstr ""
 
 #: app/Customize/Panels/footer/styles/section.php:69
-#: app/Customize/Panels/footer/widgets/section.php:43
 msgid "Default Color"
 msgstr ""
 
@@ -1592,33 +1594,34 @@ msgstr ""
 msgid "On Hover"
 msgstr ""
 
-#: app/Customize/Panels/typography/panel.php:36
-#: app/Customize/Panels/typography/panel.php:109
-#: app/Customize/Panels/typography/panel.php:239
+#: app/Customize/Panels/typography/panel.php:41
+#: app/Customize/Panels/typography/panel.php:89
+#: app/Customize/Panels/typography/panel.php:119
+#: app/Customize/Panels/typography/panel.php:249
 msgid "styles"
 msgstr ""
 
-#: app/Customize/Panels/typography/panel.php:69
+#: app/Customize/Panels/typography/panel.php:74
 msgid "headings"
 msgstr ""
 
-#: app/Customize/Panels/typography/panel.php:94
+#: app/Customize/Panels/typography/panel.php:104
 msgid "Heading Styles"
 msgstr ""
 
-#: app/Customize/Panels/typography/panel.php:134
+#: app/Customize/Panels/typography/panel.php:144
 msgid "Mobile Sizes"
 msgstr ""
 
-#: app/Customize/Panels/typography/panel.php:175
+#: app/Customize/Panels/typography/panel.php:185
 msgid "Tablet Sizes"
 msgstr ""
 
-#: app/Customize/Panels/typography/panel.php:220
+#: app/Customize/Panels/typography/panel.php:230
 msgid "Desktop Sizes"
 msgstr ""
 
-#: app/Customize/Panels/typography/panel.php:282
+#: app/Customize/Panels/typography/panel.php:292
 msgid "Main - Desktop"
 msgstr ""
 
@@ -1638,11 +1641,11 @@ msgstr ""
 msgid "Please define an icon name."
 msgstr ""
 
-#: app/Template/Nav/Nav.php:329
+#: app/Template/Nav/Nav.php:349
 msgid "&lt; prev"
 msgstr ""
 
-#: app/Template/Nav/Nav.php:330
+#: app/Template/Nav/Nav.php:350
 msgid "next &gt;"
 msgstr ""
 
@@ -2005,22 +2008,22 @@ msgstr ""
 msgid "https://sky.camp"
 msgstr ""
 
-#: app/Template/Nav/Nav.php:62
+#: app/Template/Nav/Nav.php:63
 msgctxt "nav menu location"
 msgid "Header"
 msgstr ""
 
-#: app/Template/Nav/Nav.php:66
+#: app/Template/Nav/Nav.php:67
 msgctxt "nav menu location"
 msgid "Navbar"
 msgstr ""
 
-#: app/Template/Nav/Nav.php:70
+#: app/Template/Nav/Nav.php:71
 msgctxt "nav menu location"
 msgid "Top Nav"
 msgstr ""
 
-#: app/Template/Nav/Nav.php:74
+#: app/Template/Nav/Nav.php:75
 msgctxt "nav menu location"
 msgid "Footer Nav"
 msgstr ""

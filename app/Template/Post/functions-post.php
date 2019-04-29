@@ -15,7 +15,7 @@
 namespace Taproot\Template;
 
 use function Taproot\Customize\theme_mod;
-use Hybrid\Carbon\Image as Featured_Image;
+
 
 /**
  * Output Archive Link
@@ -121,16 +121,32 @@ function render_author( array $args = [] ) {
  * Displays the featured image.
  *
  * @since  1.0.0
- * @param  array  $args
- * @return string
+ * @param  array   $args
+ * @param  string  $type
+ * @return void
  */
 function featured_image( $args = [], $type = '' ) {
 
     if( !apply_filters( 'taproot/template/featured-image/display', true, $type ) ) return;
-
+    $post_id = get_the_ID();
     $args = wp_parse_args( $args, [
         'size' => 'full',
+        'link' => false,
+        'class' => ''
     ]);
 
-    Featured_Image::display( 'featured', $args );
+    if ( has_post_thumbnail( $post_id ) ) {
+
+        $html = '';
+        if( $args['link'] ) {
+            $html .= '<a href="' . get_permalink( $post_id ) . '" title="' . get_the_title() . '">';
+        }
+
+        $html .= get_the_post_thumbnail( $post_id, $args['size'], array( 'class' => $args['class'] ) );
+
+        if( $args['link'] ) {
+            $html .= '</a>';
+        }
+        echo $html;
+    }
 }

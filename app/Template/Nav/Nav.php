@@ -37,11 +37,12 @@ class Nav implements Bootable {
 	 */
 	public function boot() {
         add_action( 'init', [ $this, 'register_nav_menus' ], 5 );
-        add_filter( 'hybrid/attr/menu/class', [ $this, 'nav_classes' ], 100, 2  );
+        add_filter( 'hybrid/attr/menu/class', [ $this, 'nav_classes' ], 100, 2 );
         add_filter( 'nav_menu_css_class', [ $this, 'menu_item_classes' ], 10, 3 );
         add_filter( 'nav_menu_item_args', [ $this, 'menu_item_dropdowns' ], 10, 2 );
-        add_filter( 'taproot/template/menu-toggle', [ $this, 'menu_toggle' ], 10, 2  );
-        add_filter( 'nav_menu_link_attributes', [ $this, 'nav_menu_link_attributes' ], 10, 3  );
+        add_filter( 'taproot/template/menu-toggle', [ $this, 'menu_toggle' ], 10, 2 );
+        add_filter( 'nav_menu_link_attributes', [ $this, 'nav_menu_link_attributes' ], 10, 3 );
+        add_filter( 'nav_menu_submenu_css_class', [ $this, 'nav_menu_submenu_css_class' ], 10, 2 );
         add_filter( 'hybrid/pagination/posts/args', [ $this, 'pagination' ] );
         add_filter( 'hybrid/pagination/post/args', [ $this, 'pagination' ] );
         add_filter( 'hybrid/pagination/comments/args', [ $this, 'pagination' ] );
@@ -254,6 +255,7 @@ class Nav implements Bootable {
     function menu_item_classes( $classes, $item, $args = [] ) {
 
         if( $args->theme_location ) {
+            $classes[] = 'menu--theme__item';
             $classes[] = sprintf( 'menu--%s__item', $args->theme_location );
         }
 
@@ -292,10 +294,28 @@ class Nav implements Bootable {
      * @since 1.0.0
      */
     public function nav_menu_link_attributes( $atts, $item, $args ) {
+
         if( $args->theme_location ) {
+            $atts['class'] .= ' menu--theme__link';
             $atts['class'] .= sprintf( ' menu--%s__link', $args->theme_location );
         }
+
         return $atts;
+    }
+
+
+    /**
+     * Set submenu classes
+     *
+     * @since 1.1.1
+     */
+    public function nav_menu_submenu_css_class( $classes, $args ) {
+
+        if( $args->theme_location ) {
+            $classes[] = 'menu--theme__sub-menu';
+        }
+
+        return $classes;
     }
 
 

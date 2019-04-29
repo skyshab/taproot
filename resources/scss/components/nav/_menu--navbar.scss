@@ -15,15 +15,15 @@
             height: 3.2em;
             display: flex;
             align-items: center;
-        }  
-        
+        }
+
         &.menu--right {
             .menu--navbar__container {
                 justify-content: flex-end;
-            }  
+            }
         }
     }
-} 
+}
 
 
 // mixin to generate desktop nav styles
@@ -32,54 +32,54 @@
     &.mobile-at-#{$screen} {
         .menu__sub-menu {
             background-color: var( --colors--theme--accent );
-            border-color: var( --colors--theme--accent );            
+            border-color: var( --colors--theme--accent );
             color: var( --colors--theme--accent-contrast );
         }
     }
-} 
+}
 
 
 .menu--navbar {
-    
-    &__link {    
-        font-size: var( --nav--navbar--font-size );
-        line-height: var( --nav--navbar--line-height );     
-    }
 
     // needed for custom header image
     position: relative;
 
+    &__link {
+        font-size: var( --nav--navbar--font-size );
+        line-height: var( --nav--navbar--line-height );
+    }
 
-    /* 
-     * Mobile Styles
-     */
+    // ****************
+    // * Mobile Styles
+    // ****************
 
     // always mobile
     @include menu-navbar-mobile-styles( 'always' );
 
-    // mobile only styles 
+    // mobile only styles
     @include screen('mobile') {
-        @include menu-navbar-mobile-styles( 'mobile' );       
+        @include menu-navbar-mobile-styles( 'mobile' );
     };
 
-    // tablet and under styles 
+    // tablet and under styles
     @include screen('tablet-and-under') {
         @include menu-navbar-mobile-styles( 'tablet-and-under' );
-    };    
+    };
 
-    /* 
-     * Desktop Styles
-     */
+
+    // ****************
+    // * Desktop Styles
+    // ****************
 
     // never mobile styles
     @include menu-navbar-desktop-styles( 'never' );
 
-    // mobile only styles 
+    // mobile at mobile only styles
     @include screen('tablet-and-up') {
         @include menu-navbar-desktop-styles( 'mobile' );
-    };    
+    };
 
-    // tablet and under styles 
+    // mobile at tablet and under styles
     @include screen('desktop') {
         @include menu-navbar-desktop-styles( 'tablet-and-under' );
     };
