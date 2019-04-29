@@ -4,6 +4,7 @@
 * 04/28/19
 * Fix - Nav menu widget styles
 * Fix - Button block aligncenter styles
+* Fix - Fixed fatal related to featured image class
 * General - Added missing Customizer labels
 * General - Moved SVG icons file
 * General - Removed unecessary menu class selectors

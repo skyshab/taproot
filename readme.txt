@@ -19,7 +19,6 @@ Taproot is a lightweight yet powerful starter theme that can be customized and e
 Taproot is based on the [Mythic](https://github.com/justintadlock/mythic) starter theme and contains the following resources:
 
 - [Hybrid Core](https://github.com/justintadlock/hybrid-core) by Justin Tadlock - [GNU GPL](https://www.gnu.org/licenses/gpl-2.0.html), version 2 or later.
-- [Hybrid Carbon](https://github.com/justintadlock/hybrid-carbon) by Justin Tadlock - [GNU GPL](https://www.gnu.org/licenses/gpl-2.0.html), version 2 or later.
 - [Hybrid Breadcrumbs](https://github.com/justintadlock/hybrid-breadcrumbs) by Justin Tadlock - [GNU GPL](https://www.gnu.org/licenses/gpl-2.0.html), version 2 or later.
 - [Rootstrap] (https://github.com/skyshab/rootstrap) by Sky Shabatura - [GNU GPL](https://www.gnu.org/licenses/gpl-2.0.html), version 2 or later.
 
