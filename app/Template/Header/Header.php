@@ -18,11 +18,8 @@ use function Taproot\Customize\theme_mod;
 use function Hybrid\View\render;
 use function Hybrid\Post\render_title;
 use function Hybrid\Post\render_date;
-use function Hybrid\Carbon\Image\render as get_featured_img;
 use function Taproot\Template\Icons\location as icon;
 use function Taproot\Template\render_author;
-
-
 use function wp_get_attachment_image_src as get_featured_url;
 use function get_post_thumbnail_id as featured_id;
 

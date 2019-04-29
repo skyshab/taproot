@@ -24,8 +24,7 @@
 		"composer/installers" : "~1.0",
 		"skyshab/rootstrap" : "@dev",
 		"justintadlock/hybrid-core" : "^5.0.0",
-		"justintadlock/hybrid-breadcrumbs": "^1.0",
-		"justintadlock/hybrid-carbon": "^1.0"
+		"justintadlock/hybrid-breadcrumbs": "^1.0"
         },
 	"require-dev": {
         "wptrt/wpthemereview": "*",

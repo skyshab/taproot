@@ -236,50 +236,6 @@
         ]
     },
     {
-        "name": "justintadlock/hybrid-carbon",
-        "version": "1.0.0",
-        "version_normalized": "1.0.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/justintadlock/hybrid-carbon.git",
-            "reference": "3d18efe73325e9426cfde1e9033f11689c55cf6e"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/justintadlock/hybrid-carbon/zipball/3d18efe73325e9426cfde1e9033f11689c55cf6e",
-            "reference": "3d18efe73325e9426cfde1e9033f11689c55cf6e",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.6"
-        },
-        "time": "2018-09-14T21:56:50+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Hybrid\\Carbon\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "GPL-2.0-or-later"
-        ],
-        "authors": [
-            {
-                "name": "Justin Tadlock",
-                "email": "justintadlock@gmail.com",
-                "homepage": "http://justintadlock.com",
-                "role": "Developer"
-            }
-        ],
-        "description": "God-like post featured image script.",
-        "homepage": "https://github.com/justintadlock/hybrid-carbon",
-        "keywords": [
-            "wordpress"
-        ]
-    },
-    {
         "name": "justintadlock/hybrid-core",
         "version": "5.0.2",
         "version_normalized": "5.0.2.0",

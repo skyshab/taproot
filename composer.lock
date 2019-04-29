@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d8407771d879e692a87e2f33a24b495",
+    "content-hash": "c02fd7af5ba65fd072b4aa2db672175c",
     "packages": [
         {
             "name": "composer/installers",
@@ -167,48 +167,6 @@
                 "wordpress"
             ],
             "time": "2018-10-23T19:57:54+00:00"
-        },
-        {
-            "name": "justintadlock/hybrid-carbon",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/justintadlock/hybrid-carbon.git",
-                "reference": "3d18efe73325e9426cfde1e9033f11689c55cf6e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/justintadlock/hybrid-carbon/zipball/3d18efe73325e9426cfde1e9033f11689c55cf6e",
-                "reference": "3d18efe73325e9426cfde1e9033f11689c55cf6e",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.6"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Hybrid\\Carbon\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Justin Tadlock",
-                    "email": "justintadlock@gmail.com",
-                    "homepage": "http://justintadlock.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "God-like post featured image script.",
-            "homepage": "https://github.com/justintadlock/hybrid-carbon",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2018-09-14T21:56:50+00:00"
         },
         {
             "name": "justintadlock/hybrid-core",

@@ -22,7 +22,6 @@ class ComposerStaticInita84c678bf0db3534d7ef20ff0d50134a
         ),
         'H' => 
         array (
-            'Hybrid\\Carbon\\' => 14,
             'Hybrid\\Breadcrumbs\\' => 19,
             'Hybrid\\' => 7,
         ),
@@ -44,10 +43,6 @@ class ComposerStaticInita84c678bf0db3534d7ef20ff0d50134a
         'Rootstrap\\' => 
         array (
             0 => __DIR__ . '/..' . '/skyshab/rootstrap/src',
-        ),
-        'Hybrid\\Carbon\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/justintadlock/hybrid-carbon/src',
         ),
         'Hybrid\\Breadcrumbs\\' => 
         array (
