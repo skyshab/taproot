@@ -29,7 +29,8 @@ let files = [
 	'license.md',
 	'readme.md',
 	'readme.txt',        // Required for WordPress.org theme review.
-	'screenshot.png'
+    'screenshot.png',
+    'screenshot.jpg',
 ];
 
 // Folders to include.
