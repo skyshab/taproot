@@ -713,6 +713,7 @@
 @media ( min-width: 1025px ) {
 	.app-main--full .editor-styles-wrapper .alignfull {
 		width: 100vw;
+		max-width: 100vw;
 		margin-left: calc( 50% - 50vw );
 	}
 }

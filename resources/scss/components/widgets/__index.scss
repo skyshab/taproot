@@ -10,17 +10,7 @@
 /// @link   https://taproot-theme.com
 ////
 
-@import 'app';
-@import 'app-content';
-@import 'app-main';
-@import 'app-footer';
-@import 'container';
-@import 'header/_index';
-@import 'comments/_index';
-@import 'entry/_index';
-@import 'media/_index';
-@import 'nav/_index';
-@import 'archive-header';
-@import 'sidebar';
-@import 'searchform';
-@import 'widgets/_index';
+
+@import 'widget';
+@import 'calendar';
+@import 'media';

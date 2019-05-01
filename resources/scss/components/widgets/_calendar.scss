@@ -1,0 +1,41 @@
+////
+/// Calendar Widget.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.widget--calendar {
+
+    table {
+        border-top: none;
+    }
+
+    tbody {
+        border-bottom: 1px solid var(--colors--theme--meta-medium);
+    }
+
+    td, th {
+        text-align: center;
+    }
+
+    tfoot {
+
+        td {
+            border: none;
+            &:first-child {
+                text-align: left;
+            }
+            &:last-child {
+                text-align: right;
+            }
+        }
+    }
+
+    caption {
+        background-color: var(--colors--theme--accent);
+        color: var(--colors--theme--accent-contrast);
+        padding: 0.5em;
+      }
+}

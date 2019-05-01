@@ -1198,13 +1198,16 @@ li > ul, li > ol {
 }
 .entry__byline {
 	display: flex;
+	flex-wrap: wrap;
+}
+.entry__byline__item {
+	margin-right: 0.8em;
+	flex-shrink: 0;
+	display: flex;
 	align-items: center;
 }
 .entry__byline .taproot-icon {
 	margin-right: 0.2em;
-}
-.entry__author, .entry__published, .entry__comments {
-	margin-right: 0.8em;
 }
 
 .entry--archive {
@@ -2428,8 +2431,9 @@ li > ul, li > ol {
 @media ( min-width: 1025px ) {
 	.sidebar {
 		box-sizing: content-box;
-		flex: 1 0 250px;
-		flex: 1 0 var(--layout--sidebar--min-width);
+		flex: 1 0 auto;
+		width: 250px;
+		width: var(--layout--sidebar--min-width);
 		padding: 5vw;
 		padding: var(--layout--container--padding);
 	}
@@ -2485,6 +2489,38 @@ li > ul, li > ol {
 .widget__title {
 	padding-top: 0;
 	margin-bottom: 0.6em;
+}
+
+.widget--calendar table {
+	border-top: none;
+}
+.widget--calendar tbody {
+	border-bottom: 1px solid #d8d8d8;
+	border-bottom: 1px solid var(--colors--theme--meta-medium);
+}
+.widget--calendar td, .widget--calendar th {
+	text-align: center;
+}
+.widget--calendar tfoot td {
+	border: none;
+}
+.widget--calendar tfoot td:first-child {
+	text-align: left;
+}
+.widget--calendar tfoot td:last-child {
+	text-align: right;
+}
+.widget--calendar caption {
+	background-color: #00a0d1;
+	background-color: var(--colors--theme--accent);
+	color: #ffffff;
+	color: var(--colors--theme--accent-contrast);
+	padding: 0.5em;
+}
+
+.widget--media-audio .mejs-container, .widget--media-audio .mejs-container .mejs-controls, .widget--media-audio .mejs-embed, .widget--media-audio .mejs-embed body, .widget--media-video .mejs-container, .widget--media-video .mejs-container .mejs-controls, .widget--media-video .mejs-embed, .widget--media-video .mejs-embed body {
+	background: #00a0d1;
+	background: var(--colors--theme--accent);
 }
 
 p.has-background {
@@ -3107,6 +3143,7 @@ th:not(:last-child), td:not(:last-child) {
 @media ( min-width: 1025px ) {
 	.app-main--full .alignfull {
 		width: 100vw;
+		max-width: 100vw;
 		margin-left: calc( 50% - 50vw );
 	}
 }
