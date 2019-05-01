@@ -33,9 +33,9 @@
     @include screen('desktop') {
 
         box-sizing: content-box;
-        flex: 1 0 var(--layout--sidebar--min-width);
+        flex: 1 0 auto;
+        width: var(--layout--sidebar--min-width);
         padding: var(--layout--container--padding);
-
 
         &--right {
             padding-right: 0;
