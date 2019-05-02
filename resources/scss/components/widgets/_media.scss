@@ -13,7 +13,7 @@
     &--media-audio,
     &--media-video {
         .mejs-container, .mejs-container .mejs-controls, .mejs-embed, .mejs-embed body {
-            background: var(--colors--theme--accent);
+            background: var(--colors--sidebar--accent-color);
         }
     }
 }
