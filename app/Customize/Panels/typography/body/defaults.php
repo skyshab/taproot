@@ -14,17 +14,5 @@
 
 // these are also defined in functions-setup and in the CSS
 
-// Accent Color
-$defaults->add( 'colors--theme--accent', '#00a0d1' );
-
-// Accent Contrast Color
-$defaults->add( 'colors--theme--accent-contrast', '#ffffff' );
-
-// Meta Color Light
-$defaults->add( 'colors--theme--meta-light', '#f4f4f4' );
-
-// Meta Color Medium
-$defaults->add( 'colors--theme--meta-medium', '#d8d8d8' );
-
-// Meta Color Dark
-$defaults->add( 'colors--theme--meta-dark', '#a5a5a5' );
+// Text Color
+$defaults->add( 'typography--body--text-color', '#8c8c8c' );

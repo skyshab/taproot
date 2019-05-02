@@ -34,7 +34,7 @@
 @function block-colors() {
 
 	@return (
-        theme-text            : var(--colors--theme--text,              #8c8c8c),
+        theme-text            : var(--typography--body--text-color,              #8c8c8c),
 		theme-accent          : var(--colors--theme--accent,            #00a0d1),
 		theme-accent-contrast : var(--colors--theme--accent-contrast,   #ffffff),
 		theme-meta-light      : var(--colors--theme--meta-light,        #f4f4f4),

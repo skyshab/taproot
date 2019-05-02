@@ -343,7 +343,7 @@ dd {
 	--layout--block-spacing--large: 2rem;
 }
 :root {
-	--colors--theme--text: #8c8c8c;
+	--typography--body--text-color: #8c8c8c;
 	--colors--theme--accent: #00a0d1;
 	--colors--theme--accent-contrast: #ffffff;
 	--colors--theme--meta-light: #f4f4f4;
@@ -353,7 +353,11 @@ dd {
 	--typography--links--color--visited: var( --typography--links--color );
 	--typography--links--color--hover: var( --typography--links--color );
 	--typography--links--color--active: var( --typography--links--color--hover );
-	--layout--sidebar--background-color: var( --colors--theme--meta-light );
+	--colors--sidebar--background-color: var( --colors--theme--meta-light );
+	--colors--sidebar--text-color: var( --typography--body--text-color );
+	--colors--sidebar--accent-color: var( --colors--theme--accent );
+	--colors--sidebar--link-color: var( --colors--sidebar--accent-color );
+	--colors--sidebar--link-color--hover: var( --colors--sidebar--accent-color );
 }
 :root {
 	--typography--body--font-size: 16px;
@@ -457,7 +461,7 @@ html {
 body {
 	overflow-x: hidden;
 	color: #8c8c8c;
-	color: var(--colors--theme--text);
+	color: var(--typography--body--text-color);
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	-ms-scroll-chaining: auto none;
 	    overscroll-behavior: auto none;
@@ -2415,12 +2419,22 @@ li > ul, li > ol {
 	line-height: 1.5;
 	line-height: var(--typography--sidebar--line-height);
 	background-color: #f4f4f4;
-	background-color: var(--layout--sidebar--background-color);
+	background-color: var(--colors--sidebar--background-color);
+	color: #8c8c8c;
+	color: var(--colors--sidebar--text-color);
+}
+.sidebar a:link, .sidebar a:visited {
+	color: #00a0d1;
+	color: var(--colors--sidebar--link-color);
+}
+.sidebar a:hover, .sidebar a:active {
+	color: #00a0d1;
+	color: var(--colors--sidebar--link-color--hover);
 }
 .sidebar:before {
 	content: " ";
 	background-color: #f4f4f4;
-	background-color: var(--layout--sidebar--background-color);
+	background-color: var(--colors--sidebar--background-color);
 	position: absolute;
 	width: 100vw;
 	height: 100%;
@@ -2512,15 +2526,14 @@ li > ul, li > ol {
 }
 .widget--calendar caption {
 	background-color: #00a0d1;
-	background-color: var(--colors--theme--accent);
-	color: #ffffff;
-	color: var(--colors--theme--accent-contrast);
+	background-color: var(--colors--sidebar--accent-color);
+	color: white;
 	padding: 0.5em;
 }
 
 .widget--media-audio .mejs-container, .widget--media-audio .mejs-container .mejs-controls, .widget--media-audio .mejs-embed, .widget--media-audio .mejs-embed body, .widget--media-video .mejs-container, .widget--media-video .mejs-container .mejs-controls, .widget--media-video .mejs-embed, .widget--media-video .mejs-embed body {
 	background: #00a0d1;
-	background: var(--colors--theme--accent);
+	background: var(--colors--sidebar--accent-color);
 }
 
 p.has-background {
@@ -3308,12 +3321,12 @@ th:not(:last-child), td:not(:last-child) {
 
 .has-theme-text-color {
 	color: #8c8c8c;
-	color: var(--colors--theme--text, #8c8c8c);
+	color: var(--typography--body--text-color, #8c8c8c);
 }
 
 .has-theme-text-background-color {
 	background-color: #8c8c8c;
-	background-color: var(--colors--theme--text, #8c8c8c);
+	background-color: var(--typography--body--text-color, #8c8c8c);
 }
 
 .has-theme-accent-color {

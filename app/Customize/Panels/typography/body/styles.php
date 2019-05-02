@@ -16,6 +16,13 @@ use function Taproot\Customize\get_font_family;
 use function Taproot\Customize\theme_mod;
 
 
+// Var: Body Text Color
+$styles->add_var([
+    'name' => 'typography--body--text-color',
+    'value' => theme_mod( 'typography--body--text-color', true ),
+]);
+
+
 // Body Font Family
 $styles->add([
     'selector' => 'body',

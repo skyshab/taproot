@@ -15,4 +15,5 @@
 // Define sections
 $panel->sections([
     'theme',
+    'sidebar'
 ]);

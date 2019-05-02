@@ -10,6 +10,17 @@
  */
 
 
+// Text Color
+wp.customize( 'typography--body--text-color', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'typography--body--text-color',
+            value: to
+        });
+    });
+});
+
+
 // Font Family
 wp.customize( 'typography--body--font-family', function( value ) {
     value.bind( function( to ) {
@@ -20,4 +31,3 @@ wp.customize( 'typography--body--font-family', function( value ) {
         });
     });
 });
-

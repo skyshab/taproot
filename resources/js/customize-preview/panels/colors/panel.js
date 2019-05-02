@@ -12,3 +12,4 @@
 
 
 import './theme/preview.js';
+import './sidebar/preview.js';

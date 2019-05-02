@@ -1877,6 +1877,8 @@ wp.customize('branding--title--font-styles', function (value) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _theme_preview_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./theme/preview.js */ "./resources/js/customize-preview/panels/colors/theme/preview.js");
 /* harmony import */ var _theme_preview_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_theme_preview_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _sidebar_preview_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sidebar/preview.js */ "./resources/js/customize-preview/panels/colors/sidebar/preview.js");
+/* harmony import */ var _sidebar_preview_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_sidebar_preview_js__WEBPACK_IMPORTED_MODULE_1__);
 /**
  * Add customizer panel js.
  *
@@ -1889,6 +1891,72 @@ __webpack_require__.r(__webpack_exports__);
  * @link      https://taproot-theme.com
  */
 
+
+
+/***/ }),
+
+/***/ "./resources/js/customize-preview/panels/colors/sidebar/preview.js":
+/*!*************************************************************************!*\
+  !*** ./resources/js/customize-preview/panels/colors/sidebar/preview.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Customize controls preview scripts
+ *
+ * This file binds javascript actions to cutomize controls.
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2019 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ */
+// Background Color
+wp.customize('colors--sidebar--background-color', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'colors--sidebar--background-color',
+      value: to
+    });
+  });
+}); // Text Color
+
+wp.customize('colors--sidebar--text-color', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'colors--sidebar--text-color',
+      value: to
+    });
+  });
+}); // Accent Color
+
+wp.customize('colors--sidebar--accent-color', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'colors--sidebar--accent-color',
+      value: to
+    });
+  });
+}); // Link Color
+
+wp.customize('colors--sidebar--link-color', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'colors--sidebar--link-color',
+      value: to
+    });
+  });
+}); // Link Color Hover
+
+wp.customize('colors--sidebar--link-color--hover', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'colors--sidebar--link-color--hover',
+      value: to
+    });
+  });
+});
 
 /***/ }),
 
@@ -1909,16 +1977,7 @@ __webpack_require__.r(__webpack_exports__);
  * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
-// Text Color
-wp.customize('colors--theme--text', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'colors--theme--text',
-      value: to
-    });
-  });
-}); // Accent Color
-
+// Accent Color
 wp.customize('colors--theme--accent', function (value) {
   value.bind(function (to) {
     rootstrap.var({
@@ -3678,16 +3737,7 @@ __webpack_require__.r(__webpack_exports__);
  * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
-// Sidebar Background Color
-wp.customize('layout--sidebar--background-color', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'layout--sidebar--background-color',
-      value: to
-    });
-  });
-}); // Sidebar Width
-
+// Sidebar Width
 wp.customize('layout--sidebar--min-width', function (value) {
   value.bind(function (to) {
     rootstrap.var({
@@ -6160,7 +6210,16 @@ wp.customize('typography--body-tablet--line-height', function (value) {
  * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
-// Font Family
+// Text Color
+wp.customize('typography--body--text-color', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'typography--body--text-color',
+      value: to
+    });
+  });
+}); // Font Family
+
 wp.customize('typography--body--font-family', function (value) {
   value.bind(function (to) {
     rootstrap.var({

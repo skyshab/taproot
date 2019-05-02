@@ -10,52 +10,51 @@
  */
 
 
+ // Background Color
+ wp.customize( 'colors--sidebar--background-color', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'colors--sidebar--background-color',
+            value: to
+        });
+    });
+});
+
+ // Text Color
+ wp.customize( 'colors--sidebar--text-color', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'colors--sidebar--text-color',
+            value: to
+        });
+    });
+});
+
  // Accent Color
- wp.customize( 'colors--theme--accent', function( value ) {
+ wp.customize( 'colors--sidebar--accent-color', function( value ) {
     value.bind( function( to ) {
         rootstrap.var({
-            name: 'colors--theme--accent',
+            name: 'colors--sidebar--accent-color',
             value: to
         });
     });
 });
 
- // Accent Contrast Color
- wp.customize( 'colors--theme--accent-contrast', function( value ) {
+ // Link Color
+ wp.customize( 'colors--sidebar--link-color', function( value ) {
     value.bind( function( to ) {
         rootstrap.var({
-            name: 'colors--theme--accent-contrast',
+            name: 'colors--sidebar--link-color',
             value: to
         });
     });
 });
 
-
- // Meta Color - Light
- wp.customize( 'colors--theme--meta-light', function( value ) {
+ // Link Color Hover
+ wp.customize( 'colors--sidebar--link-color--hover', function( value ) {
     value.bind( function( to ) {
         rootstrap.var({
-            name: 'colors--theme--meta-light',
-            value: to
-        });
-    });
-});
-
- // Meta Color - Medium
- wp.customize( 'colors--theme--meta-medium', function( value ) {
-    value.bind( function( to ) {
-        rootstrap.var({
-            name: 'colors--theme--meta-medium',
-            value: to
-        });
-    });
-});
-
- // Meta Color - Dark
- wp.customize( 'colors--theme--meta-dark', function( value ) {
-    value.bind( function( to ) {
-        rootstrap.var({
-            name: 'colors--theme--meta-dark',
+            name: 'colors--sidebar--link-color--hover',
             value: to
         });
     });

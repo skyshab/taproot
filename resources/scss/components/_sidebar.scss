@@ -15,11 +15,20 @@
     padding: var(--layout--container--padding) 0;
     font-size: var( --typography--sidebar--font-size );
     line-height: var( --typography--sidebar--line-height );
-    background-color: var( --layout--sidebar--background-color );
+    background-color: var( --colors--sidebar--background-color );
+    color: var( --colors--sidebar--text-color);
+
+    a:link, a:visited {
+        color: var(--colors--sidebar--link-color);
+    }
+
+    a:hover, a:active {
+        color: var(--colors--sidebar--link-color--hover);
+    }
 
     &:before {
         content: " ";
-        background-color: var( --layout--sidebar--background-color );
+        background-color: var( --colors--sidebar--background-color );
         position: absolute;
         width: 100vw;
         height: 100%;

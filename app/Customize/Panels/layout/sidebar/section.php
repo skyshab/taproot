@@ -32,13 +32,6 @@ $manager->add_section( 'layout--sidebar', [
 # =======================================================
 
 
-// Color Setting: Background Color
-color( $manager, 'layout--sidebar--background-color', [
-    'label'   => esc_html__( 'Background Color', 'taproot' ),
-    'section' => 'layout--sidebar',
-]);
-
-
 // Sidebar Min Width
 range( $manager, 'layout--sidebar--min-width', [
     'section' => 'layout--sidebar',

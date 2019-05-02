@@ -13,6 +13,7 @@
 
 
 use function Taproot\Customize\get_font_choices;
+use function Taproot\Customize\color;
 
 
 # =======================================================
@@ -31,6 +32,12 @@ $manager->add_section( 'typography--body', [
 # =======================================================
 
 
+// Color Setting: Text Color
+color( $manager, 'typography--body--text-color', [
+    'label'   => esc_html__( 'Text Color', 'taproot' ),
+    'section' => 'typography--body',
+]);
+
 
 // Setting:  Body Font
 $manager->add_setting( 'typography--body--font-family', [
@@ -45,4 +52,3 @@ $manager->add_control( 'typography--body--font-family', [
     'label' => esc_html__( 'Font Family', 'taproot' ),
     'choices' => get_font_choices(),
 ]);
-
