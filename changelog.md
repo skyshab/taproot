@@ -1,5 +1,15 @@
 # Change Log
 
+= 1.1.2 =
+* 05/03/19
+* Fix - Customizer color live preview
+* Fix - Sidebar width when using media widgets
+* Fix - Fullwidth image styles
+* General - Improved widget styles for calendar and media widgets
+* General - Moved Color controls in Customizer
+* General - Changed default mobile nav types
+
+
 = 1.1.1 =
 * 04/28/19
 * Fix - Nav menu widget styles
