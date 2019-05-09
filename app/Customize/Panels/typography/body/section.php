@@ -13,6 +13,8 @@
 
 
 use function Taproot\Customize\get_font_choices;
+use function Taproot\Customize\range;
+use function Taproot\Customize\range_atts;
 use function Taproot\Customize\color;
 
 
@@ -51,4 +53,22 @@ $manager->add_control( 'typography--body--font-family', [
     'section' => 'typography--body',
     'label' => esc_html__( 'Font Family', 'taproot' ),
     'choices' => get_font_choices(),
+]);
+
+
+// Font Size
+range( $manager, 'typography--body--font-size', [
+    'section' => 'typography--body',
+    'label' => esc_html__('Font Size', 'taproot'),
+    'atts' => range_atts( 'text' ),
+    'devices' => ['mobile', 'tablet', 'desktop']
+]);
+
+
+// Line Height
+range( $manager, 'typography--body--line-height', [
+    'section' => 'typography--body',
+    'label' => esc_html__('Line Height', 'taproot'),
+    'atts' => range_atts( 'line-height' ),
+    'devices' => ['mobile', 'tablet', 'desktop']
 ]);

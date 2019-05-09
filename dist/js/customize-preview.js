@@ -629,21 +629,15 @@ wp.customize('blog--pagination--color', function (value) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _title_preview_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./title/preview.js */ "./resources/js/customize-preview/panels/blog/title/preview.js");
-/* harmony import */ var _title_mobile_preview_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./title-mobile/preview.js */ "./resources/js/customize-preview/panels/blog/title-mobile/preview.js");
-/* harmony import */ var _title_mobile_preview_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_title_mobile_preview_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _title_tablet_preview_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./title-tablet/preview.js */ "./resources/js/customize-preview/panels/blog/title-tablet/preview.js");
-/* harmony import */ var _title_tablet_preview_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_title_tablet_preview_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _title_desktop_preview_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./title-desktop/preview.js */ "./resources/js/customize-preview/panels/blog/title-desktop/preview.js");
-/* harmony import */ var _title_desktop_preview_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_title_desktop_preview_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _archive_title_preview_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./archive-title/preview.js */ "./resources/js/customize-preview/panels/blog/archive-title/preview.js");
-/* harmony import */ var _archive_meta_preview_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./archive-meta/preview.js */ "./resources/js/customize-preview/panels/blog/archive-meta/preview.js");
-/* harmony import */ var _archive_meta_preview_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_archive_meta_preview_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _archive_link_preview_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./archive-link/preview.js */ "./resources/js/customize-preview/panels/blog/archive-link/preview.js");
-/* harmony import */ var _archive_link_preview_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_archive_link_preview_js__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _pagination_preview_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pagination/preview.js */ "./resources/js/customize-preview/panels/blog/pagination/preview.js");
-/* harmony import */ var _pagination_preview_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_pagination_preview_js__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _pagination_hover_preview_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pagination-hover/preview.js */ "./resources/js/customize-preview/panels/blog/pagination-hover/preview.js");
-/* harmony import */ var _pagination_hover_preview_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_pagination_hover_preview_js__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _archive_title_preview_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./archive-title/preview.js */ "./resources/js/customize-preview/panels/blog/archive-title/preview.js");
+/* harmony import */ var _archive_meta_preview_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./archive-meta/preview.js */ "./resources/js/customize-preview/panels/blog/archive-meta/preview.js");
+/* harmony import */ var _archive_meta_preview_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_archive_meta_preview_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _archive_link_preview_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./archive-link/preview.js */ "./resources/js/customize-preview/panels/blog/archive-link/preview.js");
+/* harmony import */ var _archive_link_preview_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_archive_link_preview_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _pagination_preview_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pagination/preview.js */ "./resources/js/customize-preview/panels/blog/pagination/preview.js");
+/* harmony import */ var _pagination_preview_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_pagination_preview_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _pagination_hover_preview_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pagination-hover/preview.js */ "./resources/js/customize-preview/panels/blog/pagination-hover/preview.js");
+/* harmony import */ var _pagination_hover_preview_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_pagination_hover_preview_js__WEBPACK_IMPORTED_MODULE_5__);
 /**
  * Add customizer panel js.
  *
@@ -661,129 +655,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/blog/title-desktop/preview.js":
-/*!*****************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/blog/title-desktop/preview.js ***!
-  \*****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('blog--title-desktop--font-size', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'blog--title--font-size',
-      value: to,
-      screen: 'desktop'
-    });
-  });
-}); // Line Height
-
-wp.customize('blog--title-desktop--line-height', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'blog--title--line-height',
-      value: to,
-      screen: 'desktop'
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/blog/title-mobile/preview.js":
-/*!****************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/blog/title-mobile/preview.js ***!
-  \****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('blog--title-mobile--font-size', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'blog--title--font-size',
-      value: to,
-      screen: 'default'
-    });
-  });
-}); // Line Height
-
-wp.customize('blog--title-mobile--line-height', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'blog--title--line-height',
-      value: to,
-      screen: 'default'
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/blog/title-tablet/preview.js":
-/*!****************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/blog/title-tablet/preview.js ***!
-  \****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('blog--title-tablet--font-size', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'blog--title--font-size',
-      value: to,
-      screen: 'tablet-and-up'
-    });
-  });
-}); // Line Height
-
-wp.customize('blog--title-tablet--line-height', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'blog--title--line-height',
-      value: to,
-      screen: 'tablet-and-up'
-    });
-  });
-});
 
 /***/ }),
 
@@ -830,44 +701,74 @@ wp.customize('blog--title--font-styles', function (value) {
       styles: styles
     });
   });
-});
+}); // Font Size
 
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/branding/layout-desktop/preview.js":
-/*!**********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/branding/layout-desktop/preview.js ***!
-  \**********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Layout
-wp.customize('branding--layout-desktop--layout', function (value) {
+wp.customize('blog--title--font-size', function (value) {
   value.bind(function (to) {
-    if ('horizontal' === to) {
-      $('.app-header').removeClass('app-header--desktop--vertical').addClass('app-header--desktop--horizontal');
-    } else if ('vertical' === to) {
-      $('.app-header').removeClass('app-header--desktop--horizontal').addClass('app-header--desktop--vertical');
-    }
+    rootstrap.var({
+      name: 'blog--title--font-size',
+      value: to,
+      screen: 'default'
+    });
+  });
+}); // Line Height
+
+wp.customize('blog--title--line-height', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'blog--title--line-height',
+      value: to,
+      screen: 'default'
+    });
+  });
+}); // Font Size Tablet
+
+wp.customize('blog--title--font-size--tablet', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'blog--title--font-size',
+      value: to,
+      screen: 'tablet-and-up'
+    });
+  });
+}); // Line Height Tablet
+
+wp.customize('blog--title--line-height--tablet', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'blog--title--line-height',
+      value: to,
+      screen: 'tablet-and-up'
+    });
+  });
+}); // Font Size Desktop
+
+wp.customize('blog--title--font-size--desktop', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'blog--title--font-size',
+      value: to,
+      screen: 'desktop'
+    });
+  });
+}); // Line Height Desktop
+
+wp.customize('blog--title--line-height--desktop', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'blog--title--line-height',
+      value: to,
+      screen: 'desktop'
+    });
   });
 });
 
 /***/ }),
 
-/***/ "./resources/js/customize-preview/panels/branding/layout-mobile/preview.js":
-/*!*********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/branding/layout-mobile/preview.js ***!
-  \*********************************************************************************/
+/***/ "./resources/js/customize-preview/panels/branding/layout/preview.js":
+/*!**************************************************************************!*\
+  !*** ./resources/js/customize-preview/panels/branding/layout/preview.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -882,7 +783,7 @@ wp.customize('branding--layout-desktop--layout', function (value) {
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
 // Layout
-wp.customize('branding--layout-mobile--layout', function (value) {
+wp.customize('branding--layout', function (value) {
   value.bind(function (to) {
     if ('horizontal' === to) {
       $('.app-header').removeClass('app-header--mobile--vertical').addClass('app-header--mobile--horizontal');
@@ -890,29 +791,9 @@ wp.customize('branding--layout-mobile--layout', function (value) {
       $('.app-header').removeClass('app-header--mobile--horizontal').addClass('app-header--mobile--vertical');
     }
   });
-});
+}); // Layout Tablet
 
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/branding/layout-tablet/preview.js":
-/*!*********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/branding/layout-tablet/preview.js ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Layout
-wp.customize('branding--layout-tablet--layout', function (value) {
+wp.customize('branding--layout--tablet', function (value) {
   value.bind(function (to) {
     if ('horizontal' === to) {
       $('.app-header').removeClass('app-header--tablet--vertical').addClass('app-header--tablet--horizontal');
@@ -920,45 +801,15 @@ wp.customize('branding--layout-tablet--layout', function (value) {
       $('.app-header').removeClass('app-header--tablet--horizontal').addClass('app-header--tablet--vertical');
     }
   });
-});
+}); // Layout Desktop
 
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/branding/logo-desktop/preview.js":
-/*!********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/branding/logo-desktop/preview.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Logo width
-wp.customize('branding--logo-desktop--width', function (value) {
+wp.customize('branding--layout--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
-      name: 'branding--logo--width',
-      value: to,
-      screen: 'desktop'
-    });
-  });
-}); // Logo gutter
-
-wp.customize('branding--logo-desktop--gutter', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'branding--logo--gutter',
-      value: to,
-      screen: 'desktop'
-    });
+    if ('horizontal' === to) {
+      $('.app-header').removeClass('app-header--desktop--vertical').addClass('app-header--desktop--horizontal');
+    } else if ('vertical' === to) {
+      $('.app-header').removeClass('app-header--desktop--horizontal').addClass('app-header--desktop--vertical');
+    }
   });
 });
 
@@ -1031,86 +882,6 @@ wp.customize('branding--logo-fixed--gutter', function (value) {
 
 /***/ }),
 
-/***/ "./resources/js/customize-preview/panels/branding/logo-mobile/preview.js":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/branding/logo-mobile/preview.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Logo width
-wp.customize('branding--logo-mobile--width', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'branding--logo--width',
-      value: to,
-      screen: 'default'
-    });
-  });
-}); // Logo gutter
-
-wp.customize('branding--logo-mobile--gutter', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'branding--logo--gutter',
-      value: to,
-      screen: 'default'
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/branding/logo-tablet/preview.js":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/branding/logo-tablet/preview.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Logo width
-wp.customize('branding--logo-tablet--width', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'branding--logo--width',
-      value: to,
-      screen: 'tablet-and-up'
-    });
-  });
-}); // Logo gutter
-
-wp.customize('branding--logo-tablet--gutter', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'branding--logo--gutter',
-      value: to,
-      screen: 'tablet-and-up'
-    });
-  });
-});
-
-/***/ }),
-
 /***/ "./resources/js/customize-preview/panels/branding/logo/preview.js":
 /*!************************************************************************!*\
   !*** ./resources/js/customize-preview/panels/branding/logo/preview.js ***!
@@ -1140,6 +911,66 @@ wp.customize('branding--logo--image', function (value) {
       screen: 'mobile'
     });
   });
+}); // Logo width
+
+wp.customize('branding--logo--width', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'branding--logo--width',
+      value: to,
+      screen: 'default'
+    });
+  });
+}); // Logo gutter
+
+wp.customize('branding--logo--gutter', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'branding--logo--gutter',
+      value: to,
+      screen: 'default'
+    });
+  });
+}); // Logo width Tablet
+
+wp.customize('branding--logo--width--tablet', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'branding--logo--width',
+      value: to,
+      screen: 'tablet-and-up'
+    });
+  });
+}); // Logo gutter Tablet
+
+wp.customize('branding--logo--gutter--tablet', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'branding--logo--gutter',
+      value: to,
+      screen: 'tablet-and-up'
+    });
+  });
+}); // Logo width Desktop
+
+wp.customize('branding--logo--width--desktop', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'branding--logo--width',
+      value: to,
+      screen: 'desktop'
+    });
+  });
+}); // Logo gutter Desktop
+
+wp.customize('branding--logo--gutter--desktop', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'branding--logo--gutter',
+      value: to,
+      screen: 'desktop'
+    });
+  });
 });
 
 /***/ }),
@@ -1153,40 +984,18 @@ wp.customize('branding--logo--image', function (value) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _layout_mobile_preview_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./layout-mobile/preview.js */ "./resources/js/customize-preview/panels/branding/layout-mobile/preview.js");
-/* harmony import */ var _layout_mobile_preview_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_layout_mobile_preview_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _layout_tablet_preview_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./layout-tablet/preview.js */ "./resources/js/customize-preview/panels/branding/layout-tablet/preview.js");
-/* harmony import */ var _layout_tablet_preview_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_layout_tablet_preview_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _layout_desktop_preview_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./layout-desktop/preview.js */ "./resources/js/customize-preview/panels/branding/layout-desktop/preview.js");
-/* harmony import */ var _layout_desktop_preview_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_layout_desktop_preview_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _logo_preview_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./logo/preview.js */ "./resources/js/customize-preview/panels/branding/logo/preview.js");
-/* harmony import */ var _logo_preview_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_logo_preview_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _logo_mobile_preview_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./logo-mobile/preview.js */ "./resources/js/customize-preview/panels/branding/logo-mobile/preview.js");
-/* harmony import */ var _logo_mobile_preview_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_logo_mobile_preview_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _logo_tablet_preview_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./logo-tablet/preview.js */ "./resources/js/customize-preview/panels/branding/logo-tablet/preview.js");
-/* harmony import */ var _logo_tablet_preview_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_logo_tablet_preview_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _logo_desktop_preview_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./logo-desktop/preview.js */ "./resources/js/customize-preview/panels/branding/logo-desktop/preview.js");
-/* harmony import */ var _logo_desktop_preview_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_logo_desktop_preview_js__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _logo_fixed_preview_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./logo-fixed/preview.js */ "./resources/js/customize-preview/panels/branding/logo-fixed/preview.js");
-/* harmony import */ var _logo_fixed_preview_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_logo_fixed_preview_js__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _title_preview_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./title/preview.js */ "./resources/js/customize-preview/panels/branding/title/preview.js");
-/* harmony import */ var _title_mobile_preview_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./title-mobile/preview.js */ "./resources/js/customize-preview/panels/branding/title-mobile/preview.js");
-/* harmony import */ var _title_mobile_preview_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_title_mobile_preview_js__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _title_tablet_preview_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./title-tablet/preview.js */ "./resources/js/customize-preview/panels/branding/title-tablet/preview.js");
-/* harmony import */ var _title_tablet_preview_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_title_tablet_preview_js__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _title_desktop_preview_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./title-desktop/preview.js */ "./resources/js/customize-preview/panels/branding/title-desktop/preview.js");
-/* harmony import */ var _title_desktop_preview_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_title_desktop_preview_js__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _title_fixed_preview_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./title-fixed/preview.js */ "./resources/js/customize-preview/panels/branding/title-fixed/preview.js");
-/* harmony import */ var _title_fixed_preview_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_title_fixed_preview_js__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _tagline_preview_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./tagline/preview.js */ "./resources/js/customize-preview/panels/branding/tagline/preview.js");
-/* harmony import */ var _tagline_mobile_preview_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./tagline-mobile/preview.js */ "./resources/js/customize-preview/panels/branding/tagline-mobile/preview.js");
-/* harmony import */ var _tagline_mobile_preview_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_tagline_mobile_preview_js__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _tagline_tablet_preview_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./tagline-tablet/preview.js */ "./resources/js/customize-preview/panels/branding/tagline-tablet/preview.js");
-/* harmony import */ var _tagline_tablet_preview_js__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_tagline_tablet_preview_js__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var _tagline_desktop_preview_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./tagline-desktop/preview.js */ "./resources/js/customize-preview/panels/branding/tagline-desktop/preview.js");
-/* harmony import */ var _tagline_desktop_preview_js__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_tagline_desktop_preview_js__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var _tagline_fixed_preview_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./tagline-fixed/preview.js */ "./resources/js/customize-preview/panels/branding/tagline-fixed/preview.js");
-/* harmony import */ var _tagline_fixed_preview_js__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_tagline_fixed_preview_js__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _layout_preview_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./layout/preview.js */ "./resources/js/customize-preview/panels/branding/layout/preview.js");
+/* harmony import */ var _layout_preview_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_layout_preview_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _logo_preview_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./logo/preview.js */ "./resources/js/customize-preview/panels/branding/logo/preview.js");
+/* harmony import */ var _logo_preview_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_logo_preview_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _logo_fixed_preview_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./logo-fixed/preview.js */ "./resources/js/customize-preview/panels/branding/logo-fixed/preview.js");
+/* harmony import */ var _logo_fixed_preview_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_logo_fixed_preview_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _title_preview_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./title/preview.js */ "./resources/js/customize-preview/panels/branding/title/preview.js");
+/* harmony import */ var _title_fixed_preview_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./title-fixed/preview.js */ "./resources/js/customize-preview/panels/branding/title-fixed/preview.js");
+/* harmony import */ var _title_fixed_preview_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_title_fixed_preview_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _tagline_preview_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tagline/preview.js */ "./resources/js/customize-preview/panels/branding/tagline/preview.js");
+/* harmony import */ var _tagline_fixed_preview_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./tagline-fixed/preview.js */ "./resources/js/customize-preview/panels/branding/tagline-fixed/preview.js");
+/* harmony import */ var _tagline_fixed_preview_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_tagline_fixed_preview_js__WEBPACK_IMPORTED_MODULE_6__);
 /**
  * Add customizer panel js.
  *
@@ -1205,95 +1014,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/branding/tagline-desktop/preview.js":
-/*!***********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/branding/tagline-desktop/preview.js ***!
-  \***********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('branding--tagline-desktop--font-size', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'branding--tagline--font-size',
-      value: to,
-      screen: 'desktop'
-    });
-  });
-}); // Line Height
-
-wp.customize('branding--tagline-desktop--line-height', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'branding--tagline--line-height',
-      value: to,
-      screen: 'desktop'
-    });
-  });
-}); // Gutter
-
-wp.customize('branding--tagline-desktop--gutter', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'branding--tagline--gutter',
-      value: to,
-      screen: 'desktop'
-    });
-  });
-}); // Hide tagline
-
-wp.customize('branding--tagline-desktop--hide-tagline', function (value) {
-  value.bind(function (to) {
-    var taglineDisplay = to ? 'none' : 'inline-block';
-    rootstrap.style({
-      id: 'branding--tagline-desktop--hide-tagline',
-      selector: '.app-header__description',
-      styles: {
-        'display': taglineDisplay
-      },
-      screen: 'desktop'
-    }); // title styles - center title
-
-    var titleStyles = to ? {
-      'grid-row-end': 'span 2',
-      'align-self': 'center'
-    } : {
-      'grid-row-end': '2',
-      'align-self': 'end'
-    };
-    rootstrap.style({
-      id: 'branding--tagline-desktop--hide-tagline--title',
-      selector: '.app-header__title',
-      styles: titleStyles,
-      screen: 'desktop'
-    });
-  });
-});
 
 /***/ }),
 
@@ -1370,162 +1090,6 @@ wp.customize('branding--tagline-fixed--gutter', function (value) {
 
 /***/ }),
 
-/***/ "./resources/js/customize-preview/panels/branding/tagline-mobile/preview.js":
-/*!**********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/branding/tagline-mobile/preview.js ***!
-  \**********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('branding--tagline-mobile--font-size', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'branding--tagline--font-size',
-      value: to,
-      screen: 'default'
-    });
-  });
-}); // Line Height
-
-wp.customize('branding--tagline-mobile--line-height', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'branding--tagline--line-height',
-      value: to,
-      screen: 'default'
-    });
-  });
-}); // Gutter
-
-wp.customize('branding--tagline-mobile--gutter', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'branding--tagline--gutter',
-      value: to,
-      screen: 'default'
-    });
-  });
-}); // Hide tagline
-
-wp.customize('branding--tagline-mobile--hide-tagline', function (value) {
-  value.bind(function (to) {
-    var taglineDisplay = to ? 'none' : 'inline-block';
-    rootstrap.style({
-      id: 'branding--tagline-mobile--hide-tagline',
-      selector: '.app-header__description',
-      styles: {
-        'display': taglineDisplay
-      },
-      screen: 'mobile'
-    }); // title styles - center title
-
-    var titleStyles = to ? {
-      'grid-row-end': 'span 2',
-      'align-self': 'center'
-    } : {
-      'grid-row-end': '2',
-      'align-self': 'end'
-    };
-    rootstrap.style({
-      id: 'branding--tagline-mobile--hide-tagline--title',
-      selector: '.app-header__title',
-      styles: titleStyles,
-      screen: 'mobile'
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/branding/tagline-tablet/preview.js":
-/*!**********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/branding/tagline-tablet/preview.js ***!
-  \**********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('branding--tagline-tablet--font-size', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'branding--tagline--font-size',
-      value: to,
-      screen: 'tablet-and-up'
-    });
-  });
-}); // Line Height
-
-wp.customize('branding--tagline-tablet--line-height', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'branding--tagline--line-height',
-      value: to,
-      screen: 'tablet-and-up'
-    });
-  });
-}); // Gutter
-
-wp.customize('branding--tagline-tablet--gutter', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'branding--tagline--gutter',
-      value: to,
-      screen: 'tablet-and-up'
-    });
-  });
-}); // Hide tagline
-
-wp.customize('branding--tagline-tablet--hide-tagline', function (value) {
-  value.bind(function (to) {
-    var taglineDisplay = to ? 'none' : 'inline-block';
-    rootstrap.style({
-      id: 'branding--tagline-tablet--hide-tagline',
-      selector: '.app-header__description',
-      styles: {
-        'display': taglineDisplay
-      },
-      screen: 'tablet'
-    }); // title styles - center title
-
-    var titleStyles = to ? {
-      'grid-row-end': 'span 2',
-      'align-self': 'center'
-    } : {
-      'grid-row-end': '2',
-      'align-self': 'end'
-    };
-    rootstrap.style({
-      id: 'branding--tagline-tablet--hide-tagline--title',
-      selector: '.app-header__title',
-      styles: titleStyles,
-      screen: 'tablet'
-    });
-  });
-});
-
-/***/ }),
-
 /***/ "./resources/js/customize-preview/panels/branding/tagline/preview.js":
 /*!***************************************************************************!*\
   !*** ./resources/js/customize-preview/panels/branding/tagline/preview.js ***!
@@ -1581,57 +1145,180 @@ wp.customize('branding--tagline--font-styles', function (value) {
       styles: taglineStyles
     });
   });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/branding/title-desktop/preview.js":
-/*!*********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/branding/title-desktop/preview.js ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
+}); // Mobile/Default Styles
 // Font Size
-wp.customize('branding--title-desktop--font-size', function (value) {
+
+wp.customize('branding--tagline--font-size', function (value) {
   value.bind(function (to) {
     rootstrap.var({
-      name: 'branding--title--font-size',
+      name: 'branding--tagline--font-size',
+      value: to,
+      screen: 'default'
+    });
+  });
+}); // Line Height
+
+wp.customize('branding--tagline--line-height', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'branding--tagline--line-height',
+      value: to,
+      screen: 'default'
+    });
+  });
+}); // Gutter
+
+wp.customize('branding--tagline--gutter', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'branding--tagline--gutter',
+      value: to,
+      screen: 'default'
+    });
+  });
+}); // Hide tagline
+
+wp.customize('branding--tagline--hide-tagline', function (value) {
+  value.bind(function (to) {
+    var taglineDisplay = to ? 'none' : 'inline-block';
+    rootstrap.style({
+      id: 'branding--tagline--hide-tagline',
+      selector: '.app-header__description',
+      styles: {
+        'display': taglineDisplay
+      },
+      screen: 'mobile'
+    }); // title styles - center title
+
+    var titleStyles = to ? {
+      'grid-row-end': 'span 2',
+      'align-self': 'center'
+    } : {
+      'grid-row-end': '2',
+      'align-self': 'end'
+    };
+    rootstrap.style({
+      id: 'branding--tagline--hide-tagline--title',
+      selector: '.app-header__title',
+      styles: titleStyles,
+      screen: 'mobile'
+    });
+  });
+}); // Tablet Styles
+// Font Size
+
+wp.customize('branding--tagline--font-size--tablet', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'branding--tagline--font-size',
+      value: to,
+      screen: 'tablet-and-up'
+    });
+  });
+}); // Line Height
+
+wp.customize('branding--tagline--line-height--tablet', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'branding--tagline--line-height',
+      value: to,
+      screen: 'tablet-and-up'
+    });
+  });
+}); // Gutter
+
+wp.customize('branding--tagline--gutter--tablet', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'branding--tagline--gutter',
+      value: to,
+      screen: 'tablet-and-up'
+    });
+  });
+}); // Hide tagline
+
+wp.customize('branding--tagline--hide-tagline--tablet', function (value) {
+  value.bind(function (to) {
+    var taglineDisplay = to ? 'none' : 'inline-block';
+    rootstrap.style({
+      id: 'branding--tagline--hide-tagline',
+      selector: '.app-header__description',
+      styles: {
+        'display': taglineDisplay
+      },
+      screen: 'tablet'
+    }); // title styles - center title
+
+    var titleStyles = to ? {
+      'grid-row-end': 'span 2',
+      'align-self': 'center'
+    } : {
+      'grid-row-end': '2',
+      'align-self': 'end'
+    };
+    rootstrap.style({
+      id: 'branding--tagline--hide-tagline--tablet--title',
+      selector: '.app-header__title',
+      styles: titleStyles,
+      screen: 'tablet'
+    });
+  });
+}); // Desktop Styles
+// Font Size
+
+wp.customize('branding--tagline--font-size--desktop', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'branding--tagline--font-size',
       value: to,
       screen: 'desktop'
     });
   });
 }); // Line Height
 
-wp.customize('branding--title-desktop--line-height', function (value) {
+wp.customize('branding--tagline--line-height--desktop', function (value) {
   value.bind(function (to) {
     rootstrap.var({
-      name: 'branding--title--line-height',
+      name: 'branding--tagline--line-height',
       value: to,
       screen: 'desktop'
     });
   });
-}); // Hide title
+}); // Gutter
 
-wp.customize('branding--title-desktop--hide-title', function (value) {
+wp.customize('branding--tagline--gutter--desktop', function (value) {
   value.bind(function (to) {
-    var titleDisplay = to ? 'none' : 'inline-block';
+    rootstrap.var({
+      name: 'branding--tagline--gutter',
+      value: to,
+      screen: 'desktop'
+    });
+  });
+}); // Hide tagline
+
+wp.customize('branding--tagline--hide-tagline--desktop', function (value) {
+  value.bind(function (to) {
+    var taglineDisplay = to ? 'none' : 'inline-block';
     rootstrap.style({
-      id: 'branding--title-desktop--hide-title',
-      selector: '.app-header__title',
+      id: 'branding--tagline--hide-tagline--desktop',
+      selector: '.app-header__description',
       styles: {
-        'display': titleDisplay
+        'display': taglineDisplay
       },
+      screen: 'desktop'
+    }); // title styles - center title
+
+    var titleStyles = to ? {
+      'grid-row-end': 'span 2',
+      'align-self': 'center'
+    } : {
+      'grid-row-end': '2',
+      'align-self': 'end'
+    };
+    rootstrap.style({
+      id: 'branding--tagline--hide-tagline--desktop--title',
+      selector: '.app-header__title',
+      styles: titleStyles,
       screen: 'desktop'
     });
   });
@@ -1699,114 +1386,6 @@ wp.customize('branding--title-fixed--line-height', function (value) {
 
 /***/ }),
 
-/***/ "./resources/js/customize-preview/panels/branding/title-mobile/preview.js":
-/*!********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/branding/title-mobile/preview.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('branding--title-mobile--font-size', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'branding--title--font-size',
-      value: to,
-      screen: 'default'
-    });
-  });
-}); // Line Height
-
-wp.customize('branding--title-mobile--line-height', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'branding--title--line-height',
-      value: to,
-      screen: 'default'
-    });
-  });
-}); // Hide title
-
-wp.customize('branding--title-mobile--hide-title', function (value) {
-  value.bind(function (to) {
-    var titleDisplay = to ? 'none' : 'inline-block';
-    rootstrap.style({
-      id: 'branding--title-mobile--hide-title',
-      selector: '.app-header__title',
-      styles: {
-        'display': titleDisplay
-      },
-      screen: 'mobile'
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/branding/title-tablet/preview.js":
-/*!********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/branding/title-tablet/preview.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('branding--title-tablet--font-size', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'branding--title--font-size',
-      value: to,
-      screen: 'tablet-and-up'
-    });
-  });
-}); // Line Height
-
-wp.customize('branding--title-tablet--line-height', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'branding--title--line-height',
-      value: to,
-      screen: 'tablet-and-up'
-    });
-  });
-}); // Hide title
-
-wp.customize('branding--title-tablet--hide-title', function (value) {
-  value.bind(function (to) {
-    var titleDisplay = to ? 'none' : 'inline-block';
-    rootstrap.style({
-      id: 'branding--title-tablet--hide-title',
-      selector: '.app-header__title',
-      styles: {
-        'display': titleDisplay
-      },
-      screen: 'tablet'
-    });
-  });
-});
-
-/***/ }),
-
 /***/ "./resources/js/customize-preview/panels/branding/title/preview.js":
 /*!*************************************************************************!*\
   !*** ./resources/js/customize-preview/panels/branding/title/preview.js ***!
@@ -1860,6 +1439,111 @@ wp.customize('branding--title--font-styles', function (value) {
       id: 'branding--title--font-styles',
       selector: '.app-header__title',
       styles: titleStyles
+    });
+  });
+}); // Mobile/Default Styles
+// Font Size
+
+wp.customize('branding--title-mobile--font-size', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'branding--title--font-size',
+      value: to,
+      screen: 'default'
+    });
+  });
+}); // Line Height
+
+wp.customize('branding--title-mobile--line-height', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'branding--title--line-height',
+      value: to,
+      screen: 'default'
+    });
+  });
+}); // Hide title
+
+wp.customize('branding--title-mobile--hide-title', function (value) {
+  value.bind(function (to) {
+    var titleDisplay = to ? 'none' : 'inline-block';
+    rootstrap.style({
+      id: 'branding--title-mobile--hide-title',
+      selector: '.app-header__title',
+      styles: {
+        'display': titleDisplay
+      },
+      screen: 'mobile'
+    });
+  });
+}); // Tablet Styles
+// Font Size
+
+wp.customize('branding--title--font-size--tablet', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'branding--title--font-size',
+      value: to,
+      screen: 'tablet-and-up'
+    });
+  });
+}); // Line Height
+
+wp.customize('branding--title--line-height--tablet', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'branding--title--line-height',
+      value: to,
+      screen: 'tablet-and-up'
+    });
+  });
+}); // Hide title
+
+wp.customize('branding--title--hide-title--tablet', function (value) {
+  value.bind(function (to) {
+    var titleDisplay = to ? 'none' : 'inline-block';
+    rootstrap.style({
+      id: 'branding--title--hide-title--tablet',
+      selector: '.app-header__title',
+      styles: {
+        'display': titleDisplay
+      },
+      screen: 'tablet'
+    });
+  });
+}); // Desktop Styles
+// Font Size
+
+wp.customize('branding--title--font-size--desktop', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'branding--title--font-size',
+      value: to,
+      screen: 'desktop'
+    });
+  });
+}); // Line Height
+
+wp.customize('branding--title--line-height--desktop', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'branding--title--line-height',
+      value: to,
+      screen: 'desktop'
+    });
+  });
+}); // Hide title
+
+wp.customize('branding--title--hide-title--desktop', function (value) {
+  value.bind(function (to) {
+    var titleDisplay = to ? 'none' : 'inline-block';
+    rootstrap.style({
+      id: 'branding--title--hide-title--desktop',
+      selector: '.app-header__title',
+      styles: {
+        'display': titleDisplay
+      },
+      screen: 'desktop'
     });
   });
 });
@@ -2380,96 +2064,6 @@ wp.customize('footer--bottom-bar--default-color--hover', function (value) {
 
 /***/ }),
 
-/***/ "./resources/js/customize-preview/panels/footer/padding-desktop/preview.js":
-/*!*********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/footer/padding-desktop/preview.js ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Padding
-wp.customize('footer--padding-desktop--padding', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'footer--padding',
-      value: to,
-      screen: 'desktop'
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/footer/padding-mobile/preview.js":
-/*!********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/footer/padding-mobile/preview.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Padding
-wp.customize('footer--padding-mobile--padding', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'footer--padding',
-      value: to,
-      screen: 'default'
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/footer/padding-tablet/preview.js":
-/*!********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/footer/padding-tablet/preview.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Padding
-wp.customize('footer--padding-tablet--padding', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'footer--padding',
-      value: to,
-      screen: 'tablet-and-up'
-    });
-  });
-});
-
-/***/ }),
-
 /***/ "./resources/js/customize-preview/panels/footer/panel.js":
 /*!***************************************************************!*\
   !*** ./resources/js/customize-preview/panels/footer/panel.js ***!
@@ -2481,22 +2075,16 @@ wp.customize('footer--padding-tablet--padding', function (value) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_preview_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/preview.js */ "./resources/js/customize-preview/panels/footer/styles/preview.js");
 /* harmony import */ var _styles_preview_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_preview_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _padding_mobile_preview_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./padding-mobile/preview.js */ "./resources/js/customize-preview/panels/footer/padding-mobile/preview.js");
-/* harmony import */ var _padding_mobile_preview_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_padding_mobile_preview_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _padding_tablet_preview_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./padding-tablet/preview.js */ "./resources/js/customize-preview/panels/footer/padding-tablet/preview.js");
-/* harmony import */ var _padding_tablet_preview_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_padding_tablet_preview_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _padding_desktop_preview_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./padding-desktop/preview.js */ "./resources/js/customize-preview/panels/footer/padding-desktop/preview.js");
-/* harmony import */ var _padding_desktop_preview_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_padding_desktop_preview_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _widgets_preview_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./widgets/preview.js */ "./resources/js/customize-preview/panels/footer/widgets/preview.js");
-/* harmony import */ var _widgets_preview_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_widgets_preview_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _widgets_mobile_preview_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./widgets-mobile/preview.js */ "./resources/js/customize-preview/panels/footer/widgets-mobile/preview.js");
-/* harmony import */ var _widgets_mobile_preview_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_widgets_mobile_preview_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _widgets_tablet_preview_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./widgets-tablet/preview.js */ "./resources/js/customize-preview/panels/footer/widgets-tablet/preview.js");
-/* harmony import */ var _widgets_tablet_preview_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_widgets_tablet_preview_js__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _widgets_desktop_preview_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./widgets-desktop/preview.js */ "./resources/js/customize-preview/panels/footer/widgets-desktop/preview.js");
-/* harmony import */ var _widgets_desktop_preview_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_widgets_desktop_preview_js__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _bottom_bar_preview_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./bottom-bar/preview.js */ "./resources/js/customize-preview/panels/footer/bottom-bar/preview.js");
-/* harmony import */ var _bottom_bar_preview_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_bottom_bar_preview_js__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _widgets_preview_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./widgets/preview.js */ "./resources/js/customize-preview/panels/footer/widgets/preview.js");
+/* harmony import */ var _widgets_preview_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_widgets_preview_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _widgets_mobile_preview_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./widgets-mobile/preview.js */ "./resources/js/customize-preview/panels/footer/widgets-mobile/preview.js");
+/* harmony import */ var _widgets_mobile_preview_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_widgets_mobile_preview_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _widgets_tablet_preview_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./widgets-tablet/preview.js */ "./resources/js/customize-preview/panels/footer/widgets-tablet/preview.js");
+/* harmony import */ var _widgets_tablet_preview_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_widgets_tablet_preview_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _widgets_desktop_preview_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./widgets-desktop/preview.js */ "./resources/js/customize-preview/panels/footer/widgets-desktop/preview.js");
+/* harmony import */ var _widgets_desktop_preview_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_widgets_desktop_preview_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _bottom_bar_preview_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./bottom-bar/preview.js */ "./resources/js/customize-preview/panels/footer/bottom-bar/preview.js");
+/* harmony import */ var _bottom_bar_preview_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_bottom_bar_preview_js__WEBPACK_IMPORTED_MODULE_5__);
 /**
  * Add customizer panel js.
  *
@@ -2508,9 +2096,6 @@ __webpack_require__.r(__webpack_exports__);
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
-
-
-
 
 
 
@@ -2571,6 +2156,46 @@ wp.customize('footer--styles--default-color--hover', function (value) {
         'color': to
       }
     });
+  });
+}); // Padding
+
+wp.customize('footer--styles--padding', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'footer--padding',
+      value: to,
+      screen: 'default'
+    });
+  });
+}); // Padding Tablet
+
+wp.customize('footer--styles--padding--tablet', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'footer--padding',
+      value: to,
+      screen: 'tablet-and-up'
+    });
+  });
+}); // Padding Desktop
+
+wp.customize('footer--styles--padding--desktop', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'footer--padding',
+      value: to,
+      screen: 'desktop'
+    });
+  });
+}); // Fullwidth
+
+wp.customize('footer--styles--fullwidth', function (value) {
+  value.bind(function (to) {
+    if (to) {
+      $('.app-footer').removeClass('app-footer--standard-width').addClass('app-footer--fullwidth');
+    } else {
+      $('.app-footer').removeClass('app-footer--fullwidth').addClass('app-footer--standard-width');
+    }
   });
 });
 
@@ -2936,7 +2561,135 @@ wp.customize('footer--widgets-tablet--gutter', function (value) {
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
 // Default Color
-wp.customize('footer--widgets--footer-layout', function (value) {
+wp.customize('footer--widgets--default-color', function (value) {
+  value.bind(function (to) {
+    rootstrap.style({
+      id: 'footer--widgets--default-color',
+      selector: '.app-footer__widget',
+      styles: {
+        'color': to
+      }
+    });
+  });
+}); // Headings Color
+
+wp.customize('footer--widgets--headings-color', function (value) {
+  value.bind(function (to) {
+    rootstrap.style({
+      id: 'footer--widgets--headings-color',
+      selector: '.app-footer__widget h1, .app-footer__widget h2, .app-footer__widget h3, .app-footer__widget h4, .app-footer__widget h5, .app-footer__widget h6',
+      styles: {
+        'color': to
+      }
+    });
+  });
+}); // Link Color
+
+wp.customize('footer--widgets--link-color', function (value) {
+  value.bind(function (to) {
+    rootstrap.style({
+      id: 'footer--widgets--link-color',
+      selector: '.app-footer__widget a, .app-footer__widget a:visited',
+      styles: {
+        'color': to
+      }
+    });
+  });
+}); // Link Color Hover
+
+wp.customize('footer--widgets--link-color--hover', function (value) {
+  value.bind(function (to) {
+    rootstrap.style({
+      id: 'footer--widgets--link-color--hover',
+      selector: '.app-footer__widget a:hover',
+      styles: {
+        'color': to
+      }
+    });
+  });
+}); // Mobile Styles
+// Default Color
+
+wp.customize('footer--widgets--layout', function (value) {
+  value.bind(function (to) {
+    var footerStyles;
+
+    switch (to) {
+      case 'halves':
+        footerStyles = 'repeat(2, 1fr)';
+        break;
+
+      case 'full':
+        footerStyles = '100%';
+        break;
+
+      default:
+        footerStyles = false;
+    }
+
+    rootstrap.style({
+      id: 'footer--widgets--layout',
+      selector: '.app-footer__widgets',
+      styles: {
+        'grid-template-columns': footerStyles
+      },
+      screen: 'default'
+    });
+  });
+}); // Title Font Size
+
+wp.customize('footer--widgets--title--font-size', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'footer--widgets--title--font-size',
+      value: to,
+      screen: 'default'
+    });
+  });
+}); // Title Line Height
+
+wp.customize('footer--widgets--title--line-height', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'footer--widgets--title--line-height',
+      value: to,
+      screen: 'default'
+    });
+  });
+}); // Text Font Size
+
+wp.customize('footer--widgets--font-size', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'footer--widgets--font-size',
+      value: to,
+      screen: 'default'
+    });
+  });
+}); // Text Line Height
+
+wp.customize('footer--widgets--line-height', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'footer--widgets--line-height',
+      value: to,
+      screen: 'default'
+    });
+  });
+}); // Widgets Spacing
+
+wp.customize('footer--widgets--gutter', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'footer--widgets--gutter',
+      value: to,
+      screen: 'default'
+    });
+  });
+}); // Tablet Styles
+// Layout
+
+wp.customize('footer--widgets--layout--tablet', function (value) {
   value.bind(function (to) {
     var footerStyles;
 
@@ -2978,7 +2731,110 @@ wp.customize('footer--widgets--footer-layout', function (value) {
     }
 
     rootstrap.style({
-      id: 'footer--widgets--footer-layout',
+      id: 'footer--widgets--layout--tablet',
+      selector: '.app-footer__widgets',
+      styles: {
+        'grid-template-columns': footerStyles
+      },
+      screen: 'tablet-and-up'
+    });
+  });
+}); // Title Font Size
+
+wp.customize('footer--widgets--title--font-size--tablet', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'footer--widgets--title--font-size',
+      value: to,
+      screen: 'tablet-and-up'
+    });
+  });
+}); // Title Line Height
+
+wp.customize('footer--widgets--title--line-height--tablet', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'footer--widgets--title--line-height',
+      value: to,
+      screen: 'tablet-and-up'
+    });
+  });
+}); // Text Font Size
+
+wp.customize('footer--widgets--font-size--tablet', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'footer--widgets--font-size',
+      value: to,
+      screen: 'tablet-and-up'
+    });
+  });
+}); // Text Line Height
+
+wp.customize('footer--widgets--line-height--tablet', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'footer--widgets--line-height',
+      value: to,
+      screen: 'tablet-and-up'
+    });
+  });
+}); // Widgets Spacing
+
+wp.customize('footer--widgets--gutter--tablet', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'footer--widgets--gutter',
+      value: to,
+      screen: 'tablet-and-up'
+    });
+  });
+}); // Desktop Styles
+// Layout
+
+wp.customize('footer--widgets--layout--desktop', function (value) {
+  value.bind(function (to) {
+    var footerStyles;
+
+    switch (to) {
+      case 'quarters':
+        footerStyles = 'repeat(4, 1fr)';
+        break;
+
+      case 'thirds':
+        footerStyles = 'repeat(3, 1fr)';
+        break;
+
+      case 'halves':
+        footerStyles = 'repeat(2, 1fr)';
+        break;
+
+      case 'full':
+        footerStyles = '100%';
+        break;
+
+      case 'one-third-two-thirds':
+        footerStyles = '1fr 2fr';
+        break;
+
+      case 'two-thirds-one-third':
+        footerStyles = '2fr 1fr';
+        break;
+
+      case 'quarter-quarter-half':
+        footerStyles = '1fr 1fr 2fr';
+        break;
+
+      case 'half-quarter-quarter':
+        footerStyles = '2fr 1fr 1fr';
+        break;
+
+      default:
+        footerStyles = false;
+    }
+
+    rootstrap.style({
+      id: 'footer--widgets--layout--desktop',
       selector: '.app-footer__widgets',
       styles: {
         'grid-template-columns': footerStyles
@@ -2986,52 +2842,54 @@ wp.customize('footer--widgets--footer-layout', function (value) {
       screen: 'desktop'
     });
   });
-}); // Default Color
+}); // Title Font Size
 
-wp.customize('footer--widgets--default-color', function (value) {
+wp.customize('footer--widgets--title--font-size--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.style({
-      id: 'footer--widgets--default-color',
-      selector: '.app-footer__widget',
-      styles: {
-        'color': to
-      }
+    rootstrap.var({
+      name: 'footer--widgets--title--font-size',
+      value: to,
+      screen: 'desktop'
     });
   });
-}); // Headings Color
+}); // Title Line Height
 
-wp.customize('footer--widgets--headings-color', function (value) {
+wp.customize('footer--widgets--title--line-height--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.style({
-      id: 'footer--widgets--headings-color',
-      selector: '.app-footer__widget h1, .app-footer__widget h2, .app-footer__widget h3, .app-footer__widget h4, .app-footer__widget h5, .app-footer__widget h6',
-      styles: {
-        'color': to
-      }
+    rootstrap.var({
+      name: 'footer--widgets--title--line-height',
+      value: to,
+      screen: 'desktop'
     });
   });
-}); // Link Color
+}); // Text Font Size
 
-wp.customize('footer--widgets--link-color', function (value) {
+wp.customize('footer--widgets--font-size--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.style({
-      id: 'footer--widgets--link-color',
-      selector: '.app-footer__widget a, .app-footer__widget a:visited',
-      styles: {
-        'color': to
-      }
+    rootstrap.var({
+      name: 'footer--widgets--font-size',
+      value: to,
+      screen: 'desktop'
     });
   });
-}); // Link Color
+}); // Text Line Height
 
-wp.customize('footer--widgets--link-color--hover', function (value) {
+wp.customize('footer--widgets--line-height--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.style({
-      id: 'footer--widgets--link-color--hover',
-      selector: '.app-footer__widget a:hover',
-      styles: {
-        'color': to
-      }
+    rootstrap.var({
+      name: 'footer--widgets--line-height',
+      value: to,
+      screen: 'desktop'
+    });
+  });
+}); // Widgets Spacing
+
+wp.customize('footer--widgets--gutter--desktop', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'footer--widgets--gutter',
+      value: to,
+      screen: 'desktop'
     });
   });
 });
@@ -3152,157 +3010,6 @@ wp.customize('header--image--min-height', function (value) {
 
 /***/ }),
 
-/***/ "./resources/js/customize-preview/panels/header/padding-desktop/preview.js":
-/*!*********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/header/padding-desktop/preview.js ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Fullwidth Header
-wp.customize('header--padding-desktop--fullwidth', function (value) {
-  value.bind(function (to) {
-    var headerPadding = wp.customize.instance('header--padding-desktop--padding').get();
-    var contentPadding = wp.customize.instance('layout--content-desktop--content-gutter').get();
-    var padding = to ? headerPadding : contentPadding;
-    rootstrap.style({
-      id: 'header--padding-desktop--fullwidth',
-      selector: '.app-header__container',
-      styles: {
-        'padding-left': padding,
-        'padding-right': padding
-      },
-      screen: 'desktop'
-    });
-    rootstrap.style({
-      id: 'header--padding-desktop--fullwidth-width',
-      selector: '.app-header__container',
-      styles: {
-        'max-width': '100%',
-        'width': '100%'
-      },
-      screen: 'desktop',
-      callback: to
-    });
-  });
-}); // Padding
-
-wp.customize('header--padding-desktop--padding', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'header--padding',
-      value: to,
-      screen: 'desktop'
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/header/padding-fixed/preview.js":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/header/padding-fixed/preview.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Top/Bottom Padding
-wp.customize('header--padding-fixed--padding', function (value) {
-  value.bind(function (to) {
-    rootstrap.style({
-      id: 'header--padding-fixed--padding',
-      selector: '.app-header--fixed .app-header__container',
-      styles: {
-        'padding-top': to,
-        'padding-bottom': to
-      },
-      screen: 'desktop'
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/header/padding-mobile/preview.js":
-/*!********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/header/padding-mobile/preview.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Header Padding
-wp.customize('header--padding-mobile--padding', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'header--padding',
-      value: to,
-      screen: 'default'
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/header/padding-tablet/preview.js":
-/*!********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/header/padding-tablet/preview.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Padding
-wp.customize('header--padding-tablet--padding', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'header--padding',
-      value: to,
-      screen: 'tablet-and-up'
-    });
-  });
-});
-
-/***/ }),
-
 /***/ "./resources/js/customize-preview/panels/header/panel.js":
 /*!***************************************************************!*\
   !*** ./resources/js/customize-preview/panels/header/panel.js ***!
@@ -3316,16 +3023,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_preview_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_preview_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _styles_fixed_preview_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles-fixed/preview.js */ "./resources/js/customize-preview/panels/header/styles-fixed/preview.js");
 /* harmony import */ var _styles_fixed_preview_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_fixed_preview_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _padding_mobile_preview_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./padding-mobile/preview.js */ "./resources/js/customize-preview/panels/header/padding-mobile/preview.js");
-/* harmony import */ var _padding_mobile_preview_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_padding_mobile_preview_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _padding_tablet_preview_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./padding-tablet/preview.js */ "./resources/js/customize-preview/panels/header/padding-tablet/preview.js");
-/* harmony import */ var _padding_tablet_preview_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_padding_tablet_preview_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _padding_desktop_preview_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./padding-desktop/preview.js */ "./resources/js/customize-preview/panels/header/padding-desktop/preview.js");
-/* harmony import */ var _padding_desktop_preview_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_padding_desktop_preview_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _padding_fixed_preview_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./padding-fixed/preview.js */ "./resources/js/customize-preview/panels/header/padding-fixed/preview.js");
-/* harmony import */ var _padding_fixed_preview_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_padding_fixed_preview_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _image_preview_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./image/preview.js */ "./resources/js/customize-preview/panels/header/image/preview.js");
-/* harmony import */ var _image_preview_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_image_preview_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _image_preview_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./image/preview.js */ "./resources/js/customize-preview/panels/header/image/preview.js");
+/* harmony import */ var _image_preview_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_image_preview_js__WEBPACK_IMPORTED_MODULE_2__);
 /**
  * Add customizer panel js.
  *
@@ -3337,10 +3036,6 @@ __webpack_require__.r(__webpack_exports__);
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
-
-
-
-
 
 
 
@@ -3447,6 +3142,36 @@ wp.customize('header--styles--default-color--hover', function (value) {
       }
     });
   });
+}); // Header Padding
+
+wp.customize('header--styles--padding', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'header--padding',
+      value: to,
+      screen: 'default'
+    });
+  });
+}); // Header Padding Tablet
+
+wp.customize('header--styles--padding--tablet', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'header--padding',
+      value: to,
+      screen: 'tablet-and-up'
+    });
+  });
+}); // Header Padding Desktop
+
+wp.customize('header--styles--padding--desktop', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'header--padding',
+      value: to,
+      screen: 'desktop'
+    });
+  });
 });
 
 /***/ }),
@@ -3493,128 +3218,16 @@ wp.customize('layout--boxed--outer-padding', function (value) {
 
 /***/ }),
 
-/***/ "./resources/js/customize-preview/panels/layout/container-desktop/preview.js":
-/*!***********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/layout/container-desktop/preview.js ***!
-  \***********************************************************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../functions-customize-preview.js */ "./resources/js/customize-preview/functions-customize-preview.js");
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
- // Container Width
-
-wp.customize('layout--container-desktop--width', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      screen: 'desktop',
-      name: 'layout--container--width',
-      value: to.replace('vw', '%')
-    });
-    rootstrap.var({
-      screen: 'desktop',
-      name: 'layout--container--padding',
-      value: _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getPaddingFromWidth"](to, 'vw')
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/layout/container-mobile/preview.js":
-/*!**********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/layout/container-mobile/preview.js ***!
-  \**********************************************************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../functions-customize-preview.js */ "./resources/js/customize-preview/functions-customize-preview.js");
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
- // Container Width
-
-wp.customize('layout--container-mobile--width', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'layout--container--width',
-      value: to
-    });
-    rootstrap.var({
-      name: 'layout--container--padding',
-      value: _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getPaddingFromWidth"](to, 'vw')
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/layout/container-tablet/preview.js":
-/*!**********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/layout/container-tablet/preview.js ***!
-  \**********************************************************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../functions-customize-preview.js */ "./resources/js/customize-preview/functions-customize-preview.js");
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
- // Container Width
-
-wp.customize('layout--container-tablet--width', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      screen: 'tablet-and-up',
-      name: 'layout--container--width',
-      value: to
-    });
-    rootstrap.var({
-      screen: 'tablet-and-up',
-      name: 'layout--container--padding',
-      value: _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getPaddingFromWidth"](to, 'vw')
-    });
-  });
-});
-
-/***/ }),
-
 /***/ "./resources/js/customize-preview/panels/layout/container/preview.js":
 /*!***************************************************************************!*\
   !*** ./resources/js/customize-preview/panels/layout/container/preview.js ***!
   \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../functions-customize-preview.js */ "./resources/js/customize-preview/functions-customize-preview.js");
 /**
  * Customize controls preview scripts
  *
@@ -3625,7 +3238,8 @@ wp.customize('layout--container-tablet--width', function (value) {
  * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
-// Max Content Width
+ // Max Content Width
+
 wp.customize('layout--container--max-width', function (value) {
   value.bind(function (to) {
     var styleSelector;
@@ -3644,6 +3258,49 @@ wp.customize('layout--container--max-width', function (value) {
       styles: {
         'max-width': to
       }
+    });
+  });
+}); // Container Width Mobile
+
+wp.customize('layout--container--width', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'layout--container--width',
+      value: to
+    });
+    rootstrap.var({
+      name: 'layout--container--padding',
+      value: _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getPaddingFromWidth"](to, 'vw')
+    });
+  });
+}); // Container Width Tablet
+
+wp.customize('layout--container--width--tablet', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      screen: 'tablet-and-up',
+      name: 'layout--container--width',
+      value: to
+    });
+    rootstrap.var({
+      screen: 'tablet-and-up',
+      name: 'layout--container--padding',
+      value: _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getPaddingFromWidth"](to, 'vw')
+    });
+  });
+}); // Container Width Desktop
+
+wp.customize('layout--container--width--desktop', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      screen: 'desktop',
+      name: 'layout--container--width',
+      value: to.replace('vw', '%')
+    });
+    rootstrap.var({
+      screen: 'desktop',
+      name: 'layout--container--padding',
+      value: _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getPaddingFromWidth"](to, 'vw')
     });
   });
 });
@@ -3691,14 +3348,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _boxed_preview_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./boxed/preview.js */ "./resources/js/customize-preview/panels/layout/boxed/preview.js");
 /* harmony import */ var _boxed_preview_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_boxed_preview_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _container_preview_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./container/preview.js */ "./resources/js/customize-preview/panels/layout/container/preview.js");
-/* harmony import */ var _container_preview_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_container_preview_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _container_mobile_preview_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./container-mobile/preview.js */ "./resources/js/customize-preview/panels/layout/container-mobile/preview.js");
-/* harmony import */ var _container_tablet_preview_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./container-tablet/preview.js */ "./resources/js/customize-preview/panels/layout/container-tablet/preview.js");
-/* harmony import */ var _container_desktop_preview_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./container-desktop/preview.js */ "./resources/js/customize-preview/panels/layout/container-desktop/preview.js");
-/* harmony import */ var _content_preview_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./content/preview.js */ "./resources/js/customize-preview/panels/layout/content/preview.js");
-/* harmony import */ var _content_preview_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_content_preview_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _sidebar_preview_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./sidebar/preview.js */ "./resources/js/customize-preview/panels/layout/sidebar/preview.js");
-/* harmony import */ var _sidebar_preview_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_sidebar_preview_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _content_preview_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./content/preview.js */ "./resources/js/customize-preview/panels/layout/content/preview.js");
+/* harmony import */ var _content_preview_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_content_preview_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _sidebar_preview_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sidebar/preview.js */ "./resources/js/customize-preview/panels/layout/sidebar/preview.js");
+/* harmony import */ var _sidebar_preview_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_sidebar_preview_js__WEBPACK_IMPORTED_MODULE_3__);
 /**
  * Add customizer panel js.
  *
@@ -3710,9 +3363,6 @@ __webpack_require__.r(__webpack_exports__);
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
-
-
-
 
 
 
@@ -5502,12 +5152,6 @@ wp.customize('nav--top--align', function (value) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _title_preview_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./title/preview.js */ "./resources/js/customize-preview/panels/pages/title/preview.js");
-/* harmony import */ var _title_mobile_preview_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./title-mobile/preview.js */ "./resources/js/customize-preview/panels/pages/title-mobile/preview.js");
-/* harmony import */ var _title_mobile_preview_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_title_mobile_preview_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _title_tablet_preview_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./title-tablet/preview.js */ "./resources/js/customize-preview/panels/pages/title-tablet/preview.js");
-/* harmony import */ var _title_tablet_preview_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_title_tablet_preview_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _title_desktop_preview_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./title-desktop/preview.js */ "./resources/js/customize-preview/panels/pages/title-desktop/preview.js");
-/* harmony import */ var _title_desktop_preview_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_title_desktop_preview_js__WEBPACK_IMPORTED_MODULE_3__);
 /**
  * Add customizer panel js.
  *
@@ -5520,129 +5164,6 @@ __webpack_require__.r(__webpack_exports__);
  * @link      https://taproot-theme.com
  */
 
-
-
-
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/pages/title-desktop/preview.js":
-/*!******************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/pages/title-desktop/preview.js ***!
-  \******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('pages--title-desktop--font-size', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'pages--title--font-size',
-      value: to,
-      screen: 'desktop'
-    });
-  });
-}); // Line Height
-
-wp.customize('pages--title-desktop--line-height', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'pages--title--line-height',
-      value: to,
-      screen: 'desktop'
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/pages/title-mobile/preview.js":
-/*!*****************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/pages/title-mobile/preview.js ***!
-  \*****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('pages--title-mobile--font-size', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'pages--title--font-size',
-      value: to,
-      screen: 'default'
-    });
-  });
-}); // Line Height
-
-wp.customize('pages--title-mobile--line-height', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'pages--title--line-height',
-      value: to,
-      screen: 'default'
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/pages/title-tablet/preview.js":
-/*!*****************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/pages/title-tablet/preview.js ***!
-  \*****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('pages--title-tablet--font-size', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'pages--title--font-size',
-      value: to,
-      screen: 'tablet-and-up'
-    });
-  });
-}); // Line Height
-
-wp.customize('pages--title-tablet--line-height', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'pages--title--line-height',
-      value: to,
-      screen: 'tablet-and-up'
-    });
-  });
-});
 
 /***/ }),
 
@@ -5696,6 +5217,66 @@ wp.customize('pages--title--font-styles', function (value) {
       id: 'pages--title--font-styles',
       selector: '.entry__title--page',
       styles: headingsStyles
+    });
+  });
+}); // Font Size
+
+wp.customize('pages--title--font-size', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'pages--title--font-size',
+      value: to,
+      screen: 'default'
+    });
+  });
+}); // Line Height
+
+wp.customize('pages--title--line-height', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'pages--title--line-height',
+      value: to,
+      screen: 'default'
+    });
+  });
+}); // Font Size Tablet
+
+wp.customize('pages--title--font-size--tablet', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'pages--title--font-size',
+      value: to,
+      screen: 'tablet-and-up'
+    });
+  });
+}); // Line Height Tablet
+
+wp.customize('pages--title--line-height--tablet', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'pages--title--line-height',
+      value: to,
+      screen: 'tablet-and-up'
+    });
+  });
+}); // Font Size Desktop
+
+wp.customize('pages--title--font-size--desktop', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'pages--title--font-size',
+      value: to,
+      screen: 'desktop'
+    });
+  });
+}); // Line Height Desktop
+
+wp.customize('pages--title--line-height--desktop', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'pages--title--line-height',
+      value: to,
+      screen: 'desktop'
     });
   });
 });
@@ -5812,16 +5393,10 @@ wp.customize('posts--nav--font-size', function (value) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _title_preview_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./title/preview.js */ "./resources/js/customize-preview/panels/posts/title/preview.js");
-/* harmony import */ var _title_mobile_preview_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./title-mobile/preview.js */ "./resources/js/customize-preview/panels/posts/title-mobile/preview.js");
-/* harmony import */ var _title_mobile_preview_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_title_mobile_preview_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _title_tablet_preview_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./title-tablet/preview.js */ "./resources/js/customize-preview/panels/posts/title-tablet/preview.js");
-/* harmony import */ var _title_tablet_preview_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_title_tablet_preview_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _title_desktop_preview_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./title-desktop/preview.js */ "./resources/js/customize-preview/panels/posts/title-desktop/preview.js");
-/* harmony import */ var _title_desktop_preview_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_title_desktop_preview_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _meta_preview_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./meta/preview.js */ "./resources/js/customize-preview/panels/posts/meta/preview.js");
-/* harmony import */ var _meta_preview_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_meta_preview_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _nav_preview_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./nav/preview.js */ "./resources/js/customize-preview/panels/posts/nav/preview.js");
-/* harmony import */ var _nav_preview_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_nav_preview_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _meta_preview_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./meta/preview.js */ "./resources/js/customize-preview/panels/posts/meta/preview.js");
+/* harmony import */ var _meta_preview_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_meta_preview_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _nav_preview_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nav/preview.js */ "./resources/js/customize-preview/panels/posts/nav/preview.js");
+/* harmony import */ var _nav_preview_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nav_preview_js__WEBPACK_IMPORTED_MODULE_2__);
 /**
  * Add customizer panel js.
  *
@@ -5836,129 +5411,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/posts/title-desktop/preview.js":
-/*!******************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/posts/title-desktop/preview.js ***!
-  \******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('posts--title-desktop--font-size', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'posts--title--font-size',
-      value: to,
-      screen: 'desktop'
-    });
-  });
-}); // Line Height
-
-wp.customize('posts--title-desktop--line-height', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'posts--title--line-height',
-      value: to,
-      screen: 'desktop'
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/posts/title-mobile/preview.js":
-/*!*****************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/posts/title-mobile/preview.js ***!
-  \*****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('posts--title-mobile--font-size', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'posts--title--font-size',
-      value: to,
-      screen: 'default'
-    });
-  });
-}); // Line Height
-
-wp.customize('posts--title-mobile--line-height', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'posts--title--line-height',
-      value: to,
-      screen: 'default'
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/posts/title-tablet/preview.js":
-/*!*****************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/posts/title-tablet/preview.js ***!
-  \*****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('posts--title-tablet--font-size', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'posts--title--font-size',
-      value: to,
-      screen: 'tablet-and-up'
-    });
-  });
-}); // Line Height
-
-wp.customize('posts--title-tablet--line-height', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'posts--title--line-height',
-      value: to,
-      screen: 'tablet-and-up'
-    });
-  });
-});
 
 /***/ }),
 
@@ -6005,6 +5457,66 @@ wp.customize('posts--title--font-styles', function (value) {
       styles: headingsStyles
     });
   });
+}); // Font Size
+
+wp.customize('posts--title--font-size', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'posts--title--font-size',
+      value: to,
+      screen: 'default'
+    });
+  });
+}); // Line Height
+
+wp.customize('posts--title--line-height', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'posts--title--line-height',
+      value: to,
+      screen: 'default'
+    });
+  });
+}); // Font Size Tablet
+
+wp.customize('posts--title--font-size--tablet', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'posts--title--font-size',
+      value: to,
+      screen: 'tablet-and-up'
+    });
+  });
+}); // Line Height Tablet
+
+wp.customize('posts--title--line-height--tablet', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'posts--title--line-height',
+      value: to,
+      screen: 'tablet-and-up'
+    });
+  });
+}); // Font Size Desktop
+
+wp.customize('posts--title--font-size--desktop', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'posts--title--font-size',
+      value: to,
+      screen: 'desktop'
+    });
+  });
+}); // Line Height Desktop
+
+wp.customize('posts--title--line-height--desktop', function (value) {
+  value.bind(function (to) {
+    rootstrap.var({
+      name: 'posts--title--line-height',
+      value: to,
+      screen: 'desktop'
+    });
+  });
 });
 
 /***/ }),
@@ -6028,168 +5540,6 @@ wp.customize('posts--title--font-styles', function (value) {
  * @link      https://taproot-theme.com
  */
 // import './default/preview.js';
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/typography/body-desktop/preview.js":
-/*!**********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/typography/body-desktop/preview.js ***!
-  \**********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('typography--body-desktop--font-size', function (value) {
-  value.bind(function (to) {
-    value.bind(function (to) {
-      rootstrap.var({
-        name: 'typography--body--font-size',
-        value: to,
-        screen: 'desktop'
-      });
-    });
-  });
-}); // Line Height
-
-wp.customize('typography--body-desktop--line-height', function (value) {
-  value.bind(function (to) {
-    value.bind(function (to) {
-      rootstrap.var({
-        name: 'typography--body--line-height',
-        value: to,
-        screen: 'desktop'
-      });
-
-      if (!to.includes('px')) {
-        to += 'em';
-      }
-
-      rootstrap.var({
-        name: 'typography--body--block-spacing',
-        value: to,
-        screen: 'desktop'
-      });
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/typography/body-mobile/preview.js":
-/*!*********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/typography/body-mobile/preview.js ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('typography--body-mobile--font-size', function (value) {
-  value.bind(function (to) {
-    value.bind(function (to) {
-      rootstrap.var({
-        name: 'typography--body--font-size',
-        value: to,
-        screen: 'default'
-      });
-    });
-  });
-}); // Line Height
-
-wp.customize('typography--body-mobile--line-height', function (value) {
-  value.bind(function (to) {
-    value.bind(function (to) {
-      rootstrap.var({
-        name: 'typography--body--line-height',
-        value: to,
-        screen: 'default'
-      });
-
-      if (!to.includes('px')) {
-        to += 'em';
-      }
-
-      rootstrap.var({
-        name: 'typography--body--block-spacing',
-        value: to,
-        screen: 'default'
-      });
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/typography/body-tablet/preview.js":
-/*!*********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/typography/body-tablet/preview.js ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('typography--body-tablet--font-size', function (value) {
-  value.bind(function (to) {
-    value.bind(function (to) {
-      rootstrap.var({
-        name: 'typography--body--font-size',
-        value: to,
-        screen: 'tablet-and-up'
-      });
-    });
-  });
-}); // Line Height
-
-wp.customize('typography--body-tablet--line-height', function (value) {
-  value.bind(function (to) {
-    value.bind(function (to) {
-      rootstrap.var({
-        name: 'typography--body--line-height',
-        value: to,
-        screen: 'tablet-and-up'
-      });
-
-      if (!to.includes('px')) {
-        to += 'em';
-      }
-
-      rootstrap.var({
-        name: 'typography--body--block-spacing',
-        value: to,
-        screen: 'tablet-and-up'
-      });
-    });
-  });
-});
 
 /***/ }),
 
@@ -6228,135 +5578,105 @@ wp.customize('typography--body--font-family', function (value) {
       screen: 'default'
     });
   });
-});
+}); // Font Size Mobile
 
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/typography/h1-desktop/preview.js":
-/*!********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/typography/h1-desktop/preview.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('typography--h1-desktop--font-size', function (value) {
+wp.customize('typography--body--font-size', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
       rootstrap.var({
-        name: 'typography--h1--font-size',
-        value: to,
-        screen: 'desktop'
-      });
-    });
-  });
-}); // Line Height
-
-wp.customize('typography--h1-desktop--line-height', function (value) {
-  value.bind(function (to) {
-    value.bind(function (to) {
-      rootstrap.var({
-        name: 'typography--h1--line-height',
-        value: to,
-        screen: 'desktop'
-      });
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/typography/h1-mobile/preview.js":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/typography/h1-mobile/preview.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('typography--h1-mobile--font-size', function (value) {
-  value.bind(function (to) {
-    value.bind(function (to) {
-      rootstrap.var({
-        name: 'typography--h1--font-size',
+        name: 'typography--body--font-size',
         value: to,
         screen: 'default'
       });
     });
   });
-}); // Line Height
+}); // Line Height Mobile
 
-wp.customize('typography--h1-mobile--line-height', function (value) {
+wp.customize('typography--body--line-height', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
       rootstrap.var({
-        name: 'typography--h1--line-height',
+        name: 'typography--body--line-height',
+        value: to,
+        screen: 'default'
+      });
+
+      if (!to.includes('px')) {
+        to += 'em';
+      }
+
+      rootstrap.var({
+        name: 'typography--body--block-spacing',
         value: to,
         screen: 'default'
       });
     });
   });
-});
+}); // Font Size Tablet
 
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/typography/h1-tablet/preview.js":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/typography/h1-tablet/preview.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('typography--h1-tablet--font-size', function (value) {
+wp.customize('typography--body--font-size--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
       rootstrap.var({
-        name: 'typography--h1--font-size',
+        name: 'typography--body--font-size',
         value: to,
         screen: 'tablet-and-up'
       });
     });
   });
-}); // Line Height
+}); // Line Height Tablet
 
-wp.customize('typography--h1-tablet--line-height', function (value) {
+wp.customize('typography--body--line-height--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
       rootstrap.var({
-        name: 'typography--h1--line-height',
+        name: 'typography--body--line-height',
         value: to,
         screen: 'tablet-and-up'
+      });
+
+      if (!to.includes('px')) {
+        to += 'em';
+      }
+
+      rootstrap.var({
+        name: 'typography--body--block-spacing',
+        value: to,
+        screen: 'tablet-and-up'
+      });
+    });
+  });
+}); // Font Size Desktop
+
+wp.customize('typography--body--font-size--desktop', function (value) {
+  value.bind(function (to) {
+    value.bind(function (to) {
+      rootstrap.var({
+        name: 'typography--body--font-size',
+        value: to,
+        screen: 'desktop'
+      });
+    });
+  });
+}); // Line Height Desktop
+
+wp.customize('typography--body--line-height--desktop', function (value) {
+  value.bind(function (to) {
+    value.bind(function (to) {
+      rootstrap.var({
+        name: 'typography--body--line-height',
+        value: to,
+        screen: 'desktop'
+      });
+
+      if (!to.includes('px')) {
+        to += 'em';
+      }
+
+      rootstrap.var({
+        name: 'typography--body--block-spacing',
+        value: to,
+        screen: 'desktop'
       });
     });
   });
@@ -6423,138 +5743,6 @@ wp.customize('typography--h1--font-styles', function (value) {
 
 /***/ }),
 
-/***/ "./resources/js/customize-preview/panels/typography/h2-desktop/preview.js":
-/*!********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/typography/h2-desktop/preview.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('typography--h2-desktop--font-size', function (value) {
-  value.bind(function (to) {
-    value.bind(function (to) {
-      rootstrap.var({
-        name: 'typography--h2--font-size',
-        value: to,
-        screen: 'desktop'
-      });
-    });
-  });
-}); // Line Height
-
-wp.customize('typography--h2-desktop--line-height', function (value) {
-  value.bind(function (to) {
-    value.bind(function (to) {
-      rootstrap.var({
-        name: 'typography--h2--line-height',
-        value: to,
-        screen: 'desktop'
-      });
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/typography/h2-mobile/preview.js":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/typography/h2-mobile/preview.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('typography--h2-mobile--font-size', function (value) {
-  value.bind(function (to) {
-    value.bind(function (to) {
-      rootstrap.var({
-        name: 'typography--h2--font-size',
-        value: to,
-        screen: 'default'
-      });
-    });
-  });
-}); // Line Height
-
-wp.customize('typography--h2-mobile--line-height', function (value) {
-  value.bind(function (to) {
-    value.bind(function (to) {
-      rootstrap.var({
-        name: 'typography--h2--line-height',
-        value: to,
-        screen: 'default'
-      });
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/typography/h2-tablet/preview.js":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/typography/h2-tablet/preview.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('typography--h2-tablet--font-size', function (value) {
-  value.bind(function (to) {
-    value.bind(function (to) {
-      rootstrap.var({
-        name: 'typography--h2--font-size',
-        value: to,
-        screen: 'tablet-and-up'
-      });
-    });
-  });
-}); // Line Height
-
-wp.customize('typography--h2-tablet--line-height', function (value) {
-  value.bind(function (to) {
-    value.bind(function (to) {
-      rootstrap.var({
-        name: 'typography--h2--line-height',
-        value: to,
-        screen: 'tablet-and-up'
-      });
-    });
-  });
-});
-
-/***/ }),
-
 /***/ "./resources/js/customize-preview/panels/typography/h2/preview.js":
 /*!************************************************************************!*\
   !*** ./resources/js/customize-preview/panels/typography/h2/preview.js ***!
@@ -6610,135 +5798,75 @@ wp.customize('typography--h2--font-styles', function (value) {
       styles: h2Styles
     });
   });
-});
+}); // Font Size Mobile
 
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/typography/h3-desktop/preview.js":
-/*!********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/typography/h3-desktop/preview.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('typography--h3-desktop--font-size', function (value) {
+wp.customize('typography--h2--font-size', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
       rootstrap.var({
-        name: 'typography--h3--font-size',
-        value: to,
-        screen: 'desktop'
-      });
-    });
-  });
-}); // Line Height
-
-wp.customize('typography--h3-desktop--line-height', function (value) {
-  value.bind(function (to) {
-    value.bind(function (to) {
-      rootstrap.var({
-        name: 'typography--h3--line-height',
-        value: to,
-        screen: 'desktop'
-      });
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/typography/h3-mobile/preview.js":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/typography/h3-mobile/preview.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('typography--h3-mobile--font-size', function (value) {
-  value.bind(function (to) {
-    value.bind(function (to) {
-      rootstrap.var({
-        name: 'typography--h3--font-size',
+        name: 'typography--h2--font-size',
         value: to,
         screen: 'default'
       });
     });
   });
-}); // Line Height
+}); // Line Height Mobile
 
-wp.customize('typography--h3-mobile--line-height', function (value) {
+wp.customize('typography--h2--line-height', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
       rootstrap.var({
-        name: 'typography--h3--line-height',
+        name: 'typography--h2--line-height',
         value: to,
         screen: 'default'
       });
     });
   });
-});
+}); // Font Size Tablet
 
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/typography/h3-tablet/preview.js":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/typography/h3-tablet/preview.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('typography--h3-tablet--font-size', function (value) {
+wp.customize('typography--h2--font-size--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
       rootstrap.var({
-        name: 'typography--h3--font-size',
+        name: 'typography--h2--font-size',
         value: to,
         screen: 'tablet-and-up'
       });
     });
   });
-}); // Line Height
+}); // Line Height Tablet
 
-wp.customize('typography--h3-tablet--line-height', function (value) {
+wp.customize('typography--h2--line-height--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
       rootstrap.var({
-        name: 'typography--h3--line-height',
+        name: 'typography--h2--line-height',
         value: to,
         screen: 'tablet-and-up'
+      });
+    });
+  });
+}); // Font Size Desktop
+
+wp.customize('typography--h2--font-size--desktop', function (value) {
+  value.bind(function (to) {
+    value.bind(function (to) {
+      rootstrap.var({
+        name: 'typography--h2--font-size',
+        value: to,
+        screen: 'desktop'
+      });
+    });
+  });
+}); // Line Height Desktop
+
+wp.customize('typography--h2--line-height--desktop', function (value) {
+  value.bind(function (to) {
+    value.bind(function (to) {
+      rootstrap.var({
+        name: 'typography--h2--line-height',
+        value: to,
+        screen: 'desktop'
       });
     });
   });
@@ -6801,135 +5929,75 @@ wp.customize('typography--h3--font-styles', function (value) {
       styles: h3Styles
     });
   });
-});
+}); // Font Size Mobile
 
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/typography/h4-desktop/preview.js":
-/*!********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/typography/h4-desktop/preview.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('typography--h4-desktop--font-size', function (value) {
+wp.customize('typography--h3--font-size', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
       rootstrap.var({
-        name: 'typography--h4--font-size',
-        value: to,
-        screen: 'desktop'
-      });
-    });
-  });
-}); // Line Height
-
-wp.customize('typography--h4-desktop--line-height', function (value) {
-  value.bind(function (to) {
-    value.bind(function (to) {
-      rootstrap.var({
-        name: 'typography--h4--line-height',
-        value: to,
-        screen: 'desktop'
-      });
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/typography/h4-mobile/preview.js":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/typography/h4-mobile/preview.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('typography--h4-mobile--font-size', function (value) {
-  value.bind(function (to) {
-    value.bind(function (to) {
-      rootstrap.var({
-        name: 'typography--h4--font-size',
+        name: 'typography--h3--font-size',
         value: to,
         screen: 'default'
       });
     });
   });
-}); // Line Height
+}); // Line Height Mobile
 
-wp.customize('typography--h4-mobile--line-height', function (value) {
+wp.customize('typography--h3--line-height', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
       rootstrap.var({
-        name: 'typography--h4--line-height',
+        name: 'typography--h3--line-height',
         value: to,
         screen: 'default'
       });
     });
   });
-});
+}); // Font Size Tablet
 
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/typography/h4-tablet/preview.js":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/typography/h4-tablet/preview.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('typography--h4-tablet--font-size', function (value) {
+wp.customize('typography--h3--font-size--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
       rootstrap.var({
-        name: 'typography--h4--font-size',
+        name: 'typography--h3--font-size',
         value: to,
         screen: 'tablet-and-up'
       });
     });
   });
-}); // Line Height
+}); // Line Height Tablet
 
-wp.customize('typography--h4-tablet--line-height', function (value) {
+wp.customize('typography--h3--line-height--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
       rootstrap.var({
-        name: 'typography--h4--line-height',
+        name: 'typography--h3--line-height',
         value: to,
         screen: 'tablet-and-up'
+      });
+    });
+  });
+}); // Font Size Desktop
+
+wp.customize('typography--h3--font-size--desktop', function (value) {
+  value.bind(function (to) {
+    value.bind(function (to) {
+      rootstrap.var({
+        name: 'typography--h3--font-size',
+        value: to,
+        screen: 'desktop'
+      });
+    });
+  });
+}); // Line Height Desktop
+
+wp.customize('typography--h3--line-height--desktop', function (value) {
+  value.bind(function (to) {
+    value.bind(function (to) {
+      rootstrap.var({
+        name: 'typography--h3--line-height',
+        value: to,
+        screen: 'desktop'
       });
     });
   });
@@ -6992,135 +6060,75 @@ wp.customize('typography--h4--font-styles', function (value) {
       styles: h4Styles
     });
   });
-});
+}); // Font Size Mobile
 
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/typography/h5-desktop/preview.js":
-/*!********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/typography/h5-desktop/preview.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('typography--h5-desktop--font-size', function (value) {
+wp.customize('typography--h4--font-size', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
       rootstrap.var({
-        name: 'typography--h5--font-size',
-        value: to,
-        screen: 'desktop'
-      });
-    });
-  });
-}); // Line Height
-
-wp.customize('typography--h5-desktop--line-height', function (value) {
-  value.bind(function (to) {
-    value.bind(function (to) {
-      rootstrap.var({
-        name: 'typography--h5--line-height',
-        value: to,
-        screen: 'desktop'
-      });
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/typography/h5-mobile/preview.js":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/typography/h5-mobile/preview.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('typography--h5-mobile--font-size', function (value) {
-  value.bind(function (to) {
-    value.bind(function (to) {
-      rootstrap.var({
-        name: 'typography--h5--font-size',
+        name: 'typography--h4--font-size',
         value: to,
         screen: 'default'
       });
     });
   });
-}); // Line Height
+}); // Line Height Mobile
 
-wp.customize('typography--h5-mobile--line-height', function (value) {
+wp.customize('typography--h4--line-height', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
       rootstrap.var({
-        name: 'typography--h5--line-height',
+        name: 'typography--h4--line-height',
         value: to,
         screen: 'default'
       });
     });
   });
-});
+}); // Font Size Tablet
 
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/typography/h5-tablet/preview.js":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/typography/h5-tablet/preview.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('typography--h5-tablet--font-size', function (value) {
+wp.customize('typography--h4--font-size--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
       rootstrap.var({
-        name: 'typography--h5--font-size',
+        name: 'typography--h4--font-size',
         value: to,
         screen: 'tablet-and-up'
       });
     });
   });
-}); // Line Height
+}); // Line Height Tablet
 
-wp.customize('typography--h5-tablet--line-height', function (value) {
+wp.customize('typography--h4--line-height--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
       rootstrap.var({
-        name: 'typography--h5--line-height',
+        name: 'typography--h4--line-height',
         value: to,
         screen: 'tablet-and-up'
+      });
+    });
+  });
+}); // Font Size Desktop
+
+wp.customize('typography--h4--font-size--desktop', function (value) {
+  value.bind(function (to) {
+    value.bind(function (to) {
+      rootstrap.var({
+        name: 'typography--h4--font-size',
+        value: to,
+        screen: 'desktop'
+      });
+    });
+  });
+}); // Line Height Desktop
+
+wp.customize('typography--h4--line-height--desktop', function (value) {
+  value.bind(function (to) {
+    value.bind(function (to) {
+      rootstrap.var({
+        name: 'typography--h4--line-height',
+        value: to,
+        screen: 'desktop'
       });
     });
   });
@@ -7183,135 +6191,75 @@ wp.customize('typography--h5--font-styles', function (value) {
       styles: h5Styles
     });
   });
-});
+}); // Font Size Mobile
 
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/typography/h6-desktop/preview.js":
-/*!********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/typography/h6-desktop/preview.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('typography--h6-desktop--font-size', function (value) {
+wp.customize('typography--h5--font-size', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
       rootstrap.var({
-        name: 'typography--h6--font-size',
-        value: to,
-        screen: 'desktop'
-      });
-    });
-  });
-}); // Line Height
-
-wp.customize('typography--h6-desktop--line-height', function (value) {
-  value.bind(function (to) {
-    value.bind(function (to) {
-      rootstrap.var({
-        name: 'typography--h6--line-height',
-        value: to,
-        screen: 'desktop'
-      });
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/typography/h6-mobile/preview.js":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/typography/h6-mobile/preview.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('typography--h6-mobile--font-size', function (value) {
-  value.bind(function (to) {
-    value.bind(function (to) {
-      rootstrap.var({
-        name: 'typography--h6--font-size',
+        name: 'typography--h5--font-size',
         value: to,
         screen: 'default'
       });
     });
   });
-}); // Line Height
+}); // Line Height Mobile
 
-wp.customize('typography--h6-mobile--line-height', function (value) {
+wp.customize('typography--h5--line-height', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
       rootstrap.var({
-        name: 'typography--h6--line-height',
+        name: 'typography--h5--line-height',
         value: to,
         screen: 'default'
       });
     });
   });
-});
+}); // Font Size Tablet
 
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/typography/h6-tablet/preview.js":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/typography/h6-tablet/preview.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('typography--h6-tablet--font-size', function (value) {
+wp.customize('typography--h5--font-size--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
       rootstrap.var({
-        name: 'typography--h6--font-size',
+        name: 'typography--h5--font-size',
         value: to,
         screen: 'tablet-and-up'
       });
     });
   });
-}); // Line Height
+}); // Line Height Tablet
 
-wp.customize('typography--h6-tablet--line-height', function (value) {
+wp.customize('typography--h5--line-height--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
       rootstrap.var({
-        name: 'typography--h6--line-height',
+        name: 'typography--h5--line-height',
         value: to,
         screen: 'tablet-and-up'
+      });
+    });
+  });
+}); // Font Size Desktop
+
+wp.customize('typography--h5--font-size--desktop', function (value) {
+  value.bind(function (to) {
+    value.bind(function (to) {
+      rootstrap.var({
+        name: 'typography--h5--font-size',
+        value: to,
+        screen: 'desktop'
+      });
+    });
+  });
+}); // Line Height Desktop
+
+wp.customize('typography--h5--line-height--desktop', function (value) {
+  value.bind(function (to) {
+    value.bind(function (to) {
+      rootstrap.var({
+        name: 'typography--h5--line-height',
+        value: to,
+        screen: 'desktop'
       });
     });
   });
@@ -7372,6 +6320,78 @@ wp.customize('typography--h6--font-styles', function (value) {
       id: 'typography--h6--font-styles',
       selector: 'h6',
       styles: h6Styles
+    });
+  });
+}); // Font Size Mobile
+
+wp.customize('typography--h6--font-size', function (value) {
+  value.bind(function (to) {
+    value.bind(function (to) {
+      rootstrap.var({
+        name: 'typography--h6--font-size',
+        value: to,
+        screen: 'default'
+      });
+    });
+  });
+}); // Line Height Mobile
+
+wp.customize('typography--h6--line-height', function (value) {
+  value.bind(function (to) {
+    value.bind(function (to) {
+      rootstrap.var({
+        name: 'typography--h6--line-height',
+        value: to,
+        screen: 'default'
+      });
+    });
+  });
+}); // Font Size Tablet
+
+wp.customize('typography--h6--font-size--tablet', function (value) {
+  value.bind(function (to) {
+    value.bind(function (to) {
+      rootstrap.var({
+        name: 'typography--h6--font-size',
+        value: to,
+        screen: 'tablet-and-up'
+      });
+    });
+  });
+}); // Line Height Tablet
+
+wp.customize('typography--h6--line-height--tablet', function (value) {
+  value.bind(function (to) {
+    value.bind(function (to) {
+      rootstrap.var({
+        name: 'typography--h6--line-height',
+        value: to,
+        screen: 'tablet-and-up'
+      });
+    });
+  });
+}); // Font Size Desktop
+
+wp.customize('typography--h6--font-size--desktop', function (value) {
+  value.bind(function (to) {
+    value.bind(function (to) {
+      rootstrap.var({
+        name: 'typography--h6--font-size',
+        value: to,
+        screen: 'desktop'
+      });
+    });
+  });
+}); // Line Height Desktop
+
+wp.customize('typography--h6--line-height--desktop', function (value) {
+  value.bind(function (to) {
+    value.bind(function (to) {
+      rootstrap.var({
+        name: 'typography--h6--line-height',
+        value: to,
+        screen: 'desktop'
+      });
     });
   });
 });
@@ -7542,63 +6562,17 @@ wp.customize('typography--links--underline', function (value) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _body_preview_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./body/preview.js */ "./resources/js/customize-preview/panels/typography/body/preview.js");
 /* harmony import */ var _body_preview_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_body_preview_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _body_mobile_preview_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./body-mobile/preview.js */ "./resources/js/customize-preview/panels/typography/body-mobile/preview.js");
-/* harmony import */ var _body_mobile_preview_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_body_mobile_preview_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _body_tablet_preview_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./body-tablet/preview.js */ "./resources/js/customize-preview/panels/typography/body-tablet/preview.js");
-/* harmony import */ var _body_tablet_preview_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_body_tablet_preview_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _body_desktop_preview_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./body-desktop/preview.js */ "./resources/js/customize-preview/panels/typography/body-desktop/preview.js");
-/* harmony import */ var _body_desktop_preview_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_body_desktop_preview_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _headings_preview_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./headings/preview.js */ "./resources/js/customize-preview/panels/typography/headings/preview.js");
-/* harmony import */ var _h1_preview_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./h1/preview.js */ "./resources/js/customize-preview/panels/typography/h1/preview.js");
-/* harmony import */ var _h2_preview_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./h2/preview.js */ "./resources/js/customize-preview/panels/typography/h2/preview.js");
-/* harmony import */ var _h3_preview_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./h3/preview.js */ "./resources/js/customize-preview/panels/typography/h3/preview.js");
-/* harmony import */ var _h4_preview_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./h4/preview.js */ "./resources/js/customize-preview/panels/typography/h4/preview.js");
-/* harmony import */ var _h5_preview_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./h5/preview.js */ "./resources/js/customize-preview/panels/typography/h5/preview.js");
-/* harmony import */ var _h6_preview_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./h6/preview.js */ "./resources/js/customize-preview/panels/typography/h6/preview.js");
-/* harmony import */ var _h1_mobile_preview_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./h1-mobile/preview.js */ "./resources/js/customize-preview/panels/typography/h1-mobile/preview.js");
-/* harmony import */ var _h1_mobile_preview_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_h1_mobile_preview_js__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _h2_mobile_preview_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./h2-mobile/preview.js */ "./resources/js/customize-preview/panels/typography/h2-mobile/preview.js");
-/* harmony import */ var _h2_mobile_preview_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_h2_mobile_preview_js__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _h3_mobile_preview_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./h3-mobile/preview.js */ "./resources/js/customize-preview/panels/typography/h3-mobile/preview.js");
-/* harmony import */ var _h3_mobile_preview_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_h3_mobile_preview_js__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _h4_mobile_preview_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./h4-mobile/preview.js */ "./resources/js/customize-preview/panels/typography/h4-mobile/preview.js");
-/* harmony import */ var _h4_mobile_preview_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_h4_mobile_preview_js__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _h5_mobile_preview_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./h5-mobile/preview.js */ "./resources/js/customize-preview/panels/typography/h5-mobile/preview.js");
-/* harmony import */ var _h5_mobile_preview_js__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_h5_mobile_preview_js__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var _h6_mobile_preview_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./h6-mobile/preview.js */ "./resources/js/customize-preview/panels/typography/h6-mobile/preview.js");
-/* harmony import */ var _h6_mobile_preview_js__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_h6_mobile_preview_js__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var _h1_tablet_preview_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./h1-tablet/preview.js */ "./resources/js/customize-preview/panels/typography/h1-tablet/preview.js");
-/* harmony import */ var _h1_tablet_preview_js__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_h1_tablet_preview_js__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var _h2_tablet_preview_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./h2-tablet/preview.js */ "./resources/js/customize-preview/panels/typography/h2-tablet/preview.js");
-/* harmony import */ var _h2_tablet_preview_js__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_h2_tablet_preview_js__WEBPACK_IMPORTED_MODULE_18__);
-/* harmony import */ var _h3_tablet_preview_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./h3-tablet/preview.js */ "./resources/js/customize-preview/panels/typography/h3-tablet/preview.js");
-/* harmony import */ var _h3_tablet_preview_js__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_h3_tablet_preview_js__WEBPACK_IMPORTED_MODULE_19__);
-/* harmony import */ var _h4_tablet_preview_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./h4-tablet/preview.js */ "./resources/js/customize-preview/panels/typography/h4-tablet/preview.js");
-/* harmony import */ var _h4_tablet_preview_js__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_h4_tablet_preview_js__WEBPACK_IMPORTED_MODULE_20__);
-/* harmony import */ var _h5_tablet_preview_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./h5-tablet/preview.js */ "./resources/js/customize-preview/panels/typography/h5-tablet/preview.js");
-/* harmony import */ var _h5_tablet_preview_js__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_h5_tablet_preview_js__WEBPACK_IMPORTED_MODULE_21__);
-/* harmony import */ var _h6_tablet_preview_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./h6-tablet/preview.js */ "./resources/js/customize-preview/panels/typography/h6-tablet/preview.js");
-/* harmony import */ var _h6_tablet_preview_js__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(_h6_tablet_preview_js__WEBPACK_IMPORTED_MODULE_22__);
-/* harmony import */ var _h1_desktop_preview_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./h1-desktop/preview.js */ "./resources/js/customize-preview/panels/typography/h1-desktop/preview.js");
-/* harmony import */ var _h1_desktop_preview_js__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(_h1_desktop_preview_js__WEBPACK_IMPORTED_MODULE_23__);
-/* harmony import */ var _h2_desktop_preview_js__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./h2-desktop/preview.js */ "./resources/js/customize-preview/panels/typography/h2-desktop/preview.js");
-/* harmony import */ var _h2_desktop_preview_js__WEBPACK_IMPORTED_MODULE_24___default = /*#__PURE__*/__webpack_require__.n(_h2_desktop_preview_js__WEBPACK_IMPORTED_MODULE_24__);
-/* harmony import */ var _h3_desktop_preview_js__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./h3-desktop/preview.js */ "./resources/js/customize-preview/panels/typography/h3-desktop/preview.js");
-/* harmony import */ var _h3_desktop_preview_js__WEBPACK_IMPORTED_MODULE_25___default = /*#__PURE__*/__webpack_require__.n(_h3_desktop_preview_js__WEBPACK_IMPORTED_MODULE_25__);
-/* harmony import */ var _h4_desktop_preview_js__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./h4-desktop/preview.js */ "./resources/js/customize-preview/panels/typography/h4-desktop/preview.js");
-/* harmony import */ var _h4_desktop_preview_js__WEBPACK_IMPORTED_MODULE_26___default = /*#__PURE__*/__webpack_require__.n(_h4_desktop_preview_js__WEBPACK_IMPORTED_MODULE_26__);
-/* harmony import */ var _h5_desktop_preview_js__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./h5-desktop/preview.js */ "./resources/js/customize-preview/panels/typography/h5-desktop/preview.js");
-/* harmony import */ var _h5_desktop_preview_js__WEBPACK_IMPORTED_MODULE_27___default = /*#__PURE__*/__webpack_require__.n(_h5_desktop_preview_js__WEBPACK_IMPORTED_MODULE_27__);
-/* harmony import */ var _h6_desktop_preview_js__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./h6-desktop/preview.js */ "./resources/js/customize-preview/panels/typography/h6-desktop/preview.js");
-/* harmony import */ var _h6_desktop_preview_js__WEBPACK_IMPORTED_MODULE_28___default = /*#__PURE__*/__webpack_require__.n(_h6_desktop_preview_js__WEBPACK_IMPORTED_MODULE_28__);
-/* harmony import */ var _links_preview_js__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./links/preview.js */ "./resources/js/customize-preview/panels/typography/links/preview.js");
-/* harmony import */ var _links_preview_js__WEBPACK_IMPORTED_MODULE_29___default = /*#__PURE__*/__webpack_require__.n(_links_preview_js__WEBPACK_IMPORTED_MODULE_29__);
-/* harmony import */ var _sidebar_mobile_preview_js__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./sidebar-mobile/preview.js */ "./resources/js/customize-preview/panels/typography/sidebar-mobile/preview.js");
-/* harmony import */ var _sidebar_mobile_preview_js__WEBPACK_IMPORTED_MODULE_30___default = /*#__PURE__*/__webpack_require__.n(_sidebar_mobile_preview_js__WEBPACK_IMPORTED_MODULE_30__);
-/* harmony import */ var _sidebar_tablet_preview_js__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./sidebar-tablet/preview.js */ "./resources/js/customize-preview/panels/typography/sidebar-tablet/preview.js");
-/* harmony import */ var _sidebar_tablet_preview_js__WEBPACK_IMPORTED_MODULE_31___default = /*#__PURE__*/__webpack_require__.n(_sidebar_tablet_preview_js__WEBPACK_IMPORTED_MODULE_31__);
-/* harmony import */ var _sidebar_desktop_preview_js__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./sidebar-desktop/preview.js */ "./resources/js/customize-preview/panels/typography/sidebar-desktop/preview.js");
-/* harmony import */ var _sidebar_desktop_preview_js__WEBPACK_IMPORTED_MODULE_32___default = /*#__PURE__*/__webpack_require__.n(_sidebar_desktop_preview_js__WEBPACK_IMPORTED_MODULE_32__);
+/* harmony import */ var _headings_preview_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./headings/preview.js */ "./resources/js/customize-preview/panels/typography/headings/preview.js");
+/* harmony import */ var _h1_preview_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./h1/preview.js */ "./resources/js/customize-preview/panels/typography/h1/preview.js");
+/* harmony import */ var _h2_preview_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./h2/preview.js */ "./resources/js/customize-preview/panels/typography/h2/preview.js");
+/* harmony import */ var _h3_preview_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./h3/preview.js */ "./resources/js/customize-preview/panels/typography/h3/preview.js");
+/* harmony import */ var _h4_preview_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./h4/preview.js */ "./resources/js/customize-preview/panels/typography/h4/preview.js");
+/* harmony import */ var _h5_preview_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./h5/preview.js */ "./resources/js/customize-preview/panels/typography/h5/preview.js");
+/* harmony import */ var _h6_preview_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./h6/preview.js */ "./resources/js/customize-preview/panels/typography/h6/preview.js");
+/* harmony import */ var _links_preview_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./links/preview.js */ "./resources/js/customize-preview/panels/typography/links/preview.js");
+/* harmony import */ var _links_preview_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_links_preview_js__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _sidebar_preview_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./sidebar/preview.js */ "./resources/js/customize-preview/panels/typography/sidebar/preview.js");
+/* harmony import */ var _sidebar_preview_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_sidebar_preview_js__WEBPACK_IMPORTED_MODULE_9__);
 /**
  * Add customizer panel js.
  *
@@ -7621,35 +6595,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /***/ }),
 
-/***/ "./resources/js/customize-preview/panels/typography/sidebar-desktop/preview.js":
-/*!*************************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/typography/sidebar-desktop/preview.js ***!
-  \*************************************************************************************/
+/***/ "./resources/js/customize-preview/panels/typography/sidebar/preview.js":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/customize-preview/panels/typography/sidebar/preview.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -7663,62 +6614,8 @@ __webpack_require__.r(__webpack_exports__);
  * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
-// Font Size
-wp.customize('typography--sidebar-desktop--font-size', function (value) {
-  value.bind(function (to) {
-    value.bind(function (to) {
-      rootstrap.var({
-        name: 'typography--sidebar--font-size',
-        value: to,
-        screen: 'desktop'
-      });
-    });
-  });
-}); // Line Height
-
-wp.customize('typography--sidebar-desktop--line-height', function (value) {
-  value.bind(function (to) {
-    value.bind(function (to) {
-      rootstrap.var({
-        name: 'typography--sidebar--line-height',
-        value: to,
-        screen: 'desktop'
-      });
-
-      if (!to.includes('px')) {
-        to += 'em';
-      }
-
-      rootstrap.var({
-        name: 'typography--sidebar--block-spacing',
-        value: to,
-        screen: 'desktop'
-      });
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/typography/sidebar-mobile/preview.js":
-/*!************************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/typography/sidebar-mobile/preview.js ***!
-  \************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('typography--sidebar-mobile--font-size', function (value) {
+// Font Size Mobile
+wp.customize('typography--sidebar--font-size', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
       rootstrap.var({
@@ -7728,9 +6625,9 @@ wp.customize('typography--sidebar-mobile--font-size', function (value) {
       });
     });
   });
-}); // Line Height
+}); // Line Height Mobile
 
-wp.customize('typography--sidebar-mobile--line-height', function (value) {
+wp.customize('typography--sidebar--line-height', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
       rootstrap.var({
@@ -7750,29 +6647,9 @@ wp.customize('typography--sidebar-mobile--line-height', function (value) {
       });
     });
   });
-});
+}); // Font Size Tablet
 
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/typography/sidebar-tablet/preview.js":
-/*!************************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/typography/sidebar-tablet/preview.js ***!
-  \************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Font Size
-wp.customize('typography--sidebar-tablet--font-size', function (value) {
+wp.customize('typography--sidebar--font-size--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
       rootstrap.var({
@@ -7782,9 +6659,9 @@ wp.customize('typography--sidebar-tablet--font-size', function (value) {
       });
     });
   });
-}); // Line Height
+}); // Line Height Tablet
 
-wp.customize('typography--sidebar-tablet--line-height', function (value) {
+wp.customize('typography--sidebar--line-height--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
       rootstrap.var({
@@ -7801,6 +6678,40 @@ wp.customize('typography--sidebar-tablet--line-height', function (value) {
         name: 'typography--sidebar--block-spacing',
         value: to,
         screen: 'tablet-and-up'
+      });
+    });
+  });
+}); // Font Size Desktop
+
+wp.customize('typography--sidebar--font-size--desktop', function (value) {
+  value.bind(function (to) {
+    value.bind(function (to) {
+      rootstrap.var({
+        name: 'typography--sidebar--font-size',
+        value: to,
+        screen: 'desktop'
+      });
+    });
+  });
+}); // Line Height Desktop
+
+wp.customize('typography--sidebar--line-height--desktop', function (value) {
+  value.bind(function (to) {
+    value.bind(function (to) {
+      rootstrap.var({
+        name: 'typography--sidebar--line-height',
+        value: to,
+        screen: 'desktop'
+      });
+
+      if (!to.includes('px')) {
+        to += 'em';
+      }
+
+      rootstrap.var({
+        name: 'typography--sidebar--block-spacing',
+        value: to,
+        screen: 'desktop'
       });
     });
   });

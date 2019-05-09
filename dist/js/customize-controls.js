@@ -101,6 +101,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _customize_controls_Range_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_customize_controls_Range_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _customize_controls_FontStyles_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./customize-controls/FontStyles.js */ "./resources/js/customize-controls/FontStyles.js");
 /* harmony import */ var _customize_controls_FontStyles_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_customize_controls_FontStyles_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _customize_controls_DevicePicker_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./customize-controls/DevicePicker.js */ "./resources/js/customize-controls/DevicePicker.js");
+/* harmony import */ var _customize_controls_DevicePicker_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_customize_controls_DevicePicker_js__WEBPACK_IMPORTED_MODULE_3__);
 /**
  * Customize controls script.
  *
@@ -114,6 +116,7 @@ __webpack_require__.r(__webpack_exports__);
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
+
 
 
 
@@ -432,6 +435,70 @@ wp.customize.controlConstructor['alpha-color'] = wp.customize.Control.extend({
 
 /***/ }),
 
+/***/ "./resources/js/customize-controls/DevicePicker.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/customize-controls/DevicePicker.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+/**
+ * Device Picker
+ *
+ * This file handles the JavaScript for the device picker
+ * that is a component of our responsive control types.
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2019 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ */
+var DevicePicker =
+/*#__PURE__*/
+function () {
+  function DevicePicker() {
+    _classCallCheck(this, DevicePicker);
+
+    this.handlers();
+  }
+
+  _createClass(DevicePicker, [{
+    key: "handlers",
+    value: function handlers() {
+      var api = wp.customize;
+      document.querySelectorAll('.device-picker__device').forEach(function (device) {
+        device.addEventListener('click', function (e) {
+          var $this = e.target;
+          var device = $this.dataset.device;
+          $this.parentElement.setAttribute('data-current-device', device);
+          api.previewedDevice.set(device);
+          document.querySelectorAll('.device-picker').forEach(function (picker) {
+            picker.dataset.currentDevice = device;
+          });
+        });
+      });
+    }
+  }]);
+
+  return DevicePicker;
+}();
+/**
+ * Run on document ready
+ */
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  var devicePicker = new DevicePicker();
+});
+
+/***/ }),
+
 /***/ "./resources/js/customize-controls/FontStyles.js":
 /*!*******************************************************!*\
   !*** ./resources/js/customize-controls/FontStyles.js ***!
@@ -578,72 +645,78 @@ var TaprootRange =
 /*#__PURE__*/
 function () {
   function TaprootRange(control) {
+    var _this = this;
+
     _classCallCheck(this, TaprootRange);
 
     if (!control) {
       return false;
-    } // Set up our attributes
+    }
 
+    control = document.querySelector(control.selector);
+    this.devicePicker = control.querySelector('.device-picker');
+    this.devices = control.querySelectorAll('.device-picker__device');
+    this.controls = control.querySelectorAll('.device-group__item'); // initiate handlers
 
-    $control = jQuery(control.selector);
-    this.$range = $control.find('.taproot-range');
-    this.$rangeInput = $control.find('.taproot-range-input');
-    this.$unit = $control.find('.taproot-unit');
-    this.$reset = $control.find('.taproot-reset-slider');
-    this.$value = $control.find('.taproot-range-value');
-    this.$enable = $control.find('.taproot-range-enable');
-    this.$disable = $control.find('.taproot-range-disable'); // Set up event handlers
-
-    this.handlers();
+    this.controls.forEach(function (control) {
+      _this.handlers(control);
+    });
   } // event handlers for our control
 
 
   _createClass(TaprootRange, [{
     key: "handlers",
-    value: function handlers() {
-      var self = this;
-      self.$range.on('mousedown', function () {
-        var stepPlaces = self.decimalPlaces($(this).attr('step')); // using 'input' instead of 'mousemove' prevents
-        // the value changing after releasing control
-        // Are there other repercussions to this?
+    value: function handlers(control) {
+      var self = this; // Set up our attributes
 
-        $(this).on('input', function () {
+      var range = control.querySelector('.taproot-range');
+      var rangeInput = control.querySelector('.taproot-range-input');
+      var unit = control.querySelector('.taproot-unit');
+      var reset = control.querySelector('.taproot-reset-slider');
+      var val = control.querySelector('.taproot-range-value');
+      var enable = control.querySelector('.taproot-range-enable');
+      range.addEventListener('mousedown', function (e) {
+        var $this = e.target;
+        var stepPlaces = self.decimalPlaces($this.getAttribute('step')); // using 'input' instead of 'mousemove' prevents
+        // the value changing after releasing control
+
+        $this.addEventListener('input', function () {
           // check range step attribute, and adjust input
           // to display using appropriate number of decimal places
-          self.$rangeInput.val(parseFloat($(this).attr('value')).toFixed(stepPlaces));
-          self.updateValue();
+          rangeInput.value = parseFloat($this.value).toFixed(stepPlaces);
+          self.updateValue(val, range, unit);
         });
       });
-      self.$rangeInput.on('change keyup', function () {
-        self.adjustRangeValue($(this), 1000);
-        self.updateValue();
-      }).on('focusout', function () {
-        self.adjustRangeValue($(this), 0);
-        self.updateValue();
+      rangeInput.addEventListener('change', function (e) {
+        var $this = e.target;
+        self.adjustRangeValue($this, 1000);
+        self.updateValue(val, range, unit);
+        $this.addEventListener('focusout', function () {
+          self.adjustRangeValue($this, 0);
+          self.updateValue(val, range, unit);
+        });
       });
-      self.$reset.click(function () {
-        self.reset();
+      reset.addEventListener('click', function () {
+        self.reset(range, rangeInput, unit);
+        self.updateValue(val, range, unit);
       });
-      self.$enable.on('change', function () {
-        self.reset();
+      enable.addEventListener('change', function () {
+        self.reset(range, rangeInput, unit);
+        self.updateValue(val, range, unit);
       });
-      self.$unit.on('change', function () {
-        var value = $(this).val();
-        var $option = $(this).find('option[value="' + value + '"]');
-        var defaultVal = parseFloat($option.attr('default'));
-        self.$range.attr('min', parseFloat($option.attr('min')));
-        self.$range.attr('max', parseFloat($option.attr('max')));
-        self.$range.attr('step', parseFloat($option.attr('step')));
-        self.$range.val(defaultVal);
-        self.$rangeInput.attr('min', parseFloat($option.attr('min')));
-        self.$rangeInput.attr('max', parseFloat($option.attr('max')));
-        self.$rangeInput.attr('step', parseFloat($option.attr('step')));
-        self.$rangeInput.val(defaultVal);
-        self.updateValue();
-      });
-      self.$disable.on('click', function () {
-        self.$enable.prop('checked', false).change();
-        self.$value.val('').change();
+      unit.addEventListener('change', function (e) {
+        var $this = e.target;
+        var option = $this.querySelector('option[value="' + $this.value + '"]');
+        var defaultVal = parseFloat(option.getAttribute('default'));
+        range.setAttribute('min', parseFloat(option.getAttribute('min')));
+        range.setAttribute('max', parseFloat(option.getAttribute('max')));
+        range.setAttribute('step', parseFloat(option.getAttribute('step')));
+        range.value = defaultVal;
+        rangeInput.setAttribute('min', parseFloat(option.getAttribute('min')));
+        rangeInput.setAttribute('max', parseFloat(option.getAttribute('max')));
+        rangeInput.setAttribute('step', parseFloat(option.getAttribute('step')));
+        rangeInput.value = defaultVal;
+        self.updateValue(val, range, unit);
       });
     } // get number of decimal places
 
@@ -659,56 +732,71 @@ function () {
 
   }, {
     key: "reset",
-    value: function reset() {
-      var rangeDefault = this.$range.data('reset_value');
-      var unitDefault = this.$unit.data('reset_value');
-      this.$unit.val(unitDefault).change();
-      this.$range.val(rangeDefault).change();
-      this.$rangeInput.val(rangeDefault).change();
-      this.updateValue();
+    value: function reset(range, rangeInput, unit) {
+      var rangeDefault = range.dataset.reset_value;
+      range.value = rangeDefault;
+      rangeInput.value = rangeDefault;
+      unit.value = unit.dataset.reset_value;
+      this.change(unit);
+      this.change(range);
+      this.change(rangeInput);
     } // update the hidden control that stores the value
 
   }, {
     key: "updateValue",
-    value: function updateValue() {
-      var unit = 'unitless' === this.$unit.val() ? '' : this.$unit.val();
-      this.$value.val(this.$range.val() + unit).change();
+    value: function updateValue(val, range, unit) {
+      unit = 'unitless' === unit.value ? '' : unit.value;
+      val.value = range.value + unit;
+      this.change(val);
     } // handle range adjustments
 
   }, {
     key: "adjustRangeValue",
-    value: function adjustRangeValue($rangeInput, timeout) {
-      var $range = $rangeInput.parent().find('.taproot-range');
-      var value = parseFloat($rangeInput.val());
-      var reset = parseFloat($range.attr('data-reset_value'));
-      var step = parseFloat($rangeInput.attr('step'));
-      var min = parseFloat($rangeInput.attr('min'));
-      var max = parseFloat($rangeInput.attr('max'));
-      clearTimeout(this.rangeTimeout);
-      this.rangeTimeout = setTimeout(function () {
-        if (isNaN(value)) {
-          $rangeInput.val(reset);
-          $range.val(reset).change();
+    value: function adjustRangeValue(rangeInput, timeout) {
+      var self = this;
+      var range = rangeInput.parentElement.querySelector('.taproot-range');
+      var reset = parseFloat(range.dataset.reset_value);
+      var step = parseFloat(rangeInput.getAttribute('step'));
+      var min = parseFloat(rangeInput.getAttribute('min'));
+      var max = parseFloat(rangeInput.getAttribute('max'));
+      var val = parseFloat(rangeInput.value);
+      clearTimeout(self.rangeTimeout);
+      self.rangeTimeout = setTimeout(function () {
+        if (isNaN(val)) {
+          rangeInput.value = reset;
+          range.value = reset;
+          self.change(range);
           return;
         }
 
-        if (1 <= step && 0 !== value % 1) {
-          value = Math.round(value);
-          $rangeInput.val(value);
-          $range.val(value).change();
+        if (1 <= step && 0 !== val % 1) {
+          val = Math.round(val);
+          rangeInput.value = val;
+          range.value = val;
+          self.change(range);
         }
 
-        if (value > max) {
-          $rangeInput.val(max);
-          $range.val(max).change();
+        if (val > max) {
+          rangeInput.value = max;
+          range.value = max;
+          self.change(range);
         }
 
-        if (value < min) {
-          $rangeInput.val(min);
-          $range.val(min).change();
+        if (val < min) {
+          rangeInput.value = min;
+          range.value = min;
+          self.change(range);
         }
       }, timeout);
-      $range.val(value).change();
+      range.value = val;
+      self.change(range);
+    } // trigger change on an input
+
+  }, {
+    key: "change",
+    value: function change(el) {
+      var change = new Event('change');
+      el.dispatchEvent(change);
     }
   }]);
 
@@ -719,7 +807,7 @@ function () {
  */
 
 
-wp.customize.controlConstructor['taproot-range'] = wp.customize.Control.extend({
+wp.customize.controlConstructor['range'] = wp.customize.Control.extend({
   ready: function ready() {
     var range = new TaprootRange(this);
   }

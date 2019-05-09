@@ -52,3 +52,26 @@ $styles->add([
         'color' => theme_mod( 'header--styles--default-color--hover' ),
     ],
 ]);
+
+
+// Var: Padding
+$styles->add_var([
+    'name' => 'header--padding',
+    'value' => theme_mod( 'header--styles--padding' ),
+]);
+
+
+// Var: Padding Tablet
+$styles->add_var([
+    'name' => 'header--padding',
+    'value' => theme_mod( 'header--styles--padding--tablet' ),
+    'screen' => 'tablet-and-up'
+]);
+
+
+// Var: Padding Desktop
+$styles->add_var([
+    'name' => 'header--padding',
+    'value' => theme_mod( 'header--styles--padding--desktop' ),
+    'screen' => 'desktop'
+]);

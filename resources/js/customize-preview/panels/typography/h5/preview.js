@@ -53,3 +53,86 @@ wp.customize( 'typography--h5--font-styles', function( value ) {
         });
     });
 });
+
+
+// Font Size Mobile
+wp.customize( 'typography--h5--font-size', function( value ) {
+    value.bind( function( to ) {
+        value.bind( function( to ) {
+            rootstrap.var({
+                name: 'typography--h5--font-size',
+                value: to,
+                screen: 'default'
+            });
+        });
+    });
+});
+
+
+// Line Height Mobile
+wp.customize( 'typography--h5--line-height', function( value ) {
+    value.bind( function( to ) {
+        value.bind( function( to ) {
+            rootstrap.var({
+                name: 'typography--h5--line-height',
+                value: to,
+                screen: 'default'
+            });
+        });
+    });
+});
+
+// Font Size Tablet
+wp.customize( 'typography--h5--font-size--tablet', function( value ) {
+    value.bind( function( to ) {
+        value.bind( function( to ) {
+            rootstrap.var({
+                name: 'typography--h5--font-size',
+                value: to,
+                screen: 'tablet-and-up'
+            });
+        });
+    });
+});
+
+
+// Line Height Tablet
+wp.customize( 'typography--h5--line-height--tablet', function( value ) {
+    value.bind( function( to ) {
+        value.bind( function( to ) {
+            rootstrap.var({
+                name: 'typography--h5--line-height',
+                value: to,
+                screen: 'tablet-and-up'
+            });
+        });
+    });
+});
+
+
+// Font Size Desktop
+wp.customize( 'typography--h5--font-size--desktop', function( value ) {
+    value.bind( function( to ) {
+        value.bind( function( to ) {
+            rootstrap.var({
+                name: 'typography--h5--font-size',
+                value: to,
+                screen: 'desktop'
+            });
+        });
+    });
+});
+
+
+// Line Height Desktop
+wp.customize( 'typography--h5--line-height--desktop', function( value ) {
+    value.bind( function( to ) {
+        value.bind( function( to ) {
+            rootstrap.var({
+                name: 'typography--h5--line-height',
+                value: to,
+                screen: 'desktop'
+            });
+        });
+    });
+});

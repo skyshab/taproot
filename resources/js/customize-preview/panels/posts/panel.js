@@ -12,8 +12,5 @@
 
 
 import './title/preview.js';
-import './title-mobile/preview.js';
-import './title-tablet/preview.js';
-import './title-desktop/preview.js';
 import './meta/preview.js';
 import './nav/preview.js';

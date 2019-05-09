@@ -13,5 +13,11 @@
  */
 
 
- // Enable Fullwidth Header
-// $defaults->add( 'header--styles--fullwidth', 0 );
+// Header Padding
+$defaults->add( 'header--styles--padding', '16px' );
+
+// Header Padding Tablet
+$defaults->add( 'header--styles--padding--tablet', '16px' );
+
+// Header Padding Desktop
+$defaults->add( 'header--styles--padding--desktop', '16px' );

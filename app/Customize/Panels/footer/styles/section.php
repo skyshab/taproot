@@ -13,6 +13,8 @@
 
 
 use function Taproot\Customize\color;
+use function Taproot\Customize\range;
+use function Taproot\Customize\range_atts;
 
 
 # =======================================================
@@ -75,4 +77,13 @@ color( $manager, 'footer--styles--default-color', [
 color( $manager, 'footer--styles--default-color--hover', [
     'label'   => esc_html__( 'Default Hover Color', 'taproot' ),
     'section' => 'footer--styles',
+]);
+
+
+// Setting: Padding
+range( $manager, 'footer--styles--padding', [
+    'section' => 'footer--styles',
+    'label' => esc_html__('Padding', 'taproot'),
+    'atts' => range_atts('layout-padding'),
+    'devices' => ['mobile', 'tablet', 'desktop']
 ]);

@@ -10,8 +10,4 @@
  * @link      https://taproot-theme.com
  */
 
-
 import './title/preview.js';
-import './title-mobile/preview.js';
-import './title-tablet/preview.js';
-import './title-desktop/preview.js';

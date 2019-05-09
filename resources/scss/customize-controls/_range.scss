@@ -10,15 +10,17 @@
 ////
 
 
-.customize-control-taproot-range {
-    
-    .range-group {
+.customize-control-range {
+
+    position: relative;
+
+    .device-group__item {
         display: flex;
         flex-direction: row;
         align-items: center;
         @extend %shadow-box;
         padding: 0 10px;
-        height: 36px;  
+        height: 36px;
         position: relative;
     }
 
@@ -28,12 +30,12 @@
         outline: none;
         border: none;
         border-radius: 0!important;
-        box-shadow: none;         
+        box-shadow: none;
         height: 36px!important;
         line-height: 36px!important;
-        margin: 0!important;  
+        margin: 0!important;
         -webkit-appearance: none;
-        -moz-appearance: none;  
+        -moz-appearance: none;
         padding: 1px 0 0 3px!important;
         font-size: 12px;
         font-weight: 500;
@@ -42,12 +44,12 @@
         &:focus {
             border: none;
             outline: none;
-            box-shadow: none;   
+            box-shadow: none;
         }
 
         &:disabled {
             color: inherit
-        }        
+        }
     }
 
     .taproot-range {
@@ -77,7 +79,7 @@
         text-align: center;
         margin-left: 4px;
         border: none;
-        box-shadow: none;        
+        box-shadow: none;
         background: #ffffff;
         padding: 0!important;
         font-size: 12px;
@@ -91,66 +93,44 @@
     }
 
     // reset button
-    .taproot-reset-slider { 
+    .taproot-reset-slider {
 
-        width: 18px; 
-        height: 28px; 
-        margin-left: 5px; 
-        display: inline-block; 
-        position: relative; 
-        vertical-align: middle; 
+        margin-left: 2px;
+        display: inline-block;
 
-        &:after { 
-            font-family: 'Dashicons'; 
-            content: "\f531"; 
-            font-size: 18px; 
-            line-height: 28px; 
-            color: #cacaca; 
-            -webkit-font-smoothing: antialiased; 
-            -moz-osx-font-smoothing: grayscale; 
+        &:after {
+            font-family: 'Dashicons';
+            content: "\f531";
+            font-size: 16px;
+            line-height: 28px;
+            color: #cacaca;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             transition: background .5s;
         }
 
-        &:hover:after { 
-            color: #A7A7A7; 
-        }    
+        &:hover:after {
+            color: #A7A7A7;
+        }
     }
 
     // enable/disable checkbox
     .taproot-range-enable {
-        background: #ddd;
-        box-shadow: none;
-        border: none;
-        margin: 0 10px 0 0;
 
         &:not(:checked) + .taproot-range-enable-message ~ * {
             display: none;
         }
-          
-        &:checked, &:checked + .taproot-range-enable-message {
-            display: none;            
+
+        &:checked + .taproot-range-enable-message {
+            display: none;
         }
-          
+
         &-message {
             color: #ccc;
-        }        
-    }
-
-    .taproot-range-disable {
-        position: absolute;
-        right: 0;
-        top: -24px;
-        font-size: 11px;
-        opacity: 0;
-        transition: opacity 0.4s ease-in-out;
-        cursor: pointer;
-    }
-  
-    &:hover .taproot-range-disable {
-        opacity: 0.5; 
-
-        &:hover {
-            opacity: 0.8;
         }
-    }      
+
+        &:checked:before {
+            color: #A7A7A7;
+        }
+    }
 }

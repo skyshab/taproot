@@ -264,7 +264,7 @@ function get_full_layout_padding() {
  */
 function get_layout_width( $screen = 'mobile', $unit = 'decimal' ) {
 
-    $width = theme_mod( sprintf('layout--container-%s--width', $screen), true );
+    $width = theme_mod( sprintf('layout--container--width--%s', $screen), true );
 
     if( ! $width ) {
         return false;
@@ -319,4 +319,28 @@ function theme_mod( $id, $display_default = false ) {
 
     return \Rootstrap\get_theme_mod($id, null, $display_default);
 
+}
+
+
+/**
+ * Get footer widget layout style
+ *
+ * @since  1.1.0
+ * @param  string
+ * @return string
+ */
+function get_footer_widget_layout_style($layout) {
+
+    $layouts = [
+        'quarters' => 'repeat(4, 1fr)',
+        'thirds' => 'repeat(3, 1fr)',
+        'halves' => 'repeat(2, 1fr)',
+        'full' => '100%',
+        'one-third-two-thirds' => '1fr 2fr',
+        'two-thirds-one-third' => '2fr 1fr',
+        'quarter-quarter-half' => '1fr 1fr 2fr',
+        'half-quarter-quarter' => '2fr 1fr 1fr'
+    ];
+
+    return ( isset($layouts[$layout]) ) ? $layouts[$layout] : false;
 }

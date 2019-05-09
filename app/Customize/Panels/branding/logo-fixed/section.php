@@ -23,6 +23,7 @@
 $manager->add_section( 'branding--logo-fixed', [
     'title' => esc_html__( 'Logo - Fixed', 'taproot' ),
     'panel' => 'branding',
+    'priority' => 500
 ]);
 
 

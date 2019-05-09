@@ -9,7 +9,6 @@
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
 
-
 class TaprootRange {
 
     constructor( control ) {
@@ -18,81 +17,84 @@ class TaprootRange {
             return false;
         }
 
-        // Set up our attributes
-        $control = jQuery(control.selector);
-        this.$range = $control.find('.taproot-range');
-        this.$rangeInput = $control.find('.taproot-range-input');
-        this.$unit = $control.find('.taproot-unit');
-        this.$reset = $control.find('.taproot-reset-slider');
-        this.$value = $control.find('.taproot-range-value');
-        this.$enable = $control.find( '.taproot-range-enable' );
-        this.$disable = $control.find( '.taproot-range-disable' );
+        control = document.querySelector(control.selector);
 
-        // Set up event handlers
-        this.handlers();
+        this.devicePicker = control.querySelector( '.device-picker' );
+        this.devices = control.querySelectorAll( '.device-picker__device' );
+        this.controls = control.querySelectorAll( '.device-group__item' );
+
+        // initiate handlers
+        this.controls.forEach( control => {
+            this.handlers(control);
+        });
     }
 
 
     // event handlers for our control
-    handlers() {
+    handlers(control) {
 
         const self = this;
 
-        self.$range.on( 'mousedown', function() {
+        // Set up our attributes
+        const range = control.querySelector('.taproot-range');
+        const rangeInput = control.querySelector('.taproot-range-input');
+        const unit = control.querySelector('.taproot-unit');
+        const reset = control.querySelector('.taproot-reset-slider');
+        const val = control.querySelector('.taproot-range-value');
+        const enable = control.querySelector( '.taproot-range-enable' );
 
-            var stepPlaces = self.decimalPlaces( $( this ).attr('step') );
+        range.addEventListener('mousedown', (e) => {
+            const $this = e.target;
+            const stepPlaces = self.decimalPlaces( $this.getAttribute('step') );
 
             // using 'input' instead of 'mousemove' prevents
             // the value changing after releasing control
-            // Are there other repercussions to this?
-            $( this ).on('input', function() {
+            $this.addEventListener('input', () => {
 
                 // check range step attribute, and adjust input
                 // to display using appropriate number of decimal places
-                self.$rangeInput.val( parseFloat( $( this ).attr( 'value' ) ).toFixed(stepPlaces) );
-                self.updateValue();
+                rangeInput.value = parseFloat($this.value).toFixed(stepPlaces);
+                self.updateValue(val, range, unit);
             });
-
         });
 
-        self.$rangeInput.on( 'change keyup', function() {
-            self.adjustRangeValue( $(this), 1000 );
-            self.updateValue();
-        }).on( 'focusout', function() {
-            self.adjustRangeValue( $(this), 0 );
-            self.updateValue();
+        rangeInput.addEventListener('change', (e) => {
+            const $this = e.target;
+            self.adjustRangeValue( $this, 1000 );
+            self.updateValue(val, range, unit);
+
+            $this.addEventListener('focusout', () => {
+                self.adjustRangeValue( $this, 0 );
+                self.updateValue(val, range, unit);
+            });
         });
 
-        self.$reset.click( function() {
-            self.reset();
+        reset.addEventListener('click', () => {
+            self.reset(range, rangeInput, unit);
+            self.updateValue(val, range, unit);
         });
 
-        self.$enable.on( 'change', function() {
-            self.reset();
+        enable.addEventListener('change', () => {
+            self.reset(range, rangeInput, unit);
+            self.updateValue(val, range, unit);
         });
 
-        self.$unit.on( 'change', function() {
-            const value = $(this).val();
-            const $option = $(this).find('option[value="' + value + '"]');
-            const defaultVal   = parseFloat( $option.attr('default') );
+        unit.addEventListener('change', (e) => {
+            const $this = e.target;
+            const option = $this.querySelector('option[value="' + $this.value + '"]');
+            const defaultVal = parseFloat( option.getAttribute('default') );
 
-            self.$range.attr('min',  parseFloat( $option.attr('min')  ));
-            self.$range.attr('max',  parseFloat( $option.attr('max')  ));
-            self.$range.attr('step', parseFloat( $option.attr('step') ));
-            self.$range.val( defaultVal );
+            range.setAttribute('min',  parseFloat( option.getAttribute('min')  ));
+            range.setAttribute('max',  parseFloat( option.getAttribute('max')  ));
+            range.setAttribute('step', parseFloat( option.getAttribute('step') ));
+            range.value = defaultVal;
 
-            self.$rangeInput.attr('min',  parseFloat( $option.attr('min')  ));
-            self.$rangeInput.attr('max',  parseFloat( $option.attr('max')  ));
-            self.$rangeInput.attr('step', parseFloat( $option.attr('step') ));
-            self.$rangeInput.val( defaultVal );
-            self.updateValue();
+            rangeInput.setAttribute('min',  parseFloat( option.getAttribute('min')  ));
+            rangeInput.setAttribute('max',  parseFloat( option.getAttribute('max')  ));
+            rangeInput.setAttribute('step', parseFloat( option.getAttribute('step') ));
+            rangeInput.value = defaultVal;
+            self.updateValue(val, range, unit);
         });
-
-        self.$disable.on( 'click',  function() {
-            self.$enable.prop('checked', false).change();
-            self.$value.val('').change();
-        });
-
     }
 
 
@@ -106,60 +108,75 @@ class TaprootRange {
 
 
     // reset the values to default
-    reset() {
-        const rangeDefault = this.$range.data( 'reset_value' );
-        const unitDefault = this.$unit.data( 'reset_value' );
-        this.$unit.val( unitDefault ).change();
-        this.$range.val( rangeDefault ).change();
-        this.$rangeInput.val( rangeDefault ).change();
+    reset(range, rangeInput, unit) {
+        const rangeDefault = range.dataset.reset_value;
 
-        this.updateValue();
+        range.value = rangeDefault;
+        rangeInput.value = rangeDefault;
+        unit.value = unit.dataset.reset_value;
+
+        this.change(unit);
+        this.change(range);
+        this.change(rangeInput);
     }
 
 
     // update the hidden control that stores the value
-    updateValue() {
-        const unit = ( 'unitless' === this.$unit.val() ) ? '' : this.$unit.val();
-        this.$value.val( this.$range.val() + unit ).change();
+    updateValue( val, range, unit ) {
+        unit = ( 'unitless' === unit.value ) ? '' : unit.value;
+        val.value = range.value + unit;
+        this.change(val);
     }
 
 
     // handle range adjustments
-    adjustRangeValue( $rangeInput, timeout ) {
-        const $range  = $rangeInput.parent().find('.taproot-range');
-        var   value   = parseFloat( $rangeInput.val() );
-        const reset   = parseFloat( $range.attr('data-reset_value') );
-        const step    = parseFloat( $rangeInput.attr('step') );
-        const min     = parseFloat( $rangeInput.attr('min') );
-        const max     = parseFloat( $rangeInput.attr('max') );
+    adjustRangeValue( rangeInput, timeout ) {
+        const self = this;
+        const range   = rangeInput.parentElement.querySelector('.taproot-range');
+        const reset   = parseFloat( range.dataset.reset_value );
+        const step    = parseFloat( rangeInput.getAttribute('step') );
+        const min     = parseFloat( rangeInput.getAttribute('min') );
+        const max     = parseFloat( rangeInput.getAttribute('max') );
+        var   val     = parseFloat( rangeInput.value );
 
-        clearTimeout( this.rangeTimeout );
+        clearTimeout( self.rangeTimeout );
 
-        this.rangeTimeout = setTimeout( function() {
-            if ( isNaN( value ) ) {
-                $rangeInput.val( reset );
-                $range.val( reset ).change();
+        self.rangeTimeout = setTimeout( function() {
+            if ( isNaN( val ) ) {
+                rangeInput.value = reset;
+                range.value = reset;
+                self.change(range);
                 return;
             }
 
-            if ( 1 <=  step && 0 !== value % 1 ) {
-                value = Math.round( value );
-                $rangeInput.val( value );
-                $range.val( value ).change();
+            if ( 1 <=  step && 0 !== val % 1 ) {
+                val = Math.round( val );
+                rangeInput.value = val;
+                range.value = val;
+                self.change(range);
             }
 
-            if ( value > max ) {
-                $rangeInput.val( max );
-                $range.val( max ).change();
+            if ( val > max ) {
+                rangeInput.value = max;
+                range.value = max ;
+                self.change(range);
             }
 
-            if ( value < min ) {
-                $rangeInput.val( min );
-                $range.val( min ).change();
+            if ( val < min ) {
+                rangeInput.value = min;
+                range.value = min;
+                self.change(range);
             }
         }, timeout );
 
-        $range.val( value ).change();
+        range.value = val;
+        self.change(range);
+    }
+
+    // trigger change on an input
+    change(el) {
+        var change = new Event('change');
+        el.dispatchEvent(change);
     }
 }
 
@@ -167,7 +184,7 @@ class TaprootRange {
 /**
  * Initiate Range
  */
-wp.customize.controlConstructor['taproot-range'] = wp.customize.Control.extend( {
+wp.customize.controlConstructor['range'] = wp.customize.Control.extend( {
 	ready: function() {
         let range = new TaprootRange( this );
 	}
