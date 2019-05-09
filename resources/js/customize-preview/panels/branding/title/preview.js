@@ -9,6 +9,7 @@
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
 
+
 import * as utils from '../../../functions-customize-preview.js';
 
 
@@ -25,7 +26,6 @@ wp.customize( 'branding--title--color', function( value ) {
     });
 });
 
-
 // Font Family
 wp.customize( 'branding--title--font-family', function( value ) {
     value.bind( function( to ) {
@@ -39,7 +39,6 @@ wp.customize( 'branding--title--font-family', function( value ) {
     });
 });
 
-
 // Font Styles
 wp.customize( 'branding--title--font-styles', function( value ) {
     value.bind( function( to ) {
@@ -48,6 +47,126 @@ wp.customize( 'branding--title--font-styles', function( value ) {
             id: 'branding--title--font-styles',
             selector: '.app-header__title',
             styles: titleStyles
+        });
+    });
+});
+
+
+// Mobile/Default Styles
+
+// Font Size
+wp.customize( 'branding--title-mobile--font-size', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'branding--title--font-size',
+            value: to,
+            screen: 'default'
+        });
+    });
+});
+
+// Line Height
+wp.customize( 'branding--title-mobile--line-height', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'branding--title--line-height',
+            value: to,
+            screen: 'default'
+        });
+    });
+});
+
+// Hide title
+wp.customize( 'branding--title-mobile--hide-title', function( value ) {
+    value.bind( function( to ) {
+        var titleDisplay = (to) ? 'none' : 'inline-block';
+        rootstrap.style({
+            id: 'branding--title-mobile--hide-title',
+            selector: '.app-header__title',
+            styles: {
+                'display': titleDisplay
+            },
+            screen: 'mobile'
+        });
+    });
+});
+
+
+// Tablet Styles
+
+// Font Size
+wp.customize( 'branding--title--font-size--tablet', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'branding--title--font-size',
+            value: to,
+            screen: 'tablet-and-up'
+        });
+    });
+});
+
+// Line Height
+wp.customize( 'branding--title--line-height--tablet', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'branding--title--line-height',
+            value: to,
+            screen: 'tablet-and-up'
+        });
+    });
+});
+
+// Hide title
+wp.customize( 'branding--title--hide-title--tablet', function( value ) {
+    value.bind( function( to ) {
+        var titleDisplay = (to) ? 'none' : 'inline-block';
+        rootstrap.style({
+            id: 'branding--title--hide-title--tablet',
+            selector: '.app-header__title',
+            styles: {
+                'display': titleDisplay
+            },
+            screen: 'tablet'
+        });
+    });
+});
+
+
+// Desktop Styles
+
+// Font Size
+wp.customize( 'branding--title--font-size--desktop', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'branding--title--font-size',
+            value: to,
+            screen: 'desktop'
+        });
+    });
+});
+
+// Line Height
+wp.customize( 'branding--title--line-height--desktop', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'branding--title--line-height',
+            value: to,
+            screen: 'desktop'
+        });
+    });
+});
+
+// Hide title
+wp.customize( 'branding--title--hide-title--desktop', function( value ) {
+    value.bind( function( to ) {
+        var titleDisplay = (to) ? 'none' : 'inline-block';
+        rootstrap.style({
+            id: 'branding--title--hide-title--desktop',
+            selector: '.app-header__title',
+            styles: {
+                'display': titleDisplay
+            },
+            screen: 'desktop'
         });
     });
 });

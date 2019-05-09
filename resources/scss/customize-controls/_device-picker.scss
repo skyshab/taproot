@@ -1,0 +1,71 @@
+////
+/// Device Picker Styles.
+///
+/// Styles for the device picker component
+///
+/// @group  CustomizeControls
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+.device-picker {
+    display: inline-flex;
+    position: absolute;
+    right: 8px;
+    top: 0;
+    height: 24px;
+    align-items: center;
+
+    &__device {
+        color: #A7A7A7;
+        background: transparent;
+        border: none;
+        border-radius: 50%;
+        height: 18px;
+        width: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 2px;
+        cursor: pointer;
+
+        &:hover {
+            color: #555d66;
+        }
+
+        &:before {
+            display: inline-block;
+            -webkit-font-smoothing: antialiased;
+            font: normal 11px dashicons;
+            vertical-align: top;
+        }
+
+        &--mobile:before {
+              content: "\f470";
+        }
+
+        &--tablet:before {
+              content: "\f471";
+        }
+
+        &--desktop:before {
+              content: "\f472";
+        }
+    }
+
+    &[data-current-device="mobile"]  .device-picker__device--mobile,
+    &[data-current-device="tablet"]  .device-picker__device--tablet,
+    &[data-current-device="desktop"] .device-picker__device--desktop {
+        background: #A7A7A7;
+        color: white;
+    }
+
+
+    &[data-current-device="mobile"]  ~ .device-group .device-group__item:not(.device-group__item--mobile),
+    &[data-current-device="tablet"]  ~ .device-group .device-group__item:not(.device-group__item--tablet),
+    &[data-current-device="desktop"] ~ .device-group .device-group__item:not(.device-group__item--desktop) {
+        display: none;
+    }
+
+}

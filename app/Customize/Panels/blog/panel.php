@@ -15,11 +15,10 @@
 // define sections
 $panel->sections([
     'layout',
-    'title', 'title-mobile', 'title-tablet', 'title-desktop',
+    'title',
     'archive-title', 'archive-meta', 'archive-excerpt', 'archive-link',
     'pagination', 'pagination-hover',
 ]);
-
 
 
 // Archive tabs
@@ -40,49 +39,5 @@ $panel->tabs([
     'sections' => [
         'blog--pagination' => [ 'label' => 'Default', 'hide' => false ],
         'blog--pagination-hover' => [ 'label' => 'Hover', 'hide' => true ],
-    ],
-]);
-
-
-// Blog Title sequence
-$panel->sequence([
-    'sections' => [
-        'blog--title' => [
-            'hide' => false,
-            'next' => [
-                'label' => __('mobile', 'taproot'),
-            ],
-        ],
-        'blog--title-mobile' => [
-            'device' => 'mobile',
-            'hide' => true,
-            'prev' => [
-                'label' => __('general', 'taproot'),
-                'device' => 'desktop'
-            ],
-            'next' => [
-                'label' => __('tablet', 'taproot'),
-            ],
-        ],
-        'blog--title-tablet' => [
-            'device' => 'tablet',
-            'hide' => true,
-            'prev' => [
-                'label' => __('mobile', 'taproot'),
-            ],
-            'next' => [
-                'label' => __('desktop', 'taproot'),
-            ],
-        ],
-        'blog--title-desktop' => [
-            'device' => 'desktop',
-            'hide' => true,
-            'prev' => [
-                'label' => __('tablet', 'taproot'),
-            ],
-            'next' => [
-                'link' => false
-            ],
-        ],
     ],
 ]);

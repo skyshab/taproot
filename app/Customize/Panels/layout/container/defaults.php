@@ -15,3 +15,12 @@
 
 // Container Max Width
 $defaults->add( 'layout--container--max-width', '1060px' );
+
+// Container Width - Mobile
+$defaults->add( 'layout--container--width', '86vw' );
+
+// Container Width - Tablet
+$defaults->add( 'layout--container--width--tablet', '90vw' );
+
+// Container Width - Desktop
+$defaults->add( 'layout--container--width--desktop', '90vw' );

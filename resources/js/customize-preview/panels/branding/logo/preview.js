@@ -23,3 +23,72 @@ wp.customize( 'branding--logo--image', function( value ) {
         });
     });
 });
+
+
+// Logo width
+wp.customize( 'branding--logo--width', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'branding--logo--width',
+            value: to,
+            screen: 'default',
+        });
+    });
+});
+
+// Logo gutter
+wp.customize( 'branding--logo--gutter', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'branding--logo--gutter',
+            value: to,
+            screen: 'default',
+        });
+    });
+});
+
+
+// Logo width Tablet
+wp.customize( 'branding--logo--width--tablet', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'branding--logo--width',
+            value: to,
+            screen: 'tablet-and-up',
+        });
+    });
+});
+
+// Logo gutter Tablet
+wp.customize( 'branding--logo--gutter--tablet', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'branding--logo--gutter',
+            value: to,
+            screen: 'tablet-and-up',
+        });
+    });
+});
+
+
+// Logo width Desktop
+wp.customize( 'branding--logo--width--desktop', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'branding--logo--width',
+            value: to,
+            screen: 'desktop',
+        });
+    });
+});
+
+// Logo gutter Desktop
+wp.customize( 'branding--logo--gutter--desktop', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'branding--logo--gutter',
+            value: to,
+            screen: 'desktop',
+        });
+    });
+});

@@ -14,7 +14,7 @@
 
 use function Taproot\Customize\color;
 use function Taproot\Customize\range;
-
+use function Taproot\Customize\range_atts;
 
 # =======================================================
 # Add Section
@@ -81,4 +81,12 @@ color( $manager, 'header--styles-fixed--default-color', [
 color( $manager, 'header--styles-fixed--default-color-hover', [
     'label'   => esc_html__( 'Header Default Color: Hover', 'taproot' ),
     'section' => 'header--styles-fixed',
+]);
+
+
+// Setting: Fixed Header Padding
+range( $manager, 'header--styles-fixed--padding', [
+    'section' => 'header--styles-fixed',
+    'label' => esc_html__('Padding', 'taproot'),
+    'atts' => range_atts('layout-padding')
 ]);

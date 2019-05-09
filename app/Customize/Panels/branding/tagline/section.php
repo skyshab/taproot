@@ -13,9 +13,11 @@
 
 
 use Taproot\Customize\Controls\Font_Styles;
-use function Taproot\Customize\color;
+use Taproot\Customize\Controls\Responsive_Control;
 use function Taproot\Customize\get_font_choices;
-
+use function Taproot\Customize\color;
+use function Taproot\Customize\range;
+use function Taproot\Customize\range_atts;
 
 # =======================================================
 # Add Section
@@ -41,7 +43,7 @@ if( $manager->get_control( 'blogdescription' ) ) {
 }
 
 
-// Setting: Display Site Tagline
+// Setting: Enable Site Tagline
 $manager->add_setting( 'branding--tagline--display-tagline', [
     'sanitize_callback' => 'taproot_sanitize_checkbox',
     'transport' => 'refresh',
@@ -50,8 +52,23 @@ $manager->add_setting( 'branding--tagline--display-tagline', [
 $manager->add_control( 'branding--tagline--display-tagline', [
     'type' => 'checkbox',
     'section' => 'branding--tagline',
-    'label' => esc_html__( 'Display Site Tagline', 'taproot' ),
+    'label' => esc_html__( 'Enable Site Tagline', 'taproot' ),
 ]);
+
+
+// Setting: Hide Site Tagline
+$manager->add_setting( 'branding--tagline--hide-tagline', [
+    'sanitize_callback' => 'taproot_sanitize_checkbox',
+    'transport' => 'postMessage',
+]);
+
+// Control: Hide Site Tagline
+$manager->add_control( new Responsive_Control( $manager, 'branding--tagline--hide-tagline', [
+    'type' => 'checkbox',
+    'section' => 'branding--tagline',
+    'label' => esc_html__( 'Hide Tagline', 'taproot' ),
+    'devices' => ['mobile', 'tablet', 'desktop']
+]));
 
 
 // Text Color
@@ -85,6 +102,39 @@ $manager->add_control( new Font_Styles( $manager, 'branding--tagline--font-style
     'section' => 'branding--tagline',
     'label'   => esc_html__( 'Font Styles', 'taproot' ),
 ]));
+
+
+// Font Size
+range( $manager, 'branding--tagline--font-size', [
+    'section' => 'branding--tagline',
+    'label' => esc_html__('Font Size', 'taproot'),
+    'atts'  => range_atts('heading'),
+    'devices' => ['mobile', 'tablet', 'desktop']
+]);
+
+
+// Line Height
+range( $manager, 'branding--tagline--line-height', [
+    'section' => 'branding--tagline',
+    'label' => esc_html__('Line Height', 'taproot'),
+    'atts'  => range_atts('line-height'),
+    'devices' => ['mobile', 'tablet', 'desktop']
+]);
+
+
+// Tagline Gutter
+range( $manager, 'branding--tagline--gutter', [
+    'section' => 'branding--tagline',
+    'label' => esc_html__('Tagline Gutter', 'taproot'),
+    'atts'  => [
+        'px' => [
+            'max'   => 100,
+            'default' => 4
+        ]
+    ],
+    'devices' => ['mobile', 'tablet', 'desktop']
+]);
+
 
 
 # =======================================================

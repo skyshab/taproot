@@ -58,3 +58,14 @@ if( is_boxed_layout() && theme_mod( 'header--styles-fixed--fixed', true ) ) {
         'screen' => 'desktop'
     ]);
 }
+
+
+// Fixed Header Padding
+$styles->add([
+    'selector' => '.app-header--fixed .app-header__container',
+    'styles' => [
+        'padding-top'    => theme_mod( 'header--styles-fixed--padding' ),
+        'padding-bottom' => theme_mod( 'header--styles-fixed--padding' ),
+    ],
+    'screen' => 'desktop'
+]);

@@ -13,8 +13,4 @@
 
 import './styles/preview.js';
 import './styles-fixed/preview.js';
-import './padding-mobile/preview.js';
-import './padding-tablet/preview.js';
-import './padding-desktop/preview.js';
-import './padding-fixed/preview.js';
 import './image/preview.js';

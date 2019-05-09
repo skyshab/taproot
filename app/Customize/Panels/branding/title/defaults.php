@@ -15,3 +15,24 @@
 
 // Show Title by default
 $defaults->add( 'branding--title--display-title', true );
+
+
+// Title font size
+$defaults->add( 'branding--title--font-size', '1.6em' );
+
+// Title line height
+$defaults->add( 'branding--title--line-height', '1' );
+
+
+// Title font size tablet
+$defaults->add( 'branding--title--font-size--tablet', '1.6em' );
+
+// Title line height tablet
+$defaults->add( 'branding--title--line-height--tablet', '1' );
+
+
+// Title font size desktop
+$defaults->add( 'branding--title--font-size--desktop', '1.8em' );
+
+// Title line height desktop
+$defaults->add( 'branding--title--line-height--desktop', '1' );

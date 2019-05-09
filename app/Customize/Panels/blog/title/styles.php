@@ -22,9 +22,53 @@ $styles->add([
     'styles' => [ 'color' => theme_mod( 'blog--title--color' ) ]
 ]);
 
-
 // Font Style
 $styles->add([
     'selector' => '.archive-header__title',
     'styles' => get_font_styles( 'blog--title--font-styles' )
+]);
+
+
+// Var: Blog Title Font Size
+$styles->add_var([
+    'name' => 'blog--title--font-size',
+    'value' => theme_mod( 'blog--title--font-size' ),
+    'screen' => 'default'
+]);
+
+// Var: Blog Title Line Height
+$styles->add_var([
+    'name' => 'blog--title--line-height',
+    'value' => theme_mod( 'blog--title--line-height' ),
+    'screen' => 'default'
+]);
+
+
+// Var: Blog Title Font Size Tablet
+$styles->add_var([
+    'name' =>'blog--title--font-size',
+    'value' => theme_mod( 'blog--title--font-size--tablet' ),
+    'screen' => 'tablet-and-up'
+]);
+
+// Var: Blog Title Line Height Tablet
+$styles->add_var([
+    'name' =>'blog--title--line-height',
+    'value' => theme_mod( 'blog--title--line-height--tablet' ),
+    'screen' => 'tablet-and-up'
+]);
+
+
+// Var: Blog Title Font Size Desktop
+$styles->add_var([
+    'name' => 'blog--title--font-size',
+    'value' => theme_mod( 'blog--title--font-size--desktop' ),
+    'screen' => 'desktop'
+]);
+
+// Var: Blog Title Line Height Desktop
+$styles->add_var([
+    'name' => 'blog--title--line-height',
+    'value' => theme_mod( 'blog--title--line-height--desktop' ),
+    'screen' => 'desktop'
 ]);

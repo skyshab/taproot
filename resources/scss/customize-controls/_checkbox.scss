@@ -11,41 +11,49 @@
 
 
 .customize-control-checkbox {
-        
-    font-weight: 600; 
-    font-size: 12px; 
-    text-transform: uppercase; 
+    position: relative;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
     margin-top: 0.6em;
 
-
-    .customize-inside-control-row {
+    .customize-inside-control-row, .device-group__item {
         display: flex;
-        align-items: center;        
+        align-items: center;
         margin-left: 0;
-        @extend %shadow-box;  
-        padding: 10px; 
-    }      
+        @extend %shadow-box;
+        padding: 10px;
+    }
+
+    .device-picker {
+        height: 100%;
+    }
+}
+
+// style all checkboxes in controls
+.customize-control {
 
     input[type=checkbox] {
         margin: 0;
         margin-right: 10px;
         display: inline-flex;
+        min-width: 20px;
         width: 20px;
         height: 20px;
         border: none;
         box-shadow: none;
         background: #EEEEEE;
 
-        &:checked:before { 
+        &:checked:before {
             margin: 0;
             width: inherit;
             height: inherit;
             box-sizing: border-box;
             margin-left: -1px;
-        }        
+        }
     }
+}
 
-} 
 
 // don't add top margin when first control in a section
 .section-meta + .customize-control-checkbox {

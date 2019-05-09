@@ -45,3 +45,145 @@ if( !$show_tagline ) {
         ],
     ]);
 }
+
+
+// Hide Tagline
+if( theme_mod( 'branding--tagline--hide-tagline' ) ) {
+    $styles->add([
+        'screen' => 'mobile',
+        'selector' => '.app-header__tagline',
+        'styles' => [ 'display' => 'none' ],
+    ]);
+
+    // if we do hide the tagline, adjust title to use space accordingly.
+    // only ouput if we're not hiding the title too
+    if( !theme_mod( 'branding--title--hide-title' ) ) {
+        $styles->add([
+            'screen' => 'mobile',
+            'selector' => '.app-header__title',
+            'styles' => [
+                'grid-row-end' => 'span 2',
+                'align-self' => 'center',
+            ],
+        ]);
+    }
+}
+else {
+
+    // Var: Tagline Font Size
+    $styles->add_var([
+        'name' => 'branding--tagline--font-size',
+        'value' => theme_mod( 'branding--tagline--font-size' ),
+        'screen' => 'default'
+    ]);
+
+    // Var: Tagline Line Height
+    $styles->add_var([
+        'name' => 'branding--tagline--line-height',
+        'value' => theme_mod( 'branding--tagline--line-height' ),
+        'screen' => 'default'
+    ]);
+
+    // Var: Tagline Gutter
+    $styles->add_var([
+        'name' => 'branding--tagline--gutter',
+        'value' => theme_mod( 'branding--tagline--gutter' ),
+        'screen' => 'default'
+    ]);
+}
+
+
+// Tablet Styles
+
+// Hide Tagline
+if( theme_mod( 'branding--tagline--hide-tagline--tablet' ) ) {
+    $styles->add([
+        'screen' => 'tablet',
+        'selector' => '.app-header__tagline',
+        'styles' => [ 'display' => 'none' ],
+    ]);
+
+    // if we do hide the tagline, adjust title to use space accordingly.
+    // only ouput if we're not hiding the title too
+    if( !theme_mod( 'branding--title--hide-title--tablet' ) ) {
+        $styles->add([
+            'screen' => 'tablet',
+            'selector' => '.app-header__title',
+            'styles' => [
+                'grid-row-end' => 'span 2',
+                'align-self' => 'center',
+            ],
+        ]);
+    }
+}
+else {
+
+    // Var: Tagline Font Size
+    $styles->add_var([
+        'name' => 'branding--tagline--font-size',
+        'value' => theme_mod( 'branding--tagline--font-size--tablet' ),
+        'screen' => 'tablet-and-up'
+    ]);
+
+    // Var: Tagline Line Height
+    $styles->add_var([
+        'name' => 'branding--tagline--line-height',
+        'value' => theme_mod( 'branding--tagline--line-height--tablet' ),
+        'screen' => 'tablet-and-up'
+    ]);
+
+    // Var: Tagline Gutter
+    $styles->add_var([
+        'name' => 'branding--tagline--gutter',
+        'value' => theme_mod( 'branding--tagline--gutter--tablet' ),
+        'screen' => 'tablet-and-up'
+    ]);
+}
+
+
+// Desktop Styles
+
+// Hide Tagline
+if( theme_mod( 'branding--tagline--hide-tagline--desktop' ) ) {
+    $styles->add([
+        'screen' => 'desktop',
+        'selector' => '.app-header__tagline',
+        'styles' => [ 'display' => 'none' ],
+    ]);
+
+   // if we do hide the tagline, adjust title to use space accordingly.
+    // only ouput if we're not hiding the title too
+    if( !theme_mod( 'branding--title--hide-title--desktop' ) ) {
+        $styles->add([
+            'screen' => 'desktop',
+            'selector' => '.app-header__title',
+            'styles' => [
+                'grid-row-end' => 'span 2',
+                'align-self' => 'center',
+            ],
+        ]);
+    }
+}
+else {
+
+    // Var: Tagline Font Size
+    $styles->add_var([
+        'name' => 'branding--tagline--font-size',
+        'value' => theme_mod( 'branding--tagline--font-size--desktop' ),
+        'screen' => 'desktop'
+    ]);
+
+    // Var: Tagline Line Height
+    $styles->add_var([
+        'name' => 'branding--tagline--line-height',
+        'value' => theme_mod( 'branding--tagline--line-height--desktop' ),
+        'screen' => 'desktop'
+    ]);
+
+    // Var: Tagline Gutter
+    $styles->add_var([
+        'name' => 'branding--tagline--gutter',
+        'value' => theme_mod( 'branding--tagline--gutter--desktop' ),
+        'screen' => 'desktop'
+    ]);
+}

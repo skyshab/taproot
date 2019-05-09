@@ -12,6 +12,10 @@
  */
 
 
+use function Taproot\Customize\range;
+use function Taproot\Customize\range_atts;
+
+
 # =======================================================
 # Add Section
 # =======================================================
@@ -32,3 +36,31 @@ $manager->add_section( 'branding--logo', [
 if( $manager->get_control( 'custom_logo' ) ) {
     $manager->get_control( 'custom_logo' )->section = 'branding--logo';
 }
+
+
+// Setting: Logo Width
+range( $manager, 'branding--logo--width', [
+    'section' => 'branding--logo',
+    'label' => esc_html__('Logo Width', 'taproot'),
+    'atts'  => [
+        'px' => [
+            'max' => 500,
+            'default' => 60
+        ]
+    ],
+    'devices' => ['mobile', 'tablet', 'desktop']
+]);
+
+
+// Setting: Logo Gutter
+range( $manager, 'branding--logo--gutter', [
+    'section' => 'branding--logo',
+    'label' => esc_html__('Gutter Width', 'taproot'),
+    'atts'  => [
+        'px' => [
+            'max' => 50,
+            'default' => 16
+        ]
+    ],
+    'devices' => ['mobile', 'tablet', 'desktop']
+]);

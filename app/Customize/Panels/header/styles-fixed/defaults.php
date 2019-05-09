@@ -16,6 +16,8 @@
  // Enable Fixed Header
 $defaults->add( 'header--styles-fixed--fixed', 1 );
 
-
 // Fixed Header Type
 $defaults->add( 'header--styles-fixed--type', 'fade' );
+
+// Header Padding
+$defaults->add( 'header--styles-fixed--padding', get_theme_mod( 'header--styles--padding--desktop', '16px' ) );

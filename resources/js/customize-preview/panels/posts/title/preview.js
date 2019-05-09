@@ -23,7 +23,6 @@ wp.customize( 'posts--title--color', function( value ) {
     });
 });
 
-
 // Font Styles
 wp.customize( 'posts--title--font-styles', function( value ) {
     value.bind( function( to ) {
@@ -32,6 +31,75 @@ wp.customize( 'posts--title--font-styles', function( value ) {
             id: 'posts--title--font-styles',
             selector: '.entry__title--single',
             styles: headingsStyles
+        });
+    });
+});
+
+
+// Font Size
+wp.customize( 'posts--title--font-size', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'posts--title--font-size',
+            value: to,
+            screen: 'default'
+        });
+    });
+});
+
+// Line Height
+wp.customize( 'posts--title--line-height', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'posts--title--line-height',
+            value: to,
+            screen: 'default'
+        });
+    });
+});
+
+
+// Font Size Tablet
+wp.customize( 'posts--title--font-size--tablet', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'posts--title--font-size',
+            value: to,
+            screen: 'tablet-and-up'
+        });
+    });
+});
+
+// Line Height Tablet
+wp.customize( 'posts--title--line-height--tablet', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'posts--title--line-height',
+            value: to,
+            screen: 'tablet-and-up'
+        });
+    });
+});
+
+
+// Font Size Desktop
+wp.customize( 'posts--title--font-size--desktop', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'posts--title--font-size',
+            value: to,
+            screen: 'desktop'
+        });
+    });
+});
+
+// Line Height Desktop
+wp.customize( 'posts--title--line-height--desktop', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'posts--title--line-height',
+            value: to,
+            screen: 'desktop'
         });
     });
 });

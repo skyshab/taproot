@@ -75,19 +75,19 @@ class Header implements Bootable {
             $classes[] = 'app-header--standard-width';
 
         // branding mobile
-        if( theme_mod( 'branding--layout-mobile--layout', true ) === 'vertical' )
+        if( theme_mod( 'branding--layout', true ) === 'vertical' )
             $classes[] = 'app-header--mobile--vertical';
         else
             $classes[] = 'app-header--mobile--horizontal';
 
         // branding tablet
-        if( theme_mod( 'branding--layout-tablet--layout', true ) === 'vertical' )
+        if( theme_mod( 'branding--layout--tablet', true ) === 'vertical' )
             $classes[] = 'app-header--tablet--vertical';
         else
             $classes[] = 'app-header--tablet--horizontal';
 
         // branding desktop
-        if( theme_mod( 'branding--layout-desktop--layout', true ) === 'vertical' )
+        if( theme_mod( 'branding--layout--desktop', true ) === 'vertical' )
             $classes[] = 'app-header--desktop--vertical';
         else
             $classes[] = 'app-header--desktop--horizontal';

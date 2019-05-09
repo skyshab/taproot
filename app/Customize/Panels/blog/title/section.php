@@ -14,6 +14,7 @@
 
 use Taproot\Customize\Controls\Font_Styles;
 use function Taproot\Customize\range;
+use function Taproot\Customize\range_atts;
 use function Taproot\Customize\color;
 
 
@@ -64,3 +65,21 @@ $manager->add_control( new Font_Styles( $manager,
         'label'     => esc_html__( 'Title Font Styles', 'taproot' ),
     ]
 ));
+
+
+// Setting: Title Font Size
+range( $manager, 'blog--title--font-size', [
+    'section' => 'blog--title',
+    'label' => esc_html__('Title Font Size', 'taproot'),
+    'atts' => range_atts('heading'),
+    'devices' => ['mobile', 'tablet', 'desktop']
+]);
+
+
+// Setting: Title Line Height
+range( $manager, 'blog--title--line-height', [
+    'section' => 'blog--title',
+    'label' => esc_html__('Title Line Height', 'taproot'),
+    'atts' => range_atts('line-height'),
+    'devices' => ['mobile', 'tablet', 'desktop']
+]);
