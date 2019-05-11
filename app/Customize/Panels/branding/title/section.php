@@ -13,11 +13,11 @@
 
 
 use Taproot\Customize\Controls\Font_Styles;
-use Taproot\Customize\Controls\Responsive_Control;
 use function Taproot\Customize\get_font_choices;
 use function Taproot\Customize\color;
 use function Taproot\Customize\range;
 use function Taproot\Customize\range_atts;
+use function Taproot\Customize\checkbox;
 
 
 # =======================================================
@@ -57,18 +57,11 @@ $manager->add_control( 'branding--title--display-title', [
 
 
 // Setting: Hide Site Title
-$manager->add_setting( 'branding--title--hide-title', [
-    'sanitize_callback' => 'taproot_sanitize_checkbox',
-    'transport' => 'postMessage',
-]);
-
-// Control: Hide Site Title
-$manager->add_control( new Responsive_Control( $manager, 'branding--title--hide-title', [
-    'type' => 'checkbox',
+checkbox( $manager, 'branding--title--hide', [
     'section' => 'branding--title',
     'label' => esc_html__( 'Hide Title', 'taproot' ),
     'devices' => ['mobile', 'tablet', 'desktop']
-]));
+]);
 
 
 // Title Color

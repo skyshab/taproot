@@ -38,7 +38,7 @@
         align-items: center;
     }
 
-    .custom-header & {
+    .app-header--has-custom-header & {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -50,6 +50,6 @@
 }
 
 // hide additional header content when fixed header
-.custom-header .app-header--fixed .additional-header-content {
+.app-header--has-custom-header.app-header--fixed .additional-header-content {
     display: none;
 }

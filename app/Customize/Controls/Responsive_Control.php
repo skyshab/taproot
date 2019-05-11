@@ -153,7 +153,7 @@ class Responsive_Control extends WP_Customize_Control {
                 $initial_atts = $this->get_attributes( $input_attrs );
 
                 // if a default is set, use it as the unit default
-                if( $default_number && $default_unit ) {
+                if( $default_unit ) {
                     $attributes[$default_unit]['default'] = $default_number;
                 }
 

@@ -12,7 +12,6 @@
  */
 
 
-use Taproot\Customize\Controls\Responsive_Control;
 use function Taproot\Customize\radio;
 
 

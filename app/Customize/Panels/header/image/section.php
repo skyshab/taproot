@@ -102,6 +102,7 @@ if ( isset( $manager->selective_refresh ) ) {
             'selector'            => '#wp-custom-header',
             'render_callback'     => 'the_custom_header_markup',
             'container_inclusive' => true,
+            'fallback_refresh'    => false
         ]);
     }
 }

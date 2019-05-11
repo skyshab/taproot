@@ -362,10 +362,18 @@ function select( $manager, $id, $args = [] ) {
             $settings["control_{$device}"] = $setting_id;
         }
 
+        // calculate defaults
+        if( is_array($default) ) {
+            $setting_default = ( isset($default[$device]) ) ? $default[$device] : false;
+        } else {
+            $setting_default = $default;
+        }
+
         // Create Setting
         $manager->add_setting( $setting_id, [
             'sanitize_callback' => 'sanitize_text_field',
             'transport' => $transport,
+            'default' => $setting_default
         ]);
     }
 
@@ -412,10 +420,18 @@ function radio( $manager, $id, $args = [] ) {
             $settings["control_{$device}"] = $setting_id;
         }
 
+        // calculate defaults
+        if( is_array($default) ) {
+            $setting_default = ( isset($default[$device]) ) ? $default[$device] : false;
+        } else {
+            $setting_default = $default;
+        }
+
         // Create Setting
         $manager->add_setting( $setting_id, [
             'sanitize_callback' => 'sanitize_text_field',
             'transport' => $transport,
+            'default' => $setting_default
         ]);
     }
 
@@ -425,6 +441,62 @@ function radio( $manager, $id, $args = [] ) {
         'section' => $section,
         'label' => $label,
         'choices' => $choices,
+        'settings' => $settings,
+        'devices' => $devices
+    ]));
+}
+
+
+/**
+ * Create Responsive Radio Control
+ *
+ * @since 1.2.0
+ * @return void
+ */
+function checkbox( $manager, $id, $args = [] ) {
+
+    $default        = (isset($args['default'])) ? $args['default'] : false;
+    $label          = (isset($args['label'])) ? $args['label'] : '';
+    $section        = (isset($args['section'])) ? $args['section'] : '';
+    $priority       = (isset($args['priority'])) ? $args['priority'] : false;
+    $transport      = (isset($args['transport'])) ? $args['transport'] : 'postMessage';
+    $devices        = (isset($args['devices'])) ? $args['devices'] : ['mobile'];
+    $settings       = [];
+
+
+    // loop through the devices
+    foreach( $devices as $device ) {
+
+        // add settings
+        if( 'mobile' === $device ) {
+            $setting_id = $id;
+            $settings['control'] = $id;
+        }
+        else {
+            $setting_id = "{$id}--{$device}";
+            $settings["control_{$device}"] = $setting_id;
+        }
+
+        // calculate defaults
+        if( is_array($default) ) {
+            $setting_default = ( isset($default[$device]) ) ? $default[$device] : false;
+        } else {
+            $setting_default = $default;
+        }
+
+        // Create Setting
+        $manager->add_setting( $setting_id, [
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => $transport,
+            'default' => $setting_default
+        ]);
+    }
+
+    // Create Control
+    $manager->add_control( new Responsive_Control( $manager, $id, [
+        'type' => 'checkbox',
+        'section' => $section,
+        'label' => $label,
         'settings' => $settings,
         'devices' => $devices
     ]));

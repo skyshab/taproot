@@ -290,20 +290,18 @@ function getPaddingFromWidth(width) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _panels_site_identity_panel_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./panels/site-identity/panel.js */ "./resources/js/customize-preview/panels/site-identity/panel.js");
-/* harmony import */ var _panels_site_identity_panel_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_panels_site_identity_panel_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _panels_general_panel_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./panels/general/panel.js */ "./resources/js/customize-preview/panels/general/panel.js");
-/* harmony import */ var _panels_layout_panel_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./panels/layout/panel.js */ "./resources/js/customize-preview/panels/layout/panel.js");
-/* harmony import */ var _panels_header_panel_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./panels/header/panel.js */ "./resources/js/customize-preview/panels/header/panel.js");
-/* harmony import */ var _panels_branding_panel_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./panels/branding/panel.js */ "./resources/js/customize-preview/panels/branding/panel.js");
-/* harmony import */ var _panels_typography_panel_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./panels/typography/panel.js */ "./resources/js/customize-preview/panels/typography/panel.js");
-/* harmony import */ var _panels_colors_panel_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./panels/colors/panel.js */ "./resources/js/customize-preview/panels/colors/panel.js");
-/* harmony import */ var _panels_elements_panel_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./panels/elements/panel.js */ "./resources/js/customize-preview/panels/elements/panel.js");
-/* harmony import */ var _panels_blog_panel_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./panels/blog/panel.js */ "./resources/js/customize-preview/panels/blog/panel.js");
-/* harmony import */ var _panels_posts_panel_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./panels/posts/panel.js */ "./resources/js/customize-preview/panels/posts/panel.js");
-/* harmony import */ var _panels_pages_panel_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./panels/pages/panel.js */ "./resources/js/customize-preview/panels/pages/panel.js");
-/* harmony import */ var _panels_footer_panel_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./panels/footer/panel.js */ "./resources/js/customize-preview/panels/footer/panel.js");
-/* harmony import */ var _panels_nav_panel_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./panels/nav/panel.js */ "./resources/js/customize-preview/panels/nav/panel.js");
+/* harmony import */ var _panels_general_panel_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./panels/general/panel.js */ "./resources/js/customize-preview/panels/general/panel.js");
+/* harmony import */ var _panels_layout_panel_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./panels/layout/panel.js */ "./resources/js/customize-preview/panels/layout/panel.js");
+/* harmony import */ var _panels_header_panel_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./panels/header/panel.js */ "./resources/js/customize-preview/panels/header/panel.js");
+/* harmony import */ var _panels_branding_panel_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./panels/branding/panel.js */ "./resources/js/customize-preview/panels/branding/panel.js");
+/* harmony import */ var _panels_typography_panel_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./panels/typography/panel.js */ "./resources/js/customize-preview/panels/typography/panel.js");
+/* harmony import */ var _panels_colors_panel_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./panels/colors/panel.js */ "./resources/js/customize-preview/panels/colors/panel.js");
+/* harmony import */ var _panels_elements_panel_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./panels/elements/panel.js */ "./resources/js/customize-preview/panels/elements/panel.js");
+/* harmony import */ var _panels_blog_panel_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./panels/blog/panel.js */ "./resources/js/customize-preview/panels/blog/panel.js");
+/* harmony import */ var _panels_posts_panel_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./panels/posts/panel.js */ "./resources/js/customize-preview/panels/posts/panel.js");
+/* harmony import */ var _panels_pages_panel_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./panels/pages/panel.js */ "./resources/js/customize-preview/panels/pages/panel.js");
+/* harmony import */ var _panels_footer_panel_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./panels/footer/panel.js */ "./resources/js/customize-preview/panels/footer/panel.js");
+/* harmony import */ var _panels_nav_panel_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./panels/nav/panel.js */ "./resources/js/customize-preview/panels/nav/panel.js");
 /**
  * Add customizer panel js.
  *
@@ -315,7 +313,6 @@ __webpack_require__.r(__webpack_exports__);
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
-
 
 
 
@@ -1178,11 +1175,11 @@ wp.customize('branding--tagline--gutter', function (value) {
   });
 }); // Hide tagline
 
-wp.customize('branding--tagline--hide-tagline', function (value) {
+wp.customize('branding--tagline--hide', function (value) {
   value.bind(function (to) {
     var taglineDisplay = to ? 'none' : 'inline-block';
     rootstrap.style({
-      id: 'branding--tagline--hide-tagline',
+      id: 'branding--tagline--hide',
       selector: '.app-header__description',
       styles: {
         'display': taglineDisplay
@@ -1198,7 +1195,7 @@ wp.customize('branding--tagline--hide-tagline', function (value) {
       'align-self': 'end'
     };
     rootstrap.style({
-      id: 'branding--tagline--hide-tagline--title',
+      id: 'branding--tagline--hide--title',
       selector: '.app-header__title',
       styles: titleStyles,
       screen: 'mobile'
@@ -1237,11 +1234,11 @@ wp.customize('branding--tagline--gutter--tablet', function (value) {
   });
 }); // Hide tagline
 
-wp.customize('branding--tagline--hide-tagline--tablet', function (value) {
+wp.customize('branding--tagline--hide--tablet', function (value) {
   value.bind(function (to) {
     var taglineDisplay = to ? 'none' : 'inline-block';
     rootstrap.style({
-      id: 'branding--tagline--hide-tagline',
+      id: 'branding--tagline--hide',
       selector: '.app-header__description',
       styles: {
         'display': taglineDisplay
@@ -1257,7 +1254,7 @@ wp.customize('branding--tagline--hide-tagline--tablet', function (value) {
       'align-self': 'end'
     };
     rootstrap.style({
-      id: 'branding--tagline--hide-tagline--tablet--title',
+      id: 'branding--tagline--hide--tablet--title',
       selector: '.app-header__title',
       styles: titleStyles,
       screen: 'tablet'
@@ -1296,11 +1293,11 @@ wp.customize('branding--tagline--gutter--desktop', function (value) {
   });
 }); // Hide tagline
 
-wp.customize('branding--tagline--hide-tagline--desktop', function (value) {
+wp.customize('branding--tagline--hide--desktop', function (value) {
   value.bind(function (to) {
     var taglineDisplay = to ? 'none' : 'inline-block';
     rootstrap.style({
-      id: 'branding--tagline--hide-tagline--desktop',
+      id: 'branding--tagline--hide--desktop',
       selector: '.app-header__description',
       styles: {
         'display': taglineDisplay
@@ -1316,7 +1313,7 @@ wp.customize('branding--tagline--hide-tagline--desktop', function (value) {
       'align-self': 'end'
     };
     rootstrap.style({
-      id: 'branding--tagline--hide-tagline--desktop--title',
+      id: 'branding--tagline--hide--desktop--title',
       selector: '.app-header__title',
       styles: titleStyles,
       screen: 'desktop'
@@ -1444,7 +1441,7 @@ wp.customize('branding--title--font-styles', function (value) {
 }); // Mobile/Default Styles
 // Font Size
 
-wp.customize('branding--title-mobile--font-size', function (value) {
+wp.customize('branding--title--font-size', function (value) {
   value.bind(function (to) {
     rootstrap.var({
       name: 'branding--title--font-size',
@@ -1454,7 +1451,7 @@ wp.customize('branding--title-mobile--font-size', function (value) {
   });
 }); // Line Height
 
-wp.customize('branding--title-mobile--line-height', function (value) {
+wp.customize('branding--title--line-height', function (value) {
   value.bind(function (to) {
     rootstrap.var({
       name: 'branding--title--line-height',
@@ -1464,11 +1461,11 @@ wp.customize('branding--title-mobile--line-height', function (value) {
   });
 }); // Hide title
 
-wp.customize('branding--title-mobile--hide-title', function (value) {
+wp.customize('branding--title--hide', function (value) {
   value.bind(function (to) {
     var titleDisplay = to ? 'none' : 'inline-block';
     rootstrap.style({
-      id: 'branding--title-mobile--hide-title',
+      id: 'branding--title--hide',
       selector: '.app-header__title',
       styles: {
         'display': titleDisplay
@@ -1499,11 +1496,11 @@ wp.customize('branding--title--line-height--tablet', function (value) {
   });
 }); // Hide title
 
-wp.customize('branding--title--hide-title--tablet', function (value) {
+wp.customize('branding--title--hide--tablet', function (value) {
   value.bind(function (to) {
     var titleDisplay = to ? 'none' : 'inline-block';
     rootstrap.style({
-      id: 'branding--title--hide-title--tablet',
+      id: 'branding--title--hide--tablet',
       selector: '.app-header__title',
       styles: {
         'display': titleDisplay
@@ -1534,11 +1531,11 @@ wp.customize('branding--title--line-height--desktop', function (value) {
   });
 }); // Hide title
 
-wp.customize('branding--title--hide-title--desktop', function (value) {
+wp.customize('branding--title--hide--desktop', function (value) {
   value.bind(function (to) {
     var titleDisplay = to ? 'none' : 'inline-block';
     rootstrap.style({
-      id: 'branding--title--hide-title--desktop',
+      id: 'branding--title--hide--desktop',
       selector: '.app-header__title',
       styles: {
         'display': titleDisplay
@@ -2077,14 +2074,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_preview_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_preview_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _widgets_preview_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./widgets/preview.js */ "./resources/js/customize-preview/panels/footer/widgets/preview.js");
 /* harmony import */ var _widgets_preview_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_widgets_preview_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _widgets_mobile_preview_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./widgets-mobile/preview.js */ "./resources/js/customize-preview/panels/footer/widgets-mobile/preview.js");
-/* harmony import */ var _widgets_mobile_preview_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_widgets_mobile_preview_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _widgets_tablet_preview_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./widgets-tablet/preview.js */ "./resources/js/customize-preview/panels/footer/widgets-tablet/preview.js");
-/* harmony import */ var _widgets_tablet_preview_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_widgets_tablet_preview_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _widgets_desktop_preview_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./widgets-desktop/preview.js */ "./resources/js/customize-preview/panels/footer/widgets-desktop/preview.js");
-/* harmony import */ var _widgets_desktop_preview_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_widgets_desktop_preview_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _bottom_bar_preview_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./bottom-bar/preview.js */ "./resources/js/customize-preview/panels/footer/bottom-bar/preview.js");
-/* harmony import */ var _bottom_bar_preview_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_bottom_bar_preview_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _bottom_bar_preview_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./bottom-bar/preview.js */ "./resources/js/customize-preview/panels/footer/bottom-bar/preview.js");
+/* harmony import */ var _bottom_bar_preview_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_bottom_bar_preview_js__WEBPACK_IMPORTED_MODULE_2__);
 /**
  * Add customizer panel js.
  *
@@ -2096,9 +2087,6 @@ __webpack_require__.r(__webpack_exports__);
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
-
-
-
 
 
 
@@ -2196,348 +2184,6 @@ wp.customize('footer--styles--fullwidth', function (value) {
     } else {
       $('.app-footer').removeClass('app-footer--fullwidth').addClass('app-footer--standard-width');
     }
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/footer/widgets-desktop/preview.js":
-/*!*********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/footer/widgets-desktop/preview.js ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Default Color
-wp.customize('footer--widgets-desktop--layout', function (value) {
-  value.bind(function (to) {
-    var footerStyles;
-
-    switch (to) {
-      case 'quarters':
-        footerStyles = 'repeat(4, 1fr)';
-        break;
-
-      case 'thirds':
-        footerStyles = 'repeat(3, 1fr)';
-        break;
-
-      case 'halves':
-        footerStyles = 'repeat(2, 1fr)';
-        break;
-
-      case 'full':
-        footerStyles = '100%';
-        break;
-
-      case 'one-third-two-thirds':
-        footerStyles = '1fr 2fr';
-        break;
-
-      case 'two-thirds-one-third':
-        footerStyles = '2fr 1fr';
-        break;
-
-      case 'quarter-quarter-half':
-        footerStyles = '1fr 1fr 2fr';
-        break;
-
-      case 'half-quarter-quarter':
-        footerStyles = '2fr 1fr 1fr';
-        break;
-
-      default:
-        footerStyles = false;
-    }
-
-    rootstrap.style({
-      id: 'footer--widgets-desktop--layout',
-      selector: '.app-footer__widgets',
-      styles: {
-        'grid-template-columns': footerStyles
-      },
-      screen: 'desktop'
-    });
-  });
-}); // Title Font Size
-
-wp.customize('footer--widgets-desktop--title--font-size', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'footer--widgets--title--font-size',
-      value: to,
-      screen: 'desktop'
-    });
-  });
-}); // Title Line Height
-
-wp.customize('footer--widgets-desktop--title--line-height', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'footer--widgets--title--line-height',
-      value: to,
-      screen: 'desktop'
-    });
-  });
-}); // Text Font Size
-
-wp.customize('footer--widgets-desktop--font-size', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'footer--widgets--font-size',
-      value: to,
-      screen: 'desktop'
-    });
-  });
-}); // Text Line Height
-
-wp.customize('footer--widgets-desktop--line-height', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'footer--widgets--line-height',
-      value: to,
-      screen: 'desktop'
-    });
-  });
-}); // Widgets Spacing
-
-wp.customize('footer--widgets-desktop--gutter', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'footer--widgets--gutter',
-      value: to,
-      screen: 'desktop'
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/footer/widgets-mobile/preview.js":
-/*!********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/footer/widgets-mobile/preview.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Default Color
-wp.customize('footer--widgets-mobile--layout', function (value) {
-  value.bind(function (to) {
-    var footerStyles;
-
-    switch (to) {
-      case 'halves':
-        footerStyles = 'repeat(2, 1fr)';
-        break;
-
-      case 'full':
-        footerStyles = '100%';
-        break;
-
-      default:
-        footerStyles = false;
-    }
-
-    rootstrap.style({
-      id: 'footer--widgets-mobile--layout',
-      selector: '.app-footer__widgets',
-      styles: {
-        'grid-template-columns': footerStyles
-      },
-      screen: 'default'
-    });
-  });
-}); // Title Font Size
-
-wp.customize('footer--widgets-mobile--title--font-size', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'footer--widgets--title--font-size',
-      value: to,
-      screen: 'default'
-    });
-  });
-}); // Title Line Height
-
-wp.customize('footer--widgets-mobile--title--line-height', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'footer--widgets--title--line-height',
-      value: to,
-      screen: 'default'
-    });
-  });
-}); // Text Font Size
-
-wp.customize('footer--widgets-mobile--font-size', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'footer--widgets--font-size',
-      value: to,
-      screen: 'default'
-    });
-  });
-}); // Text Line Height
-
-wp.customize('footer--widgets-mobile--line-height', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'footer--widgets--line-height',
-      value: to,
-      screen: 'default'
-    });
-  });
-}); // Widgets Spacing
-
-wp.customize('footer--widgets-mobile--gutter', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'footer--widgets--gutter',
-      value: to,
-      screen: 'default'
-    });
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/footer/widgets-tablet/preview.js":
-/*!********************************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/footer/widgets-tablet/preview.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Customize controls preview scripts
- *
- * This file binds javascript actions to cutomize controls.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- */
-// Default Color
-wp.customize('footer--widgets-tablet--layout', function (value) {
-  value.bind(function (to) {
-    var footerStyles;
-
-    switch (to) {
-      case 'quarters':
-        footerStyles = 'repeat(4, 1fr)';
-        break;
-
-      case 'thirds':
-        footerStyles = 'repeat(3, 1fr)';
-        break;
-
-      case 'halves':
-        footerStyles = 'repeat(2, 1fr)';
-        break;
-
-      case 'full':
-        footerStyles = '100%';
-        break;
-
-      case 'one-third-two-thirds':
-        footerStyles = '1fr 2fr';
-        break;
-
-      case 'two-thirds-one-third':
-        footerStyles = '2fr 1fr';
-        break;
-
-      case 'quarter-quarter-half':
-        footerStyles = '1fr 1fr 2fr';
-        break;
-
-      case 'half-quarter-quarter':
-        footerStyles = '2fr 1fr 1fr';
-        break;
-
-      default:
-        footerStyles = false;
-    }
-
-    rootstrap.style({
-      id: 'footer--widgets-tablet--layout',
-      selector: '.app-footer__widgets',
-      styles: {
-        'grid-template-columns': footerStyles
-      },
-      screen: 'tablet-and-up'
-    });
-  });
-}); // Title Font Size
-
-wp.customize('footer--widgets-tablet--title--font-size', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'footer--widgets--title--font-size',
-      value: to,
-      screen: 'tablet-and-up'
-    });
-  });
-}); // Title Line Height
-
-wp.customize('footer--widgets-tablet--title--line-height', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'footer--widgets--title--line-height',
-      value: to,
-      screen: 'tablet-and-up'
-    });
-  });
-}); // Text Font Size
-
-wp.customize('footer--widgets-tablet--font-size', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'footer--widgets--font-size',
-      value: to,
-      screen: 'tablet-and-up'
-    });
-  });
-}); // Text Line Height
-
-wp.customize('footer--widgets-tablet--line-height', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'footer--widgets--line-height',
-      value: to,
-      screen: 'tablet-and-up'
-    });
-  });
-}); // Widgets Spacing
-
-wp.customize('footer--widgets-tablet--gutter', function (value) {
-  value.bind(function (to) {
-    rootstrap.var({
-      name: 'footer--widgets--gutter',
-      value: to,
-      screen: 'tablet-and-up'
-    });
   });
 });
 
@@ -5518,28 +5164,6 @@ wp.customize('posts--title--line-height--desktop', function (value) {
     });
   });
 });
-
-/***/ }),
-
-/***/ "./resources/js/customize-preview/panels/site-identity/panel.js":
-/*!**********************************************************************!*\
-  !*** ./resources/js/customize-preview/panels/site-identity/panel.js ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Add customizer panel js.
- *
- * This file contains the js functionality for the customizer preview.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- * @link      https://taproot-theme.com
- */
-// import './default/preview.js';
 
 /***/ }),
 

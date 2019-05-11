@@ -13,11 +13,11 @@
 
 
 use Taproot\Customize\Controls\Font_Styles;
-use Taproot\Customize\Controls\Responsive_Control;
 use function Taproot\Customize\get_font_choices;
 use function Taproot\Customize\color;
 use function Taproot\Customize\range;
 use function Taproot\Customize\range_atts;
+use function Taproot\Customize\checkbox;
 
 # =======================================================
 # Add Section
@@ -57,18 +57,11 @@ $manager->add_control( 'branding--tagline--display-tagline', [
 
 
 // Setting: Hide Site Tagline
-$manager->add_setting( 'branding--tagline--hide-tagline', [
-    'sanitize_callback' => 'taproot_sanitize_checkbox',
-    'transport' => 'postMessage',
-]);
-
-// Control: Hide Site Tagline
-$manager->add_control( new Responsive_Control( $manager, 'branding--tagline--hide-tagline', [
-    'type' => 'checkbox',
+checkbox( $manager, 'branding--tagline--hide', [
     'section' => 'branding--tagline',
     'label' => esc_html__( 'Hide Tagline', 'taproot' ),
     'devices' => ['mobile', 'tablet', 'desktop']
-]));
+]);
 
 
 // Text Color
@@ -128,8 +121,7 @@ range( $manager, 'branding--tagline--gutter', [
     'label' => esc_html__('Tagline Gutter', 'taproot'),
     'atts'  => [
         'px' => [
-            'max'   => 100,
-            'default' => 4
+            'max' => 100,
         ]
     ],
     'devices' => ['mobile', 'tablet', 'desktop']

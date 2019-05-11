@@ -17,18 +17,18 @@
 $defaults->add( 'branding--logo--width', '60px' );
 
 // Logo gutter
-$defaults->add( 'branding--logo--gutter', '1em' );
+$defaults->add( 'branding--logo--gutter', '16px' );
 
 
 // Logo width tablet
 $defaults->add( 'branding--logo--width--tablet', '60px' );
 
 // Logo gutter tablet
-$defaults->add( 'branding--logo--gutter--tablet', '1em' );
+$defaults->add( 'branding--logo--gutter--tablet', '16px' );
 
 
 // Logo width desktop
 $defaults->add( 'branding--logo--width--desktop', '75px' );
 
 // Logo gutter desktop
-$defaults->add( 'branding--logo--gutter--desktop', '1em' );
+$defaults->add( 'branding--logo--gutter--desktop', '16px' );

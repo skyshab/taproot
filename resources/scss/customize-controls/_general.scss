@@ -15,6 +15,12 @@ body .wp-full-overlay #customize-preview iframe.resizing {
     max-width: 100%!important;
 }
 
-.devices .preview-mobile-landscape:before {
-    transform: rotate(90deg) scaleY(-1);
+// style the logo picker
+#customize-control-custom_logo {
+    .thumbnail-image {
+        text-align: center;
+        img {
+            max-height: 175px;
+        }
+    }
 }

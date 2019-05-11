@@ -36,7 +36,7 @@ $styles->add([
 
 
 // Hide Title
-if( theme_mod( 'branding--title--hide-title' ) ) {
+if( theme_mod( 'branding--title--hide' ) ) {
     $styles->add([
         'screen' => 'mobile',
         'selector' => '.app-header__title',
@@ -66,7 +66,7 @@ else {
 
 
 // Hide Title
-if( theme_mod( 'branding--title--hide-title--tablet' ) ) {
+if( theme_mod( 'branding--title--hide--tablet' ) ) {
     $styles->add([
         'screen' => 'tablet',
         'selector' => '.app-header__title',
@@ -96,7 +96,7 @@ else {
 
 
 // Hide Title
-if( theme_mod( 'branding--title--hide-title--desktop' ) ) {
+if( theme_mod( 'branding--title--hide--desktop' ) ) {
     $styles->add([
         'screen' => 'desktop',
         'selector' => '.app-header__title',

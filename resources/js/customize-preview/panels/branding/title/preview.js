@@ -55,7 +55,7 @@ wp.customize( 'branding--title--font-styles', function( value ) {
 // Mobile/Default Styles
 
 // Font Size
-wp.customize( 'branding--title-mobile--font-size', function( value ) {
+wp.customize( 'branding--title--font-size', function( value ) {
     value.bind( function( to ) {
         rootstrap.var({
             name: 'branding--title--font-size',
@@ -66,7 +66,7 @@ wp.customize( 'branding--title-mobile--font-size', function( value ) {
 });
 
 // Line Height
-wp.customize( 'branding--title-mobile--line-height', function( value ) {
+wp.customize( 'branding--title--line-height', function( value ) {
     value.bind( function( to ) {
         rootstrap.var({
             name: 'branding--title--line-height',
@@ -77,11 +77,11 @@ wp.customize( 'branding--title-mobile--line-height', function( value ) {
 });
 
 // Hide title
-wp.customize( 'branding--title-mobile--hide-title', function( value ) {
+wp.customize( 'branding--title--hide', function( value ) {
     value.bind( function( to ) {
         var titleDisplay = (to) ? 'none' : 'inline-block';
         rootstrap.style({
-            id: 'branding--title-mobile--hide-title',
+            id: 'branding--title--hide',
             selector: '.app-header__title',
             styles: {
                 'display': titleDisplay
@@ -117,11 +117,11 @@ wp.customize( 'branding--title--line-height--tablet', function( value ) {
 });
 
 // Hide title
-wp.customize( 'branding--title--hide-title--tablet', function( value ) {
+wp.customize( 'branding--title--hide--tablet', function( value ) {
     value.bind( function( to ) {
         var titleDisplay = (to) ? 'none' : 'inline-block';
         rootstrap.style({
-            id: 'branding--title--hide-title--tablet',
+            id: 'branding--title--hide--tablet',
             selector: '.app-header__title',
             styles: {
                 'display': titleDisplay
@@ -157,11 +157,11 @@ wp.customize( 'branding--title--line-height--desktop', function( value ) {
 });
 
 // Hide title
-wp.customize( 'branding--title--hide-title--desktop', function( value ) {
+wp.customize( 'branding--title--hide--desktop', function( value ) {
     value.bind( function( to ) {
         var titleDisplay = (to) ? 'none' : 'inline-block';
         rootstrap.style({
-            id: 'branding--title--hide-title--desktop',
+            id: 'branding--title--hide--desktop',
             selector: '.app-header__title',
             styles: {
                 'display': titleDisplay

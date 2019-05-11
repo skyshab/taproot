@@ -30,6 +30,14 @@ class DevicePicker {
                 });
             });
         });
+
+        // Change responsive controls whenever the preview is changed.
+        api.previewedDevice.bind( () => {
+            const device = api.previewedDevice.get();
+            document.querySelectorAll('.device-picker').forEach( picker => {
+                picker.dataset.currentDevice = device;
+            });
+        });
     }
 }
 

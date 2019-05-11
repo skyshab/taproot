@@ -482,6 +482,13 @@ function () {
             picker.dataset.currentDevice = device;
           });
         });
+      }); // Change responsive controls whenever the preview is changed.
+
+      api.previewedDevice.bind(function () {
+        var device = api.previewedDevice.get();
+        document.querySelectorAll('.device-picker').forEach(function (picker) {
+          picker.dataset.currentDevice = device;
+        });
       });
     }
   }]);

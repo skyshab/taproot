@@ -14,8 +14,11 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	max-width: 100% !important;
 }
 
-.devices .preview-mobile-landscape:before {
-	transform: rotate(90deg) scaleY(-1);
+#customize-control-custom_logo .thumbnail-image {
+	text-align: center;
+}
+#customize-control-custom_logo .thumbnail-image img {
+	max-height: 175px;
 }
 
 .customize-control-select {
@@ -348,7 +351,8 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 }
 .customize-control-range .taproot-range-input {
 	width: 36px !important;
-	text-align: center;
+	flex-shrink: 0;
+	text-align: right;
 	margin-left: 4px;
 	border: none;
 	box-shadow: none;
@@ -359,7 +363,6 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	font-weight: 500;
 	color: #555;
 	-moz-appearance: textfield;
-	text-align: right;
 }
 .customize-control-range .taproot-range-input::-webkit-outer-spin-button, .customize-control-range .taproot-range-input::-webkit-inner-spin-button {
 	-webkit-appearance: none;

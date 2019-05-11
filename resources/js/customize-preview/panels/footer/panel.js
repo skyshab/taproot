@@ -13,7 +13,4 @@
 
 import './styles/preview.js';
 import './widgets/preview.js';
-import './widgets-mobile/preview.js';
-import './widgets-tablet/preview.js';
-import './widgets-desktop/preview.js';
 import './bottom-bar/preview.js';

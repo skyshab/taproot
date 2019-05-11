@@ -12,8 +12,6 @@
  */
 
 
-$panels->add( 'site-identity' );
-
 $panels->add( 'general', [
     'title' => __('General', 'taproot'),
     'priority' => 10,

@@ -41,7 +41,7 @@ class Header implements Bootable {
 	 */
 	public function boot() {
         add_filter( 'hybrid/attr/app-header/class', [ $this, 'header_classes' ], 10, 2 );
-        add_filter( 'theme_mod_header_image', [ $this, 'custom_header' ] );
+        add_filter( 'theme_mod_header_image', [ $this, 'custom_header' ], 100 );
         add_action( 'taproot/header/additional-content', [ $this, 'additional_content' ] );
     }
 
@@ -130,7 +130,7 @@ class Header implements Bootable {
             return $value;
         }
 
-        //Static homepage
+        // Static homepage
         elseif ( is_front_page() ) {
             if($post_custom_header) {
                 return $post_custom_header;
@@ -138,12 +138,12 @@ class Header implements Bootable {
             return $value;
         }
 
-        //Blog page
+        // Blog page
         elseif ( is_home() ) {
             return get_post_meta( get_option( 'page_for_posts' ), 'taproot_custom_header_image', true );
         }
 
-        //everything else
+        // Single posts pages and custom post types
         elseif( is_singular() ) {
             if( $use_featured && '' !== $use_featured ) {
                 return get_featured_url( featured_id( get_the_ID() ), 'full', false )[0];
@@ -166,7 +166,7 @@ class Header implements Bootable {
         if( $post_custom_header ) {
             return true;
         }
-        elseif( theme_mod('header_image') ) {
+        elseif( theme_mod('header_image') && is_front_page() && is_home() ) {
             return true;
         }
         return false;

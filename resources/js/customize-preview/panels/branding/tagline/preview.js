@@ -89,11 +89,11 @@ wp.customize( 'branding--tagline--gutter', function( value ) {
 });
 
 // Hide tagline
-wp.customize( 'branding--tagline--hide-tagline', function( value ) {
+wp.customize( 'branding--tagline--hide', function( value ) {
     value.bind( function( to ) {
         var taglineDisplay = (to) ? 'none' : 'inline-block';
         rootstrap.style({
-            id: 'branding--tagline--hide-tagline',
+            id: 'branding--tagline--hide',
             selector: '.app-header__description',
             styles: {
                 'display': taglineDisplay
@@ -113,7 +113,7 @@ wp.customize( 'branding--tagline--hide-tagline', function( value ) {
             };
 
         rootstrap.style({
-            id: 'branding--tagline--hide-tagline--title',
+            id: 'branding--tagline--hide--title',
             selector: '.app-header__title',
             styles: titleStyles,
             screen: 'mobile'
@@ -159,11 +159,11 @@ wp.customize( 'branding--tagline--gutter--tablet', function( value ) {
 
 
 // Hide tagline
-wp.customize( 'branding--tagline--hide-tagline--tablet', function( value ) {
+wp.customize( 'branding--tagline--hide--tablet', function( value ) {
     value.bind( function( to ) {
         var taglineDisplay = (to) ? 'none' : 'inline-block';
         rootstrap.style({
-            id: 'branding--tagline--hide-tagline',
+            id: 'branding--tagline--hide',
             selector: '.app-header__description',
             styles: {
                 'display': taglineDisplay
@@ -183,7 +183,7 @@ wp.customize( 'branding--tagline--hide-tagline--tablet', function( value ) {
             };
 
         rootstrap.style({
-            id: 'branding--tagline--hide-tagline--tablet--title',
+            id: 'branding--tagline--hide--tablet--title',
             selector: '.app-header__title',
             styles: titleStyles,
             screen: 'tablet'
@@ -229,11 +229,11 @@ wp.customize( 'branding--tagline--gutter--desktop', function( value ) {
 
 
 // Hide tagline
-wp.customize( 'branding--tagline--hide-tagline--desktop', function( value ) {
+wp.customize( 'branding--tagline--hide--desktop', function( value ) {
     value.bind( function( to ) {
         var taglineDisplay = (to) ? 'none' : 'inline-block';
         rootstrap.style({
-            id: 'branding--tagline--hide-tagline--desktop',
+            id: 'branding--tagline--hide--desktop',
             selector: '.app-header__description',
             styles: {
                 'display': taglineDisplay
@@ -253,7 +253,7 @@ wp.customize( 'branding--tagline--hide-tagline--desktop', function( value ) {
             };
 
         rootstrap.style({
-            id: 'branding--tagline--hide-tagline--desktop--title',
+            id: 'branding--tagline--hide--desktop--title',
             selector: '.app-header__title',
             styles: titleStyles,
             screen: 'desktop'
