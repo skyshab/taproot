@@ -1,5 +1,13 @@
 # Change Log
 
+= 1.2.0 =
+* 05/11/19
+* New - Responsive Customizer controls
+* Fix - Custom Header in preview
+* Fix - Mobile nav icon placement with vertical branding
+* General - Widget styles
+* General - Customizer styles and behavior
+
 = 1.1.2 =
 * 05/03/19
 * Fix - Customizer color live preview
