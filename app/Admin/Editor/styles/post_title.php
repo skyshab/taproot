@@ -48,7 +48,7 @@ $styles->add([
 // mobile default
 $styles->add_var([
     'name' => 'posts--title--font-size',
-    'value' => theme_mod('posts--title-mobile--font-size'),
+    'value' => theme_mod('posts--title--font-size'),
     'selector' => '.editor-styles-wrapper .wp-block',
 ]);
 
@@ -56,7 +56,7 @@ $styles->add_var([
 // tablet size when settings panel closed, use mobile when open
 $styles->add_var([
     'name' => 'posts--title--font-size',
-    'value' => theme_mod('posts--title-tablet--font-size'),
+    'value' => theme_mod('posts--title-tablet--font-size--tablet'),
     'screen' => 'editor-tablet',
     'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
 ]);
@@ -65,7 +65,7 @@ $styles->add_var([
 // tablet size when settings panel open
 $styles->add_var([
     'name' => 'posts--title--font-size',
-    'value' => theme_mod('posts--title-tablet--font-size'),
+    'value' => theme_mod('posts--title-tablet--font-size--tablet'),
     'screen' => 'editor-desktop',
     'selector' => '.editor-styles-wrapper .wp-block',
 ]);
@@ -74,7 +74,7 @@ $styles->add_var([
 // desktop size when settings panel closed
 $styles->add_var([
     'name' => 'posts--title--font-size',
-    'value' => theme_mod('posts--title-desktop--font-size'),
+    'value' => theme_mod('posts--title--font-size--desktop'),
     'screen' => 'editor-desktop',
     'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
 ]);
@@ -88,7 +88,7 @@ $styles->add_var([
 // mobile default
 $styles->add_var([
     'name' => 'posts--title--line-height',
-    'value' => theme_mod('posts--title-mobile--line-height'),
+    'value' => theme_mod('posts--title--line-height'),
     'selector' => '.editor-styles-wrapper .wp-block',
 ]);
 
@@ -96,7 +96,7 @@ $styles->add_var([
 // tablet size when settings panel closed, use mobile when open
 $styles->add_var([
     'name' => 'posts--title--line-height',
-    'value' => theme_mod('posts--title-tablet--line-height'),
+    'value' => theme_mod('posts--title-tablet--line-height--tablet'),
     'screen' => 'editor-tablet',
     'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
 ]);
@@ -105,7 +105,7 @@ $styles->add_var([
 // tablet size when settings panel open
 $styles->add_var([
     'name' => 'posts--title--line-height',
-    'value' => theme_mod('posts--title-tablet--line-height'),
+    'value' => theme_mod('posts--title-tablet--line-height--tablet'),
     'screen' => 'editor-desktop',
     'selector' => '.editor-styles-wrapper .wp-block',
 ]);
@@ -114,7 +114,7 @@ $styles->add_var([
 // desktop size when settings panel closed
 $styles->add_var([
     'name' => 'posts--title--line-height',
-    'value' => theme_mod('posts--title-desktop--line-height'),
+    'value' => theme_mod('posts--title--line-height--desktop'),
     'screen' => 'editor-desktop',
     'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
 ]);
