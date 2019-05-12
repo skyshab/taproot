@@ -15,13 +15,6 @@
 use function Taproot\Customize\theme_mod;
 
 
-// Var: Body Text Color
-$styles->add_var([
-    'name' => 'colors--theme--text',
-    'value' => theme_mod( 'colors--theme--text', true ),
-]);
-
-
 // Var: Accent Color
 $styles->add_var([
     'name' => 'colors--theme--accent',

@@ -15,13 +15,6 @@
 use function Taproot\Customize\theme_mod;
 
 
-// Var: Sidebar Background Color
-$styles->add_var([
-    'name' => 'layout--sidebar--background-color',
-    'value' => theme_mod( 'layout--sidebar--background-color' ),
-]);
-
-
 // Var: Sidebar Min Width
 $styles->add_var([
     'name' => 'layout--sidebar--min-width',

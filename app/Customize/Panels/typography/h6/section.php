@@ -14,7 +14,8 @@
 use Taproot\Customize\Controls\Font_Styles;
 use function Taproot\Customize\color;
 use function Taproot\Customize\get_font_choices;
-
+use function Taproot\Customize\range;
+use function Taproot\Customize\range_atts;
 
 # =======================================================
 # Add Section
@@ -63,3 +64,20 @@ $manager->add_control( new Font_Styles( $manager, 'typography--h6--font-styles',
     'section'   => 'typography--h6',
     'label'     => esc_html__( 'Font Styles', 'taproot' ),
 ]));
+
+
+// Font Size
+range( $manager, 'typography--h6--font-size', [
+    'section' => 'typography--h6',
+    'label' => esc_html__('Font Size', 'taproot'),
+    'atts' => range_atts( 'heading' ),
+    'devices' => ['mobile', 'tablet', 'desktop']
+]);
+
+// Line Height
+range( $manager, 'typography--h6--line-height', [
+    'section' => 'typography--h6',
+    'label' => esc_html__('Line Height', 'taproot'),
+    'atts' => range_atts( 'line-height' ),
+    'devices' => ['mobile', 'tablet', 'desktop']
+]);

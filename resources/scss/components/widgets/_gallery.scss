@@ -1,0 +1,54 @@
+////
+/// Gallery Widgets.
+/// Using adaptation of Twenty Nineteen's gallery styles
+/// until we implement a more full fledged solution.
+///
+/// @group  Components
+/// @author WordPress contributors, Sky Shabatura
+/// @link   https://github.com/WordPress/twentynineteen/blob/master/sass/media/_galleries.scss
+////
+
+.gallery {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.gallery-item {
+	display: inline-block;
+	margin-right: 16px;
+	margin-bottom: 16px;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+
+	// Loops to enumerate the classes for gallery columns.
+	@for $i from 2 through 9 {
+		.gallery-columns-#{$i} & {
+			max-width: calc((100% - 16px * #{ $i - 1 }) / #{ $i });
+
+			&:nth-of-type(#{$i}n+#{$i}) {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&:last-of-type {
+		padding-right: 0;
+	}
+}
+
+.gallery-caption {
+	display: none;
+}
+
+.gallery-item > div > a {
+	display: block;
+	line-height: 0;
+
+	// Accessibility
+	box-shadow: 0 0 0 0 transparent;
+
+	&:focus {
+		box-shadow: 0 0 0 2px var(--theme--colors--accent);
+	}
+}

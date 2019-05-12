@@ -22,8 +22,8 @@ use function Taproot\Customize\theme_mod;
 
 // Var: Body Text Color
 $styles->add_var([
-    'name' => 'colors--theme--text',
-    'value' => theme_mod( 'colors--theme--text' ),
+    'name' => 'typography--body--text-color',
+    'value' => theme_mod( 'typography--body--text-color' ),
 ]);
 
 

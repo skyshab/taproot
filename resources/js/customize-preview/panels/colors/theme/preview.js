@@ -10,17 +10,6 @@
  */
 
 
-// Text Color
-wp.customize( 'colors--theme--text', function( value ) {
-    value.bind( function( to ) {
-        rootstrap.var({
-            name: 'colors--theme--text',
-            value: to
-        });
-    });
-});
-
-
  // Accent Color
  wp.customize( 'colors--theme--accent', function( value ) {
     value.bind( function( to ) {

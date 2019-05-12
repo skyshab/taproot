@@ -18,7 +18,7 @@ $defaults->add( 'nav--navbar-mobile--breakpoint', 'mobile' );
 
 
 // mobile type
-$defaults->add( 'nav--navbar-mobile--type', 'dropdown-slide' );
+$defaults->add( 'nav--navbar-mobile--type', 'slide' );
 
 
 // Navbar background color

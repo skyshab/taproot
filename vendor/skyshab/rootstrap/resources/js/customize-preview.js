@@ -19,7 +19,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
  *
  * @package   Rootstrap
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2018, Sky Shabatura
+ * @copyright Copyright (c) 2019, Sky Shabatura
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
@@ -137,12 +137,17 @@ function () {
   function StyleVar(data) {
     _classCallCheck(this, StyleVar);
 
-    if (!data.name || !data.value) return false;
+    if (!data.name) return false;
     this.screen = data.screen;
     this.name = data.name;
     this.id = this.screen ? "".concat(data.name, "--").concat(data.screen) : data.name;
-    this.value = data.value;
-    this.insertStyleblock();
+
+    if (data.value && '' !== data.value) {
+      this.value = data.value;
+      this.insertStyleblock();
+    } else {
+      this.removeStyleblock();
+    }
   }
 
   _createClass(StyleVar, [{
@@ -154,6 +159,15 @@ function () {
         oldBlock.innerHTML = this.getStyleBlockContent();
       } else {
         document.head.insertBefore(this.getStyleBlock(), this.getHook());
+      }
+    }
+  }, {
+    key: "removeStyleblock",
+    value: function removeStyleblock() {
+      var styleBlock = document.getElementById(this.id);
+
+      if (styleBlock) {
+        styleBlock.remove();
       }
     }
   }, {

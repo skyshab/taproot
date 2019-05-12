@@ -19,7 +19,10 @@
             padding: 1em 0;
         }
 
-        &.mobile-type-dropdown-slide, &.mobile-type-dropdown-fade {
+        &.mobile-type-dropdown-slide,
+        &.mobile-type-dropdown-fade,
+        &.mobile-type-slide,
+        &.mobile-type-fullscreen {
             position: absolute;
             justify-content: flex-end;
             height: 100%;
@@ -28,7 +31,10 @@
             bottom: 0;
             left: 0;
             padding: inherit;
+        }
 
+        &.mobile-type-dropdown-slide,
+        &.mobile-type-dropdown-fade {
             .menu__items {
                 left: 50%;
                 transform: translateX(-50%);

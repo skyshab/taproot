@@ -16,6 +16,14 @@
 // Background Color
 $defaults->add( 'footer--styles--background-color', '#232323' );
 
-
 // Text Color
 $defaults->add( 'footer--styles--default-color', '#ffffff' );
+
+// Layout Padding
+$defaults->add( 'footer--styles--padding', '24px' );
+
+// Layout Padding Tablet
+$defaults->add( 'footer--styles--padding--tablet', '24px' );
+
+// Layout Padding Desktop
+$defaults->add( 'footer--styles--padding--desktop', '24px' );

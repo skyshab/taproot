@@ -80,7 +80,7 @@ add_action( 'after_setup_theme', function() {
         [
             'name'  => __( 'Text Color', 'taproot' ),
             'slug'  => 'theme-text',
-            'color' => get_theme_mod( 'colors--theme--text', '#8c8c8c' )
+            'color' => get_theme_mod( 'typography--body--text-color', '#8c8c8c' )
         ],
         [
             'name'  => __( 'Accent Color', 'taproot' ),

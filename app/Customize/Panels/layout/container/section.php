@@ -49,3 +49,45 @@ range( $manager, 'layout--container--max-width', [
         ],
     ]
 ]);
+
+
+// Container Width
+range( $manager, 'layout--container--width', [
+    'section' => 'layout--container',
+    'label' => esc_html__('Container Width', 'taproot'),
+    'atts'  => [
+        'vw' => [
+            'min'   => 60,
+            'max'   => 100,
+        ]
+    ],
+    'devices' => [
+        'mobile',
+        'tablet',
+        'desktop'
+    ],
+]);
+
+
+
+
+// Testing New Range Control
+// range( $manager, 'testing-new-range', [
+//     'section' => 'layout--container',
+//     'label' => esc_html__('Testing New Range Control', 'taproot'),
+//     'atts'  => [
+//         'px' => [
+//             'min'   => 500,
+//             'max'   => 1600,
+//             'default' => 1000
+//         ]
+//     ],
+//     'devices' => [
+//         'mobile',
+//         'tablet',
+//         'desktop'
+//     ],
+//     'default' => [
+//         'desktop' => '1200px'
+//     ]
+// ]);

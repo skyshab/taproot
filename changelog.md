@@ -1,5 +1,23 @@
 # Change Log
 
+= 1.2.0 =
+* 05/11/19
+* New - Responsive Customizer controls
+* Fix - Custom Header in preview
+* Fix - Mobile nav icon placement with vertical branding
+* General - Widget styles
+* General - Customizer styles and behavior
+
+= 1.1.2 =
+* 05/03/19
+* Fix - Customizer color live preview
+* Fix - Sidebar width when using media widgets
+* Fix - Fullwidth image styles
+* General - Improved widget styles for calendar and media widgets
+* General - Moved Color controls in Customizer
+* General - Changed default mobile nav types
+
+
 = 1.1.1 =
 * 04/28/19
 * Fix - Nav menu widget styles

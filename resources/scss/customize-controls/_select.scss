@@ -12,16 +12,18 @@
 
 .customize-control-select {
 
-    select { 
-        width: 100%; 
-        font-size: 14px; 
-        height: 36px; 
-        line-height: 36px;        
-        color: #32373c; 
+    position: relative;
+
+    select {
+        width: 100%;
+        font-size: 14px;
+        height: 36px;
+        line-height: 36px;
+        color: #32373c;
         border: none;
-        margin: 0!important;  
+        margin: 0!important;
         -webkit-appearance: none;
-        -moz-appearance: none;  
+        -moz-appearance: none;
         padding: 0 10px;
         cursor: pointer;
         @extend %shadow-box;
@@ -31,10 +33,10 @@
         background-repeat: no-repeat;
         background-position: right 10px center;
 
-        &:focus { 
+        &:focus {
             border: none;
             outline: none;
-        }        
+        }
     }
 
 }

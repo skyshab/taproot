@@ -1,0 +1,19 @@
+////
+/// Media Widgets.
+/// This includes common styles for the default audio and video widgets
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+.widget {
+
+    &--media-audio,
+    &--media-video {
+        .mejs-container, .mejs-container .mejs-controls, .mejs-embed, .mejs-embed body {
+            background: var(--colors--sidebar--accent-color);
+        }
+    }
+}

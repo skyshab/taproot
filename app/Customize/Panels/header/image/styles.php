@@ -18,7 +18,7 @@ use function Taproot\Customize\is_boxed_layout;
 
 // Header Image heights
 $styles->add([
-    'selector' => '.custom-header .app-header:not(.app-header--fixed)',
+    'selector' => '.app-header--has-custom-header:not(.app-header--fixed)',
     'styles' => array(
         'height' => theme_mod( 'header--image--height', true ),
         'max-height' => theme_mod( 'header--image--max-height', true ),
@@ -30,7 +30,7 @@ $styles->add([
 if( '100vh' === theme_mod( 'header--image--max-height', true ) && is_boxed_layout() ) {
     $styles->add([
         'screen' => 'tablet-and-up',
-        'selector' => '.custom-header .app-header.boxed-layout:not(.app-header--fixed)',
+        'selector' => '.app-header--has-custom-header.boxed-layout:not(.app-header--fixed)',
         'styles' => [
             'max-height' => sprintf( "calc(100vh - %s)", theme_mod( 'layout--site--boxed-layout--padding', true ) ),
         ],

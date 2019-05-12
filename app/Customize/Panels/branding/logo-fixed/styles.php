@@ -31,7 +31,7 @@ else {
     $logo_styles['width'] = theme_mod( 'branding--logo-fixed--width' );
     $logo_gutter = theme_mod( 'branding--logo-fixed--gutter' );
 
-    if( 'horizontal' === theme_mod( 'branding--layout-desktop--layout', true ) && $logo_gutter ) {
+    if( 'horizontal' === theme_mod( 'branding--layout--desktop', true ) && $logo_gutter ) {
         $logo_styles['margin'] = sprintf( '0 %s 0 0', $logo_gutter );
     }
     elseif( $logo_gutter ) {

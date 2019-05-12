@@ -13,8 +13,11 @@
 
 
 use Taproot\Customize\Controls\Font_Styles;
-use function Taproot\Customize\color;
 use function Taproot\Customize\get_font_choices;
+use function Taproot\Customize\color;
+use function Taproot\Customize\range;
+use function Taproot\Customize\range_atts;
+use function Taproot\Customize\checkbox;
 
 
 # =======================================================
@@ -40,7 +43,7 @@ if( $manager->get_control( 'blogname' ) ) {
     $manager->get_setting( 'blogname' )->transport = 'postMessage';
 }
 
-// Setting: Display Site Title
+// Setting: Enable Site Title
 $manager->add_setting( 'branding--title--display-title', [
     'sanitize_callback' => 'taproot_sanitize_checkbox',
     'transport' => 'refresh',
@@ -49,7 +52,15 @@ $manager->add_setting( 'branding--title--display-title', [
 $manager->add_control( 'branding--title--display-title', [
     'type' => 'checkbox',
     'section' => 'branding--title',
-    'label' => esc_html__( 'Display Site Title', 'taproot' ),
+    'label' => esc_html__( 'Enable Site Title', 'taproot' ),
+]);
+
+
+// Setting: Hide Site Title
+checkbox( $manager, 'branding--title--hide', [
+    'section' => 'branding--title',
+    'label' => esc_html__( 'Hide Title', 'taproot' ),
+    'devices' => ['mobile', 'tablet', 'desktop']
 ]);
 
 
@@ -84,6 +95,24 @@ $manager->add_control( new Font_Styles( $manager, 'branding--title--font-styles'
     'section' => 'branding--title',
     'label'   => esc_html__( 'Font Styles', 'taproot' ),
 ]));
+
+
+// Font Size
+range( $manager, 'branding--title--font-size', [
+    'section' => 'branding--title',
+    'label' => esc_html__('Font Size', 'taproot'),
+    'atts'  => range_atts('heading'),
+    'devices' => ['mobile', 'tablet', 'desktop']
+]);
+
+
+// Line Height
+range( $manager, 'branding--title--line-height', [
+    'section' => 'branding--title',
+    'label' => esc_html__('Line Height', 'taproot'),
+    'atts'  => range_atts('line-height'),
+    'devices' => ['mobile', 'tablet', 'desktop']
+]);
 
 
 # =======================================================

@@ -66,3 +66,24 @@ if( is_boxed_layout() && theme_mod( 'footer--styles--fixed' ) ) {
         'screen' => 'desktop'
     ]);
 }
+
+
+// Var: Padding
+$styles->add_var([
+    'name' => 'footer--padding',
+    'value' => theme_mod( 'footer--styles--padding' ),
+]);
+
+// Var: Padding Tablet
+$styles->add_var([
+    'name' => 'footer--padding',
+    'value' => theme_mod( 'footer--styles--padding--tablet' ),
+    'screen' => 'tablet-and-up'
+]);
+
+// Var: Padding Desktop
+$styles->add_var([
+    'name' => 'footer--padding',
+    'value' => theme_mod( 'footer--styles--padding--desktop' ),
+    'screen' => 'desktop'
+]);

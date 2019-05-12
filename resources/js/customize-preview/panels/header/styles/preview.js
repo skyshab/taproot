@@ -68,3 +68,39 @@ wp.customize( 'header--styles--default-color--hover', function( value ) {
         });
     });
 });
+
+
+// Header Padding
+wp.customize( 'header--styles--padding', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'header--padding',
+            value: to,
+            screen: 'default',
+        });
+    });
+});
+
+
+// Header Padding Tablet
+wp.customize( 'header--styles--padding--tablet', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'header--padding',
+            value: to,
+            screen: 'tablet-and-up',
+        });
+    });
+});
+
+
+// Header Padding Desktop
+wp.customize( 'header--styles--padding--desktop', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'header--padding',
+            value: to,
+            screen: 'desktop',
+        });
+    });
+});

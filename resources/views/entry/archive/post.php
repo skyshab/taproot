@@ -13,16 +13,19 @@
 
 			<?php Hybrid\Post\display_author([
                 'class' => 'entry__author entry__author--archive',
-                'before' => Taproot\Template\Icons\location( 'author', ['icon' => 'user'] )
+                'before' => '<span class="entry__byline__item">' . Taproot\Template\Icons\location( 'author', ['icon' => 'user'] ),
+                'after' => '</span>'
             ])?>
 
 			<?php Hybrid\Post\display_date([
-                'before' => Taproot\Template\Icons\location( 'date', ['icon' => 'calendar'] ),
+                'before' => '<span class="entry__byline__item">' . Taproot\Template\Icons\location( 'date', ['icon' => 'calendar'] ),
+                'after' => '</span>',
                 'class' => 'entry__published entry__published--archive'
             ])?>
 
 			<?php Hybrid\Post\display_comments_link([
-                'before' => Taproot\Template\Icons\location( 'comments', ['icon' => 'comments'] ),
+                'before' => '<span class="entry__byline__item">' . Taproot\Template\Icons\location( 'comments', ['icon' => 'comments'] ),
+                'after' => '</span>',
                 'class' => 'entry__comments entry__comments--archive'
             ])?>
 

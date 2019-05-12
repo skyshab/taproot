@@ -10,17 +10,6 @@
  */
 
 
-// Sidebar Background Color
-wp.customize( 'layout--sidebar--background-color', function( value ) {
-    value.bind( function( to ) {
-        rootstrap.var({
-            name: 'layout--sidebar--background-color',
-            value: to
-        });
-    });
-});
-
-
 // Sidebar Width
 wp.customize( 'layout--sidebar--min-width', function( value ) {
     value.bind( function( to ) {

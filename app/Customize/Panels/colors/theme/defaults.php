@@ -14,9 +14,6 @@
 
 // these are also defined in functions-setup and in the CSS
 
-// Text Color
-$defaults->add( 'colors--theme--text', '#8c8c8c' );
-
 // Accent Color
 $defaults->add( 'colors--theme--accent', '#00a0d1' );
 

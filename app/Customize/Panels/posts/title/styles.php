@@ -21,12 +21,56 @@ $styles->add([
     'selector' => '.entry__title--single',
     'styles' => [
         'color' => theme_mod( 'posts--title--color' ),
-    ],
+    ]
 ]);
-
 
 // Font Style
 $styles->add([
     'selector' => '.entry__title--single',
     'styles' => get_font_styles( 'posts--title--font-styles' )
+]);
+
+
+// Var: Title Font Size
+$styles->add_var([
+    'name' => 'posts--title--font-size',
+    'value' => theme_mod( 'posts--title--font-size' ),
+    'screen' => 'default'
+]);
+
+// Var: Title Line Height
+$styles->add_var([
+    'name' => 'posts--title--line-height',
+    'value' => theme_mod( 'posts--title--line-height' ),
+    'screen' => 'default'
+]);
+
+
+// Var: Title Font Size Tablet
+$styles->add_var([
+    'name' => 'posts--title--font-size',
+    'value' => theme_mod( 'posts--title--font-size--tablet' ),
+    'screen' => 'tablet-and-up'
+]);
+
+// Var: Title Line Height Tablet
+$styles->add_var([
+    'name' => 'posts--title--line-height',
+    'value' => theme_mod( 'posts--title--line-height--tablet' ),
+    'screen' => 'tablet-and-up'
+]);
+
+
+// Var: Title Font Size Desktop
+$styles->add_var([
+    'name' => 'posts--title--font-size',
+    'value' => theme_mod( 'posts--title--font-size--desktop' ),
+    'screen' => 'desktop'
+]);
+
+// Var: Title Line Height Desktop
+$styles->add_var([
+    'name' => 'posts--title--line-height',
+    'value' => theme_mod( 'posts--title--line-height--desktop' ),
+    'screen' => 'desktop'
 ]);

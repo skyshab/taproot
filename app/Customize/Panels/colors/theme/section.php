@@ -31,13 +31,6 @@ $manager->add_section( 'colors--theme', [
 # =======================================================
 
 
-// Color Setting: Text Color
-color( $manager, 'colors--theme--text', [
-    'label'   => esc_html__( 'Text Color', 'taproot' ),
-    'section' => 'colors--theme',
-]);
-
-
 // Color Setting: Accent Color
 color( $manager, 'colors--theme--accent', [
     'label'   => esc_html__( 'Accent Color', 'taproot' ),

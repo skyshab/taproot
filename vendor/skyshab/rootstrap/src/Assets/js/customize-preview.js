@@ -21,15 +21,15 @@ class Styles {
         this.insertStyleblock();
     }
 
-    insertStyleblock() {        
+    insertStyleblock() {
         const oldBlock = document.getElementById( this.id );
 
         if( oldBlock ) {
             oldBlock.innerHTML = this.getStyleBlockContent();
         }
         else {
-            document.head.insertBefore( this.getStyleBlock(), this.getHook() );    
-        }        
+            document.head.insertBefore( this.getStyleBlock(), this.getHook() );
+        }
     }
 
     openQuery() {
@@ -54,7 +54,7 @@ class Styles {
 
             query += '{';
         }
-        
+
         return query;
     }
 
@@ -82,7 +82,7 @@ class Styles {
         styleblock.setAttribute("id", this.id);
         styleblock.textContent = this.getStyleBlockContent();
         return styleblock;
-    }    
+    }
 
     getHook() {
         var screen = (this.screen) ? this.screen : 'default';
@@ -97,23 +97,35 @@ class Styles {
 class StyleVar {
 
     constructor( data ) {
-        if ( !data.name || !data.value ) return false;
+        if ( !data.name ) return false;
         this.screen = data.screen;
         this.name = data.name;
         this.id = ( this.screen ) ? `${data.name}--${data.screen}` : data.name;
-        this.value = data.value;
-        this.insertStyleblock();
+        if(data.value && '' !== data.value) {
+            this.value = data.value;
+            this.insertStyleblock();
+        } else {
+            this.removeStyleblock();
+        }
     }
 
-    insertStyleblock() {        
+    insertStyleblock() {
         const oldBlock = document.getElementById( this.id );
 
         if( oldBlock ) {
             oldBlock.innerHTML = this.getStyleBlockContent();
         }
         else {
-            document.head.insertBefore( this.getStyleBlock(), this.getHook() );    
-        }        
+            document.head.insertBefore( this.getStyleBlock(), this.getHook() );
+        }
+    }
+
+    removeStyleblock() {
+        const styleBlock = document.getElementById( this.id );
+
+        if( styleBlock ) {
+            styleBlock.remove();
+        }
     }
 
     openQuery() {
@@ -138,7 +150,7 @@ class StyleVar {
 
             query += '{';
         }
-        
+
         return query;
     }
 
@@ -163,7 +175,7 @@ class StyleVar {
         styleblock.setAttribute("id", this.id);
         styleblock.textContent = this.getStyleBlockContent();
         return styleblock;
-    }    
+    }
 
     getHook() {
         var screen = (this.screen) ? this.screen : 'default';
@@ -184,5 +196,5 @@ const rootstrap = {
     },
     var : (data) => {
         const styleVar = new StyleVar( data );
-    }    
+    }
 };

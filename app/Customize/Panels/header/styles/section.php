@@ -13,7 +13,8 @@
 
 
 use function Taproot\Customize\color;
-
+use function Taproot\Customize\range;
+use function Taproot\Customize\range_atts;
 
 # =======================================================
 # Add Section
@@ -66,8 +67,10 @@ color( $manager, 'header--styles--default-color--hover', [
 ]);
 
 
-// move header image control to header styles section
-// if( $manager->get_section( 'header_image' ) ) {
-// 	$manager->get_section( 'header_image' )->panel = 'header';
-// 	$manager->get_section( 'header_image' )->priority = 500;
-// }
+// Setting: Header Padding
+range( $manager, 'header--styles--padding', [
+    'section' => 'header--styles',
+    'label' => esc_html__('Padding', 'taproot'),
+    'atts' => range_atts('layout-padding'),
+    'devices' => ['mobile', 'tablet', 'desktop']
+]);

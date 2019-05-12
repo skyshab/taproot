@@ -11,21 +11,10 @@
  */
 
 
-import './layout-mobile/preview.js';
-import './layout-tablet/preview.js';
-import './layout-desktop/preview.js';
+import './layout/preview.js';
 import './logo/preview.js';
-import './logo-mobile/preview.js';
-import './logo-tablet/preview.js';
-import './logo-desktop/preview.js';
 import './logo-fixed/preview.js';
 import './title/preview.js';
-import './title-mobile/preview.js';
-import './title-tablet/preview.js';
-import './title-desktop/preview.js';
 import './title-fixed/preview.js';
 import './tagline/preview.js';
-import './tagline-mobile/preview.js';
-import './tagline-tablet/preview.js';
-import './tagline-desktop/preview.js';
 import './tagline-fixed/preview.js';

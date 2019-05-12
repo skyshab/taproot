@@ -50,3 +50,52 @@ wp.customize( 'footer--styles--default-color--hover', function( value ) {
         });
     });
 });
+
+
+// Padding
+wp.customize( 'footer--styles--padding', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'footer--padding',
+            value: to,
+            screen: 'default',
+        });
+    });
+});
+
+
+// Padding Tablet
+wp.customize( 'footer--styles--padding--tablet', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'footer--padding',
+            value: to,
+            screen: 'tablet-and-up',
+        });
+    });
+});
+
+
+// Padding Desktop
+wp.customize( 'footer--styles--padding--desktop', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.var({
+            name: 'footer--padding',
+            value: to,
+            screen: 'desktop',
+        });
+    });
+});
+
+
+// Fullwidth
+wp.customize( 'footer--styles--fullwidth', function( value ) {
+    value.bind( function( to ) {
+        if( to ) {
+            $('.app-footer').removeClass('app-footer--standard-width').addClass('app-footer--fullwidth');
+        }
+        else {
+            $('.app-footer').removeClass('app-footer--fullwidth').addClass('app-footer--standard-width');
+        }
+    });
+});

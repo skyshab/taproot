@@ -12,9 +12,6 @@
 
 
 import './title/preview.js';
-import './title-mobile/preview.js';
-import './title-tablet/preview.js';
-import './title-desktop/preview.js';
 import './archive-title/preview.js';
 import './archive-meta/preview.js';
 import './archive-link/preview.js';

@@ -23,7 +23,6 @@ $styles->add([
     'styles' => [ 'color' => theme_mod( 'typography--h2--color' ) ],
 ]);
 
-
 // Font Family
 $styles->add([
     'selector' => 'h2',
@@ -32,9 +31,54 @@ $styles->add([
     ]
 ]);
 
-
 // Font Styles
 $styles->add([
     'selector' => 'h2',
     'styles' => get_font_styles( 'typography--h2--font-styles' )
+]);
+
+
+// Var: Heading Font Size Mobile
+$styles->add_var([
+    'name' => 'typography--h2--font-size',
+    'value' => theme_mod( 'typography--h2--font-size' ),
+    'screen' => 'default',
+]);
+
+// Var: Heading Line Height Mobile
+$styles->add_var([
+    'name' => 'typography--h2--line-height',
+    'value' => theme_mod( 'typography--h2--line-height' ),
+    'screen' => 'default',
+]);
+
+
+// Var: Heading Font Size Tablet
+$styles->add_var([
+    'name' => 'typography--h2--font-size',
+    'value' => theme_mod( 'typography--h2--font-size--tablet' ),
+    'screen' => 'tablet-and-up',
+]);
+
+// Var: Heading Line Height Tablet
+$styles->add_var([
+    'name' => 'typography--h2--line-height',
+    'value' => theme_mod( 'typography--h2--line-height--tablet' ),
+    'screen' => 'tablet-and-up',
+]);
+
+
+// Var: Heading Font Size Desktop
+$styles->add_var([
+    'name' => 'typography--h2--font-size',
+    'value' => theme_mod( 'typography--h2--font-size--desktop' ),
+    'screen' => 'desktop',
+
+]);
+
+// Var: Heading Line Height Desktop
+$styles->add_var([
+    'name' => 'typography--h2--line-height',
+    'value' => theme_mod( 'typography--h2--line-height--desktop' ),
+    'screen' => 'desktop',
 ]);

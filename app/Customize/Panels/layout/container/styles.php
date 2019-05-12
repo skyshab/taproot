@@ -14,6 +14,7 @@
 
 use function Taproot\Customize\is_boxed_layout;
 use function Taproot\Customize\get_layout_width;
+use function Taproot\Customize\get_padding_from_width;
 use function Taproot\Customize\get_full_layout_width;
 use function Taproot\Customize\get_full_layout_padding;
 use function Taproot\Customize\theme_mod;
@@ -66,3 +67,74 @@ if($full_layout_width) {
         ]);
     }
 }
+
+// mobile
+
+$site_width_mobile = theme_mod('layout--container--width', true);
+
+$styles->add_var([
+    'name' => 'layout--container--width',
+    'value' => $site_width_mobile
+]);
+
+$styles->add_var([
+    'name' => 'layout--container--padding',
+    'value' => get_padding_from_width( $site_width_mobile, 'vw' )
+]);
+
+
+// tablet
+
+$site_width_tablet = theme_mod('layout--container--width--tablet', true);
+
+$styles->add_var([
+    'screen' => 'tablet-and-up',
+    'name' => 'layout--container--width',
+    'value' => $site_width_tablet
+]);
+
+$styles->add_var([
+    'screen' => 'tablet-and-up',
+    'name' => 'layout--container--padding',
+    'value' => get_padding_from_width( $site_width_tablet, 'vw' )
+]);
+
+
+// desktop
+
+$site_width_desktop = get_layout_width('desktop', 'vw');
+$layout_padding_desktop = get_padding_from_width($site_width_desktop, 'vw');
+
+if( is_boxed_layout() ) {
+    $site_width_desktop = get_layout_width('desktop', '%');
+}
+
+$styles->add_var([
+    'screen' => 'desktop',
+    'name' => 'layout--container--width',
+    'value' => $site_width_desktop
+]);
+
+$styles->add_var([
+    'screen' => 'desktop',
+    'name' => 'layout--container--padding',
+    'value' => $layout_padding_desktop
+]);
+
+$styles->add_var([
+    'screen' => 'desktop',
+    'name' => 'layout--container--width-as-decimal',
+    'value' => get_layout_width('desktop')
+]);
+
+$styles->add_var([
+    'screen' => 'desktop',
+    'name' => 'layout--container--width-as-vw',
+    'value' => get_layout_width('desktop', 'vw')
+]);
+
+$styles->add_var([
+    'screen' => 'desktop',
+    'name' => 'layout--container--width-as-percentage',
+    'value' => get_layout_width('desktop', '%')
+]);

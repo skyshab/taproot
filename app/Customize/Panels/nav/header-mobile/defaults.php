@@ -18,7 +18,7 @@ $defaults->add( 'nav--header-mobile--breakpoint', 'tablet-and-under' );
 
 
 // mobile menu type
-$defaults->add( 'nav--header-mobile--type', 'dropdown-slide' );
+$defaults->add( 'nav--header-mobile--type', 'slide' );
 
 
 // menu background color
