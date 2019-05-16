@@ -3,7 +3,7 @@
  * Customize_Defaults.
  *
  * This class is just a wrapper around the `Collection` class for adding a
- * default customizer value. 
+ * default customizer value.
  *
  * @package   Rootstrap
  * @author    Sky Shabatura
@@ -12,10 +12,9 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Rootstrap\Modules\Customize_Defaults;
+namespace Rootstrap_Customize_Defaults;
 
-use Rootstrap\Modules\Customize_Defaults\Customize_Default;
-use Rootstrap\Abstracts\Collection;
+use Rootstrap_Customize_Defaults\Abstracts\Collection;
 
 
 /**
@@ -38,6 +37,6 @@ class Customize_Defaults extends Collection {
      */
      public function add( $id, $value ) {
         parent::add( $id, new Customize_Default( $id, $value ) );
-    }    
+    }
 
 }

@@ -2,7 +2,7 @@
 /**
  * Customize Default class.
  *
- * This class stores a default customizer value. 
+ * This class stores a default customizer value.
  *
  * @package   Rootstrap
  * @author    Sky Shabatura
@@ -11,9 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Rootstrap\Modules\Customize_Defaults;
-
-use Rootstrap\Contracts\Customize_Default as Contract;
+namespace Rootstrap_Customize_Defaults;
 
 
 /**
@@ -22,11 +20,11 @@ use Rootstrap\Contracts\Customize_Default as Contract;
  * @since  1.0.0
  * @access public
  */
-class Customize_Default implements Contract {
+class Customize_Default {
 
 
     /**
-     * Customize control id. 
+     * Customize control id.
      *
      * @since  1.0.0
      * @access protected
@@ -35,18 +33,18 @@ class Customize_Default implements Contract {
     protected $id;
 
     /**
-     * Customize control default value. 
+     * Customize control default value.
      *
      * @since  1.0.0
      * @access protected
      * @var    array
      */
     protected $value;
-    
+
 
     /**
      * Register a new customize control default.
-     * 
+     *
      * If a single value is passed in, treat it as the default value.
      * An array can also be passed in with the default value and an additional
      * attribute for controlling whether the default value renders in get_theme_mod()
@@ -60,10 +58,10 @@ class Customize_Default implements Contract {
     public function __construct( $id = false, $value = false ) {
 
         // If no id, then what are we even doing here?
-        if( !$id || !$value ) return false; 
+        if( !$id || !$value ) return false;
 
         // if value is not set, bail
-        if( is_bool($value) && ! $value ) return false; 
+        if( is_bool($value) && ! $value ) return false;
 
         // Ok this is for real. store the ID
         $this->id = $id;
