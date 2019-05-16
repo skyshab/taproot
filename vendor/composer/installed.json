@@ -453,20 +453,20 @@
         "source": {
             "type": "git",
             "url": "https://github.com/skyshab/rootstrap.git",
-            "reference": "669992855ff9714edb31fc498a50d7ad5f6a749c"
+            "reference": "6c00239b6c497fad253ed49ee17ca77b62547ad7"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/skyshab/rootstrap/zipball/669992855ff9714edb31fc498a50d7ad5f6a749c",
-            "reference": "669992855ff9714edb31fc498a50d7ad5f6a749c",
+            "url": "https://api.github.com/repos/skyshab/rootstrap/zipball/6c00239b6c497fad253ed49ee17ca77b62547ad7",
+            "reference": "6c00239b6c497fad253ed49ee17ca77b62547ad7",
             "shasum": ""
         },
         "require": {
             "php": ">=5.6"
         },
-        "time": "2019-03-13T21:04:42+00:00",
+        "time": "2019-05-02T13:32:53+00:00",
         "type": "library",
-        "installation-source": "dist",
+        "installation-source": "source",
         "autoload": {
             "psr-4": {
                 "Rootstrap\\": "src/"
@@ -489,6 +489,53 @@
         ],
         "description": "Rootstrap is a collection of utilities for managing WordPress Customizer controls, settings, responsive breakpoints and styles.",
         "homepage": "https://github.com/skyshab/rootstrap",
+        "keywords": [
+            "wordpress"
+        ]
+    },
+    {
+        "name": "skyshab/rootstrap-customize-defaults",
+        "version": "v1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/skyshab/rootstrap-customize-defaults.git",
+            "reference": "37b2c6b5800ab9b54a8eab95e8deba94f0467a5a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/skyshab/rootstrap-customize-defaults/zipball/37b2c6b5800ab9b54a8eab95e8deba94f0467a5a",
+            "reference": "37b2c6b5800ab9b54a8eab95e8deba94f0467a5a",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6"
+        },
+        "time": "2019-05-16T12:17:15+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Rootstrap_Customize_Defaults\\": "src/"
+            },
+            "files": [
+                "src/rootstrap-customize-defaults-init.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Sky Shabatura",
+                "email": "github@sky.camp",
+                "homepage": "https://github.com/skyshab",
+                "role": "Developer"
+            }
+        ],
+        "description": "Rootstrap is a collection of utilities for managing WordPress Customizer controls, settings, responsive breakpoints and styles.",
+        "homepage": "https://github.com/skyshab/rootstrap-customize-defaults",
         "keywords": [
             "wordpress"
         ]

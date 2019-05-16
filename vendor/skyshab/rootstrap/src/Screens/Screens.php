@@ -2,8 +2,8 @@
 /**
  * Screens manager.
  *
- * This class is just a wrapper around the `Collection` class for adding 
- * a new screen. 
+ * This class is just a wrapper around the `Collection` class for adding
+ * a new screen.
  *
  * @package   Rootstrap
  * @author    Sky Shabatura
@@ -12,10 +12,9 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Rootstrap\Modules\Screens;
+namespace Rootstrap\Screens;
 
 use Rootstrap\Abstracts\Collection;
-use Rootstrap\Modules\Screens\Screen;
 
 
 /**

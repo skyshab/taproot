@@ -11,15 +11,15 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Rootstrap\Modules\Styles;
+namespace Rootstrap\Styles;
 
-use Rootstrap\Modules\Styles\Style;
-use Rootstrap\Modules\Screens\Screens;
+use Rootstrap\Screens\Screens;
+use Rootstrap\Contracts\Styles as StylesContract;
 
 
-class Styles {
-    
-    
+class Styles implements StylesContract {
+
+
     /**
      * Stores style objects
      *
@@ -30,13 +30,13 @@ class Styles {
     protected $styles;
 
     /**
-     * Stores Vars objects
+     * Stores Custom Property objects
      *
      * @since  1.0.0
      * @access protected
      * @var    array
      */
-    protected $vars;
+    protected $custom_properites;
 
     /**
      * Stores Screens
@@ -50,12 +50,12 @@ class Styles {
 
     /**
      * Setup our Styles object
-     * 
+     *
      * Todo: make this only accept instances of a screens object
      *
-     * @since 1.0.0   
+     * @since 1.0.0
      * @param object $screens - a Screens object
-     * @return void     
+     * @return void
      */
     public function __construct( $screens = null ) {
         if( $screens === null ) {
@@ -69,13 +69,13 @@ class Styles {
     /**
      * Sort the screens by min widths
      *
-     * @since 1.0.0  
-     * @return void 
+     * @since 1.0.0
+     * @return void
      */
-    private function sorted_screens() {   
-        
+    private function sorted_screens() {
+
         $min_array = [];
- 
+
         // create a new array with min value to be sorted
         foreach ( $this->screens->all() as $name => $screen ) {
             $min = ( 'default' === $name ) ? 0 : $screen->min();
@@ -92,7 +92,7 @@ class Styles {
     /**
      * Wrap styles with media query, when applicable
      *
-     * @since 1.0.0   
+     * @since 1.0.0
      * @param string $styles - the styles to wrap
      * @param string $screen - the screen to use for query
      * @return string
@@ -117,7 +117,7 @@ class Styles {
         // initiate our output string
         $output = '';
 
-        // if there's a media query for our string, 
+        // if there's a media query for our string,
         // wrap our styles
         if( $min || $max ) {
 
@@ -149,17 +149,17 @@ class Styles {
     /**
      * Get the styles from a particular screen
      *
-     * @since 1.0.0   
+     * @since 1.0.0
      * @param string    $screen - the screen name
-     * @return string 
+     * @return string
      */
     private function screen_styles( $screen = 'default' ) {
 
         $has_styles = ( isset( $this->styles[$screen] ) && is_array( $this->styles[$screen] ) ) ? true : false;
-        $has_vars = ( isset( $this->vars[$screen] ) && is_array( $this->vars[$screen] ) ) ? true : false;
+        $has_custom_properties = ( isset( $this->custom_properties[$screen] ) && is_array( $this->custom_properties[$screen] ) ) ? true : false;
 
-        // Check if this screen has any styles or vars set. If not return empty string 
-        if( !$has_styles && !$has_vars  ) return '';
+        // Check if this screen has any styles or vars set. If not return empty string
+        if( !$has_styles && !$has_custom_properties  ) return '';
 
         // initiate outputy string
         $output = '';
@@ -168,34 +168,34 @@ class Styles {
         if( $has_styles ) {
             foreach( $this->styles[$screen] as $style ) {
                 $output .= $style->get();
-            }            
+            }
         }
 
         // if there are vars, add each to the output string
-        if( $has_vars ) {
+        if( $has_custom_properties ) {
 
-            $root_vars = '';
-            $contextual_vars = '';
+            $root_properties = '';
+            $contextual_properties = '';
 
             // loop through variable declarations
-            foreach( $this->vars[$screen] as $var ) {
+            foreach( $this->custom_properties[$screen] as $var ) {
 
                 if( $var->has_selector() ) {
-                    $contextual_vars .= $var->get();
+                    $contextual_properties .= $var->get();
                 }
                 else {
-                    $root_vars .= $var->get();
+                    $root_properties .= $var->get();
                 }
             }
 
             // add root level vars
-            if( '' !== $root_vars ) {
-                $output .= sprintf( ':root { %s }', $root_vars );        
+            if( '' !== $root_properties ) {
+                $output .= sprintf( ':root { %s }', $root_properties );
             }
 
             // add contextual vars
-            if( '' !== $contextual_vars ) {
-                $output .= $contextual_vars;        
+            if( '' !== $contextual_properties ) {
+                $output .= $contextual_properties;
             }
         }
 
@@ -207,9 +207,9 @@ class Styles {
     /**
      * Wrap styles in style element
      *
-     * @since 1.0.0   
+     * @since 1.0.0
      * @param string $id - the id to add to the styleblock
-     * @return string 
+     * @return string
      */
     private function make_styleblock( $styles, $id = false  ) {
 
@@ -230,13 +230,13 @@ class Styles {
     /**
      * Get Customizer Meta Placeholder
      *
-     * @since 1.0.0   
+     * @since 1.0.0
      * @param string $id - the id to add to the styleblock
      */
-    private function customize_placeholder( $name ) {    
+    private function customize_placeholder( $name ) {
         $block_meta = sprintf( 'rootstrap-style-hook--%s', $name );
-        return sprintf('<meta id="%s" name="%s">', $block_meta, $block_meta );        
-    }    
+        return sprintf('<meta id="%s" name="%s">', $block_meta, $block_meta );
+    }
 
 
     /**
@@ -254,16 +254,16 @@ class Styles {
 
 
     /**
-     * Add a new var.
+     * Add a new custom property.
      *
      * @since  1.0.0
      * @access public
      * @param  array   $args
      * @return void
      */
-    public function add_var( $args ) {
-        $var = new CSS_Var( $args );
-        $this->vars[$var->screen()][] = $var;
+    public function custom_property( $args ) {
+        $custom_property = new CustomProperty( $args );
+        $this->custom_properties[$custom_property->screen()][] = $custom_property;
     }
 
 
@@ -284,7 +284,7 @@ class Styles {
     /**
      * Get the styles from all screens
      *
-     * @since 1.0.0   
+     * @since 1.0.0
      * @access public
      * @return string
      */
@@ -296,11 +296,11 @@ class Styles {
         foreach ( $this->sorted_screens() as $name ) {
 
             // if no styles or vars for this screen, skip to next one
-            if( !isset($this->styles[$name]) && !isset($this->vars[$name]) ) continue;
+            if( !isset($this->styles[$name]) && !isset($this->custom_properties[$name]) ) continue;
 
             // add the styles
             $styles .= $this->screen_styles( $name );
-        } 
+        }
 
         return $styles;
     }
@@ -309,7 +309,7 @@ class Styles {
     /**
      * Get the styles from all screens
      *
-     * @since 1.0.0   
+     * @since 1.0.0
      * @access public
      * @return string
      */
@@ -326,9 +326,8 @@ class Styles {
     /**
      * Print the styles by screen when in customize preview
      *
-     * @since 1.0.0   
+     * @since 1.0.0
      * @access public
-     * @param string $id - the id to add to the styleblock
      * @return string
      */
     public function get_customize_preview() {
@@ -346,7 +345,7 @@ class Styles {
 
             // add the styleblock
             $block .= $this->make_styleblock( $screen_styles, $block_id );
-            
+
             // add the placeholder
             $block .= $this->customize_placeholder( $name );
         }
@@ -354,4 +353,4 @@ class Styles {
         return $block;
     }
 
-} 
+}

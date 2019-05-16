@@ -1,9 +1,9 @@
 <?php
 /**
- * Screens manager.
+ * Rootstrap class.
  *
- * This class is used to boot the screen manager and handle its action and
- * filter hooks.
+ * This class handles the Rootstrap config data and sets up
+ * the individual modules that make up Rootstrap.
  *
  * @package   Rootstrap
  * @author    Sky Shabatura
@@ -12,14 +12,18 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Rootstrap\Modules\Devices;
+namespace Rootstrap;
 
 use Rootstrap\Abstracts\Bootable;
-use Rootstrap\Modules\Styles\Styles;
+use Rootstrap\Styles\Styles;
+
+use function Rootstrap\Devices\get_devices;
+use function Rootstrap\Devices\get_devices_array;
+use function Rootstrap\Screens\get_screens_array;
 
 
 /**
- * Screen manager class.
+ * Creates a new Rootstrap object.
  *
  * @since  1.0.0
  * @access public
@@ -28,67 +32,110 @@ class Manager extends Bootable {
 
 
     /**
-     * Sets up the screens manager actions and filters.
+     * Stores Resources Path
      *
-     * @since  1.0.0
-     * @access public
-     * @return void
+     * @since 1.0.0
+     * @var array
+     */
+    private $resources;
+
+
+    /**
+     * Load resources.
+     *
+     * @since 1.0.0
+     * @return object
      */
     public function boot() {
 
-        // Add registration callback for devices.
-        add_action( 'rootstrap/register', [ $this, 'register' ] );    
-        
-        // Register JS data for devices.        
-        add_filter( 'rootstrap/resources/js-data', [ $this, 'js_data' ] );          
-        
+        // get the vendor path
+        $vendor = apply_filters( 'rootstrap/resources/vendor', false );
+        if ( !$vendor ) return;
+        $this->resources = $vendor . '/skyshab/rootstrap/resources';
+
+        // resources url should be defined by this point. add customizer actions
+        add_action( 'customize_controls_enqueue_scripts', [ $this, 'customize_resources' ] );
+        add_action( 'customize_preview_init', [ $this, 'customize_preview'  ] );
+        add_action( 'customize_save_after', [ $this, 'clear_cache' ] );
+
         // Set Customizer Devices
         add_filter( 'customize_previewable_devices', [ $this, 'customize_previewable_devices' ] );
 
         // Add Customizer Screen Styles
-        add_action( 'customize_controls_print_styles', [ $this, 'customize_controls_print_styles' ] ); 
+        add_action( 'customize_controls_print_styles', [ $this, 'customize_controls_print_styles' ] );
     }
 
 
     /**
-     * Register devices
+     * Enqueue scripts and styles.
+     *
+     *  If filters are applied defining file locations, load scripts and styles.
+     *
+     * @since 1.0.0
+     */
+    public function customize_resources() {
+
+        wp_enqueue_script( 'rootstrap-customize-controls', $this->resources . '/js/customize-controls.min.js', ['customize-controls', 'jquery'], "1.2", true );
+
+        wp_localize_script( 'rootstrap-customize-controls', 'rootstrapData', $this->js_data() );
+
+        wp_enqueue_style( 'rootstrap-customize-controls', $this->resources . '/css/customize-controls.min.css' );
+    }
+
+
+    /**
+     * Enqueue customize preview scripts
+     *
+     * If filters are applied defining file locations, load scripts.
+     *
+     * @since 1.0.0
+     */
+    public function customize_preview() {
+
+        wp_enqueue_script( 'rootstrap-customize-preview',
+            $this->resources . '/js/customize-preview.min.js',
+            array(),
+            filemtime( get_template_directory().'/style.css' )
+        );
+    }
+
+
+    /**
+     * Clears cached styles when saving customizer
      *
      * @since  1.0.0
      * @access public
      * @return void
      */
-    public function register() {
-
-        // get default devices
-        $devices = get_device_defaults();
-
-        // create our intial screens as defined in Rootstrap config
-        foreach( $devices as $device => $args ) {
-            add_device( $device, $args );
-        }
-
-        // action hook for plugins and child themes to add or remove devices
-        do_action( 'rootstrap/register/devices', devices() );        
+    public function clear_cache() {
+        remove_theme_mod( 'rootstrap-theme-mods' );
     }
 
 
     /**
-     * Makes data about our devices available in customizer js
+     * Get data to make available to JS
      *
      * @since  1.0.0
      * @access public
-     * @param  array  $data - the data array to filter
-     * @return array  returns modified data
+     * @return array  returns array of js data
      */
-    public function js_data( $data ) {   
-        
+    public function js_data() {
+
+        $data = [];
+
         // add device data
         $data['devices'] = get_devices_array();
 
-        // return modified data
-        return $data;
+        // add screen data
+        $data['screens'] = get_screens_array();
+
+        // filter to modify the js data
+        $js_data = apply_filters( 'rootstrap/resources/js-data', $data );
+
+        // return filtered data
+        return $js_data;
     }
-    
+
 
     /**
      * Add custom devices to customizer.
@@ -127,7 +174,7 @@ class Manager extends Bootable {
 
     /**
      * Add custom screen size styles to customizer head
-     * 
+     *
      * @since 1.0.0
      * @return string
      */
@@ -142,7 +189,7 @@ class Manager extends Bootable {
             $styles->add([
                 'selector' => sprintf( 'button.preview-%s:before', $name ),
                 'styles' => [
-                    'content' => $device->icon() 
+                    'content' => $device->icon()
                 ]
             ]);
 
@@ -150,16 +197,16 @@ class Manager extends Bootable {
             $styles->add([
                 'selector' => sprintf( '.control-section-rootstrap-device--%s .customize-section-title h3:after', $name ),
                 'styles' => [
-                    'content' => $device->icon() 
+                    'content' => $device->icon()
                 ]
-            ]); 
+            ]);
 
             // set customize preview screen max width
             $styles->add([
                 'selector' => sprintf( '.preview-%s #customize-preview', $name ),
                 'styles' => [
                     'width' => $device->preview_width() . '!important',
-                    'height' => $device->preview_height() . '!important',                    
+                    'height' => $device->preview_height() . '!important',
                 ],
             ]);
 
@@ -183,5 +230,5 @@ class Manager extends Bootable {
         // print styles
         echo $styles->get_styleblock( 'customize-controls' );
     }
-    
+
 }

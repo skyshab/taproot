@@ -9,6 +9,7 @@ class ComposerStaticInita84c678bf0db3534d7ef20ff0d50134a
     public static $files = array (
         '77c7b76f4dcd3556a40cd339441c5cce' => __DIR__ . '/..' . '/justintadlock/hybrid-core/src/bootstrap-hybrid.php',
         'b03984ffdb4c6b9d816ecda51bb2d015' => __DIR__ . '/..' . '/skyshab/rootstrap/src/rootstrap-init.php',
+        'ef71a34c0d11bb0eb526515e3b49ae43' => __DIR__ . '/..' . '/skyshab/rootstrap-customize-defaults/src/rootstrap-customize-defaults-init.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -18,6 +19,7 @@ class ComposerStaticInita84c678bf0db3534d7ef20ff0d50134a
         ),
         'R' => 
         array (
+            'Rootstrap_Customize_Defaults\\' => 29,
             'Rootstrap\\' => 10,
         ),
         'H' => 
@@ -39,6 +41,10 @@ class ComposerStaticInita84c678bf0db3534d7ef20ff0d50134a
         'Taproot\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
+        ),
+        'Rootstrap_Customize_Defaults\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/skyshab/rootstrap-customize-defaults/src',
         ),
         'Rootstrap\\' => 
         array (

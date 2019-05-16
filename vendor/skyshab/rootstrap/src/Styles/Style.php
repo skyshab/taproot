@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Rootstrap\Modules\Styles;
+namespace Rootstrap\Styles;
 
 use Rootstrap\Contracts\Style as Contract;
 
@@ -57,7 +57,7 @@ class Style implements Contract {
      *
      * @since  1.0.0
      * @access protected
-     * @var    bool 
+     * @var    bool
      */
     protected $callback;
 
@@ -92,11 +92,11 @@ class Style implements Contract {
         return $this->screen;
     }
 
-    
+
     /**
      * Assemble styles and return string
      *
-     * @since 1.0.0   
+     * @since 1.0.0
      * @return string
      */
     public function get() {
@@ -132,6 +132,6 @@ class Style implements Contract {
      */
     public function __toString() {
         return $this->get();
-    }    
+    }
 
 }

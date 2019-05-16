@@ -20,7 +20,7 @@ namespace Rootstrap\Contracts;
  * @since  1.0.0
  * @access public
  */
-interface CSS_Var {
+interface CustomProperty {
 
 
     /**

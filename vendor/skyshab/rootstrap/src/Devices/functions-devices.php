@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Rootstrap\Modules\Devices;
+namespace Rootstrap\Devices;
 
 use function Rootstrap\rootstrap;
 
@@ -24,7 +24,7 @@ use function Rootstrap\rootstrap;
  * @return Devices
  */
 function devices() {
-    return rootstrap()->get_instance( 'Devices');
+    return rootstrap()->getDevices();
 }
 
 
@@ -78,7 +78,7 @@ function get_devices_array() {
     $array = [];
     foreach( get_devices() as $name => $device ) {
         $array[$name]['min'] = $device->min();
-        $array[$name]['max'] = $device->max();        
+        $array[$name]['max'] = $device->max();
     }
     return $array;
 }
@@ -147,42 +147,4 @@ function get_device_min( $device ) {
 function get_device_max( $device ) {
     $device = get_device( $device );
     return $device->max();
-}
-
-
-/**
- * Get the default devices
- *
- * @since 1.0.0
- * @return array
- */
-function get_device_defaults() {
-
-    $defaults = [];
-
-    $defaults['mobile'] = array(
-        'min' => '',
-        'max' => '767px',
-        'icon' => '"\\f470"',
-        'preview_width' => '375px',
-        'preview_height' => '677px'
-    );
-
-    $defaults['tablet'] = array(
-        'min' => '768px',
-        'max' => '1024px',
-        'icon' => '"\\f471"',
-        'preview_width' => '768px',
-        'preview_height' => '100%'
-    );
-
-    $defaults['desktop'] = array(
-        'min' => '1025px',
-        'max' => '',
-        'icon' => '"\\f472"',
-        'preview_width' => '100%',
-        'preview_height' => '100%'
-    );
-
-    return $defaults;
 }

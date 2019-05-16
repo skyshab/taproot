@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Rootstrap\Modules\Screens;
+namespace Rootstrap\Screens;
 
 use function Rootstrap\rootstrap;
 
@@ -24,7 +24,7 @@ use function Rootstrap\rootstrap;
  * @return Screens
  */
 function screens() {
-    return rootstrap()->get_instance( 'Screens');
+    return rootstrap()->getScreens();
 }
 
 
@@ -78,7 +78,7 @@ function get_screens_array() {
     $array = [];
     foreach( get_screens() as $name => $device ) {
         $array[$name]['min'] = $device->min();
-        $array[$name]['max'] = $device->max();        
+        $array[$name]['max'] = $device->max();
     }
     return $array;
 }

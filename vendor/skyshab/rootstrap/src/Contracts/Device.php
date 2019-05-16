@@ -1,8 +1,8 @@
 <?php
 /**
- * Module interface.
+ * Screen interface.
  *
- * Defines the interface that Module class must use.
+ * Defines the interface that Screen class must use.
  *
  * @package   Rootstrap
  * @author    Sky Shabatura
@@ -15,16 +15,15 @@ namespace Rootstrap\Contracts;
 
 
 /**
- * Module interface.
+ * Screen interface.
  *
  * @since  1.0.0
  * @access public
  */
-interface Module {
+interface Device {
 
-    
     /**
-     * Returns the module name.
+     * Returns the screen name.
      *
      * @since  1.0.0
      * @access public
@@ -32,44 +31,49 @@ interface Module {
      */
     public function name();
 
+    /**
+     * Returns the screen min width.
+     *
+     * @since  1.0.0
+     * @access public
+     * @return string
+     */
+    public function min();
 
     /**
-     * Returns the namespace.
+     * Returns the screen max width.
+     *
+     * @since  1.0.0
+     * @access public
+     * @return string
+     */
+    public function max();
+
+    /**
+     * Returns the device icon markup.
      *
      * @since  1.0.0
      * @access public
      * @return bool
      */
-    public function get_namespace();      
-
+    public function icon();
 
     /**
-     * Returns the includes.
+     * Returns the device icon markup.
      *
      * @since  1.0.0
      * @access public
      * @return bool
      */
-    public function includes();
-
+    public function preview_width();
 
     /**
-     * Returns the instances.
+     * Returns the device icon markup.
      *
      * @since  1.0.0
      * @access public
      * @return bool
      */
-    public function instances();
-
-
-    /**
-     * Returns the boot files.
-     *
-     * @since  1.0.0
-     * @access public
-     * @return bool
-     */
-    public function boot();
+    public function preview_height();
 
 }

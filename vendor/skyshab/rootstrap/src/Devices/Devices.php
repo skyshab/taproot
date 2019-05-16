@@ -2,8 +2,8 @@
 /**
  * Devices Collection
  *
- * This class is a wrapper around the `Collection` class for adding 
- * a new device. 
+ * This class is a wrapper around the `Collection` class for adding
+ * a new device.
  *
  * @package   Rootstrap
  * @author    Sky Shabatura
@@ -12,7 +12,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Rootstrap\Modules\Devices;
+namespace Rootstrap\Devices;
 
 use Rootstrap\Abstracts\Collection;
 
@@ -25,7 +25,7 @@ use Rootstrap\Abstracts\Collection;
  */
 class Devices extends Collection {
 
-    
+
     /**
      * Add a new device.
      *
@@ -38,5 +38,5 @@ class Devices extends Collection {
      public function add( $name, $args ) {
         parent::add( $name, new Device( $name, $args ) );
     }
-   
+
 }

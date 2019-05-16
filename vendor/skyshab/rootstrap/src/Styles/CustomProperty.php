@@ -11,9 +11,9 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Rootstrap\Modules\Styles;
+namespace Rootstrap\Styles;
 
-use Rootstrap\Contracts\CSS_Var as Contract;
+use Rootstrap\Contracts\CustomProperty as Contract;
 
 
 /**
@@ -22,7 +22,7 @@ use Rootstrap\Contracts\CSS_Var as Contract;
  * @since  1.0.0
  * @access public
  */
-class CSS_Var implements Contract {
+class CustomProperty implements Contract {
 
 
     /**
@@ -57,7 +57,7 @@ class CSS_Var implements Contract {
      *
      * @since  1.0.0
      * @access protected
-     * @var    bool 
+     * @var    bool
      */
     protected $callback;
 
@@ -106,11 +106,11 @@ class CSS_Var implements Contract {
         return ( $this->selector && '' !== $this->selector ) ? true : false;
     }
 
-    
+
     /**
      * Assemble styles and return string
      *
-     * @since 1.0.0   
+     * @since 1.0.0
      * @return string
      */
     public function get() {
@@ -135,6 +135,6 @@ class CSS_Var implements Contract {
      */
     public function __toString() {
         return $this->get();
-    }    
+    }
 
 }

@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Taproot\\' => array($baseDir . '/app'),
+    'Rootstrap_Customize_Defaults\\' => array($vendorDir . '/skyshab/rootstrap-customize-defaults/src'),
     'Rootstrap\\' => array($vendorDir . '/skyshab/rootstrap/src'),
     'Hybrid\\Breadcrumbs\\' => array($vendorDir . '/justintadlock/hybrid-breadcrumbs/src'),
     'Hybrid\\' => array($vendorDir . '/justintadlock/hybrid-core/src'),

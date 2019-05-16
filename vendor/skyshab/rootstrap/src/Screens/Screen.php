@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Rootstrap\Modules\Screens;
+namespace Rootstrap\Screens;
 
 use Rootstrap\Contracts\Screen as Contract;
 
@@ -24,7 +24,7 @@ use Rootstrap\Contracts\Screen as Contract;
  */
 class Screen implements Contract {
 
-    
+
     /**
      * Screen name.
      *
@@ -51,7 +51,7 @@ class Screen implements Contract {
      * @var    string
      */
     private $max = false;
- 
+
 
     /**
      * Register a new screen object.
@@ -67,8 +67,8 @@ class Screen implements Contract {
         $this->name = $name;
         foreach( $args as $property => $value ) {
             if( property_exists( $this, $property ) )
-                $this->$property = $value;            
-        }        
+                $this->$property = $value;
+        }
     }
 
 
@@ -105,7 +105,7 @@ class Screen implements Contract {
      */
     public function max() {
         return $this->max;
-    }    
+    }
 
 
     /**
