@@ -1,6 +1,6 @@
 <?php
 /**
- * App service provider.
+ * Admin service provider.
  *
  * Service providers are essentially the bootstrapping code for your theme.
  * They allow you to add bindings to the container on registration
@@ -13,18 +13,20 @@
  * @link      https://taproot-theme.com
  */
 
-namespace Taproot;
+
+namespace Taproot\Providers;
 
 use Hybrid\Tools\ServiceProvider;
-use Rootstrap\Rootstrap;
+use Taproot\Admin\Editor\Editor;
+
 
 /**
- * App service provider.
+ * Admin service provider class.
  *
  * @since  1.0.0
  * @access public
  */
-class Provider extends ServiceProvider {
+class AdminProvider extends ServiceProvider {
 
 
 	/**
@@ -36,17 +38,8 @@ class Provider extends ServiceProvider {
 	 */
 	public function register() {
 
-		// Bind a single instance of the main Roostrap class.
-		$this->app->singleton( Rootstrap::class, Rootstrap::instance() );
+		$this->app->singleton( Editor::class );
 
-		// Bind the Laravel Mix manifest for cache-busting.
-		$this->app->singleton( 'taproot/mix', function() {
-
-            $file = get_theme_file_path( 'dist/mix-manifest.json' );
-            $contents = file_exists( $file ) ? file( $file ) : false;
-
-            return $contents ? json_decode( join( '', $contents ), true ) : null;
-		});
 	}
 
 	/**
@@ -58,8 +51,8 @@ class Provider extends ServiceProvider {
 	 */
 	public function boot() {
 
-        // Boot the Rootstrap class instance.
-        $this->app->resolve( Rootstrap::class )->boot();
+		// Boot the Editor class
+        $this->app->resolve( Editor::class )->boot();
 
 	}
 }

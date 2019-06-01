@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin service provider.
+ * Template service provider.
  *
  * Service providers are essentially the bootstrapping code for your theme.
  * They allow you to add bindings to the container on registration
@@ -13,17 +13,20 @@
  * @link      https://taproot-theme.com
  */
 
-namespace Taproot\Admin\Editor;
+
+namespace Taproot\Providers;
 
 use Hybrid\Tools\ServiceProvider;
+use Taproot\Template\Template;
+
 
 /**
- * Admin service provider class.
+ * Template provider class
  *
  * @since  1.0.0
  * @access public
  */
-class Provider extends ServiceProvider {
+class TemplateProvider extends ServiceProvider {
 
 
 	/**
@@ -35,7 +38,8 @@ class Provider extends ServiceProvider {
 	 */
 	public function register() {
 
-		$this->app->singleton( Editor::class );
+        // Bind SVG icons to our icons class
+        $this->app->bind( 'Taproot\Template\Icons', 'Taproot\Template\Icons\SVG' );
 
 	}
 
@@ -48,8 +52,8 @@ class Provider extends ServiceProvider {
 	 */
 	public function boot() {
 
-		// Boot the Editor class
-        $this->app->resolve( Editor::class )->boot();
+		// Boot the Template class
+        $this->app->resolve( Template::class )->boot();
 
 	}
 }

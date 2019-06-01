@@ -1,6 +1,6 @@
 <?php
 /**
- * Customizer service provider.
+ * App service provider.
  *
  * Service providers are essentially the bootstrapping code for your theme.
  * They allow you to add bindings to the container on registration
@@ -13,17 +13,19 @@
  * @link      https://taproot-theme.com
  */
 
-namespace Taproot\Customize;
+
+namespace Taproot\Providers;
 
 use Hybrid\Tools\ServiceProvider;
 
+
 /**
- * Customizer service provider class.
+ * App service provider.
  *
  * @since  1.0.0
  * @access public
  */
-class Provider extends ServiceProvider {
+class AppProvider extends ServiceProvider {
 
 
 	/**
@@ -35,22 +37,14 @@ class Provider extends ServiceProvider {
 	 */
 	public function register() {
 
-		// Bind a single instance of our customizer class.
-        $this->app->singleton( Customize::class );
+		// Bind the Laravel Mix manifest for cache-busting.
+		$this->app->singleton( 'taproot/mix', function() {
 
-	}
+            $file = get_theme_file_path( 'dist/mix-manifest.json' );
+            $contents = file_exists( $file ) ? file( $file ) : false;
 
-	/**
-	 * Boot Class Instances
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return void
-	 */
-	public function boot() {
+            return $contents ? json_decode( join( '', $contents ), true ) : null;
+		});
+    }
 
-		// Boot the customizer class instance.
-        $this->app->resolve( Customize::class )->boot();
-
-	}
 }
