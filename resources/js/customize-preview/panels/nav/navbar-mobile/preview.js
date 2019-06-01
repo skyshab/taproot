@@ -160,7 +160,7 @@ wp.customize( 'nav--navbar-mobile--link-color--hover', function( value ) {
 //  Var: Link Font Size
 wp.customize( 'nav--navbar-mobile--font-size', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'nav--navbar--font-size',
             value: to,
             screen: utils.getMobileScreen( wp.customize.instance('nav--navbar-mobile--breakpoint').get()),
@@ -172,7 +172,7 @@ wp.customize( 'nav--navbar-mobile--font-size', function( value ) {
 //  Var: Link Line Height
 wp.customize( 'nav--navbar-mobile--line-height', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'nav--navbar--line-height',
             value: to,
             screen: utils.getMobileScreen( wp.customize.instance('nav--navbar-mobile--breakpoint').get()),

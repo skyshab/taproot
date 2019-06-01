@@ -97,7 +97,7 @@ wp.customize( 'footer--widgets--layout', function( value ) {
 // Title Font Size
 wp.customize( 'footer--widgets--title--font-size', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'footer--widgets--title--font-size',
             value: to,
             screen: 'default',
@@ -108,7 +108,7 @@ wp.customize( 'footer--widgets--title--font-size', function( value ) {
 // Title Line Height
 wp.customize( 'footer--widgets--title--line-height', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'footer--widgets--title--line-height',
             value: to,
             screen: 'default',
@@ -119,7 +119,7 @@ wp.customize( 'footer--widgets--title--line-height', function( value ) {
 // Text Font Size
 wp.customize( 'footer--widgets--font-size', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'footer--widgets--font-size',
             value: to,
             screen: 'default',
@@ -130,7 +130,7 @@ wp.customize( 'footer--widgets--font-size', function( value ) {
 // Text Line Height
 wp.customize( 'footer--widgets--line-height', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'footer--widgets--line-height',
             value: to,
             screen: 'default',
@@ -141,7 +141,7 @@ wp.customize( 'footer--widgets--line-height', function( value ) {
 // Widgets Spacing
 wp.customize( 'footer--widgets--gutter', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'footer--widgets--gutter',
             value: to,
             screen: 'default',
@@ -208,7 +208,7 @@ wp.customize( 'footer--widgets--layout--tablet', function( value ) {
 // Title Font Size
 wp.customize( 'footer--widgets--title--font-size--tablet', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'footer--widgets--title--font-size',
             value: to,
             screen: 'tablet-and-up',
@@ -219,7 +219,7 @@ wp.customize( 'footer--widgets--title--font-size--tablet', function( value ) {
 // Title Line Height
 wp.customize( 'footer--widgets--title--line-height--tablet', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'footer--widgets--title--line-height',
             value: to,
             screen: 'tablet-and-up',
@@ -230,7 +230,7 @@ wp.customize( 'footer--widgets--title--line-height--tablet', function( value ) {
 // Text Font Size
 wp.customize( 'footer--widgets--font-size--tablet', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'footer--widgets--font-size',
             value: to,
             screen: 'tablet-and-up',
@@ -241,7 +241,7 @@ wp.customize( 'footer--widgets--font-size--tablet', function( value ) {
 // Text Line Height
 wp.customize( 'footer--widgets--line-height--tablet', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'footer--widgets--line-height',
             value: to,
             screen: 'tablet-and-up',
@@ -252,7 +252,7 @@ wp.customize( 'footer--widgets--line-height--tablet', function( value ) {
 // Widgets Spacing
 wp.customize( 'footer--widgets--gutter--tablet', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'footer--widgets--gutter',
             value: to,
             screen: 'tablet-and-up',
@@ -319,7 +319,7 @@ wp.customize( 'footer--widgets--layout--desktop', function( value ) {
 // Title Font Size
 wp.customize( 'footer--widgets--title--font-size--desktop', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'footer--widgets--title--font-size',
             value: to,
             screen: 'desktop',
@@ -330,7 +330,7 @@ wp.customize( 'footer--widgets--title--font-size--desktop', function( value ) {
 // Title Line Height
 wp.customize( 'footer--widgets--title--line-height--desktop', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'footer--widgets--title--line-height',
             value: to,
             screen: 'desktop',
@@ -341,7 +341,7 @@ wp.customize( 'footer--widgets--title--line-height--desktop', function( value ) 
 // Text Font Size
 wp.customize( 'footer--widgets--font-size--desktop', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'footer--widgets--font-size',
             value: to,
             screen: 'desktop',
@@ -352,7 +352,7 @@ wp.customize( 'footer--widgets--font-size--desktop', function( value ) {
 // Text Line Height
 wp.customize( 'footer--widgets--line-height--desktop', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'footer--widgets--line-height',
             value: to,
             screen: 'desktop',
@@ -363,7 +363,7 @@ wp.customize( 'footer--widgets--line-height--desktop', function( value ) {
 // Widgets Spacing
 wp.customize( 'footer--widgets--gutter--desktop', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'footer--widgets--gutter',
             value: to,
             screen: 'desktop',

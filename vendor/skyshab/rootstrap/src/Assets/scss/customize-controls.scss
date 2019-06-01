@@ -4,7 +4,5 @@
 /// This stylesheet imports all the styles needed for the customize controls panel.
 ////
 
-@import 'core/core';
-@import 'modules/sequences';
-@import 'modules/tabs';
-@import 'modules/devices';
+@import 'core';
+@import 'devices';

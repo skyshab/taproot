@@ -219,22 +219,16 @@ add_filter( 'image_size_names_choose', function( $sizes ) {
 });
 
 
-
 /**
- * Register location to the Rootstrap resources directory.
+ * Changes the theme template path to the `dist/views` folder.
  *
- * This is used to load scripts in the Customizer interface.
- *
- * @since  1.0.0
+ * @since  1.3.0
  * @access public
- * @return void
+ * @return string
  */
-add_action( 'init', function(){
-    add_filter( 'rootstrap/resources/location', function(){
-        return get_template_directory_uri() . '/vendor/skyshab/rootstrap/resources';
-    });
+add_filter( 'hybrid/template/path', function() {
+	return 'views';
 });
-
 
 
 /**

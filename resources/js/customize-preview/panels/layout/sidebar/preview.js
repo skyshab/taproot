@@ -13,7 +13,7 @@
 // Sidebar Width
 wp.customize( 'layout--sidebar--min-width', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'layout--sidebar--min-width',
             value: to,
             screen: 'desktop'

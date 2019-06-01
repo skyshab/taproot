@@ -4,11 +4,13 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInita84c678bf0db3534d7ef20ff0d50134a
+class ComposerStaticInit64da96bad5bb3570420e748850943885
 {
     public static $files = array (
         '77c7b76f4dcd3556a40cd339441c5cce' => __DIR__ . '/..' . '/justintadlock/hybrid-core/src/bootstrap-hybrid.php',
         'b03984ffdb4c6b9d816ecda51bb2d015' => __DIR__ . '/..' . '/skyshab/rootstrap/src/rootstrap-init.php',
+        '948c207b39fd4fec391619552dac1c9a' => __DIR__ . '/..' . '/skyshab/rootstrap-customize/src/rootstrap-customize-init.php',
+        '297fbc59480a44e397b3cad637a1b9a5' => __DIR__ . '/..' . '/skyshab/rootstrap-customize-defaults/src/functions-rootstrap-customize-defaults.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -18,6 +20,8 @@ class ComposerStaticInita84c678bf0db3534d7ef20ff0d50134a
         ),
         'R' => 
         array (
+            'Rootstrap\\Customize\\Defaults\\' => 29,
+            'Rootstrap\\Customize\\' => 20,
             'Rootstrap\\' => 10,
         ),
         'H' => 
@@ -39,6 +43,14 @@ class ComposerStaticInita84c678bf0db3534d7ef20ff0d50134a
         'Taproot\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
+        ),
+        'Rootstrap\\Customize\\Defaults\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/skyshab/rootstrap-customize-defaults/src',
+        ),
+        'Rootstrap\\Customize\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/skyshab/rootstrap-customize/src',
         ),
         'Rootstrap\\' => 
         array (
@@ -65,8 +77,8 @@ class ComposerStaticInita84c678bf0db3534d7ef20ff0d50134a
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInita84c678bf0db3534d7ef20ff0d50134a::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInita84c678bf0db3534d7ef20ff0d50134a::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit64da96bad5bb3570420e748850943885::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit64da96bad5bb3570420e748850943885::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }

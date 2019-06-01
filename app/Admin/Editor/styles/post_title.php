@@ -46,7 +46,7 @@ $styles->add([
 
 
 // mobile default
-$styles->add_var([
+$styles->custom_property([
     'name' => 'posts--title--font-size',
     'value' => theme_mod('posts--title--font-size'),
     'selector' => '.editor-styles-wrapper .wp-block',
@@ -54,7 +54,7 @@ $styles->add_var([
 
 
 // tablet size when settings panel closed, use mobile when open
-$styles->add_var([
+$styles->custom_property([
     'name' => 'posts--title--font-size',
     'value' => theme_mod('posts--title-tablet--font-size--tablet'),
     'screen' => 'editor-tablet',
@@ -63,7 +63,7 @@ $styles->add_var([
 
 
 // tablet size when settings panel open
-$styles->add_var([
+$styles->custom_property([
     'name' => 'posts--title--font-size',
     'value' => theme_mod('posts--title-tablet--font-size--tablet'),
     'screen' => 'editor-desktop',
@@ -72,7 +72,7 @@ $styles->add_var([
 
 
 // desktop size when settings panel closed
-$styles->add_var([
+$styles->custom_property([
     'name' => 'posts--title--font-size',
     'value' => theme_mod('posts--title--font-size--desktop'),
     'screen' => 'editor-desktop',
@@ -86,7 +86,7 @@ $styles->add_var([
 
 
 // mobile default
-$styles->add_var([
+$styles->custom_property([
     'name' => 'posts--title--line-height',
     'value' => theme_mod('posts--title--line-height'),
     'selector' => '.editor-styles-wrapper .wp-block',
@@ -94,7 +94,7 @@ $styles->add_var([
 
 
 // tablet size when settings panel closed, use mobile when open
-$styles->add_var([
+$styles->custom_property([
     'name' => 'posts--title--line-height',
     'value' => theme_mod('posts--title-tablet--line-height--tablet'),
     'screen' => 'editor-tablet',
@@ -103,7 +103,7 @@ $styles->add_var([
 
 
 // tablet size when settings panel open
-$styles->add_var([
+$styles->custom_property([
     'name' => 'posts--title--line-height',
     'value' => theme_mod('posts--title-tablet--line-height--tablet'),
     'screen' => 'editor-desktop',
@@ -112,7 +112,7 @@ $styles->add_var([
 
 
 // desktop size when settings panel closed
-$styles->add_var([
+$styles->custom_property([
     'name' => 'posts--title--line-height',
     'value' => theme_mod('posts--title--line-height--desktop'),
     'screen' => 'editor-desktop',

@@ -41,7 +41,7 @@ wp.customize( 'posts--nav--color--hover', function( value ) {
 // Link Size
 wp.customize( 'posts--nav--font-size', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'posts--nav--font-size',
             value: to
         });

@@ -26,7 +26,7 @@ wp.customize( 'pages--title--color', function( value ) {
 // Single Title Font Size
 wp.customize( 'pages--title--font-size', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'pages--title--font-size',
             value: to
         });
@@ -49,7 +49,7 @@ wp.customize( 'pages--title--font-styles', function( value ) {
 // Font Size
 wp.customize( 'pages--title--font-size', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'pages--title--font-size',
             value: to,
             screen: 'default'
@@ -60,7 +60,7 @@ wp.customize( 'pages--title--font-size', function( value ) {
 // Line Height
 wp.customize( 'pages--title--line-height', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'pages--title--line-height',
             value: to,
             screen: 'default'
@@ -73,7 +73,7 @@ wp.customize( 'pages--title--line-height', function( value ) {
 // Font Size Tablet
 wp.customize( 'pages--title--font-size--tablet', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'pages--title--font-size',
             value: to,
             screen: 'tablet-and-up'
@@ -84,7 +84,7 @@ wp.customize( 'pages--title--font-size--tablet', function( value ) {
 // Line Height Tablet
 wp.customize( 'pages--title--line-height--tablet', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'pages--title--line-height',
             value: to,
             screen: 'tablet-and-up'
@@ -96,7 +96,7 @@ wp.customize( 'pages--title--line-height--tablet', function( value ) {
 // Font Size Desktop
 wp.customize( 'pages--title--font-size--desktop', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'pages--title--font-size',
             value: to,
             screen: 'desktop'
@@ -107,7 +107,7 @@ wp.customize( 'pages--title--font-size--desktop', function( value ) {
 // Line Height Desktop
 wp.customize( 'pages--title--line-height--desktop', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'pages--title--line-height',
             value: to,
             screen: 'desktop'

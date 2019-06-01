@@ -16,31 +16,31 @@ use function Taproot\Customize\theme_mod;
 
 
 // Var: Sidebar Background Color
-$styles->add_var([
+$styles->custom_property([
     'name' => 'colors--sidebar--background-color',
     'value' => theme_mod( 'colors--sidebar--background-color' ),
 ]);
 
 // Var: Sidebar Text Color
-$styles->add_var([
+$styles->custom_property([
     'name' => 'colors--sidebar--text-color',
     'value' => theme_mod( 'colors--sidebar--text-color' ),
 ]);
 
 // Var: Sidebar Accent Color
-$styles->add_var([
+$styles->custom_property([
     'name' => 'colors--sidebar--accent-color',
     'value' => theme_mod( 'colors--sidebar--accent-color' ),
 ]);
 
 // Var: Sidebar Link Color
-$styles->add_var([
+$styles->custom_property([
     'name' => 'colors--sidebar--link-color',
     'value' => theme_mod( 'colors--sidebar--link-color' ),
 ]);
 
 // Var: Sidebar Link Hover Color
-$styles->add_var([
+$styles->custom_property([
     'name' => 'colors--sidebar--link-color--hover',
     'value' => theme_mod( 'colors--sidebar--link-color--hover' ),
 ]);

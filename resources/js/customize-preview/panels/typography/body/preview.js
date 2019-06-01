@@ -13,7 +13,7 @@
 // Text Color
 wp.customize( 'typography--body--text-color', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'typography--body--text-color',
             value: to
         });
@@ -24,7 +24,7 @@ wp.customize( 'typography--body--text-color', function( value ) {
 // Font Family
 wp.customize( 'typography--body--font-family', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'typography--body--font-family',
             value: to,
             screen: 'default'
@@ -37,7 +37,7 @@ wp.customize( 'typography--body--font-family', function( value ) {
 wp.customize( 'typography--body--font-size', function( value ) {
     value.bind( function( to ) {
         value.bind( function( to ) {
-            rootstrap.var({
+            rootstrap.customProperty({
                 name: 'typography--body--font-size',
                 value: to,
                 screen: 'default'
@@ -51,7 +51,7 @@ wp.customize( 'typography--body--font-size', function( value ) {
 wp.customize( 'typography--body--line-height', function( value ) {
     value.bind( function( to ) {
         value.bind( function( to ) {
-            rootstrap.var({
+            rootstrap.customProperty({
                 name: 'typography--body--line-height',
                 value: to,
                 screen: 'default'
@@ -59,7 +59,7 @@ wp.customize( 'typography--body--line-height', function( value ) {
             if( !to.includes('px') ) {
                 to += 'em';
             }
-            rootstrap.var({
+            rootstrap.customProperty({
                 name: 'typography--body--block-spacing',
                 value: to,
                 screen: 'default'
@@ -73,7 +73,7 @@ wp.customize( 'typography--body--line-height', function( value ) {
 wp.customize( 'typography--body--font-size--tablet', function( value ) {
     value.bind( function( to ) {
         value.bind( function( to ) {
-            rootstrap.var({
+            rootstrap.customProperty({
                 name: 'typography--body--font-size',
                 value: to,
                 screen: 'tablet-and-up'
@@ -87,7 +87,7 @@ wp.customize( 'typography--body--font-size--tablet', function( value ) {
 wp.customize( 'typography--body--line-height--tablet', function( value ) {
     value.bind( function( to ) {
         value.bind( function( to ) {
-            rootstrap.var({
+            rootstrap.customProperty({
                 name: 'typography--body--line-height',
                 value: to,
                 screen: 'tablet-and-up'
@@ -95,7 +95,7 @@ wp.customize( 'typography--body--line-height--tablet', function( value ) {
             if( !to.includes('px') ) {
                 to += 'em';
             }
-            rootstrap.var({
+            rootstrap.customProperty({
                 name: 'typography--body--block-spacing',
                 value: to,
                 screen: 'tablet-and-up'
@@ -109,7 +109,7 @@ wp.customize( 'typography--body--line-height--tablet', function( value ) {
 wp.customize( 'typography--body--font-size--desktop', function( value ) {
     value.bind( function( to ) {
         value.bind( function( to ) {
-            rootstrap.var({
+            rootstrap.customProperty({
                 name: 'typography--body--font-size',
                 value: to,
                 screen: 'desktop'
@@ -123,7 +123,7 @@ wp.customize( 'typography--body--font-size--desktop', function( value ) {
 wp.customize( 'typography--body--line-height--desktop', function( value ) {
     value.bind( function( to ) {
         value.bind( function( to ) {
-            rootstrap.var({
+            rootstrap.customProperty({
                 name: 'typography--body--line-height',
                 value: to,
                 screen: 'desktop'
@@ -131,7 +131,7 @@ wp.customize( 'typography--body--line-height--desktop', function( value ) {
             if( !to.includes('px') ) {
                 to += 'em';
             }
-            rootstrap.var({
+            rootstrap.customProperty({
                 name: 'typography--body--block-spacing',
                 value: to,
                 screen: 'desktop'

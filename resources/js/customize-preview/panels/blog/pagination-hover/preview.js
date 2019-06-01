@@ -15,7 +15,7 @@
 // Blog Pagination Color Hover
 wp.customize( 'blog--pagination-hover--link--color', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'blog--pagination-hover--link--color',
             value: to
         });
@@ -27,7 +27,7 @@ wp.customize( 'blog--pagination-hover--link--color', function( value ) {
 // Blog Pagination Background Color Hover
 wp.customize( 'blog--pagination-hover--background-color', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'blog--pagination-hover--background-color',
             value: to
         });
@@ -38,7 +38,7 @@ wp.customize( 'blog--pagination-hover--background-color', function( value ) {
 // Blog Pagination Numbers Color Hover
 wp.customize( 'blog--pagination-hover--color', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'blog--pagination-hover--color',
             value: to
         });

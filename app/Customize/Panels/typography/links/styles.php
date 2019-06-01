@@ -16,28 +16,28 @@ use function Taproot\Customize\theme_mod;
 
 
 // Var: Link color
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--links--color',
     'value' => theme_mod( 'typography--links--color' ),
 ]);
 
 
 // Var: Link color visited
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--links--color--visited',
     'value' => theme_mod( 'typography--links--color--visited' ),
 ]);
 
 
 // Var: Link color hover
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--links--color--hover',
     'value' => theme_mod( 'typography--links--color--hover' ),
 ]);
 
 
 // Var: Link color hover
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--links--color--active',
     'value' => theme_mod( 'typography--links--color--active' ),
 ]);

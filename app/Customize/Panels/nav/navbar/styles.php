@@ -89,7 +89,7 @@ if( has_nav_menu( 'navbar' ) ) {
 
 
     // Var: font size
-    $styles->add_var([
+    $styles->custom_property([
         'name' => 'nav--navbar--font-size',
         'value' => theme_mod( 'nav--navbar--font-size', true ),
         'screen' => $navbar_desktop_screen,
@@ -97,7 +97,7 @@ if( has_nav_menu( 'navbar' ) ) {
 
 
     // Var: Navbar height
-    $styles->add_var([
+    $styles->custom_property([
         'name' => 'nav--navbar--line-height',
         'value' => theme_mod( 'nav--navbar--height', true ),
         'screen' => $navbar_desktop_screen,

@@ -59,7 +59,7 @@ wp.customize( 'typography--h5--font-styles', function( value ) {
 wp.customize( 'typography--h5--font-size', function( value ) {
     value.bind( function( to ) {
         value.bind( function( to ) {
-            rootstrap.var({
+            rootstrap.customProperty({
                 name: 'typography--h5--font-size',
                 value: to,
                 screen: 'default'
@@ -73,7 +73,7 @@ wp.customize( 'typography--h5--font-size', function( value ) {
 wp.customize( 'typography--h5--line-height', function( value ) {
     value.bind( function( to ) {
         value.bind( function( to ) {
-            rootstrap.var({
+            rootstrap.customProperty({
                 name: 'typography--h5--line-height',
                 value: to,
                 screen: 'default'
@@ -86,7 +86,7 @@ wp.customize( 'typography--h5--line-height', function( value ) {
 wp.customize( 'typography--h5--font-size--tablet', function( value ) {
     value.bind( function( to ) {
         value.bind( function( to ) {
-            rootstrap.var({
+            rootstrap.customProperty({
                 name: 'typography--h5--font-size',
                 value: to,
                 screen: 'tablet-and-up'
@@ -100,7 +100,7 @@ wp.customize( 'typography--h5--font-size--tablet', function( value ) {
 wp.customize( 'typography--h5--line-height--tablet', function( value ) {
     value.bind( function( to ) {
         value.bind( function( to ) {
-            rootstrap.var({
+            rootstrap.customProperty({
                 name: 'typography--h5--line-height',
                 value: to,
                 screen: 'tablet-and-up'
@@ -114,7 +114,7 @@ wp.customize( 'typography--h5--line-height--tablet', function( value ) {
 wp.customize( 'typography--h5--font-size--desktop', function( value ) {
     value.bind( function( to ) {
         value.bind( function( to ) {
-            rootstrap.var({
+            rootstrap.customProperty({
                 name: 'typography--h5--font-size',
                 value: to,
                 screen: 'desktop'
@@ -128,7 +128,7 @@ wp.customize( 'typography--h5--font-size--desktop', function( value ) {
 wp.customize( 'typography--h5--line-height--desktop', function( value ) {
     value.bind( function( to ) {
         value.bind( function( to ) {
-            rootstrap.var({
+            rootstrap.customProperty({
                 name: 'typography--h5--line-height',
                 value: to,
                 screen: 'desktop'

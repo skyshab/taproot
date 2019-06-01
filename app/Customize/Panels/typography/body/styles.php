@@ -17,7 +17,7 @@ use function Taproot\Customize\theme_mod;
 use function Taproot\Customize\maybe_convert_to_em;
 
 // Var: Body Text Color
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--body--text-color',
     'value' => theme_mod( 'typography--body--text-color', true ),
 ]);
@@ -35,7 +35,7 @@ $styles->add([
 // Mobile
 
 // Var: Body Font Size
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--body--font-size',
     'value' => theme_mod( 'typography--body--font-size' ),
     'screen' => 'default',
@@ -43,7 +43,7 @@ $styles->add_var([
 
 
 // Var: Body Line Height
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--body--line-height',
     'value' => theme_mod( 'typography--body--line-height' ),
     'screen' => 'default',
@@ -51,7 +51,7 @@ $styles->add_var([
 
 
 // Var: Body Block Spacing
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--body--block-spacing',
     'value' =>  maybe_convert_to_em( theme_mod( 'typography--body--line-height' ) ),
     'screen' => 'default',
@@ -61,7 +61,7 @@ $styles->add_var([
 // Tablet
 
 // Var: Body Font Size
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--body--font-size',
     'value' => theme_mod( 'typography--body--font-size--tablet' ),
     'screen' => 'tablet-and-up',
@@ -69,7 +69,7 @@ $styles->add_var([
 
 
 // Var: Body Line Height
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--body--line-height',
     'value' => theme_mod( 'typography--body--line-height--tablet' ),
     'screen' => 'tablet-and-up',
@@ -77,7 +77,7 @@ $styles->add_var([
 
 
 // Var: Body Block Spacing
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--body--block-spacing',
     'value' =>  maybe_convert_to_em( theme_mod( 'typography--body--line-height--tablet' ) ),
     'screen' => 'tablet-and-up',
@@ -87,7 +87,7 @@ $styles->add_var([
 // Desktop
 
 // Var: Body Font Size
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--body--font-size',
     'value' => theme_mod( 'typography--body--font-size--desktop' ),
     'screen' => 'desktop',
@@ -95,7 +95,7 @@ $styles->add_var([
 
 
 // Var: Body Line Height
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--body--line-height',
     'value' => theme_mod( 'typography--body--line-height--desktop' ),
     'screen' => 'desktop',
@@ -103,7 +103,7 @@ $styles->add_var([
 
 
 // Var: Body Block Spacing
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--body--block-spacing',
     'value' =>  maybe_convert_to_em( theme_mod( 'typography--body--line-height--desktop' ) ),
     'screen' => 'desktop',

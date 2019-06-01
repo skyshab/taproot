@@ -39,14 +39,14 @@ $styles->add([
 
 
 // Var: Heading Font Size Mobile
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--h2--font-size',
     'value' => theme_mod( 'typography--h2--font-size' ),
     'screen' => 'default',
 ]);
 
 // Var: Heading Line Height Mobile
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--h2--line-height',
     'value' => theme_mod( 'typography--h2--line-height' ),
     'screen' => 'default',
@@ -54,14 +54,14 @@ $styles->add_var([
 
 
 // Var: Heading Font Size Tablet
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--h2--font-size',
     'value' => theme_mod( 'typography--h2--font-size--tablet' ),
     'screen' => 'tablet-and-up',
 ]);
 
 // Var: Heading Line Height Tablet
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--h2--line-height',
     'value' => theme_mod( 'typography--h2--line-height--tablet' ),
     'screen' => 'tablet-and-up',
@@ -69,7 +69,7 @@ $styles->add_var([
 
 
 // Var: Heading Font Size Desktop
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--h2--font-size',
     'value' => theme_mod( 'typography--h2--font-size--desktop' ),
     'screen' => 'desktop',
@@ -77,7 +77,7 @@ $styles->add_var([
 ]);
 
 // Var: Heading Line Height Desktop
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--h2--line-height',
     'value' => theme_mod( 'typography--h2--line-height--desktop' ),
     'screen' => 'desktop',

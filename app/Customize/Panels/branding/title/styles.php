@@ -46,7 +46,7 @@ if( theme_mod( 'branding--title--hide' ) ) {
 else {
 
     // Var: Title Font Size
-    $styles->add_var([
+    $styles->custom_property([
         'name' => 'branding--title--font-size',
         'value' => theme_mod( 'branding--title--font-size' ),
         'screen' => 'default'
@@ -54,7 +54,7 @@ else {
 
 
     // Var: Title Line Height
-    $styles->add_var([
+    $styles->custom_property([
         'name' => 'branding--title--line-height',
         'value' => theme_mod( 'branding--title--line-height' ),
         'screen' => 'default'
@@ -76,7 +76,7 @@ if( theme_mod( 'branding--title--hide--tablet' ) ) {
 else {
 
     // Var: Title Font Size
-    $styles->add_var([
+    $styles->custom_property([
         'name' => 'branding--title--font-size',
         'value' => theme_mod( 'branding--title--font-size--tablet' ),
         'screen' => 'tablet-and-up'
@@ -84,7 +84,7 @@ else {
 
 
     // Var: Title Line Height
-    $styles->add_var([
+    $styles->custom_property([
         'name' => 'branding--title--line-height',
         'value' => theme_mod( 'branding--title--line-height--tablet' ),
         'screen' => 'tablet-and-up'
@@ -106,7 +106,7 @@ if( theme_mod( 'branding--title--hide--desktop' ) ) {
 else {
 
     // Var: Title Font Size
-    $styles->add_var([
+    $styles->custom_property([
         'name' => 'branding--title--font-size',
         'value' => theme_mod( 'branding--title--font-size--desktop' ),
         'screen' => 'desktop'
@@ -114,7 +114,7 @@ else {
 
 
     // Var: Title Line Height
-    $styles->add_var([
+    $styles->custom_property([
         'name' => 'branding--title--line-height',
         'value' => theme_mod( 'branding--title--line-height--desktop' ),
         'screen' => 'desktop'

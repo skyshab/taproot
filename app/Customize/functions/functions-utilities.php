@@ -316,9 +316,7 @@ function get_padding_from_width( $width, $unit = false ) {
  * @return mixed
  */
 function theme_mod( $id, $display_default = false ) {
-
-    return \Rootstrap\get_theme_mod($id, null, $display_default);
-
+    return \Rootstrap\Customize\Defaults\get_theme_mod($id, null, $display_default);
 }
 
 

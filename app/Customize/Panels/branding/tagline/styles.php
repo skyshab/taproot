@@ -71,21 +71,21 @@ if( theme_mod( 'branding--tagline--hide-tagline' ) ) {
 else {
 
     // Var: Tagline Font Size
-    $styles->add_var([
+    $styles->custom_property([
         'name' => 'branding--tagline--font-size',
         'value' => theme_mod( 'branding--tagline--font-size' ),
         'screen' => 'default'
     ]);
 
     // Var: Tagline Line Height
-    $styles->add_var([
+    $styles->custom_property([
         'name' => 'branding--tagline--line-height',
         'value' => theme_mod( 'branding--tagline--line-height' ),
         'screen' => 'default'
     ]);
 
     // Var: Tagline Gutter
-    $styles->add_var([
+    $styles->custom_property([
         'name' => 'branding--tagline--gutter',
         'value' => theme_mod( 'branding--tagline--gutter' ),
         'screen' => 'default'
@@ -119,21 +119,21 @@ if( theme_mod( 'branding--tagline--hide-tagline--tablet' ) ) {
 else {
 
     // Var: Tagline Font Size
-    $styles->add_var([
+    $styles->custom_property([
         'name' => 'branding--tagline--font-size',
         'value' => theme_mod( 'branding--tagline--font-size--tablet' ),
         'screen' => 'tablet-and-up'
     ]);
 
     // Var: Tagline Line Height
-    $styles->add_var([
+    $styles->custom_property([
         'name' => 'branding--tagline--line-height',
         'value' => theme_mod( 'branding--tagline--line-height--tablet' ),
         'screen' => 'tablet-and-up'
     ]);
 
     // Var: Tagline Gutter
-    $styles->add_var([
+    $styles->custom_property([
         'name' => 'branding--tagline--gutter',
         'value' => theme_mod( 'branding--tagline--gutter--tablet' ),
         'screen' => 'tablet-and-up'
@@ -167,21 +167,21 @@ if( theme_mod( 'branding--tagline--hide-tagline--desktop' ) ) {
 else {
 
     // Var: Tagline Font Size
-    $styles->add_var([
+    $styles->custom_property([
         'name' => 'branding--tagline--font-size',
         'value' => theme_mod( 'branding--tagline--font-size--desktop' ),
         'screen' => 'desktop'
     ]);
 
     // Var: Tagline Line Height
-    $styles->add_var([
+    $styles->custom_property([
         'name' => 'branding--tagline--line-height',
         'value' => theme_mod( 'branding--tagline--line-height--desktop' ),
         'screen' => 'desktop'
     ]);
 
     // Var: Tagline Gutter
-    $styles->add_var([
+    $styles->custom_property([
         'name' => 'branding--tagline--gutter',
         'value' => theme_mod( 'branding--tagline--gutter--desktop' ),
         'screen' => 'desktop'

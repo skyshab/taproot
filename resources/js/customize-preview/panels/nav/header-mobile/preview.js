@@ -143,7 +143,7 @@ wp.customize( 'nav--header-mobile--font-family', function( value ) {
 //  Var: Link Font Size
 wp.customize( 'nav--header-mobile--font-size', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'nav--header--font-size',
             value: to,
             screen: utils.getMobileScreen( wp.customize.instance('nav--header-mobile--breakpoint').get()),
@@ -155,7 +155,7 @@ wp.customize( 'nav--header-mobile--font-size', function( value ) {
 //  Var: Link Line Height
 wp.customize( 'nav--header-mobile--line-height', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'nav--header--line-height',
             value: to,
             screen: utils.getMobileScreen( wp.customize.instance('nav--header-mobile--breakpoint').get()),

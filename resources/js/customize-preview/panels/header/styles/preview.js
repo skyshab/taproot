@@ -73,7 +73,7 @@ wp.customize( 'header--styles--default-color--hover', function( value ) {
 // Header Padding
 wp.customize( 'header--styles--padding', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'header--padding',
             value: to,
             screen: 'default',
@@ -85,7 +85,7 @@ wp.customize( 'header--styles--padding', function( value ) {
 // Header Padding Tablet
 wp.customize( 'header--styles--padding--tablet', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'header--padding',
             value: to,
             screen: 'tablet-and-up',
@@ -97,7 +97,7 @@ wp.customize( 'header--styles--padding--tablet', function( value ) {
 // Header Padding Desktop
 wp.customize( 'header--styles--padding--desktop', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'header--padding',
             value: to,
             screen: 'desktop',
