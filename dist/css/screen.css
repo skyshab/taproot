@@ -2515,7 +2515,7 @@ li > ul, li > ol {
 	text-align: center;
 }
 .widget--calendar tr {
-	background: rgba(255, 255, 255, 0.5);
+	background: rgba(255, 255, 255, 0.6);
 }
 .widget--calendar tfoot td {
 	border: none;
