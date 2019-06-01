@@ -55,7 +55,7 @@ wp.customize( 'footer--styles--default-color--hover', function( value ) {
 // Padding
 wp.customize( 'footer--styles--padding', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'footer--padding',
             value: to,
             screen: 'default',
@@ -67,7 +67,7 @@ wp.customize( 'footer--styles--padding', function( value ) {
 // Padding Tablet
 wp.customize( 'footer--styles--padding--tablet', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'footer--padding',
             value: to,
             screen: 'tablet-and-up',
@@ -79,7 +79,7 @@ wp.customize( 'footer--styles--padding--tablet', function( value ) {
 // Padding Desktop
 wp.customize( 'footer--styles--padding--desktop', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'footer--padding',
             value: to,
             screen: 'desktop',

@@ -348,7 +348,7 @@ __webpack_require__.r(__webpack_exports__);
 // Link Font Size
 wp.customize('blog--archive-link--font-size', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'blog--archive-link--font-size',
       value: to
     });
@@ -377,7 +377,7 @@ wp.customize('blog--archive-link--font-size', function (value) {
 // Meta Color
 wp.customize('blog--archive-meta--color', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'blog--archive-meta--color',
       value: to
     });
@@ -386,7 +386,7 @@ wp.customize('blog--archive-meta--color', function (value) {
 
 wp.customize('blog--archive-meta--icon--color', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'blog--archive-meta--icon--color',
       value: to
     });
@@ -498,7 +498,7 @@ wp.customize('blog--archive-title--font-styles', function (value) {
 // Blog Pagination Color Hover
 wp.customize('blog--pagination-hover--link--color', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'blog--pagination-hover--link--color',
       value: to
     });
@@ -507,7 +507,7 @@ wp.customize('blog--pagination-hover--link--color', function (value) {
 
 wp.customize('blog--pagination-hover--background-color', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'blog--pagination-hover--background-color',
       value: to
     });
@@ -516,7 +516,7 @@ wp.customize('blog--pagination-hover--background-color', function (value) {
 
 wp.customize('blog--pagination-hover--color', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'blog--pagination-hover--color',
       value: to
     });
@@ -702,7 +702,7 @@ wp.customize('blog--title--font-styles', function (value) {
 
 wp.customize('blog--title--font-size', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'blog--title--font-size',
       value: to,
       screen: 'default'
@@ -712,7 +712,7 @@ wp.customize('blog--title--font-size', function (value) {
 
 wp.customize('blog--title--line-height', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'blog--title--line-height',
       value: to,
       screen: 'default'
@@ -722,7 +722,7 @@ wp.customize('blog--title--line-height', function (value) {
 
 wp.customize('blog--title--font-size--tablet', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'blog--title--font-size',
       value: to,
       screen: 'tablet-and-up'
@@ -732,7 +732,7 @@ wp.customize('blog--title--font-size--tablet', function (value) {
 
 wp.customize('blog--title--line-height--tablet', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'blog--title--line-height',
       value: to,
       screen: 'tablet-and-up'
@@ -742,7 +742,7 @@ wp.customize('blog--title--line-height--tablet', function (value) {
 
 wp.customize('blog--title--font-size--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'blog--title--font-size',
       value: to,
       screen: 'desktop'
@@ -752,7 +752,7 @@ wp.customize('blog--title--font-size--desktop', function (value) {
 
 wp.customize('blog--title--line-height--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'blog--title--line-height',
       value: to,
       screen: 'desktop'
@@ -912,7 +912,7 @@ wp.customize('branding--logo--image', function (value) {
 
 wp.customize('branding--logo--width', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'branding--logo--width',
       value: to,
       screen: 'default'
@@ -922,7 +922,7 @@ wp.customize('branding--logo--width', function (value) {
 
 wp.customize('branding--logo--gutter', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'branding--logo--gutter',
       value: to,
       screen: 'default'
@@ -932,7 +932,7 @@ wp.customize('branding--logo--gutter', function (value) {
 
 wp.customize('branding--logo--width--tablet', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'branding--logo--width',
       value: to,
       screen: 'tablet-and-up'
@@ -942,7 +942,7 @@ wp.customize('branding--logo--width--tablet', function (value) {
 
 wp.customize('branding--logo--gutter--tablet', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'branding--logo--gutter',
       value: to,
       screen: 'tablet-and-up'
@@ -952,7 +952,7 @@ wp.customize('branding--logo--gutter--tablet', function (value) {
 
 wp.customize('branding--logo--width--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'branding--logo--width',
       value: to,
       screen: 'desktop'
@@ -962,7 +962,7 @@ wp.customize('branding--logo--width--desktop', function (value) {
 
 wp.customize('branding--logo--gutter--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'branding--logo--gutter',
       value: to,
       screen: 'desktop'
@@ -1147,7 +1147,7 @@ wp.customize('branding--tagline--font-styles', function (value) {
 
 wp.customize('branding--tagline--font-size', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'branding--tagline--font-size',
       value: to,
       screen: 'default'
@@ -1157,7 +1157,7 @@ wp.customize('branding--tagline--font-size', function (value) {
 
 wp.customize('branding--tagline--line-height', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'branding--tagline--line-height',
       value: to,
       screen: 'default'
@@ -1167,7 +1167,7 @@ wp.customize('branding--tagline--line-height', function (value) {
 
 wp.customize('branding--tagline--gutter', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'branding--tagline--gutter',
       value: to,
       screen: 'default'
@@ -1206,7 +1206,7 @@ wp.customize('branding--tagline--hide', function (value) {
 
 wp.customize('branding--tagline--font-size--tablet', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'branding--tagline--font-size',
       value: to,
       screen: 'tablet-and-up'
@@ -1216,7 +1216,7 @@ wp.customize('branding--tagline--font-size--tablet', function (value) {
 
 wp.customize('branding--tagline--line-height--tablet', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'branding--tagline--line-height',
       value: to,
       screen: 'tablet-and-up'
@@ -1226,7 +1226,7 @@ wp.customize('branding--tagline--line-height--tablet', function (value) {
 
 wp.customize('branding--tagline--gutter--tablet', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'branding--tagline--gutter',
       value: to,
       screen: 'tablet-and-up'
@@ -1265,7 +1265,7 @@ wp.customize('branding--tagline--hide--tablet', function (value) {
 
 wp.customize('branding--tagline--font-size--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'branding--tagline--font-size',
       value: to,
       screen: 'desktop'
@@ -1275,7 +1275,7 @@ wp.customize('branding--tagline--font-size--desktop', function (value) {
 
 wp.customize('branding--tagline--line-height--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'branding--tagline--line-height',
       value: to,
       screen: 'desktop'
@@ -1285,7 +1285,7 @@ wp.customize('branding--tagline--line-height--desktop', function (value) {
 
 wp.customize('branding--tagline--gutter--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'branding--tagline--gutter',
       value: to,
       screen: 'desktop'
@@ -1443,7 +1443,7 @@ wp.customize('branding--title--font-styles', function (value) {
 
 wp.customize('branding--title--font-size', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'branding--title--font-size',
       value: to,
       screen: 'default'
@@ -1453,7 +1453,7 @@ wp.customize('branding--title--font-size', function (value) {
 
 wp.customize('branding--title--line-height', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'branding--title--line-height',
       value: to,
       screen: 'default'
@@ -1478,7 +1478,7 @@ wp.customize('branding--title--hide', function (value) {
 
 wp.customize('branding--title--font-size--tablet', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'branding--title--font-size',
       value: to,
       screen: 'tablet-and-up'
@@ -1488,7 +1488,7 @@ wp.customize('branding--title--font-size--tablet', function (value) {
 
 wp.customize('branding--title--line-height--tablet', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'branding--title--line-height',
       value: to,
       screen: 'tablet-and-up'
@@ -1513,7 +1513,7 @@ wp.customize('branding--title--hide--tablet', function (value) {
 
 wp.customize('branding--title--font-size--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'branding--title--font-size',
       value: to,
       screen: 'desktop'
@@ -1523,7 +1523,7 @@ wp.customize('branding--title--font-size--desktop', function (value) {
 
 wp.customize('branding--title--line-height--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'branding--title--line-height',
       value: to,
       screen: 'desktop'
@@ -1596,7 +1596,7 @@ __webpack_require__.r(__webpack_exports__);
 // Background Color
 wp.customize('colors--sidebar--background-color', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'colors--sidebar--background-color',
       value: to
     });
@@ -1605,7 +1605,7 @@ wp.customize('colors--sidebar--background-color', function (value) {
 
 wp.customize('colors--sidebar--text-color', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'colors--sidebar--text-color',
       value: to
     });
@@ -1614,7 +1614,7 @@ wp.customize('colors--sidebar--text-color', function (value) {
 
 wp.customize('colors--sidebar--accent-color', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'colors--sidebar--accent-color',
       value: to
     });
@@ -1623,7 +1623,7 @@ wp.customize('colors--sidebar--accent-color', function (value) {
 
 wp.customize('colors--sidebar--link-color', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'colors--sidebar--link-color',
       value: to
     });
@@ -1632,7 +1632,7 @@ wp.customize('colors--sidebar--link-color', function (value) {
 
 wp.customize('colors--sidebar--link-color--hover', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'colors--sidebar--link-color--hover',
       value: to
     });
@@ -1661,7 +1661,7 @@ wp.customize('colors--sidebar--link-color--hover', function (value) {
 // Accent Color
 wp.customize('colors--theme--accent', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'colors--theme--accent',
       value: to
     });
@@ -1670,7 +1670,7 @@ wp.customize('colors--theme--accent', function (value) {
 
 wp.customize('colors--theme--accent-contrast', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'colors--theme--accent-contrast',
       value: to
     });
@@ -1679,7 +1679,7 @@ wp.customize('colors--theme--accent-contrast', function (value) {
 
 wp.customize('colors--theme--meta-light', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'colors--theme--meta-light',
       value: to
     });
@@ -1688,7 +1688,7 @@ wp.customize('colors--theme--meta-light', function (value) {
 
 wp.customize('colors--theme--meta-medium', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'colors--theme--meta-medium',
       value: to
     });
@@ -1697,7 +1697,7 @@ wp.customize('colors--theme--meta-medium', function (value) {
 
 wp.customize('colors--theme--meta-dark', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'colors--theme--meta-dark',
       value: to
     });
@@ -2149,7 +2149,7 @@ wp.customize('footer--styles--default-color--hover', function (value) {
 
 wp.customize('footer--styles--padding', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'footer--padding',
       value: to,
       screen: 'default'
@@ -2159,7 +2159,7 @@ wp.customize('footer--styles--padding', function (value) {
 
 wp.customize('footer--styles--padding--tablet', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'footer--padding',
       value: to,
       screen: 'tablet-and-up'
@@ -2169,7 +2169,7 @@ wp.customize('footer--styles--padding--tablet', function (value) {
 
 wp.customize('footer--styles--padding--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'footer--padding',
       value: to,
       screen: 'desktop'
@@ -2286,7 +2286,7 @@ wp.customize('footer--widgets--layout', function (value) {
 
 wp.customize('footer--widgets--title--font-size', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'footer--widgets--title--font-size',
       value: to,
       screen: 'default'
@@ -2296,7 +2296,7 @@ wp.customize('footer--widgets--title--font-size', function (value) {
 
 wp.customize('footer--widgets--title--line-height', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'footer--widgets--title--line-height',
       value: to,
       screen: 'default'
@@ -2306,7 +2306,7 @@ wp.customize('footer--widgets--title--line-height', function (value) {
 
 wp.customize('footer--widgets--font-size', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'footer--widgets--font-size',
       value: to,
       screen: 'default'
@@ -2316,7 +2316,7 @@ wp.customize('footer--widgets--font-size', function (value) {
 
 wp.customize('footer--widgets--line-height', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'footer--widgets--line-height',
       value: to,
       screen: 'default'
@@ -2326,7 +2326,7 @@ wp.customize('footer--widgets--line-height', function (value) {
 
 wp.customize('footer--widgets--gutter', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'footer--widgets--gutter',
       value: to,
       screen: 'default'
@@ -2389,7 +2389,7 @@ wp.customize('footer--widgets--layout--tablet', function (value) {
 
 wp.customize('footer--widgets--title--font-size--tablet', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'footer--widgets--title--font-size',
       value: to,
       screen: 'tablet-and-up'
@@ -2399,7 +2399,7 @@ wp.customize('footer--widgets--title--font-size--tablet', function (value) {
 
 wp.customize('footer--widgets--title--line-height--tablet', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'footer--widgets--title--line-height',
       value: to,
       screen: 'tablet-and-up'
@@ -2409,7 +2409,7 @@ wp.customize('footer--widgets--title--line-height--tablet', function (value) {
 
 wp.customize('footer--widgets--font-size--tablet', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'footer--widgets--font-size',
       value: to,
       screen: 'tablet-and-up'
@@ -2419,7 +2419,7 @@ wp.customize('footer--widgets--font-size--tablet', function (value) {
 
 wp.customize('footer--widgets--line-height--tablet', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'footer--widgets--line-height',
       value: to,
       screen: 'tablet-and-up'
@@ -2429,7 +2429,7 @@ wp.customize('footer--widgets--line-height--tablet', function (value) {
 
 wp.customize('footer--widgets--gutter--tablet', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'footer--widgets--gutter',
       value: to,
       screen: 'tablet-and-up'
@@ -2492,7 +2492,7 @@ wp.customize('footer--widgets--layout--desktop', function (value) {
 
 wp.customize('footer--widgets--title--font-size--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'footer--widgets--title--font-size',
       value: to,
       screen: 'desktop'
@@ -2502,7 +2502,7 @@ wp.customize('footer--widgets--title--font-size--desktop', function (value) {
 
 wp.customize('footer--widgets--title--line-height--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'footer--widgets--title--line-height',
       value: to,
       screen: 'desktop'
@@ -2512,7 +2512,7 @@ wp.customize('footer--widgets--title--line-height--desktop', function (value) {
 
 wp.customize('footer--widgets--font-size--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'footer--widgets--font-size',
       value: to,
       screen: 'desktop'
@@ -2522,7 +2522,7 @@ wp.customize('footer--widgets--font-size--desktop', function (value) {
 
 wp.customize('footer--widgets--line-height--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'footer--widgets--line-height',
       value: to,
       screen: 'desktop'
@@ -2532,7 +2532,7 @@ wp.customize('footer--widgets--line-height--desktop', function (value) {
 
 wp.customize('footer--widgets--gutter--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'footer--widgets--gutter',
       value: to,
       screen: 'desktop'
@@ -2792,7 +2792,7 @@ wp.customize('header--styles--default-color--hover', function (value) {
 
 wp.customize('header--styles--padding', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'header--padding',
       value: to,
       screen: 'default'
@@ -2802,7 +2802,7 @@ wp.customize('header--styles--padding', function (value) {
 
 wp.customize('header--styles--padding--tablet', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'header--padding',
       value: to,
       screen: 'tablet-and-up'
@@ -2812,7 +2812,7 @@ wp.customize('header--styles--padding--tablet', function (value) {
 
 wp.customize('header--styles--padding--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'header--padding',
       value: to,
       screen: 'desktop'
@@ -2846,7 +2846,7 @@ wp.customize('layout--boxed--outer-padding', function (value) {
     isBoxed = isBoxed ? isBoxed.get() : false;
 
     if (isBoxed) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'layout--boxed--outer-padding',
         value: to
       });
@@ -2910,11 +2910,11 @@ wp.customize('layout--container--max-width', function (value) {
 
 wp.customize('layout--container--width', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'layout--container--width',
       value: to
     });
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'layout--container--padding',
       value: _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getPaddingFromWidth"](to, 'vw')
     });
@@ -2923,12 +2923,12 @@ wp.customize('layout--container--width', function (value) {
 
 wp.customize('layout--container--width--tablet', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       screen: 'tablet-and-up',
       name: 'layout--container--width',
       value: to
     });
-    rootstrap.var({
+    rootstrap.customProperty({
       screen: 'tablet-and-up',
       name: 'layout--container--padding',
       value: _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getPaddingFromWidth"](to, 'vw')
@@ -2938,12 +2938,12 @@ wp.customize('layout--container--width--tablet', function (value) {
 
 wp.customize('layout--container--width--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       screen: 'desktop',
       name: 'layout--container--width',
       value: to.replace('vw', '%')
     });
-    rootstrap.var({
+    rootstrap.customProperty({
       screen: 'desktop',
       name: 'layout--container--padding',
       value: _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getPaddingFromWidth"](to, 'vw')
@@ -2973,7 +2973,7 @@ wp.customize('layout--container--width--desktop', function (value) {
 // Max Content Width
 wp.customize('layout--content--max-width', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'layout--content--max-width',
       value: to
     });
@@ -3036,7 +3036,7 @@ __webpack_require__.r(__webpack_exports__);
 // Sidebar Width
 wp.customize('layout--sidebar--min-width', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'layout--sidebar--min-width',
       value: to,
       screen: 'desktop'
@@ -3084,7 +3084,7 @@ wp.customize('nav--footer-mobile--hide', function (value) {
 
 wp.customize('nav--footer-mobile--font-size', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'nav--footer--font-size',
       value: to,
       screen: _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getMobileScreen"](wp.customize.instance('nav--footer-mobile--breakpoint').get())
@@ -3094,7 +3094,7 @@ wp.customize('nav--footer-mobile--font-size', function (value) {
 
 wp.customize('nav--footer-mobile--line-height', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'nav--footer--line-height',
       value: to,
       screen: _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getMobileScreen"](wp.customize.instance('nav--footer-mobile--breakpoint').get())
@@ -3213,7 +3213,7 @@ wp.customize('nav--footer--position', function (value) {
 
 wp.customize('nav--footer--font-size', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'nav--footer--font-size',
       value: to,
       screen: _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getDesktopScreen"](wp.customize.instance('nav--footer-mobile--breakpoint').get())
@@ -3223,7 +3223,7 @@ wp.customize('nav--footer--font-size', function (value) {
 
 wp.customize('nav--footer--line-height', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'nav--footer--line-height',
       value: to,
       screen: _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getDesktopScreen"](wp.customize.instance('nav--footer-mobile--breakpoint').get())
@@ -3598,7 +3598,7 @@ wp.customize('nav--header-mobile--font-family', function (value) {
 
 wp.customize('nav--header-mobile--font-size', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'nav--header--font-size',
       value: to,
       screen: _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getMobileScreen"](wp.customize.instance('nav--header-mobile--breakpoint').get())
@@ -3608,7 +3608,7 @@ wp.customize('nav--header-mobile--font-size', function (value) {
 
 wp.customize('nav--header-mobile--line-height', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'nav--header--line-height',
       value: to,
       screen: _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getMobileScreen"](wp.customize.instance('nav--header-mobile--breakpoint').get())
@@ -3717,7 +3717,7 @@ wp.customize('nav--header--font-family', function (value) {
 
 wp.customize('nav--header--font-size', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'nav--header--font-size',
       value: to,
       screen: _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getDesktopScreen"](wp.customize.instance('nav--header-mobile--breakpoint').get())
@@ -3727,7 +3727,7 @@ wp.customize('nav--header--font-size', function (value) {
 
 wp.customize('nav--header--height', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'nav--header--line-height',
       value: to,
       screen: _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getDesktopScreen"](wp.customize.instance('nav--header-mobile--breakpoint').get())
@@ -4154,7 +4154,7 @@ wp.customize('nav--navbar-mobile--link-color--hover', function (value) {
 
 wp.customize('nav--navbar-mobile--font-size', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'nav--navbar--font-size',
       value: to,
       screen: _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getMobileScreen"](wp.customize.instance('nav--navbar-mobile--breakpoint').get())
@@ -4164,7 +4164,7 @@ wp.customize('nav--navbar-mobile--font-size', function (value) {
 
 wp.customize('nav--navbar-mobile--line-height', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'nav--navbar--line-height',
       value: to,
       screen: _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getMobileScreen"](wp.customize.instance('nav--navbar-mobile--breakpoint').get())
@@ -4289,7 +4289,7 @@ wp.customize('nav--navbar--link-color--hover', function (value) {
 
 wp.customize('nav--navbar--font-size', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'nav--navbar--font-size',
       value: to,
       screen: _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getDesktopScreen"](wp.customize.instance('nav--navbar-mobile--breakpoint').get())
@@ -4299,7 +4299,7 @@ wp.customize('nav--navbar--font-size', function (value) {
 
 wp.customize('nav--navbar--height', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'nav--navbar--line-height',
       value: to,
       screen: _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getDesktopScreen"](wp.customize.instance('nav--navbar-mobile--breakpoint').get())
@@ -4614,7 +4614,7 @@ wp.customize('nav--top-mobile--hide', function (value) {
 
 wp.customize('nav--top-mobile--font-size', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'nav--top--font-size',
       value: to,
       screen: _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getMobileScreen"](wp.customize.instance('nav--top-mobile--breakpoint').get())
@@ -4624,7 +4624,7 @@ wp.customize('nav--top-mobile--font-size', function (value) {
 
 wp.customize('nav--top-mobile--line-height', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'nav--top--line-height',
       value: to,
       screen: _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getMobileScreen"](wp.customize.instance('nav--top-mobile--breakpoint').get())
@@ -4685,7 +4685,7 @@ wp.customize('nav--top--hide', function (value) {
 
 wp.customize('nav--top--background-color', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'nav--top--background-color',
       value: to
     });
@@ -4741,7 +4741,7 @@ wp.customize('nav--top--link-color--hover', function (value) {
 
 wp.customize('nav--top--font-size', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'nav--top--font-size',
       value: to,
       screen: _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getDesktopScreen"](wp.customize.instance('nav--top-mobile--breakpoint').get())
@@ -4751,7 +4751,7 @@ wp.customize('nav--top--font-size', function (value) {
 
 wp.customize('nav--top--line-height', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'nav--top--line-height',
       value: to,
       screen: _functions_customize_preview_js__WEBPACK_IMPORTED_MODULE_0__["getDesktopScreen"](wp.customize.instance('nav--top-mobile--breakpoint').get())
@@ -4849,7 +4849,7 @@ wp.customize('pages--title--color', function (value) {
 
 wp.customize('pages--title--font-size', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'pages--title--font-size',
       value: to
     });
@@ -4869,7 +4869,7 @@ wp.customize('pages--title--font-styles', function (value) {
 
 wp.customize('pages--title--font-size', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'pages--title--font-size',
       value: to,
       screen: 'default'
@@ -4879,7 +4879,7 @@ wp.customize('pages--title--font-size', function (value) {
 
 wp.customize('pages--title--line-height', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'pages--title--line-height',
       value: to,
       screen: 'default'
@@ -4889,7 +4889,7 @@ wp.customize('pages--title--line-height', function (value) {
 
 wp.customize('pages--title--font-size--tablet', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'pages--title--font-size',
       value: to,
       screen: 'tablet-and-up'
@@ -4899,7 +4899,7 @@ wp.customize('pages--title--font-size--tablet', function (value) {
 
 wp.customize('pages--title--line-height--tablet', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'pages--title--line-height',
       value: to,
       screen: 'tablet-and-up'
@@ -4909,7 +4909,7 @@ wp.customize('pages--title--line-height--tablet', function (value) {
 
 wp.customize('pages--title--font-size--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'pages--title--font-size',
       value: to,
       screen: 'desktop'
@@ -4919,7 +4919,7 @@ wp.customize('pages--title--font-size--desktop', function (value) {
 
 wp.customize('pages--title--line-height--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'pages--title--line-height',
       value: to,
       screen: 'desktop'
@@ -4949,7 +4949,7 @@ wp.customize('pages--title--line-height--desktop', function (value) {
 // Meta Color
 wp.customize('posts--meta--color', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'posts--meta--color',
       value: to
     });
@@ -4958,7 +4958,7 @@ wp.customize('posts--meta--color', function (value) {
 
 wp.customize('posts--meta--icon--color', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'posts--meta--icon--color',
       value: to
     });
@@ -4967,7 +4967,7 @@ wp.customize('posts--meta--icon--color', function (value) {
 
 wp.customize('posts--meta--font-size', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'posts--meta--font-size',
       value: to
     });
@@ -5020,7 +5020,7 @@ wp.customize('posts--nav--color--hover', function (value) {
 
 wp.customize('posts--nav--font-size', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'posts--nav--font-size',
       value: to
     });
@@ -5107,7 +5107,7 @@ wp.customize('posts--title--font-styles', function (value) {
 
 wp.customize('posts--title--font-size', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'posts--title--font-size',
       value: to,
       screen: 'default'
@@ -5117,7 +5117,7 @@ wp.customize('posts--title--font-size', function (value) {
 
 wp.customize('posts--title--line-height', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'posts--title--line-height',
       value: to,
       screen: 'default'
@@ -5127,7 +5127,7 @@ wp.customize('posts--title--line-height', function (value) {
 
 wp.customize('posts--title--font-size--tablet', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'posts--title--font-size',
       value: to,
       screen: 'tablet-and-up'
@@ -5137,7 +5137,7 @@ wp.customize('posts--title--font-size--tablet', function (value) {
 
 wp.customize('posts--title--line-height--tablet', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'posts--title--line-height',
       value: to,
       screen: 'tablet-and-up'
@@ -5147,7 +5147,7 @@ wp.customize('posts--title--line-height--tablet', function (value) {
 
 wp.customize('posts--title--font-size--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'posts--title--font-size',
       value: to,
       screen: 'desktop'
@@ -5157,7 +5157,7 @@ wp.customize('posts--title--font-size--desktop', function (value) {
 
 wp.customize('posts--title--line-height--desktop', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'posts--title--line-height',
       value: to,
       screen: 'desktop'
@@ -5187,7 +5187,7 @@ wp.customize('posts--title--line-height--desktop', function (value) {
 // Text Color
 wp.customize('typography--body--text-color', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'typography--body--text-color',
       value: to
     });
@@ -5196,7 +5196,7 @@ wp.customize('typography--body--text-color', function (value) {
 
 wp.customize('typography--body--font-family', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'typography--body--font-family',
       value: to,
       screen: 'default'
@@ -5207,7 +5207,7 @@ wp.customize('typography--body--font-family', function (value) {
 wp.customize('typography--body--font-size', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--body--font-size',
         value: to,
         screen: 'default'
@@ -5219,7 +5219,7 @@ wp.customize('typography--body--font-size', function (value) {
 wp.customize('typography--body--line-height', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--body--line-height',
         value: to,
         screen: 'default'
@@ -5229,7 +5229,7 @@ wp.customize('typography--body--line-height', function (value) {
         to += 'em';
       }
 
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--body--block-spacing',
         value: to,
         screen: 'default'
@@ -5241,7 +5241,7 @@ wp.customize('typography--body--line-height', function (value) {
 wp.customize('typography--body--font-size--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--body--font-size',
         value: to,
         screen: 'tablet-and-up'
@@ -5253,7 +5253,7 @@ wp.customize('typography--body--font-size--tablet', function (value) {
 wp.customize('typography--body--line-height--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--body--line-height',
         value: to,
         screen: 'tablet-and-up'
@@ -5263,7 +5263,7 @@ wp.customize('typography--body--line-height--tablet', function (value) {
         to += 'em';
       }
 
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--body--block-spacing',
         value: to,
         screen: 'tablet-and-up'
@@ -5275,7 +5275,7 @@ wp.customize('typography--body--line-height--tablet', function (value) {
 wp.customize('typography--body--font-size--desktop', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--body--font-size',
         value: to,
         screen: 'desktop'
@@ -5287,7 +5287,7 @@ wp.customize('typography--body--font-size--desktop', function (value) {
 wp.customize('typography--body--line-height--desktop', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--body--line-height',
         value: to,
         screen: 'desktop'
@@ -5297,7 +5297,7 @@ wp.customize('typography--body--line-height--desktop', function (value) {
         to += 'em';
       }
 
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--body--block-spacing',
         value: to,
         screen: 'desktop'
@@ -5361,6 +5361,78 @@ wp.customize('typography--h1--font-styles', function (value) {
       id: 'typography--h1--font-styles',
       selector: 'h1',
       styles: h1Styles
+    });
+  });
+}); // Font Size Mobile
+
+wp.customize('typography--h1--font-size', function (value) {
+  value.bind(function (to) {
+    value.bind(function (to) {
+      rootstrap.customProperty({
+        name: 'typography--h1--font-size',
+        value: to,
+        screen: 'default'
+      });
+    });
+  });
+}); // Line Height Mobile
+
+wp.customize('typography--h1--line-height', function (value) {
+  value.bind(function (to) {
+    value.bind(function (to) {
+      rootstrap.customProperty({
+        name: 'typography--h1--line-height',
+        value: to,
+        screen: 'default'
+      });
+    });
+  });
+}); // Font Size Tablet
+
+wp.customize('typography--h1--font-size--tablet', function (value) {
+  value.bind(function (to) {
+    value.bind(function (to) {
+      rootstrap.customProperty({
+        name: 'typography--h1--font-size',
+        value: to,
+        screen: 'tablet-and-up'
+      });
+    });
+  });
+}); // Line Height Tablet
+
+wp.customize('typography--h1--line-height--tablet', function (value) {
+  value.bind(function (to) {
+    value.bind(function (to) {
+      rootstrap.customProperty({
+        name: 'typography--h1--line-height',
+        value: to,
+        screen: 'tablet-and-up'
+      });
+    });
+  });
+}); // Font Size Desktop
+
+wp.customize('typography--h1--font-size--desktop', function (value) {
+  value.bind(function (to) {
+    value.bind(function (to) {
+      rootstrap.customProperty({
+        name: 'typography--h1--font-size',
+        value: to,
+        screen: 'desktop'
+      });
+    });
+  });
+}); // Line Height Desktop
+
+wp.customize('typography--h1--line-height--desktop', function (value) {
+  value.bind(function (to) {
+    value.bind(function (to) {
+      rootstrap.customProperty({
+        name: 'typography--h1--line-height',
+        value: to,
+        screen: 'desktop'
+      });
     });
   });
 });
@@ -5427,7 +5499,7 @@ wp.customize('typography--h2--font-styles', function (value) {
 wp.customize('typography--h2--font-size', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h2--font-size',
         value: to,
         screen: 'default'
@@ -5439,7 +5511,7 @@ wp.customize('typography--h2--font-size', function (value) {
 wp.customize('typography--h2--line-height', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h2--line-height',
         value: to,
         screen: 'default'
@@ -5451,7 +5523,7 @@ wp.customize('typography--h2--line-height', function (value) {
 wp.customize('typography--h2--font-size--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h2--font-size',
         value: to,
         screen: 'tablet-and-up'
@@ -5463,7 +5535,7 @@ wp.customize('typography--h2--font-size--tablet', function (value) {
 wp.customize('typography--h2--line-height--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h2--line-height',
         value: to,
         screen: 'tablet-and-up'
@@ -5475,7 +5547,7 @@ wp.customize('typography--h2--line-height--tablet', function (value) {
 wp.customize('typography--h2--font-size--desktop', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h2--font-size',
         value: to,
         screen: 'desktop'
@@ -5487,7 +5559,7 @@ wp.customize('typography--h2--font-size--desktop', function (value) {
 wp.customize('typography--h2--line-height--desktop', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h2--line-height',
         value: to,
         screen: 'desktop'
@@ -5558,7 +5630,7 @@ wp.customize('typography--h3--font-styles', function (value) {
 wp.customize('typography--h3--font-size', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h3--font-size',
         value: to,
         screen: 'default'
@@ -5570,7 +5642,7 @@ wp.customize('typography--h3--font-size', function (value) {
 wp.customize('typography--h3--line-height', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h3--line-height',
         value: to,
         screen: 'default'
@@ -5582,7 +5654,7 @@ wp.customize('typography--h3--line-height', function (value) {
 wp.customize('typography--h3--font-size--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h3--font-size',
         value: to,
         screen: 'tablet-and-up'
@@ -5594,7 +5666,7 @@ wp.customize('typography--h3--font-size--tablet', function (value) {
 wp.customize('typography--h3--line-height--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h3--line-height',
         value: to,
         screen: 'tablet-and-up'
@@ -5606,7 +5678,7 @@ wp.customize('typography--h3--line-height--tablet', function (value) {
 wp.customize('typography--h3--font-size--desktop', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h3--font-size',
         value: to,
         screen: 'desktop'
@@ -5618,7 +5690,7 @@ wp.customize('typography--h3--font-size--desktop', function (value) {
 wp.customize('typography--h3--line-height--desktop', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h3--line-height',
         value: to,
         screen: 'desktop'
@@ -5689,7 +5761,7 @@ wp.customize('typography--h4--font-styles', function (value) {
 wp.customize('typography--h4--font-size', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h4--font-size',
         value: to,
         screen: 'default'
@@ -5701,7 +5773,7 @@ wp.customize('typography--h4--font-size', function (value) {
 wp.customize('typography--h4--line-height', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h4--line-height',
         value: to,
         screen: 'default'
@@ -5713,7 +5785,7 @@ wp.customize('typography--h4--line-height', function (value) {
 wp.customize('typography--h4--font-size--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h4--font-size',
         value: to,
         screen: 'tablet-and-up'
@@ -5725,7 +5797,7 @@ wp.customize('typography--h4--font-size--tablet', function (value) {
 wp.customize('typography--h4--line-height--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h4--line-height',
         value: to,
         screen: 'tablet-and-up'
@@ -5737,7 +5809,7 @@ wp.customize('typography--h4--line-height--tablet', function (value) {
 wp.customize('typography--h4--font-size--desktop', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h4--font-size',
         value: to,
         screen: 'desktop'
@@ -5749,7 +5821,7 @@ wp.customize('typography--h4--font-size--desktop', function (value) {
 wp.customize('typography--h4--line-height--desktop', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h4--line-height',
         value: to,
         screen: 'desktop'
@@ -5820,7 +5892,7 @@ wp.customize('typography--h5--font-styles', function (value) {
 wp.customize('typography--h5--font-size', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h5--font-size',
         value: to,
         screen: 'default'
@@ -5832,7 +5904,7 @@ wp.customize('typography--h5--font-size', function (value) {
 wp.customize('typography--h5--line-height', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h5--line-height',
         value: to,
         screen: 'default'
@@ -5844,7 +5916,7 @@ wp.customize('typography--h5--line-height', function (value) {
 wp.customize('typography--h5--font-size--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h5--font-size',
         value: to,
         screen: 'tablet-and-up'
@@ -5856,7 +5928,7 @@ wp.customize('typography--h5--font-size--tablet', function (value) {
 wp.customize('typography--h5--line-height--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h5--line-height',
         value: to,
         screen: 'tablet-and-up'
@@ -5868,7 +5940,7 @@ wp.customize('typography--h5--line-height--tablet', function (value) {
 wp.customize('typography--h5--font-size--desktop', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h5--font-size',
         value: to,
         screen: 'desktop'
@@ -5880,7 +5952,7 @@ wp.customize('typography--h5--font-size--desktop', function (value) {
 wp.customize('typography--h5--line-height--desktop', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h5--line-height',
         value: to,
         screen: 'desktop'
@@ -5951,7 +6023,7 @@ wp.customize('typography--h6--font-styles', function (value) {
 wp.customize('typography--h6--font-size', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h6--font-size',
         value: to,
         screen: 'default'
@@ -5963,7 +6035,7 @@ wp.customize('typography--h6--font-size', function (value) {
 wp.customize('typography--h6--line-height', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h6--line-height',
         value: to,
         screen: 'default'
@@ -5975,7 +6047,7 @@ wp.customize('typography--h6--line-height', function (value) {
 wp.customize('typography--h6--font-size--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h6--font-size',
         value: to,
         screen: 'tablet-and-up'
@@ -5987,7 +6059,7 @@ wp.customize('typography--h6--font-size--tablet', function (value) {
 wp.customize('typography--h6--line-height--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h6--line-height',
         value: to,
         screen: 'tablet-and-up'
@@ -5999,7 +6071,7 @@ wp.customize('typography--h6--line-height--tablet', function (value) {
 wp.customize('typography--h6--font-size--desktop', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h6--font-size',
         value: to,
         screen: 'desktop'
@@ -6011,7 +6083,7 @@ wp.customize('typography--h6--font-size--desktop', function (value) {
 wp.customize('typography--h6--line-height--desktop', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--h6--line-height',
         value: to,
         screen: 'desktop'
@@ -6102,7 +6174,7 @@ wp.customize('typography--headings--font-styles', function (value) {
 // Link Color
 wp.customize('typography--links--color', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'typography--links--color',
       value: to
     });
@@ -6111,7 +6183,7 @@ wp.customize('typography--links--color', function (value) {
 
 wp.customize('typography--links--color--visited', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'typography--links--color--visited',
       value: to
     });
@@ -6120,7 +6192,7 @@ wp.customize('typography--links--color--visited', function (value) {
 
 wp.customize('typography--links--color--hover', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'typography--links--color--hover',
       value: to
     });
@@ -6129,7 +6201,7 @@ wp.customize('typography--links--color--hover', function (value) {
 
 wp.customize('typography--links--color--active', function (value) {
   value.bind(function (to) {
-    rootstrap.var({
+    rootstrap.customProperty({
       name: 'typography--links--color--active',
       value: to
     });
@@ -6242,7 +6314,7 @@ __webpack_require__.r(__webpack_exports__);
 wp.customize('typography--sidebar--font-size', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--sidebar--font-size',
         value: to,
         screen: 'default'
@@ -6254,7 +6326,7 @@ wp.customize('typography--sidebar--font-size', function (value) {
 wp.customize('typography--sidebar--line-height', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--sidebar--line-height',
         value: to,
         screen: 'default'
@@ -6264,7 +6336,7 @@ wp.customize('typography--sidebar--line-height', function (value) {
         to += 'em';
       }
 
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--sidebar--block-spacing',
         value: to,
         screen: 'default'
@@ -6276,7 +6348,7 @@ wp.customize('typography--sidebar--line-height', function (value) {
 wp.customize('typography--sidebar--font-size--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--sidebar--font-size',
         value: to,
         screen: 'tablet-and-up'
@@ -6288,7 +6360,7 @@ wp.customize('typography--sidebar--font-size--tablet', function (value) {
 wp.customize('typography--sidebar--line-height--tablet', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--sidebar--line-height',
         value: to,
         screen: 'tablet-and-up'
@@ -6298,7 +6370,7 @@ wp.customize('typography--sidebar--line-height--tablet', function (value) {
         to += 'em';
       }
 
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--sidebar--block-spacing',
         value: to,
         screen: 'tablet-and-up'
@@ -6310,7 +6382,7 @@ wp.customize('typography--sidebar--line-height--tablet', function (value) {
 wp.customize('typography--sidebar--font-size--desktop', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--sidebar--font-size',
         value: to,
         screen: 'desktop'
@@ -6322,7 +6394,7 @@ wp.customize('typography--sidebar--font-size--desktop', function (value) {
 wp.customize('typography--sidebar--line-height--desktop', function (value) {
   value.bind(function (to) {
     value.bind(function (to) {
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--sidebar--line-height',
         value: to,
         screen: 'desktop'
@@ -6332,7 +6404,7 @@ wp.customize('typography--sidebar--line-height--desktop', function (value) {
         to += 'em';
       }
 
-      rootstrap.var({
+      rootstrap.customProperty({
         name: 'typography--sidebar--block-spacing',
         value: to,
         screen: 'desktop'

@@ -28,7 +28,7 @@ wp.customize( 'branding--logo--image', function( value ) {
 // Logo width
 wp.customize( 'branding--logo--width', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'branding--logo--width',
             value: to,
             screen: 'default',
@@ -39,7 +39,7 @@ wp.customize( 'branding--logo--width', function( value ) {
 // Logo gutter
 wp.customize( 'branding--logo--gutter', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'branding--logo--gutter',
             value: to,
             screen: 'default',
@@ -51,7 +51,7 @@ wp.customize( 'branding--logo--gutter', function( value ) {
 // Logo width Tablet
 wp.customize( 'branding--logo--width--tablet', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'branding--logo--width',
             value: to,
             screen: 'tablet-and-up',
@@ -62,7 +62,7 @@ wp.customize( 'branding--logo--width--tablet', function( value ) {
 // Logo gutter Tablet
 wp.customize( 'branding--logo--gutter--tablet', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'branding--logo--gutter',
             value: to,
             screen: 'tablet-and-up',
@@ -74,7 +74,7 @@ wp.customize( 'branding--logo--gutter--tablet', function( value ) {
 // Logo width Desktop
 wp.customize( 'branding--logo--width--desktop', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'branding--logo--width',
             value: to,
             screen: 'desktop',
@@ -85,7 +85,7 @@ wp.customize( 'branding--logo--width--desktop', function( value ) {
 // Logo gutter Desktop
 wp.customize( 'branding--logo--gutter--desktop', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'branding--logo--gutter',
             value: to,
             screen: 'desktop',

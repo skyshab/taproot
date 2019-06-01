@@ -13,7 +13,7 @@
  // Background Color
  wp.customize( 'colors--sidebar--background-color', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'colors--sidebar--background-color',
             value: to
         });
@@ -23,7 +23,7 @@
  // Text Color
  wp.customize( 'colors--sidebar--text-color', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'colors--sidebar--text-color',
             value: to
         });
@@ -33,7 +33,7 @@
  // Accent Color
  wp.customize( 'colors--sidebar--accent-color', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'colors--sidebar--accent-color',
             value: to
         });
@@ -43,7 +43,7 @@
  // Link Color
  wp.customize( 'colors--sidebar--link-color', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'colors--sidebar--link-color',
             value: to
         });
@@ -53,7 +53,7 @@
  // Link Color Hover
  wp.customize( 'colors--sidebar--link-color--hover', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'colors--sidebar--link-color--hover',
             value: to
         });

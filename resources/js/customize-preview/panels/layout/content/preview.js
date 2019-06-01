@@ -13,7 +13,7 @@
 // Max Content Width
 wp.customize( 'layout--content--max-width', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'layout--content--max-width',
             value: to,
         });

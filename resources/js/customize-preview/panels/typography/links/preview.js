@@ -13,7 +13,7 @@
 // Link Color
 wp.customize( 'typography--links--color', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'typography--links--color',
             value: to
         });
@@ -24,7 +24,7 @@ wp.customize( 'typography--links--color', function( value ) {
 // Link Color:visited
 wp.customize( 'typography--links--color--visited', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'typography--links--color--visited',
             value: to
         });
@@ -35,7 +35,7 @@ wp.customize( 'typography--links--color--visited', function( value ) {
 // Link Color:hover
 wp.customize( 'typography--links--color--hover', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'typography--links--color--hover',
             value: to
         });
@@ -46,7 +46,7 @@ wp.customize( 'typography--links--color--hover', function( value ) {
 // Link Color:active
 wp.customize( 'typography--links--color--active', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'typography--links--color--active',
             value: to
         });

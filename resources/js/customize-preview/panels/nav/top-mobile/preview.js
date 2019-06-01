@@ -29,7 +29,7 @@ wp.customize( 'nav--top-mobile--hide', function( value ) {
 //  Var: Link Font Size
 wp.customize( 'nav--top-mobile--font-size', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'nav--top--font-size',
             value: to,
             screen: utils.getMobileScreen( wp.customize.instance('nav--top-mobile--breakpoint').get()),
@@ -41,7 +41,7 @@ wp.customize( 'nav--top-mobile--font-size', function( value ) {
 //  Var: Link Line Height
 wp.customize( 'nav--top-mobile--line-height', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'nav--top--line-height',
             value: to,
             screen: utils.getMobileScreen( wp.customize.instance('nav--top-mobile--breakpoint').get()),

@@ -29,7 +29,7 @@ wp.customize( 'nav--top--hide', function( value ) {
 // Background Color
 wp.customize( 'nav--top--background-color', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'nav--top--background-color',
             value: to
         });
@@ -89,7 +89,7 @@ wp.customize( 'nav--top--link-color--hover', function( value ) {
 //  Var: Link Font Size
 wp.customize( 'nav--top--font-size', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'nav--top--font-size',
             value: to,
             screen: utils.getDesktopScreen( wp.customize.instance('nav--top-mobile--breakpoint').get()),
@@ -101,7 +101,7 @@ wp.customize( 'nav--top--font-size', function( value ) {
 //  Var: Link Line Height
 wp.customize( 'nav--top--line-height', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'nav--top--line-height',
             value: to,
             screen: utils.getDesktopScreen( wp.customize.instance('nav--top-mobile--breakpoint').get()),

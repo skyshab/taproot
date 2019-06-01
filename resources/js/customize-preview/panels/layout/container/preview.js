@@ -43,12 +43,12 @@ wp.customize( 'layout--container--max-width', function( value ) {
 wp.customize( 'layout--container--width', function( value ) {
     value.bind( function( to ) {
 
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'layout--container--width',
             value: to
         });
 
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'layout--container--padding',
             value: utils.getPaddingFromWidth(to, 'vw')
         });
@@ -61,13 +61,13 @@ wp.customize( 'layout--container--width', function( value ) {
 wp.customize( 'layout--container--width--tablet', function( value ) {
     value.bind( function( to ) {
 
-        rootstrap.var({
+        rootstrap.customProperty({
             screen: 'tablet-and-up',
             name: 'layout--container--width',
             value: to
         });
 
-        rootstrap.var({
+        rootstrap.customProperty({
             screen: 'tablet-and-up',
             name: 'layout--container--padding',
             value: utils.getPaddingFromWidth(to, 'vw')
@@ -81,13 +81,13 @@ wp.customize( 'layout--container--width--tablet', function( value ) {
 wp.customize( 'layout--container--width--desktop', function( value ) {
     value.bind( function( to ) {
 
-        rootstrap.var({
+        rootstrap.customProperty({
             screen: 'desktop',
             name: 'layout--container--width',
             value: to.replace('vw', '%')
         });
 
-        rootstrap.var({
+        rootstrap.customProperty({
             screen: 'desktop',
             name: 'layout--container--padding',
             value: utils.getPaddingFromWidth(to, 'vw')

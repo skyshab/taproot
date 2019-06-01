@@ -13,7 +13,7 @@
 // Meta Color
 wp.customize( 'posts--meta--color', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'posts--meta--color',
             value: to
         });
@@ -24,7 +24,7 @@ wp.customize( 'posts--meta--color', function( value ) {
 // Meta Icon Color
 wp.customize( 'posts--meta--icon--color', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'posts--meta--icon--color',
             value: to
         });
@@ -35,7 +35,7 @@ wp.customize( 'posts--meta--icon--color', function( value ) {
 // Meta Font Size
 wp.customize( 'posts--meta--font-size', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'posts--meta--font-size',
             value: to
         });
