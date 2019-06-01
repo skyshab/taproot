@@ -22,7 +22,7 @@ use function Taproot\Customize\theme_mod;
 
 $max_container_width = theme_mod( 'layout--container--max-width', true );
 
-$styles->add_var([
+$styles->custom_property([
     'name' => 'layout--container--max-width',
     'value' => $max_container_width
 ]);
@@ -35,7 +35,7 @@ if($full_layout_width) {
         'min' => $full_layout_width . 'px',
     ]);
 
-    $styles->add_var([
+    $styles->custom_property([
         'screen' => 'layout-is-fullwidth',
         'name' => 'layout--container--padding',
         'value' => get_full_layout_padding()
@@ -72,12 +72,12 @@ if($full_layout_width) {
 
 $site_width_mobile = theme_mod('layout--container--width', true);
 
-$styles->add_var([
+$styles->custom_property([
     'name' => 'layout--container--width',
     'value' => $site_width_mobile
 ]);
 
-$styles->add_var([
+$styles->custom_property([
     'name' => 'layout--container--padding',
     'value' => get_padding_from_width( $site_width_mobile, 'vw' )
 ]);
@@ -87,13 +87,13 @@ $styles->add_var([
 
 $site_width_tablet = theme_mod('layout--container--width--tablet', true);
 
-$styles->add_var([
+$styles->custom_property([
     'screen' => 'tablet-and-up',
     'name' => 'layout--container--width',
     'value' => $site_width_tablet
 ]);
 
-$styles->add_var([
+$styles->custom_property([
     'screen' => 'tablet-and-up',
     'name' => 'layout--container--padding',
     'value' => get_padding_from_width( $site_width_tablet, 'vw' )
@@ -109,31 +109,31 @@ if( is_boxed_layout() ) {
     $site_width_desktop = get_layout_width('desktop', '%');
 }
 
-$styles->add_var([
+$styles->custom_property([
     'screen' => 'desktop',
     'name' => 'layout--container--width',
     'value' => $site_width_desktop
 ]);
 
-$styles->add_var([
+$styles->custom_property([
     'screen' => 'desktop',
     'name' => 'layout--container--padding',
     'value' => $layout_padding_desktop
 ]);
 
-$styles->add_var([
+$styles->custom_property([
     'screen' => 'desktop',
     'name' => 'layout--container--width-as-decimal',
     'value' => get_layout_width('desktop')
 ]);
 
-$styles->add_var([
+$styles->custom_property([
     'screen' => 'desktop',
     'name' => 'layout--container--width-as-vw',
     'value' => get_layout_width('desktop', 'vw')
 ]);
 
-$styles->add_var([
+$styles->custom_property([
     'screen' => 'desktop',
     'name' => 'layout--container--width-as-percentage',
     'value' => get_layout_width('desktop', '%')

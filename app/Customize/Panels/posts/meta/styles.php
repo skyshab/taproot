@@ -16,21 +16,21 @@ use function Taproot\Customize\theme_mod;
 
 
 // Var: Meta Color
-$styles->add_var([
+$styles->custom_property([
     'name' => 'posts--meta--color',
     'value' => theme_mod( 'posts--meta--color' ),
 ]);
 
 
 // Var: Meta Icon Color
-$styles->add_var([
+$styles->custom_property([
     'name' => 'posts--meta--icon--color',
     'value' => theme_mod( 'posts--meta--icon--color' ),
 ]);
 
 
 // Var: Meta Font Size
-$styles->add_var([
+$styles->custom_property([
     'name' => 'posts--meta--font-size',
     'value' => theme_mod( 'posts--meta--font-size' ),
 ]);

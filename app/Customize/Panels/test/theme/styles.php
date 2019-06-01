@@ -11,40 +11,52 @@
  * @link      https://taproot-theme.com
  */
 
-
 use function Taproot\Customize\theme_mod;
 
 
 // Var: Accent Color
 $styles->custom_property([
     'name' => 'colors--theme--accent',
-    'value' => theme_mod( 'colors--theme--accent', true ),
+    'value' => theme_mod( 'colors--theme--test', true ),
 ]);
 
 
 // Var: Accent Contrast Color
 $styles->custom_property([
     'name' => 'colors--theme--accent-contrast',
-    'value' => theme_mod( 'colors--theme--accent-contrast', true ),
+    'value' => 'red',
 ]);
 
 
 // Var: Meta Light
 $styles->custom_property([
     'name' => 'colors--theme--meta-light',
-    'value' => theme_mod( 'colors--theme--meta-light', true ),
+    'value' => 'red',
 ]);
 
 
 // Var: Meta Medium
 $styles->custom_property([
     'name' => 'colors--theme--meta-medium',
-    'value' => theme_mod( 'colors--theme--meta-medium', true ),
+    'value' => 'red',
 ]);
 
 
 // Var: Meta Dark
 $styles->custom_property([
     'name' => 'colors--theme--meta-dark',
-    'value' => theme_mod( 'colors--theme--meta-dark', true ),
+    'value' => 'red',
 ]);
+
+
+
+$styles->add([
+    'selector' => 'body',
+    'styles' => [
+        'color' => 'blue',
+    ],
+    'screen' => 'tablet-and-up',
+]);
+
+
+

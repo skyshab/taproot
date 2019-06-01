@@ -23,7 +23,7 @@ use function Taproot\Customize\theme_mod;
 
 
 // Var: Heading Color
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--headings--text-color',
     'value' => theme_mod( 'typography--headings--text-color' ),
 ]);
@@ -35,7 +35,7 @@ $styles->add_var([
 
 
 // Var: Font Family
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--headings--font-family',
     'value' => get_font_family( theme_mod( 'typography--headings--font-family' ) ),
 ]);

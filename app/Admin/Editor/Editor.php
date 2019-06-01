@@ -14,7 +14,7 @@
 namespace Taproot\Admin\Editor;
 
 use Hybrid\Contracts\Bootable;
-use Rootstrap\Modules\Styles\Styles;
+use Rootstrap\Styles\Styles;
 use function Taproot\asset;
 use function Taproot\Customize\theme_mod;
 

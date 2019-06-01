@@ -92,7 +92,7 @@ class Panel  {
 	 * @return void
 	 */
 	public function boot() {
-		add_action( 'rootstrap/loaded', [ $this, 'setup' ] );
+		add_action( 'init', [ $this, 'setup' ] );
         add_action( 'rootstrap/register/defaults', [ $this, 'register_defaults' ] );
         add_filter( 'rootstrap/sequences', [ $this, 'customize_sequences_filter' ] );
         add_filter( 'rootstrap/tabs', [ $this, 'customize_tabs_filter' ] );
@@ -194,6 +194,9 @@ class Panel  {
 	 * @return void
 	 */
 	public function styles( $styles ) {
+        if( !is_array($this->sections) ) {
+            return;
+        }
         $panel = $this->id;
         foreach( $this->sections as $section ) {
             $file = path( $panel, $section, 'styles.php' );

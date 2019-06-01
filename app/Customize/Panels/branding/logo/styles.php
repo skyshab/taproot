@@ -16,14 +16,14 @@ use function Taproot\Customize\theme_mod;
 
 
  // Var: Logo Width
-$styles->add_var([
+$styles->custom_property([
     'name' => 'branding--logo--width',
     'value' => theme_mod( 'branding--logo--width' ),
     'screen' => 'default'
 ]);
 
 // Var: Logo Gutter
-$styles->add_var([
+$styles->custom_property([
     'name' => 'branding--logo--gutter',
     'value' => theme_mod( 'branding--logo--gutter' ),
     'screen' => 'default'
@@ -31,14 +31,14 @@ $styles->add_var([
 
 
 // Var: Logo Width Tablet
-$styles->add_var([
+$styles->custom_property([
     'name' => 'branding--logo--width',
     'value' => theme_mod( 'branding--logo--width--tablet' ),
     'screen' => 'tablet-and-up'
 ]);
 
 // Var: Logo Gutter Tablet
-$styles->add_var([
+$styles->custom_property([
     'name' => 'branding--logo--gutter',
     'value' => theme_mod( 'branding--logo--gutter--tablet' ),
     'screen' => 'tablet-and-up'
@@ -46,14 +46,14 @@ $styles->add_var([
 
 
 // Var: Logo Width Desktop
-$styles->add_var([
+$styles->custom_property([
     'name' => 'branding--logo--width',
     'value' => theme_mod( 'branding--logo--width--desktop' ),
     'screen' => 'desktop'
 ]);
 
 // Var: Logo Gutter Desktop
-$styles->add_var([
+$styles->custom_property([
     'name' => 'branding--logo--gutter',
     'value' => theme_mod( 'branding--logo--gutter--desktop' ),
     'screen' => 'desktop'

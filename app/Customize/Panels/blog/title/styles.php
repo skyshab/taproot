@@ -30,14 +30,14 @@ $styles->add([
 
 
 // Var: Blog Title Font Size
-$styles->add_var([
+$styles->custom_property([
     'name' => 'blog--title--font-size',
     'value' => theme_mod( 'blog--title--font-size' ),
     'screen' => 'default'
 ]);
 
 // Var: Blog Title Line Height
-$styles->add_var([
+$styles->custom_property([
     'name' => 'blog--title--line-height',
     'value' => theme_mod( 'blog--title--line-height' ),
     'screen' => 'default'
@@ -45,14 +45,14 @@ $styles->add_var([
 
 
 // Var: Blog Title Font Size Tablet
-$styles->add_var([
+$styles->custom_property([
     'name' =>'blog--title--font-size',
     'value' => theme_mod( 'blog--title--font-size--tablet' ),
     'screen' => 'tablet-and-up'
 ]);
 
 // Var: Blog Title Line Height Tablet
-$styles->add_var([
+$styles->custom_property([
     'name' =>'blog--title--line-height',
     'value' => theme_mod( 'blog--title--line-height--tablet' ),
     'screen' => 'tablet-and-up'
@@ -60,14 +60,14 @@ $styles->add_var([
 
 
 // Var: Blog Title Font Size Desktop
-$styles->add_var([
+$styles->custom_property([
     'name' => 'blog--title--font-size',
     'value' => theme_mod( 'blog--title--font-size--desktop' ),
     'screen' => 'desktop'
 ]);
 
 // Var: Blog Title Line Height Desktop
-$styles->add_var([
+$styles->custom_property([
     'name' => 'blog--title--line-height',
     'value' => theme_mod( 'blog--title--line-height--desktop' ),
     'screen' => 'desktop'

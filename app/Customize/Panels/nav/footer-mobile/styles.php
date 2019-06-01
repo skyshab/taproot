@@ -40,7 +40,7 @@ if( has_nav_menu( 'footer' ) ) {
 
 
     // Var: Font Size
-    $styles->add_var([
+    $styles->custom_property([
         'name' => 'nav--footer--font-size',
         'value' => theme_mod( 'nav--footer-mobile--font-size' ),
         'screen' => $mobile_screen,
@@ -48,7 +48,7 @@ if( has_nav_menu( 'footer' ) ) {
 
 
     // Var: Line Height
-    $styles->add_var([
+    $styles->custom_property([
         'name' => 'nav--footer--line-height',
         'value' => theme_mod( 'nav--footer-mobile--line-height' ),
         'screen' => $mobile_screen,

@@ -16,7 +16,7 @@ use function Taproot\Customize\theme_mod;
 
 
 // max width
-$styles->add_var([
+$styles->custom_property([
     'name' => 'layout--content--max-width',
     'value' => theme_mod( 'layout--content--max-width', true ),
 ]);

@@ -42,7 +42,7 @@ if( has_nav_menu( 'top' ) ) {
 
 
     // Var: font size
-    $styles->add_var([
+    $styles->custom_property([
         'name' => 'nav--top--font-size',
         'value' => theme_mod( 'nav--top-mobile--font-size', true ),
         'screen' => $mobile_screen,
@@ -50,7 +50,7 @@ if( has_nav_menu( 'top' ) ) {
 
 
     // Var: line height
-    $styles->add_var([
+    $styles->custom_property([
         'name' => 'nav--top--line-height',
         'value' => theme_mod( 'nav--top-mobile--line-height', true ),
         'screen' => $mobile_screen,

@@ -48,42 +48,42 @@ $styles->add([
 // Mobile Styles
 
 // Var: Widgets Layout
-$styles->add_var([
+$styles->custom_property([
     'name' => 'footer--widgets--layout',
     'value' => get_footer_widget_layout_style( theme_mod( 'footer--widgets--layout', true ) ),
     'screen' => 'default',
 ]);
 
 // Var: Title Font Size
-$styles->add_var([
+$styles->custom_property([
     'name' => 'footer--widgets--title--font-size',
     'value' => theme_mod( 'footer--widgets--title--font-size' ),
     'screen' => 'default',
 ]);
 
 // Var: Title Line Height
-$styles->add_var([
+$styles->custom_property([
     'name' => 'footer--widgets--title--line-height',
     'value' => theme_mod( 'footer--widgets--title--line-height' ),
     'screen' => 'default',
 ]);
 
 // Var: Text Font Size
-$styles->add_var([
+$styles->custom_property([
     'name' => 'footer--widgets--color',
     'value' => theme_mod( 'footer--widgets--color' ),
     'screen' => 'default',
 ]);
 
 // Var: Text Line Height
-$styles->add_var([
+$styles->custom_property([
     'name' => 'footer--widgets--line-height',
     'value' => theme_mod( 'footer--widgets--line-height' ),
     'screen' => 'default',
 ]);
 
 // Var: Widgets Spacing
-$styles->add_var([
+$styles->custom_property([
     'name' => 'footer--widgets--gutter',
     'value' => theme_mod( 'footer--widgets--gutter' ),
     'screen' => 'default',
@@ -93,42 +93,42 @@ $styles->add_var([
 // Tablet Styles
 
 // Var: Widgets Layout
-$styles->add_var([
+$styles->custom_property([
     'name' => 'footer--widgets--layout',
     'value' => get_footer_widget_layout_style( theme_mod( 'footer--widgets--layout--tablet', true ) ),
     'screen' => 'tablet-and-up',
 ]);
 
 // Var: Title Font Size
-$styles->add_var([
+$styles->custom_property([
     'name' => 'footer--widgets--title--font-size',
     'value' => theme_mod( 'footer--widgets--title--font-size' ),
     'screen' => 'tablet-and-up',
 ]);
 
 // Var: Title Line Height
-$styles->add_var([
+$styles->custom_property([
     'name' => 'footer--widgets--title--line-height',
     'value' => theme_mod( 'footer--widgets--title--line-height--tablet' ),
     'screen' => 'tablet-and-up',
 ]);
 
 // Var: Text Font Size
-$styles->add_var([
+$styles->custom_property([
     'name' => 'footer--widgets--color',
     'value' => theme_mod( 'footer--widgets--color--tablet' ),
     'screen' => 'tablet-and-up',
 ]);
 
 // Var: Text Line Height
-$styles->add_var([
+$styles->custom_property([
     'name' => 'footer--widgets--line-height',
     'value' => theme_mod( 'footer--widgets--line-height--tablet' ),
     'screen' => 'tablet-and-up',
 ]);
 
 // Var: Widgets Spacing
-$styles->add_var([
+$styles->custom_property([
     'name' => 'footer--widgets--gutter',
     'value' => theme_mod( 'footer--widgets--gutter--tablet' ),
     'screen' => 'tablet-and-up',
@@ -138,42 +138,42 @@ $styles->add_var([
 // Desktop Styles
 
 // Var: Widgets Layout
-$styles->add_var([
+$styles->custom_property([
     'name' => 'footer--widgets--layout',
     'value' => get_footer_widget_layout_style( theme_mod( 'footer--widgets--layout--desktop', true ) ),
     'screen' => 'desktop',
 ]);
 
 // Var: Title Font Size
-$styles->add_var([
+$styles->custom_property([
     'name' => 'footer--widgets--title--font-size',
     'value' => theme_mod( 'footer--widgets--title--font-size--desktop' ),
     'screen' => 'desktop',
 ]);
 
 // Var: Title Line Height
-$styles->add_var([
+$styles->custom_property([
     'name' => 'footer--widgets--title--line-height',
     'value' => theme_mod( 'footer--widgets--title--line-height--desktop' ),
     'screen' => 'desktop',
 ]);
 
 // Var: Text Font Size
-$styles->add_var([
+$styles->custom_property([
     'name' => 'footer--widgets--color',
     'value' => theme_mod( 'footer--widgets--color--desktop' ),
     'screen' => 'desktop',
 ]);
 
 // Var: Text Line Height
-$styles->add_var([
+$styles->custom_property([
     'name' => 'footer--widgets--line-height',
     'value' => theme_mod( 'footer--widgets--line-height--desktop' ),
     'screen' => 'desktop',
 ]);
 
 // Var: Widgets Spacing
-$styles->add_var([
+$styles->custom_property([
     'name' => 'footer--widgets--gutter',
     'value' => theme_mod( 'footer--widgets--gutter--desktop' ),
     'screen' => 'desktop',
