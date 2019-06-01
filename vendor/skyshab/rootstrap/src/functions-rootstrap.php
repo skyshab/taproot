@@ -13,7 +13,7 @@ namespace Rootstrap;
 
 
 /**
- * Returns a Rootstrap object.
+ * Returns the Rootstrap object instance.
  *
  * @since  1.0.0
  * @access public

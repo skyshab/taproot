@@ -19,7 +19,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
  *
  * @package   Rootstrap
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2018, Sky Shabatura
+ * @copyright Copyright (c) 2019, Sky Shabatura
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
@@ -37,13 +37,7 @@ function () {
 
     if (!this.api) return false; // define registered devices
 
-    this.devices = rootstrapData.devices; // initialize tab functionality
-
-    this.initializeNavLinks(); // initialize sequence devices
-
-    this.initializeDeviceLinks(); // setup device data
-
-    this.bindDevices();
+    this.devices = rootstrapData.devices;
   }
   /**
    * Get list of device names
@@ -99,54 +93,6 @@ function () {
       var iframe = document.querySelector("#customize-preview iframe");
       var iframeDoc = iframe.contentDocument ? iframe.contentDocument : iframe.contentWindow.document;
       return iframeDoc.body.offsetWidth();
-    }
-    /**
-     * When opening a section, open the associated device in preview.
-     */
-
-  }, {
-    key: "bindDevices",
-    value: function bindDevices() {
-      var api = this.api;
-      var devices = this.getDeviceList();
-      api.section.each(function (section) {
-        var type = section.params.type;
-        devices.forEach(function (device) {
-          if (type && type === "rootstrap-device--".concat(device)) section.expanded.bind(function () {
-            api.previewedDevice.set(device);
-          });
-        });
-      });
-    }
-    /**
-     * Add click handler to tabs and sequence navigation
-     */
-
-  }, {
-    key: "initializeNavLinks",
-    value: function initializeNavLinks() {
-      var api = this.api;
-      document.querySelectorAll('.rootstrap-nav-link').forEach(function (link) {
-        var section = link.dataset.section;
-        link.addEventListener("click", function (e) {
-          if (api.section(section)) api.section(section).focus();
-        });
-      });
-    }
-    /**
-     * Add click handler to sequence navigation for devices
-     */
-
-  }, {
-    key: "initializeDeviceLinks",
-    value: function initializeDeviceLinks() {
-      var api = this.api;
-      document.querySelectorAll('.rootstrap-nav-link').forEach(function (link) {
-        var device = link.dataset.device;
-        link.addEventListener("click", function (e) {
-          if (device) api.previewedDevice.set(device);
-        });
-      });
     }
   }]);
 

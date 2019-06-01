@@ -12,9 +12,10 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Rootstrap_Customize_Defaults;
 
-use Rootstrap_Customize_Defaults\Abstracts\Collection;
+namespace Rootstrap\Customize\Defaults;
+
+use Rootstrap\Abstracts\Collection;
 
 
 /**

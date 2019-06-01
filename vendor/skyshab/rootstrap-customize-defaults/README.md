@@ -1,30 +1,27 @@
 # Rootstrap Customize Defaults
 
-Version: 1.0.0
-Released: 05/16/2019
+Version: 1.1.0
+Released: 05/19/2019
 
 ## Description
-Rootstrap is a collection of utilities for managing WordPress Customizer controls, settings, responsive breakpoints and styles.
+Rootstrap Customize Defaults extends Rootstrap to add functionality for managing customizer defaults.
 
 ## Requirements
 
-* WordPress 4.9.6+.
-* PHP 5.6+ (7.0+ recommended).
+* Rootstrap v1.1.0+
+* WordPress 5.0+
+* PHP 7.0+
 * [Composer](https://getcomposer.org/) for managing PHP dependencies.
 
 
 ## Features
 
 Rootstrap is a collection of tools for use when implementing the WordPress Customize API in
-your theme or plugin. Certain project variables can be defined and then utilized
-when creating customizer sections and controls or rendering out the related styles.
+your theme or plugin.
 
-
-Define the default values to be used for customizer control defaults, and use these values as
-the fallback value when using Rootstrap's custom get_theme_mod function. This allows defaults
-for both to be managed from a single place.
-
-
+Rootstrap Customize Defaults allows you to define the default values to be used for customizer control defaults,
+and use these values as the fallback value when using Rootstrap's custom get_theme_mod function. This allows
+defaults for both settings and styles to be managed from a single place.
 
 ### Installation
 
@@ -38,15 +35,8 @@ composer require skyshab/rootstrap-customize-defaults
 
 Read the project wiki: https://github.com/skyshab/rootstrap/wiki
 
-Quick screencast of devices, tabs and section sequences: https://youtu.be/htPsjFDnnXQ
-
-
-## Notes
-
-Thanks to Justin Tadlock for the Collections class.
-
 ## Copyright and License
 
 This project is licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
 
-2014-2019 &copy; [Sky Shabatura]
+2014-2019 &copy; [Sky Shabatura](https://github.com/skyshab)

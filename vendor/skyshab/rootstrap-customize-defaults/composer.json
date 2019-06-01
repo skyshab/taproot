@@ -1,6 +1,6 @@
 {
 	"name"        : "skyshab/rootstrap-customize-defaults",
-	"description" : "Rootstrap is a collection of utilities for managing WordPress Customizer controls, settings, responsive breakpoints and styles.",
+	"description" : "Rootstrap Customize Defaults extends Rootstrap to add functionality for managing Customizer defaults.",
 	"keywords"    : [ "wordpress" ],
 	"homepage"    : "https://github.com/skyshab/rootstrap-customize-defaults",
 	"license"     : "GPL-2.0-or-later",
@@ -17,10 +17,10 @@
 	},
 	"autoload"    : {
 		"psr-4" : {
-			"Rootstrap_Customize_Defaults\\" : "src/"
+			"Rootstrap\\Customize\\Defaults\\" : "src/"
 		},
 		"files" : [
-			"src/rootstrap-customize-defaults-init.php"
+			"src/functions-rootstrap-customize-defaults.php"
 		]
 	},
 	"require"     : {
