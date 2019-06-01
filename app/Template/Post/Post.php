@@ -100,7 +100,7 @@ class Post implements Bootable {
      */
     public function post_header_display( $hierarchy ) {
         $display = get_post_meta( get_the_ID(), 'taproot_post_title_display', true );
-        if( 'header' === $display ) {
+        if( 'header' === $display  || 'hide' === $display ) {
             return [];
         }
 
