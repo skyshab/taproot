@@ -1,5 +1,18 @@
 # Change Log
 
+= 1.3.0 =
+* 06/18/19
+* Fix - Post Title not hiding
+* Fix - Fatal error with PHP 5.6.x
+* New - Option to use default custom header image
+* New - Added page builder template
+* New - Improved calendar widget styles
+* New - Control breadcrumbs display by post type
+* General - Moved "views" folder to theme root
+* General - Updated Rootstrap to v1.1.1
+* General - Updated Hybrid Core to v5.0.3
+* General - Refactored providers
+
 = 1.2.0 =
 * 05/11/19
 * New - Responsive Customizer controls
