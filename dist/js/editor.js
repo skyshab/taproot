@@ -95,7 +95,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _editor_sidebar_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./editor/sidebar.js */ "./resources/js/editor/sidebar.js");
+/* harmony import */ var _editor_sidebar_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./editor/sidebar/index.js */ "./resources/js/editor/sidebar/index.js");
 /**
  * Primary front-end script.
  *
@@ -113,10 +113,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/editor/HeaderImagePicker.js":
-/*!**************************************************!*\
-  !*** ./resources/js/editor/HeaderImagePicker.js ***!
-  \**************************************************/
+/***/ "./resources/js/editor/sidebar/HeaderImagePicker.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/editor/sidebar/HeaderImagePicker.js ***!
+  \**********************************************************/
 /*! exports provided: HeaderImagePicker */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -141,9 +141,12 @@ var compose = wp.compose.compose;
 var _wp$data = wp.data,
     withSelect = _wp$data.withSelect,
     withDispatch = _wp$data.withDispatch;
-var CheckboxControl = wp.components.CheckboxControl;
-var MediaUpload = wp.editor.MediaUpload;
+var SelectControl = wp.components.SelectControl;
+var _wp$editor = wp.editor,
+    MediaUpload = _wp$editor.MediaUpload,
+    PostTypeSupportCheck = _wp$editor.PostTypeSupportCheck;
 var __ = wp.i18n.__;
+var doAction = wp.hooks.doAction;
 var HeaderImagePicker = compose(withDispatch(function (dispatch, props) {
   return {
     setMetaFieldValue: function setMetaFieldValue(value) {
@@ -151,12 +154,18 @@ var HeaderImagePicker = compose(withDispatch(function (dispatch, props) {
         meta: _defineProperty({}, props.fieldName, value)
       });
     },
-    setCheckboxValue: function setCheckboxValue(value) {
+    setSelectValue: function setSelectValue(value) {
       dispatch('core/editor').editPost({
         meta: {
-          taprooot_use_featured_image_for_header: value
+          taproot_custom_header_image_type: value
         }
       });
+
+      if ('custom' !== value) {
+        dispatch('core/editor').editPost({
+          meta: _defineProperty({}, props.fieldName, '')
+        });
+      }
     }
   };
 }), withSelect(function (select, props) {
@@ -174,43 +183,62 @@ var HeaderImagePicker = compose(withDispatch(function (dispatch, props) {
 
   return {
     metaFieldValue: select('core/editor').getEditedPostAttribute('meta')[props.fieldName],
-    checkboxValue: select('core/editor').getEditedPostAttribute('meta')['taprooot_use_featured_image_for_header'],
-    featuredImage: featuredImageSrc
+    featuredImage: featuredImageSrc,
+    selectValue: select('core/editor').getEditedPostAttribute('meta')['taproot_custom_header_image_type']
   };
 }))(function (props) {
-  // create component title
-  var title = React.createElement("span", null, __('Custom Header Image')); // create the image preview element
+  // create image select
+  var imageSelect = React.createElement(PostTypeSupportCheck, {
+    supportKeys: "thumbnail"
+  }, React.createElement(SelectControl, {
+    label: __('Custom Header Image'),
+    value: props.selectValue,
+    options: [{
+      label: __('None'),
+      value: 'none'
+    }, {
+      label: __('Default'),
+      value: 'default'
+    }, {
+      label: __('Use Featured Image'),
+      value: 'featured'
+    }, {
+      label: __('Custom'),
+      value: 'custom'
+    }],
+    onChange: function onChange(content) {
+      props.setSelectValue(content);
+    }
+  })); // create the image preview element
 
   var preview = function preview() {
     var imageSource = false;
 
-    if (props.checkboxValue === 1) {
+    if ('featured' === props.selectValue) {
       if (props.featuredImage) imageSource = props.featuredImage.source_url;
-    } else if (props.metaFieldValue) {
+    } else if ('default' === props.selectValue) {
+      if (typeof taprootDefaultHeaderImage !== 'undefined') {
+        imageSource = taprootDefaultHeaderImage;
+      }
+    } else if ('custom' === props.selectValue && props.metaFieldValue) {
       imageSource = props.metaFieldValue;
-    }
+    } // action that fires whenever changing the preview.
+    // passes in image url.
+    // Used to change hero content background image in our plugin.
 
-    if (imageSource) return React.createElement("img", {
+
+    doAction('taproot.plugin.headerImageChange', imageSource);
+    if (imageSource) return React.createElement("div", {
+      className: "media-preview-wrapper"
+    }, React.createElement("img", {
       src: imageSource,
-      style: {
-        marginTop: '6px'
-      },
       class: "media-preview"
-    });
-  }; // create checkbox control for using featured image
+    }));
+  }; // create the button to add an image
 
-
-  var checkbox = React.createElement(CheckboxControl, {
-    label: __('Use Featured Image'),
-    checked: props.checkboxValue,
-    onChange: function onChange(isChecked) {
-      isChecked = isChecked ? 1 : 0;
-      props.setCheckboxValue(isChecked);
-    }
-  }); // create the button to add an image
 
   var addImage = function addImage(open) {
-    if (props.checkboxValue !== 1) return React.createElement("button", {
+    if ('custom' === props.selectValue) return React.createElement("button", {
       class: "components-button is-button is-default",
       style: {
         marginRight: '10px'
@@ -225,7 +253,7 @@ var HeaderImagePicker = compose(withDispatch(function (dispatch, props) {
   }; // button to clear the saved image value
 
 
-  var imageReset = props.checkboxValue !== 1 && props.metaFieldValue ? React.createElement("button", {
+  var imageReset = 'custom' === props.selectValue && props.metaFieldValue ? React.createElement("button", {
     class: "components-button is-button is-default",
     onClick: reset
   }, __('Clear')) : null; // return the custom header image picker component
@@ -239,17 +267,17 @@ var HeaderImagePicker = compose(withDispatch(function (dispatch, props) {
     },
     render: function render(_ref) {
       var open = _ref.open;
-      return [title, preview(), checkbox, addImage(open), imageReset];
+      return [imageSelect, preview(), addImage(open), imageReset];
     }
   });
 });
 
 /***/ }),
 
-/***/ "./resources/js/editor/LayoutPicker.js":
-/*!*********************************************!*\
-  !*** ./resources/js/editor/LayoutPicker.js ***!
-  \*********************************************/
+/***/ "./resources/js/editor/sidebar/LayoutPicker.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/editor/sidebar/LayoutPicker.js ***!
+  \*****************************************************/
 /*! exports provided: LayoutPicker */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -313,10 +341,10 @@ var LayoutPicker = compose(withDispatch(function (dispatch, props) {
 
 /***/ }),
 
-/***/ "./resources/js/editor/PostTitleOptions.js":
-/*!*************************************************!*\
-  !*** ./resources/js/editor/PostTitleOptions.js ***!
-  \*************************************************/
+/***/ "./resources/js/editor/sidebar/PostTitleOptions.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/editor/sidebar/PostTitleOptions.js ***!
+  \*********************************************************/
 /*! exports provided: PostTitleOptions */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -377,18 +405,18 @@ var PostTitleOptions = compose(withDispatch(function (dispatch, props) {
 
 /***/ }),
 
-/***/ "./resources/js/editor/sidebar.js":
-/*!****************************************!*\
-  !*** ./resources/js/editor/sidebar.js ***!
-  \****************************************/
+/***/ "./resources/js/editor/sidebar/index.js":
+/*!**********************************************!*\
+  !*** ./resources/js/editor/sidebar/index.js ***!
+  \**********************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _LayoutPicker_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LayoutPicker.js */ "./resources/js/editor/LayoutPicker.js");
-/* harmony import */ var _PostTitleOptions_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PostTitleOptions.js */ "./resources/js/editor/PostTitleOptions.js");
-/* harmony import */ var _HeaderImagePicker_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./HeaderImagePicker.js */ "./resources/js/editor/HeaderImagePicker.js");
+/* harmony import */ var _LayoutPicker_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LayoutPicker.js */ "./resources/js/editor/sidebar/LayoutPicker.js");
+/* harmony import */ var _PostTitleOptions_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PostTitleOptions.js */ "./resources/js/editor/sidebar/PostTitleOptions.js");
+/* harmony import */ var _HeaderImagePicker_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./HeaderImagePicker.js */ "./resources/js/editor/sidebar/HeaderImagePicker.js");
 /**
  * Block Editor Custom Settings Panel.
  *
@@ -412,24 +440,42 @@ __webpack_require__.r(__webpack_exports__);
   var registerPlugin = wp.plugins.registerPlugin;
   var Fragment = wp.element.Fragment;
   var PanelBody = wp.components.PanelBody;
-  var __ = wp.i18n.__; // register our sidebar panel
+  var __ = wp.i18n.__;
+  var PostTypeSupportCheck = wp.editor.PostTypeSupportCheck;
+  var _wp$hooks = wp.hooks,
+      applyFilters = _wp$hooks.applyFilters,
+      addFilter = _wp$hooks.addFilter,
+      doAction = _wp$hooks.doAction;
+  addFilter('taproot.plugin.hook', 'skyshab/taproot/layout', function (components) {
+    return [components, React.createElement(_LayoutPicker_js__WEBPACK_IMPORTED_MODULE_0__["LayoutPicker"], {
+      fieldName: "taproot_page_layout"
+    })];
+  }, 10);
+  addFilter('taproot.plugin.hook', 'skyshab/taproot/postTitle', function (components) {
+    return [components, React.createElement(_PostTitleOptions_js__WEBPACK_IMPORTED_MODULE_1__["PostTitleOptions"], {
+      fieldName: "taproot_post_title_display"
+    })];
+  }, 20);
+  addFilter('taproot.plugin.hook', 'skyshab/taproot/customHeader', function (components) {
+    return [components, React.createElement(_HeaderImagePicker_js__WEBPACK_IMPORTED_MODULE_2__["HeaderImagePicker"], {
+      fieldName: "taproot_custom_header_image"
+    })];
+  }, 30);
+  doAction('taproot.plugin.defaultsLoaded'); // register our sidebar panel
 
   registerPlugin('tr-theme-sidebar', {
     render: function render() {
-      return React.createElement(Fragment, null, React.createElement(PluginSidebarMoreMenuItem, {
+      return React.createElement(PostTypeSupportCheck, {
+        supportKeys: "custom-fields"
+      }, React.createElement(Fragment, null, React.createElement(PluginSidebarMoreMenuItem, {
         target: "taproot-theme-sidebar",
         icon: "carrot"
       }, __('Taproot Theme Settings')), React.createElement(PluginSidebar, {
         name: "taproot-theme-sidebar",
+        className: "taproot-theme-sidebar",
         icon: "carrot",
         title: __('Taproot Page Settings')
-      }, React.createElement(PanelBody, null, React.createElement(_LayoutPicker_js__WEBPACK_IMPORTED_MODULE_0__["LayoutPicker"], {
-        fieldName: "taproot_page_layout"
-      }), React.createElement(_PostTitleOptions_js__WEBPACK_IMPORTED_MODULE_1__["PostTitleOptions"], {
-        fieldName: "taproot_post_title_display"
-      }), React.createElement(_HeaderImagePicker_js__WEBPACK_IMPORTED_MODULE_2__["HeaderImagePicker"], {
-        fieldName: "taproot_custom_header_image"
-      }))));
+      }, React.createElement(PanelBody, null, applyFilters('taproot.plugin.hook')))));
     }
   });
 })(window.wp);

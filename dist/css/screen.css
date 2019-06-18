@@ -2616,6 +2616,29 @@ li > ul, li > ol {
 	box-shadow: 0 0 0 2px var(--theme--colors--accent);
 }
 
+.wp-block-group::after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.wp-block-group.has-background {
+	margin-bottom: 1.5em;
+	margin-bottom: var(--typography--body--block-spacing);
+	padding: 1.5em;
+	padding: var(--typography--body--block-spacing);
+}
+.wp-block-group.alignfull.has-background > .alignfull:not(.has-background) {
+	padding-left: 0;
+	padding-right: 0;
+}
+.wp-block-group > *:not([class*=align]):not(.editor-inner-blocks) {
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 p.has-background {
 	padding: 0.6em;
 }

@@ -25,7 +25,7 @@
         "skyshab/rootstrap" : "^1.1.1",
         "skyshab/rootstrap-customize" : "^1.1.0",
         "skyshab/rootstrap-customize-defaults" : "^1.1.0",
-		"justintadlock/hybrid-core" : "^5.0.0",
+		"justintadlock/hybrid-core" : "^5.0.3",
 		"justintadlock/hybrid-breadcrumbs": "^1.0"
         },
 	"require-dev": {

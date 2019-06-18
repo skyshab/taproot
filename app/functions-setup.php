@@ -217,35 +217,3 @@ add_filter( 'image_size_names_choose', function( $sizes ) {
     ];
     return array_merge( $new_sizes, $sizes );
 });
-
-
-/**
- * Changes the theme template path to the `dist/views` folder.
- *
- * @since  1.3.0
- * @access public
- * @return string
- */
-add_filter( 'hybrid/template/path', function() {
-	return 'views';
-});
-
-
-/**
- * Add template for page builders.
- *
- * This adds a blank template with no container as a custom template.
- *
- * @since  1.0.0
- * @access public
- * @return void
- */
-add_action( 'hybrid/templates/register', function( $templates ) {
-	$templates->add(
-		'page-builder.php',
-		[
-			'label'      => __( 'Page Builder', 'taproot' ),
-			'post_types' => [ 'page', 'post' ]
-		]
-	);
-});

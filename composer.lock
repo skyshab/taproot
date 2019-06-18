@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae4f4c29d23dad468eaa1c2dc04db60e",
+    "content-hash": "3adff27c6f905e80d0ac50d23c1047c2",
     "packages": [
         {
             "name": "composer/installers",
@@ -170,16 +170,16 @@
         },
         {
             "name": "justintadlock/hybrid-core",
-            "version": "5.0.2",
+            "version": "5.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/justintadlock/hybrid-core.git",
-                "reference": "69e1ff5bdec260fb5259efacc55715559f47b70b"
+                "reference": "9474963cbbacce85271a2dac2675d4c7a503a632"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justintadlock/hybrid-core/zipball/69e1ff5bdec260fb5259efacc55715559f47b70b",
-                "reference": "69e1ff5bdec260fb5259efacc55715559f47b70b",
+                "url": "https://api.github.com/repos/justintadlock/hybrid-core/zipball/9474963cbbacce85271a2dac2675d4c7a503a632",
+                "reference": "9474963cbbacce85271a2dac2675d4c7a503a632",
                 "shasum": ""
             },
             "require": {
@@ -211,20 +211,20 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2019-04-04T16:38:23+00:00"
+            "time": "2019-06-16T17:58:56+00:00"
         },
         {
             "name": "skyshab/rootstrap",
-            "version": "dev-master",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skyshab/rootstrap.git",
-                "reference": "d3d57116a0250a692a50953b6a28840ac1402460"
+                "reference": "418f503423950c17e19a810c577d7440dceceefc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skyshab/rootstrap/zipball/d3d57116a0250a692a50953b6a28840ac1402460",
-                "reference": "d3d57116a0250a692a50953b6a28840ac1402460",
+                "url": "https://api.github.com/repos/skyshab/rootstrap/zipball/418f503423950c17e19a810c577d7440dceceefc",
+                "reference": "418f503423950c17e19a810c577d7440dceceefc",
                 "shasum": ""
             },
             "require": {
@@ -256,20 +256,20 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2019-05-17T19:52:32+00:00"
+            "time": "2019-05-20T11:13:34+00:00"
         },
         {
             "name": "skyshab/rootstrap-customize",
-            "version": "v1.0.1",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skyshab/rootstrap-customize.git",
-                "reference": "944ef1d91c9b423aed3ca88fedc715e09fd01b14"
+                "reference": "71d609f758132466a5deb742005118c12a3c37b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skyshab/rootstrap-customize/zipball/944ef1d91c9b423aed3ca88fedc715e09fd01b14",
-                "reference": "944ef1d91c9b423aed3ca88fedc715e09fd01b14",
+                "url": "https://api.github.com/repos/skyshab/rootstrap-customize/zipball/71d609f758132466a5deb742005118c12a3c37b9",
+                "reference": "71d609f758132466a5deb742005118c12a3c37b9",
                 "shasum": ""
             },
             "require": {
@@ -301,20 +301,20 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2019-05-18T10:33:51+00:00"
+            "time": "2019-05-19T11:43:57+00:00"
         },
         {
             "name": "skyshab/rootstrap-customize-defaults",
-            "version": "v1.0.2",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skyshab/rootstrap-customize-defaults.git",
-                "reference": "a9ae56d7c61d1e5dcb683c4751f92b9d6806c8fe"
+                "reference": "d9dd6481754d0bc358ad770a79a30fdd46611583"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skyshab/rootstrap-customize-defaults/zipball/a9ae56d7c61d1e5dcb683c4751f92b9d6806c8fe",
-                "reference": "a9ae56d7c61d1e5dcb683c4751f92b9d6806c8fe",
+                "url": "https://api.github.com/repos/skyshab/rootstrap-customize-defaults/zipball/d9dd6481754d0bc358ad770a79a30fdd46611583",
+                "reference": "d9dd6481754d0bc358ad770a79a30fdd46611583",
                 "shasum": ""
             },
             "require": {
@@ -346,7 +346,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2019-05-18T10:10:53+00:00"
+            "time": "2019-05-19T11:45:49+00:00"
         }
     ],
     "packages-dev": [
@@ -743,9 +743,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "skyshab/rootstrap": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

@@ -33,7 +33,7 @@
                 "dev-master": "1.0-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Composer\\Installers\\": "src/Composer/Installers"
@@ -153,7 +153,7 @@
         "extra": {
             "class": "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin"
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\": "src/"
@@ -211,7 +211,7 @@
         },
         "time": "2018-10-23T19:57:54+00:00",
         "type": "library",
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Hybrid\\Breadcrumbs\\": "src/"
@@ -237,25 +237,25 @@
     },
     {
         "name": "justintadlock/hybrid-core",
-        "version": "5.0.2",
-        "version_normalized": "5.0.2.0",
+        "version": "5.0.3",
+        "version_normalized": "5.0.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/justintadlock/hybrid-core.git",
-            "reference": "69e1ff5bdec260fb5259efacc55715559f47b70b"
+            "reference": "9474963cbbacce85271a2dac2675d4c7a503a632"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/justintadlock/hybrid-core/zipball/69e1ff5bdec260fb5259efacc55715559f47b70b",
-            "reference": "69e1ff5bdec260fb5259efacc55715559f47b70b",
+            "url": "https://api.github.com/repos/justintadlock/hybrid-core/zipball/9474963cbbacce85271a2dac2675d4c7a503a632",
+            "reference": "9474963cbbacce85271a2dac2675d4c7a503a632",
             "shasum": ""
         },
         "require": {
             "php": ">=5.6"
         },
-        "time": "2019-04-04T16:38:23+00:00",
+        "time": "2019-06-16T17:58:56+00:00",
         "type": "library",
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Hybrid\\": "src/"
@@ -313,7 +313,7 @@
         },
         "time": "2018-12-30T23:16:27+00:00",
         "type": "phpcodesniffer-standard",
-        "installation-source": "source",
+        "installation-source": "dist",
         "notification-url": "https://packagist.org/downloads/",
         "license": [
             "LGPL-3.0-or-later"
@@ -369,7 +369,7 @@
         },
         "time": "2018-12-16T19:10:44+00:00",
         "type": "phpcodesniffer-standard",
-        "installation-source": "source",
+        "installation-source": "dist",
         "notification-url": "https://packagist.org/downloads/",
         "license": [
             "LGPL-3.0-or-later"
@@ -422,7 +422,7 @@
         },
         "time": "2018-10-07T18:31:37+00:00",
         "type": "phpcodesniffer-standard",
-        "installation-source": "source",
+        "installation-source": "dist",
         "notification-url": "https://packagist.org/downloads/",
         "license": [
             "LGPL-3.0-or-later"
@@ -448,25 +448,25 @@
     },
     {
         "name": "skyshab/rootstrap",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "v1.1.1",
+        "version_normalized": "1.1.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/skyshab/rootstrap.git",
-            "reference": "d3d57116a0250a692a50953b6a28840ac1402460"
+            "reference": "418f503423950c17e19a810c577d7440dceceefc"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/skyshab/rootstrap/zipball/d3d57116a0250a692a50953b6a28840ac1402460",
-            "reference": "d3d57116a0250a692a50953b6a28840ac1402460",
+            "url": "https://api.github.com/repos/skyshab/rootstrap/zipball/418f503423950c17e19a810c577d7440dceceefc",
+            "reference": "418f503423950c17e19a810c577d7440dceceefc",
             "shasum": ""
         },
         "require": {
             "php": ">=5.6"
         },
-        "time": "2019-05-17T19:52:32+00:00",
+        "time": "2019-05-20T11:13:34+00:00",
         "type": "library",
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Rootstrap\\": "src/"
@@ -495,25 +495,25 @@
     },
     {
         "name": "skyshab/rootstrap-customize",
-        "version": "v1.0.1",
-        "version_normalized": "1.0.1.0",
+        "version": "v1.1.0",
+        "version_normalized": "1.1.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/skyshab/rootstrap-customize.git",
-            "reference": "944ef1d91c9b423aed3ca88fedc715e09fd01b14"
+            "reference": "71d609f758132466a5deb742005118c12a3c37b9"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/skyshab/rootstrap-customize/zipball/944ef1d91c9b423aed3ca88fedc715e09fd01b14",
-            "reference": "944ef1d91c9b423aed3ca88fedc715e09fd01b14",
+            "url": "https://api.github.com/repos/skyshab/rootstrap-customize/zipball/71d609f758132466a5deb742005118c12a3c37b9",
+            "reference": "71d609f758132466a5deb742005118c12a3c37b9",
             "shasum": ""
         },
         "require": {
             "php": ">=5.6"
         },
-        "time": "2019-05-18T10:33:51+00:00",
+        "time": "2019-05-19T11:43:57+00:00",
         "type": "library",
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Rootstrap\\Customize\\": "src/"
@@ -542,25 +542,25 @@
     },
     {
         "name": "skyshab/rootstrap-customize-defaults",
-        "version": "v1.0.2",
-        "version_normalized": "1.0.2.0",
+        "version": "v1.1.0",
+        "version_normalized": "1.1.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/skyshab/rootstrap-customize-defaults.git",
-            "reference": "a9ae56d7c61d1e5dcb683c4751f92b9d6806c8fe"
+            "reference": "d9dd6481754d0bc358ad770a79a30fdd46611583"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/skyshab/rootstrap-customize-defaults/zipball/a9ae56d7c61d1e5dcb683c4751f92b9d6806c8fe",
-            "reference": "a9ae56d7c61d1e5dcb683c4751f92b9d6806c8fe",
+            "url": "https://api.github.com/repos/skyshab/rootstrap-customize-defaults/zipball/d9dd6481754d0bc358ad770a79a30fdd46611583",
+            "reference": "d9dd6481754d0bc358ad770a79a30fdd46611583",
             "shasum": ""
         },
         "require": {
             "php": ">=5.6"
         },
-        "time": "2019-05-18T10:10:53+00:00",
+        "time": "2019-05-19T11:45:49+00:00",
         "type": "library",
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Rootstrap\\Customize\\Defaults\\": "src/"
@@ -622,7 +622,7 @@
                 "dev-master": "3.x-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "notification-url": "https://packagist.org/downloads/",
         "license": [
             "BSD-3-Clause"
@@ -667,7 +667,7 @@
         },
         "time": "2018-12-18T09:43:51+00:00",
         "type": "phpcodesniffer-standard",
-        "installation-source": "source",
+        "installation-source": "dist",
         "notification-url": "https://packagist.org/downloads/",
         "license": [
             "MIT"
@@ -717,7 +717,7 @@
         },
         "time": "2018-10-31T17:02:38+00:00",
         "type": "phpcodesniffer-standard",
-        "installation-source": "source",
+        "installation-source": "dist",
         "notification-url": "https://packagist.org/downloads/",
         "license": [
             "MIT"
