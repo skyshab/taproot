@@ -76,6 +76,9 @@ class Editor implements Bootable {
             asset( 'js/editor.js' ),
             array( 'wp-plugins', 'wp-edit-post', 'wp-element', 'wp-components', 'wp-data', 'wp-editor' )
         );
+
+        wp_add_inline_script( 'taproot-editor-sidebar-js', $this->headerImageData() );
+
     }
 
 
@@ -108,18 +111,26 @@ class Editor implements Bootable {
 
 
     /**
+     * Get default header image data
+     *
+     * @since 1.3.0
+     * @return string - Returns string
+     */
+    public function headerImageData() {
+        $default_header_image = theme_mod('header_image');
+        if ( $default_header_image && 'remove-header' !== $default_header_image ) {
+            return sprintf('var taprootDefaultHeaderImage = "%s"', $default_header_image);
+        }
+    }
+
+
+    /**
      * Register post meta fields for the editor sidebar
      *
      * @since 1.0.0
      * @return void
      */
     public function register_post_meta() {
-
-        register_meta( 'post', 'taproot_custom_header_image', [
-            'show_in_rest' => true,
-            'single' => true,
-            'type' => 'string',
-        ]);
 
         register_meta( 'post', 'taproot_page_layout', [
             'show_in_rest' => true,
@@ -133,10 +144,16 @@ class Editor implements Bootable {
             'type' => 'string',
         ]);
 
-        register_meta( 'post', 'taproot_use_featured_image_for_header', [
+        register_meta( 'post', 'taproot_custom_header_image_type', [
             'show_in_rest' => true,
             'single' => true,
-            'type' => 'integer',
+            'type' => 'string',
+        ]);
+
+        register_meta( 'post', 'taproot_custom_header_image', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'string',
         ]);
     }
 

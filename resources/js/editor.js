@@ -13,5 +13,4 @@
  */
 
 
-import './editor/sidebar.js';
-
+import './editor/sidebar/index.js';

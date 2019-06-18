@@ -15,6 +15,7 @@ namespace Taproot\Template\Post;
 
 use Hybrid\Contracts\Bootable;
 use function Taproot\Customize\theme_mod;
+use function Taproot\Template\get_custom_header_type;
 
 
 /**
@@ -119,11 +120,10 @@ class Post implements Bootable {
      */
     public function featured_image_display( $display, $type ) {
         if( is_singular() ) {
-            $featured_in_header = get_post_meta( get_the_ID(), 'taproot_use_featured_image_for_header', true );
-            if( $featured_in_header && 'header' !== $type ) {
+
+            if( 'featured' === get_custom_header_type() && 'header' !== $type ) {
                 return false;
             }
-            return true;
         }
         return true;
     }

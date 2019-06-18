@@ -17,10 +17,10 @@ const {
     withSelect,
     withDispatch
 } = wp.data;
-const { CheckboxControl } = wp.components;
-const { MediaUpload } = wp.editor;
+const { SelectControl } = wp.components;
+const { MediaUpload, PostTypeSupportCheck } = wp.editor;
 const { __ } = wp.i18n;
-
+const {doAction} = wp.hooks;
 
 export const HeaderImagePicker = compose(
     withDispatch( function( dispatch, props ) {
@@ -28,8 +28,12 @@ export const HeaderImagePicker = compose(
             setMetaFieldValue: function( value ) {
                 dispatch('core/editor').editPost({meta:{[props.fieldName]: value}})
             },
-            setCheckboxValue: function( value ) {
-                dispatch('core/editor').editPost({ meta: { taprooot_use_featured_image_for_header: value } })
+            setSelectValue: function( value ) {
+                dispatch('core/editor').editPost( {meta: { taproot_custom_header_image_type: value}} );
+
+                if ('custom' !== value) {
+                    dispatch('core/editor').editPost({meta:{[props.fieldName]: ''}})
+                }
             }
         }
     }),
@@ -43,46 +47,62 @@ export const HeaderImagePicker = compose(
         }
         return {
             metaFieldValue: select('core/editor').getEditedPostAttribute('meta')[props.fieldName],
-            checkboxValue: select('core/editor').getEditedPostAttribute('meta')['taprooot_use_featured_image_for_header'],
-            featuredImage: featuredImageSrc
+            featuredImage: featuredImageSrc,
+            selectValue: select('core/editor').getEditedPostAttribute('meta')['taproot_custom_header_image_type'],
         }
     })
 )( props => {
 
-    // create component title
-    const title = ( <span>{ __('Custom Header Image') }</span> );
+    // create image select
+    const imageSelect =  (
+        <PostTypeSupportCheck supportKeys="thumbnail">
+            <SelectControl
+                label={ __('Custom Header Image') }
+                value={ props.selectValue }
+                options={[
+                    { label: __('None'), value: 'none' },
+                    { label: __('Default'), value: 'default' },
+                    { label: __('Use Featured Image'), value: 'featured' },
+                    { label: __('Custom'), value: 'custom' }
+                ]}
+                onChange={ content => {
+                    props.setSelectValue(content);
+                }} />
+        </PostTypeSupportCheck>
+    )
 
     // create the image preview element
     const preview = () => {
         let imageSource = false;
-        if ( props.checkboxValue === 1 ) {
+        if ( 'featured' === props.selectValue ) {
             if ( props.featuredImage ) imageSource = props.featuredImage.source_url
         }
-        else if ( props.metaFieldValue ) {
+        else if ( 'default' === props.selectValue ) {
+            if (typeof taprootDefaultHeaderImage !== 'undefined') {
+                imageSource = taprootDefaultHeaderImage
+            }
+        }
+        else if ( 'custom' === props.selectValue && props.metaFieldValue) {
             imageSource = props.metaFieldValue
         }
+
+        // action that fires whenever changing the preview.
+        // passes in image url.
+        // Used to change hero content background image in our plugin.
+        doAction('taproot.plugin.headerImageChange', imageSource);
+
         if ( imageSource ) return (
-            <img
-                src={imageSource}
-                style={{ marginTop: '6px' }}
-                class="media-preview" />
+            <div className="media-preview-wrapper">
+                <img
+                    src={imageSource}
+                    class="media-preview" />
+            </div>
         )
     }
 
-    // create checkbox control for using featured image
-    const checkbox = (
-        <CheckboxControl
-            label={ __('Use Featured Image') }
-            checked={ props.checkboxValue }
-            onChange={ ( isChecked ) => {
-                isChecked = (isChecked) ? 1 : 0;
-                props.setCheckboxValue( isChecked );
-            }} />
-    )
-
     // create the button to add an image
     const addImage = (open) => {
-        if ( props.checkboxValue !== 1 ) return (
+        if ( 'custom' === props.selectValue ) return (
             <button
                 class="components-button is-button is-default"
                 style={{marginRight: '10px' }}
@@ -94,11 +114,11 @@ export const HeaderImagePicker = compose(
 
     // clear the saved image value
     const reset = () => {
-        props.setMetaFieldValue('')
+        props.setMetaFieldValue('');
     }
 
     // button to clear the saved image value
-    const imageReset = ( props.checkboxValue !== 1 && props.metaFieldValue ) ? (
+    const imageReset = ( 'custom' === props.selectValue && props.metaFieldValue ) ? (
         <button
             class="components-button is-button is-default"
             onClick={reset} >
@@ -113,12 +133,11 @@ export const HeaderImagePicker = compose(
             label={ __('Custom Header Image') }
             value={ props.metaFieldValue }
             onSelect={ imageObject => {
-                if (imageObject.sizes) props.setMetaFieldValue(imageObject.sizes.full.url)
+                if (imageObject.sizes) props.setMetaFieldValue(imageObject.sizes.full.url);
             }}
             render={ ({open}) => [
-                title,
+                imageSelect,
                 preview(),
-                checkbox,
                 addImage(open),
                 imageReset
             ]}
