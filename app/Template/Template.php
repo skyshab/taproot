@@ -33,6 +33,12 @@ class Template implements Bootable {
 	 */
 	public function boot() {
 
+        // set template directory location
+        add_filter( 'hybrid/template/path', [ $this, 'path' ]  );
+
+        // define custom templates
+        add_action( 'hybrid/templates/register', [ $this, 'register' ]  );
+
         // load dependencies
         $this->load_dependencies();
 
@@ -79,6 +85,36 @@ class Template implements Bootable {
             'Breadcrumbs/functions-breadcrumbs',
             'Postnav/functions-postnav'
         ]);
+    }
+
+
+    /**
+     * Changes the theme template path to the `views` folder
+     * to the theme root.
+     *
+     * @since  1.3.0
+     * @access public
+     * @return string
+     */
+    public function path() {
+        return 'views';
+    }
+
+
+    /**
+     * Add templates for page builders.
+     *
+     * This adds the following templates:
+     * Page Builder - Content area only has no container.
+     * Blank - No header, footer or sidebar.
+     *
+     * @since  1.3.0
+     * @access public
+     * @return void
+     */
+    public function register( $templates ) {
+        $templates->add('page-builder.php', ['label' => __('Page Builder', 'taproot')]);
+        $templates->add('blank.php', ['label' => __('Blank Template', 'taproot')]);
     }
 
 }
