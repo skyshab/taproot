@@ -16,4 +16,5 @@
 $panel->sections([
     'layout',
     'title',
+    'breadcrumbs'
 ]);

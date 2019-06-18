@@ -18,4 +18,5 @@ $panel->sections([
     'title',
     'meta',
     'nav',
+    'breadcrumbs'
 ]);
