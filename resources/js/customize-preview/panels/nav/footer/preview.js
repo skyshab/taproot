@@ -98,7 +98,7 @@ wp.customize( 'nav--footer--position', function( value ) {
 //  Var: Link Font Size
 wp.customize( 'nav--footer--font-size', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'nav--footer--font-size',
             value: to,
             screen: utils.getDesktopScreen( wp.customize.instance('nav--footer-mobile--breakpoint').get()),
@@ -110,7 +110,7 @@ wp.customize( 'nav--footer--font-size', function( value ) {
 //  Var: Link Line Height
 wp.customize( 'nav--footer--line-height', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'nav--footer--line-height',
             value: to,
             screen: utils.getDesktopScreen( wp.customize.instance('nav--footer-mobile--breakpoint').get()),

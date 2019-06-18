@@ -12,7 +12,6 @@
  */
 class Rootstrap {
 
-    
     constructor() {
         // define api attribute
         this.api = wp.customize;
@@ -22,15 +21,6 @@ class Rootstrap {
 
         // define registered devices
         this.devices = rootstrapData.devices;
-
-        // initialize tab functionality
-        this.initializeNavLinks();
-
-        // initialize sequence devices
-        this.initializeDeviceLinks();        
-
-        // setup device data
-        this.bindDevices();  
     }
 
 
@@ -52,10 +42,10 @@ class Rootstrap {
             if( !name || !data ) continue;
             var min = ( parseInt( data.min, 10 ) ) ? parseInt( data.min, 10 ): 0;
             var max = ( parseInt( data.max, 10 ) ) ? parseInt( data.max, 10 ): 9999;
- 
+
             if( width >= min && width <= max )
                 device = name;
-                return false;            
+                return false;
         }
 
         return device;
@@ -79,57 +69,9 @@ class Rootstrap {
         return iframeDoc.body.offsetWidth()
     }
 
-
-    /**
-     * When opening a section, open the associated device in preview.
-     */
-    bindDevices() {
-        const api = this.api;
-        const devices = this.getDeviceList();
-        api.section.each( ( section ) => { 
-            var type = section.params.type;
-            devices.forEach( ( device ) => {
-                if( type && type === `rootstrap-device--${device}` )
-                    section.expanded.bind( () => {
-                        api.previewedDevice.set( device );                                                         
-                    });                    
-            });               
-        });     
-    }
-
-
-    /**
-     * Add click handler to tabs and sequence navigation
-     */
-    initializeNavLinks() {
-        const api = this.api;
-        document.querySelectorAll('.rootstrap-nav-link').forEach( ( link ) => {            
-            var section = link.dataset.section;
-            link.addEventListener("click", (e) => { 
-                if( api.section( section ) )
-                    api.section( section ).focus();
-            });
-        });
-    }
-
-
-    /**
-     * Add click handler to sequence navigation for devices
-     */
-    initializeDeviceLinks() {
-        const api = this.api;
-        document.querySelectorAll('.rootstrap-nav-link').forEach( ( link ) => {            
-            var device = link.dataset.device;
-            link.addEventListener("click", (e) => { 
-                if( device )
-                    api.previewedDevice.set( device );
-            });
-        });
-    }
-
 }
 
- 
+
 /**
  * Create our Rootstrap Instance on customize ready
  */

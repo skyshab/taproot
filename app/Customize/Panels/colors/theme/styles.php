@@ -16,35 +16,35 @@ use function Taproot\Customize\theme_mod;
 
 
 // Var: Accent Color
-$styles->add_var([
+$styles->custom_property([
     'name' => 'colors--theme--accent',
     'value' => theme_mod( 'colors--theme--accent', true ),
 ]);
 
 
 // Var: Accent Contrast Color
-$styles->add_var([
+$styles->custom_property([
     'name' => 'colors--theme--accent-contrast',
     'value' => theme_mod( 'colors--theme--accent-contrast', true ),
 ]);
 
 
 // Var: Meta Light
-$styles->add_var([
+$styles->custom_property([
     'name' => 'colors--theme--meta-light',
     'value' => theme_mod( 'colors--theme--meta-light', true ),
 ]);
 
 
 // Var: Meta Medium
-$styles->add_var([
+$styles->custom_property([
     'name' => 'colors--theme--meta-medium',
     'value' => theme_mod( 'colors--theme--meta-medium', true ),
 ]);
 
 
 // Var: Meta Dark
-$styles->add_var([
+$styles->custom_property([
     'name' => 'colors--theme--meta-dark',
     'value' => theme_mod( 'colors--theme--meta-dark', true ),
 ]);

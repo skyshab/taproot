@@ -13,7 +13,7 @@
 // Meta Color
 wp.customize( 'blog--archive-meta--color', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'blog--archive-meta--color',
             value: to
         });
@@ -24,7 +24,7 @@ wp.customize( 'blog--archive-meta--color', function( value ) {
 // Meta Icon Color
 wp.customize( 'blog--archive-meta--icon--color', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'blog--archive-meta--icon--color',
             value: to
         });

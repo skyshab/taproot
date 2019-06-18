@@ -13,7 +13,7 @@
 // Link Font Size
 wp.customize( 'blog--archive-link--font-size', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'blog--archive-link--font-size',
             value: to
         });

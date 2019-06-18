@@ -15,7 +15,7 @@
 namespace Taproot;
 
 use Hybrid\App;
-use function Rootstrap\rootstrap_register_styles;
+use function Rootstrap\Styles\register as rootstrap_register_styles;
 
 
 /**

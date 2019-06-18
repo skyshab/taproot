@@ -167,23 +167,23 @@
     },
     {
         "name": "justintadlock/hybrid-core",
-        "version": "5.0.2",
-        "version_normalized": "5.0.2.0",
+        "version": "5.0.3",
+        "version_normalized": "5.0.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/justintadlock/hybrid-core.git",
-            "reference": "69e1ff5bdec260fb5259efacc55715559f47b70b"
+            "reference": "9474963cbbacce85271a2dac2675d4c7a503a632"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/justintadlock/hybrid-core/zipball/69e1ff5bdec260fb5259efacc55715559f47b70b",
-            "reference": "69e1ff5bdec260fb5259efacc55715559f47b70b",
+            "url": "https://api.github.com/repos/justintadlock/hybrid-core/zipball/9474963cbbacce85271a2dac2675d4c7a503a632",
+            "reference": "9474963cbbacce85271a2dac2675d4c7a503a632",
             "shasum": ""
         },
         "require": {
             "php": ">=5.6"
         },
-        "time": "2019-04-04T16:38:23+00:00",
+        "time": "2019-06-16T17:58:56+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -214,23 +214,23 @@
     },
     {
         "name": "skyshab/rootstrap",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "v1.1.1",
+        "version_normalized": "1.1.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/skyshab/rootstrap.git",
-            "reference": "669992855ff9714edb31fc498a50d7ad5f6a749c"
+            "reference": "418f503423950c17e19a810c577d7440dceceefc"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/skyshab/rootstrap/zipball/669992855ff9714edb31fc498a50d7ad5f6a749c",
-            "reference": "669992855ff9714edb31fc498a50d7ad5f6a749c",
+            "url": "https://api.github.com/repos/skyshab/rootstrap/zipball/418f503423950c17e19a810c577d7440dceceefc",
+            "reference": "418f503423950c17e19a810c577d7440dceceefc",
             "shasum": ""
         },
         "require": {
             "php": ">=5.6"
         },
-        "time": "2019-03-13T21:04:42+00:00",
+        "time": "2019-05-20T11:13:34+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -255,6 +255,100 @@
         ],
         "description": "Rootstrap is a collection of utilities for managing WordPress Customizer controls, settings, responsive breakpoints and styles.",
         "homepage": "https://github.com/skyshab/rootstrap",
+        "keywords": [
+            "wordpress"
+        ]
+    },
+    {
+        "name": "skyshab/rootstrap-customize",
+        "version": "v1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/skyshab/rootstrap-customize.git",
+            "reference": "71d609f758132466a5deb742005118c12a3c37b9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/skyshab/rootstrap-customize/zipball/71d609f758132466a5deb742005118c12a3c37b9",
+            "reference": "71d609f758132466a5deb742005118c12a3c37b9",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6"
+        },
+        "time": "2019-05-19T11:43:57+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Rootstrap\\Customize\\": "src/"
+            },
+            "files": [
+                "src/rootstrap-customize-init.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Sky Shabatura",
+                "email": "github@sky.camp",
+                "homepage": "https://github.com/skyshab",
+                "role": "Developer"
+            }
+        ],
+        "description": "Rootstrap Customize extends Rootstrap to add Customizer tabs, sequences, and a collection of responsive controls that can be used in a theme.",
+        "homepage": "https://github.com/skyshab/rootstrap",
+        "keywords": [
+            "wordpress"
+        ]
+    },
+    {
+        "name": "skyshab/rootstrap-customize-defaults",
+        "version": "v1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/skyshab/rootstrap-customize-defaults.git",
+            "reference": "d9dd6481754d0bc358ad770a79a30fdd46611583"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/skyshab/rootstrap-customize-defaults/zipball/d9dd6481754d0bc358ad770a79a30fdd46611583",
+            "reference": "d9dd6481754d0bc358ad770a79a30fdd46611583",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6"
+        },
+        "time": "2019-05-19T11:45:49+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Rootstrap\\Customize\\Defaults\\": "src/"
+            },
+            "files": [
+                "src/functions-rootstrap-customize-defaults.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Sky Shabatura",
+                "email": "github@sky.camp",
+                "homepage": "https://github.com/skyshab",
+                "role": "Developer"
+            }
+        ],
+        "description": "Rootstrap Customize Defaults extends Rootstrap to add functionality for managing Customizer defaults.",
+        "homepage": "https://github.com/skyshab/rootstrap-customize-defaults",
         "keywords": [
             "wordpress"
         ]

@@ -21,42 +21,42 @@ use function Taproot\Customize\theme_mod;
 
 
 // Var: Body Text Color
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--body--text-color',
     'value' => theme_mod( 'typography--body--text-color' ),
 ]);
 
 
 // Var: Accent Color
-$styles->add_var([
+$styles->custom_property([
     'name' => 'colors--theme--accent',
     'value' => theme_mod( 'colors--theme--accent' ),
 ]);
 
 
 // Var: Accent Contrast Color
-$styles->add_var([
+$styles->custom_property([
     'name' => 'colors--theme--accent-contrast',
     'value' => theme_mod( 'colors--theme--accent-contrast' ),
 ]);
 
 
 // Var: Meta Light
-$styles->add_var([
+$styles->custom_property([
     'name' => 'colors--theme--meta-light',
     'value' => theme_mod( 'colors--theme--meta-light' ),
 ]);
 
 
 // Var: Meta Medium
-$styles->add_var([
+$styles->custom_property([
     'name' => 'colors--theme--meta-medium',
     'value' => theme_mod( 'colors--theme--meta-medium' ),
 ]);
 
 
 // Var: Meta Dark
-$styles->add_var([
+$styles->custom_property([
     'name' => 'colors--theme--meta-dark',
     'value' => theme_mod( 'colors--theme--meta-dark' ),
 ]);

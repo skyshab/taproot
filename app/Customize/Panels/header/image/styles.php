@@ -32,7 +32,7 @@ if( '100vh' === theme_mod( 'header--image--max-height', true ) && is_boxed_layou
         'screen' => 'tablet-and-up',
         'selector' => '.app-header--has-custom-header.boxed-layout:not(.app-header--fixed)',
         'styles' => [
-            'max-height' => sprintf( "calc(100vh - %s)", theme_mod( 'layout--site--boxed-layout--padding', true ) ),
+            'max-height' => sprintf( "calc(100vh - %s)", theme_mod( 'layout--boxed--outer-padding', true ) ),
         ],
     ]);
 }

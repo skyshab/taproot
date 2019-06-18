@@ -32,35 +32,35 @@ $styles->add([
 
 
 // Mobile default
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--h2--font-size',
-    'value' => theme_mod('typography--h2-mobile--font-size'),
+    'value' => theme_mod('typography--h2--font-size'),
     'selector' => '.editor-styles-wrapper .wp-block',
 ]);
 
 
 // tablet size when settings panel closed, use mobile when open
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--h2--font-size',
-    'value' => theme_mod('typography--h2-tablet--font-size'),
+    'value' => theme_mod('typography--h2--font-size--tablet'),
     'screen' => 'editor-tablet',
     'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
 ]);
 
 
 // tablet size when settings panel open
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--h2--font-size',
-    'value' => theme_mod('typography--h2-tablet--font-size'),
+    'value' => theme_mod('typography--h2--font-size--tablet'),
     'screen' => 'editor-desktop',
     'selector' => '.editor-styles-wrapper .wp-block',
 ]);
 
 
 // desktop size when settings panel closed
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--h2--font-size',
-    'value' => theme_mod('typography--h2-desktop--font-size'),
+    'value' => theme_mod('typography--h2--font-size--desktop'),
     'screen' => 'editor-desktop',
     'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
 ]);
@@ -72,35 +72,35 @@ $styles->add_var([
 
 
 // mobile default
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--h2--line-height',
-    'value' => theme_mod('typography--h2-mobile--line-height'),
+    'value' => theme_mod('typography--h2--line-height'),
     'selector' => '.editor-styles-wrapper .wp-block',
 ]);
 
 
 // tablet size when settings panel closed, use mobile when open
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--h2--line-height',
-    'value' => theme_mod('typography--h2-tablet--line-height'),
+    'value' => theme_mod('typography--h2--line-height--tablet'),
     'screen' => 'editor-tablet',
     'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
 ]);
 
 
 // tablet size when settings panel open
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--h2--line-height',
-    'value' => theme_mod('typography--h2-tablet--line-height'),
+    'value' => theme_mod('typography--h2--line-height--tablet'),
     'screen' => 'editor-desktop',
     'selector' => '.editor-styles-wrapper .wp-block',
 ]);
 
 
 // desktop size when settings panel closed
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--h2--line-height',
-    'value' => theme_mod('typography--h2-desktop--line-height'),
+    'value' => theme_mod('typography--h2--line-height--desktop'),
     'screen' => 'editor-desktop',
     'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
 ]);

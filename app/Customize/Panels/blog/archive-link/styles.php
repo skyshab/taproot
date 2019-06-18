@@ -15,7 +15,7 @@ use function Taproot\Customize\theme_mod;
 
 
 // Var: Link Font Size
-$styles->add_var([
+$styles->custom_property([
     'name' => 'blog--archive-link--font-size',
     'value' => theme_mod( 'blog--archive-link--font-size' ),
 ]);

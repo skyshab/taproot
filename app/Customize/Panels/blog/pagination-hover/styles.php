@@ -15,21 +15,21 @@ use function Taproot\Customize\theme_mod;
 
 
 // Var: Blog Pagination Color
-$styles->add_var([
+$styles->custom_property([
     'name' => 'blog--pagination-hover--link--color',
     'value' => theme_mod( 'blog--pagination-hover--link--color' ),
 ]);
 
 
 // Color Setting: Pagination Numbers Background
-$styles->add_var([
+$styles->custom_property([
     'name' => 'blog--pagination-hover--background-color',
     'value' => theme_mod( 'blog--pagination-hover--background-color' ),
 ]);
 
 
 // Color Setting: Pagination Numbers Color
-$styles->add_var([
+$styles->custom_property([
     'name' => 'blog--pagination-hover--color',
     'value' => theme_mod( 'blog--pagination-hover--color' ),
 ]);

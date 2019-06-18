@@ -82,7 +82,7 @@ if( has_nav_menu( 'footer' ) ) {
 
 
     // Var: font size
-    $styles->add_var([
+    $styles->custom_property([
         'name' => 'nav--footer--font-size',
         'value' => theme_mod( 'nav--footer--font-size', true ),
         'screen' => $footer_nav_desktop_screen,
@@ -90,7 +90,7 @@ if( has_nav_menu( 'footer' ) ) {
 
 
     // Var: line height
-    $styles->add_var([
+    $styles->custom_property([
         'name' => 'nav--footer--line-height',
         'value' => theme_mod( 'nav--footer--line-height', true ),
         'screen' => $footer_nav_desktop_screen,

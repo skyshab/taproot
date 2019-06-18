@@ -22,6 +22,7 @@ use function Taproot\Template\Icons\location as icon;
 use function Taproot\Template\render_author;
 use function wp_get_attachment_image_src as get_featured_url;
 use function get_post_thumbnail_id as featured_id;
+use function Taproot\Template\get_custom_header_type;
 
 /**
  * Handles front end logic
@@ -117,8 +118,6 @@ class Header implements Bootable {
      * @return string
      */
     public function custom_header( $value ) {
-        $post_custom_header = get_post_meta( get_the_ID(), 'taproot_custom_header_image', true );
-        $use_featured = get_post_meta( get_the_ID(), 'taproot_use_featured_image_for_header', true );
 
         // Customizer uses this filter to get the current set image
         if ( is_admin() ) {
@@ -130,27 +129,22 @@ class Header implements Bootable {
             return $value;
         }
 
-        // Static homepage
-        elseif ( is_front_page() ) {
-            if($post_custom_header) {
-                return $post_custom_header;
-            }
-            return $value;
-        }
-
-        // Blog page
-        elseif ( is_home() ) {
-            return get_post_meta( get_option( 'page_for_posts' ), 'taproot_custom_header_image', true );
-        }
-
         // Single posts pages and custom post types
-        elseif( is_singular() ) {
-            if( $use_featured && '' !== $use_featured ) {
+        if( is_singular() ) {
+
+            $header_image_type = get_custom_header_type();
+
+            if( 'featured' === $header_image_type ) {
                 return get_featured_url( featured_id( get_the_ID() ), 'full', false )[0];
             }
-            elseif( $post_custom_header ) {
-                return $post_custom_header;
+            elseif( 'default' === $header_image_type ) {
+                return ('remove-header' === $value) ? false : $value;
             }
+            elseif( 'custom' === $header_image_type ) {
+                return get_post_meta( get_the_ID(), 'taproot_custom_header_image', true );
+            }
+
+            return false;
         }
     }
 
@@ -162,13 +156,39 @@ class Header implements Bootable {
      * @return void
      */
     public function hasCustomHeader() {
-        $post_custom_header = get_post_meta( get_the_ID(), 'taproot_custom_header_image', true );
-        if( $post_custom_header ) {
-            return true;
+
+
+        $default_custom_header = theme_mod('header_image');
+        if('remove-header' === $default_custom_header) {
+            $default_custom_header = false;
         }
-        elseif( theme_mod('header_image') && is_front_page() && is_home() ) {
-            return true;
+
+        if( is_front_page() && is_home() ) {
+
+            if($default_custom_header) {
+                return true;
+            }
         }
+        elseif( is_singular() ) {
+
+            $header_image_type = get_custom_header_type();
+
+            if( 'featured' === $header_image_type) {
+                return true;
+            }
+            elseif( 'default' === $header_image_type) {
+                if($default_custom_header) {
+                    return true;
+                }
+            }
+            elseif( 'custom' === $header_image_type) {
+                $post_custom_header = get_post_meta( get_the_ID(), 'taproot_custom_header_image', true );
+                if( $post_custom_header ) {
+                    return true;
+                }
+            }
+        }
+
         return false;
     }
 

@@ -16,7 +16,7 @@ use function Taproot\Customize\is_boxed_layout;
 use function Taproot\Customize\theme_mod;
 
 
-$styles->add_var([
+$styles->custom_property([
     'name' => 'layout--boxed--outer-padding',
     'value' => theme_mod( 'layout--boxed--outer-padding', true ),
     'callback' => is_boxed_layout(),

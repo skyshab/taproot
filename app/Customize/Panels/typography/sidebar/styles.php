@@ -17,7 +17,7 @@ use function Taproot\Customize\maybe_convert_to_em;
 
 
 // Var: Sidebar Font Size
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--sidebar--font-size',
     'value' => theme_mod( 'typography--sidebar-mobile--font-size' ),
     'screen' => 'default',
@@ -25,7 +25,7 @@ $styles->add_var([
 
 
 // Var: Sidebar Line Height
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--sidebar--line-height',
     'value' => theme_mod( 'typography--sidebar-mobile--line-height' ),
     'screen' => 'default',
@@ -33,7 +33,7 @@ $styles->add_var([
 
 
 // Var: Sidebar Block Spacing
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--sidebar--block-spacing',
     'value' =>  maybe_convert_to_em( theme_mod( 'typography--sidebar-mobile--line-height' ) ),
     'screen' => 'default',
@@ -41,7 +41,7 @@ $styles->add_var([
 
 
 // Var: Sidebar Font Size Tablet
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--sidebar--font-size',
     'value' => theme_mod( 'typography--sidebar--font-size--tablet' ),
     'screen' => 'desktop',
@@ -49,7 +49,7 @@ $styles->add_var([
 
 
 // Var: Sidebar Line Height Tablet
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--sidebar--line-height',
     'value' => theme_mod( 'typography--sidebar--line-height--tablet' ),
     'screen' => 'desktop',
@@ -57,7 +57,7 @@ $styles->add_var([
 
 
 // Var: Sidebar Block Spacing Tablet
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--sidebar--block-spacing',
     'value' =>  maybe_convert_to_em( theme_mod( 'typography--sidebar--line-height--tablet' ) ),
     'screen' => 'tablet-and-up',
@@ -65,7 +65,7 @@ $styles->add_var([
 
 
 // Var: Sidebar Font Size Desktop
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--sidebar--font-size',
     'value' => theme_mod( 'typography--sidebar--font-size--desktop' ),
     'screen' => 'desktop',
@@ -73,7 +73,7 @@ $styles->add_var([
 
 
 // Var: Sidebar Line Height Desktop
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--sidebar--line-height',
     'value' => theme_mod( 'typography--sidebar--line-height--desktop' ),
     'screen' => 'desktop',
@@ -81,7 +81,7 @@ $styles->add_var([
 
 
 // Var: Sidebar Block Spacing Desktop
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--sidebar--block-spacing',
     'value' =>  maybe_convert_to_em( theme_mod( 'typography--sidebar--line-height--desktop' ) ),
     'screen' => 'desktop',

@@ -57,7 +57,7 @@ wp.customize( 'branding--title--font-styles', function( value ) {
 // Font Size
 wp.customize( 'branding--title--font-size', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'branding--title--font-size',
             value: to,
             screen: 'default'
@@ -68,7 +68,7 @@ wp.customize( 'branding--title--font-size', function( value ) {
 // Line Height
 wp.customize( 'branding--title--line-height', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'branding--title--line-height',
             value: to,
             screen: 'default'
@@ -97,7 +97,7 @@ wp.customize( 'branding--title--hide', function( value ) {
 // Font Size
 wp.customize( 'branding--title--font-size--tablet', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'branding--title--font-size',
             value: to,
             screen: 'tablet-and-up'
@@ -108,7 +108,7 @@ wp.customize( 'branding--title--font-size--tablet', function( value ) {
 // Line Height
 wp.customize( 'branding--title--line-height--tablet', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'branding--title--line-height',
             value: to,
             screen: 'tablet-and-up'
@@ -137,7 +137,7 @@ wp.customize( 'branding--title--hide--tablet', function( value ) {
 // Font Size
 wp.customize( 'branding--title--font-size--desktop', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'branding--title--font-size',
             value: to,
             screen: 'desktop'
@@ -148,7 +148,7 @@ wp.customize( 'branding--title--font-size--desktop', function( value ) {
 // Line Height
 wp.customize( 'branding--title--line-height--desktop', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'branding--title--line-height',
             value: to,
             screen: 'desktop'

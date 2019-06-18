@@ -1,0 +1,35 @@
+////
+/// Group block.
+///
+/// @group  Blocks
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+.wp-block-group {
+
+	&::after {
+		content:    ".";
+		display:    block;
+		height:     0;
+		clear:      both;
+		visibility: hidden;
+	}
+
+	&.has-background {
+		margin-bottom: var( --typography--body--block-spacing ); // use larger block spacing unit here?
+		padding:       var( --typography--body--block-spacing );
+	}
+
+	&.alignfull.has-background > .alignfull:not(.has-background) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	> *:not([class*=align]):not(.editor-inner-blocks) {
+		max-width: 100%; // this should be the max content width
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

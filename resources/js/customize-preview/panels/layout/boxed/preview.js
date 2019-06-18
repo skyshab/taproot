@@ -17,7 +17,7 @@ wp.customize( 'layout--boxed--outer-padding', function( value ) {
         isBoxed = ( isBoxed ) ? isBoxed.get() : false;
 
         if( isBoxed ) {
-            rootstrap.var({
+            rootstrap.customProperty({
                 name: 'layout--boxed--outer-padding',
                 value: to
             });

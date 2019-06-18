@@ -127,15 +127,15 @@ function () {
   return Styles;
 }();
 /**
- * Class for adding CSS variables
+ * Class for adding CSS custom properties
  */
 
 
-var StyleVar =
+var CustomProperty =
 /*#__PURE__*/
 function () {
-  function StyleVar(data) {
-    _classCallCheck(this, StyleVar);
+  function CustomProperty(data) {
+    _classCallCheck(this, CustomProperty);
 
     if (!data.name) return false;
     this.screen = data.screen;
@@ -150,7 +150,7 @@ function () {
     }
   }
 
-  _createClass(StyleVar, [{
+  _createClass(CustomProperty, [{
     key: "insertStyleblock",
     value: function insertStyleblock() {
       var oldBlock = document.getElementById(this.id);
@@ -199,8 +199,8 @@ function () {
       return query;
     }
   }, {
-    key: "getVar",
-    value: function getVar() {
+    key: "getStyles",
+    value: function getStyles() {
       if (!this.name || !this.value) return '';
       var output = ':root {';
       output += "--".concat(this.name, ": ").concat(this.value, ";");
@@ -215,7 +215,7 @@ function () {
   }, {
     key: "getStyleBlockContent",
     value: function getStyleBlockContent() {
-      return this.openQuery() + this.getVar() + this.closeQuery();
+      return this.openQuery() + this.getStyles() + this.closeQuery();
     }
   }, {
     key: "getStyleBlock",
@@ -233,7 +233,7 @@ function () {
     }
   }]);
 
-  return StyleVar;
+  return CustomProperty;
 }();
 /**
  * Object for interfacing with rootstrap
@@ -247,7 +247,7 @@ var rootstrap = {
   style: function style(data) {
     var style = new Styles(data);
   },
-  var: function _var(data) {
-    var styleVar = new StyleVar(data);
+  customProperty: function customProperty(data) {
+    var customProperty = new CustomProperty(data);
   }
 };

@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Taproot 1.2.0\n"
+"Project-Id-Version: Taproot 1.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/taproot\n"
-"POT-Creation-Date: 2019-05-11 12:38:44+00:00\n"
+"POT-Creation-Date: 2019-06-18 10:49:52+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -206,8 +206,7 @@ msgid "Full Width"
 msgstr ""
 
 #: app/Customize/Panels/blog/pagination/section.php:25
-#: app/Customize/Panels/blog/panel.php:38
-#: resources/views/nav/pagination/post.php:4
+#: app/Customize/Panels/blog/panel.php:38 views/nav/pagination/post.php:4
 msgid "Pagination"
 msgstr ""
 
@@ -464,7 +463,8 @@ msgid "Text Color"
 msgstr ""
 
 #: app/Customize/Panels/colors/sidebar/section.php:48
-#: app/Customize/Panels/colors/theme/section.php:36 app/functions-setup.php:86
+#: app/Customize/Panels/colors/theme/section.php:36
+#: app/Customize/Panels/test/theme/section.php:36 app/functions-setup.php:86
 msgid "Accent Color"
 msgstr ""
 
@@ -518,10 +518,14 @@ msgid "Meta Color - Dark"
 msgstr ""
 
 #: app/Customize/Panels/elements/breadcrumbs/section.php:26
+#: app/Customize/Panels/pages/breadcrumbs/section.php:22
+#: app/Customize/Panels/posts/breadcrumbs/section.php:22
 msgid "Breadcrumbs"
 msgstr ""
 
 #: app/Customize/Panels/elements/breadcrumbs/section.php:43
+#: app/Customize/Panels/pages/breadcrumbs/section.php:41
+#: app/Customize/Panels/posts/breadcrumbs/section.php:41
 msgid "Enable Breadcrumbs"
 msgstr ""
 
@@ -1159,6 +1163,10 @@ msgstr ""
 msgid "Navigation"
 msgstr ""
 
+#: app/Customize/Panels/test/theme/section.php:24
+msgid "Theme Test"
+msgstr ""
+
 #: app/Customize/Panels/typography/body/section.php:27
 msgid "Body"
 msgstr ""
@@ -1280,6 +1288,14 @@ msgstr ""
 msgid "Footer %s"
 msgstr ""
 
+#: app/Template/Template.php:116
+msgid "Page Builder"
+msgstr ""
+
+#: app/Template/Template.php:117
+msgid "Blank Template"
+msgstr ""
+
 #: app/bootstrap-compat.php:37
 #. Translators: 1 is the required WordPress version and 2 is the user's current
 #. version.
@@ -1350,170 +1366,6 @@ msgstr ""
 
 #: app/functions-setup.php:214
 msgid "Medium Large"
-msgstr ""
-
-#: app/functions-setup.php:253
-msgid "Page Builder"
-msgstr ""
-
-#: resources/views/comment/default.php:11 resources/views/comment/ping.php:8
-#. Translators: 1 is the comment date and 2 is the time.
-msgid "%1$s at %2$s"
-msgstr ""
-
-#: resources/views/comment/default.php:25
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: resources/views/comments/default.php:28
-msgid "Comments are closed."
-msgstr ""
-
-#: resources/views/content/404.php:9
-msgid "Whoah, partner!"
-msgstr ""
-
-#: resources/views/content/404.php:12
-msgid ""
-"It looks like you stumbled upon a page that does not exist. Perhaps rolling "
-"the dice with a search might help."
-msgstr ""
-
-#: resources/views/entry/single/attachment-audio.php:16
-msgid "Audio Info"
-msgstr ""
-
-#: resources/views/entry/single/attachment-audio.php:19
-#: resources/views/entry/single/attachment-video.php:19
-msgid "Run Time"
-msgstr ""
-
-#: resources/views/entry/single/attachment-audio.php:20
-msgid "Artist"
-msgstr ""
-
-#: resources/views/entry/single/attachment-audio.php:21
-msgid "Album"
-msgstr ""
-
-#: resources/views/entry/single/attachment-audio.php:22
-msgid "Track Number"
-msgstr ""
-
-#: resources/views/entry/single/attachment-audio.php:23
-msgid "Year"
-msgstr ""
-
-#: resources/views/entry/single/attachment-audio.php:24
-msgid "Genre"
-msgstr ""
-
-#: resources/views/entry/single/attachment-audio.php:25
-#: resources/views/entry/single/attachment-image.php:50
-#: resources/views/entry/single/attachment-video.php:21
-msgid "Name"
-msgstr ""
-
-#: resources/views/entry/single/attachment-audio.php:26
-#: resources/views/entry/single/attachment-image.php:51
-#: resources/views/entry/single/attachment-video.php:22
-msgid "Mime Type"
-msgstr ""
-
-#: resources/views/entry/single/attachment-audio.php:27
-#: resources/views/entry/single/attachment-image.php:52
-#: resources/views/entry/single/attachment-video.php:23
-msgid "Type"
-msgstr ""
-
-#: resources/views/entry/single/attachment-audio.php:28
-#: resources/views/entry/single/attachment-image.php:53
-#: resources/views/entry/single/attachment-video.php:24
-msgid "Size"
-msgstr ""
-
-#: resources/views/entry/single/attachment-image.php:9
-#. Translators: %s is a list of image size links.
-msgid "Sizes: %s"
-msgstr ""
-
-#: resources/views/entry/single/attachment-image.php:32
-msgid "Gallery"
-msgstr ""
-
-#: resources/views/entry/single/attachment-image.php:40
-msgid "Image Info"
-msgstr ""
-
-#: resources/views/entry/single/attachment-image.php:43
-#: resources/views/entry/single/attachment-video.php:20
-msgid "Dimensions"
-msgstr ""
-
-#: resources/views/entry/single/attachment-image.php:44
-msgid "Date"
-msgstr ""
-
-#: resources/views/entry/single/attachment-image.php:45
-msgid "Camera"
-msgstr ""
-
-#: resources/views/entry/single/attachment-image.php:46
-msgid "Aperture"
-msgstr ""
-
-#: resources/views/entry/single/attachment-image.php:47
-msgid "Focal Length"
-msgstr ""
-
-#: resources/views/entry/single/attachment-image.php:48
-msgid "ISO"
-msgstr ""
-
-#: resources/views/entry/single/attachment-image.php:49
-msgid "Shutter Speed"
-msgstr ""
-
-#: resources/views/entry/single/attachment-video.php:16
-msgid "Video Info"
-msgstr ""
-
-#: resources/views/entry/single/post.php:16
-msgid "Categories"
-msgstr ""
-
-#: resources/views/entry/single/post.php:21
-msgid "Tags"
-msgstr ""
-
-#: resources/views/header/default.php:16
-msgid "Skip to content"
-msgstr ""
-
-#: resources/views/nav/pagination/comments.php:2
-#: resources/views/nav/pagination/posts.php:2
-msgid "&larr; Previous"
-msgstr ""
-
-#: resources/views/nav/pagination/comments.php:3
-#: resources/views/nav/pagination/posts.php:3
-msgid "Next &rarr;"
-msgstr ""
-
-#: resources/views/nav/pagination/comments.php:4
-msgid "Comments Navigation"
-msgstr ""
-
-#: resources/views/nav/pagination/posts.php:4
-msgid "Posts Navigation"
-msgstr ""
-
-#: resources/views/partials/searchform.php:12
-msgid "Search for:"
-msgstr ""
-
-#: resources/views/partials/searchform.php:14
-msgid "Search &hellip;"
 msgstr ""
 
 #: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:95
@@ -1601,6 +1453,164 @@ msgstr ""
 #: vendor/justintadlock/hybrid-core/src/functions-filters.php:209
 #. Translators: Used as a placeholder for untitled posts on non-singular views.
 msgid "(Untitled)"
+msgstr ""
+
+#: views/comment/default.php:11 views/comment/ping.php:8
+#. Translators: 1 is the comment date and 2 is the time.
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: views/comment/default.php:25
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: views/comments/default.php:28
+msgid "Comments are closed."
+msgstr ""
+
+#: views/content/404.php:9
+msgid "Whoah, partner!"
+msgstr ""
+
+#: views/content/404.php:12
+msgid ""
+"It looks like you stumbled upon a page that does not exist. Perhaps rolling "
+"the dice with a search might help."
+msgstr ""
+
+#: views/entry/single/attachment-audio.php:16
+msgid "Audio Info"
+msgstr ""
+
+#: views/entry/single/attachment-audio.php:19
+#: views/entry/single/attachment-video.php:19
+msgid "Run Time"
+msgstr ""
+
+#: views/entry/single/attachment-audio.php:20
+msgid "Artist"
+msgstr ""
+
+#: views/entry/single/attachment-audio.php:21
+msgid "Album"
+msgstr ""
+
+#: views/entry/single/attachment-audio.php:22
+msgid "Track Number"
+msgstr ""
+
+#: views/entry/single/attachment-audio.php:23
+msgid "Year"
+msgstr ""
+
+#: views/entry/single/attachment-audio.php:24
+msgid "Genre"
+msgstr ""
+
+#: views/entry/single/attachment-audio.php:25
+#: views/entry/single/attachment-image.php:50
+#: views/entry/single/attachment-video.php:21
+msgid "Name"
+msgstr ""
+
+#: views/entry/single/attachment-audio.php:26
+#: views/entry/single/attachment-image.php:51
+#: views/entry/single/attachment-video.php:22
+msgid "Mime Type"
+msgstr ""
+
+#: views/entry/single/attachment-audio.php:27
+#: views/entry/single/attachment-image.php:52
+#: views/entry/single/attachment-video.php:23
+msgid "Type"
+msgstr ""
+
+#: views/entry/single/attachment-audio.php:28
+#: views/entry/single/attachment-image.php:53
+#: views/entry/single/attachment-video.php:24
+msgid "Size"
+msgstr ""
+
+#: views/entry/single/attachment-image.php:9
+#. Translators: %s is a list of image size links.
+msgid "Sizes: %s"
+msgstr ""
+
+#: views/entry/single/attachment-image.php:32
+msgid "Gallery"
+msgstr ""
+
+#: views/entry/single/attachment-image.php:40
+msgid "Image Info"
+msgstr ""
+
+#: views/entry/single/attachment-image.php:43
+#: views/entry/single/attachment-video.php:20
+msgid "Dimensions"
+msgstr ""
+
+#: views/entry/single/attachment-image.php:44
+msgid "Date"
+msgstr ""
+
+#: views/entry/single/attachment-image.php:45
+msgid "Camera"
+msgstr ""
+
+#: views/entry/single/attachment-image.php:46
+msgid "Aperture"
+msgstr ""
+
+#: views/entry/single/attachment-image.php:47
+msgid "Focal Length"
+msgstr ""
+
+#: views/entry/single/attachment-image.php:48
+msgid "ISO"
+msgstr ""
+
+#: views/entry/single/attachment-image.php:49
+msgid "Shutter Speed"
+msgstr ""
+
+#: views/entry/single/attachment-video.php:16
+msgid "Video Info"
+msgstr ""
+
+#: views/entry/single/post.php:16
+msgid "Categories"
+msgstr ""
+
+#: views/entry/single/post.php:21
+msgid "Tags"
+msgstr ""
+
+#: views/header/default.php:16
+msgid "Skip to content"
+msgstr ""
+
+#: views/nav/pagination/comments.php:2 views/nav/pagination/posts.php:2
+msgid "&larr; Previous"
+msgstr ""
+
+#: views/nav/pagination/comments.php:3 views/nav/pagination/posts.php:3
+msgid "Next &rarr;"
+msgstr ""
+
+#: views/nav/pagination/comments.php:4
+msgid "Comments Navigation"
+msgstr ""
+
+#: views/nav/pagination/posts.php:4
+msgid "Posts Navigation"
+msgstr ""
+
+#: views/partials/searchform.php:12
+msgid "Search for:"
+msgstr ""
+
+#: views/partials/searchform.php:14
+msgid "Search &hellip;"
 msgstr ""
 
 #. Theme Name of the plugin/theme

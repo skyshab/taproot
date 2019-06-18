@@ -16,7 +16,7 @@ use function Taproot\Customize\theme_mod;
 
 
 // Var: Sidebar Min Width
-$styles->add_var([
+$styles->custom_property([
     'name' => 'layout--sidebar--min-width',
     'value' => theme_mod( 'layout--sidebar--min-width', true ),
     'screen' => 'desktop'

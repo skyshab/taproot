@@ -21,13 +21,13 @@ $headings_selector = 'h1, h2, h3, h4, h5, h6';
 
 
 // Var: Heading Color
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--headings--text-color',
     'value' => theme_mod( 'typography--headings--text-color' ),
 ]);
 
 // Var: Font Family
-$styles->add_var([
+$styles->custom_property([
     'name' => 'typography--headings--font-family',
     'value' => get_font_family( theme_mod( 'typography--headings--font-family' ) ),
 ]);

@@ -63,3 +63,20 @@ function get_layout() {
 
     return $layout;
 }
+
+
+/**
+ * Get custom header type for single posts/pages/custom post types.
+ *
+ * @since  1.3.0
+ * @access public
+ * @return string
+ */
+function get_custom_header_type() {
+
+    if( is_singular() ) {
+        return get_post_meta( get_the_ID(), 'taproot_custom_header_image_type', true );
+    }
+
+    return false;
+}

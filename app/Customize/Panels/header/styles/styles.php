@@ -55,14 +55,14 @@ $styles->add([
 
 
 // Var: Padding
-$styles->add_var([
+$styles->custom_property([
     'name' => 'header--padding',
     'value' => theme_mod( 'header--styles--padding' ),
 ]);
 
 
 // Var: Padding Tablet
-$styles->add_var([
+$styles->custom_property([
     'name' => 'header--padding',
     'value' => theme_mod( 'header--styles--padding--tablet' ),
     'screen' => 'tablet-and-up'
@@ -70,7 +70,7 @@ $styles->add_var([
 
 
 // Var: Padding Desktop
-$styles->add_var([
+$styles->custom_property([
     'name' => 'header--padding',
     'value' => theme_mod( 'header--styles--padding--desktop' ),
     'screen' => 'desktop'

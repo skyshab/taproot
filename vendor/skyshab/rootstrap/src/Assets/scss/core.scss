@@ -1,0 +1,11 @@
+/*
+ * Styles for global navigation controls
+ */
+
+/* hide  sections in the customizer panel */
+.accordion-section[id*="rootstrap-section-hider"] ~ .accordion-section {
+    height: 0;
+    .accordion-section-title {
+        display: none;
+    }
+}

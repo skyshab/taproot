@@ -58,7 +58,7 @@ wp.customize( 'branding--tagline--font-styles', function( value ) {
 // Font Size
 wp.customize( 'branding--tagline--font-size', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'branding--tagline--font-size',
             value: to,
             screen: 'default'
@@ -69,7 +69,7 @@ wp.customize( 'branding--tagline--font-size', function( value ) {
 // Line Height
 wp.customize( 'branding--tagline--line-height', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'branding--tagline--line-height',
             value: to,
             screen: 'default'
@@ -80,7 +80,7 @@ wp.customize( 'branding--tagline--line-height', function( value ) {
 // Gutter
 wp.customize( 'branding--tagline--gutter', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'branding--tagline--gutter',
             value: to,
             screen: 'default'
@@ -127,7 +127,7 @@ wp.customize( 'branding--tagline--hide', function( value ) {
 // Font Size
 wp.customize( 'branding--tagline--font-size--tablet', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'branding--tagline--font-size',
             value: to,
             screen: 'tablet-and-up'
@@ -138,7 +138,7 @@ wp.customize( 'branding--tagline--font-size--tablet', function( value ) {
 // Line Height
 wp.customize( 'branding--tagline--line-height--tablet', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'branding--tagline--line-height',
             value: to,
             screen: 'tablet-and-up'
@@ -149,7 +149,7 @@ wp.customize( 'branding--tagline--line-height--tablet', function( value ) {
 // Gutter
 wp.customize( 'branding--tagline--gutter--tablet', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'branding--tagline--gutter',
             value: to,
             screen: 'tablet-and-up'
@@ -197,7 +197,7 @@ wp.customize( 'branding--tagline--hide--tablet', function( value ) {
 // Font Size
 wp.customize( 'branding--tagline--font-size--desktop', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'branding--tagline--font-size',
             value: to,
             screen: 'desktop'
@@ -208,7 +208,7 @@ wp.customize( 'branding--tagline--font-size--desktop', function( value ) {
 // Line Height
 wp.customize( 'branding--tagline--line-height--desktop', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'branding--tagline--line-height',
             value: to,
             screen: 'desktop'
@@ -219,7 +219,7 @@ wp.customize( 'branding--tagline--line-height--desktop', function( value ) {
 // Gutter
 wp.customize( 'branding--tagline--gutter--desktop', function( value ) {
     value.bind( function( to ) {
-        rootstrap.var({
+        rootstrap.customProperty({
             name: 'branding--tagline--gutter',
             value: to,
             screen: 'desktop'

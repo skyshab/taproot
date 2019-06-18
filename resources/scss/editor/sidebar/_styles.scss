@@ -20,3 +20,12 @@
         stroke: none!important;
     }
 }
+
+.taproot-theme-sidebar {
+    .components-base-control, .media-preview-wrapper {
+        margin: 16px 0;
+    }
+    .media-preview-wrapper img {
+        display: block;
+    }
+}

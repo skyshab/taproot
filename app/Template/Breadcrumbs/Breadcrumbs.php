@@ -48,9 +48,31 @@ class Breadcrumbs implements Bootable {
      * @param string    $html
      * @return string
      */
-    function breadcrumbs_home_icon( $html ) {
+    public function breadcrumbs_home_icon( $html ) {
         if( !theme_mod( 'elements--breadcrumbs--home-icon', true ) ) return $html;
         return str_replace('<span itemprop="name">Home</span>', icon('home'), $html );
+    }
+
+
+    /**
+     * Get post types that support breadcrumbs
+     *
+     * @since 1.3.0
+     * @return array
+     */
+    public function supported_post_types() {
+
+        $supported_types = [];
+
+        if( theme_mod( 'posts--breadcrumbs--enable', true ) ) {
+            $supported_types[] = 'post';
+        }
+
+        if( theme_mod( 'pages--breadcrumbs--enable', true ) ) {
+            $supported_types[] = 'page';
+        }
+
+        return apply_filters('taproot/breadcrumbs/supported-post-types', $supported_types );
     }
 
 
@@ -61,8 +83,15 @@ class Breadcrumbs implements Bootable {
      * @param string    $html
      * @return string
      */
-    function render( $args ) {
+    public function render( $args ) {
+
+        // check if breadcrumbs are enabled
         if( !theme_mod( 'elements--breadcrumbs--enable', true ) ) return;
+
+        // check if current post type supports breadcrumbs
+        if( !in_array( get_post_type(), $this->supported_post_types() ) ) return;
+
+        // render the breadcrumbs
         Trail::display();
     }
 
