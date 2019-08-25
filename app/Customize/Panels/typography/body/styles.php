@@ -16,20 +16,24 @@ use function Taproot\Customize\get_font_family;
 use function Taproot\Customize\theme_mod;
 use function Taproot\Customize\maybe_convert_to_em;
 
-// Var: Body Text Color
+
+// Custom Property: Body Text Color
 $styles->custom_property([
     'name' => 'typography--body--text-color',
     'value' => theme_mod( 'typography--body--text-color', true ),
 ]);
 
 
-// Body Font Family
-$styles->add([
-    'selector' => 'body',
-    'styles' => [
-        'font-family' => get_font_family( theme_mod( 'typography--body--font-family', 'default' ) )
-    ],
-]);
+$body_font = theme_mod( 'typography--body--font-family');
+
+if( $body_font && "default" !== $body_font ) {
+
+    // Custom Property: Body Font Family
+    $styles->custom_property([
+        'name' => 'typography--body--font-family',
+        'value' => $body_font,
+    ]);
+}
 
 
 // Mobile

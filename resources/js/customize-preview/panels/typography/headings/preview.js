@@ -17,12 +17,9 @@ const headingsSelector = 'h1, h2, h3, h4, h5, h6';
 // Text Color
 wp.customize( 'typography--headings--text-color', function( value ) {
     value.bind( function( to ) {
-        rootstrap.style({
-            id: 'typography--headings--text-color',
-            selector: headingsSelector,
-            styles: {
-                'color': to
-            }
+        rootstrap.customProperty({
+            name: 'typography--headings--text-color',
+            value: to
         });
     });
 });
