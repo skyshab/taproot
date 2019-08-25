@@ -37,7 +37,7 @@
     </div>
 
 	<div class="entry__footer entry__footer--archive">
-		<?php Taproot\Template\archive_link() ?>
+		<?php Taproot\Template\entry_link() ?>
 	</div>
 
 </article>

@@ -90,7 +90,7 @@
     }
 
     &__link.taproot-button {
-        font-size: 0.8em;
+        font-size: var(--blog--archive-link--font-size);
     }
 
 	// Individual metadata items.
