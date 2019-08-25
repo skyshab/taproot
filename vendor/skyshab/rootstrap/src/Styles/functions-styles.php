@@ -13,6 +13,8 @@
 
 namespace Rootstrap\Styles;
 
+use function Rootstrap\Screens\screens;
+
 
 /**
  * Register theme stylesheet
@@ -66,6 +68,17 @@ function register( $handle, $src = '', $deps = [], $ver = false  ) {
         // Add the mods
         wp_add_inline_style( $handle, $output );
     }
+
+    // Create  hook for adding singular styles
+    if( is_singular() ) {
+
+        $singular_styles = apply_filters('rootstrap/styles/singular', new Styles( screens() ) );
+
+        if($singular_styles) {
+            wp_add_inline_style( $handle, $singular_styles->get_styles() );
+        }
+    }
+
 }
 
 

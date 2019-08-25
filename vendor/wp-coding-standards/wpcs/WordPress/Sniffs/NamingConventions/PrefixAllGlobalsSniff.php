@@ -7,11 +7,11 @@
  * @license https://opensource.org/licenses/MIT MIT
  */
 
-namespace WordPress\Sniffs\NamingConventions;
+namespace WordPressCS\WordPress\Sniffs\NamingConventions;
 
-use WordPress\AbstractFunctionParameterSniff;
-use WordPress\PHPCSHelper;
-use PHP_CodeSniffer_Tokens as Tokens;
+use WordPressCS\WordPress\AbstractFunctionParameterSniff;
+use WordPressCS\WordPress\PHPCSHelper;
+use PHP_CodeSniffer\Util\Tokens;
 
 /**
  * Verify that everything defined in the global namespace is prefixed with a theme/plugin specific prefix.
@@ -22,7 +22,7 @@ use PHP_CodeSniffer_Tokens as Tokens;
  * @since   0.13.0 Class name changed: this class is now namespaced.
  * @since   1.2.0  Now also checks whether namespaces are prefixed.
  *
- * @uses    \WordPress\Sniff::$custom_test_class_whitelist
+ * @uses    \WordPressCS\WordPress\Sniff::$custom_test_class_whitelist
  */
 class PrefixAllGlobalsSniff extends AbstractFunctionParameterSniff {
 
@@ -174,6 +174,18 @@ class PrefixAllGlobalsSniff extends AbstractFunctionParameterSniff {
 	);
 
 	/**
+	 * List of all PHP native functions.
+	 *
+	 * Using this list rather than a call to `function_exists()` prevents
+	 * false negatives from user-defined functions when those would be
+	 * autoloaded via a Composer autoload files directives.
+	 *
+	 * @var array
+	 */
+	private $built_in_functions;
+
+
+	/**
 	 * Returns an array of tokens this test wants to listen for.
 	 *
 	 * @since 0.12.0
@@ -181,17 +193,19 @@ class PrefixAllGlobalsSniff extends AbstractFunctionParameterSniff {
 	 * @return array
 	 */
 	public function register() {
-		$targets = array(
-			\T_NAMESPACE  => \T_NAMESPACE,
-			\T_FUNCTION   => \T_FUNCTION,
-			\T_CLASS      => \T_CLASS,
-			\T_INTERFACE  => \T_INTERFACE,
-			\T_TRAIT      => \T_TRAIT,
-			\T_CONST      => \T_CONST,
-			\T_VARIABLE   => \T_VARIABLE,
-			\T_DOLLAR     => \T_DOLLAR, // Variable variables.
-			\T_ANON_CLASS => \T_ANON_CLASS, // Only used for skipping over test classes.
+		// Get a list of all PHP native functions.
+		$all_functions            = get_defined_functions();
+		$this->built_in_functions = array_flip( $all_functions['internal'] );
+
+		// Set the sniff targets.
+		$targets  = array(
+			\T_NAMESPACE => \T_NAMESPACE,
+			\T_FUNCTION  => \T_FUNCTION,
+			\T_CONST     => \T_CONST,
+			\T_VARIABLE  => \T_VARIABLE,
+			\T_DOLLAR    => \T_DOLLAR, // Variable variables.
 		);
+		$targets += Tokens::$ooScopeTokens; // T_ANON_CLASS is only used for skipping over test classes.
 
 		// Add function call target for hook names and constants defined using define().
 		$parent = parent::register();
@@ -243,7 +257,7 @@ class PrefixAllGlobalsSniff extends AbstractFunctionParameterSniff {
 		// Allow overruling the prefixes set in a ruleset via the command line.
 		$cl_prefixes = trim( PHPCSHelper::get_config_data( 'prefixes' ) );
 		if ( ! empty( $cl_prefixes ) ) {
-			$this->prefixes = $cl_prefixes;
+			$this->prefixes = array_filter( array_map( 'trim', explode( ',', $cl_prefixes ) ) );
 		}
 
 		$this->prefixes = $this->merge_custom_array( $this->prefixes, array(), false );
@@ -259,9 +273,7 @@ class PrefixAllGlobalsSniff extends AbstractFunctionParameterSniff {
 		}
 
 		// Ignore test classes.
-		if ( ( \T_CLASS === $this->tokens[ $stackPtr ]['code']
-			|| \T_TRAIT === $this->tokens[ $stackPtr ]['code']
-			|| \T_ANON_CLASS === $this->tokens[ $stackPtr ]['code'] )
+		if ( isset( Tokens::$ooScopeTokens[ $this->tokens[ $stackPtr ]['code'] ] )
 			&& true === $this->is_test_class( $stackPtr )
 		) {
 			if ( $this->tokens[ $stackPtr ]['scope_condition'] === $stackPtr && isset( $this->tokens[ $stackPtr ]['scope_closer'] ) ) {
@@ -345,17 +357,17 @@ class PrefixAllGlobalsSniff extends AbstractFunctionParameterSniff {
 			switch ( $this->tokens[ $stackPtr ]['type'] ) {
 				case 'T_FUNCTION':
 					// Methods in a class do not need to be prefixed.
-					if ( $this->phpcsFile->hasCondition( $stackPtr, array( \T_CLASS, \T_ANON_CLASS, \T_INTERFACE, \T_TRAIT ) ) === true ) {
+					if ( $this->phpcsFile->hasCondition( $stackPtr, Tokens::$ooScopeTokens ) === true ) {
 						return;
 					}
 
 					$item_name = $this->phpcsFile->getDeclarationName( $stackPtr );
-					if ( function_exists( '\\' . $item_name ) ) {
+					if ( isset( $this->built_in_functions[ $item_name ] ) ) {
 						// Backfill for PHP native function.
 						return;
 					}
 
-					$error_text = 'Functions declared';
+					$error_text = 'Functions declared in the global namespace';
 					$error_code = 'NonPrefixedFunctionFound';
 					break;
 
@@ -543,7 +555,7 @@ class PrefixAllGlobalsSniff extends AbstractFunctionParameterSniff {
 			$stackPtr,
 			'NonPrefixedVariableFound',
 			array(
-				'Variables defined',
+				'Global variables defined',
 				$variable_name,
 			)
 		);
@@ -693,7 +705,7 @@ class PrefixAllGlobalsSniff extends AbstractFunctionParameterSniff {
 			$is_error,
 			'NonPrefixedVariableFound',
 			array(
-				'Variables defined',
+				'Global variables defined',
 				'$' . $variable_name,
 			)
 		);
@@ -794,9 +806,15 @@ class PrefixAllGlobalsSniff extends AbstractFunctionParameterSniff {
 
 			$data       = array( 'Global constants defined' );
 			$error_code = 'NonPrefixedConstantFound';
+			if ( false === $is_error ) {
+				$error_code = 'VariableConstantNameFound';
+			}
 		} else {
 			$data       = array( 'Hook names invoked' );
 			$error_code = 'NonPrefixedHooknameFound';
+			if ( false === $is_error ) {
+				$error_code = 'DynamicHooknameFound';
+			}
 		}
 
 		$data[] = $raw_content;

@@ -7,10 +7,10 @@
  * @license https://opensource.org/licenses/MIT MIT
  */
 
-namespace WordPress\Sniffs\WP;
+namespace WordPressCS\WordPress\Sniffs\WP;
 
-use WordPress\Sniff;
-use PHP_CodeSniffer_Tokens as Tokens;
+use WordPressCS\WordPress\Sniff;
+use PHP_CodeSniffer\Util\Tokens;
 
 /**
  * Flag cron schedules less than 15 minutes.
@@ -20,7 +20,7 @@ use PHP_CodeSniffer_Tokens as Tokens;
  * @package WPCS\WordPressCodingStandards
  *
  * @since   0.3.0
- * @since   0.11.0 - Extends the WordPress_Sniff class.
+ * @since   0.11.0 - Extends the WordPressCS native `Sniff` class.
  *                 - Now deals correctly with WP time constants.
  * @since   0.13.0 Class name changed: this class is now namespaced.
  * @since   0.14.0 The minimum cron interval tested against is now configurable.
@@ -56,6 +56,15 @@ class CronIntervalSniff extends Sniff {
 	);
 
 	/**
+	 * Function within which the hook should be found.
+	 *
+	 * @var array
+	 */
+	protected $valid_functions = array(
+		'add_filter' => true,
+	);
+
+	/**
 	 * Returns an array of tokens this test wants to listen for.
 	 *
 	 * @return array
@@ -82,13 +91,18 @@ class CronIntervalSniff extends Sniff {
 		}
 
 		// If within add_filter.
-		$functionPtr = $this->phpcsFile->findPrevious( \T_STRING, key( $token['nested_parenthesis'] ) );
-		if ( false === $functionPtr || 'add_filter' !== $this->tokens[ $functionPtr ]['content'] ) {
+		$functionPtr = $this->is_in_function_call( $stackPtr, $this->valid_functions );
+		if ( false === $functionPtr ) {
 			return;
 		}
 
 		$callback = $this->get_function_call_parameter( $functionPtr, 2 );
 		if ( false === $callback ) {
+			return;
+		}
+
+		if ( $stackPtr >= $callback['start'] ) {
+			// "cron_schedules" found in the second parameter, not the first.
 			return;
 		}
 
@@ -178,7 +192,7 @@ class CronIntervalSniff extends Sniff {
 
 					// If all digits and operators, eval!
 					if ( preg_match( '#^[\s\d+*/-]+$#', $value ) > 0 ) {
-						$interval = eval( "return ( $value );" ); // @codingStandardsIgnoreLine - No harm here.
+						$interval = eval( "return ( $value );" ); // phpcs:ignore Squiz.PHP.Eval -- No harm here.
 						break;
 					}
 
