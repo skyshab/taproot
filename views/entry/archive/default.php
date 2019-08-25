@@ -11,7 +11,7 @@
 	</header>
 
 	<div class="entry__summary entry__summary--archive">
-		<?php the_excerpt() ?>
+		<?php the_content() ?>
 	</div>
 
 </article>
