@@ -20,7 +20,7 @@ Taproot is based on the [Mythic](https://github.com/justintadlock/mythic) starte
 
 - [Hybrid Core](https://github.com/justintadlock/hybrid-core) by Justin Tadlock - [GNU GPL](https://www.gnu.org/licenses/gpl-2.0.html), version 2 or later.
 - [Hybrid Breadcrumbs](https://github.com/justintadlock/hybrid-breadcrumbs) by Justin Tadlock - [GNU GPL](https://www.gnu.org/licenses/gpl-2.0.html), version 2 or later.
-- [Rootstrap] (https://github.com/skyshab/rootstrap) by Sky Shabatura - [GNU GPL](https://www.gnu.org/licenses/gpl-2.0.html), version 2 or later.
+- [Rootstrap](https://github.com/skyshab/rootstrap) by Sky Shabatura - [GNU GPL](https://www.gnu.org/licenses/gpl-2.0.html), version 2 or later.
 
 ## Copyright and License
 Taproot is licensed under the [GNU GPL](https://www.gnu.org/licenses/gpl-2.0.html), version 2 or later.

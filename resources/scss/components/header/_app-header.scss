@@ -140,16 +140,12 @@
         }
     }
 
-	// Output from the `custom-logo` feature.
-	&__logo {}
-
 	// Logo link.
 	&__logo-link {
         grid-area: logo;
         display: grid;
         width:  var( --branding--logo--width );
     }
-
 
 	// The site title.
 	&__title {

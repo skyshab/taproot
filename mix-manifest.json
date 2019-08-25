@@ -1,16 +1,16 @@
 {
     "/dist/js/app.js": "/dist/js/app.js?id=ffdad5cc180bc057c6e0",
-    "/dist/css/screen.css": "/dist/css/screen.css?id=a9694498e09518de10d2",
-    "/dist/css/editor.css": "/dist/css/editor.css?id=0b453d738cfcd8c3276f",
-    "/dist/css/customize-controls.css": "/dist/css/customize-controls.css?id=a6eaa66622d4d82abd54",
+    "/dist/css/screen.css": "/dist/css/screen.css?id=0253ccde49657fa3bfe7",
+    "/dist/css/editor.css": "/dist/css/editor.css?id=add1146e0829aa3f69cd",
+    "/dist/css/customize-controls.css": "/dist/css/customize-controls.css?id=4b85f4904c938931ff74",
     "/dist/js/app.js.map": "/dist/js/app.js.map?id=a2e93c728f7280b8f9f2",
-    "/dist/css/screen.css.map": "/dist/css/screen.css.map?id=1539cac413272315bfaf",
-    "/dist/css/editor.css.map": "/dist/css/editor.css.map?id=4212ae3aa3c368ef18e0",
-    "/dist/css/customize-controls.css.map": "/dist/css/customize-controls.css.map?id=629da37cbb1c4e778509",
-    "/dist/js/customize-controls.js": "/dist/js/customize-controls.js?id=519d436f10aae17d086c",
-    "/dist/js/customize-controls.js.map": "/dist/js/customize-controls.js.map?id=d2d86229a5d5fdf5f52a",
-    "/dist/js/customize-preview.js": "/dist/js/customize-preview.js?id=a9717ddaf2a38df62353",
-    "/dist/js/customize-preview.js.map": "/dist/js/customize-preview.js.map?id=5271b8f55dcf7839a24c",
-    "/dist/js/editor.js": "/dist/js/editor.js?id=56ec72162bcc35e8e873",
-    "/dist/js/editor.js.map": "/dist/js/editor.js.map?id=28f5e643b1eeae3b678c"
+    "/dist/css/screen.css.map": "/dist/css/screen.css.map?id=92fc3bebd2efceb1c193",
+    "/dist/css/editor.css.map": "/dist/css/editor.css.map?id=5de6e557bd3ac54d0ac1",
+    "/dist/css/customize-controls.css.map": "/dist/css/customize-controls.css.map?id=f78dddf6654f779d765b",
+    "/dist/js/customize-controls.js": "/dist/js/customize-controls.js?id=700c8bce5f64e8842fba",
+    "/dist/js/customize-controls.js.map": "/dist/js/customize-controls.js.map?id=e8bbf8c56466c27502f7",
+    "/dist/js/customize-preview.js": "/dist/js/customize-preview.js?id=109db6dfa2a7fcec34db",
+    "/dist/js/customize-preview.js.map": "/dist/js/customize-preview.js.map?id=00ac785531a3100c049b",
+    "/dist/js/editor.js": "/dist/js/editor.js?id=0ae7e5fee718906ab5b3",
+    "/dist/js/editor.js.map": "/dist/js/editor.js.map?id=8a5682455c9d1167d3eb"
 }
