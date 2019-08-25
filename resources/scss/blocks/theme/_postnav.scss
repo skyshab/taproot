@@ -10,9 +10,13 @@
 .postnav {
     display: flex;
     justify-content: space-between;
-    padding: 0.625rem 0;
-    border-top: 1px solid var( --colors--theme--meta-medium );
-    border-bottom: 1px solid var( --colors--theme--meta-medium );
+    margin-bottom: var(--layout--block-spacing--large);
+
+    &.has-separators {
+        padding: 0.625rem 0;
+        border-top: 1px solid var( --colors--theme--meta-medium );
+        border-bottom: 1px solid var( --colors--theme--meta-medium );
+    }
 
     &__link {
 
@@ -38,6 +42,6 @@
         &--next .taproot-icon {
             margin-left: 0.5em;
         }
-    }    
+    }
 
 }

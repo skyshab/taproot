@@ -56,8 +56,8 @@ class Postnav {
 	 */
 	private function init( $context, $args ) {
 
-        $prev_text = theme_mod( 'posts--nav--prev', esc_html__('PREV', 'taproot'), true );
-        $next_text = theme_mod( 'posts--nav--next', esc_html__('NEXT', 'taproot'), true );
+        $prev_text = theme_mod( 'posts--nav--prev', true );
+        $next_text = theme_mod( 'posts--nav--next', true );
 
         $defaults = [
             'prev_text' => $prev_text,
@@ -71,7 +71,6 @@ class Postnav {
         $this->args = wp_parse_args( $args, $defaults );
         $this->context = $context;
     }
-
 
 
     /**
@@ -106,12 +105,7 @@ class Postnav {
 	 * @return void
 	 */
 	private function has_content() {
-
-        if( !theme_mod( 'posts--nav--enable', true ) ) return false;
-
-        if( !$this->has_prev_link() && !$this->has_next_link() ) return false;
-
-        return true;
+       return ( $this->has_prev_link() || $this->has_next_link() ) ? true : false;
     }
 
 
@@ -200,7 +194,7 @@ class Postnav {
 	 */
 	private function classes() {
 
-        $classes = 'postnav';
+        $classes =  $this->args['nav_class'];
 
         if( $this->context ) {
             $classes .= sprintf( ' postnav--%s ', $this->context );

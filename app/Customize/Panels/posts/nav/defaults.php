@@ -16,6 +16,11 @@
 // Enable Post Navigation
 $defaults->add( 'posts--nav--enable', 1 );
 
-
 // Disable Font Size by default
 $defaults->add( 'posts--nav--font-size--enable', false );
+
+// Default "previous" text
+$defaults->add( 'posts--nav--prev', esc_html__('PREV', 'taproot') );
+
+// Default "next" text
+$defaults->add( 'posts--nav--next', esc_html__('NEXT', 'taproot') );
