@@ -16,7 +16,8 @@
 $panel->sections([
     'styles',
     'styles-fixed',
-    'image'
+    'image',
+    'hero'
 ]);
 
 
@@ -26,5 +27,6 @@ $panel->tabs([
     'sections' => [
         'header--styles' => [ 'label' => __('default', 'taproot'), 'hide' => false ],
         'header--styles-fixed' => [ 'label' => __('fixed', 'taproot'), 'hide' => true ],
+        'header--hero' => [ 'label' => __('hero', 'taproot'), 'hide' => true ],
     ],
 ]);

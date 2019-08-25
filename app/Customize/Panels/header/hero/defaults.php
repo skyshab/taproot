@@ -14,10 +14,12 @@
 
 
  // Default Header Image Height
-$defaults->add( 'header--image--height', '64vw' );
+ $defaults->add( 'header--hero--height', '300px' );
 
-// Default Header Image Max Height
-$defaults->add( 'header--image--max-height', '100vh' );
 
-// Default Header Image Min Height
-$defaults->add( 'header--image--min-height', '320px' );
+ // Default Header Image Height
+ $defaults->add( 'header--hero--height--tablet', '56vw' );
+
+
+ // Default Header Image Height
+ $defaults->add( 'header--hero--height--desktop', '100vh' );

@@ -45,12 +45,9 @@ wp.customize( 'header--styles--fullwidth', function( value ) {
 // Header Default Color
 wp.customize( 'header--styles--default-color', function( value ) {
     value.bind( function( to ) {
-        rootstrap.style({
-            id: 'header--styles--default-color',
-            selector: '.app-header__container',
-            styles: {
-                color: to,
-            }
+        rootstrap.customProperty({
+            name: 'header--default-color',
+            value: to
         });
     });
 });
@@ -59,12 +56,9 @@ wp.customize( 'header--styles--default-color', function( value ) {
 // Header Default Color Hover
 wp.customize( 'header--styles--default-color--hover', function( value ) {
     value.bind( function( to ) {
-        rootstrap.style({
-            id: 'header--styles--default-color--hover',
-            selector: '.app-header__container .label-toggle:hover',
-            styles: {
-                color: to,
-            }
+        rootstrap.customProperty({
+            name: 'header--link-color--hover',
+            value: to
         });
     });
 });

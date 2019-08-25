@@ -14,6 +14,8 @@
 
 namespace Taproot\Template;
 
+use function Taproot\Customize\theme_mod;
+
 
 /**
  * Output Header Additional Content
@@ -24,4 +26,55 @@ namespace Taproot\Template;
  */
 function additional_content() {
     do_action('taproot/header/additional-content');
+}
+
+
+ /**
+ * Filter for custom header overlay display
+ *
+ *
+ * @since 1.0.0
+ * @param string
+ * @return string
+ */
+function get_overlay() {
+
+    if ( ! has_custom_header() && ! is_customize_preview() ) {
+        return;
+    }
+
+    $classnames = "taproot-overlay taproot-overlay--custom-header";
+    $overlay_color = theme_mod('header--hero--overlay-color');
+    $overlay_opacity = theme_mod('header--hero--overlay-opacity');
+    $classnames .= dimRatioToClass($overlay_opacity);
+    $overlay_styles = '';
+
+    if( is_singular() ) {
+        $overlay_color_type =  get_post_meta( get_the_ID(), 'taprooot_hero_overlay_type', true );
+        if('custom' === $overlay_color_type) {
+            $overlay_color_name =  get_post_meta( get_the_ID(), 'taprooot_hero_overlay_color_name', true );
+            if( $overlay_color_name ) {
+                $classnames .= sprintf(' has-%s-background-color', esc_attr($overlay_color_name) );
+            }
+        }
+    }
+
+    if($overlay_color) {
+        $overlay_styles = sprintf('background-color: %s', $overlay_color );
+    }
+
+    return sprintf('<div id="taproot-overlay" class="%s" style="%s"></div>', esc_attr($classnames), esc_attr($overlay_styles) );
+}
+
+/**
+ * Helper function to get opacity classname from number
+ *
+ * @since  1.4.0
+ * @access public
+ * @param  mixed $ratio - numeric value representing the opacity level
+ * @return string - classname for controlling opacity
+ */
+function dimRatioToClass($ratio) {
+    $ratio = intval( $ratio );
+    return ( $ratio === 0 ) ? '' : sprintf(' has-background-dim-%s', 10 * round( $ratio / 10 ) );
 }

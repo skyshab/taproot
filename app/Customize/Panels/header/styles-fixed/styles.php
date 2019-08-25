@@ -26,23 +26,36 @@ $styles->add([
 ]);
 
 
-// Default Color
-$styles->add([
-    'selector' => '.app-header--fixed',
-    'styles' => [
-        'color' => theme_mod( 'header--styles-fixed--default-color' ),
-    ],
-    'screen' => 'desktop'
+// // Default Color
+// $styles->add([
+//     'selector' => '.app-header--fixed',
+//     'styles' => [
+//         'color' => theme_mod( 'header--styles-fixed--default-color' ),
+//     ],
+//     'screen' => 'desktop'
+// ]);
+
+
+// // Default Color Hover
+// $styles->add([
+//     'selector' => '.app-header--fixed .menu--toggle:hover',
+//     'styles' => [
+//         'color' => theme_mod( 'header--styles-fixed--default-color--hover' ),
+//     ],
+//     'screen' => 'desktop'
+// ]);
+
+
+// Custom Property: Default Fixed Header Color
+$styles->custom_property([
+    'name' => 'header--fixed--default-color',
+    'value' => theme_mod( 'header--styles-fixed--default-color' ),
 ]);
 
-
-// Default Color Hover
-$styles->add([
-    'selector' => '.app-header--fixed .menu--toggle:hover',
-    'styles' => [
-        'color' => theme_mod( 'header--styles-fixed--default-color-hover' ),
-    ],
-    'screen' => 'desktop'
+// Custom Property: Default Fixed Header Link Hover Color
+$styles->custom_property([
+    'name' => 'header--fixed--link-color--hover',
+    'value' => theme_mod( 'header--styles-fixed--default-color--hover' ),
 ]);
 
 

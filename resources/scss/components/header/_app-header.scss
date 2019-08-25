@@ -10,15 +10,22 @@
 .app-header {
 
     background-color: var( --colors--theme--accent );
-    color: var( --colors--theme--accent-contrast );
+    color: var( --header--default-color );
     width: 100%;
     position: relative;
 
-	// Wrapper around the title and description.
+    a:hover {
+        color: var( --header--link-color--hover );
+    }
+
 	&__branding {
         display: grid;
         align-items: center;
-        // grid-row-gap: 5px;
+
+        // Wrapper around the title and description.
+        &__content {
+            grid-area: content;
+        }
 
         // prevent the branding from being squished when next to
         // a header menu that is expanded.
@@ -179,6 +186,7 @@
         margin-top: var( --branding--tagline--gutter );
     }
 
+    // Fixed header styles
     &--fixed {
 
         @include screen('desktop') {
@@ -190,7 +198,12 @@
 
             // customize defaults
             background-color: #000000;
-            color: #ffffff;
+
+            color: var( --header--fixed--default-color );
+
+            a:hover {
+                color: var( --header--fixed--link-color--hover );
+            }
         };
     }
 

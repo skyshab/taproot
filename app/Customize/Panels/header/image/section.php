@@ -12,10 +12,6 @@
  */
 
 
-use function Taproot\Customize\color;
-use function Taproot\Customize\range;
-
-
 # =======================================================
 # Move Existing Section
 # =======================================================
@@ -26,7 +22,7 @@ use function Taproot\Customize\range;
 // We're hiding the default control description with CSS.
 if( $manager->get_section( 'header_image' ) ) {
 	$manager->get_section( 'header_image' )->panel = 'header';
-    $manager->get_section( 'header_image' )->priority = 500;
+    $manager->get_section( 'header_image' )->priority = 120;
     $manager->get_section( 'header_image' )->description = esc_html__('Choose a custom header image for the homepage. If using a static homepage, the page settings will be used instead.', 'taproot');
 }
 
@@ -40,49 +36,6 @@ if( $manager->get_section( 'header_image' ) ) {
 if( $manager->get_setting( 'header_image' ) ) {
     $manager->get_setting( 'header_image' )->transport = 'postMessage';
     $manager->get_setting( 'header_image_data' )->transport = 'postMessage';
-}
-
-
-if( $manager->get_section( 'header_image' ) ) {
-
-    $header_image_height_atts = [
-        'vw' => [
-            'min' => 0,
-            'max' => 100,
-        ],
-        'vh' => [
-            'min' => 0,
-            'max' => 100,
-        ],
-        'px' => [
-            'min' => 0,
-            'max' => 1000,
-        ],
-    ];
-
-    // Setting: Header Image Height
-    range( $manager, 'header--image--height', [
-        'section' => 'header_image',
-        'label' => esc_html__('Height', 'taproot'),
-        'atts' => $header_image_height_atts
-    ]);
-
-
-    // Setting: Header Image Max Height
-    range( $manager, 'header--image--max-height', [
-        'section' => 'header_image',
-        'label' => esc_html__('Max Height', 'taproot'),
-        'atts' => $header_image_height_atts
-    ]);
-
-
-    // Setting: Header Image Min Height
-    range( $manager, 'header--image--min-height', [
-        'section' => 'header_image',
-        'label' => esc_html__('Min Height', 'taproot'),
-        'atts' => $header_image_height_atts
-    ]);
-
 }
 
 

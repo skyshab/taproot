@@ -24,6 +24,7 @@ use function Taproot\Customize\range_atts;
 $manager->add_section( 'header--styles', [
     'title' => esc_html__( 'Header Styles', 'taproot' ),
     'panel' => 'header',
+    'priority' => 100
 ]);
 
 
@@ -60,7 +61,7 @@ color( $manager, 'header--styles--default-color', [
 ]);
 
 
-// Color Setting: Header Default Color
+// Color Setting: Header Default Link Hover Color
 color( $manager, 'header--styles--default-color--hover', [
     'label'   => esc_html__( 'Header Default Color: Hover', 'taproot' ),
     'section' => 'header--styles',
