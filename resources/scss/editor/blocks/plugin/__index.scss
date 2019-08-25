@@ -8,9 +8,7 @@
 /// @link   https://taproot-theme.com
 ////
 
-
-// import theme block styles
-@import 'theme/_index';
-
-// import plugin block styles
-@import 'plugin/_index';
+// import custom block styles
+@import 'meta';
+@import 'breadcrumbs';
+@import 'post-title';

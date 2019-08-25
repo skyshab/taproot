@@ -34,5 +34,12 @@
 @import 'core/verse';
 @import 'core/text-media';
 
+// import custom block styles
+@import 'theme/meta';
+@import 'theme/title';
+@import 'theme/breadcrumbs';
+@import 'theme/postnav';
+
+
 // import global block styles
 @import 'block-styles';

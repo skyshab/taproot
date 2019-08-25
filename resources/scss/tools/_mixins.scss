@@ -18,52 +18,52 @@ $tr-desktop-min: '1025px';
 
 // The screen mixin
 @mixin screen( $screen ) {
-  
+
     $query: '';
-  
+
     @if ( $screen == 'mobile' ) {
       $query: "( max-width: #{$tr-mobile-max} )";
     }
-  
+
     @if ( $screen == 'tablet' ) {
         $query: "( min-width: #{$tr-tablet-min} ) and ( max-width: #{$tr-tablet-max} )";
     }
-  
+
     @if ( $screen == 'tablet-and-under' ) {
         $query: "( max-width: #{$tr-tablet-max} )";
     }
-  
+
     @if ( $screen == 'tablet-and-up' ) {
         $query: "( min-width: #{$tr-tablet-min} )";
     }
-  
+
     @if ( $screen == 'desktop' ) {
         $query: "( min-width: #{$tr-desktop-min} )";
     }
-  
+
     @if( $query != '' ) {
-        @media #{$query}  { @content; }    
+        @media #{$query}  { @content; }
     }
     @else {
-      @content;     
+      @content;
     }
 }
 
 
 // get styles for branding layout
 @mixin branding_styles( $type: 'horizontal' ) {
-    
+
     @if ( $type == 'horizontal' ) {
-        grid-template-rows: 1fr 1fr;
+        // grid-template-rows: 1fr 1fr;
         grid-template-columns: fit-content(100%) auto;
-        grid-template-areas: "logo title" "logo tagline";
-        justify-items: start;  
+        grid-template-areas: "logo content";
+        justify-items: start;
     }
 
     @if ( $type == 'vertical' ) {
         grid-template-rows: auto;
         grid-template-columns: auto;
-        grid-template-areas: "logo" "title" "tagline";
-        justify-items: center;   
+        grid-template-areas: "logo" "content";
+        justify-items: center;
     }
 }

@@ -33,113 +33,75 @@
 }
 
 
+// Create Classes for opacity.
+// This is used on overlays without explicit content
 
-.screen-reader-text, .visuallyhidden {
-    clip: rect(1px, 1px, 1px, 1px);
-    height: 1px;
-    overflow: hidden;
-    position: absolute !important;
-    top: auto;
-    left: -999em;
-    width: 1px;
-    word-wrap: normal !important;
+@for $i from 1 through 10 {
+    .has-background-dim-#{ $i * 10 } {
+        opacity: $i * 0.1;
+    }
 }
 
-.screen-reader-text:focus, .visuallyhidden:focus {
-    background-color: #f1f1f1;
-    border-radius: 3px;
-    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-    clip: auto !important;
-    display: block;
-    font-size: 0.875rem;
-    font-weight: 700;
-    height: auto;
-    left: 5px;
-    line-height: normal;
-    padding: 15px 23px 14px;
-    text-decoration: none;
-    top: 5px;
-    width: auto;
-    z-index: 100000; /* Above WP toolbar. */
-}
-
-
-
-.app-header .skip-link {
-    transform: translateY(-100%);
-    transition: transform 0.4s ease-in-out;
-}
-
-.app-header .skip-link:focus {
-    position: fixed!important;
-    background-color: #ffffff;
-    clip: auto !important;
-    display: block;
-    padding: 1em;
-    border-radius: 0;
-    text-align: center;
-    outline: none;
-    box-shadow: none;
-    text-decoration: none;
+// Class for creating an overlay.
+// Assumes parent container has relative or absolute positioning
+.taproot-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
     top: 0;
     left: 0;
-    transform: translateY(0px);
-    width: 100%;
-    z-index: 100000;
+    bottom: 0;
+    right: 0;
 }
 
-.admin-bar .app-header:not(.app-header--fixed) .skip-link:focus {
+// Padding Classes
+.pad {
 
-    @media (max-width: 782px) {
-        transform: translateY(46px);
+    &-l {
+        padding-left: 0.25em;
     }
 
-    @media (min-width: 783px) {
-        transform: translateY(32px);
+    &-r {
+        padding-right: 0.25em;
     }
 }
 
+// Margin Classes
+.push {
 
-.align-self--right {
-    align-self: flex-end;
+    &-l {
+        margin-left: 0.25em;
+    }
+
+    &-r {
+        margin-right: 0.25em;
+    }
 }
 
-.align-self--center {
-    align-self: center;
+// Flip Classes
+.flip {
+
+    &-h {
+        transform: scale(-1, 1);
+    }
+
+    &-v {
+        transform: scale(1, -1);
+    }
 }
 
-.pad-l {
-    padding-left: 0.25em;
-}
+// Rotation Classes
+.rotate {
 
-.pad-r {
-    padding-right: 0.25em;
-}
+    &-90 {
+        transform: rotate(90deg);
+    }
 
-.push-l {
-    margin-left: 0.25em;
-}
+    &-180 {
+        transform: rotate(180deg);
+    }
 
-.push-r {
-    margin-right: 0.25em;
-}
-
-.flip-h {
-    transform: scale(-1, 1);
-}
-
-.flip-v {
-    transform: scale(1, -1);
-}
-
-.rotate-90 {
-    transform: rotate(90deg);
-}
-
-.rotate-180 {
-    transform: rotate(180deg);
-}
-
-.rotate-270 {
-    transform: rotate(270deg);
+    &-270 {
+        transform: rotate(270deg);
+    }
 }

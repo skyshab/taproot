@@ -9,28 +9,66 @@
 /// @link   https://taproot-theme.com
 ////
 
-// Left alignment.
-.alignleft {
-	@media( min-width: 480px ) {
-		float:     left;
-		margin:    0 var( --typography--body--block-spacing ) var( --typography--body--block-spacing ) 0;
-		max-width: 50%;
-	}
+
+// Block level alignment
+.align {
+
+    @media( min-width: 480px ) {
+        &left {
+            float:     left;
+            margin:    0 var( --typography--body--block-spacing ) var( --typography--body--block-spacing ) 0;
+            max-width: 50%;
+        }
+        &right {
+            float:     right;
+            margin:    0 0 var( --typography--body--block-spacing ) var( --typography--body--block-spacing );
+            max-width: 50%;
+        }
+    }
+
+    &center {
+        margin-left:  auto;
+        margin-right: auto;
+        clear:        both;
+    }
 }
 
 
-// Right alignment.
-.alignright {
-	@media( min-width: 480px ) {
-		float:     right;
-		margin:    0 0 var( --typography--body--block-spacing ) var( --typography--body--block-spacing );
-		max-width: 50%;
-	}
+// Text alignment classes
+.has-text-align {
+    &-left {
+        text-align: left;
+    }
+    &-right {
+        text-align: right;
+    }
+    &-center {
+        text-align: center;
+    }
 }
 
-// Center alignment.
-.aligncenter {
-	margin-left:  auto;
-	margin-right: auto;
-	clear:        both;
+// Flex container alignment classes
+.has-flex-align {
+    &-left {
+        justify-content: flex-start;
+    }
+    &-right {
+        justify-content: flex-end;
+    }
+    &-center {
+        justify-content: center;
+    }
+}
+
+// Flex item alignment classes
+.align-self {
+    &--left {
+        align-self: flex-start;
+    }
+    &--right {
+        align-self: flex-end;
+    }
+    &--center {
+        align-self: center;
+    }
 }

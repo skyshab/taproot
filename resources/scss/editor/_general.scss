@@ -1,7 +1,7 @@
 ////
 /// Editor - General Styles
 ///
-/// These styles apply to all block types in the editor.
+/// General theme styles for the editor.
 ///
 /// @group  Styles
 /// @author Sky Shabatura <theme@sky.camp>
@@ -15,8 +15,17 @@ figure {
     margin-top: 0;
 }
 
-
 // featured image control
 .editor-post-featured-image .components-responsive-wrapper__content {
     width: 100%;
+}
+
+// theme icons
+.taproot-icon {
+    display: inline-block;
+    vertical-align: middle;
+    height: 1em;
+    width: 1em;
+    position: relative;
+    fill: currentColor;
 }
