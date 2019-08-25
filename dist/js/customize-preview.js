@@ -1900,13 +1900,13 @@ wp.customize('elements--buttons--border-width', function (value) {
   });
 }); // Border Radius
 
-wp.customize('elements--buttons--border-radius', function (value) {
+wp.customize('elements--buttons--is-rounded', function (value) {
   value.bind(function (to) {
     rootstrap.style({
-      id: 'elements--buttons--border-radius',
-      selector: '.taproot-button, .comment-respond__submit',
+      id: 'elements--buttons--is-rounded',
+      selector: '.taproot-button, .comment-respond__submit, .wp-block-button__link',
       styles: {
-        'border-radius': to
+        'border-radius': to ? '100px' : '0px'
       }
     });
   });
@@ -2600,6 +2600,82 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/customize-preview/panels/header/hero/preview.js":
+/*!**********************************************************************!*\
+  !*** ./resources/js/customize-preview/panels/header/hero/preview.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Customize controls preview scripts
+ *
+ * This file binds javascript actions to cutomize controls.
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2019 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ */
+// Header Image Height
+wp.customize('header--hero--height', function (value) {
+  value.bind(function (to) {
+    rootstrap.style({
+      id: 'header--hero--height',
+      selector: '.custom-header .app-header:not(.app-header--fixed)',
+      styles: {
+        "min-height": to
+      }
+    });
+  });
+}); // Header Image Height - Tablet
+
+wp.customize('header--hero--height--tablet', function (value) {
+  value.bind(function (to) {
+    rootstrap.style({
+      id: 'header--hero--height--tablet',
+      selector: '.custom-header .app-header:not(.app-header--fixed)',
+      styles: {
+        "min-height": to
+      },
+      screen: 'tablet-and-up'
+    });
+  });
+}); // Header Image Height - Desktop
+
+wp.customize('header--hero--height--desktop', function (value) {
+  value.bind(function (to) {
+    rootstrap.style({
+      id: 'header--hero--height--desktop',
+      selector: '.custom-header .app-header:not(.app-header--fixed)',
+      styles: {
+        "min-height": to
+      },
+      screen: 'desktop'
+    });
+  });
+}); // Hero Default Color
+
+wp.customize('header--hero--default-color', function (value) {
+  value.bind(function (to) {
+    rootstrap.customProperty({
+      name: 'header--hero--default-color',
+      value: to
+    });
+  });
+}); // Hero Default Color Hover
+
+wp.customize('header--hero--default-color--hover', function (value) {
+  value.bind(function (to) {
+    rootstrap.customProperty({
+      name: 'header--hero--link-color--hover',
+      value: to
+    });
+  });
+});
+
+/***/ }),
+
 /***/ "./resources/js/customize-preview/panels/header/image/preview.js":
 /*!***********************************************************************!*\
   !*** ./resources/js/customize-preview/panels/header/image/preview.js ***!
@@ -2617,40 +2693,18 @@ __webpack_require__.r(__webpack_exports__);
  * @copyright 2019 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
-// Header Image Height
-wp.customize('header--image--height', function (value) {
+// Header Image
+wp.customize('header_image', function (value) {
   value.bind(function (to) {
-    rootstrap.style({
-      id: 'header--image--height',
-      selector: '.custom-header .app-header:not(.app-header--fixed)',
-      styles: {
-        height: to
-      }
-    });
-  });
-}); // Header Image Max Height
+    var appHeader = document.querySelector('.home.blog .app-header');
 
-wp.customize('header--image--max-height', function (value) {
-  value.bind(function (to) {
-    rootstrap.style({
-      id: 'header--image--max-height',
-      selector: '.custom-header .app-header:not(.app-header--fixed)',
-      styles: {
-        'max-height': to
+    if (appHeader) {
+      if (to && 'remove-header' !== to) {
+        appHeader.classList.add('app-header--has-custom-header');
+      } else {
+        appHeader.classList.remove('app-header--has-custom-header');
       }
-    });
-  });
-}); // Header Image Min Height
-
-wp.customize('header--image--min-height', function (value) {
-  value.bind(function (to) {
-    rootstrap.style({
-      id: 'header--image--min-height',
-      selector: '.custom-header .app-header:not(.app-header--fixed)',
-      styles: {
-        'min-height': to
-      }
-    });
+    }
   });
 });
 
@@ -2669,8 +2723,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_preview_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_preview_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _styles_fixed_preview_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles-fixed/preview.js */ "./resources/js/customize-preview/panels/header/styles-fixed/preview.js");
 /* harmony import */ var _styles_fixed_preview_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_fixed_preview_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _image_preview_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./image/preview.js */ "./resources/js/customize-preview/panels/header/image/preview.js");
-/* harmony import */ var _image_preview_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_image_preview_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _hero_preview_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./hero/preview.js */ "./resources/js/customize-preview/panels/header/hero/preview.js");
+/* harmony import */ var _hero_preview_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_hero_preview_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _image_preview_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./image/preview.js */ "./resources/js/customize-preview/panels/header/image/preview.js");
+/* harmony import */ var _image_preview_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_image_preview_js__WEBPACK_IMPORTED_MODULE_3__);
 /**
  * Add customizer panel js.
  *
@@ -2682,6 +2738,7 @@ __webpack_require__.r(__webpack_exports__);
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
+
 
 
 
@@ -2715,6 +2772,24 @@ wp.customize('header--styles-fixed--background-color', function (value) {
         'background-color': to
       },
       screen: 'desktop'
+    });
+  });
+}); // Fixed Header Default Color
+
+wp.customize('header--styles-fixed--default-color', function (value) {
+  value.bind(function (to) {
+    rootstrap.customProperty({
+      name: 'header--fixed--default-color',
+      value: to
+    });
+  });
+}); // Fixed Header Default Color Hover
+
+wp.customize('header--styles-fixed--default-color--hover', function (value) {
+  value.bind(function (to) {
+    rootstrap.customProperty({
+      name: 'header--fixed--link-color--hover',
+      value: to
     });
   });
 });
@@ -2768,24 +2843,18 @@ wp.customize('header--styles--fullwidth', function (value) {
 
 wp.customize('header--styles--default-color', function (value) {
   value.bind(function (to) {
-    rootstrap.style({
-      id: 'header--styles--default-color',
-      selector: '.app-header__container',
-      styles: {
-        color: to
-      }
+    rootstrap.customProperty({
+      name: 'header--default-color',
+      value: to
     });
   });
 }); // Header Default Color Hover
 
 wp.customize('header--styles--default-color--hover', function (value) {
   value.bind(function (to) {
-    rootstrap.style({
-      id: 'header--styles--default-color--hover',
-      selector: '.app-header__container .label-toggle:hover',
-      styles: {
-        color: to
-      }
+    rootstrap.customProperty({
+      name: 'header--link-color--hover',
+      value: to
     });
   });
 }); // Header Padding
@@ -5198,7 +5267,7 @@ wp.customize('typography--body--font-family', function (value) {
   value.bind(function (to) {
     rootstrap.customProperty({
       name: 'typography--body--font-family',
-      value: to,
+      value: 'default' !== to ? to : '',
       screen: 'default'
     });
   });
@@ -6119,12 +6188,9 @@ var headingsSelector = 'h1, h2, h3, h4, h5, h6'; // Text Color
 
 wp.customize('typography--headings--text-color', function (value) {
   value.bind(function (to) {
-    rootstrap.style({
-      id: 'typography--headings--text-color',
-      selector: headingsSelector,
-      styles: {
-        'color': to
-      }
+    rootstrap.customProperty({
+      name: 'typography--headings--text-color',
+      value: to
     });
   });
 }); // Font Family

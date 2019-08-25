@@ -334,7 +334,13 @@ function () {
           obj.set('');
         });
 
-        _this.updateAlphaSlider(100, $alphaSlider);
+        _this.updateAlphaSlider(100, $alphaSlider); // Trigger a preview refresh. This is added because the previous color
+        // value is loaded in the customize preview via PHP and clearing doesn't
+        // have the desired effect. This is not the best way to handle things,
+        // but it works for now.
+
+
+        wp.customize.previewer.refresh();
       }); // Bind event handler for clicking on the 'Default' button
 
       $container.find('.button.wp-picker-default').on('click', function () {

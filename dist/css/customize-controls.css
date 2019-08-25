@@ -87,12 +87,17 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	padding: 10px;
 }
 
+.customize-control-alpha-color .has-alpha .wp-picker-container .iris-picker {
+	width: calc(100% - 2px) !important;
+}
+.customize-control-alpha-color .no-alpha .wp-picker-container .iris-picker {
+	width: 238px !important;
+}
 .customize-control-alpha-color .wp-picker-container {
 	margin: 0;
 	max-width: 100%;
 }
 .customize-control-alpha-color .wp-picker-container .iris-picker {
-	width: calc(100% - 2px) !important;
 	max-width: 275px;
 	height: 200px !important;
 	padding-bottom: 25px !important;
@@ -168,6 +173,9 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	box-shadow: none;
 }
 .customize-control-alpha-color .wp-picker-container .wp-color-result .wp-color-result-text {
+	display: inline-block;
+	width: 100%;
+	padding: 0;
 	background: rgba(0, 0, 0, 0.22);
 	color: white;
 	border-left: none;
@@ -175,8 +183,6 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 	text-transform: uppercase;
 	font-weight: 700;
 	border-radius: 0;
-	display: inline-block;
-	width: 100%;
 }
 .customize-control-alpha-color .wp-picker-input-wrap .button {
 	margin-left: 0;
