@@ -94,7 +94,7 @@ class Sidebar implements Bootable {
     public function display( $hierarchy ) {
 
         // if not a sidebar page, return empty array
-        if( 'full' ===  get_layout() )
+        if( 'full' === get_layout() )
             return [];
 
         // otherwise, carry on
