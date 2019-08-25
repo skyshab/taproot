@@ -77,7 +77,7 @@ class Editor implements Bootable {
             array( 'wp-plugins', 'wp-edit-post', 'wp-element', 'wp-components', 'wp-data', 'wp-editor' )
         );
 
-        wp_add_inline_script( 'taproot-editor-sidebar-js', $this->headerImageData() );
+        wp_add_inline_script( 'taproot-editor-sidebar-js', $this->editorData() );
 
     }
 
@@ -116,11 +116,36 @@ class Editor implements Bootable {
      * @since 1.3.0
      * @return string - Returns string
      */
-    public function headerImageData() {
-        $default_header_image = theme_mod('header_image');
-        if ( $default_header_image && 'remove-header' !== $default_header_image ) {
-            return sprintf('var taprootDefaultHeaderImage = "%s"', $default_header_image);
+    public function editorData() {
+
+        if( theme_mod('header--hero--default-color', true) ) {
+            $heroDefaultColor = theme_mod('header--hero--default-color', true);
         }
+        elseif( theme_mod('header--styles--default-color', true) ) {
+            $heroDefaultColor = theme_mod('header--styles--default-color', true);
+        }
+        else {
+            $heroDefaultColor = "#ffffff";
+        }
+
+
+        $header_image = theme_mod('header_image');
+        if ('remove-header' === $header_image ) {
+            $header_image = false;
+        }
+
+
+        $data = [
+            "headerImage" => $header_image,
+            "headerOverlayColor" => theme_mod('header--hero--overlay-color', true),
+            "headerOverlayOpacity" => theme_mod('header--hero--overlay-opacity', true),
+            "headerHeroDefaultColor" => $heroDefaultColor,
+            "headerHeroHoverColor" => theme_mod('header--hero--default-color--hover', true),
+        ];
+
+        $data = apply_filters('taproot/editor-data', $data);
+
+        return sprintf( 'var taprootEditorData = %s;', wp_json_encode($data) );
     }
 
 
@@ -155,6 +180,49 @@ class Editor implements Bootable {
             'single' => true,
             'type' => 'string',
         ]);
+
+        register_meta( 'post', 'taprooot_hero_overlay_type', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'string',
+        ]);
+
+        register_meta( 'post', 'taprooot_hero_overlay_color', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'string',
+        ]);
+
+        register_meta( 'post', 'taprooot_hero_overlay_color_name', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'string',
+        ]);
+
+        register_meta( 'post', 'taprooot_hero_overlay_opacity', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'number',
+        ]);
+
+        register_meta( 'post', 'taprooot_hero_default_color', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'string',
+        ]);
+
+        register_meta( 'post', 'taprooot_hero_default_hover_color', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'string',
+        ]);
+
+        register_meta( 'post', 'taprooot_hero_height', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'number',
+        ]);
+
     }
 
 }
