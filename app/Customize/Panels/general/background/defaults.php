@@ -14,4 +14,4 @@
 
 
 // Background Color
-$defaults->add( 'general--background--background-color', '#afafaf');
+// $defaults->add( 'general--background--background-color', '#afafaf');
