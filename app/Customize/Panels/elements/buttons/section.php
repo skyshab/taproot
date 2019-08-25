@@ -57,6 +57,19 @@ color( $manager, 'elements--buttons--color', [
 ]);
 
 
+// Setting: Enable Rounded Buttons
+$manager->add_setting( 'elements--buttons--is-rounded', [
+    'sanitize_callback' => 'taproot_sanitize_checkbox',
+    'transport' => 'postMessage',
+]);
+
+$manager->add_control( 'elements--buttons--is-rounded', [
+    'label'     => esc_html__( 'Use Rounded Corners', 'taproot' ),
+    'section'   => 'elements--buttons',
+    'type'      => 'checkbox'
+]);
+
+
 // Setting: Font size
 range( $manager, 'elements--buttons--font-size', [
     'section' => 'elements--buttons',
@@ -98,22 +111,6 @@ range( $manager, 'elements--buttons--border-width', [
     'atts'  => [
         'px' => [
             'max' => 10,
-            'default' => 0
-        ]
-    ]
-]);
-
-
-// Setting: Border Radius
-range( $manager, 'elements--buttons--border-radius', [
-    'section' => 'elements--buttons',
-    'label' => esc_html__('Border Radius', 'taproot'),
-    'atts'  => [
-        'em' => [
-            'max' => 3,
-            'default' => 0
-        ],
-        '%' => [
             'default' => 0
         ]
     ]

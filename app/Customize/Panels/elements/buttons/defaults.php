@@ -24,6 +24,3 @@ $defaults->add( 'elements--buttons--padding', '1.25em' );
 
 // Buttons border width
 $defaults->add( 'elements--buttons--border-width', '0px' );
-
-// Buttons border radius
-$defaults->add( 'elements--buttons--border-radius', '0%' );
