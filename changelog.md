@@ -1,5 +1,14 @@
 # Change Log
 
+= 1.4.0 =
+* 08/28/19
+* New - Added default hero image
+* New - Hero overlay
+* New - Single post theme settings improvements
+* New - Added new screenshot
+* Fix - Various bug fixes
+* General - Added fallback header and footer templates
+
 = 1.3.0 =
 * 06/18/19
 * Fix - Post Title not hiding
