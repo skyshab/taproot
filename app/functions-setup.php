@@ -182,8 +182,8 @@ add_action( 'after_setup_theme', function() {
 	add_theme_support( 'custom-header', [
 		'default-image'          => get_parent_theme_file_uri( '/dist/images/header.jpg' ),
 		'random-default'         => false,
-		'width'                  => 2000,
-		'height'                 => 1200,
+		'width'                  => 1920,
+		'height'                 => 1080,
 		'flex-height'            => true,
 		'flex-width'             => true,
 		'default-text-color'     => '',

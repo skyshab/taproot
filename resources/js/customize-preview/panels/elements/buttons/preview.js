@@ -116,7 +116,7 @@ wp.customize( 'elements--buttons--background-color', function( value ) {
             id: 'elements--buttons--font-family',
             selector: '.taproot-button, .comment-respond__submit',
             styles: {
-                'font-family': to,
+                'font-family': utils.getFontFamily(to),
             }
         });
     });

@@ -29,3 +29,10 @@ figure {
     position: relative;
     fill: currentColor;
 }
+
+
+// This fixes gutenberg plugin style issues with dropcaps.
+// This will likely be removed later
+.has-drop-cap:first-letter, .has-drop-cap:not(.is-selected):first-letter {
+    font-weight: 400;
+}

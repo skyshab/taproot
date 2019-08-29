@@ -133,11 +133,14 @@ class Editor implements Bootable {
         if ('remove-header' === $header_image ) {
             $header_image = false;
         }
+        elseif( ! $header_image ) {
+            $header_image = get_parent_theme_file_uri( '/dist/images/header.jpg');
+        }
 
 
         $data = [
             "headerImage" => $header_image,
-            "headerOverlayColor" => theme_mod('header--hero--overlay-color', true),
+            "headerOverlayColor" => get_theme_mod('header--hero--overlay-color', theme_mod('colors--theme--accent', true) ),
             "headerOverlayOpacity" => theme_mod('header--hero--overlay-opacity', true),
             "headerHeroDefaultColor" => $heroDefaultColor,
             "headerHeroHoverColor" => theme_mod('header--hero--default-color--hover', true),

@@ -2,7 +2,7 @@
  * Post Title Component
  *
  * This file handles the JavaScript for creating a select control
- * for post title options in the block editor theme sidebar panel. 
+ * for post title options in the block editor theme sidebar panel.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
@@ -13,7 +13,7 @@
 
 
 const { compose } = wp.compose;
-const { 
+const {
     withSelect,
     withDispatch
 } = wp.data;
@@ -41,9 +41,9 @@ export const PostTitleOptions = compose(
             value={ props.metaFieldValue }
             options={[
                 { label: __('Show in Content'), value: 'content' },
-                { label: __('Show in Custom Header'), value: 'header' },
+                { label: __('Show in Hero Area'), value: 'header' },
                 { label: __('Hide'), value: 'hide' }
-            ]}         
+            ]}
             onChange={ content => {
                 props.setMetaFieldValue(content)
             }} />

@@ -33,7 +33,7 @@ wp.customize( 'branding--tagline--font-family', function( value ) {
             id: 'branding--tagline--color',
             selector: '.app-header__description',
             styles: {
-                'font-family': to
+                'font-family': utils.getFontFamily(to)
             },
         });
     });

@@ -44,10 +44,11 @@ function get_overlay() {
     }
 
     $classnames = "taproot-overlay taproot-overlay--custom-header";
-    $overlay_color = theme_mod('header--hero--overlay-color');
-    $overlay_opacity = theme_mod('header--hero--overlay-opacity');
+    $overlay_color = get_theme_mod('header--hero--overlay-color', 'var(--colors--theme--accent)');
+    $overlay_opacity = theme_mod('header--hero--overlay-opacity', true);
     $classnames .= dimRatioToClass($overlay_opacity);
     $overlay_styles = '';
+
 
     if( is_singular() ) {
         $overlay_color_type =  get_post_meta( get_the_ID(), 'taprooot_hero_overlay_type', true );

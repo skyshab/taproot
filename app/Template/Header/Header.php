@@ -166,7 +166,8 @@ class Header implements Bootable {
      */
     public function hasCustomHeader() {
 
-        $custom_header = theme_mod('header_image', true);
+        $custom_header = get_theme_mod('header_image', true);
+
         if('remove-header' === $custom_header) {
             $custom_header = false;
         }
@@ -176,7 +177,7 @@ class Header implements Bootable {
 
 
     /**
-     * Filter for custom header overlay display
+     * Filter for custom header overlay color
      *
      *
      * @since 1.0.0
@@ -184,11 +185,6 @@ class Header implements Bootable {
      * @return string
      */
     public function hero_overlay_color( $value ) {
-
-        // Customizer uses this filter to get the current set image
-        if ( is_admin() ) {
-            return $value;
-        }
 
         // Default homepage
         if ( is_front_page() && is_home() ) {
@@ -221,11 +217,6 @@ class Header implements Bootable {
      * @return string
      */
     public function hero_overlay_opacity( $value ) {
-
-        // Customizer uses this filter to get the current set image
-        if ( is_admin() ) {
-            return $value;
-        }
 
         // Default homepage
         if ( is_front_page() && is_home() ) {

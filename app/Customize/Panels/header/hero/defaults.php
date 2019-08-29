@@ -13,13 +13,17 @@
  */
 
 
- // Default Header Image Height
- $defaults->add( 'header--hero--height', '300px' );
+// Default Overlay Opacity
+$defaults->add( 'header--hero--overlay-opacity', '50%' );
 
 
- // Default Header Image Height
- $defaults->add( 'header--hero--height--tablet', '56vw' );
+// Default Header Image Height
+$defaults->add( 'header--hero--height', '300px' );
 
 
- // Default Header Image Height
- $defaults->add( 'header--hero--height--desktop', '100vh' );
+// Default Header Image Height
+$defaults->add( 'header--hero--height--tablet', '56vw' );
+
+
+// Default Header Image Height
+$defaults->add( 'header--hero--height--desktop', '100vh' );

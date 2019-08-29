@@ -33,7 +33,7 @@ wp.customize( 'typography--h4--font-family', function( value ) {
             id: 'typography--h4--font-family',
             selector: 'h4',
             styles: {
-                'font-family': to
+                'font-family': utils.getFontFamily(to)
             }
         });
     });

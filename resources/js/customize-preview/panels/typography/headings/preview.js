@@ -32,7 +32,7 @@ wp.customize( 'typography--headings--font-family', function( value ) {
             id: 'typography--headings--font-family',
             selector: headingsSelector,
             styles: {
-                'font-family': to
+                'font-family': utils.getFontFamily(to)
             }
         });
     });

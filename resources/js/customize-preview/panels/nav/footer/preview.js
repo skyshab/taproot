@@ -73,7 +73,7 @@ wp.customize( 'nav--footer--font-family', function( value ) {
             id: 'nav--footer--font-family',
             selector: '.menu--footer__link',
             styles: {
-                'font-family': to
+                'font-family': utils.getFontFamily(to)
             }
         });
     });

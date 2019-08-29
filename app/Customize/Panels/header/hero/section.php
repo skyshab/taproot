@@ -60,7 +60,8 @@ $manager->add_section( 'header--hero', [
     color( $manager, 'header--hero--overlay-color', [
         'label'   => esc_html__( 'Overlay Color', 'taproot' ),
         'section' => 'header--hero',
-        'hide_alpha' => true
+        'hide_alpha' => true,
+        'default' => get_theme_mod('colors--theme--accent', '#00a0d1')
     ]);
 
 
