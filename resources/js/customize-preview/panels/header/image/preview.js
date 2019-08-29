@@ -10,41 +10,20 @@
  */
 
 
-// Header Image Height
-wp.customize( 'header--image--height', function( value ) {
+
+// Header Image
+wp.customize( 'header_image', function( value ) {
     value.bind( function( to ) {
-        rootstrap.style({
-            id: 'header--image--height',
-            selector: '.custom-header .app-header:not(.app-header--fixed)',
-            styles: {
-                height: to
+
+        let appHeader = document.querySelector('.home.blog .app-header')
+
+        if(appHeader) {
+            if(to && 'remove-header' !== to) {
+                appHeader.classList.add('app-header--has-custom-header');
             }
-        });
+            else {
+                appHeader.classList.remove('app-header--has-custom-header');
+            }
+        }
     });
 });
-
-// Header Image Max Height
-wp.customize( 'header--image--max-height', function( value ) {
-    value.bind( function( to ) {
-        rootstrap.style({
-            id: 'header--image--max-height',
-            selector: '.custom-header .app-header:not(.app-header--fixed)',
-            styles: {
-                'max-height': to
-            }
-        });
-    });
-})
-
-// Header Image Min Height
-wp.customize( 'header--image--min-height', function( value ) {
-    value.bind( function( to ) {
-        rootstrap.style({
-            id: 'header--image--min-height',
-            selector: '.custom-header .app-header:not(.app-header--fixed)',
-            styles: {
-                'min-height': to
-            }
-        });
-    });
-})

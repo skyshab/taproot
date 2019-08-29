@@ -23,6 +23,8 @@ use function Taproot\Template\render_author;
 use function wp_get_attachment_image_src as get_featured_url;
 use function get_post_thumbnail_id as featured_id;
 use function Taproot\Template\get_custom_header_type;
+use function Taproot\Template\dimRatioToClass;
+use function Taproot\Template\get_overlay;
 
 /**
  * Handles front end logic
@@ -44,6 +46,9 @@ class Header implements Bootable {
         add_filter( 'hybrid/attr/app-header/class', [ $this, 'header_classes' ], 10, 2 );
         add_filter( 'theme_mod_header_image', [ $this, 'custom_header' ], 100 );
         add_action( 'taproot/header/additional-content', [ $this, 'additional_content' ] );
+        add_filter( 'theme_mod_header--hero--overlay-color', [ $this, 'hero_overlay_color' ], 100 );
+        add_filter( 'theme_mod_header--hero--overlay-opacity', [ $this, 'hero_overlay_opacity' ], 100 );
+        add_filter( 'get_header_image_tag', [ $this, 'add_overlay' ], 100 );
     }
 
 
@@ -117,7 +122,8 @@ class Header implements Bootable {
      * @since 1.0.0
      * @return string
      */
-    public function custom_header( $value ) {
+    public function custom_header( $value = false ) {
+
 
         // Customizer uses this filter to get the current set image
         if ( is_admin() ) {
@@ -134,14 +140,17 @@ class Header implements Bootable {
 
             $header_image_type = get_custom_header_type();
 
-            if( 'featured' === $header_image_type ) {
-                return get_featured_url( featured_id( get_the_ID() ), 'full', false )[0];
+            if( 'none' === $header_image_type ) {
+                return false;
             }
-            elseif( 'default' === $header_image_type ) {
-                return ('remove-header' === $value) ? false : $value;
+            elseif( 'featured' === $header_image_type ) {
+                return get_featured_url( featured_id( get_the_ID() ), 'full', false )[0];
             }
             elseif( 'custom' === $header_image_type ) {
                 return get_post_meta( get_the_ID(), 'taproot_custom_header_image', true );
+            }
+            elseif( $value ) {
+                return $value;
             }
 
             return false;
@@ -157,39 +166,90 @@ class Header implements Bootable {
      */
     public function hasCustomHeader() {
 
+        $custom_header = get_theme_mod('header_image', true);
 
-        $default_custom_header = theme_mod('header_image');
-        if('remove-header' === $default_custom_header) {
-            $default_custom_header = false;
+        if('remove-header' === $custom_header) {
+            $custom_header = false;
         }
 
-        if( is_front_page() && is_home() ) {
+        return ($custom_header && '' !== $custom_header) ? true : false;
+    }
 
-            if($default_custom_header) {
-                return true;
-            }
-        }
-        elseif( is_singular() ) {
 
-            $header_image_type = get_custom_header_type();
+    /**
+     * Filter for custom header overlay color
+     *
+     *
+     * @since 1.0.0
+     * @param string
+     * @return string
+     */
+    public function hero_overlay_color( $value ) {
 
-            if( 'featured' === $header_image_type) {
-                return true;
-            }
-            elseif( 'default' === $header_image_type) {
-                if($default_custom_header) {
-                    return true;
-                }
-            }
-            elseif( 'custom' === $header_image_type) {
-                $post_custom_header = get_post_meta( get_the_ID(), 'taproot_custom_header_image', true );
-                if( $post_custom_header ) {
-                    return true;
-                }
-            }
+        // Default homepage
+        if ( is_front_page() && is_home() ) {
+            return $value;
         }
 
-        return false;
+        // Single posts pages and custom post types
+        if( is_singular() ) {
+            $post_id = get_the_ID();
+            $overlay_color_type =  get_post_meta( $post_id, 'taprooot_hero_overlay_type', true );
+
+            if('custom' === $overlay_color_type) {
+                return get_post_meta( $post_id, 'taprooot_hero_overlay_color', true );
+            }
+            elseif('none' === $overlay_color_type) {
+                return null;
+            }
+        }
+
+        return $value;
+    }
+
+
+    /**
+     * Filter for custom header overlay display
+     *
+     *
+     * @since 1.0.0
+     * @param string
+     * @return string
+     */
+    public function hero_overlay_opacity( $value ) {
+
+        // Default homepage
+        if ( is_front_page() && is_home() ) {
+            return $value;
+        }
+
+        // Single posts pages and custom post types
+        if( is_singular() ) {
+            $post_id = get_the_ID();
+            $overlay_color_type =  get_post_meta( $post_id, 'taprooot_hero_overlay_type', true );
+
+            if('custom' === $overlay_color_type) {
+                return get_post_meta( $post_id, 'taprooot_hero_overlay_opacity', true );
+            }
+            elseif('none' === $overlay_color_type) {
+                return null;
+            }
+        }
+
+        return $value;
+    }
+
+
+    /**
+     * Filter for custom header overlay display
+     *
+     *
+     * @since 1.0.0
+     * @param string
+     * @return string
+     */
+    public function add_overlay( $html ) {
+        return $html . get_overlay();
     }
 
 
@@ -207,8 +267,11 @@ class Header implements Bootable {
 
         $post_type = get_post_type( get_the_ID() );
 
-        $header_additional_content = render_title([
-            'class' => sprintf('additional-header-content__title additional-header-content__title--%s', $post_type)
+        // open container
+        $header_additional_content = '<div class="additional-header-content__container container">';
+
+        $header_additional_content .= render_title([
+            'class' => sprintf('additional-header-content__title additional-header-content__title--%s has-text-align-center', $post_type)
         ]);
 
         if( is_single() ) {
@@ -223,6 +286,9 @@ class Header implements Bootable {
                 ]);
             $header_additional_content .=  '</p>';
         }
+
+        //close container
+        $header_additional_content .=  '</div>';
 
         echo $header_additional_content;
     }

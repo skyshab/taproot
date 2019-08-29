@@ -60,3 +60,34 @@ $styles->custom_property([
     'name' => 'colors--theme--meta-dark',
     'value' => theme_mod( 'colors--theme--meta-dark' ),
 ]);
+
+
+// Color class: theme accent
+$styles->add([
+    'selector' => '.has-theme-accent-color',
+    'styles' => [ 'color' => theme_mod( 'colors--theme--accent', true ) ],
+]);
+
+// Color class: theme accent contrast
+$styles->add([
+    'selector' => '.has-theme-accent-contrast-color',
+    'styles' => [ 'color' => theme_mod( 'colors--theme--accent-contrast', true ) ],
+]);
+
+// Color class: theme meta light
+$styles->add([
+    'selector' => '.has-theme-meta-light-color',
+    'styles' => [ 'color' => theme_mod( 'colors--theme--meta-light', true ) ],
+]);
+
+// Color class: theme meta medium
+$styles->add([
+    'selector' => '.has-theme-meta-medium-color',
+    'styles' => [ 'color' => theme_mod( 'colors--theme--meta-medium', true ) ],
+]);
+
+// Color class: theme meta dark
+$styles->add([
+    'selector' => '.has-theme-meta-dark-color',
+    'styles' => [ 'color' => theme_mod( 'colors--theme--meta-dark', true ) ],
+]);

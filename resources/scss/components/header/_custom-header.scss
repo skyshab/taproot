@@ -43,6 +43,15 @@
 
 /* top nav, header container, additional header content, navbar*/
 .app-header--has-custom-header {
+
+    &:not(.app-header--fixed) {
+        color: var( --header--hero--default-color );
+        a:hover {
+            color: var( --header--hero--link-color--hover );
+        }
+    }
+
+    max-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
 

@@ -14,7 +14,6 @@
 namespace Taproot\Template\Breadcrumbs;
 
 use Hybrid\Contracts\Bootable;
-use Hybrid\Breadcrumbs\Trail as Trail;
 use function Taproot\Template\Icons\get as icon;
 use function Taproot\Customize\theme_mod;
 
@@ -37,7 +36,7 @@ class Breadcrumbs implements Bootable {
 	 */
 	public function boot() {
         add_filter( 'hybrid/breadcrumbs/trail', [ $this, 'breadcrumbs_home_icon' ] );
-        add_action( 'taproot/template/breadcrumbs', [ $this, 'render' ] );
+        add_filter( 'taproot/breadcrumbs/supported-post-types', [ $this, 'supported_post_types' ] );
     }
 
 
@@ -55,44 +54,22 @@ class Breadcrumbs implements Bootable {
 
 
     /**
-     * Get post types that support breadcrumbs
+     * Add post type support for breadcrumbs
      *
-     * @since 1.3.0
+     * @since 1.4.0
      * @return array
      */
-    public function supported_post_types() {
-
-        $supported_types = [];
+    public function supported_post_types($post_types) {
 
         if( theme_mod( 'posts--breadcrumbs--enable', true ) ) {
-            $supported_types[] = 'post';
+            $post_types[] = 'post';
         }
 
         if( theme_mod( 'pages--breadcrumbs--enable', true ) ) {
-            $supported_types[] = 'page';
+            $post_types[] = 'page';
         }
 
-        return apply_filters('taproot/breadcrumbs/supported-post-types', $supported_types );
-    }
-
-
-    /**
-     * Render breadcrumbs
-     *
-     * @since 1.0.0
-     * @param string    $html
-     * @return string
-     */
-    public function render( $args ) {
-
-        // check if breadcrumbs are enabled
-        if( !theme_mod( 'elements--breadcrumbs--enable', true ) ) return;
-
-        // check if current post type supports breadcrumbs
-        if( !in_array( get_post_type(), $this->supported_post_types() ) ) return;
-
-        // render the breadcrumbs
-        Trail::display();
+        return $post_types;
     }
 
 }

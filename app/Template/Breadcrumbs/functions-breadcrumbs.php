@@ -14,15 +14,67 @@
 
 namespace Taproot\Template;
 
+use Hybrid\Breadcrumbs\Trail as Breadcrumbs;
+use function Taproot\Customize\theme_mod;
+
 
 /**
- * Action for outputting breadcrumbs
+ * Get Breadcrumbs Markup
  *
- * @since  1.0.0
+ * @since  1.4.0
+ * @access public
+ * @param  array  $args
+ * @return string
+ */
+function get_the_breadcrumbs( $args = [] ) {
+
+    $args = wp_parse_args($args, [
+        'textColor' => false,
+        'customTextColor' => false,
+        'align' => theme_mod('elements--breadcrumbs--align'),
+        'showSeparators' => theme_mod('elements--breadcrumbs--has-separators'),
+    ]);
+
+    // not a good way to add the styles to the breadcrumbs container
+    // $styles = ( $args['customTextColor'] ) ? sprintf('color: %s', $args['customTextColor']) : '';
+
+    $classes = 'breadcrumbs';
+
+    if( $args['textColor'] ) {
+        $classes .= sprintf(' has-%s-color', $args['textColor']);
+    }
+
+    if( $args['align'] ) {
+        $classes .= sprintf(' has-flex-align-%s', $args['align']);
+    }
+
+    if( $args['showSeparators'] ) {
+        $classes .= ' has-separators';
+    }
+
+    return Breadcrumbs::render( ['post' => get_post(), 'container_class' => $classes] );
+}
+
+
+/**
+ * Print Breadcrumbs
+ *
+ * @since  1.4.0
  * @access public
  * @param  array  $args
  * @return void
  */
 function breadcrumbs( $args = [] ) {
-    do_action( 'taproot/template/breadcrumbs', $args );
+
+    // check if breadcrumbs are enabled
+    if( !theme_mod( 'elements--breadcrumbs--enable', true ) ) return;
+
+    // filter for supported post types
+    $supported_types = apply_filters('taproot/breadcrumbs/supported-post-types', [] );
+
+    // check if current post type supports breadcrumbs
+    if( !in_array( get_post_type(), $supported_types ) ) return;
+
+    // print the breadcrumbs
+    echo get_the_breadcrumbs( $args );
 }

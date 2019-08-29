@@ -1,0 +1,17 @@
+////
+/// Editor - Button Block Styles
+///
+/// These styles apply to the verse block only in the editor.
+///
+/// @group  Styles
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+.wp-block-group {
+
+	> *:not([class*=align]):not(.editor-inner-blocks) {
+        max-width: 100%;
+	}
+}

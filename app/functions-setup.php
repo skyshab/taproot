@@ -180,10 +180,10 @@ add_action( 'after_setup_theme', function() {
 add_action( 'after_setup_theme', function() {
 
 	add_theme_support( 'custom-header', [
-		'default-image'          => '',
+		'default-image'          => get_parent_theme_file_uri( '/dist/images/header.jpg' ),
 		'random-default'         => false,
-		'width'                  => 2000,
-		'height'                 => 1200,
+		'width'                  => 1920,
+		'height'                 => 1080,
 		'flex-height'            => true,
 		'flex-width'             => true,
 		'default-text-color'     => '',
@@ -194,7 +194,15 @@ add_action( 'after_setup_theme', function() {
 		'admin-preview-callback' => '',
 		'video'                  => false,
 		'video-active-callback'  => 'is_front_page'
-	] );
+    ] );
+
+	register_default_headers([
+		'default-image' => [
+			'url'           => '%s/dist/images/header.jpg',
+			'thumbnail_url' => '%s/dist/images/header.jpg',
+			'description'   => __( 'Default Header Image', 'taproot' ),
+        ],
+    ]);
 
 }, 15 );
 
@@ -216,4 +224,16 @@ add_filter( 'image_size_names_choose', function( $sizes ) {
         'full' => __( 'Full', 'taproot' ),
     ];
     return array_merge( $new_sizes, $sizes );
+});
+
+
+/**
+ * Clear the Rootstrap Customizer Cache after update
+ *
+ * @since  1.4.0
+ * @access public
+ * @return void
+ */
+add_action( 'upgrader_process_complete', function() {
+   remove_theme_mod( 'rootstrap-theme-mods' );
 });

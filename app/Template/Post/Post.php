@@ -15,7 +15,6 @@ namespace Taproot\Template\Post;
 
 use Hybrid\Contracts\Bootable;
 use function Taproot\Customize\theme_mod;
-use function Taproot\Template\get_custom_header_type;
 
 
 /**
@@ -38,8 +37,6 @@ class Post implements Bootable {
         add_filter( 'post_class', [ $this, 'entry_classes' ]  );
         add_filter( 'excerpt_more', [ $this, 'excerpt_more' ]  );
         add_filter( 'excerpt_length', [ $this, 'excerpt_length' ] );
-        add_filter( 'hybrid/view/entry/header/hierarchy', [ $this, 'post_header_display' ] );
-        add_filter( 'taproot/template/featured-image/display', [ $this, 'featured_image_display' ], 10, 2 );
     }
 
 
@@ -50,7 +47,11 @@ class Post implements Bootable {
      * @return void
      */
     public function entry_classes( $classes ) {
-        $classes[] = ( is_singular() ) ? 'entry--single' : 'entry--archive';
+
+        if( !is_singular() ) {
+            $classes[] = 'entry--archive';
+        }
+
         return $classes;
     }
 
@@ -88,44 +89,5 @@ class Post implements Bootable {
         return ( $custom_length ) ? $custom_length : $length;
     }
 
-
-
-    /**
-     * Post header display.
-     *
-     * Don't display post headers if we are showing them in the header.
-     *
-     * @since 1.0.0
-     * @param array
-     * @return array.
-     */
-    public function post_header_display( $hierarchy ) {
-        $display = get_post_meta( get_the_ID(), 'taproot_post_title_display', true );
-        if( 'header' === $display  || 'hide' === $display ) {
-            return [];
-        }
-
-        return $hierarchy;
-    }
-
-
-    /**
-     * Featured Image display.
-     *
-     * Don't display featured image if we are showing it in the header.
-     *
-     * @since 1.0.0
-     * @param array
-     * @return array.
-     */
-    public function featured_image_display( $display, $type ) {
-        if( is_singular() ) {
-
-            if( 'featured' === get_custom_header_type() && 'header' !== $type ) {
-                return false;
-            }
-        }
-        return true;
-    }
-
 }
+

@@ -17,12 +17,9 @@ const headingsSelector = 'h1, h2, h3, h4, h5, h6';
 // Text Color
 wp.customize( 'typography--headings--text-color', function( value ) {
     value.bind( function( to ) {
-        rootstrap.style({
-            id: 'typography--headings--text-color',
-            selector: headingsSelector,
-            styles: {
-                'color': to
-            }
+        rootstrap.customProperty({
+            name: 'typography--headings--text-color',
+            value: to
         });
     });
 });
@@ -35,7 +32,7 @@ wp.customize( 'typography--headings--font-family', function( value ) {
             id: 'typography--headings--font-family',
             selector: headingsSelector,
             styles: {
-                'font-family': to
+                'font-family': utils.getFontFamily(to)
             }
         });
     });

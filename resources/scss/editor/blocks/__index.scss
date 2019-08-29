@@ -9,16 +9,8 @@
 ////
 
 
-// import global block styles
-@import 'blocks';
-@import 'buttons';
-@import 'code';
-@import 'headings';
-@import 'media-text';
-@import 'post-title';
-@import 'pre';
-@import 'quotes';
-@import 'separator';
-@import 'table';
-@import 'verse';
+// import theme block styles
+@import 'theme/_index';
 
+// import plugin block styles
+@import 'plugin/_index';

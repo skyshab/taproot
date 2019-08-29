@@ -13,4 +13,5 @@
 
 import './styles/preview.js';
 import './styles-fixed/preview.js';
+import './hero/preview.js';
 import './image/preview.js';

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<ruleset name="Mythic Theme Coding Standards">
+
+	<!-- Use WPTRTCS: https://github.com/WPTRT/WPThemeReview. -->
+	<rule ref="WPThemeReview"/>
+
+	<!-- Exclude files and folders. -->
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <!-- <exclude-pattern>*/vendor/skyshab/rootstrap/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/vendor/bin/*</exclude-pattern>
+	<exclude-pattern>*/vendor/composer/*</exclude-pattern>
+	<exclude-pattern>*/vendor/dealerdirect/*</exclude-pattern>
+	<exclude-pattern>*/vendor/justintadlock/*</exclude-pattern>
+	<exclude-pattern>*/vendor/phpcompatibility/*</exclude-pattern>
+	<exclude-pattern>*/vendor/squizlabs/*</exclude-pattern>
+	<exclude-pattern>*/vendor/wp-coding-standards/*</exclude-pattern>
+	<exclude-pattern>*/vendor/wptrt/*</exclude-pattern> -->
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+
+	<!-- Only check the PHP files. -->
+	<arg name="extensions" value="php"/>
+
+	<!-- Check PHP version compatibility. -->
+	<rule ref="PHPCompatibilityWP"/>
+	<config name="testVersion" value="5.6-"/>
+
+	<!-- Set textdomains. -->
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="taproot"/>
+			</property>
+		</properties>
+	</rule>
+
+</ruleset>

@@ -65,6 +65,7 @@ class Color extends WP_Customize_Control {
 
 		// Support passing hide_alpha as string or boolean. Default to false
 		$hide_alpha = ( $this->hide_alpha && 'false' !== $this->hide_alpha ) ? 'true' : 'false';
+        $alpha_class = ($hide_alpha !== 'false' ) ? 'no-alpha' : 'has-alpha';
 
 		// Output the label if passed in
 		if ( isset( $this->label ) && '' !== $this->label ) {
@@ -76,7 +77,7 @@ class Color extends WP_Customize_Control {
 			echo '<span class="description customize-control-description">' . esc_html( $this->description ) . '</span>';
 		}
 		?>
-		<div class="customize-control-content">
+		<div class="customize-control-content <?php echo esc_attr($alpha_class) ?>">
 			<label>
 				<input class="alpha-color-control" type="text" data-hide-alpha="<?php echo esc_attr( $hide_alpha ); ?>" data-palette="<?php echo esc_attr( $palette ); ?>" data-default-color="<?php echo esc_attr( $this->settings['default']->default ); ?>" <?php $this->link(); ?>  />
 			</label>

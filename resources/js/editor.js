@@ -14,3 +14,4 @@
 
 
 import './editor/sidebar/index.js';
+import './editor/blocks/buttons/index.js';

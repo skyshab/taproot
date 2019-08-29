@@ -13,7 +13,9 @@
 
 import {LayoutPicker} from './LayoutPicker.js';
 import {PostTitleOptions} from './PostTitleOptions.js';
-import {HeaderImagePicker} from './HeaderImagePicker.js';
+import {HeroImage} from './HeroImage.js';
+import {HeroOverlay} from './HeroOverlay.js';
+import {HeroTextColors} from './HeroTextColors.js';
 
 
 ( wp => {
@@ -24,35 +26,9 @@ import {HeaderImagePicker} from './HeaderImagePicker.js';
     } = wp.editPost;
     const { registerPlugin } = wp.plugins;
     const { Fragment } = wp.element;
-    const { PanelBody } = wp.components;
+    const { Panel, PanelBody } = wp.components;
     const { __ } = wp.i18n;
     const {PostTypeSupportCheck } = wp.editor;
-    const {applyFilters, addFilter, doAction} = wp.hooks;
-
-
-    addFilter( 'taproot.plugin.hook', 'skyshab/taproot/layout', function(components){
-        return ([
-            components,
-            <LayoutPicker fieldName='taproot_page_layout' />,
-        ])
-    }, 10);
-
-    addFilter( 'taproot.plugin.hook', 'skyshab/taproot/postTitle', function(components){
-        return ([
-            components,
-            <PostTitleOptions fieldName='taproot_post_title_display' />,
-        ])
-    }, 20);
-
-    addFilter( 'taproot.plugin.hook', 'skyshab/taproot/customHeader', function(components){
-        return ([
-            components,
-            <HeaderImagePicker fieldName='taproot_custom_header_image' />
-        ])
-    }, 30);
-
-
-    doAction('taproot.plugin.defaultsLoaded');
 
 
     // register our sidebar panel
@@ -70,10 +46,24 @@ import {HeaderImagePicker} from './HeaderImagePicker.js';
                             name="taproot-theme-sidebar"
                             className="taproot-theme-sidebar"
                             icon="carrot"
-                            title={ __( 'Taproot Page Settings' ) } >
-                            <PanelBody>
-                                { applyFilters('taproot.plugin.hook') }
-                            </PanelBody>
+                            title={ __( 'Taproot Page Settings' ) }
+                        >
+                            <Panel>
+                                <PanelBody title={ __( 'Layout' ) } initialOpen={ false } >
+                                    <LayoutPicker fieldName='taproot_page_layout' />
+                                </PanelBody>
+
+                                <PanelBody title={ __( 'Post Title' ) } initialOpen={ false } >
+                                    <PostTitleOptions fieldName='taproot_post_title_display' />
+                                </PanelBody>
+
+                                <PanelBody title={ __( 'Hero Area' ) } initialOpen={ false } >
+                                    <HeroImage/>
+                                    <HeroOverlay/>
+                                    <HeroTextColors/>
+                                </PanelBody>
+                            </Panel>
+
                         </PluginSidebar>
                     </Fragment>
                 </PostTypeSupportCheck>

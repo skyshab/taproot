@@ -19,8 +19,26 @@ use function Taproot\Customize\theme_mod;
 $styles->add([
     'selector' => '.taproot-button:hover, .comment-respond__submit:hover',
     'styles' => [
-        'color'             =>  theme_mod( 'elements--buttons-hover--color' ),
-        'background-color'  =>  theme_mod( 'elements--buttons-hover--background-color' ),
-        'border-color'      =>  theme_mod( 'elements--buttons-hover--border-color' ),
+        'color' =>  theme_mod( 'elements--buttons-hover--color' ),
+        'background-color' =>  theme_mod( 'elements--buttons-hover--background-color' ),
+        'border-color' =>  theme_mod( 'elements--buttons-hover--border-color' ),
     ]
 ]);
+
+
+// Button Block Hover Styles
+$styles->add([
+    'selector' => '.wp-block-button__link:not(.has-background):hover',
+    'styles' => [
+        'background-color' =>  theme_mod( 'elements--buttons-hover--background-color' ),
+    ]
+]);
+
+$styles->add([
+    'selector' => '.wp-block-button__link:not(.has-text-color):hover',
+    'styles' => [
+        'color' =>  theme_mod( 'elements--buttons-hover--color' ),
+    ]
+]);
+
+

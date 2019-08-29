@@ -26,7 +26,7 @@ wp.customize( 'typography--body--font-family', function( value ) {
     value.bind( function( to ) {
         rootstrap.customProperty({
             name: 'typography--body--font-family',
-            value: to,
+            value: ('default' !== to) ? to : '',
             screen: 'default'
         });
     });

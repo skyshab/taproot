@@ -10,18 +10,12 @@
 	</div>
 
 	<footer class="entry__footer entry__footer--single">
-        <p class="entry__footer__taxonomies">
-		    <?php Hybrid\Post\display_terms([ 
-                'taxonomy' => 'category', 
-                'before' => sprintf( '<span class="entry-term-group"><span class="entry-term-before">%s: </span>', __( 'Categories', 'taproot' ) ),
-                'after' => '</span>'
-            ]) ?>
-		    <?php Hybrid\Post\display_terms([ 
-                'taxonomy' => 'post_tag', 
-                'before' => sprintf( '<span class="entry-term-group"><span class="entry-term-before">%s: </span>', __( 'Tags', 'taproot' ) ),
-                'after' => '</span>'
-            ]) ?>        
-        </p>
+        <?php Hybrid\View\display( 'partials/post-meta', 'post', [
+            'author' => false,
+            'date' => false,
+            'taxonomies' => ['category', 'post_tag'],
+            'className' => 'taproot-meta entry__footer__taxonomies',
+        ]); ?>
         <?php Hybrid\View\display( 'nav/postnav' ) ?>
 	</footer>
 

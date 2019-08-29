@@ -17,33 +17,46 @@ namespace Taproot\Template;
 use function Taproot\Customize\theme_mod;
 
 
+
 /**
- * Output Archive Link
+ * Output Entry Link
  *
  * @since  1.0.0
  * @access public
  * @return void
  */
-function archive_link() {
+function entry_link( array $args = [] ) {
 
-    $link_style = theme_mod( 'blog--archive-link--style', true );
+    $defaults = [
+        'class'  => 'entry__link',
+        'text'   => theme_mod( 'blog--archive-link--text', true ),
+        'button' => ('button' === theme_mod( 'blog--archive-link--style', true ) ) ? true : false,
+        'position' => theme_mod( 'blog--archive-link--position', true ),
+    ];
 
-    if( theme_mod('taproot_post_show_all') || 'inline' === $link_style || 'none' === $link_style )
-        return false;
+    $args = wp_parse_args( $args, $defaults);
 
-    $link_text = theme_mod( 'blog--archive-link--text', true );
-    $link_position = theme_mod( 'blog--archive-link--position', true );
-    $link_class = ( 'button' === $link_style ) ? 'taproot-button ' : '';
-    $link_class .= ( 'right' === $link_position ) ? 'align-self--right ' : '';
-    $link_class .= 'entry__link';
+    $link_class = $args['class'];
+
+    if( $args['button'] ) {
+        $link_class .= ' taproot-button';
+    }
+
+    if( $args['position'] && 'right' === $args['position'] ) {
+        $link_class .= ' align-self--right';
+    }
+    else {
+        $link_class .= ' align-self--left';
+    }
 
     printf( '<a href="%s" class="%s"><span class="visuallyhidden">%s</span>%s</a>',
         esc_url( get_permalink() ),
         esc_attr( $link_class ),
         esc_html( get_the_title() ),
-        esc_html( $link_text )
+        esc_html( $args['text'] )
     );
 }
+
 
 
 /**
@@ -66,87 +79,4 @@ function blog_title() {
 
     // echol filtered blog title content
     echo wp_kses( theme_mod( 'blog--title--title', true ), $allowed );
-}
-
-
-/**
- * Outputs the post author HTML.
- *
- * @since  1.0.0
- * @access public
- * @param  array  $args
- * @return void
- */
-function display_author( array $args = [] ) {
-    echo render_author( $args );
-}
-
-
-/**
- * Returns the post author HTML.
- *
- * @since  1.0.0
- * @param  array  $args
- * @return string
- */
-function render_author( array $args = [] ) {
-
-    $args = wp_parse_args( $args, [
-        'text'   => '%s',
-        'class'  => 'entry__author',
-        'before' => '',
-        'after'  => ''
-    ]);
-
-    global $post;
-    $author_id = $post->post_author;
-    $display_name = get_the_author_meta('display_name', $author_id);
-    $url = get_author_posts_url( $author_id );
-
-    $html = sprintf(
-        '<a class="%s" href="%s">%s</a>',
-        esc_attr( $args['class'] ),
-        esc_url( $url ),
-        sprintf( $args['text'], $display_name )
-    );
-
-    return apply_filters(
-        'taproot/template/author',
-        $args['before'] . $html . $args['after']
-    );
-}
-
-
-/**
- * Displays the featured image.
- *
- * @since  1.0.0
- * @param  array   $args
- * @param  string  $type
- * @return void
- */
-function featured_image( $args = [], $type = '' ) {
-
-    if( !apply_filters( 'taproot/template/featured-image/display', true, $type ) ) return;
-    $post_id = get_the_ID();
-    $args = wp_parse_args( $args, [
-        'size' => 'full',
-        'link' => false,
-        'class' => ''
-    ]);
-
-    if ( has_post_thumbnail( $post_id ) ) {
-
-        $html = '';
-        if( $args['link'] ) {
-            $html .= '<a href="' . get_permalink( $post_id ) . '" title="' . get_the_title() . '">';
-        }
-
-        $html .= get_the_post_thumbnail( $post_id, $args['size'], array( 'class' => $args['class'] ) );
-
-        if( $args['link'] ) {
-            $html .= '</a>';
-        }
-        echo $html;
-    }
 }

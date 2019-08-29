@@ -23,3 +23,25 @@ wp.customize( 'header--styles-fixed--background-color', function( value ) {
         });
     });
 });
+
+
+// Fixed Header Default Color
+wp.customize( 'header--styles-fixed--default-color', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.customProperty({
+            name: 'header--fixed--default-color',
+            value: to
+        });
+    });
+});
+
+
+// Fixed Header Default Color Hover
+wp.customize( 'header--styles-fixed--default-color--hover', function( value ) {
+    value.bind( function( to ) {
+        rootstrap.customProperty({
+            name: 'header--fixed--link-color--hover',
+            value: to
+        });
+    });
+});

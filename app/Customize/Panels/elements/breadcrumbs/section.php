@@ -85,6 +85,19 @@ $manager->add_control( 'elements--breadcrumbs--home-icon', [
 ]);
 
 
+// Setting: Enable Breadcrumb Separators
+$manager->add_setting( 'elements--breadcrumbs--has-separators', [
+    'sanitize_callback' => 'taproot_sanitize_checkbox',
+    'transport' => 'refresh',
+]);
+
+$manager->add_control( 'elements--breadcrumbs--has-separators', [
+    'label'     => esc_html__( 'Use Separators', 'taproot' ),
+    'section'   => 'elements--breadcrumbs',
+    'type'      => 'checkbox'
+]);
+
+
 // Color Setting: Text Color
 color( $manager, 'elements--breadcrumbs--color', [
     'label'   => esc_html__( 'Text Color', 'taproot' ),

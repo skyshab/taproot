@@ -8,17 +8,23 @@
 
 .customize-control-alpha-color {
 
+    .has-alpha .wp-picker-container .iris-picker {
+        width: calc(100% - 2px)!important;
+    }
+
+    .no-alpha .wp-picker-container .iris-picker {
+        width: 238px!important;
+    }
+
     .wp-picker-container {
 
-        margin: 0; 
+        margin: 0;
         max-width: 100%;
 
         .iris-picker {
-
-            width: calc(100% - 2px)!important;
             max-width: 275px;
             height: 200px!important;
-            padding-bottom: 25px!important;    
+            padding-bottom: 25px!important;
             margin-top: 12px;
 
 
@@ -36,13 +42,13 @@
                     border-radius: 0!important;
                     border-color: rgba(0, 0, 0, 0.2)!important;
                     box-shadow: none;
-                
+
                     &:before {
                         border-radius: 0;
                     }
                 }
-            }        
-                      
+            }
+
             .iris-palette-container {
                 width: 100%;
                 display: flex;
@@ -55,27 +61,27 @@
                 height: 20px!important;
                 float: none;
                 margin: 0 5px 0 0!important;
-            }            
+            }
         }
 
         .iris-square {
             height: 175px!important;
-            margin-right: 10px!important;        
-        }     
-        
+            margin-right: 10px!important;
+        }
+
         .iris-square-value:focus {
             box-shadow: none;
         }
-        
+
         .iris-picker .iris-palette, .iris-square-inner, .iris-slider, .alpha-color-picker-wrapper, .alpha-color-picker-wrapper .transparency {
             box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1)!important;
             border-radius: 0!important;
-        }                       
+        }
 
         input[type=text] {
             padding: 8px 10px;
         }
-          
+
         .wp-color-result {
 
             height: 36px;
@@ -86,21 +92,20 @@
             border: none;
             border-radius: 0;
             background: white;
-        
             &.wp-picker-open {
 
                 margin-bottom: 12px;
 
                 ~ .wp-picker-holder .alpha-color-picker-wrapper {
                     display: block;
-                }   
-                
+                }
+
                 + .wp-picker-input-wrap {
                     width: 100%;
                     max-width: 275px;
                     display: flex;
-                    justify-content: space-between;      
-                }                
+                    justify-content: space-between;
+                }
             }
 
             &:active, &:focus {
@@ -110,6 +115,9 @@
             }
 
             .wp-color-result-text {
+                display: inline-block;
+                width: 100%;
+                padding: 0;
                 background: rgba(0, 0, 0, 0.22);
                 color: white;
                 border-left: none;
@@ -117,11 +125,9 @@
                 text-transform: uppercase;
                 font-weight: 700;
                 border-radius: 0;
-                display: inline-block;
-                width: 100%;                
             }
         }
-        
+
     }
 
     .wp-picker-input-wrap {
@@ -159,14 +165,14 @@
         position: relative;
         margin: 0;
         float: left;
-        margin-left: 10px;	
+        margin-left: 10px;
 
         .ui-widget-content,
         .ui-widget-header,
         .ui-state-focus {
             background: transparent;
             border: none;
-        }        
+        }
 
         .ui-slider {
             position: relative;
@@ -178,7 +184,7 @@
 
         .ui-slider-handle {
             transform: translateY(50%);
-        }        
+        }
 
         .ui-slider-handle, .ui-state-default {
             height: 18px;
@@ -199,7 +205,7 @@
             text-decoration: none;
             cursor: ns-resize;
         }
-                        
+
         .transparency {
             position: absolute;
             top: 0;
@@ -215,5 +221,5 @@
             margin: 0;
             padding: 0;
         }
-    }    
+    }
 }

@@ -68,13 +68,13 @@ wp.customize( 'elements--buttons--background-color', function( value ) {
 
 
  // Border Radius
- wp.customize( 'elements--buttons--border-radius', function( value ) {
+ wp.customize( 'elements--buttons--is-rounded', function( value ) {
     value.bind( function( to ) {
         rootstrap.style({
-            id: 'elements--buttons--border-radius',
-            selector: '.taproot-button, .comment-respond__submit',
+            id: 'elements--buttons--is-rounded',
+            selector: '.taproot-button, .comment-respond__submit, .wp-block-button__link',
             styles: {
-                'border-radius': to,
+                'border-radius': (to) ? '100px' : '0px',
             }
         });
     });
@@ -116,7 +116,7 @@ wp.customize( 'elements--buttons--background-color', function( value ) {
             id: 'elements--buttons--font-family',
             selector: '.taproot-button, .comment-respond__submit',
             styles: {
-                'font-family': to,
+                'font-family': utils.getFontFamily(to),
             }
         });
     });

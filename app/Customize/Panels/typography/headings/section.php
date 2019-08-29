@@ -35,20 +35,20 @@ $manager->add_section( 'typography--headings', [
 
 
 // Text Color
-color( $manager, 'typography--text-color', [
+color( $manager, 'typography--headings--text-color', [
     'label'   => esc_html__( 'Text Color', 'taproot' ),
     'section' => 'typography--headings',
 ]);
 
 
 // Font Family
-$manager->add_setting( 'typography--font-family', [
+$manager->add_setting( 'typography--headings--font-family', [
     'sanitize_callback' => 'sanitize_text_field',
     'transport' => 'postMessage',
     'default' => 'default'
 ]);
 
-$manager->add_control( 'typography--font-family', [
+$manager->add_control( 'typography--headings--font-family', [
     'type' => 'select',
     'section' => 'typography--headings',
     'label' => esc_html__( 'Font Family', 'taproot' ),
@@ -57,11 +57,11 @@ $manager->add_control( 'typography--font-family', [
 
 
 // Font Styles
-$manager->add_setting( 'typography--font-styles', [
+$manager->add_setting( 'typography--headings--font-styles', [
     'transport' => 'postMessage'
 ]);
 
-$manager->add_control( new Font_Styles( $manager, 'typography--font-styles', [
+$manager->add_control( new Font_Styles( $manager, 'typography--headings--font-styles', [
     'section'   => 'typography--headings',
     'label'     => esc_html__( 'Heading Font Styles', 'taproot' ),
 ]));

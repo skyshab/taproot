@@ -63,7 +63,7 @@ wp.customize( 'nav--header-fixed--font-family', function( value ) {
             id: 'nav--header-fixed--font-family',
             selector: '.app-header--fixed .menu--header__link',
             styles: {
-                'font-family': to
+                'font-family': utils.getFontFamily(to)
             },
             screen: 'desktop'
         });

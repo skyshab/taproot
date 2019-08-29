@@ -34,7 +34,25 @@ export function taprootFontStyles( value ) {
     }
 
     return styles;
-};
+}
+
+
+// Get font family
+// Adds quotes if needed.
+// Checks if "default" is set, and returns unset if so
+export function getFontFamily( font ) {
+
+    if( 'default' === font || !font ) {
+        return 'unset';
+    }
+    else if( font.includes('"') ) {
+        return font;
+    }
+    else {
+        return '"' + font + '"';
+    }
+}
+
 
 
 // Get mobile screen from setting value

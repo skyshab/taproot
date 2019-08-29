@@ -12,6 +12,7 @@
  * @link      https://taproot-theme.com
  */
 
+
 # ------------------------------------------------------------------------------
 # Create a new application.
 # ------------------------------------------------------------------------------
@@ -21,6 +22,7 @@
 # after the application has booted.
 
 $taproot = new \Hybrid\Core\Application();
+
 
 # ------------------------------------------------------------------------------
 # Register service providers with the application.
@@ -54,6 +56,5 @@ do_action( 'taproot/bootstrap', $taproot );
 #
 # Calls the application `boot()` method, which launches the application. Pat
 # yourself on the back for a job well done.
-
 
 $taproot->boot();

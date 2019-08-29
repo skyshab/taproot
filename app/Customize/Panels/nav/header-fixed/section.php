@@ -144,7 +144,7 @@ range( $manager, 'nav--header-fixed--padding', [
 $manager->add_setting( 'nav--header-fixed--align', [
     'sanitize_callback' => 'sanitize_text_field',
     'transport' => 'postMessage',
-    'default' => 'center'
+    'default' => 'flex-end'
 ]);
 
 $manager->add_control( 'nav--header-fixed--align', [

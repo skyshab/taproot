@@ -24,6 +24,7 @@ use function Taproot\Customize\range_atts;
 $manager->add_section( 'header--styles-fixed', [
     'title' => esc_html__( 'Header Styles Fixed', 'taproot' ),
     'panel' => 'header',
+    'priority' => 110
 ]);
 
 
@@ -78,7 +79,7 @@ color( $manager, 'header--styles-fixed--default-color', [
 
 
 // Color Setting: Default Color: Hover
-color( $manager, 'header--styles-fixed--default-color-hover', [
+color( $manager, 'header--styles-fixed--default-color--hover', [
     'label'   => esc_html__( 'Header Default Color: Hover', 'taproot' ),
     'section' => 'header--styles-fixed',
 ]);

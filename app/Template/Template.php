@@ -57,6 +57,7 @@ class Template implements Bootable {
             'Breadcrumbs',
             'Footer',
             'Post',
+            'Singular',
             'Search'
         ]);
     }
@@ -78,6 +79,7 @@ class Template implements Bootable {
             'Utilities/functions-utilities',
             'Icons/functions-icons',
             'Post/functions-post',
+            'Singular/functions-singular',
             'Header/functions-header',
             'Branding/functions-branding',
             'Footer/functions-footer',
@@ -113,8 +115,18 @@ class Template implements Bootable {
      * @return void
      */
     public function register( $templates ) {
-        $templates->add('page-builder.php', ['label' => __('Page Builder', 'taproot')]);
-        $templates->add('blank.php', ['label' => __('Blank Template', 'taproot')]);
+        $templates->add('templates/page-builder.php', ['label' => __('Page Builder', 'taproot')]);
+        $templates->add('templates/blank.php', ['label' => __('Blank Template', 'taproot')]);
+        $templates->add('templates/blocks.php', ['label' => __('Block Editor Template', 'taproot')]);
+    }
+
+    // testing page template defaults - remove before release
+   public function set_default_page_template( $data, $post ) {
+        if ( 0 != count( get_page_templates( $post ) ) && get_option( 'page_for_posts' ) != $post->ID && '' == $data->data['template'] ) :
+            $data->data['template'] = 'templates/blank.php';
+        endif;
+
+        return $data;
     }
 
 }

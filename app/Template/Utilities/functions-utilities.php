@@ -75,7 +75,14 @@ function get_layout() {
 function get_custom_header_type() {
 
     if( is_singular() ) {
-        return get_post_meta( get_the_ID(), 'taproot_custom_header_image_type', true );
+
+        $post_header_type = get_post_meta( get_the_ID(), 'taproot_custom_header_image_type', true );
+
+        if($post_header_type && '' !== $post_header_type) {
+            return $post_header_type;
+        }
+
+        return 'none';
     }
 
     return false;

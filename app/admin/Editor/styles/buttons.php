@@ -30,7 +30,7 @@ $styles->add([
         'background-color'  =>  theme_mod( 'elements--buttons--background-color', theme_mod( 'colors--theme--accent', true ) ),
         'border-color'      =>  theme_mod( 'elements--buttons--border-color' ),
         'border-width'      =>  theme_mod( 'elements--buttons--border-width' ),
-        'border-radius'     =>  theme_mod( 'elements--buttons--border-radius' ),
+        'border-radius'     =>  ( theme_mod( 'elements--buttons--is-rounded' ) ) ? '100px' : '0px',
         'font-family'       =>  get_font_family( theme_mod( 'elements--buttons--font-family' ) ),
         'font-size'         =>  theme_mod( 'elements--buttons--font-size', true ),
         'padding-left'      =>  theme_mod( 'elements--buttons--padding', true ),
@@ -58,13 +58,18 @@ $styles->add([
 
 
 // Button Hover Styles
-// removing this until we figure out how to add hover styles to the block editor buttons
-// $styles->add([
-//     'selector' => '.editor-styles-wrapper .wp-block-button .wp-block-button__link:hover, .editor-styles-wrapper .taproot-button:hover',
-//     'styles' => [
-//         'color'             =>  theme_mod( 'elements--buttons-hover--color' ),
-//         'background-color'  =>  theme_mod( 'elements--buttons-hover--background-color' ),
-//         'border-color'      =>  theme_mod( 'elements--buttons-hover--border-color' ),
-//     ]
-// ]);
+
+$styles->add([
+    'selector' => '.wp-block-button__link:not(.has-background-color):hover',
+    'styles' => [
+        'background-color' =>  theme_mod( 'elements--buttons-hover--background-color' ),
+    ]
+]);
+
+$styles->add([
+    'selector' => '.wp-block-button__link:not(.has-text-color):hover',
+    'styles' => [
+        'color' =>  theme_mod( 'elements--buttons-hover--color' ),
+    ]
+]);
 

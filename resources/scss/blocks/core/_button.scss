@@ -46,3 +46,27 @@
         text-decoration: none;
     }
 }
+
+// Button Style Overrides
+.wp-block-button {
+
+    &.is-style-squared .wp-block-button__link {
+        border-radius: 0;
+    }
+
+    &.is-style-rounded .wp-block-button__link {
+        border-radius: 100px;
+    }
+
+    &.is-style-squared, &.is-style-rounded {
+        .wp-block-button__link {
+            border-width: 0;
+
+            &.has-background:hover {
+                box-shadow: inset 0 0 0 99em rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+
+}
+

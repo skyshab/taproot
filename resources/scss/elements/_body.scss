@@ -10,7 +10,7 @@
 body {
     overflow-x: hidden;
     color: var( --typography--body--text-color );
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    font-family: var( --typography--body--font-family );
 
     // prevent top and bottom elastic scrolling in Chrome.
     // This does not work yet in Safari

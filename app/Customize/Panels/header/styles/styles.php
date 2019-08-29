@@ -36,22 +36,35 @@ $styles->add([
 ]);
 
 
-// Default Color
-$styles->add([
-    'selector' => '.app-header__container, .menu--header__link:link, .menu--header__link:visited',
-    'styles' => [
-        'color' => theme_mod( 'header--styles--default-color' ),
-    ],
-]);
+// // Default Color
+// $styles->add([
+//     'selector' => '.app-header, .menu--header__link:link, .menu--header__link:visited',
+//     'styles' => [
+//         'color' => theme_mod( 'header--styles--default-color' ),
+//     ],
+// ]);
+
+// // Default Color Hover
+// $styles->add([
+//     'selector' => '.app-header__container .label-toggle:hover, .menu--header__link:hover',
+//     'styles' => [
+//         'color' => theme_mod( 'header--styles--default-color--hover' ),
+//     ],
+// ]);
 
 
-// Default Color Hover
-$styles->add([
-    'selector' => '.app-header__container .label-toggle:hover, .menu--header__link:hover',
-    'styles' => [
-        'color' => theme_mod( 'header--styles--default-color--hover' ),
-    ],
+// Custom Property: Default Header Color
+$styles->custom_property([
+    'name' => 'header--default-color',
+    'value' => theme_mod( 'header--styles--default-color' ),
 ]);
+
+// Custom Property: Default Header Link Hover Color
+$styles->custom_property([
+    'name' => 'header--link-color--hover',
+    'value' => theme_mod( 'header--styles--default-color--hover' ),
+]);
+
 
 
 // Var: Padding
