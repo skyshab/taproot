@@ -148,7 +148,7 @@ class AlphaColor {
         const alphaVal = this.getAlpha( startingColor ) / 100;
 
         // Insert our opacity slider
-        $( '<div class="alpha-color-picker-wrapper">' +
+        jQuery( '<div class="alpha-color-picker-wrapper">' +
                 '<div class="alpha-slider"></div>' +
                 '<div class="transparency"></div>' +
             '</div>' ).appendTo( container.find( '.iris-picker-inner' ) );
@@ -157,9 +157,9 @@ class AlphaColor {
         container.find( '.alpha-slider' ).slider({
             orientation: 'vertical',
             create: function() {
-                var value = $( this ).slider( 'value' );
-                $( this ).find( '.ui-slider-handle' ).text( Math.round(value * 100) );
-                $( this ).siblings( '.transparency ').css( 'background-color', colorObject.toString( 'no-alpha' ) );
+                var value = jQuery( this ).slider( 'value' );
+                jQuery( this ).find( '.ui-slider-handle' ).text( Math.round(value * 100) );
+                jQuery( this ).siblings( '.transparency ').css( 'background-color', colorObject.toString( 'no-alpha' ) );
             },
             value: alphaVal,
             range: 'max',
@@ -182,7 +182,7 @@ class AlphaColor {
 		// Bind event handler for clicking on a palette color
 		$container.find( '.iris-palette' ).on( 'click', (e) => {
 
-			var color = $( e.target ).css( 'background-color' );
+			var color = jQuery( e.target ).css( 'background-color' );
 			const alpha = this.getAlpha( color );
 
 			this.updateAlphaSlider( alpha, $alphaSlider );
@@ -227,7 +227,7 @@ class AlphaColor {
 
 		// Bind event handler for typing or pasting into the input
 		this.control.on( 'input', (e) => {
-			const value = $( e.target ).val();
+			const value = jQuery( e.target ).val();
 			const alpha = this.getAlpha( value );
 			this.updateAlphaSlider( alpha, $alphaSlider );
 		});
