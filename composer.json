@@ -22,6 +22,21 @@
             "name": "justintadlock/hybrid-breadcrumbs",
             "type": "git",
             "url": "/Users/sky/Repos/justintadlock/hybrid-breadcrumbs"
+        },
+        {
+            "name": "skyshab/rootstrap",
+            "type": "git",
+            "url": "/Users/sky/Repos/skyshab/legacy/rootstrap"
+        },
+        {
+            "name": "skyshab/rootstrap-customize",
+            "type": "git",
+            "url": "/Users/sky/Repos/skyshab/legacy/rootstrap-customize"
+        },
+        {
+            "name": "skyshab/rootstrap-customize-defaults",
+            "type": "git",
+            "url": "/Users/sky/Repos/skyshab/legacy/rootstrap-customize-defaults"
         }
     ],
     "require": {
