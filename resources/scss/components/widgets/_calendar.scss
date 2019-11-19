@@ -10,6 +10,7 @@
 
     table {
         border-top: none;
+        background: var(--colors--theme--meta-light)
     }
 
     tbody {
@@ -18,10 +19,6 @@
 
     td, th {
         text-align: center;
-    }
-
-    tr {
-        background: rgba(255, 255, 255, 0.6);
     }
 
     tfoot {
