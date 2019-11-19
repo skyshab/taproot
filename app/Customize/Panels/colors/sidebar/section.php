@@ -49,6 +49,12 @@ color( $manager, 'colors--sidebar--accent-color', [
     'section' => 'colors--sidebar',
 ]);
 
+// Color Setting: Accent Contrast Color
+color( $manager, 'colors--sidebar--accent-contrast', [
+    'label'   => esc_html__( 'Accent Contrast Color', 'taproot' ),
+    'section' => 'colors--sidebar',
+]);
+
 // Color Setting: Link Color
 color( $manager, 'colors--sidebar--link-color', [
     'label'   => esc_html__( 'Link Color', 'taproot' ),
