@@ -16,6 +16,10 @@ import {PostTitleOptions} from './PostTitleOptions.js';
 import {HeroImage} from './HeroImage.js';
 import {HeroOverlay} from './HeroOverlay.js';
 import {HeroTextColors} from './HeroTextColors.js';
+import {LayoutSlot} from './LayoutSlot.js';
+
+// Action for adding items to the layout section slot
+wp.hooks.doAction( 'taproot-single-layout-slot', LayoutSlot );
 
 
 ( wp => {
@@ -29,7 +33,6 @@ import {HeroTextColors} from './HeroTextColors.js';
     const { Panel, PanelBody } = wp.components;
     const { __ } = wp.i18n;
     const {PostTypeSupportCheck } = wp.editor;
-
 
     // register our sidebar panel
     registerPlugin( 'tr-theme-sidebar', {
@@ -51,6 +54,9 @@ import {HeroTextColors} from './HeroTextColors.js';
                             <Panel>
                                 <PanelBody title={ __( 'Layout' ) } initialOpen={ false } >
                                     <LayoutPicker fieldName='taproot_page_layout' />
+                                    <LayoutSlot.Slot>
+                                        {(fills) => (<>{ fills }</>)}
+                                    </LayoutSlot.Slot>
                                 </PanelBody>
 
                                 <PanelBody title={ __( 'Post Title' ) } initialOpen={ false } >
