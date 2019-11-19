@@ -1,5 +1,13 @@
 # Change Log
 
+= 1.4.1 =
+* 10/19/19
+* Fix - Javascript errors in customizer in WP 5.3
+* New - Added accent contrast color to sidebars
+* New - Added support for inner container to cover block styles
+* New - Added slot to editor panel for plugin support
+* General - Misc widget style tweaks
+
 = 1.4.0 =
 * 08/28/19
 * New - Added default hero image
