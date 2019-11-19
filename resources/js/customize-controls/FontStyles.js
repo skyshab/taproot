@@ -9,7 +9,6 @@
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
 
-
 class TaprootFontStyles {
 
     // initiate control
@@ -20,11 +19,11 @@ class TaprootFontStyles {
         }
 
         // Set up our attributes
-        $control = jQuery(control.selector);
-        this.$fontStyles =  $control.find('.taproot-font-styles--item');
-        this.$checkboxes = $control.find('.taproot-font-style-checkbox');
-        this.$input = $control.find('.taproot-font-styles-input');
-        this.$reset = $control.find('.taproot-control-reset');
+        const $control = document.querySelector(control.selector);
+        this.fontStyles =  $control.querySelectorAll('.taproot-font-styles--item');
+        this.checkboxes = $control.querySelectorAll('.taproot-font-style-checkbox');
+        this.input = $control.querySelector('.taproot-font-styles-input');
+        this.reset = $control.querySelector('.taproot-control-reset');
 
         // Set up event handlers
         this.handlers();
@@ -35,66 +34,144 @@ class TaprootFontStyles {
 
         const self = this;
 
-        self.$fontStyles.click( function() {
+        // Font style handlers
+        self.fontStyles.forEach( fontStyle => {
+            fontStyle.addEventListener('click', (e) => {
 
-            var checkbox = $( this ).find( 'input' );
+                const $this = e.target;
+                const checkbox = $this.querySelector( 'input' );
 
-            $( this ).toggleClass( 'taproot-font-style-checked' );
+                // Toggle 'checked' class
+                $this.classList.toggle( 'taproot-font-style-checked' );
 
-            if ( checkbox.is( ':checked' ) ) {
-                checkbox.prop( 'checked', false );
-            } else {
-                checkbox.prop( 'checked', true );
+                // If the checkbox is checked
+                if ( checkbox.checked ) {
 
-                if ( 'uppercase' === checkbox.val() ) {
-                    $( this ).siblings('.taproot-font-styles--capitalize').removeClass('taproot-font-style-checked').find('input').prop( 'checked', false ).change();
-                } else if ( 'capitalize' == checkbox.val() ) {
-                    $( this ).siblings('.taproot-font-styles--uppercase').removeClass('taproot-font-style-checked').find('input').prop( 'checked', false ).change();
+                    // Uncheck checkbox
+                    checkbox.checked = false;
                 }
-            }
 
-            checkbox.change();
+                // Or if not checked
+                else {
+
+                    // Set checkbox to checked
+                    checkbox.checked = true;
+
+                    // Create var to store toggle element
+                    let other = false;
+
+                    // If this is the "uppercase" option
+                    if ( 'uppercase' === checkbox.value ) {
+                        other = $this.parentNode.querySelector( '.taproot-font-styles--capitalize' );
+                    }
+
+                    // Or if the "capitalize" option
+                    else if ( 'capitalize' == checkbox.value ) {
+                        other = $this.parentNode.querySelector( '.taproot-font-styles--uppercase' );
+                    }
+
+                    // if we need to toggle another option
+                    if(other) {
+                        // Remove class
+                        other.classList.remove('taproot-font-style-checked');
+
+                        // Get the checkbox
+                        input = other.querySelector( 'input' );
+
+                        // Uncheck it
+                        input.checked = false;
+
+                        // Trigger change
+                        input.dispatchEvent( new Event('change') );
+                    }
+                }
+
+                // Trigger a change on the checkbox
+                checkbox.dispatchEvent( new Event('change') );
+            });
         });
 
-        self.$checkboxes.on('change', function() {
+        // Checkbox handlers
+        self.checkboxes.forEach( checkbox => {
+            checkbox.addEventListener('change', (e) => {
 
-            var currentValue = self.$input.val(),
-                value         = $(this).val(),
-                values        = ( 'false' != currentValue ) ? currentValue.split( '|' ) : [],
-                query         = $.inArray( value, values ),
-                result        = '';
+                const $this = e.target;
+                const value = $this.value;
+                let currentValue = self.input.value;
+                let values = ( 'false' != currentValue ) ? currentValue.split( '|' ) : [];
+                let result = '';
 
-            if ( true == $(this).prop('checked' ) ) {
-                if ( currentValue.length ) {
-                    if ( 0 > query ) {
-                        values.push( value );
-                        result = values.join( '|' );
+                // If the checkbox is checked
+                if ( $this.checked ) {
+
+                    // Is there already a saved value?
+                    if ( currentValue.length ) {
+
+                        // If this is not already in the array
+                        if ( ! values.includes(value) ) {
+
+                            // Add to array
+                            values.push( value );
+
+                            // Define list
+                            result = values.join( '|' );
+                        }
                     }
-                } else {
-                    result = value;
-                }
-            } else {
-                if ( currentValue.length ) {
-                    if ( 0 <= query ) {
-                        values.splice( query, 1 );
-                        result = values.join( '|' );
-                    } else {
-                        result = currentValue;
+                    // No other values
+                    else {
+                        result = value;
                     }
                 }
-            }
+                // or if not checked
+                else {
 
-            self.$input.val( result ).change();
+                    // Is there already a saved value?
+                    if ( currentValue.length ) {
+
+                        // If this is already in the array
+                        if ( values.includes(value) ) {
+
+                            // Remove option from array
+                            values = values.filter(item => item !== value);
+
+                            // Define the list
+                            result = values.join( '|' );
+                        }
+
+                        // No other values
+                        else {
+                            result = currentValue;
+                        }
+                    }
+                }
+
+                // Set input value
+                self.input.value = result;
+
+                // Trigger a change on the input
+                self.input.dispatchEvent( new Event('change') );
+            });
         });
 
-        self.$reset.click( () => {
-            self.$input.val('').change();
-            self.$checkboxes.removeAttr( 'checked' );
-            self.$fontStyles.removeClass( 'taproot-font-style-checked' );
+        // Reset handler
+        self.reset.addEventListener('click', (e) => {
+
+            // Unset the value and trigger change
+            self.input.value = '';
+            self.input.dispatchEvent( new Event('change') );
+
+            // Uncheck all of the checkboxes
+            self.checkboxes.forEach( checkbox => {
+                checkbox.checked = false;
+            });
+
+            // Remove 'checked' classes
+            self.fontStyles.forEach( fontStyle => {
+                fontStyle.classList.remove('taproot-font-style-checked');
+            });
         });
     }
 }
-
 
 /**
  * Initiate Control

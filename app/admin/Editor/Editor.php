@@ -74,8 +74,8 @@ class Editor implements Bootable {
         wp_enqueue_script(
             'taproot-editor-sidebar-js',
             asset( 'js/editor.js' ),
-            array( 'wp-plugins', 'wp-edit-post', 'wp-element', 'wp-components', 'wp-data', 'wp-editor' )
-        );
+            array( 'wp-plugins', 'wp-edit-post', 'wp-element', 'wp-components', 'wp-data', 'wp-editor' ),
+        false, true);
 
         wp_add_inline_script( 'taproot-editor-sidebar-js', $this->editorData() );
 

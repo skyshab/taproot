@@ -33,6 +33,12 @@ $styles->custom_property([
     'value' => theme_mod( 'colors--sidebar--accent-color' ),
 ]);
 
+// Var: Sidebar Accent Contrast Color
+$styles->custom_property([
+    'name' => 'colors--sidebar--accent-contrast',
+    'value' => theme_mod( 'colors--sidebar--accent-contrast' ),
+]);
+
 // Var: Sidebar Link Color
 $styles->custom_property([
     'name' => 'colors--sidebar--link-color',

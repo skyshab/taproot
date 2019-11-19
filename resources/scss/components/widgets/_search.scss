@@ -1,0 +1,26 @@
+////
+/// Calendar Widget.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.widget--search {
+
+    .searchform {
+
+        // Submit button
+        &__submit {
+            background-color: var(--colors--sidebar--accent-color);
+            color: var(--colors--sidebar--accent-contrast);
+        }
+
+        // Search input
+        &__search {
+            background-color: var(--colors--theme--meta-light);
+        }
+
+    }
+
+}
