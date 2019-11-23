@@ -56,24 +56,24 @@ if( $data['date'] !== false ) {
 
 // Display Taxonomies
 if( !empty( $data['taxonomies'] ) ) {
-    foreach( $data['taxonomies'] as $taxonomy ) {
-        if( taxonomy_exists($taxonomy) ) {
+    foreach( $data['taxonomies'] as $tax ) {
+        if( taxonomy_exists($tax) ) {
 
             if( $data['icons'] ) {
-                $tax_label = ( is_taxonomy_hierarchical( $taxonomy ) ) ?
+                $tax_label = ( is_taxonomy_hierarchical( $tax ) ) ?
                     icon( 'categories', ['icon' => 'list-ul'] ) :
                     icon( 'tags', ['icon' => 'tags'] );
             }
             else {
-                $tax_labels = get_taxonomy_labels( get_taxonomy( $taxonomy ) );
-                $tax_label = sprintf('<span class="taproot-meta__item__label">%s:</span>', esc_html__($tax_labels->name, 'taproot') );
+                $tax_labels = get_taxonomy_labels( get_taxonomy( $tax ) );
+                $tax_label = sprintf('<span class="taproot-meta__item__label">%s:</span>', esc_html($tax_labels->name) );
             }
 
             display_terms([
-                'taxonomy' => $taxonomy,
-                'before' => sprintf( '<span class=" taproot-meta__item taproot-meta__item--%s">%s', $taxonomy, $tax_label ),
+                'taxonomy' => $tax,
+                'before' => sprintf( '<span class=" taproot-meta__item taproot-meta__item--%s">%s', $tax, $tax_label ),
                 'after' => '</span>',
-                'class' => sprintf( 'taproot-meta__terms taproot-meta__terms--%s', $taxonomy)
+                'class' => sprintf( 'taproot-meta__terms taproot-meta__terms--%s', $tax)
             ]);
         }
     }
