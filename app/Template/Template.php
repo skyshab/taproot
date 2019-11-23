@@ -115,7 +115,7 @@ class Template implements Bootable {
      * @return void
      */
     public function register( $templates ) {
-        $templates->add('templates/page-builder.php', ['label' => __('Page Builder', 'taproot')]);
+        $templates->add('templates/builder.php', ['label' => __('Page Builder', 'taproot')]);
         $templates->add('templates/blank.php', ['label' => __('Blank Template', 'taproot')]);
         $templates->add('templates/blocks.php', ['label' => __('Block Editor Template', 'taproot')]);
     }
