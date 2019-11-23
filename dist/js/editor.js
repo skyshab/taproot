@@ -277,7 +277,7 @@ function HeroImageEdit(_ref) {
 
   var addImage = function addImage(open) {
     if ('custom' === heroImageType) return React.createElement("button", {
-      class: "components-button is-button is-default",
+      "class": "components-button is-button is-default",
       style: {
         marginRight: '10px'
       },
@@ -292,7 +292,7 @@ function HeroImageEdit(_ref) {
 
 
   var imageReset = 'custom' === heroImageType && heroImage ? React.createElement("button", {
-    class: "components-button is-button is-default",
+    "class": "components-button is-button is-default",
     onClick: reset
   }, __('Clear')) : null; // return the custom header image picker component
 
@@ -537,7 +537,7 @@ function HeroPreviewEdit(_ref) {
     className: "media-preview-wrapper"
   }, React.createElement("img", {
     src: imageSource,
-    class: "media-preview"
+    "class": "media-preview"
   }), 'none' !== overlayType && React.createElement("div", {
     className: "taproot-overlay",
     style: {
@@ -546,7 +546,7 @@ function HeroPreviewEdit(_ref) {
     }
   }), React.createElement("a", {
     href: "#",
-    class: "taproot-overlay-preview-text",
+    "class": "taproot-overlay-preview-text",
     style: {
       color: defaultColor
     }

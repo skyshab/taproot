@@ -11,7 +11,7 @@
  * @link      https://taproot-theme.com
  */
 
-namespace Taproot\Admin\Editor;
+namespace Taproot\Editor;
 
 use Hybrid\Contracts\Bootable;
 use Rootstrap\Styles\Styles;
