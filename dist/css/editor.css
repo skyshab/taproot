@@ -791,7 +791,6 @@
 }
 .editor-styles-wrapper .wp-block-image.is-resized {
 	width: -webkit-min-content;
-	width: -moz-min-content;
 	width: min-content;
 	display: -ms-inline-grid;
 	-ms-grid-columns: min-content;
