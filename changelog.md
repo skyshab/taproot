@@ -1,5 +1,11 @@
 # Change Log
 
+= 1.4.2 =
+* 10/23/19
+* Fix - Namespacing issue
+* Fix - Custom template name collision
+* Fix - Post meta template error
+
 = 1.4.1 =
 * 10/19/19
 * Fix - Javascript errors in customizer in WP 5.3
