@@ -34,7 +34,7 @@ $taproot = new \Hybrid\Core\Application();
 
 $taproot->provider( \Taproot\Providers\AppProvider::class );
 $taproot->provider( \Taproot\Providers\RootstrapProvider::class );
-$taproot->provider( \Taproot\Providers\AdminProvider::class );
+$taproot->provider( \Taproot\Providers\EditorProvider::class );
 $taproot->provider( \Taproot\Providers\CustomizeProvider::class );
 $taproot->provider( \Taproot\Providers\TemplateProvider::class );
 

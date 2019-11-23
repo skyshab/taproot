@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin service provider.
+ * Editor service provider.
  *
  * Service providers are essentially the bootstrapping code for your theme.
  * They allow you to add bindings to the container on registration
@@ -17,17 +17,16 @@
 namespace Taproot\Providers;
 
 use Hybrid\Tools\ServiceProvider;
-use Taproot\Admin\Editor\Editor;
+use Taproot\Editor\Editor;
 
 
 /**
- * Admin service provider class.
+ * Editor service provider class.
  *
  * @since  1.0.0
  * @access public
  */
-class AdminProvider extends ServiceProvider {
-
+class EditorProvider extends ServiceProvider {
 
 	/**
 	 * Register classes and bind to the container
@@ -39,7 +38,6 @@ class AdminProvider extends ServiceProvider {
 	public function register() {
 
 		$this->app->singleton( Editor::class );
-
 	}
 
 	/**
@@ -53,6 +51,5 @@ class AdminProvider extends ServiceProvider {
 
 		// Boot the Editor class
         $this->app->resolve( Editor::class )->boot();
-
-	}
+    }
 }
