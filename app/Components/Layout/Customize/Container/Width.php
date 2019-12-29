@@ -118,7 +118,7 @@ class Width extends Range {
                     'screen' => 'layout-is-fullwidth',
                     'selector' => '.app-main--full .alignwide',
                     'styles' => [
-                        // 'margin-left' => sprintf('calc( (%s - 100%%) / -2 )', $max_container_width),
+                        'margin-left' => sprintf('calc( (%s - 100%%) / -2 )', Mod::get('layout--container--max-width') ),
                     ],
                 ]);
             }
