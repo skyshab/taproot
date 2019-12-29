@@ -1,0 +1,27 @@
+////
+/// Component Custom Properties
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+:root {
+
+    // Colors
+
+
+    // Mobile/default
+
+
+
+    // Tablet
+    @include screen('tablet') {
+
+    }
+
+    // Desktop
+    @include screen('desktop') {
+
+    }
+}

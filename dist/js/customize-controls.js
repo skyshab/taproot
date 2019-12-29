@@ -338,9 +338,8 @@ function () {
         // value is loaded in the customize preview via PHP and clearing doesn't
         // have the desired effect. This is not the best way to handle things,
         // but it works for now.
+        // wp.customize.previewer.refresh();
 
-
-        wp.customize.previewer.refresh();
       }); // Bind event handler for clicking on the 'Default' button
 
       $container.find('.button.wp-picker-default').on('click', function () {
@@ -721,7 +720,7 @@ function () {
     control = document.querySelector(control.selector);
     this.devicePicker = control.querySelector('.device-picker');
     this.devices = control.querySelectorAll('.device-picker__device');
-    this.controls = control.querySelectorAll('.device-group__item'); // initiate handlers
+    this.controls = control.querySelectorAll('.customize-control-taproot-range__wrapper'); // initiate handlers
 
     this.controls.forEach(function (control) {
       _this.handlers(control);
@@ -790,7 +789,8 @@ function () {
     value: function decimalPlaces(value) {
       if (Math.floor(value) == value) {
         return 0;
-      }
+      } // There's an error here when unitless and no default?
+
 
       return value.toString().split('.')[1].length || 0;
     } // reset the values to default
@@ -872,7 +872,7 @@ function () {
  */
 
 
-wp.customize.controlConstructor['range'] = wp.customize.Control.extend({
+wp.customize.controlConstructor['taproot-range'] = wp.customize.Control.extend({
   ready: function ready() {
     var range = new TaprootRange(this);
   }

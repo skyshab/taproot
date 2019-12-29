@@ -2,9 +2,7 @@
 /**
  * Customize class.
  *
- * This file shows some basics on how to set up and work with the WordPress
- * Customization API. This is the place to set up all of your theme options for
- * the customizer.
+ * This file implements the primary theme customizer functionality.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
@@ -17,179 +15,377 @@ namespace Taproot\Customize;
 
 use WP_Customize_Manager;
 use Hybrid\Contracts\Bootable;
-use Taproot\Customize\Panels\Panels;
-use Rootstrap\Styles\Styles;
-use function Rootstrap\Screens\screens;
-use function Taproot\asset;
-
+use Hybrid\App;
+use function Taproot\Tools\asset;
 
 /**
- * Handles setting up everything we need for the customizer.
+ * Primary customizer class.
  *
- * @link   https://developer.wordpress.org/themes/customize-api
- * @since  1.0.0
+ * @since  2.0.0
  * @access public
  */
 class Customize implements Bootable {
 
+    /**
+     * Stores panels
+     *
+     * @since 2.0.0
+     * @var array
+     */
+    public $panels = [];
 
     /**
-     * Stores panels object
+     * Stores sections
      *
-     * @since 1.0.0
-     * @var string
+     * @since 2.0.0
+     * @var array
      */
-    private $panels;
-
+    public $sections = [];
 
     /**
-     * Set up our Panles object
+     * Stores controls
      *
-     * @since 1.0.0
-     *
-     * @param  string $id
-     * @param  array $args
+     * @since 2.0.0
+     * @var array
      */
-    public function __construct() {
-        $this->panels = new Panels();
-    }
-
-
-	/**
-	 * Adds actions on the appropriate customize action hooks.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return void
-	 */
-	public function boot() {
-
-        // load panels
-		add_action( 'rootstrap/loaded', [ $this, 'load_panels' ] );
-
-        // Load our controls, callbacks, adjustments and utility functions
-        add_action( 'customize_register', [ $this, 'customize_register' ] );
-
-        // load front facing styles
-        add_filter( 'rootstrap/styles/public', [ $this, 'panel_styles'] );
-
-		// Enqueue scripts and styles.
-		add_action( 'customize_controls_enqueue_scripts', [ $this, 'controlsEnqueue'] );
-        add_action( 'customize_preview_init', [ $this, 'previewEnqueue' ] );
-    }
-
+    public $controls = [];
 
     /**
-     * Print customizer public styles
+     * Adds actions on the appropriate customize action hooks.
      *
-     * @since 1.0.0
-     */
-    public function load_panels() {
-        $panels = $this->panels;
-        include_once 'Panels/register-panels.php';
-    }
-
-
-	/**
-     * Callback for customize register.
-	 *
-     * Load files for controls, callbacks, utilities and adjustments
-     *
-     * @since  1.0.0
+     * @since  2.0.0
      * @access public
-     * @param  WP_Customize_Manager  $manager  Instance of the customize manager.
      * @return void
-	 */
-    public function customize_register( WP_Customize_Manager $manager ) {
-        include_once 'functions/functions-controls.php';
-        include_once 'functions/functions-sanitize.php';
-        include_once 'functions/functions-partials.php';
+     */
+    public function boot() {
 
-        // change menus priority
-        if( $manager->get_panel( 'nav_menus' ) ) {
-            $manager->get_panel( 'nav_menus' )->priority = 45;
-        }
+        add_filter( 'init', [ $this, 'setup' ], 100 );
 
-        // make footer sidebars appear in the customizer last
-        if( $manager->get_section( 'sidebar-widgets-footer-1' ) ) {
-            $manager->get_section( 'sidebar-widgets-footer-1' )->priority = 500;
-        }
+        // Register panels
+        add_action('rootstrap/customize-register/panels', [$this, 'panels']);
 
-        if( $manager->get_section( 'sidebar-widgets-footer-2' ) ) {
-            $manager->get_section( 'sidebar-widgets-footer-2' )->priority = 510;
-        }
+        // Register sections
+        add_action("rootstrap/customize-register/sections", [$this, 'sections']);
 
-        if( $manager->get_section( 'sidebar-widgets-footer-3' ) ) {
-            $manager->get_section( 'sidebar-widgets-footer-3' )->priority = 520;
-        }
+        // Register settings
+        add_action("rootstrap/customize-register/settings", [$this, 'settings']);
 
-        if( $manager->get_section( 'sidebar-widgets-footer-4' ) ) {
-            $manager->get_section( 'sidebar-widgets-footer-4' )->priority = 530;
-        }
+        // Register controls
+        add_action("rootstrap/customize-register/controls", [$this, 'controls']);
 
-        // Hide the default colors section
-        if( $manager->get_section( 'colors' ) ) {
-            $manager->remove_section( 'colors' );
-        }
+        // Register partials
+        add_action("rootstrap/customize-register/partials", [$this, 'partials']);
 
-        // Rename site icon section
-        if( $manager->get_section( 'title_tagline' ) ) {
-            $manager->get_section( 'title_tagline' )->title = __('Site Icon', 'taproot');
-            $manager->get_section( 'title_tagline' )->panel = 'general';
-        }
+        // Add any customizer modifications
+        add_action( 'customize_register', [$this, 'customize_register_after'], PHP_INT_MAX );
 
-        // move to the general settings panel
-        if( $manager->get_section( 'static_front_page' ) ) {
-            $manager->get_section( 'static_front_page' )->panel = 'general';
-        }
+        // Register defaults
+        add_action("customize/defaults", [$this, 'defaults']);
 
-        // Hide the default show title/tagline controls
-        if( $manager->get_control( 'display_header_text' ) ) {
-            $manager->remove_control( 'display_header_text' );
-        }
-	}
+        // Register Tabs
+        add_filter( 'rootstrap/tabs', [ $this, 'tabs' ] );
 
+        // Register Sequences
+        add_filter( 'rootstrap/sequences', [ $this, 'sequences' ] );
+
+        // Editor styles
+        add_action( 'taproot\editor\styles', [$this, 'editorStyles'] );
+
+        // Enqueue scripts and styles.
+        add_action( 'customize_controls_enqueue_scripts', [ $this, 'controlsEnqueue'] );
+    }
 
     /**
-     * Get panel styles
+     * Setup
      *
-     * @since 1.0.0
+     * @since  2.0.0
+     * @access public
+     * @return void
      */
-    public function panel_styles() {
+    public function setup() {
 
-        $styles = new Styles( screens() );
+        // Get panels collection
+        $panels = App::resolve( 'customize/components' );
 
-        foreach( $this->panels->all() as $name => $panel ) {
-            $panel->styles( $styles );
+        // Loop through the panels
+        foreach( $panels->all() as $id => $panel ) {
+
+            // Store panel
+            $this->panels[] = $panel;
+
+            // Loop through the sections
+            foreach( $panel->section_objects as $section ) {
+
+                // Store section
+                $this->sections[] = $section;
+
+                // Loop through the controls
+                foreach( $section->control_objects as $control ) {
+
+                    // Store control
+                    $this->controls[] = $control;
+                }
+            }
         }
 
-        return $styles;
+        // Theme stylesheet handle
+        $handle = App::resolve( 'styles/handle' );
+
+        // Front End styles
+        add_action("rootstrap/styles/{$handle}", [$this, 'styles']);
+
+        // Preview refresh
+        add_filter("rootstrap/styles/{$handle}/previewRefresh", [$this, 'previewRefresh']);
     }
 
+    /**
+     * Panels
+     *
+     * @since  2.0.0
+     * @access public
+     * @param  object  $manager - Instance of WP_Customize_Manager
+     * @return void
+     */
+    public function panels( WP_Customize_Manager $manager ) {
 
-	/**
-	 * Register or enqueue scripts/styles for the controls that are output
-	 * in the controls frame.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return void
-	 */
-	public function controlsEnqueue() {
-		wp_enqueue_script( 'taproot-customize-controls', asset( 'js/customize-controls.js' ), [ 'customize-controls' ], null, true );
-		wp_enqueue_style( 'taproot-customize-controls', asset( 'css/customize-controls.css' ), [], null );
-	}
-
-
-	/**
-	 * Register or enqueue scripts/styles for the live preview frame.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return void
-	 */
-	public function previewEnqueue() {
-		wp_enqueue_script( 'taproot-customize-preview', asset( 'js/customize-preview.js' ), [ 'customize-preview' ], null, true );
+        foreach( $this->panels as $panel ) {
+            if( method_exists( $panel, 'panels') ) {
+                $panel->panels($manager);
+            }
+        }
     }
 
+    /**
+     * Sections
+     *
+     * @since  2.0.0
+     * @access public
+     * @param  object  $manager - Instance of WP_Customize_Manager
+     * @return void
+     */
+    public function sections( WP_Customize_Manager $manager ) {
+
+        foreach( $this->sections as $section ) {
+            if( method_exists( $section, 'sections') ) {
+                $section->sections($manager);
+            }
+        }
+    }
+
+    /**
+     * Settings
+     *
+     * @since  2.0.0
+     * @access public
+     * @param  object  $manager - Instance of WP_Customize_Manager
+     * @return void
+     */
+    public function settings( WP_Customize_Manager $manager ) {
+
+        foreach( $this->controls as $control ) {
+            if( method_exists( $control, 'settings') ) {
+                $control->settings($manager);
+            }
+        }
+    }
+
+    /**
+     * Controls
+     *
+     * @since  2.0.0
+     * @access public
+     * @param  object  $manager - Instance of WP_Customize_Manager
+     * @return void
+     */
+    public function controls( WP_Customize_Manager $manager ) {
+
+        foreach( $this->controls as $control ) {
+            if( method_exists( $control, 'controls') ) {
+                $control->controls($manager);
+            }
+        }
+    }
+
+    /**
+     * Partials
+     *
+     * @since  2.0.0
+     * @access public
+     * @param  object  $manager - Instance of WP_Customize_Manager
+     * @return void
+     */
+    public function partials( WP_Customize_Manager $manager ) {
+
+        foreach( $this->controls as $control ) {
+            if( method_exists( $control, 'partials') ) {
+                $control->partials($manager);
+            }
+        }
+    }
+
+    /**
+     * Customize register after
+     *
+     * This provides a hook for adding modifications to core or third-party
+     * customizer components that may not have been added yet.
+     *
+     * @since  2.0.0
+     * @access public
+     * @param  object  $manager - Instance of WP_Customize_Manager
+     * @return void
+     */
+    public function customize_register_after( WP_Customize_Manager $manager ) {
+
+        // Panels
+        foreach( $this->panels as $panel ) {
+            if( method_exists( $panel, 'customize_register_after') ) {
+                $panel->customize_register_after( $manager );
+            }
+        }
+
+        // Sections
+        foreach( $this->sections as $section ) {
+            if( method_exists( $section, 'customize_register_after') ) {
+                $section->customize_register_after( $manager );
+            }
+        }
+
+        // Controls
+        foreach( $this->controls as $control ) {
+            if( method_exists( $control, 'customize_register_after') ) {
+                $control->customize_register_after( $manager );
+            }
+        }
+    }
+
+    /**
+     * Defaults
+     *
+     * @since  2.0.0
+     * @access public
+     * @param  object  $defaults - Instance of defaults manager
+     * @return void
+     */
+    public function defaults( $defaults ) {
+
+        foreach( $this->controls as $control ) {
+            if( method_exists( $control, 'defaults') ) {
+                $control->defaults($defaults);
+            }
+        }
+    }
+
+    /**
+     * Styles
+     *
+     * @since  2.0.0
+     * @access public
+     * @param  object  $styles - Instance of rootstrap styles
+     * @return void
+     */
+    public function styles( $styles ) {
+
+        foreach( $this->controls as $control ) {
+            if( method_exists( $control, 'styles') ) {
+                $control->styles($styles);
+            }
+        }
+    }
+
+    /**
+     * Editor Styles
+     *
+     * @since  2.0.0
+     * @access public
+     * @param  object  $styles - Instance of rootstrap styles
+     * @return void
+     */
+    public function editorStyles( $styles ) {
+
+        foreach( $this->controls as $control ) {
+            if( method_exists( $control, 'editorStyles') ) {
+                $control->editorStyles( $styles );
+            }
+        }
+    }
+
+    /**
+     * Preview Refresh
+     *
+     * @since  2.0.0
+     * @access public
+     * @param  object  $controls - Instance of preview refresh
+     * @return void
+     */
+    public function previewRefresh( $controls ) {
+
+        foreach( $this->controls as $control ) {
+            if( method_exists( $control, 'previewRefresh') ) {
+                $controls = $control->previewRefresh($controls);
+            }
+        }
+
+        return $controls;
+    }
+
+    /**
+     * Tabs
+     *
+     * @since  2.0.0
+     * @access public
+     * @param  object  $tabs - Instance of tabs manager
+     * @return void
+     */
+    public function tabs( $tabs ) {
+
+        foreach( $this->panels as $panel ) {
+            if( method_exists( $panel, 'tabs') ) {
+                $tabs = $panel->tabs($tabs);
+            }
+        }
+
+        return $tabs;
+    }
+
+    /**
+     * Sequences
+     *
+     * @since  2.0.0
+     * @access public
+     * @param  object  $sequences - Instance of sequences manager
+     * @return void
+     */
+    public function sequences( $sequences ) {
+
+        foreach( $this->panels as $panel ) {
+            if( method_exists( $panel, 'sequences') ) {
+                $sequences = $panel->sequences($sequences);
+            }
+        }
+
+        return $sequences;
+    }
+
+    /**
+     * Enqueue scripts and styles for the customize controls.
+     *
+     * @since  2.0.0
+     * @access public
+     * @return void
+     */
+    public function controlsEnqueue() {
+        wp_enqueue_script( 'taproot-customize-controls', asset( 'js/customize-controls.js' ), [ 'customize-controls' ], null, true );
+        wp_enqueue_style( 'taproot-customize-controls', asset( 'css/customize-controls.css' ), [], null );
+    }
+
+    /**
+     * Enqueue scripts and styles for the customize preview.
+     *
+     * @since  2.0.0
+     * @access public
+     * @return void
+     */
+    public function previewEnqueue() {
+        wp_enqueue_script( 'taproot-customize-preview', asset( 'js/customize-preview.js' ), [ 'customize-preview' ], null, true );
+    }
 }

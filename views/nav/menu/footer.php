@@ -20,6 +20,6 @@
 
         </div>
 
-	</nav>
+    </nav>
 
 <?php endif ?>

@@ -1,0 +1,168 @@
+////
+/// Nav menu component.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+// Global Theme Menu Styles
+.menu--theme {
+
+    &__items {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        z-index: 98;
+    }
+
+    &__items, &__sub-menu {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__item {
+        position: relative;
+        flex: 0 1 auto;
+        margin: 0;
+
+        &.has-children .menu--header__link, &.has-children .menu--navbar__link  {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    // default color
+    &__link, &__link:visited, &__link:hover {
+        color: white;
+    }
+
+    &__link {
+        display: block;
+        position: relative;
+        text-decoration: none;
+        transition: color .5s ease-in-out, background-color .4s ease-in-out;
+
+        &:hover {
+            text-decoration: none;
+            transition: color .5s ease-in-out, background-color .4s ease-in-out;
+        }
+    }
+
+    &__sub-menu {
+        flex-direction: column;
+    }
+
+} // .menu--theme
+
+
+// submenu dropdown icon
+.dropdown-target {
+    display: inline-flex;
+
+    .widget--nav-menu & {
+        display: none;
+    }
+}
+
+
+// styles to support slide type nav
+.app {
+    &.slide-right {
+        left: -300px;
+    }
+    &.slide-left {
+        left: 300px;
+    }
+}
+
+
+// mixin to generate mobile nav styles
+@mixin mobile-styles( $screen ) {
+
+    .mobile-at-#{$screen} {
+
+        display: flex;
+        align-items: center;
+
+        .menu__item {
+            width: 100%;
+        }
+
+        // hide nav when mobile
+        &.hidden-when-mobile, &.hidden-when-mobile .menu--toggle {
+            display: none;
+        }
+    }
+}
+
+
+// mixin to generate desktop nav styles
+@mixin desktop-styles( $screen ) {
+
+    .mobile-at-#{$screen} {
+
+        .menu {
+
+            &__items {
+                flex-direction: row;
+
+                & > .menu__item:first-of-type > a {
+                    padding-left: 0;
+                }
+
+                & > .menu__item:not(.has-children):last-of-type > a {
+                    padding-right: 0;
+                }
+            }
+
+            &--toggle {
+                display: none;
+            }
+        }
+    }
+}
+
+
+// ****************
+// * Mobile Styles
+// ****************
+
+// always mobile
+@include mobile-styles( 'always' );
+
+// mobile only styles
+@include screen('mobile') {
+    @include mobile-styles( 'mobile' );
+}
+
+// tablet and under styles
+@include screen('tablet-and-under') {
+    @include mobile-styles( 'tablet-and-under' );
+}
+
+
+// ****************
+// * Desktop Styles
+// ****************
+
+// never mobile styles
+@include desktop-styles( 'never' );
+
+// mobile at mobile only styles
+@include screen('tablet-and-up') {
+    @include desktop-styles( 'mobile' );
+}
+
+// mobile at tablet and under styles
+@include screen('desktop') {
+    @include desktop-styles( 'tablet-and-under' );
+
+    // fixed header hidden menu styles
+    .app-header--has-fixed:not(.app-header--fixed) .hidden-when-not-fixed {
+        display: none;
+    }
+}

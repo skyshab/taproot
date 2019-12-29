@@ -1,35 +1,35 @@
 <?php if ( post_password_required() || ( ! have_comments() && ! comments_open() && ! pings_open() ) ) {
-	return;
+    return;
 } ?>
 
 <section id="comments" class="comments">
 
-	<?php if ( have_comments() ) : ?>
+    <?php if ( have_comments() ) : ?>
 
-		<h2 class="comments__title"><?php comments_number() ?></h2>
+        <h2 class="comments__title"><?php comments_number() ?></h2>
 
-		<?php Hybrid\View\display( 'nav/pagination', 'comments' ) ?>
+        <?php Hybrid\View\display( 'nav/pagination', 'comments' ) ?>
 
-		<ol class="comments__list">
+        <ol class="comments__list">
 
-			<?php wp_list_comments( [
-				'callback' => function( $comment, $args, $depth ) {
-					Hybrid\View\display( 'comment', Hybrid\Comment\hierarchy(), compact( 'comment', 'args', 'depth' ) );
-				}
-			] ) ?>
+            <?php wp_list_comments( [
+                'callback' => function( $comment, $args, $depth ) {
+                    Hybrid\View\display( 'comment', Hybrid\Comment\hierarchy(), compact( 'comment', 'args', 'depth' ) );
+                }
+            ] ) ?>
 
-		</ol>
+        </ol>
 
-	<?php endif ?>
+    <?php endif ?>
 
-	<?php if ( ! comments_open() ) : ?>
+    <?php if ( ! comments_open() ) : ?>
 
-		<p class="comments__closed">
-			<?php esc_html_e( 'Comments are closed.', 'taproot' ) ?>
-		</p>
+        <p class="comments__closed">
+            <?php esc_html_e( 'Comments are closed.', 'taproot' ) ?>
+        </p>
 
-	<?php endif ?>
+    <?php endif ?>
 
-	<?php comment_form() ?>
+    <?php comment_form() ?>
 
 </section>

@@ -17,7 +17,34 @@
     position: relative;
     z-index: 2;
 
-    .boxed-layout & {
-        max-width: var(--layout--container--max-width);
+    &-main {
+        background-color: white;
+        margin: 0 auto;
+        order: 1;
+        width: 100%;
+        min-width: 0; // this is to fix problems with flexbox and pre elements breaking the layout
     }
+
+    &-content {
+
+        background-color: white;
+        margin: 0 auto;
+
+        // needed this for safari, to prevent the sidebar in fullwidth layout from going off screen
+        overflow: hidden;
+
+        &__container {
+
+            display: flex;
+
+            @include screen('tablet-and-under') {
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+.container {
+    margin: 0 auto;
+    position: relative;
 }

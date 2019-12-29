@@ -1,0 +1,41 @@
+////
+/// App component.
+///
+/// This is the wrapper for the entire page layout.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.app {
+
+    .boxed-layout & {
+        max-width: var(--layout--container--max-width);
+    }
+
+    &-main {
+        max-width: var( --layout--content--max-width );
+        padding: var(--layout--container--padding) 0;
+
+        // desktop styles
+        @include screen('desktop') {
+            box-sizing: content-box;
+            flex: 0 1 var(--layout--content--max-width);
+
+            &--sidebar-right {
+                padding: var(--layout--container--padding) var(--layout--container--padding) var(--layout--container--padding) 0;
+            }
+            &--sidebar-left {
+                padding: var(--layout--container--padding) 0 var(--layout--container--padding) var(--layout--container--padding);
+            }
+            &--full {
+                padding: var(--layout--container--padding) 0;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+        }
+    }
+}

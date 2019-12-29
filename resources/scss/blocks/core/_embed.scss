@@ -8,44 +8,44 @@
 
 .wp-block-embed {
 
-	// Image embeds.
-	&.is-type-image {}
+    // Image embeds.
+    &.is-type-image {}
 
-	// Audio embeds.
-	&.is-type-audio {}
+    // Audio embeds.
+    &.is-type-audio {}
 
-	// Rich text embeds (text, Twitter, etc.)
-	&.is-type-rich {}
+    // Rich text embeds (text, Twitter, etc.)
+    &.is-type-rich {}
 
-	// Video embeds.
-	&.is-type-video {}
+    // Video embeds.
+    &.is-type-video {}
 
-	// Directly target iframes.
-	iframe {}
+    // Directly target iframes.
+    iframe {}
 
-	// Caption below embedded content.
-	figcaption {
-		margin-top: 0.5em;
-		text-align: center;
+    // Caption below embedded content.
+    figcaption {
+        margin-top: 0.5em;
+        text-align: center;
     }
-    
+
     &__wrapper {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;  
-        
+        height: 100%;
+
         iframe {
             width: 100%;
-            height: 100%;  
+            height: 100%;
         }
-    }    
+    }
 }
 
 
 .wp-embed-aspect-16-9 {
-	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
-	height: 0;  
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
 }

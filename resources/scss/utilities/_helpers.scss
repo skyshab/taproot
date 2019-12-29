@@ -12,13 +12,13 @@
 
 @each $color-name, $color-value in block-colors() {
 
-	.has-#{ $color-name }-color {
-		color : #{ $color-value };
-	}
+    .has-#{ $color-name }-color {
+        color : #{ $color-value };
+    }
 
-	.has-#{ $color-name }-background-color {
-		background-color: #{ $color-value };
-	}
+    .has-#{ $color-name }-background-color {
+        background-color: #{ $color-value };
+    }
 }
 
 /// Loops through the editor font sizes and adds utility classes for them. This
@@ -27,9 +27,9 @@
 
 @each $font-size-name, $font-size-value in editor-font-sizes() {
 
-	.has-#{ $font-size-name }-font-size {
-		font-size: #{ $font-size-value };
-	}
+    .has-#{ $font-size-name }-font-size {
+        font-size: #{ $font-size-value };
+    }
 }
 
 

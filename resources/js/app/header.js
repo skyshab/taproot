@@ -32,9 +32,9 @@ class TaprootHeader {
         this.fixedOffset = 600;
 
         // set fixed header type
-		if ( this.header.classList.contains('fixed-type--fade') ) {
+        if ( this.header.classList.contains('fixed-type--fade') ) {
             this.fixedHeaderType = 'fade';
-		} else if (this.header.classList.contains('fixed-type--slide') ) {
+        } else if (this.header.classList.contains('fixed-type--slide') ) {
             this.fixedHeaderType = 'slide';
         } else if (this.header.classList.contains('fixed-type--sticky') ) {
             this.fixedHeaderType = 'sticky';
@@ -115,14 +115,14 @@ class TaprootHeader {
     /**
      *  Fix the header
      */
-	fixTheHeader() {
+    fixTheHeader() {
         if ( 1025 > this.body.offsetWidth ) {
             return;
         }
 
-		if ( 'slide' === this.fixedHeaderType ) {
+        if ( 'slide' === this.fixedHeaderType ) {
             this.slideInDown();
-		} else if ( 'fade' === this.fixedHeaderType ) {
+        } else if ( 'fade' === this.fixedHeaderType ) {
             this.fadeIn();
         } else if ( 'sticky' === this.fixedHeaderType ) {
             this.header.classList.add('app-header--fixed');
@@ -137,7 +137,7 @@ class TaprootHeader {
     unFixTheHeader() {
         if ( 'slide' === this.fixedHeaderType ) {
             this.slideUpOut();
-		} else if ( 'fade' === this.fixedHeaderType ) {
+        } else if ( 'fade' === this.fixedHeaderType ) {
             this.fadeOut();
         } else {
             this.header.classList.remove('app-header--fixed');

@@ -60,7 +60,7 @@ class Device_Picker {
 
         // if desktop device doesn't exist
         if( !in_array('desktop', $devices) ) {
-            $current_device = 'unset';
+            $current_device = end($devices);
         }
 
         // open component

@@ -1,23 +1,15 @@
-<?php if ( is_home() ) : ?>
+<div class="archive-header <?php printf( 'archive-header--%s', esc_attr( get_post_type() ) ) ?>" >
 
-	<div class="archive-header archive-header--blog">
-		<h1 class="archive-header__title archive-header__title--blog"><?php Taproot\Template\blog_title() ?></h1>
-	</div>
+    <h1 class="archive-header__title <?php printf( 'archive-header__title--%s', esc_attr( get_post_type() ) ) ?>">
+        <?php the_archive_title() ?>
+    </h1>
 
-<?php elseif ( ! is_front_page() ) : ?>
+    <?php if ( ! is_paged() && get_the_archive_description() ) : ?>
 
-	<div class="archive-header">
+        <div class="archive-header__description">
+            <?php the_archive_description() ?>
+        </div>
 
-		<h1 class="archive-header__title"><?php the_archive_title() ?></h1>
+    <?php endif ?>
 
-		<?php if ( ! is_paged() && get_the_archive_description() ) : ?>
-
-			<div class="archive-header__description">
-				<?php the_archive_description() ?>
-			</div>
-
-		<?php endif ?>
-
-	</div>
-
-<?php endif; ?>
+</div>

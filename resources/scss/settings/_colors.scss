@@ -15,12 +15,12 @@
 
 @function colors() {
 
-	$colors : (
-		white : #fff,
-		black : #000
-	);
+    $colors : (
+        white : #fff,
+        black : #000
+    );
 
-	@return map-merge( $colors, block-colors() );
+    @return map-merge( $colors, block-colors() );
 }
 
 /// Returns a map of block colors in name-value format. These are the colors
@@ -33,14 +33,14 @@
 
 @function block-colors() {
 
-	@return (
-        theme-text            : var(--typography--body--text-color,              #8c8c8c),
-		theme-accent          : var(--colors--theme--accent,            #00a0d1),
-		theme-accent-contrast : var(--colors--theme--accent-contrast,   #ffffff),
-		theme-meta-light      : var(--colors--theme--meta-light,        #f4f4f4),
+    @return (
+        theme-text            : var(--typography--body--text-color,     #8c8c8c),
+        theme-accent          : var(--colors--theme--accent,            #00a0d1),
+        theme-accent-contrast : var(--colors--theme--accent-contrast,   #ffffff),
+        theme-meta-light      : var(--colors--theme--meta-light,        #f4f4f4),
         theme-meta-medium     : var(--colors--theme--meta-medium,       #d8d8d8),
         theme-meta-dark       : var(--colors--theme--meta-dark,         #a5a5a5)
-	);
+    );
 }
 
 /// Returns a single color value by name.
@@ -52,7 +52,7 @@
 
 @function color( $name ) {
 
-	@return map-get( colors(), $name );
+    @return map-get( colors(), $name );
 }
 
 /// Returns a single block color value by name.
@@ -64,5 +64,5 @@
 
 @function block-color( $name ) {
 
-	@return map-get( block-colors(), $name );
+    @return map-get( block-colors(), $name );
 }

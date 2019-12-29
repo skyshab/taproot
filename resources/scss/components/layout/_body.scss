@@ -1,0 +1,14 @@
+////
+/// Body styles
+///
+/// @group  Elements
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+@include screen('desktop') {
+
+    body.boxed-layout {
+        padding: var(--layout--boxed--outer-padding);
+    }
+}

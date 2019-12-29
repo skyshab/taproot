@@ -1,13 +1,9 @@
 ////
 /// Customize controls stylesheet.
 ///
-/// This is the primary stylesheet for the customize controls panel. Use this
-/// for importing styles for custom panels, sections, and controls.
-///
-/// @group  Styles
 /// @author Sky Shabatura <theme@sky.camp>
 /// @link   https://taproot-theme.com
 ////
 
-// Import customize-controls partials.
-@import 'customize-controls/_index';
+// Import customize controls partials
+@import 'customize/_index';

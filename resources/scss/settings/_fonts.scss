@@ -14,11 +14,11 @@
 
 @function font-families() {
 
-	@return (
-		primary   : system-ui,
-		secondary : system-ui,
-		code      : #{'Source Code Pro', Monaco, Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace}
-	);
+    @return (
+        primary   : system-ui,
+        secondary : system-ui,
+        code      : #{'Source Code Pro', Monaco, Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace}
+    );
 }
 
 /// Returns a single color value by name.
@@ -30,7 +30,7 @@
 
 @function font-family( $name ) {
 
-	@return map-get( font-families(), $name );
+    @return map-get( font-families(), $name );
 }
 
 /// Returns a map of editor font sizes in name-value format. These are the sizes
@@ -43,12 +43,12 @@
 
 @function editor-font-sizes() {
 
-	@return (
-		small   : 0.875em,
-		regular : 1em,
-		large   : 1.4375em,
-		larger  : 2em
-	);
+    @return (
+        small   : 0.875em,
+        regular : 1em,
+        large   : 1.4375em,
+        larger  : 2em
+    );
 }
 
 /// Returns a single editor font size value by name.
@@ -59,7 +59,7 @@
 /// @return {string}         Font size value.
 
 @function editor-font-size( $name ) {
-	@return map-get( editor-font-sizes(), $name );
+    @return map-get( editor-font-sizes(), $name );
 }
 
 .has-large-font-size, .has-larger-font-size {

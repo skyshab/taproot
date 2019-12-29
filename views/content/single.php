@@ -1,10 +1,10 @@
 <div class="app-content">
-    
+
     <div class="app-content__container container">
 
         <main <?php Hybrid\Attr\display( 'app-main' ) ?>>
 
-            <?php Taproot\Template\breadcrumbs(); ?>
+            <?php Taproot\Components\Navigation_Breadcrumbs\Functions::breadcrumbs() ?>
 
             <?php if ( have_posts() ) : ?>
 
@@ -21,7 +21,7 @@
         </main>
 
         <?php Hybrid\View\display( 'sidebar', 'primary', [ 'sidebar' => 'primary' ] ) ?>
-    
+
     </div>
-    
+
 </div>

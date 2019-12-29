@@ -29,8 +29,8 @@ const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
  */
 
 if ( process.env.export ) {
-	const exportTheme = require( './webpack.mix.export.js' );
-	return;
+    const exportTheme = require( './webpack.mix.export.js' );
+    return;
 }
 
 /*
@@ -62,8 +62,16 @@ mix.setPublicPath( './' );
  * @link https://laravel.com/docs/5.6/mix#url-processing
  */
 mix.options( {
-	postCss        : [ require( 'postcss-preset-env' )() ],
-	processCssUrls : false
+    postCss        : [
+        require( 'postcss-preset-env' )(),
+        require('postcss-sort-media-queries')({
+            sort: 'mobile-first'
+            // sort: function(a, b) {
+            // custom sorting function
+            // }
+        })
+    ],
+    processCssUrls : false
 } );
 
 /*
@@ -93,7 +101,6 @@ mix.react( `${devPath}/js/app.js`,                'dist/js' )
    .react( `${devPath}/js/customize-preview.js`,  'dist/js' )
    .react( `${devPath}/js/editor.js`,             'dist/js' );
 
-
 /*
  * Compile CSS. Mix supports Sass, Less, Stylus, and plain CSS, and has functions
  * for each of them.
@@ -105,16 +112,15 @@ mix.react( `${devPath}/js/app.js`,                'dist/js' )
 
 // Sass configuration.
 var sassConfig = {
-	outputStyle : 'expanded',
-	indentType  : 'tab',
-	indentWidth : 1
+    outputStyle : 'expanded',
+    indentType  : 'tab',
+    indentWidth : 1
 };
 
 // Compile SASS/CSS.
 mix.sass( `${devPath}/scss/screen.scss`,             'dist/css', sassConfig )
    .sass( `${devPath}/scss/editor.scss`,             'dist/css', sassConfig )
    .sass( `${devPath}/scss/customize-controls.scss`, 'dist/css', sassConfig );
-
 
 /*
  * Add custom Webpack configuration.
@@ -127,42 +133,42 @@ mix.sass( `${devPath}/scss/screen.scss`,             'dist/css', sassConfig )
  * @link https://webpack.js.org/configuration/
  */
 mix.webpackConfig( {
-	stats       : 'minimal',
-	devtool     : mix.inProduction() ? false : 'source-map',
-	performance : { hints  : false    },
+    stats       : 'minimal',
+    devtool     : mix.inProduction() ? false : 'source-map',
+    performance : { hints  : false    },
     externals   : { jquery : 'jQuery' },
-	resolve     : {
-		alias : {
-			// Alias for Hybrid Customize assets.
-			// Import from `hybrid-customize/js` or `~hybrid-customize/scss`.
+    resolve     : {
+        alias : {
+            // Alias for Hybrid Customize assets.
+            // Import from `hybrid-customize/js` or `~hybrid-customize/scss`.
             'hybrid-customize' : path.resolve( __dirname, 'vendor/justintadlock/hybrid-customize/resources/' ),
 
             // alias for customize-preview directory
             'customize-preview' : path.resolve( __dirname, 'resources/js/customize-preview/' ),
-		}
-	},
-	plugins     : [
-		// @link https://github.com/webpack-contrib/copy-webpack-plugin
-		new CopyWebpackPlugin( [
-			{ from : `${devPath}/svg`,   to : 'dist/svg'   },
-		]),
-	]
+        }
+    },
+    plugins     : [
+        // @link https://github.com/webpack-contrib/copy-webpack-plugin
+        new CopyWebpackPlugin( [
+            { from : `${devPath}/svg`,   to : 'dist/svg'   },
+        ]),
+    ]
 });
 
 if ( process.env.sync ) {
 
-	/*
-	 * Monitor files for changes and inject your changes into the browser.
-	 *
-	 * @link https://laravel.com/docs/5.6/mix#browsersync-reloading
-	 */
-	mix.browserSync( {
-		proxy : 'localhost',
-		files : [
-			'dist/**/*',
-			`${devPath}/views/**/*.php`,
-			'app/**/*.php',
-			'functions.php'
-		]
-	});
+    /*
+     * Monitor files for changes and inject your changes into the browser.
+     *
+     * @link https://laravel.com/docs/5.6/mix#browsersync-reloading
+     */
+    mix.browserSync( {
+        proxy : 'localhost',
+        files : [
+            'dist/**/*',
+            `${devPath}/views/**/*.php`,
+            'app/**/*.php',
+            'functions.php'
+        ]
+    });
 }

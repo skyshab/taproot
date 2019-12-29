@@ -6,7 +6,7 @@
  * @since 1.0.0
  */
 
-use function Taproot\Template\Icons\location as icon;
+use function Hybrid\app;
 use function Hybrid\Post\display_date as display_date;
 use function Hybrid\Post\display_terms as display_terms;
 
@@ -35,7 +35,7 @@ if( $data['author'] !== false ) {
     $author_id = $post->post_author;
     $author_name = sprintf('<span class="taproot-meta__item__content">%s</span>', get_the_author_meta('display_name', $author_id) );
     $author_label = ( $data['icons'] ) ?
-        icon( 'author', ['icon' => 'user'] ) :
+        app('icons')->location( 'author', ['icon' => 'user'] ) :
         sprintf('<span class="taproot-meta__label">%s:</span>', esc_html__('Author', 'taproot') );
 
     printf('<span class="taproot-meta__item taproot-meta__item--author">%s %s</span>', $author_label, $author_name);
@@ -44,7 +44,7 @@ if( $data['author'] !== false ) {
 // Display Published Date
 if( $data['date'] !== false ) {
     $date_label = ( $data['icons'] ) ?
-        icon( 'date', ['icon' => 'calendar'] ) :
+        app('icons')->location( 'date', ['icon' => 'calendar'] ) :
         sprintf('<span class="taproot-meta__label">%s:</span>', esc_html__('Published', 'taproot') );
 
     display_date([
@@ -61,8 +61,8 @@ if( !empty( $data['taxonomies'] ) ) {
 
             if( $data['icons'] ) {
                 $tax_label = ( is_taxonomy_hierarchical( $tax ) ) ?
-                    icon( 'categories', ['icon' => 'list-ul'] ) :
-                    icon( 'tags', ['icon' => 'tags'] );
+                    app('icons')->location( 'categories', ['icon' => 'list-ul'] ) :
+                    app('icons')->location( 'tags', ['icon' => 'tags'] );
             }
             else {
                 $tax_labels = get_taxonomy_labels( get_taxonomy( $tax ) );

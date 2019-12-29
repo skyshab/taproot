@@ -1,11 +1,6 @@
 ////
 /// Editor stylesheet.
 ///
-/// This is the primary editor stylesheet. It is used for the WordPress 5.0+
-/// block editor (Gutenberg) and is not intended for older versions of the
-/// WordPress edit screen.
-///
-/// @group  Styles
 /// @author Sky Shabatura <theme@sky.camp>
 /// @link   https://taproot-theme.com
 ////
@@ -19,20 +14,14 @@
 // var defaults
 :root {
     // colors
-    @import 'custom-properties/colors';
-
-    // global vars
-    @import 'custom-properties/default';
-
-    // mobile vars
-    @import 'custom-properties/mobile';
+    @import 'components/colors/_custom-properties';
 }
 
 // tablet vars
 @media ( min-width: 768px ) {
     // use tablet vars when sidebar closed
     .edit-post-layout:not(.is-sidebar-opened) {
-        @import 'custom-properties/tablet';
+
     }
 }
 
@@ -40,12 +29,12 @@
 @media (min-width: 960px) {
     // use tablet vars when settings sidebar is open
     :root {
-        @import 'custom-properties/tablet';
+
     }
 
     // use desktop vars when settings sidebar is closed
     .edit-post-layout:not(.is-sidebar-opened) {
-        @import 'custom-properties/desktop';
+
     }
 }
 

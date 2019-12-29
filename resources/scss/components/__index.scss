@@ -10,17 +10,46 @@
 /// @link   https://taproot-theme.com
 ////
 
+// Get all component custom properties first
+@import 'colors/_custom-properties';
+@import 'header/_custom-properties';
+@import 'layout/_custom-properties';
+@import 'footer/_custom-properties';
+@import 'typography/_custom-properties';
+@import 'navigation-header/_custom-properties';
+@import 'navigation-navbar/_custom-properties';
+@import 'navigation-top/_custom-properties';
+@import 'navigation-footer/_custom-properties';
+@import 'navigation-postnav/_custom-properties';
+@import 'navigation-breadcrumbs/_custom-properties';
+@import 'background/_custom-properties';
+@import 'buttons/_custom-properties';
+@import 'sidebar/_custom-properties';
+@import 'post-types/_custom-properties';
+
+
+// Boot the components
 @import 'app';
-@import 'app-content';
-@import 'app-main';
-@import 'app-footer';
-@import 'container';
+@import 'entry';
+@import 'meta';
+@import 'colors/_index';
 @import 'header/_index';
+@import 'layout/_index';
+@import 'footer/_index';
+@import 'typography/_index';
+@import 'navigation/_index';
+@import 'navigation-header/_index';
+@import 'navigation-navbar/_index';
+@import 'navigation-top/_index';
+@import 'navigation-footer/_index';
+@import 'navigation-postnav/_index';
+@import 'navigation-pagination/_index';
+@import 'navigation-breadcrumbs/_index';
+@import 'background/_index';
+@import 'buttons/_index';
+@import 'sidebar/_index';
+@import 'search/_index';
+@import 'post-types/_index';
+@import 'icons/_index';
 @import 'comments/_index';
-@import 'entry/_index';
-@import 'media/_index';
-@import 'nav/_index';
-@import 'archive-header';
-@import 'sidebar';
-@import 'searchform';
 @import 'widgets/_index';

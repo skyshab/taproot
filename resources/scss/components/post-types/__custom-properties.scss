@@ -1,0 +1,33 @@
+////
+/// Component Custom Properties
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+:root {
+
+    // Colors
+    --entry--title--color: '';
+    --archive--title--text-color: '';
+
+    // Element size and spacing
+    --entry--title--font-size: 2em;
+    --entry--title--line-height: '';
+
+    --entry--meta--font-size: '';
+    --entry--meta--text-color: '';
+    --entry--meta--icon-color: '';
+
+    --archive--title--font-size: 2em;
+    --archive--title--line-height: 1.2;
+
+    --entry--archive-link--font-size: '';
+
+    // Desktop size and spacing
+    @include screen('laptop-and-up') {
+        --entry--title--font-size: 2.5em;
+        --archive--title--font-size: 2.5em;
+    }
+}

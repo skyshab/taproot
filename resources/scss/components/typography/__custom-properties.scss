@@ -1,0 +1,66 @@
+////
+/// Component Custom Properties
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+:root {
+
+    // Colors
+    --typography--body--text-color: #8c8c8c;
+    --typography--links--color: var( --colors--theme--accent );
+    --typography--links--color--visited: var( --typography--links--color );
+    --typography--links--color--hover: var( --typography--links--color );
+    --typography--links--color--active: var( --typography--links--color--hover );
+
+    // Mobile/default
+    --typography--body--font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+
+    // base body styles
+    --typography--body--font-size: 16px;
+    --typography--body--line-height: 1.5;
+    --typography--body--block-spacing: 1.5em;
+
+    // Heading font sizes
+    --typography--h1--font-size: 2em;
+    --typography--h2--font-size: 1.63em;
+    --typography--h3--font-size: 1.38em;
+    --typography--h4--font-size: 1.13em;
+    --typography--h5--font-size: 1em;
+    --typography--h6--font-size: 1em;
+
+    // Heading line heights
+    --typography--h1--line-height: 1.05;
+    --typography--h2--line-height: 1.25;
+    --typography--h3--line-height: 1.25;
+    --typography--h4--line-height: 1.22;
+    --typography--h5--line-height: 1.05;
+    --typography--h6--line-height: 1.05;
+
+    // Tablet
+    @include screen('tablet') {
+
+        // Body base styles
+        --typography--body--font-size: 18px;
+        --typography--body--line-height: 1.6;
+        --typography--body--block-spacing: 1.6em;
+
+        // Heading font sizes
+        --typography--h1--font-size: 2.5em;
+        --typography--h2--font-size: 2em;
+        --typography--h3--font-size: 1.5em;
+        --typography--h4--font-size: 1.13em;
+    }
+
+    // Desktop
+    @include screen('desktop') {
+
+        // Heading font sizes
+        --typography--h1--font-size: 3em;
+        --typography--h2--font-size: 2.25em;
+        --typography--h3--font-size: 1.75em;
+        --typography--h4--font-size: 1.25em;
+    }
+}

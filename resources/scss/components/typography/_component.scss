@@ -1,0 +1,34 @@
+////
+/// Component: Typography
+///
+/// @group  Components\Typography
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+html {
+    font-size:      var( --typography--body--font-size );
+    line-height:    var( --typography--body--line-height );
+}
+
+body {
+    color:          var( --typography--body--text-color );
+    font-family:    var( --typography--body--font-family );
+}
+
+p, ul, ol, pre, blockquote, address, figure, dt, table {
+    margin-bottom:  var( --typography--body--block-spacing );
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    background-color: var( --colors--theme--meta-light );
+}
+
+abbr,
+acronym {
+    border-bottom: 1px dotted var( --colors--theme--meta-medium );
+}

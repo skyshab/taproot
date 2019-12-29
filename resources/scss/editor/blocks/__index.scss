@@ -8,9 +8,20 @@
 /// @link   https://taproot-theme.com
 ////
 
+// import global block styles
+@import 'blocks';
 
-// import theme block styles
-@import 'theme/_index';
+// Post title styles
+@import 'post-title';
 
-// import plugin block styles
-@import 'plugin/_index';
+// Individual block styles
+@import 'buttons';
+@import 'code';
+@import 'headings';
+@import 'media-text';
+@import 'pre';
+@import 'quotes';
+@import 'separator';
+@import 'table';
+@import 'verse';
+@import 'group';

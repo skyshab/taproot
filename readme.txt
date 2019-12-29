@@ -2,8 +2,8 @@
 Contributors: skyshab
 Tags: custom-background, custom-header, custom-colors, custom-menu, featured-images, one-column, two-column, theme-options, block-editor-styles, threaded-comments, translation-ready
 Requires at least: 5.0
-Tested up to: 5.3
-Stable tag: 1.4.2
+Tested up to: 5.2.2
+Stable tag: 1.4.0
 
 A lightweight yet powerful all-purpose theme.
 

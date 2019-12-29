@@ -11,7 +11,7 @@
 
 <div class="app">
 
-	<header <?php Hybrid\Attr\display( 'app-header' ) ?> >
+    <header <?php Hybrid\Attr\display( 'app-header' ) ?> >
 
         <a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'taproot' ) ?></a>
 
@@ -34,9 +34,9 @@
         </div>
 
         <div class="additional-header-content">
-            <?php Taproot\Template\additional_content() ?>
+            <?php do_action('taproot/header/additional-content') ?>
         </div>
 
         <?php Hybrid\View\display( 'nav/menu', 'navbar', [ 'location' => 'navbar' ] ) ?>
 
-	</header>
+    </header>

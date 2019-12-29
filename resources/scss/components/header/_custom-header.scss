@@ -19,8 +19,8 @@
     overflow: hidden;
     z-index: 0;
 
-	// Header image.
-	img {
+    // Header image.
+    img {
         display: block;
         object-fit: cover;
         max-width: none;
@@ -47,7 +47,7 @@
     &:not(.app-header--fixed) {
         color: var( --header--hero--default-color );
         a:hover {
-            color: var( --header--hero--link-color--hover );
+            color: var( --header--hero--default-color--hover );
         }
     }
 

@@ -177,7 +177,7 @@ class TaprootFontStyles {
  * Initiate Control
  */
 wp.customize.controlConstructor['taproot-font-styles'] = wp.customize.Control.extend( {
-	ready: function() {
+    ready: function() {
         let fontStyles = new TaprootFontStyles( this );
-	}
+    }
 });

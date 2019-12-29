@@ -1,0 +1,46 @@
+////
+/// Post Navigation component.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+.postnav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--layout--block-spacing--large);
+
+    &.has-separators {
+        padding: 0.625rem 0;
+        border-top: 1px solid var( --colors--theme--meta-medium );
+        border-bottom: 1px solid var( --colors--theme--meta-medium );
+    }
+
+    &__link {
+
+        font-size: var( --posts--nav--font-size );
+
+        a {
+            display: flex;
+            align-items: center;
+            line-height: 1;
+
+            &:link, &:visited {
+                color: var( --colors--theme--meta-dark );
+            }
+
+            &:hover {
+                color: var( --colors--theme--accent );
+            }
+        }
+
+        &--prev .taproot-icon {
+            margin-right: 0.5em;
+        }
+        &--next .taproot-icon {
+            margin-left: 0.5em;
+        }
+    }
+}
