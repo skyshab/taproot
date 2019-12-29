@@ -41,6 +41,8 @@
     // needed for custom header image
     position: relative;
 
+    background-color: black;
+
     &__link {
         font-size:      var( --navigation--navbar--font-size );
         line-height:    var( --navigation--navbar--line-height );
