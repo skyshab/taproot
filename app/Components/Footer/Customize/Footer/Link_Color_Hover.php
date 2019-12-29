@@ -1,8 +1,8 @@
 <?php
 /**
- * Fixed Header Default Color.
+ * Footer Default Hover Color.
  *
- * This class handles the customizer control for the fixed header color.
+ * This class handles the customizer control for the footer hover color.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Header\Customize\Styles_Fixed;
+namespace Taproot\Components\Footer\Customize\Footer;
 
 use Taproot\Customize\Controls\Color\Color;
 use function Taproot\Tools\theme_mod;
@@ -22,15 +22,15 @@ use function Taproot\Tools\theme_mod;
  * @since  2.0.0
  * @access public
  */
-class Default_Color extends Color {
+class Link_Color_Hover extends Color {
 
     /**
-     * Stores control ID
+     * Stores name
      *
      * @since 2.0.0
      * @var string
      */
-    public $name = 'default-color';
+    public $id = 'footer--link-color--hover';
 
     /**
      * Stores control label
@@ -38,7 +38,7 @@ class Default_Color extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Header Default Color';
+    public $label = 'Link Color: Hover';
 
     /**
      * Styles
@@ -49,9 +49,11 @@ class Default_Color extends Color {
      */
     public function styles($styles) {
 
-        $styles->customProperty([
-            'name'  => $this->id,
-            'value' => theme_mod( $this->id ),
+        $styles->add([
+            'selector' => '.app-footer a:hover',
+            'styles' => [
+                'color' => theme_mod( $this->id ),
+            ],
         ]);
     }
 }

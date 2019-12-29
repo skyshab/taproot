@@ -9,12 +9,12 @@
 :root {
 
     // Colors
-    --header--default-color: var( --colors--theme--accent-contrast );
-    --header--fixed--default-color: var( --header--default-color );
-    --header--hero--default-color: var( --header--default-color );
-    --header--link-color--hover: var( --colors--theme--accent-contrast );
+    --header--text-color:               var( --colors--theme--accent-contrast );
+    --header--fixed--text-color:        var( --header--text-color );
+    --header--hero--text-color:         var( --header--text-color );
+    --header--link-color--hover:        var( --colors--theme--accent-contrast );
     --header--fixed--link-color--hover: var( --header--link-color--hover );
-    --header--hero--link-color--hover: var( --header--link-color--hover );
+    --header--hero--link-color--hover:  var( --header--link-color--hover );
 
     // Mobile/default
     --header--padding: 1rem;

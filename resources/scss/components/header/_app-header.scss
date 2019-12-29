@@ -10,12 +10,12 @@
 .app-header {
 
     background-color: var( --colors--theme--accent );
-    color: var( --header--default-color );
+    color: var( --header--text-color );
     width: 100%;
     position: relative;
 
     a:hover {
-        color: var( --header--default-color--hover );
+        color: var( --header--link-color--hover );
     }
 
     &__branding {
@@ -195,10 +195,10 @@
             // customize defaults
             background-color: #000000;
 
-            color: var( --header--fixed--default-color );
+            color: var( --header--fixed--text-color );
 
             a:hover {
-                color: var( --header--fixed--default-color--hover );
+                color: var( --header--fixed--link-color--hover );
             }
         };
     }

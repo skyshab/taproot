@@ -57,8 +57,8 @@ class Section extends SectionAbstract {
         'Is_Fixed',
         'Is_Fullwidth',
         'Background_Color',
-        'Default_Color',
-        'Default_Color_Hover',
+        'Text_Color',
+        'Link_Color_Hover',
         'Padding'
     ];
 }

@@ -1,8 +1,8 @@
 <?php
 /**
- * Header Default Color.
+ * Footer Default Color.
  *
- * This class handles the customizer control for the header color.
+ * This class handles the customizer control for the footer color.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Header\Customize\Styles;
+namespace Taproot\Components\Footer\Customize\Footer;
 
 use Taproot\Customize\Controls\Color\Color;
 use function Taproot\Tools\theme_mod;
@@ -22,7 +22,7 @@ use function Taproot\Tools\theme_mod;
  * @since  2.0.0
  * @access public
  */
-class Default_Color extends Color {
+class Text_Color extends Color {
 
     /**
      * Control name
@@ -30,7 +30,7 @@ class Default_Color extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $id = 'header--default-color';
+    public $id = 'footer--text-color';
 
     /**
      * Control label
@@ -38,7 +38,7 @@ class Default_Color extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Header Default Color';
+    public $label = 'Text Color';
 
     /**
      * Default
@@ -46,7 +46,7 @@ class Default_Color extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $default = '#edba1d';
+    public $default = '#ffffff';
 
     /**
      * Styles
@@ -56,9 +56,12 @@ class Default_Color extends Color {
      * @return void
      */
     public function styles($styles) {
-        $styles->customProperty([
-            'name'  => $this->id,
-            'value' => theme_mod( $this->id ),
+
+        $styles->add([
+            'selector' => '.app-footer, .app-footer a',
+            'styles' => [
+                'color' => theme_mod( $this->id ),
+            ],
         ]);
     }
 }

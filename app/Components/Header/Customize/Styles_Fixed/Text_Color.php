@@ -1,8 +1,8 @@
 <?php
 /**
- * Hero Default Hover Color.
+ * Fixed Header Default Color.
  *
- * This class handles the customizer control for the hero default hover color.
+ * This class handles the customizer control for the fixed header color.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Header\Customize\Hero;
+namespace Taproot\Components\Header\Customize\Styles_Fixed;
 
 use Taproot\Customize\Controls\Color\Color;
 use function Taproot\Tools\theme_mod;
@@ -22,15 +22,15 @@ use function Taproot\Tools\theme_mod;
  * @since  2.0.0
  * @access public
  */
-class Default_Color_Hover extends Color {
+class Text_Color extends Color {
 
     /**
-     * Stores name
+     * Stores control ID
      *
      * @since 2.0.0
      * @var string
      */
-    public $name = 'default-color--hover';
+    public $name = 'text-color';
 
     /**
      * Stores control label
@@ -38,7 +38,7 @@ class Default_Color_Hover extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Hero Default Color: Hover';
+    public $label = 'Fixed Header Text Color';
 
     /**
      * Styles
@@ -48,6 +48,7 @@ class Default_Color_Hover extends Color {
      * @return void
      */
     public function styles($styles) {
+
         $styles->customProperty([
             'name'  => $this->id,
             'value' => theme_mod( $this->id ),

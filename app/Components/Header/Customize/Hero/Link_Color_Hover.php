@@ -1,8 +1,8 @@
 <?php
 /**
- * Footer Default Hover Color.
+ * Hero Default Hover Color.
  *
- * This class handles the customizer control for the footer hover color.
+ * This class handles the customizer control for the hero default hover color.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Footer\Customize\Footer;
+namespace Taproot\Components\Header\Customize\Hero;
 
 use Taproot\Customize\Controls\Color\Color;
 use function Taproot\Tools\theme_mod;
@@ -22,7 +22,7 @@ use function Taproot\Tools\theme_mod;
  * @since  2.0.0
  * @access public
  */
-class Default_Color_Hover extends Color {
+class Link_Color_Hover extends Color {
 
     /**
      * Stores name
@@ -30,7 +30,7 @@ class Default_Color_Hover extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $id = 'footer--default-color--hover';
+    public $name = 'link-color--hover';
 
     /**
      * Stores control label
@@ -38,7 +38,7 @@ class Default_Color_Hover extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Default Color: Hover';
+    public $label = 'Hero Link Color: Hover';
 
     /**
      * Styles
@@ -48,12 +48,9 @@ class Default_Color_Hover extends Color {
      * @return void
      */
     public function styles($styles) {
-
-        $styles->add([
-            'selector' => '.app-footer a:hover',
-            'styles' => [
-                'color' => theme_mod( $this->id ),
-            ],
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => theme_mod( $this->id ),
         ]);
     }
 }

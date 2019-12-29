@@ -472,9 +472,9 @@ li > ul, li > ol {
 }
 
 :root {
-	--header--default-color: var( --colors--theme--accent-contrast );
-	--header--fixed--default-color: var( --header--default-color );
-	--header--hero--default-color: var( --header--default-color );
+	--header--text-color: var( --colors--theme--accent-contrast );
+	--header--fixed--text-color: var( --header--text-color );
+	--header--hero--text-color: var( --header--text-color );
 	--header--link-color--hover: var( --colors--theme--accent-contrast );
 	--header--fixed--link-color--hover: var( --header--link-color--hover );
 	--header--hero--link-color--hover: var( --header--link-color--hover );
@@ -801,12 +801,13 @@ option {
 	background-color: #00a0d1;
 	background-color: var(--colors--theme--accent);
 	color: #ffffff;
-	color: var(--header--default-color);
+	color: var(--header--text-color);
 	width: 100%;
 	position: relative;
 }
 .app-header a:hover {
-	color: var(--header--default-color--hover);
+	color: #ffffff;
+	color: var(--header--link-color--hover);
 }
 .app-header__branding {
 	display: grid;
@@ -904,10 +905,11 @@ option {
 }
 .app-header--has-custom-header:not(.app-header--fixed) {
 	color: #ffffff;
-	color: var(--header--hero--default-color);
+	color: var(--header--hero--text-color);
 }
 .app-header--has-custom-header:not(.app-header--fixed) a:hover {
-	color: var(--header--hero--default-color--hover);
+	color: #ffffff;
+	color: var(--header--hero--link-color--hover);
 }
 .app-header--has-custom-header.app-header--has-topnav {
 	grid-template-rows: auto auto 1fr auto;
@@ -1464,6 +1466,7 @@ a:hover, a:active {
 
 .menu--navbar {
 	position: relative;
+	background-color: black;
 }
 .menu--navbar__link {
 	font-size: var(--navigation--navbar--font-size);
@@ -1918,13 +1921,15 @@ button {
 	text-align: right;
 }
 .widget--calendar caption {
-	background-color: var(--colors--sidebar--accent-color);
+	background-color: #00a0d1;
+	background-color: var(--sidebar--accent-color);
 	color: white;
 	padding: 0.5em;
 }
 
 .widget--media-audio .mejs-container, .widget--media-audio .mejs-container .mejs-controls, .widget--media-audio .mejs-embed, .widget--media-audio .mejs-embed body, .widget--media-video .mejs-container, .widget--media-video .mejs-container .mejs-controls, .widget--media-video .mejs-embed, .widget--media-video .mejs-embed body {
-	background: var(--colors--sidebar--accent-color);
+	background: #00a0d1;
+	background: var(--sidebar--accent-color);
 }
 
 .gallery {
@@ -3101,10 +3106,11 @@ th:not(:last-child), td:not(:last-child) {
 		transform: translateZ(0);
 		background-color: #000000;
 		color: #ffffff;
-		color: var(--header--fixed--default-color);
+		color: var(--header--fixed--text-color);
 	}
 	.app-header--fixed a:hover {
-		color: var(--header--fixed--default-color--hover);
+		color: #ffffff;
+		color: var(--header--fixed--link-color--hover);
 	}
 	.app-main {
 		box-sizing: content-box;

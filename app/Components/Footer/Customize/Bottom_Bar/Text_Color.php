@@ -1,8 +1,8 @@
 <?php
 /**
- * Fixed Header Default Hover Color.
+ * Footer Default Color.
  *
- * This class handles the customizer control for the fixed header hover color.
+ * This class handles the customizer control for the footer color.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Header\Customize\Styles_Fixed;
+namespace Taproot\Components\Footer\Customize\Bottom_Bar;
 
 use Taproot\Customize\Controls\Color\Color;
 use function Taproot\Tools\theme_mod;
@@ -22,23 +22,31 @@ use function Taproot\Tools\theme_mod;
  * @since  2.0.0
  * @access public
  */
-class Default_Color_Hover extends Color {
+class Text_Color extends Color {
 
     /**
-     * Stores control ID
+     * Control id
      *
      * @since 2.0.0
      * @var string
      */
-    public $name = 'default-color--hover';
+    public $name = 'text-color';
 
     /**
-     * Stores control label
+     * Control label
      *
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Header Default Color: Hover';
+    public $label = 'Text Color';
+
+    /**
+     * Default
+     *
+     * @since 2.0.0
+     * @var string
+     */
+    public $default = '#ffffff';
 
     /**
      * Styles
@@ -48,9 +56,12 @@ class Default_Color_Hover extends Color {
      * @return void
      */
     public function styles($styles) {
-        $styles->customProperty([
-            'name'  => $this->id,
-            'value' => theme_mod( $this->id ),
+
+        $styles->add([
+            'selector' => '.app-footer, .app-footer a',
+            'styles' => [
+                'color' => theme_mod( $this->id ),
+            ]
         ]);
     }
 }

@@ -45,9 +45,9 @@
 .app-header--has-custom-header {
 
     &:not(.app-header--fixed) {
-        color: var( --header--hero--default-color );
+        color: var( --header--hero--text-color );
         a:hover {
-            color: var( --header--hero--default-color--hover );
+            color: var( --header--hero--link-color--hover );
         }
     }
 

@@ -58,7 +58,7 @@ class Section extends SectionAbstract {
         'Height',
         'Overlay_Color',
         'Overlay_Opacity',
-        'Default_Color',
-        'Default_Color_Hover'
+        'Text_Color',
+        'Link_Color_Hover'
     ];
 }

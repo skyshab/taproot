@@ -1,8 +1,8 @@
 <?php
 /**
- * Footer Default Color.
+ * Hero Default Color.
  *
- * This class handles the customizer control for the footer color.
+ * This class handles the customizer control for the hero default color.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Footer\Customize\Footer;
+namespace Taproot\Components\Header\Customize\Hero;
 
 use Taproot\Customize\Controls\Color\Color;
 use function Taproot\Tools\theme_mod;
@@ -22,7 +22,7 @@ use function Taproot\Tools\theme_mod;
  * @since  2.0.0
  * @access public
  */
-class Default_Color extends Color {
+class Text_Color extends Color {
 
     /**
      * Control name
@@ -30,7 +30,7 @@ class Default_Color extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $id = 'footer--default-color';
+    public $name = 'text-color';
 
     /**
      * Control label
@@ -38,15 +38,7 @@ class Default_Color extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Default Color';
-
-    /**
-     * Default
-     *
-     * @since 2.0.0
-     * @var string
-     */
-    public $default = '#ffffff';
+    public $label = 'Hero Text Color';
 
     /**
      * Styles
@@ -56,12 +48,9 @@ class Default_Color extends Color {
      * @return void
      */
     public function styles($styles) {
-
-        $styles->add([
-            'selector' => '.app-footer, .app-footer a',
-            'styles' => [
-                'color' => theme_mod( $this->id ),
-            ],
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => theme_mod( $this->id ),
         ]);
     }
 }

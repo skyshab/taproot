@@ -56,8 +56,8 @@ class Section extends SectionAbstract {
     public $controls = [
         'Is_Fullwidth',
         'Background_Color',
-        'Default_Color',
-        'Default_Color_Hover',
+        'Text_Color',
+        'Link_Color_Hover',
         'Padding'
     ];
 }
