@@ -38,7 +38,7 @@ class Provider extends ServiceProvider {
         $this->app->singleton( Controller::class );
 
         // Bind a single instance of our functions class.
-        $this->app->singleton( 'featured-image', Functions::class );
+        $this->app->singleton( 'images/template', Template::class );
     }
 
     /**

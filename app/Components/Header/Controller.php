@@ -169,21 +169,10 @@ class Controller implements Bootable {
      */
     public function custom_header( $value = false ) {
 
-
-        // Customizer uses this filter to get the current set image
-        if ( is_admin() ) {
-            return $value;
-        }
-
-        // Default homepage
-        if ( is_front_page() && is_home() ) {
-            return $value;
-        }
-
         // Single posts pages and custom post types
         if( is_singular() ) {
 
-            $header_image_type = Functions::get_custom_header_type();
+            $header_image_type = app('header/template')->get_custom_header_type();
 
             if( 'none' === $header_image_type ) {
                 return false;

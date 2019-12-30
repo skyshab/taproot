@@ -1,8 +1,8 @@
 <?php
 /**
- * Post Type Template Tags.
+ * Post Type Template Functions.
  *
- * This class contains helper functions for use in post type templates and settings.
+ * This class contains helper functions for use in post type templates.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
@@ -16,12 +16,12 @@ namespace Taproot\Components\Post_Types;
 use Taproot\Tools\Mod;
 
 /**
- * Template tags class.
+ * Template functions class.
  *
  * @since  2.0.0
  * @access public
  */
-class Functions {
+class Template {
 
     /**
      * Output Entry Link

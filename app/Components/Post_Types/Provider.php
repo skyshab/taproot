@@ -43,6 +43,9 @@ class Provider extends ServiceProvider {
 
         // Bind a single instance of our customize component class.
         $this->app->singleton( Component::class );
+
+        // Bind a single instance of the component template class.
+        $this->app->singleton( 'post-types/template', Template::class );
     }
 
     /**

@@ -14,9 +14,9 @@
 namespace Taproot\Components\Post_Types;
 
 use Hybrid\Contracts\Bootable;
-use Taproot\Components\Header\Functions as Header;
 use Taproot\Tools\Mod;
 use function Taproot\Tools\theme_mod;
+use function Hybrid\app;
 
 /**
  * Class to handle component actions.
@@ -123,8 +123,7 @@ class Controller implements Bootable {
     public function featured_image_display( $display, $type ) {
 
         if( is_singular() ) {
-
-            if( 'featured' === Header::get_custom_header_type() && 'header' !== $type ) {
+            if( 'featured' === app('header/template')->get_custom_header_type() && 'header' !== $type ) {
                 return false;
             }
         }
@@ -156,5 +155,30 @@ class Controller implements Bootable {
         }
 
         return $title;
+    }
+
+    /**
+     * Filter to add support for breadcrumbs.
+     *
+     * @since 2.0.0
+     * @param string
+     * @return string.
+     */
+    public function breadcrumbs_support( $post_types ) {
+
+        // Get the post type
+        $post_type = get_post_type();
+
+        // Non hierarchical post types
+        if( Mod::get( "{$post_type}--single--breadcrumbs--enable" ) ) {
+            $post_types[] = $post_type;
+        }
+
+        // Hierarchical post types
+        if( Mod::get( "{$post_type}--breadcrumbs--enable" ) ) {
+            $post_types[] = $post_type;
+        }
+
+        return $post_types;
     }
 }

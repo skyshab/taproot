@@ -4,7 +4,7 @@
 
         <main <?php Hybrid\Attr\display( 'app-main' ) ?>>
 
-            <?php Taproot\Components\Navigation_Breadcrumbs\Functions::breadcrumbs() ?>
+            <?php Hybrid\app('breadcrumbs/template')->breadcrumbs() ?>
 
             <?php if ( have_posts() ) : ?>
 

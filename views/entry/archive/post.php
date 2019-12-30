@@ -1,6 +1,6 @@
 <article <?php Hybrid\Attr\display( 'entry' ) ?>>
 
-    <?php Hybrid\app('featured-image')->display([
+    <?php Hybrid\app('images/template')->the_featured_image([
         'class' => 'entry__image entry__image--archive',
         'size'  => 'large',
         'link'  => true,
@@ -38,7 +38,7 @@
     </div>
 
     <div class="entry__footer entry__footer--archive">
-        <?php Taproot\Components\Post_Types\Functions::entry_link() ?>
+        <?php  Hybrid\app('post-types/template')->entry_link() ?>
     </div>
 
 </article>

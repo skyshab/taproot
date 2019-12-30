@@ -33,11 +33,11 @@ class Provider extends ServiceProvider {
      */
     public function register() {
 
-        // Bind our postnav class.
-        $this->app->bind( 'postnav', Postnav::class );
-
         // Bind a single instance of our customize component class.
         $this->app->singleton( Customize::class );
+
+        // Bind our postnav template class.
+        $this->app->bind( 'postnav/template', Template::class );
     }
 
     /**

@@ -21,7 +21,7 @@ use Taproot\Tools\Mod;
  * @since  2.0.0
  * @access public
  */
-class Functions {
+class Template {
 
     /**
      * Get header overlay markup
@@ -67,7 +67,7 @@ class Functions {
      * @param  mixed $ratio - numeric value representing the opacity level
      * @return string - classname for controlling opacity
      */
-    public static function dimRatioToClass($ratio) {
+    private static function dimRatioToClass($ratio) {
         $ratio = intval( $ratio );
         return ( $ratio === 0 ) ? '' : sprintf(' has-background-dim-%s', 10 * round( $ratio / 10 ) );
     }
@@ -97,7 +97,7 @@ class Functions {
      * @param  array  $args
      * @return string
      */
-    public static function the_author( array $args = [] ) {
+    public static function get_the_author( array $args = [] ) {
 
         $args = wp_parse_args( $args, [
             'text'   => '%s',
@@ -118,6 +118,6 @@ class Functions {
             sprintf( $args['text'], $display_name )
         );
 
-        echo apply_filters( 'taproot/template/author', $args['before'] . $html . $args['after'] );
+        return apply_filters( 'taproot/template/author', $args['before'] . $html . $args['after'] );
     }
 }

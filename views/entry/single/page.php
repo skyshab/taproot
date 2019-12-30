@@ -1,6 +1,6 @@
 <article <?php Hybrid\Attr\display( 'entry' ) ?>>
 
-    <?php Hybrid\app('featured-image')->display(['class' => 'entry_image'], 'page'); ?>
+    <?php Hybrid\app('images/template')->the_featured_image(['class' => 'entry_image'], 'page'); ?>
 
     <?php Hybrid\View\display( 'entry/header', 'page' );?>
 

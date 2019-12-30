@@ -1,8 +1,8 @@
 <?php
 /**
- * Component Functions.
+ * Component Template Functions.
  *
- * This class contains helper functions for use in the component.
+ * This class contains helper functions for use in the theme view templates.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -22,7 +22,7 @@ use Hybrid\Breadcrumbs\Trail as Breadcrumbs;
  * @since  2.0.0
  * @access public
  */
-class Functions {
+class Template {
 
     /**
      * Get Breadcrumbs Markup
@@ -37,8 +37,8 @@ class Functions {
         $args = wp_parse_args($args, [
             'textColor'         => false,
             'customTextColor'   => false,
-            'align'             => Mod::get( 'breadcrumbs--align' ),
-            'showSeparators'    => Mod::get( 'breadcrumbs--has-separators' ),
+            'align'             => Mod::get( 'navigation--breadcrumbs--align' ),
+            'showSeparators'    => Mod::get( 'navigation--breadcrumbs--has-separators' ),
         ]);
 
         // not a good way to add the styles to the breadcrumbs container
@@ -72,15 +72,17 @@ class Functions {
     public static function breadcrumbs( $args = [] ) {
 
         // check if breadcrumbs are enabled
-        if( ! Mod::get( 'breadcrumbs--enable') ) {
+        if( ! Mod::get( 'navigation--breadcrumbs--enable' ) ) {
             return;
         }
 
         // filter for supported post types
-        $supported_types = apply_filters('taproot/breadcrumbs/supported-post-types', [] );
+        $supported_types = apply_filters( 'taproot/breadcrumbs/supported-post-types', [] );
 
         // check if current post type supports breadcrumbs
-        if( !in_array( get_post_type(), $supported_types ) ) return;
+        if( ! in_array( get_post_type(), $supported_types ) ) {
+            return;
+        }
 
         // print the breadcrumbs
         echo static::get_the_breadcrumbs( $args );

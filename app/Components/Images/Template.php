@@ -1,8 +1,8 @@
 <?php
 /**
- * Image functions.
+ * Image template functions.
  *
- * This class contains helper functions for images.
+ * This class contains helper functions for images to use in theme templates.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -19,7 +19,7 @@ namespace Taproot\Components\Images;
  * @since  2.0.0
  * @access public
  */
-class Functions {
+class Template {
 
     /**
      * Displays the featured image.
@@ -29,7 +29,7 @@ class Functions {
      * @param  string  $type
      * @return void
      */
-    public static function display( $args = [], $type = '' ) {
+    public static function the_featured_image( $args = [], $type = '' ) {
 
         // Filter to determine whether we should display the featured image
         if( ! apply_filters( 'featured-image/display', TRUE, $type ) ) {

@@ -1,6 +1,6 @@
 <article <?php Hybrid\Attr\display( 'entry' ) ?>>
 
-    <?php Hybrid\app('featured-image')->display([
+    <?php Hybrid\app('images/template')->the_featured_image([
         'class' => 'entry__image entry__image--archive',
         'size'  => 'large',
         'link'  => true,
