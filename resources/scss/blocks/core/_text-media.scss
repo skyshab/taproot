@@ -3,7 +3,7 @@
 
 .wp-block-media-text {
 
-    margin: var(--layout--block-spacing--large) 0;
+    margin: var( --block-spacing--large ) 0;
 
     &__content {
         padding: 2em;
@@ -12,7 +12,7 @@
             margin-bottom: 0;
         }
         p:empty:last-child {
-            margin-top: calc( -1 * var(--typography--body--block-spacing) );
+            margin-top: calc( -1 * var( --block-spacing ) );
         }
     }
     &__media {

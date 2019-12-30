@@ -23,7 +23,10 @@
     --archive--title--font-size: 2em;
     --archive--title--line-height: 1.2;
 
-    --entry--archive-link--font-size: '';
+    --archive-entry--title--font-size: 1.8em;
+    --archive-entry--title--line-height: 1;
+    --archive-entry--title--link-color: '';
+    --archive-entry--title--link-color--hover: '';
 
     // Desktop size and spacing
     @include screen('laptop-and-up') {

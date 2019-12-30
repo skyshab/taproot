@@ -10,12 +10,12 @@
 .postnav {
     display: flex;
     justify-content: space-between;
-    margin-bottom: var(--layout--block-spacing--large);
+    margin-bottom: var( --block-spacing--large );
 
     &.has-separators {
         padding: 0.625rem 0;
-        border-top: 1px solid var( --colors--theme--meta-medium );
-        border-bottom: 1px solid var( --colors--theme--meta-medium );
+        border-top: 1px solid var( --colors--meta-medium );
+        border-bottom: 1px solid var( --colors--meta-medium );
     }
 
     &__link {
@@ -28,11 +28,11 @@
             line-height: 1;
 
             &:link, &:visited {
-                color: var( --colors--theme--meta-dark );
+                color: var( --colors--meta-dark );
             }
 
             &:hover {
-                color: var( --colors--theme--accent );
+                color: var( --colors--accent );
             }
         }
 

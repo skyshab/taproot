@@ -14,7 +14,7 @@
     height:              420px;
     max-height:          100vh;
     width:               100%;
-    margin:              var(--layout--block-spacing--large) 0;
+    margin:              var( --block-spacing--large ) 0;
     display:             flex;
     justify-content:     center;
     align-items:         center;
@@ -40,7 +40,7 @@
     @for $dim from 1 through 10 {
 
         &.has-background-dim-#{ $dim * 10 }::before {
-            background-color: rgba( color( black ), $dim * 0.1 );
+            background-color: rgba( #000000, $dim * 0.1 );
         }
     }
 

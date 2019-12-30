@@ -11,7 +11,6 @@
 ////
 
 // Get all component custom properties first
-@import 'colors/_custom-properties';
 @import 'header/_custom-properties';
 @import 'layout/_custom-properties';
 @import 'footer/_custom-properties';
@@ -27,12 +26,10 @@
 @import 'sidebar/_custom-properties';
 @import 'post-types/_custom-properties';
 
-
 // Boot the components
 @import 'app';
 @import 'entry';
 @import 'meta';
-@import 'colors/_index';
 @import 'header/_index';
 @import 'layout/_index';
 @import 'footer/_index';

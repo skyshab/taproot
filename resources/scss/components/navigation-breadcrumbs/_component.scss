@@ -10,17 +10,17 @@
 
 
 .breadcrumbs {
-    margin-bottom: var(--layout--block-spacing--large);
+    margin-bottom: var( --block-spacing--large );
     word-wrap: break-word;
     word-break: normal;
-    color: var( --colors--theme--meta-dark );
+    color: var( --colors--meta-dark );
 
     a:link, a:visited {
         color: inherit;
     }
 
     a:hover {
-        color: var( --colors--theme--accent );
+        color: var( --colors--accent );
     }
 
     // The breadcrumb title
@@ -72,7 +72,7 @@
 
     &.has-separators {
         padding: 0.4em 0;
-        border-top: 1px solid var( --colors--theme--meta-medium );
-        border-bottom: 1px solid var( --colors--theme--meta-medium );
+        border-top: 1px solid var( --colors--meta-medium );
+        border-bottom: 1px solid var( --colors--meta-medium );
     }
 }

@@ -9,8 +9,8 @@
 :root {
 
     // Colors
-    --typography--body--text-color: #8c8c8c;
-    --typography--links--color: var( --colors--theme--accent );
+    --colors--text: #8c8c8c;
+    --typography--links--color: var( --colors--accent );
     --typography--links--color--visited: var( --typography--links--color );
     --typography--links--color--hover: var( --typography--links--color );
     --typography--links--color--active: var( --typography--links--color--hover );
@@ -21,7 +21,6 @@
     // base body styles
     --typography--body--font-size: 16px;
     --typography--body--line-height: 1.5;
-    --typography--body--block-spacing: 1.5em;
 
     // Heading font sizes
     --typography--h1--font-size: 2em;
@@ -45,7 +44,6 @@
         // Body base styles
         --typography--body--font-size: 18px;
         --typography--body--line-height: 1.6;
-        --typography--body--block-spacing: 1.6em;
 
         // Heading font sizes
         --typography--h1--font-size: 2.5em;

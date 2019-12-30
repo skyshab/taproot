@@ -8,7 +8,7 @@
 
 .pagination {
 
-    margin-top:                 var(--layout--block-spacing--large);
+    margin-top:                 var( --block-spacing--large );
 
     // The list of items.
     &__items {
@@ -43,10 +43,10 @@
 
             .pagination__anchor {
 
-                color:          var( --colors--theme--meta-dark );
+                color:          var( --colors--meta-dark );
 
                 &:hover {
-                    color:      var( --colors--theme--accent );
+                    color:      var( --colors--accent );
                 }
             }
         }
@@ -70,16 +70,16 @@
 
         &--number, &--dots {
 
-            background-color:   var( --colors--theme--meta-medium );
+            background-color:   var( --colors--meta-medium );
 
             .pagination__anchor {
-                color:          var( --colors--theme--accent-contrast );
+                color:          var( --colors--accent-contrast );
             }
         }
 
         &--number:hover, &--current {
-            background-color:   var( --colors--theme--accent );
-            color:              var( --colors--theme--accent-contrast );
+            background-color:   var( --colors--accent );
+            color:              var( --colors--accent-contrast );
         }
     }
 

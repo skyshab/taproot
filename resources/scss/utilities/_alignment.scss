@@ -16,12 +16,12 @@
     @media( min-width: 480px ) {
         &left {
             float:     left;
-            margin:    0 var( --typography--body--block-spacing ) var( --typography--body--block-spacing ) 0;
+            margin:    0 var( --block-spacing ) var( --block-spacing ) 0;
             max-width: 50%;
         }
         &right {
             float:     right;
-            margin:    0 0 var( --typography--body--block-spacing ) var( --typography--body--block-spacing );
+            margin:    0 0 var( --block-spacing ) var( --block-spacing );
             max-width: 50%;
         }
     }

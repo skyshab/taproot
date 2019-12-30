@@ -11,7 +11,7 @@
     position: relative;
     clear: both;
     padding: 0.8em 0.8em 0.8em 3em;
-    background-color: var( --colors--theme--meta-light );
+    background-color: var( --colors--meta-light );
 
     &:before {
         position: absolute;
@@ -23,7 +23,7 @@
         content: "\201C";
         font-weight: 700;
         opacity: 0.3;
-        color: var( --colors--theme--meta-dark );
+        color: var( --colors--meta-dark );
     }
 
     p {

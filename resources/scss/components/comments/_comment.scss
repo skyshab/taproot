@@ -12,9 +12,9 @@
 
     // Comment Wrapper.
     &__body {
-        padding: var( --typography--body--block-spacing );
-        margin-bottom: var( --typography--body--block-spacing );
-        border: 1px solid var( --colors--theme--meta-medium );
+        padding: var( --block-spacing );
+        margin-bottom: var( --block-spacing );
+        border: 1px solid var( --colors--meta-medium );
     }
 
     // Type of comment.

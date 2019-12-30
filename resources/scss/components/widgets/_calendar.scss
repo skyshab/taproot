@@ -10,11 +10,11 @@
 
     table {
         border-top: none;
-        background: var(--colors--theme--meta-light)
+        background: var( --colors--meta-light )
     }
 
     tbody {
-        border-bottom: 1px solid var(--colors--theme--meta-medium);
+        border-bottom: 1px solid var( --colors--meta-medium );
     }
 
     td, th {

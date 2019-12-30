@@ -18,8 +18,8 @@
     }
 
     &__button {
-        background:      color( black );
-        color:           color( white );
+        background:      #000000;
+        color:           #ffffff;
         padding:         0.5em 1em;
         text-decoration: none;
 
@@ -27,7 +27,7 @@
         &:visited,
         &:focus,
         &:active {
-            color:           color( white );
+            color:           #ffffff;
             opacity:         0.85;
             text-decoration: none;
         }

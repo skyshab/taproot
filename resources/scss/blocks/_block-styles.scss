@@ -13,8 +13,8 @@
 
 .alignfull,
 .alignwide {
-    margin-top: var(--layout--block-spacing--large);
-    margin-bottom: var(--layout--block-spacing--large);
+    margin-top: var( --block-spacing--large );
+    margin-bottom: var( --block-spacing--large );
 
     // force image to fill space
     img {

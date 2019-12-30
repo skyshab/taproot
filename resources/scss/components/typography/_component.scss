@@ -12,12 +12,12 @@ html {
 }
 
 body {
-    color:          var( --typography--body--text-color );
+    color:          var( --colors--text );
     font-family:    var( --typography--body--font-family );
 }
 
 p, ul, ol, pre, blockquote, address, figure, dt, table {
-    margin-bottom:  var( --typography--body--block-spacing );
+    margin-bottom:  var( --block-spacing );
 }
 
 pre,
@@ -25,10 +25,10 @@ code,
 kbd,
 tt,
 var {
-    background-color: var( --colors--theme--meta-light );
+    background-color: var( --colors--meta-light );
 }
 
 abbr,
 acronym {
-    border-bottom: 1px dotted var( --colors--theme--meta-medium );
+    border-bottom: 1px dotted var( --colors--meta-medium );
 }

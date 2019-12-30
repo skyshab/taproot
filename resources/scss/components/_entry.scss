@@ -13,7 +13,7 @@
 
     // Featured image.
     &_image {
-        margin-bottom: var( --typography--body--block-spacing );
+        margin-bottom: var( --block-spacing );
     }
 
     // Entry titles
@@ -53,7 +53,7 @@
 
         &--archive {
             &:last-child :last-child {
-                margin-bottom: var( --layout--block-spacing--large );
+                margin-bottom: var( --block-spacing--large );
             }
         }
     }
@@ -89,14 +89,14 @@
 
         &--archive {
 
-            color: var( --colors--theme--meta-dark );
+            color: var( --colors--meta-dark );
 
             a:link, a:visited {
                 color: inherit;
             }
 
             a:hover {
-                color: var( --colors--theme--accent );
+                color: var( --colors--accent );
             }
 
             .taproot-icon {
@@ -117,7 +117,7 @@
     &__header {
 
         &--page {
-            margin-bottom: var( --layout--block-spacing--large );
+            margin-bottom: var( --block-spacing--large );
         }
 
         &--archive {
@@ -128,33 +128,33 @@
     &__footer {
 
         &--single {
-            margin-bottom: var( --layout--block-spacing--large );
+            margin-bottom: var( --block-spacing--large );
         }
 
         &--page {
-            margin-bottom: var( --layout--block-spacing--large );
+            margin-bottom: var( --block-spacing--large );
         }
 
         &--archive {
             display: flex;
             flex-direction: column;
-            margin-bottom: var( --layout--block-spacing--large );
+            margin-bottom: var( --block-spacing--large );
         }
     }
 
     &--archive {
 
-        border-top: 1px solid var( --colors--theme--meta-medium );
-        padding-top: var( --layout--block-spacing--large );
+        border-top: 1px solid var( --colors--meta-medium );
+        padding-top: var( --block-spacing--large );
 
         &:last-of-type {
-            border-bottom: 1px solid var( --colors--theme--meta-medium );
+            border-bottom: 1px solid var( --colors--meta-medium );
         }
     }
 
     // Sticky posts.
     &.sticky {
-        border: 1px solid var( --colors--theme--meta-medium );
+        border: 1px solid var( --colors--meta-medium );
         border-bottom: none;
         padding: 1.5em 1.5em 1px 1.5em;
     }
@@ -163,5 +163,5 @@
 // Archive Titles
 .archive-header__title {
     padding-top: 0;
-    margin-bottom: var( --layout--block-spacing--large );
+    margin-bottom: var( --block-spacing--large );
 }

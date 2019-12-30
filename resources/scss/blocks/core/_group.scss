@@ -18,8 +18,8 @@
     }
 
     &.has-background {
-        margin-bottom: var( --typography--body--block-spacing ); // use larger block spacing unit here?
-        padding:       var( --typography--body--block-spacing );
+        margin-bottom: var( --block-spacing ); // use larger block spacing unit here?
+        padding:       var( --block-spacing );
     }
 
     &.alignfull.has-background > .alignfull:not(.has-background) {

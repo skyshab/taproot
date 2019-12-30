@@ -8,7 +8,7 @@
 
 .wp-block-audio {
 
-    margin: var(--layout--block-spacing--large) 0;
+    margin: var( --block-spacing--large ) 0;
 
     audio {
         width: 100%;
@@ -17,6 +17,6 @@
     // Set the background in Chrome.
     // Every browser has it's own interface for this
     audio::-webkit-media-controls-panel {
-        background-color: var( --colors--theme--meta-light );
+        background-color: var( --colors--meta-light );
     }
 }

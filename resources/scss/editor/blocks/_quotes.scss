@@ -11,7 +11,7 @@
 
 // force our font size on the blockquote block
 .wp-block-quote__citation {
-    font-size: var(--typography--body--font-size);
+    font-size: var( --typography--body--font-size );
 }
 
 // pullquotes
@@ -26,9 +26,9 @@
     .editor-rich-text p {
         font-size: 1.625em;
         line-height: 1.125;
-    }  
+    }
     .wp-block-pullquote__citation {
         font-style: italic;
-        margin-top: 0.4em;            
-    }      
+        margin-top: 0.4em;
+    }
 }

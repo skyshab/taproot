@@ -24,7 +24,7 @@
         // @link https://core.trac.wordpress.org/ticket/44923
         .children {
             list-style: none;
-            padding-left: var( --typography--body--block-spacing );
+            padding-left: var( --block-spacing );
 
             // mobile styles
             @include screen('mobile') {

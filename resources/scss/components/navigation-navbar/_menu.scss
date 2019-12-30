@@ -29,9 +29,9 @@
 
     &.mobile-at-#{$screen} {
         .menu__sub-menu {
-            background-color:   var( --colors--theme--accent );
-            border-color:       var( --colors--theme--accent );
-            color:              var( --colors--theme--accent-contrast );
+            background-color:   var( --colors--accent );
+            border-color:       var( --colors--accent );
+            color:              var( --colors--accent-contrast );
         }
     }
 }
