@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Colors\Customize\Theme;
+namespace Taproot\Components\Colors\Customize\Colors;
 
 use Taproot\Customize\Abstracts\Section as SectionAbstract;
 
@@ -37,15 +37,7 @@ class Section extends SectionAbstract {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'theme';
-
-    /**
-     * Section Title
-     *
-     * @since 2.0.0
-     * @var string
-     */
-    public $title = 'Theme Colors';
+    public $id = 'colors';
 
     /**
      * Controls
@@ -60,4 +52,13 @@ class Section extends SectionAbstract {
         'Meta_Medium',
         'Meta_Dark'
     ];
+
+    /**
+     * Sections.
+     *
+     * This is a core section, and doesn't need to be created.
+     *
+     * @since 2.0.0
+     */
+    public function sections( $manager ){}
 }

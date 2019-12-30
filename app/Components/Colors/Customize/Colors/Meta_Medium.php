@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Colors\Customize\Theme;
+namespace Taproot\Components\Colors\Customize\Colors;
 
 use Taproot\Customize\Controls\Color\Color;
 use Taproot\Tools\Mod;
@@ -22,7 +22,7 @@ use Taproot\Tools\Mod;
  * @since  2.0.0
  * @access public
  */
-class Meta_Dark extends Color {
+class Meta_Medium extends Color {
 
     /**
      * Control id
@@ -30,7 +30,7 @@ class Meta_Dark extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'meta-dark';
+    public $id = 'colors--meta-medium';
 
     /**
      * Control label
@@ -38,7 +38,7 @@ class Meta_Dark extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Meta Dark Color';
+    public $label = 'Meta Medium Color';
 
     /**
      * Hide the alpha channel
@@ -54,7 +54,7 @@ class Meta_Dark extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $default = '#a5a5a5';
+    public $default = '#d8d8d8';
 
     /**
      * Styles

@@ -45,7 +45,7 @@ class Customize extends CustomizeComponent {
      * @since 2.0.0
      * @var array
      */
-    public $sections = ['Theme'];
+    public $sections = ['Colors'];
 
     /**
      * Register panels
@@ -56,15 +56,9 @@ class Customize extends CustomizeComponent {
      */
     public function panels($manager) {
 
-        // Hide the default colors section
+        // Move the colors section
         if( $manager->get_section( 'colors' ) ) {
-            $manager->remove_section( 'colors' );
+            $manager->get_section( 'colors' )->priority = 50;
         }
-
-        // Create custom colors panel
-        $manager->add_panel( $this->panel, [
-            'title' => __( 'Colors', 'taproot' ),
-            'priority' => 50,
-        ]);
     }
 }

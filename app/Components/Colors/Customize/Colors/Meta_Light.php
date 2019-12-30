@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Colors\Customize\Theme;
+namespace Taproot\Components\Colors\Customize\Colors;
 
 use Taproot\Customize\Controls\Color\Color;
 use Taproot\Tools\Mod;
@@ -22,7 +22,7 @@ use Taproot\Tools\Mod;
  * @since  2.0.0
  * @access public
  */
-class Accent extends Color {
+class Meta_Light extends Color {
 
     /**
      * Control id
@@ -30,7 +30,7 @@ class Accent extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'accent';
+    public $id = 'colors--meta-light';
 
     /**
      * Control label
@@ -38,7 +38,7 @@ class Accent extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Accent Color';
+    public $label = 'Meta Light Color';
 
     /**
      * Hide the alpha channel
@@ -54,7 +54,7 @@ class Accent extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $default = '#00a0d1';
+    public $default = '#f4f4f4';
 
     /**
      * Styles

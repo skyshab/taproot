@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Colors\Customize\Theme;
+namespace Taproot\Components\Colors\Customize\Colors;
 
 use Taproot\Customize\Controls\Color\Color;
 use Taproot\Tools\Mod;
@@ -22,7 +22,7 @@ use Taproot\Tools\Mod;
  * @since  2.0.0
  * @access public
  */
-class Meta_Medium extends Color {
+class Accent_Contrast extends Color {
 
     /**
      * Control id
@@ -30,7 +30,7 @@ class Meta_Medium extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'meta-medium';
+    public $id = 'colors--accent-contrast';
 
     /**
      * Control label
@@ -38,7 +38,7 @@ class Meta_Medium extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Meta Medium Color';
+    public $label = 'Accent Contrast Color';
 
     /**
      * Hide the alpha channel
@@ -54,7 +54,7 @@ class Meta_Medium extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $default = '#d8d8d8';
+    public $default = '#ffffff';
 
     /**
      * Styles
@@ -66,7 +66,7 @@ class Meta_Medium extends Color {
     public function styles($styles) {
 
         $styles->customProperty([
-            'name' => $this->id,
+            'name'  => $this->id,
             'value' => Mod::get( $this->id )
         ]);
     }
