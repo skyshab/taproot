@@ -1,9 +1,27 @@
 @charset "UTF-8";
+:root {
+	--colors--text: #8c8c8c;
+	--colors--theme--accent: #00a0d1;
+	--colors--accent-contrast: #ffffff;
+	--colors--meta-light: #f4f4f4;
+	--colors--meta-medium: #d8d8d8;
+	--colors--meta-dark: #a5a5a5;
+}
+
+.has-large-font-size, .has-larger-font-size {
+	margin-bottom: 1.5rem;
+}
+
 .customize-control-taproot-font-styles .taproot-font-styles, .customize-control-taproot-checkbox__wrapper, .customize-control-taproot-range__wrapper, .customize-control-text input[type=text], .customize-control-select select {
 	border-radius: 0;
 	background-color: white;
 	outline: none;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+:root {
+	--block-spacing: 1.5em;
+	--block-spacing--large: 2rem;
 }
 
 #customize-preview > iframe {
@@ -570,5 +588,11 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 
 #customize-control-header_image .customize-control-description {
 	display: none;
+}
+
+@media ( min-width: 768px ) and ( max-width: 1024px ){
+	:root {
+		--block-spacing: 1.6em;
+	}
 }
 /*# sourceMappingURL=customize-controls.css.map*/
