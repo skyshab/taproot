@@ -71,7 +71,7 @@ class Background_Color extends Color {
         $styles->add([
             'selector' => '.editor-styles-wrapper .wp-block-button .wp-block-button__link, .editor-styles-wrapper .taproot-button',
             'styles' => [
-                'background-color' => theme_mod( $this->id, Mod::get( 'colors--theme--accent' ) ),
+                'background-color' => theme_mod( $this->id, Mod::get( 'colors--accent' ) ),
             ]
         ]);
     }

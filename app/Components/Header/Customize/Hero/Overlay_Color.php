@@ -94,7 +94,7 @@ class Overlay_Color extends Color {
     public function defaults( $defaults ) {
 
         $defaults->add( $this->id, function(){
-            return Mod::get('colors--theme--accent');
+            return Mod::get('colors--accent');
         });
     }
 }

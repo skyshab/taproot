@@ -34,7 +34,6 @@ class Controller implements Bootable {
      */
     public function boot() {
         add_filter( 'hybrid/breadcrumbs/trail', [ $this, 'breadcrumbs_home_icon' ] );
-        add_filter( 'taproot/breadcrumbs/supported-post-types', [ $this, 'supported_post_types' ] );
     }
 
     /**
@@ -46,31 +45,15 @@ class Controller implements Bootable {
      */
     public function breadcrumbs_home_icon( $html ) {
 
-        if( ! Mod::get( 'breadcrumbs--has-home-icon') ) {
+        // If icon not enabled, just return the markup
+        if( ! Mod::get( 'navigation--breadcrumbs--has-home-icon') ) {
             return $html;
         }
 
+        // Get the icon markup
         $icon = app( 'icons' )->get( 'home' );
 
+        // Replace the default markup with icon markup
         return str_replace('<span itemprop="name">Home</span>', $icon, $html );
-    }
-
-    /**
-     * Add post type support for breadcrumbs
-     *
-     * @since 1.4.0
-     * @return array
-     */
-    public function supported_post_types($post_types) {
-
-        if( Mod::get( 'posts--breadcrumbs--enable' ) ) {
-            $post_types[] = 'post';
-        }
-
-        if( Mod::get( 'pages--breadcrumbs--enable' ) ) {
-            $post_types[] = 'page';
-        }
-
-        return $post_types;
     }
 }

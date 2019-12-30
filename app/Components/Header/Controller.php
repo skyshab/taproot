@@ -158,7 +158,6 @@ class Controller implements Bootable {
         return $classes;
     }
 
-
     /**
      * Filter for Custom Header Image display
      *
@@ -189,6 +188,8 @@ class Controller implements Bootable {
 
             return false;
         }
+
+        return $value;
     }
 
     /**
@@ -199,7 +200,7 @@ class Controller implements Bootable {
      */
     public function hasCustomHeader() {
 
-        $custom_header = Mod::get( 'header_image' );
+        $custom_header = Mod::get( 'header_image', TRUE );
 
         if( 'remove-header' === $custom_header ) {
             $custom_header = false;
@@ -279,7 +280,7 @@ class Controller implements Bootable {
      * @return string
      */
     public function add_overlay( $html ) {
-        return $html . Functions::get_overlay();
+        return $html . app('header/template')->get_overlay();
     }
 
     /**
@@ -305,7 +306,7 @@ class Controller implements Bootable {
 
         if( is_single() ) {
             $header_additional_content .=  '<p class="additional-header-content__meta">';
-                $header_additional_content .= Functions::the_author([
+                $header_additional_content .= app('header/template')->get_the_author([
                     'class' => sprintf('additional-header-content__author additional-header-content__author--%s', $post_type),
                     'before' => app( 'icons' )->location( 'author', ['icon' => 'user'] )
                 ]);

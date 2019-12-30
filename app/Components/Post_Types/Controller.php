@@ -40,6 +40,7 @@ class Controller implements Bootable {
         add_filter( 'hybrid/view/entry/header/hierarchy', [ $this, 'post_header_display' ] );
         add_filter( 'taproot/featured-image/display', [ $this, 'featured_image_display' ], 10, 2 );
         add_filter( 'get_the_archive_title', [ $this, 'get_the_archive_title' ] );
+        add_filter( 'taproot/breadcrumbs/supported-post-types', [ $this, 'breadcrumbs_support' ] );
     }
 
     /**
@@ -104,6 +105,7 @@ class Controller implements Bootable {
     public function post_header_display( $hierarchy ) {
 
         $display = get_post_meta( get_the_ID(), 'taproot_post_title_display', true );
+
         if( 'header' === $display  || 'hide' === $display ) {
             return [];
         }

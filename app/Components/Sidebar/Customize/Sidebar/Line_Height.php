@@ -113,7 +113,7 @@ class Line_Height extends Range {
 
         // Block Spacing: Tablet
         $styles->customProperty([
-            'name' => 'sidebar--block-spacing--tablet',
+            'name' => 'sidebar--block-spacing',
             'value' => app('typography')->maybe_convert_to_em( theme_mod( "{$this->id}--tablet" ) ),
             'screen' => 'tablet-and-up'
         ]);
@@ -127,7 +127,7 @@ class Line_Height extends Range {
 
         // Block Spacing: Desktop
         $styles->customProperty([
-            'name' => 'sidebar--block-spacing--desktop',
+            'name' => 'sidebar--block-spacing',
             'value' => app('typography')->maybe_convert_to_em( theme_mod( "{$this->id}--desktop" ) ),
             'screen' => 'desktop'
         ]);
