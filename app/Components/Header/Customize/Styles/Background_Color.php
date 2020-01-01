@@ -47,7 +47,7 @@ class Background_Color extends Color {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         $header_bkg = theme_mod( $this->id );
 

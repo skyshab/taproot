@@ -8,47 +8,15 @@
 
 .wp-block-button {
 
-    // button block only
+    margin-bottom: var( --block-spacing );
+
     &__link:hover {
         color: var( --colors--accent-contrast );
     }
 
-    margin-bottom: var( --block-spacing );
-
     &.aligncenter {
         text-align: center;
     }
-}
-
-
-.wp-block-button__link, .taproot-button, .comment-respond__submit {
-    display: inline-block;
-    box-shadow:      none;
-    cursor:          pointer;
-    text-align:      center;
-    text-decoration: none;
-    white-space:     normal;
-    word-break:      break-all;
-    border-style:    solid;
-    border-width:    0;
-    font-size:       0.9em;
-    line-height:     2.5em;
-    margin:          0;
-    padding:         0 1.25em;
-    transition: all 0.4s ease-in-out;
-    background-color: var( --colors--accent );
-    color: var( --colors--accent-contrast );
-
-    &:visited {
-        color: var( --colors--accent-contrast );
-    }
-    &:hover {
-        text-decoration: none;
-    }
-}
-
-// Button Style Overrides
-.wp-block-button {
 
     &.is-style-squared .wp-block-button__link {
         border-radius: 0;
@@ -67,6 +35,4 @@
             }
         }
     }
-
 }
-

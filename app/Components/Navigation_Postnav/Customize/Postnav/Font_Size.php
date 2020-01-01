@@ -69,11 +69,11 @@ class Font_Size extends Range {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
-        $styles->add([
-            'selector' => '.postnav__link',
-            'styles' => [ 'font-size' => theme_mod( $this->id ) ]
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => theme_mod( $this->id ),
         ]);
     }
 }

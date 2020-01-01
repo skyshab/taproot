@@ -30,7 +30,7 @@ class Icon_Color extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'text-color';
+    public $name = 'icon-color';
 
     /**
      * Control label
@@ -47,7 +47,7 @@ class Icon_Color extends Color {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         $styles->customProperty([
             'name'      => 'entry--meta--icon-color',

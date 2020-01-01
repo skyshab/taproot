@@ -13,7 +13,7 @@
     flex-direction: column;
 
     // customize defaults
-    background-color: #232323;
+    background-color: var( '--footer--background-color' );
     color: white;
 
     &__credit { margin: 0;}

@@ -8,5 +8,7 @@
 
 :root {
 
-    --posts--nav--font-size: 1em;
+    --navigation--postnav--font-size: 1em;
+    --navigation--postnav--link-color: var( --colors--meta-dark );
+    --navigation--postnav--link-color--hover: var( --colors--accent );
 }

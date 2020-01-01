@@ -57,9 +57,9 @@ class Line_Height extends Range {
      * @var string
      */
     public $default = [
-        'mobile' => '1.5',
-        'tablet' => '1.6',
-        'desktop' => '1.6'
+        'mobile'    => '1.5',
+        'tablet'    => '1.6',
+        'desktop'   => '1.6'
     ];
 
     /**
@@ -70,10 +70,9 @@ class Line_Height extends Range {
      */
     public $atts = [
         'unitless' => [
-            'min' => 0.5,
-            'max' => 3,
-            'step' => 0.01,
-            'default' => 1
+            'min'   => 0.5,
+            'max'   => 3,
+            'step'  => 0.01,
         ],
         'px' => [
             'min' => 0,
@@ -88,48 +87,48 @@ class Line_Height extends Range {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         // Mobile
         $styles->customProperty([
-            'name' => $this->id,
-            'value' => theme_mod( $this->id ),
-            'screen' => 'default'
+            'name'      => $this->id,
+            'value'     => theme_mod( $this->id ),
+            'screen'    => 'default'
         ]);
 
         // Block Spacing
         $styles->customProperty([
-            'name' => 'block-spacing',
-            'value' => app('typography')->maybe_convert_to_em( theme_mod( $this->id ) ),
-            'screen' => 'default'
+            'name'      => 'block-spacing',
+            'value'     => app('typography')->maybe_convert_to_em( theme_mod( $this->id ) ),
+            'screen'    => 'default'
         ]);
 
         // Tablet
         $styles->customProperty([
-            'name' => $this->id,
-            'value' => theme_mod( "{$this->id}--tablet" ),
-            'screen' => 'tablet'
+            'name'      => $this->id,
+            'value'     => theme_mod( "{$this->id}--tablet" ),
+            'screen'    => 'tablet'
         ]);
 
         // Block Spacing: Tablet
         $styles->customProperty([
-            'name' => 'block-spacing',
-            'value' => app('typography')->maybe_convert_to_em( theme_mod( "{$this->id}--tablet" ) ),
-            'screen' => 'tablet-and-up'
+            'name'      => 'block-spacing',
+            'value'     => app('typography')->maybe_convert_to_em( theme_mod( "{$this->id}--tablet" ) ),
+            'screen'    => 'tablet-and-up'
         ]);
 
         // Desktop
         $styles->customProperty([
-            'name' => $this->id,
-            'value' => theme_mod( "{$this->id}--desktop" ),
-            'screen' => 'desktop'
+            'name'      => $this->id,
+            'value'     => theme_mod( "{$this->id}--desktop" ),
+            'screen'    => 'desktop'
         ]);
 
         // Block Spacing: Desktop
         $styles->customProperty([
-            'name' => 'block-spacing',
-            'value' => app('typography')->maybe_convert_to_em( theme_mod( "{$this->id}--desktop" ) ),
-            'screen' => 'desktop'
+            'name'      => 'block-spacing',
+            'value'     => app('typography')->maybe_convert_to_em( theme_mod( "{$this->id}--desktop" ) ),
+            'screen'    => 'desktop'
         ]);
     }
 
@@ -140,37 +139,37 @@ class Line_Height extends Range {
      * @access public
      * @return void
      */
-    public function editorStyles($styles) {
+    public function editorStyles( $styles ) {
 
         // Body line height default
         $styles->customProperty([
-            'name' => $this->id,
-            'value' => theme_mod($this->id),
-            'selector' => '.editor-styles-wrapper .wp-block',
+            'name'      => $this->id,
+            'value'     => theme_mod($this->id),
+            'selector'  => '.editor-styles-wrapper .wp-block',
         ]);
 
         // tablet size when settings panel closed, use mobile when open
         $styles->customProperty([
-            'name' => $this->id,
-            'value' => theme_mod("{$this->id}--tablet"),
-            'screen' => 'editor-tablet',
-            'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
+            'name'      => $this->id,
+            'value'     => theme_mod("{$this->id}--tablet"),
+            'screen'    => 'editor-tablet',
+            'selector'  => '.edit-post-layout:not(.is-sidebar-opened)'
         ]);
 
         // tablet size when settings panel open
         $styles->customProperty([
-            'name' => $this->id,
-            'value' => theme_mod("{$this->id}--tablet"),
-            'screen' => 'editor-desktop',
-            'selector' => '.editor-styles-wrapper .wp-block',
+            'name'      => $this->id,
+            'value'     => theme_mod("{$this->id}--tablet"),
+            'screen'    => 'editor-desktop',
+            'selector'  => '.editor-styles-wrapper .wp-block',
         ]);
 
         // desktop size when settings panel closed
         $styles->customProperty([
-            'name' => $this->id,
-            'value' => theme_mod("{$this->id}--desktop"),
-            'screen' => 'editor-desktop',
-            'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
+            'name'      => $this->id,
+            'value'     => theme_mod("{$this->id}--desktop"),
+            'screen'    => 'editor-desktop',
+            'selector'  => '.edit-post-layout:not(.is-sidebar-opened)'
         ]);
     }
 }

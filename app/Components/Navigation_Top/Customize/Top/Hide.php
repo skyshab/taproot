@@ -48,7 +48,7 @@ class Hide extends Checkbox {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         if( Mod::get( $this->id ) ) {
             $styles->add([

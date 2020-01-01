@@ -31,7 +31,7 @@ class Line_Height extends Range {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'line-height';
+    public $id = 'buttons--line-height';
 
     /**
      * Label
@@ -40,7 +40,6 @@ class Line_Height extends Range {
      * @var string
      */
     public $label = 'Line Height';
-
 
     /**
      * Default
@@ -61,11 +60,12 @@ class Line_Height extends Range {
             'min' => 0.5,
             'max' => 3,
             'step' => 0.01,
-            'default' => 1
+            'default' => 2.5
         ],
         'px' => [
             'min' => 0,
             'max' => 72,
+            'default' => 36
         ]
     ];
 
@@ -76,13 +76,11 @@ class Line_Height extends Range {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
-        $styles->add([
-            'selector' => '.taproot-button, .wp-block-button__link, .comment-respond__submit',
-            'styles' => [
-                'line-height' => theme_mod( $this->id )
-            ]
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => theme_mod( $this->id ),
         ]);
     }
 
@@ -93,13 +91,11 @@ class Line_Height extends Range {
      * @access public
      * @return void
      */
-    public function editorStyles($styles) {
+    public function editorStyles( $styles ) {
 
-        $styles->add([
-            'selector' => '.editor-styles-wrapper .wp-block-button .wp-block-button__link, .editor-styles-wrapper .wp-block-button .mce-content-body, .editor-styles-wrapper .taproot-button',
-            'styles' => [
-                'line-height' => Mod::get( $this->id )
-            ]
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => Mod::get( $this->id ),
         ]);
     }
 }

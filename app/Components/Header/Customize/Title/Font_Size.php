@@ -2,7 +2,7 @@
 /**
  * Font Size.
  *
- * This class handles the customizer control for the taglin font size.
+ * This class handles the customizer control for the component font size.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -56,9 +56,9 @@ class Font_Size extends Range {
      * @var string
      */
     public $default = [
-        'mobile' => '1.6em',
-        'tablet' => '1.6em',
-        'desktop' => '1.8em'
+        'mobile'    => '1.6em',
+        'tablet'    => '1.6em',
+        'desktop'   => '1.8em'
     ];
 
     /**
@@ -89,7 +89,7 @@ class Font_Size extends Range {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         // Mobile: If title is not hidden
         if( ! Mod::get( "header--title--hide" ) ) {

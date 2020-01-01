@@ -57,7 +57,7 @@ class Is_Fixed extends Checkbox {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         // if boxed layout and fixed header
         if( Layout::is_boxed_layout() && Mod::get( $this->id ) ) {

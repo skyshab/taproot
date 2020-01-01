@@ -48,7 +48,7 @@ class Dropdown_Link_Color_Hover extends Color {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         $styles->add([
             'selector' => '.menu__sub-menu .menu--header__link:hover',

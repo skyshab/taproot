@@ -30,7 +30,7 @@ class Link_Color extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'color';
+    public $name = 'link-color';
 
     /**
      * Control label
@@ -47,13 +47,11 @@ class Link_Color extends Color {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
-        $styles->add([
-            'selector' => '.postnav__link a:link, .postnav__link a:visited',
-            'styles' => [
-                'color' => theme_mod( $this->id ),
-            ],
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => theme_mod( $this->id ),
         ]);
     }
 }

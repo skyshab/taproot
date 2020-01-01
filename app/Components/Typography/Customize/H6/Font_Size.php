@@ -85,7 +85,7 @@ class Font_Size extends Range {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         // Mobile
         $styles->customProperty([
@@ -116,7 +116,7 @@ class Font_Size extends Range {
      * @access public
      * @return void
      */
-    public function editorStyles($styles) {
+    public function editorStyles( $styles ) {
 
         // Mobile default
         $styles->customProperty([

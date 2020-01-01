@@ -46,7 +46,7 @@ class Font_Styles extends FontStylesAbstract {
      * @since 2.0.0
      * @var string
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         $styles->add([
             'selector' => '.taproot-button, .wp-block-button__link, .comment-respond__submit',
@@ -61,7 +61,7 @@ class Font_Styles extends FontStylesAbstract {
      * @access public
      * @return void
      */
-    public function editorStyles($styles) {
+    public function editorStyles( $styles ) {
 
         $styles->add([
             'selector' => '.editor-styles-wrapper .wp-block-button .wp-block-button__link, .editor-styles-wrapper .taproot-button',

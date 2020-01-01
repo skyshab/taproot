@@ -47,7 +47,7 @@ class Text_Color extends Color {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         $styles->add([
             'selector' => 'h3',
@@ -64,7 +64,7 @@ class Text_Color extends Color {
      * @access public
      * @return void
      */
-    public function editorStyles($styles) {
+    public function editorStyles( $styles ) {
         $this->styles($styles);
     }
 }

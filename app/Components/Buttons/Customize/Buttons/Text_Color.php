@@ -1,8 +1,8 @@
 <?php
 /**
- * Header Default Color.
+ * Buttons Text Color.
  *
- * This class handles the customizer control for the header color.
+ * This class handles the customizer control for the buttons text color.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -31,7 +31,7 @@ class Text_Color extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'text-color';
+    public $id = 'buttons--text-color';
 
     /**
      * Control label
@@ -48,13 +48,11 @@ class Text_Color extends Color {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
-        $styles->add([
-            'selector' => '.taproot-button:link, .wp-block-button__link:not(.has-text-color), .taproot-button:visited, .comment-respond__submit',
-            'styles' => [
-                'color' => theme_mod( $this->id ),
-            ]
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => theme_mod( $this->id ),
         ]);
     }
 
@@ -65,13 +63,11 @@ class Text_Color extends Color {
      * @access public
      * @return void
      */
-    public function editorStyles($styles) {
+    public function editorStyles( $styles ) {
 
-        $styles->add([
-            'selector' => '.editor-styles-wrapper .wp-block-button .wp-block-button__link, .editor-styles-wrapper .taproot-button',
-            'styles' => [
-                'color' => theme_mod( $this->id, Mod::get( 'colors--accent-contrast' ) )
-            ]
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => Mod::get( $this->id ),
         ]);
     }
 }

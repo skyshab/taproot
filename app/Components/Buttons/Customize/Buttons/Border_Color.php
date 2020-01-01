@@ -14,8 +14,8 @@
 namespace Taproot\Components\Buttons\Customize\Buttons;
 
 use Taproot\Customize\Controls\Color\Color;
+use Taproot\Tools\Mod;
 use function Taproot\Tools\theme_mod;
-
 /**
  * Class for color controls
  *
@@ -30,7 +30,7 @@ class Border_Color extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'border-color';
+    public $id = 'buttons--border-color';
 
     /**
      * Stores control label
@@ -47,13 +47,11 @@ class Border_Color extends Color {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
-        $styles->add([
-            'selector' => '.taproot-button, .wp-block-button__link, .comment-respond__submit',
-            'styles' => [
-                'border-color' => theme_mod( $this->id ),
-            ]
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => theme_mod( $this->id ),
         ]);
     }
 
@@ -64,13 +62,11 @@ class Border_Color extends Color {
      * @access public
      * @return void
      */
-    public function editorStyles($styles) {
+    public function editorStyles( $styles ) {
 
-        $styles->add([
-            'selector' => '.editor-styles-wrapper .wp-block-button .wp-block-button__link, .editor-styles-wrapper .taproot-button',
-            'styles' => [
-                'border-color' => theme_mod( $this->id ),
-            ]
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => Mod::get( $this->id ),
         ]);
     }
 }

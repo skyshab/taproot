@@ -81,7 +81,7 @@ class Width extends Range {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         $full_layout_width = Functions::get_full_layout_width();
 

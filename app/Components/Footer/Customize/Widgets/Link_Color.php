@@ -47,7 +47,7 @@ class Link_Color extends Color {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         $styles->add([
             'selector' => '.app-footer__widget a:link, .app-footer__widget a:visited',

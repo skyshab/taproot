@@ -47,13 +47,11 @@ class Link_Color_Hover extends Color {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
-        $styles->add([
-            'selector' => '.app-footer a:hover',
-            'styles' => [
-                'color' => theme_mod( $this->id ),
-            ],
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => theme_mod( $this->id ),
         ]);
     }
 }

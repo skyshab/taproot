@@ -55,7 +55,7 @@ class Text_Color extends Color {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         $styles->add([
             'selector' => '.app-footer, .app-footer a',

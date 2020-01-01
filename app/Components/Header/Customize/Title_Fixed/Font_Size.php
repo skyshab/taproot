@@ -69,7 +69,7 @@ class Font_Size extends Range {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         // Desktop: If title is not hidden
         if( ! Mod::get( "header--title-fixed--hide" ) ) {

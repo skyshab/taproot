@@ -30,7 +30,7 @@ class Link_Color_Hover extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'color--hover';
+    public $name = 'link-color--hover';
 
     /**
      * Control label
@@ -47,13 +47,11 @@ class Link_Color_Hover extends Color {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
-        $styles->add([
-            'selector' => '.postnav__link a:hover',
-            'styles' => [
-                'color' => theme_mod( $this->id ),
-            ],
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => theme_mod( $this->id ),
         ]);
     }
 }

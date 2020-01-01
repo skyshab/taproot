@@ -56,9 +56,9 @@ class Gutter extends Range {
      * @var string
      */
     public $default = [
-        'mobile' => 'disabled',
-        'tablet' => 'disabled',
-        'desktop' => '2px'
+        'mobile'    => '0px',
+        'tablet'    => '0px',
+        'desktop'   => '2px'
     ];
 
     /**
@@ -80,7 +80,7 @@ class Gutter extends Range {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         // Mobile: If tagline is not hidden
         if( ! Mod::get( "header--tagline--hide" ) ) {

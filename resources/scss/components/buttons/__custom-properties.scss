@@ -6,4 +6,19 @@
 /// @link   https://taproot-theme.com
 ////
 
+:root {
+    --buttons--font-family:         inherit;
+    --buttons--background-color:    var( --colors--accent );
+    --buttons--text-color:          var( --colors--accent-contrast );
+    --buttons--border-color:        transparent;
+    --buttons--font-size:           0.9em;
+    --buttons--line-height:         2.5;
+    --buttons--padding:             1.25em;
+    --buttons--border-width:        0;
+    --buttons--border-radius:       0;
 
+    // Hover colors
+    --buttons--hover--background-color: var( --buttons--background-color );
+    --buttons--hover--text-color:       var( --buttons--text-color );
+    --buttons--hover--border-color:     transparent;
+}

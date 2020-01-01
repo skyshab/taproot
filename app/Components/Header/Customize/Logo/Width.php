@@ -80,7 +80,7 @@ class Width extends Range {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         // Custom Property: Logo Width
         $styles->customProperty([

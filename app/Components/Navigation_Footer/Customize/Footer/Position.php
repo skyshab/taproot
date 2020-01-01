@@ -67,7 +67,7 @@ class Position extends Select {
      * @since 2.0.0
      * @var string
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         if( 'after' === Mod::get( $this->id ) ) {
             $styles->add([

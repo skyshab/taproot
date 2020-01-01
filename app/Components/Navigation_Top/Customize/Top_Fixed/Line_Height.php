@@ -66,7 +66,7 @@ class Line_Height extends Range {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         $styles->add([
             'selector' => '.app-header--fixed .menu--top__link',

@@ -31,7 +31,7 @@ class Font_Size extends Range {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'font-size';
+    public $id = 'buttons--font-size';
 
     /**
      * Label
@@ -40,6 +40,14 @@ class Font_Size extends Range {
      * @var string
      */
     public $label = 'Font Size';
+
+    /**
+     * Default
+     *
+     * @since 2.0.0
+     * @var string
+     */
+    public $default = '0.9em';
 
     /**
      * Range atts
@@ -69,13 +77,11 @@ class Font_Size extends Range {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
-        $styles->add([
-            'selector' => '.taproot-button, .wp-block-button__link, .comment-respond__submit',
-            'styles' => [
-                'font-size' => theme_mod( $this->id ),
-            ]
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => theme_mod( $this->id ),
         ]);
     }
 
@@ -86,13 +92,11 @@ class Font_Size extends Range {
      * @access public
      * @return void
      */
-    public function editorStyles($styles) {
+    public function editorStyles( $styles ) {
 
-        $styles->add([
-            'selector' => '.editor-styles-wrapper .wp-block-button .wp-block-button__link, .editor-styles-wrapper .taproot-button',
-            'styles' => [
-                'font-size' => Mod::get( 'elements--buttons--font-size' )
-            ]
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => Mod::get( $this->id ),
         ]);
     }
 }

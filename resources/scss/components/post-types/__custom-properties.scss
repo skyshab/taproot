@@ -8,29 +8,33 @@
 
 :root {
 
-    // Colors
-    --entry--title--color: '';
-    --archive--title--text-color: '';
-
-    // Element size and spacing
+    // Single Post/Page Title
+    --entry--title--color: var( --typography--headings--text-color );
     --entry--title--font-size: 2em;
-    --entry--title--line-height: '';
+    --entry--title--line-height: 1.2;
 
-    --entry--meta--font-size: '';
-    --entry--meta--text-color: '';
-    --entry--meta--icon-color: '';
+    @include screen('laptop-and-up') {
+        --entry--title--font-size: 2.5em;
+    }
 
+    // Single Post Meta
+    --entry--meta--font-size: 1em;
+    --entry--meta--text-color: inherit;
+    --entry--meta--icon-color: inherit;
+
+    // Post Archive Title
+    --archive--title--text-color: var( --typography--headings--text-color );
     --archive--title--font-size: 2em;
     --archive--title--line-height: 1.2;
 
-    --archive-entry--title--font-size: 1.8em;
-    --archive-entry--title--line-height: 1;
-    --archive-entry--title--link-color: '';
-    --archive-entry--title--link-color--hover: '';
-
-    // Desktop size and spacing
+    // Laptop and up
     @include screen('laptop-and-up') {
-        --entry--title--font-size: 2.5em;
         --archive--title--font-size: 2.5em;
     }
+
+    // Archive Entry Title
+    --archive-entry--title--font-size: 1.8em;
+    --archive-entry--title--line-height: 1;
+    --archive-entry--title--link-color: var( --typography--headings--text-color );
+    --archive-entry--title--link-color--hover: var( --colors--accent );
 }

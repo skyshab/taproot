@@ -47,7 +47,7 @@ class Link_Color extends Color {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         $styles->add([
             'selector' => '.app-header--fixed .menu--header__link:link, .app-header--fixed .menu--header__link:visited',

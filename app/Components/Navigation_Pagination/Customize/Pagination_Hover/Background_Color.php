@@ -47,7 +47,7 @@ class Background_Color extends Color {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         $styles->add([
             'selector' => '.pagination__item--number .pagination__anchor:hover, .pagination__item--dots .pagination__anchor:hover',

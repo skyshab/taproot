@@ -56,7 +56,7 @@ class Dropdown_Background_Color extends Color {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         $styles->add([
             'selector' => '.menu--header__item.has-children  .menu__sub-menu',

@@ -47,7 +47,7 @@ class Color extends ColorAbstract {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         // Tagline Styles
         $styles->add([

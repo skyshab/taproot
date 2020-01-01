@@ -307,32 +307,6 @@
 .editor-styles-wrapper .wp-block-button.aligncenter {
 	text-align: center;
 }
-.editor-styles-wrapper .wp-block-button__link, .editor-styles-wrapper .taproot-button, .editor-styles-wrapper .comment-respond__submit {
-	display: inline-block;
-	box-shadow: none;
-	cursor: pointer;
-	text-align: center;
-	text-decoration: none;
-	white-space: normal;
-	word-break: break-all;
-	border-style: solid;
-	border-width: 0;
-	font-size: 0.9em;
-	line-height: 2.5em;
-	margin: 0;
-	padding: 0 1.25em;
-	transition: all 0.4s ease-in-out;
-	background-color: var(--colors--accent);
-	color: #ffffff;
-	color: var(--colors--accent-contrast);
-}
-.editor-styles-wrapper .wp-block-button__link:visited, .editor-styles-wrapper .taproot-button:visited, .editor-styles-wrapper .comment-respond__submit:visited {
-	color: #ffffff;
-	color: var(--colors--accent-contrast);
-}
-.editor-styles-wrapper .wp-block-button__link:hover, .editor-styles-wrapper .taproot-button:hover, .editor-styles-wrapper .comment-respond__submit:hover {
-	text-decoration: none;
-}
 .editor-styles-wrapper .wp-block-button.is-style-squared .wp-block-button__link {
 	border-radius: 0;
 }

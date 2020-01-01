@@ -15,6 +15,7 @@ namespace Taproot\Components\Footer\Customize\Footer;
 
 use Taproot\Customize\Controls\Color\Color;
 use Taproot\Tools\Mod;
+use function Taproot\Tools\theme_mod;
 
 /**
  * Class for color controls
@@ -55,19 +56,15 @@ class Background_Color extends Color {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
-        $footer_bkg = Mod::get( $this->id );
-
-        // Background Color
-        $styles->add([
-            'selector' => '.app-footer',
-            'styles' => [
-                'background-color' => $footer_bkg,
-            ],
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => theme_mod( $this->id ),
         ]);
 
         // If footer background is white, add a shadow
+        $footer_bkg = Mod::get( $this->id );
         if(  '#ffffff' === $footer_bkg || 'rgb(255,255,255)' === $footer_bkg ) {
             $styles->add([
                 'selector' => '.app-footer',

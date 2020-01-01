@@ -67,7 +67,7 @@ class Line_Height extends Range {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         // Mobile: If title is not hidden
         if( ! Mod::get( "header--title-fixed--hide" ) ) {

@@ -66,7 +66,7 @@ class Font_Family extends Select {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         // Title Styles
         $styles->add([

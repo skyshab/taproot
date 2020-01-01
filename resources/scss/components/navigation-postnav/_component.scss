@@ -8,6 +8,7 @@
 
 
 .postnav {
+
     display: flex;
     justify-content: space-between;
     margin-bottom: var( --block-spacing--large );
@@ -20,7 +21,7 @@
 
     &__link {
 
-        font-size: var( --posts--nav--font-size );
+        font-size: var( --navigation--postnav--font-size );
 
         a {
             display: flex;
@@ -28,11 +29,11 @@
             line-height: 1;
 
             &:link, &:visited {
-                color: var( --colors--meta-dark );
+                color: var( --navigation--postnav--link-color );
             }
 
             &:hover {
-                color: var( --colors--accent );
+                color: var( --navigation--postnav--link-color--hover );
             }
         }
 

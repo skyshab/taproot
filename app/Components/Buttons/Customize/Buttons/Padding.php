@@ -31,7 +31,7 @@ class Padding extends Range {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'padding';
+    public $id = 'buttons--padding';
 
     /**
      * Label
@@ -40,6 +40,14 @@ class Padding extends Range {
      * @var string
      */
     public $label = 'Padding';
+
+    /**
+     * Default
+     *
+     * @since 2.0.0
+     * @var array
+     */
+    public $default = '1.25em';
 
     /**
      * Range atts
@@ -60,28 +68,17 @@ class Padding extends Range {
     ];
 
     /**
-     * Default
-     *
-     * @since 2.0.0
-     * @var array
-     */
-    public $default = '1.25em';
-
-    /**
      * Styles
      *
      * @since  2.0.0
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
-        $styles->add([
-            'selector' => '.taproot-button, .wp-block-button__link, .comment-respond__submit',
-            'styles' => [
-                'padding-left'  => theme_mod( 'elements--buttons--padding' ),
-                'padding-right' => theme_mod( 'elements--buttons--padding' ),
-            ]
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => theme_mod( $this->id ),
         ]);
     }
 
@@ -92,16 +89,11 @@ class Padding extends Range {
      * @access public
      * @return void
      */
-    public function editorStyles($styles) {
+    public function editorStyles( $styles ) {
 
-        $styles->add([
-            'selector' => '.editor-styles-wrapper .wp-block-button .wp-block-button__link, .editor-styles-wrapper .taproot-button',
-            'styles' => [
-                'padding-left'      =>  Mod::get( $this->id ),
-                'padding-right'     =>  Mod::get( $this->id ),
-                'padding-top'       => '0px',
-                'padding-bottom'    => '0px',
-            ]
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => Mod::get( $this->id ),
         ]);
     }
 }

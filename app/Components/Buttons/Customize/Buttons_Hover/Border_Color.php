@@ -30,7 +30,7 @@ class Border_Color extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'border-color';
+    public $name = 'buttons--hover--border-color';
 
     /**
      * Stores control label
@@ -47,13 +47,11 @@ class Border_Color extends Color {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
-        $styles->add([
-            'selector' => '.taproot-button:hover, .comment-respond__submit:hover',
-            'styles' => [
-                'border-color' => theme_mod( $this->id ),
-            ]
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => theme_mod( $this->id ),
         ]);
     }
 }

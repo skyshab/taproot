@@ -71,7 +71,7 @@ class Padding extends Range {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         $styles->add([
             'selector' => '.menu--header__link',

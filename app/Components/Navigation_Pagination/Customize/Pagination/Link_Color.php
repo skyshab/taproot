@@ -47,7 +47,7 @@ class Link_Color extends Color {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         $styles->add([
             'selector' => '.pagination__item--prev .pagination__anchor, .pagination__item--next .pagination__anchor',

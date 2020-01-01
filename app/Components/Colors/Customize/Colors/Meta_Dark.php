@@ -63,7 +63,7 @@ class Meta_Dark extends Color {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         $styles->customProperty([
             'name' => $this->id,
@@ -78,7 +78,7 @@ class Meta_Dark extends Color {
      * @access public
      * @return void
      */
-    public function editorStyles($styles) {
+    public function editorStyles( $styles ) {
         $this->styles($styles);
     }
 }

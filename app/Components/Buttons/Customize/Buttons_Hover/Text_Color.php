@@ -14,6 +14,7 @@
 namespace Taproot\Components\Buttons\Customize\Buttons_Hover;
 
 use Taproot\Customize\Controls\Color\Color;
+use Taproot\Tools\Mod;
 use function Taproot\Tools\theme_mod;
 
 /**
@@ -30,7 +31,7 @@ class Text_Color extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'text-color';
+    public $id = 'buttons--hover--text-color';
 
     /**
      * Control label
@@ -47,13 +48,11 @@ class Text_Color extends Color {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
-        $styles->add([
-            'selector' => '.taproot-button:hover, .comment-respond__submit:hover, .wp-block-button__link:not(.has-text-color):hover',
-            'styles' => [
-                'color' => theme_mod( $this->id )
-            ]
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => theme_mod( $this->id ),
         ]);
     }
 
@@ -64,7 +63,11 @@ class Text_Color extends Color {
      * @access public
      * @return void
      */
-    public function editorStyles($styles) {
-        $this->styles($styles);
+    public function editorStyles( $styles ) {
+
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => Mod::get( $this->id ),
+        ]);
     }
 }

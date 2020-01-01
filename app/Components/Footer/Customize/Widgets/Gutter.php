@@ -80,7 +80,7 @@ class Gutter extends Range {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         // Mobile
         $styles->customProperty([

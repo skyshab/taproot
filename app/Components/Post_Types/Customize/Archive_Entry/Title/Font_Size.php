@@ -76,7 +76,7 @@ class Font_Size extends Range {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         $styles->customProperty([
             'name'      => 'archive-entry--title--font-size',

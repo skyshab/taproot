@@ -80,7 +80,7 @@ class Padding extends Range {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         // Custom Property: Padding
         $styles->customProperty([

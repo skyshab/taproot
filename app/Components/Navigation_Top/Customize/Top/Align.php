@@ -70,7 +70,7 @@ class Align extends Select {
      * @since 2.0.0
      * @var string
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         $styles->add([
             'selector' => '.menu--top__items',

@@ -85,7 +85,7 @@ class Font_Size extends Range {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         // Mobile: If tagline is not hidden
         if( ! Mod::get( "header--tagline--hide" ) ) {

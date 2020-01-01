@@ -47,7 +47,7 @@ class Text_Color extends Color {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         $styles->customProperty([
             'name' => $this->id,
@@ -62,7 +62,7 @@ class Text_Color extends Color {
      * @access public
      * @return void
      */
-    public function editorStyles($styles) {
+    public function editorStyles( $styles ) {
         $this->styles($styles);
     }
 }

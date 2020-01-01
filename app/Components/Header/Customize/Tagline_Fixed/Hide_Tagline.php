@@ -47,7 +47,7 @@ class Hide_Tagline extends Checkbox {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         // Hide Tagline when fixed
         if( Mod::get( $this->id ) ) {

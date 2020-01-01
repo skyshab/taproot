@@ -14,6 +14,7 @@
 namespace Taproot\Components\Buttons\Customize\Buttons;
 
 use Taproot\Customize\Controls\Select\Select;
+use Taproot\Tools\Mod;
 use function Taproot\Tools\theme_mod;
 use function Hybrid\app;
 
@@ -31,7 +32,7 @@ class Font_Family extends Select {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'font-family';
+    public $name = 'buttons--font-family';
 
     /**
      * Label
@@ -66,13 +67,11 @@ class Font_Family extends Select {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
-        $styles->add([
-            'selector' => '.taproot-button, .wp-block-button__link, .comment-respond__submit',
-            'styles' => [
-                'font-family' => app('fonts')->get_font_family( theme_mod( $this->id ) ),
-            ]
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => theme_mod( $this->id ),
         ]);
     }
 
@@ -83,13 +82,11 @@ class Font_Family extends Select {
      * @access public
      * @return void
      */
-    public function editorStyles($styles) {
+    public function editorStyles( $styles ) {
 
-        $styles->add([
-            'selector' => '.editor-styles-wrapper .wp-block-button .wp-block-button__link, .editor-styles-wrapper .taproot-button',
-            'styles' => [
-                'font-family' => app('fonts')->get_font_family( theme_mod( $this->id ) )
-            ]
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => Mod::get( $this->id ),
         ]);
     }
 }

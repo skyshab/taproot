@@ -14,6 +14,7 @@
 namespace Taproot\Components\Buttons\Customize\Buttons;
 
 use Taproot\Customize\Controls\Range\Range;
+use Taproot\Tools\Mod;
 use function Taproot\Tools\theme_mod;
 
 /**
@@ -30,7 +31,7 @@ class Border_Width extends Range {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'border-width';
+    public $id = 'buttons--border-width';
 
     /**
      * Label
@@ -39,6 +40,14 @@ class Border_Width extends Range {
      * @var string
      */
     public $label = 'Border Width';
+
+    /**
+     * Default
+     *
+     * @since 2.0.0
+     * @var string
+     */
+    public $default = '0px';
 
     /**
      * Range atts
@@ -60,12 +69,11 @@ class Border_Width extends Range {
      * @access public
      * @return void
      */
-    public function styles($styles) {
-        $styles->add([
-            'selector' => '.taproot-button, .wp-block-button__link, .comment-respond__submit',
-            'styles' => [
-                'border-width' => theme_mod( $this->id ),
-            ]
+    public function styles( $styles ) {
+
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => theme_mod( $this->id ),
         ]);
     }
 
@@ -76,13 +84,11 @@ class Border_Width extends Range {
      * @access public
      * @return void
      */
-    public function editorStyles($styles) {
+    public function editorStyles( $styles ) {
 
-        $styles->add([
-            'selector' => '.editor-styles-wrapper .wp-block-button .wp-block-button__link, .editor-styles-wrapper .taproot-button',
-            'styles' => [
-                'border-width' => theme_mod( $this->id ),
-            ]
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => Mod::get( $this->id ),
         ]);
     }
 }

@@ -31,7 +31,7 @@ class Background_Color extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'background-color';
+    public $id = 'buttons--background-color';
 
     /**
      * Stores control label
@@ -48,14 +48,11 @@ class Background_Color extends Color {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
-        // Button Background
-        $styles->add([
-            'selector' => '.taproot-button, .wp-block-button__link:not(.has-background), .comment-respond__submit',
-            'styles' => [
-                'background-color' => theme_mod( $this->id ),
-            ]
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => theme_mod( $this->id ),
         ]);
     }
 
@@ -66,13 +63,11 @@ class Background_Color extends Color {
      * @access public
      * @return void
      */
-    public function editorStyles($styles) {
+    public function editorStyles( $styles ) {
 
-        $styles->add([
-            'selector' => '.editor-styles-wrapper .wp-block-button .wp-block-button__link, .editor-styles-wrapper .taproot-button',
-            'styles' => [
-                'background-color' => theme_mod( $this->id, Mod::get( 'colors--accent' ) ),
-            ]
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => Mod::get( $this->id ),
         ]);
     }
 }

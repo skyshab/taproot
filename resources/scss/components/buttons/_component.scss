@@ -13,3 +13,33 @@ button {
     display: inline-block;
     text-shadow: none;
 }
+
+.taproot-button, .wp-block-button__link, .comment-respond__submit {
+
+    display: inline-block;
+    box-shadow: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    white-space: normal;
+    word-break: break-all;
+    border-style: solid;
+    transition: all 0.4s ease-in-out;
+
+    font-family:            var( --buttons--font-family );
+    font-size:              var( --buttons--font-size );
+    line-height:            var( --buttons--line-height );
+    padding:              0 var( --buttons--padding );
+    background-color:       var( --buttons--background-color );
+    color:                  var( --buttons--text-color );
+    border-color:           var( --buttons--border-color );
+    border-width:           var( --buttons--border-width );
+    border-radius:          var( --buttons--border-radius );
+
+    &:hover {
+        text-decoration:    none;
+        background-color:   var( --buttons--hover--background-color );
+        color:              var( --buttons--hover--text-color );
+        border-color:       var( --buttons--hover--border-color );
+    }
+}

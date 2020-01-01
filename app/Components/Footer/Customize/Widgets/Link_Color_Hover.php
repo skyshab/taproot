@@ -47,7 +47,7 @@ class Link_Color_Hover extends Color {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         $styles->add([
             'selector' => '.app-footer__widget a:hover',

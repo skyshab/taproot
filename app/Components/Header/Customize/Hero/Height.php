@@ -46,7 +46,11 @@ class Height extends Range {
      * @since 2.0.0
      * @var array
      */
-    public $default = 'disabled';
+    public $default = [
+        'mobile'    => '275px',
+        'tablet'    => '56vw',
+        'desktop'   => '100vh'
+    ];
 
     /**
      * Devices
@@ -84,7 +88,7 @@ class Height extends Range {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         $selector = '.app-header--has-custom-header:not(.app-header--fixed)';
 

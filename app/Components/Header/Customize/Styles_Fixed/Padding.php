@@ -64,7 +64,7 @@ class Padding extends Range {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         $padding = theme_mod( $this->id );
 

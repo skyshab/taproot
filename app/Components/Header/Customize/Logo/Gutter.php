@@ -76,7 +76,7 @@ class Gutter extends Range {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         // Custom Property: Logo Gutter Width
         $styles->customProperty([

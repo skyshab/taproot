@@ -70,7 +70,7 @@ class Underline extends Radio {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         $underline = theme_mod( $this->id );
 

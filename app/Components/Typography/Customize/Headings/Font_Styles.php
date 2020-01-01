@@ -46,7 +46,7 @@ class Font_Styles extends FontStylesAbstract {
      * @since 2.0.0
      * @var string
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         // Font Style
         $styles->add([
@@ -62,7 +62,7 @@ class Font_Styles extends FontStylesAbstract {
      * @access public
      * @return void
      */
-    public function editorStyles($styles) {
+    public function editorStyles( $styles ) {
         $this->styles($styles);
     }
 }

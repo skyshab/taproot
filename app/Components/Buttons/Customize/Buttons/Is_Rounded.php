@@ -14,7 +14,7 @@
 namespace Taproot\Components\Buttons\Customize\Buttons;
 
 use Taproot\Customize\Controls\Checkbox\Checkbox;
-use function Taproot\Tools\theme_mod;
+use Taproot\Tools\Mod;
 
 /**
  * Class for checkbox control
@@ -30,7 +30,7 @@ class Is_Rounded extends Checkbox {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'is-rounded';
+    public $id = 'buttons--is-rounded';
 
     /**
      * Stores control label
@@ -49,18 +49,24 @@ class Is_Rounded extends Checkbox {
     public $default = FALSE;
 
     /**
+     * Transport
+     *
+     * @since 2.0.0
+     * @var string
+     */
+    public $transport = 'postMessage';
+
+    /**
      * Styles
      *
      * @since 2.0.0
      * @var string
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
-        $styles->add([
-            'selector' => '.taproot-button, .wp-block-button__link, .comment-respond__submit',
-            'styles' => [
-                'border-radius' => ( theme_mod( $this->id ) ) ? '100px' : '0px',
-            ]
+        $styles->customProperty([
+            'name'  => 'buttons--border-radius',
+            'value' => ( Mod::get( $this->id ) ) ? '100px' : FALSE,
         ]);
     }
 
@@ -71,13 +77,7 @@ class Is_Rounded extends Checkbox {
      * @access public
      * @return void
      */
-    public function editorStyles($styles) {
-
-        $styles->add([
-            'selector' => '.editor-styles-wrapper .wp-block-button .wp-block-button__link, .editor-styles-wrapper .taproot-button',
-            'styles' => [
-                'border-radius' => ( theme_mod( $this->id ) ) ? '100px' : '0px',
-            ]
-        ]);
+    public function editorStyles( $styles ) {
+        $this->styles( $styles );
     }
 }

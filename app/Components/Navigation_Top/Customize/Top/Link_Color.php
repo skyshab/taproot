@@ -56,7 +56,7 @@ class Link_Color extends Color {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         $styles->add([
             'selector' => '.menu--top__link:link, .menu--top__link:visited',

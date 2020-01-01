@@ -47,7 +47,7 @@ class Icon_Color extends Color {
      * @access public
      * @return void
      */
-    public function styles($styles) {
+    public function styles( $styles ) {
 
         $styles->customProperty([
             'name'      => 'archive-entry--meta--icon-color',
