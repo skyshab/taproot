@@ -45,7 +45,19 @@
 .app-header--has-custom-header {
 
     &:not(.app-header--fixed) {
+
         color: var( --header--hero--text-color );
+
+        min-height: 275px;
+
+        @include screen('tablet-and-up') {
+            min-height: 56vw;
+        }
+
+        @include screen('desktop') {
+            min-height: 100vh;
+        }
+
         a:hover {
             color: var( --header--hero--link-color--hover );
         }
