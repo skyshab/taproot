@@ -25,6 +25,7 @@ let files = [
     'style.css',
     'changelog.md',
     'functions.php',
+    'compat.php',
     'index.php',
     'license.md',
     'readme.md',
