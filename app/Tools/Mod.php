@@ -6,7 +6,7 @@
  *
  * @package   Rootstrap
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/rootstrap
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -50,7 +50,7 @@ class Mod {
      */
     public static function fallback( $name ) {
 
-        $defaults = App::resolve( 'customize/defaults' );
+        $defaults = App::resolve( 'rootstrap/defaults' );
 
         if ( $defaults->has($name) ) {
             return $defaults->get( $name )->value() instanceof \Closure
