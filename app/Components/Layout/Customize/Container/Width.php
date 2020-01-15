@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -181,6 +181,69 @@ class Width extends Range {
             'name' => "{$this->id}-as-percentage",
             'value' => Functions::get_layout_width('desktop', '%')
         ]);
+    }
 
+    /**
+     * Preview Styles
+     *
+     * @since  2.0.0
+     * @access public
+     * @return void
+     */
+    public function previewStyles() {
+
+        // Mobile
+        $script = <<< JS
+        wp.customize( "{$this->id}", function( value ) {
+            value.bind( function( to ) {
+                rootstrap.customProperty({
+                    name: "{$this->id}",
+                    value: to
+                });
+                rootstrap.customProperty({
+                    name: 'layout--container--padding',
+                    value: getPaddingFromWidth(to, 'vw')
+                });
+            });
+        });
+        JS;
+
+        // Tablet
+        $script .= <<< JS
+        wp.customize( 'layout--container--width--tablet', function( value ) {
+            value.bind( function( to ) {
+                rootstrap.customProperty({
+                    screen: 'tablet-and-up',
+                    name: "{$this->id}",
+                    value: to
+                });
+                rootstrap.customProperty({
+                    screen: 'tablet-and-up',
+                    name: 'layout--container--padding',
+                    value: getPaddingFromWidth(to, 'vw')
+                });
+            });
+        });
+        JS;
+
+        // Desktop
+        $script .= <<< JS
+        wp.customize( 'layout--container--width--desktop', function( value ) {
+            value.bind( function( to ) {
+                rootstrap.customProperty({
+                    screen: 'desktop',
+                    name: "{$this->id}",
+                    value: to.replace('vw', '%')
+                });
+                rootstrap.customProperty({
+                    screen: 'desktop',
+                    name: 'layout--container--padding',
+                    value: getPaddingFromWidth(to, 'vw')
+                });
+            });
+        });
+        JS;
+
+        return $script;
     }
 }

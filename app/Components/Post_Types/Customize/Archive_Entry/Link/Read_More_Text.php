@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -56,12 +56,12 @@ class Read_More_Text extends Control {
     public $label = 'Read More Text';
 
     /**
-     * Transport method
+     * Transport
      *
      * @since 2.0.0
      * @var string
      */
-    public $transport = 'postMessage';
+    public $transport = 'refresh';
 
     /**
      * Default

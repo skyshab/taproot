@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -32,7 +32,7 @@ class Font_Family extends Select {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'buttons--font-family';
+    public $id = 'buttons--font-family';
 
     /**
      * Label
@@ -71,7 +71,7 @@ class Font_Family extends Select {
 
         $styles->customProperty([
             'name'  => $this->id,
-            'value' => theme_mod( $this->id ),
+            'value' => app('fonts')->get_font_family( theme_mod( $this->id ) ),
         ]);
     }
 
@@ -86,7 +86,28 @@ class Font_Family extends Select {
 
         $styles->customProperty([
             'name'  => $this->id,
-            'value' => Mod::get( $this->id ),
+            'value' => app('fonts')->get_font_family( Mod::get( $this->id ) ),
         ]);
+    }
+
+    /**
+     * Preview Styles
+     *
+     * @since  2.0.0
+     * @access public
+     * @return void
+     */
+    public function previewStyles() {
+
+        return <<< JS
+        wp.customize( "{$this->id}", function( value ) {
+            value.bind( function( to ) {
+                rootstrap.customProperty({
+                    name: "{$this->id}",
+                    value: getFontFamily( to )
+                });
+            });
+        });
+        JS;
     }
 }

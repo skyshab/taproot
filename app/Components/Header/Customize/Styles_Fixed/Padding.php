@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -66,15 +66,39 @@ class Padding extends Range {
      */
     public function styles( $styles ) {
 
-        $padding = theme_mod( $this->id );
-
         $styles->add([
             'selector' => '.app-header--fixed .app-header__container',
             'styles' => [
-                'padding-top'    => $padding,
-                'padding-bottom' => $padding,
+                'padding-top'    => theme_mod( $this->id ),
+                'padding-bottom' => theme_mod( $this->id )
             ],
             'screen' => 'desktop'
         ]);
+    }
+
+    /**
+     * Preview Styles
+     *
+     * @since  2.0.0
+     * @access public
+     * @return void
+     */
+    public function previewStyles() {
+
+        return <<< JS
+        wp.customize( "{$this->id}", function( value ) {
+            value.bind( function( to ) {
+                rootstrap.style({
+                    id: "{$this->id}",
+                    selector: '.app-header--fixed .app-header__container',
+                    screen: 'desktop',
+                    styles: {
+                        'padding-top': to,
+                        'padding-bottom': to
+                    }
+                });
+            });
+        });
+        JS;
     }
 }

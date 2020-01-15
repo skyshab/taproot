@@ -1,12 +1,12 @@
 <?php
 /**
- * Branding Layout
+ * Link underline.
  *
- * This class handles the customize control for choosing the branding layout.
+ * This class handles the link underline styles.
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -14,7 +14,6 @@
 namespace Taproot\Components\Typography\Customize\Links;
 
 use Taproot\Customize\Controls\Radio\Radio;
-
 use function Taproot\Tools\theme_mod;
 
 /**
@@ -104,5 +103,56 @@ class Underline extends Radio {
                 ]
             ]);
         }
+    }
+
+    /**
+     * Preview Styles
+     *
+     * @since  2.0.0
+     * @access public
+     * @return void
+     */
+    public function previewStyles() {
+
+        return <<< JS
+        wp.customize( "{$this->id}", function( value ) {
+            value.bind( function( to ) {
+                if( 'underline' === to ) {
+                    rootstrap.style({
+                        id: "{$this->id}",
+                        selector: 'a:link',
+                        styles: {
+                            'text-decoration': 'underline'
+                        }
+                    });
+                }
+                else if( 'hover' === to ) {
+                    rootstrap.style({
+                        id: "{$this->id}",
+                        selector: 'a:link',
+                        styles: {
+                            'text-decoration': 'none'
+                        }
+                    });
+                    rootstrap.style({
+                        id: "{$this->id}",
+                        selector: 'a:hover, a:active',
+                        styles: {
+                            'text-decoration': 'underline'
+                        }
+                    });
+                }
+                else if( 'none' === to ) {
+                    rootstrap.style({
+                        id: "{$this->id}",
+                        selector: 'a:link, a:hover, a:active',
+                        styles: {
+                            'text-decoration': 'none'
+                        }
+                    });
+                }
+            });
+        });
+        JS;
     }
 }

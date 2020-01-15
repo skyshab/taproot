@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -40,6 +40,14 @@ class Hide extends Checkbox {
      * @var string
      */
     public $label = 'Hide title when fixed';
+
+    /**
+     * Transport
+     *
+     * @since 2.0.0
+     * @var string
+     */
+    public $transport = 'refresh';
 
     /**
      * Styles

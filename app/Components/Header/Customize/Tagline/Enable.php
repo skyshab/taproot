@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -47,4 +47,12 @@ class Enable extends Checkbox {
      * @var string
      */
     public $default = TRUE;
+
+    /**
+     * Transport
+     *
+     * @since 2.0.0
+     * @var string
+     */
+    public $transport = 'refresh';
 }

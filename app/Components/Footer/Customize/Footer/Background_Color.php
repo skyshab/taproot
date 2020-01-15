@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -14,6 +14,7 @@
 namespace Taproot\Components\Footer\Customize\Footer;
 
 use Taproot\Customize\Controls\Color\Color;
+use Taproot\Customize\Traits\CustomPropertyPreview;
 use Taproot\Tools\Mod;
 use function Taproot\Tools\theme_mod;
 
@@ -24,6 +25,8 @@ use function Taproot\Tools\theme_mod;
  * @access public
  */
 class Background_Color extends Color {
+
+    use CustomPropertyPreview;
 
     /**
      * Custom control name

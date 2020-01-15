@@ -1,12 +1,12 @@
 <?php
 /**
- * Font Size.
+ * Line Height
  *
- * This class handles the customizer control for the taglin font size.
+ * This class handles the component line height.
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -14,6 +14,7 @@
 namespace Taproot\Components\Header\Customize\Tagline_Fixed;
 
 use Taproot\Customize\Controls\Range\Range;
+use Taproot\Customize\Traits\CustomPropertyPreview;
 use Taproot\Tools\Mod;
 use function Taproot\Tools\theme_mod;
 
@@ -24,6 +25,8 @@ use function Taproot\Tools\theme_mod;
  * @access public
  */
 class Line_Height extends Range {
+
+    use CustomPropertyPreview;
 
     /**
      * Custom control ID

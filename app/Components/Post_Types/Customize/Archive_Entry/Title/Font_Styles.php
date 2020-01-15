@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -60,5 +60,27 @@ class Font_Styles extends FontStylesAbstract {
             'selector' => ".entry--type-{$this->post_type} .entry__title--archive",
             'styles' => app('typography')->get_font_styles( $this->id )
         ]);
+    }
+
+    /**
+     * Preview Styles
+     *
+     * @since  2.0.0
+     * @access public
+     * @return void
+     */
+    public function previewStyles() {
+
+        return <<< JS
+        wp.customize( "{$this->id}", function( value ) {
+            value.bind( function( to ) {
+                rootstrap.style({
+                    id: "{$this->id}",
+                    selector: ".entry--type-{$this->post_type} .entry__title--archive",
+                    styles: taprootFontStyles( to ),
+                });
+            });
+        });
+        JS;
     }
 }

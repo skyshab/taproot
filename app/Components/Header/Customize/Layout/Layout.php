@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -46,6 +46,14 @@ class Layout extends Radio {
      * @var array
      */
     public $devices = ['mobile', 'tablet', 'desktop'];
+
+    /**
+     * Transport
+     *
+     * @since 2.0.0
+     * @var array
+     */
+    public $transport = 'refresh';
 
     /**
      * Default

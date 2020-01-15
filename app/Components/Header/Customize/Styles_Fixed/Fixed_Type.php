@@ -6,14 +6,16 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
 namespace Taproot\Components\Header\Customize\Styles_Fixed;
 
-use Taproot\Customize\Controls\Select\Select;/**
+use Taproot\Customize\Controls\Select\Select;
+
+/**
  * Class for checkbox control
  *
  * @since  2.0.0
@@ -44,6 +46,14 @@ class Fixed_Type extends Select {
      * @var string
      */
     public $default = 'fade';
+
+    /**
+     * Transport
+     *
+     * @since 2.0.0
+     * @var string
+     */
+    public $transport = 'refresh';
 
     /**
      * Get Choices

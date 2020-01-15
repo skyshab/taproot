@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -15,6 +15,7 @@ namespace Taproot\Components\Sidebar\Customize\Sidebar;
 
 use Taproot\Customize\Controls\Range\Range;
 use Taproot\Tools\Mod;
+use Taproot\Customize\Traits\CustomPropertyPreview;
 
 /**
  * Class for range control
@@ -23,6 +24,8 @@ use Taproot\Tools\Mod;
  * @access public
  */
 class Min_Width extends Range {
+
+    use CustomPropertyPreview;
 
     /**
      * Custom control name

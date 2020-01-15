@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -117,5 +117,69 @@ class Height extends Range {
                 'min-height' => theme_mod( "{$this->id}--desktop" ),
             ]
         ]);
+    }
+
+    /**
+     * Preview Styles
+     *
+     * @since  2.0.0
+     * @access public
+     * @return void
+     */
+    public function previewStyles() {
+
+        // Default/mobile
+        $script = <<< JS
+        wp.customize( "{$this->id}", function( value ) {
+            value.bind( function( to ) {
+                rootstrap.style({
+                    id: "{$this->id}",
+                    selector: '.app-header--has-custom-header:not(.app-header--fixed)',
+                    styles: {
+                        "min-height": to
+                    }
+                });
+            });
+        });
+        JS;
+
+        // Tablet
+        if( isset( $this->devices ) && in_array( 'tablet', $this->devices ) ) {
+
+            $script .= <<< JS
+            wp.customize( "{$this->id}--tablet", function( value ) {
+                value.bind( function( to ) {
+                    rootstrap.style({
+                        id: "{$this->id}--tablet",
+                        selector: '.app-header--has-custom-header:not(.app-header--fixed)',
+                        styles: {
+                            "min-height": to
+                        }
+                    });
+                });
+            });
+            JS;
+        }
+
+        // Desktop
+        if( isset( $this->devices ) && in_array( 'desktop', $this->devices ) ) {
+
+            $script .= <<< JS
+            wp.customize( "{$this->id}--desktop", function( value ) {
+                value.bind( function( to ) {
+                    rootstrap.style({
+                        id: "{$this->id}--desktop",
+                        selector: '.app-header--has-custom-header:not(.app-header--fixed)',
+                        styles: {
+                            "min-height": to
+                        }
+                    });
+                });
+            });
+            JS;
+        }
+
+        // Return style scripts
+        return $script;
     }
 }

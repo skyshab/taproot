@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -30,7 +30,7 @@ class Is_Rounded extends Checkbox {
      * @since 2.0.0
      * @var string
      */
-    public $id = 'buttons--is-rounded';
+    public $id = 'buttons--border-radius';
 
     /**
      * Stores control label
@@ -65,7 +65,7 @@ class Is_Rounded extends Checkbox {
     public function styles( $styles ) {
 
         $styles->customProperty([
-            'name'  => 'buttons--border-radius',
+            'name'  => $this->id,
             'value' => ( Mod::get( $this->id ) ) ? '100px' : FALSE,
         ]);
     }
@@ -79,5 +79,26 @@ class Is_Rounded extends Checkbox {
      */
     public function editorStyles( $styles ) {
         $this->styles( $styles );
+    }
+
+    /**
+     * Preview Styles
+     *
+     * @since  2.0.0
+     * @access public
+     * @return void
+     */
+    public function previewStyles() {
+
+        return <<< JS
+        wp.customize( "{$this->id}", function( value ) {
+            value.bind( function( to ) {
+                rootstrap.customProperty({
+                    name: "{$this->id}",
+                    value: (to) ? '100px' : '0px'
+                });
+            });
+        });
+        JS;
     }
 }

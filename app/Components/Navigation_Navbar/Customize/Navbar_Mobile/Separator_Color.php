@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -65,5 +65,30 @@ class Separator_Color extends Color {
             ],
             'screen' => Functions::get_mobile_screen(),
         ]);
+    }
+
+    /**
+     * Preview Styles
+     *
+     * @since  2.0.0
+     * @access public
+     * @return void
+     */
+    public function previewStyles() {
+
+        return <<< JS
+        wp.customize( "{$this->id}", function( value ) {
+            value.bind( function( to ) {
+                rootstrap.style({
+                    id: "{$this->id}",
+                    selector: '.menu--navbar__item, .menu--navbar__link',
+                    screen: getMobileScreen( wp.customize.instance('navigation--navbar-mobile--breakpoint').get() ),
+                    styles: {
+                        'border-color': to,
+                    }
+                });
+            });
+        });
+        JS;
     }
 }

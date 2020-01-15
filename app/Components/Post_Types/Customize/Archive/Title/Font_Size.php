@@ -2,11 +2,13 @@
 /**
  * Font Size.
  *
- * This class handles the customizer control for the taglin font size.
+ * This class handles the customizer control for the  * Font Size.
+ *
+ * This class handles the component font size.font size.
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -110,5 +112,65 @@ class Font_Size extends Range {
             'screen'    => 'desktop',
             'selector'  => ".entry--type-{$this->post_type}"
         ]);
+    }
+
+    /**
+     * Preview Styles
+     *
+     * @since  2.0.0
+     * @access public
+     * @return void
+     */
+    public function previewStyles() {
+
+        // Default/mobile
+        $script = <<< JS
+        wp.customize( "{$this->id}", function( value ) {
+            value.bind( function( to ) {
+                rootstrap.customProperty({
+                    name: 'archive--title--font-size',
+                    selector: ".entry--type-{$this->post_type}",
+                    value: to
+                });
+            });
+        });
+        JS;
+
+        // Tablet
+        if( isset( $this->devices ) && in_array( 'tablet', $this->devices ) ) {
+
+            $script .= <<< JS
+            wp.customize( "{$this->id}--tablet", function( value ) {
+                value.bind( function( to ) {
+                    rootstrap.customProperty({
+                        name: 'archive--title--font-size',
+                        selector: ".entry--type-{$this->post_type}",
+                        screen: 'tablet',
+                        value: to,
+                    });
+                });
+            });
+            JS;
+        }
+
+        // Desktop
+        if( isset( $this->devices ) && in_array( 'desktop', $this->devices ) ) {
+
+            $script .= <<< JS
+            wp.customize( "{$this->id}--desktop", function( value ) {
+                value.bind( function( to ) {
+                    rootstrap.customProperty({
+                        name: 'archive--title--font-size',
+                        selector: ".entry--type-{$this->post_type}",
+                        screen: 'desktop',
+                        value: to,
+                    });
+                });
+            });
+            JS;
+        }
+
+        // Return custom property scripts
+        return $script;
     }
 }

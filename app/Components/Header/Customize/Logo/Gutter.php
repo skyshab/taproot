@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -14,7 +14,8 @@
 namespace Taproot\Components\Header\Customize\Logo;
 
 use Taproot\Customize\Controls\Range\Range;
-use function Taproot\Tools\theme_mod;
+use Taproot\Customize\Traits\CustomPropertyStyles;
+use Taproot\Customize\Traits\CustomPropertyPreview;
 
 /**
  * Class for range control
@@ -23,6 +24,9 @@ use function Taproot\Tools\theme_mod;
  * @access public
  */
 class Gutter extends Range {
+
+    use CustomPropertyStyles;
+    use CustomPropertyPreview;
 
     /**
      * Custom control ID
@@ -68,34 +72,4 @@ class Gutter extends Range {
             'default' => 16
         ]
     ];
-
-    /**
-     * Styles
-     *
-     * @since  2.0.0
-     * @access public
-     * @return void
-     */
-    public function styles( $styles ) {
-
-        // Custom Property: Logo Gutter Width
-        $styles->customProperty([
-            'name' => $this->id,
-            'value' => theme_mod( $this->id ),
-        ]);
-
-        // Custom Property: Logo Gutter Width Tablet
-        $styles->customProperty([
-            'name' => $this->id,
-            'value' => theme_mod( "{$this->id}--tablet" ),
-            'screen' => 'tablet-and-up'
-        ]);
-
-        // Custom Property: Logo Gutter Width Desktop
-        $styles->customProperty([
-            'name' => $this->id,
-            'value' => theme_mod( "{$this->id}--desktop" ),
-            'screen' => 'desktop'
-        ]);
-    }
 }

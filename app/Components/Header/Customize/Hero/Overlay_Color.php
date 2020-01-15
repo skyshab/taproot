@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -47,14 +47,6 @@ class Overlay_Color extends Color {
      * @var bool
      */
     public $hide_alpha = TRUE;
-
-    /**
-     * Preview Refresh
-     *
-     * @since 2.0.0
-     * @var bool
-     */
-    public $previewRefresh = FALSE;
 
     /**
      * Enable default

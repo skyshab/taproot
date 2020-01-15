@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -14,6 +14,8 @@
 namespace Taproot\Components\Layout\Customize\Content;
 
 use Taproot\Customize\Controls\Range\Range;
+use Taproot\Customize\Traits\CustomPropertyPreview;
+use Taproot\Customize\Traits\CustomPropertyEditor;
 use Taproot\Tools\Mod;
 
 /**
@@ -23,6 +25,9 @@ use Taproot\Tools\Mod;
  * @access public
  */
 class Max_Width extends Range {
+
+    use CustomPropertyPreview;
+    use CustomPropertyEditor;
 
     /**
      * Custom control ID
@@ -78,16 +83,5 @@ class Max_Width extends Range {
             'name'  => $this->id,
             'value' => Mod::get( $this->id )
         ]);
-    }
-
-    /**
-     * Editor Styles
-     *
-     * @since  2.0.0
-     * @access public
-     * @return void
-     */
-    public function editorStyles( $styles ) {
-        $this->styles( $styles );
     }
 }

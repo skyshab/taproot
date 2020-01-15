@@ -1,12 +1,12 @@
 <?php
 /**
- * Font Size.
+ * Line Height
  *
- * This class handles the customizer control for the taglin font size.
+ * This class handles the component line height.
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -131,5 +131,76 @@ class Line_Height extends Range {
             'value' => app('typography')->maybe_convert_to_em( theme_mod( "{$this->id}--desktop" ) ),
             'screen' => 'desktop'
         ]);
+    }
+
+    /**
+     * Preview Styles
+     *
+     * @since  2.0.0
+     * @access public
+     * @return void
+     */
+    public function previewStyles() {
+
+        // Default/mobile
+        $script = <<< JS
+        wp.customize( "{$this->id}", function( value ) {
+            value.bind( function( to ) {
+                rootstrap.customProperty({
+                    name: "{$this->id}",
+                    value: to
+                });
+                rootstrap.customProperty({
+                    name: 'sidebar--block-spacing',
+                    value: maybeConvertToEm( to )
+                });
+            });
+        });
+        JS;
+
+        // Tablet
+        if( isset( $this->devices ) && in_array( 'tablet', $this->devices ) ) {
+
+            $script .= <<< JS
+            wp.customize( "{$this->id}--tablet", function( value ) {
+                value.bind( function( to ) {
+                    rootstrap.customProperty({
+                        name: "{$this->id}",
+                        value: to,
+                        screen: 'tablet'
+                    });
+                    rootstrap.customProperty({
+                        name: 'sidebar--block-spacing',
+                        screen: 'tablet-and-up',
+                        value: maybeConvertToEm( to )
+                    });
+                });
+            });
+            JS;
+        }
+
+        // Desktop
+        if( isset( $this->devices ) && in_array( 'desktop', $this->devices ) ) {
+
+            $script .= <<< JS
+            wp.customize( "{$this->id}--desktop", function( value ) {
+                value.bind( function( to ) {
+                    rootstrap.customProperty({
+                        name: "{$this->id}",
+                        value: to,
+                        screen: 'desktop'
+                    });
+                    rootstrap.customProperty({
+                        name: 'sidebar--block-spacing',
+                        screen: 'desktop',
+                        value: maybeConvertToEm( to )
+                    });
+                });
+            });
+            JS;
+        }
+
+        // Return custom property scripts
+        return $script;
     }
 }

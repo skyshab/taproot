@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -14,7 +14,9 @@
 namespace Taproot\Components\Colors\Customize\Colors;
 
 use Taproot\Customize\Controls\Color\Color;
-use Taproot\Tools\Mod;
+use Taproot\Customize\Traits\CustomPropertyStyles;
+use Taproot\Customize\Traits\CustomPropertyEditor;
+use Taproot\Customize\Traits\CustomPropertyPreview;
 
 /**
  * Class for color controls
@@ -23,6 +25,10 @@ use Taproot\Tools\Mod;
  * @access public
  */
 class Meta_Dark extends Color {
+
+    use CustomPropertyStyles;
+    use CustomPropertyEditor;
+    use CustomPropertyPreview;
 
     /**
      * Control id
@@ -55,30 +61,4 @@ class Meta_Dark extends Color {
      * @var string
      */
     public $default = '#a5a5a5';
-
-    /**
-     * Styles
-     *
-     * @since  2.0.0
-     * @access public
-     * @return void
-     */
-    public function styles( $styles ) {
-
-        $styles->customProperty([
-            'name' => $this->id,
-            'value' => Mod::get( $this->id )
-        ]);
-    }
-
-    /**
-     * Editor Styles
-     *
-     * @since  2.0.0
-     * @access public
-     * @return void
-     */
-    public function editorStyles( $styles ) {
-        $this->styles($styles);
-    }
 }

@@ -1,19 +1,21 @@
 <?php
 /**
- * Fixed header type
+ * Link type
  *
- * This class handles the customizer control for the fixed header type.
+ * This class handles the link type.
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
 namespace Taproot\Components\Post_Types\Customize\Archive_Entry\Link;
 
-use Taproot\Customize\Controls\Select\Select;/**
+use Taproot\Customize\Controls\Select\Select;
+
+/**
  * Class for checkbox control
  *
  * @since  2.0.0
@@ -44,6 +46,14 @@ class Type extends Select {
      * @var string
      */
     public $default = 'link';
+
+    /**
+     * Transport
+     *
+     * @since 2.0.0
+     * @var string
+     */
+    public $transport = 'refresh';
 
     /**
      * Get Choices
