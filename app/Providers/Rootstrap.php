@@ -4,7 +4,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
+ * @copyright 2020 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -12,7 +12,7 @@
 namespace Taproot\Providers;
 
 use Hybrid\Tools\ServiceProvider;
-use Rootstrap\Rootstrap                         as Controller;
+use Rootstrap\Rootstrap                         as RootstrapCore;
 use Rootstrap\Devices\Manager                   as RootstrapDevices;
 use Rootstrap\Screens\Manager                   as RootstrapScreens;
 use Rootstrap\Styles\Manager                    as RootstrapStyles;
@@ -42,7 +42,7 @@ class Rootstrap extends ServiceProvider {
          * Rootstrap Core
          */
         $this->app->singleton( 'rootstrap',
-            new Controller()
+            new RootstrapCore()
         );
 
         /**
@@ -76,7 +76,7 @@ class Rootstrap extends ServiceProvider {
         /**
          * Rootstrap Defaults
          */
-        $this->app->singleton( 'customize/defaults',
+        $this->app->singleton( 'rootstrap/defaults',
             new RootstrapDefaults()
         );
 
@@ -111,6 +111,7 @@ class Rootstrap extends ServiceProvider {
      */
     public function boot() {
 
+        // Boot rootstrap modules
         array_map( function( $module ) {
             $this->app->resolve($module)->boot();
         }, [
@@ -124,8 +125,23 @@ class Rootstrap extends ServiceProvider {
 
         // Add action for interacting with the customize defaults collection
         add_action( 'init', function() {
-            $defaults = $this->app->resolve( 'customize/defaults' );
-            do_action( 'customize/defaults', $defaults );
+            $defaults = $this->app->resolve( 'rootstrap/defaults' );
+            do_action( 'rootstrap/defaults', $defaults );
         }, PHP_INT_MAX );
+
+        // Make screens data available in customize preview
+        add_action( 'customize_preview_init', function() {
+
+            $screens = $this->app->resolve('rootstrap/screens')->collection();
+            $data = [];
+
+            foreach( $screens as $name => $device ) {
+                $data[$name]['min'] = $device->min();
+                $data[$name]['max'] = $device->max();
+            }
+
+            wp_localize_script( 'customize-preview', 'rootstrapScreens', $data );
+
+        }, 20 );
     }
 }
