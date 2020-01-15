@@ -4,13 +4,12 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
+ * @copyright 2020 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
 
 namespace Taproot\Customize\Controls;
-
 
 /**
  * Class to create device picker for customizer controls
@@ -19,12 +18,10 @@ namespace Taproot\Customize\Controls;
  */
 class Device_Picker {
 
-
     /**
      * Array of devices
      */
     private $devices;
-
 
     /**
      * Set up our device picker
@@ -36,7 +33,6 @@ class Device_Picker {
     public function __construct( $devices ) {
         $this->devices = $devices;
     }
-
 
     /**
      * Render device picker
@@ -87,5 +83,4 @@ class Device_Picker {
     public function display() {
         echo $this->render();
     }
-
 }

@@ -6,14 +6,14 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/Taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
 namespace Taproot\Customize\Controls\Control;
 
-use Taproot\Customize\Controls\Traits\Standard;
+use Taproot\Customize\Traits\Standard;
 use Taproot\Tools\Mod;
 
 /**
@@ -73,14 +73,6 @@ abstract class Control {
      * @var integer
      */
     public $priority = 10;
-
-    /**
-     * Stores previewRefresh
-     *
-     * @since 2.0.0
-     * @var bool
-     */
-    public $previewRefresh = FALSE;
 
     /**
      * Stores default value

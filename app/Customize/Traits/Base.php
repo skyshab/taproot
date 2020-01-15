@@ -6,12 +6,12 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/Taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Customize\Controls\Traits;
+namespace Taproot\Customize\Traits;
 
 /**
  * Class for checkbox controls

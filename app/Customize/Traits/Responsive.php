@@ -1,17 +1,17 @@
 <?php
 /**
- * Base control methods.
+ * Responsive control methods.
  *
- * This trait contains common methods for our control classes.
+ * This trait contains methods for our responsive control classes.
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2019, Sky Shabatura
+ * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/Taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Customize\Controls\Traits;
+namespace Taproot\Customize\Traits;
 
 /**
  * Class for checkbox controls
@@ -43,49 +43,20 @@ trait Responsive {
     }
 
     /**
-     * Customize Preview Controls Refresh
-     *
-     * These controls will trigger a refresh of the styleblock
-     * in the customize preview.
-     *
-     * @since  2.0.0
-     * @access public
-     * @param  array - $controls
-     * @return array
-     */
-    public function previewRefresh($controls) {
-
-        // loop through the devices
-        foreach( $this->devices as $device ) {
-
-            // If mobile, just use the control name
-            if( 'mobile' === $device ) {
-                $controls[] = $this->id;
-            }
-            // Otherwise, append the device to the name
-            else {
-                $controls[] =  "{$this->id}--{$device}";
-            }
-        }
-
-        return $controls;
-    }
-
-    /**
      * Defaults
      *
      * @since  2.0.0
      * @access public
      * @return void
      */
-    public function defaults($defaults) {
+    public function defaults( $defaults ) {
 
         // Loop through the devices
         foreach( $this->devices as $device ) {
 
             // Handle default value
-            if( is_array($this->default) ) {
-                $default = ( isset($this->default[$device]) ) ? $this->default[$device] : false;
+            if( is_array( $this->default ) ) {
+                $default = ( isset( $this->default[$device] ) ) ? $this->default[$device] : false;
             } else {
                 $default = $this->default;
             }

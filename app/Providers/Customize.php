@@ -4,7 +4,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
+ * @copyright 2020 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -32,9 +32,8 @@ class Customize extends ServiceProvider {
      */
     public function register() {
 
+        $this->app->singleton( Controller::class );
         $this->app->singleton( 'customize/components', Collection::class );
-
-        $this->app->singleton( 'customize/controller', Controller::class );
     }
 
     /**
@@ -45,7 +44,6 @@ class Customize extends ServiceProvider {
      * @return void
      */
     public function boot() {
-
-        $this->app->resolve( 'customize/controller' )->boot();
+        $this->app->resolve( Controller::class )->boot();
     }
 }

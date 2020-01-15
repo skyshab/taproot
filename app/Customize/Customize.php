@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
+ * @copyright 2020 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -80,7 +80,7 @@ class Customize implements Bootable {
         add_action( 'customize_register', [$this, 'customize_register_after'], PHP_INT_MAX );
 
         // Register defaults
-        add_action("customize/defaults", [$this, 'defaults']);
+        add_action( 'rootstrap/defaults', [$this, 'defaults'] );
 
         // Register Tabs
         add_filter( 'rootstrap/tabs', [ $this, 'tabs' ] );
@@ -89,10 +89,16 @@ class Customize implements Bootable {
         add_filter( 'rootstrap/sequences', [ $this, 'sequences' ] );
 
         // Editor styles
-        add_action( 'taproot\editor\styles', [$this, 'editorStyles'] );
+        add_action( 'taproot/editor/styles', [$this, 'editorStyles'] );
 
         // Enqueue scripts and styles.
         add_action( 'customize_controls_enqueue_scripts', [ $this, 'controlsEnqueue'] );
+
+        // Enqueue preview scripts.
+        add_action( 'customize_preview_init', [ $this, 'previewEnqueue' ] );
+
+        // Add preview live style scripts
+        add_action( 'customize_preview_init', [ $this, 'previewStyles' ], 100 );
     }
 
     /**
@@ -132,10 +138,7 @@ class Customize implements Bootable {
         $handle = App::resolve( 'styles/handle' );
 
         // Front End styles
-        add_action("rootstrap/styles/{$handle}", [$this, 'styles']);
-
-        // Preview refresh
-        add_filter("rootstrap/styles/{$handle}/previewRefresh", [$this, 'previewRefresh']);
+        add_action( "rootstrap/styles/{$handle}", [$this, 'styles'] );
     }
 
     /**
@@ -270,7 +273,7 @@ class Customize implements Bootable {
 
         foreach( $this->controls as $control ) {
             if( method_exists( $control, 'defaults') ) {
-                $control->defaults($defaults);
+                $control->defaults( $defaults );
             }
         }
     }
@@ -287,7 +290,7 @@ class Customize implements Bootable {
 
         foreach( $this->controls as $control ) {
             if( method_exists( $control, 'styles') ) {
-                $control->styles($styles);
+                $control->styles( $styles );
             }
         }
     }
@@ -310,22 +313,19 @@ class Customize implements Bootable {
     }
 
     /**
-     * Preview Refresh
+     * Preview JS
      *
      * @since  2.0.0
      * @access public
-     * @param  object  $controls - Instance of preview refresh
      * @return void
      */
-    public function previewRefresh( $controls ) {
+    public function previewStyles() {
 
         foreach( $this->controls as $control ) {
-            if( method_exists( $control, 'previewRefresh') ) {
-                $controls = $control->previewRefresh($controls);
+            if( method_exists( $control, 'previewStyles') ) {
+                wp_add_inline_script( 'taproot-customize-preview', $control->previewStyles() );
             }
         }
-
-        return $controls;
     }
 
     /**
@@ -386,6 +386,6 @@ class Customize implements Bootable {
      * @return void
      */
     public function previewEnqueue() {
-        wp_enqueue_script( 'taproot-customize-preview', asset( 'js/customize-preview.js' ), [ 'customize-preview' ], null, true );
+        wp_enqueue_script( 'taproot-customize-preview', asset( 'js/customize-preview.js' ), ['customize-preview'], filemtime( get_template_directory().'/style.css' ), true );
     }
 }
