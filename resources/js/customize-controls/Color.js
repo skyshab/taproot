@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
+ * @copyright 2020 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
 
@@ -214,7 +214,7 @@ class AlphaColor {
             // value is loaded in the customize preview via PHP and clearing doesn't
             // have the desired effect. This is not the best way to handle things,
             // but it works for now.
-            // wp.customize.previewer.refresh();
+            wp.customize.previewer.refresh();
         });
 
 

@@ -7,7 +7,7 @@
             <?php Hybrid\Media\display_image_sizes( [
                 // Translators: %s is a list of image size links.
                 'text' => esc_html__( 'Sizes: %s', 'taproot' )
-            ] ) ?>
+            ]) ?>
         </div>
     </header>
 

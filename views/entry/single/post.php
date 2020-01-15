@@ -1,8 +1,8 @@
 <article <?php Hybrid\Attr\display( 'entry' ) ?>>
 
-    <?php Hybrid\app('images/template')->the_featured_image(['class' => 'entry_image'], 'post'); ?>
+    <?php Hybrid\app('images/template')->the_featured_image( ['class' => 'entry_image'], 'post' ) ?>
 
-    <?php Hybrid\View\display( 'entry/header', 'post' );?>
+    <?php Hybrid\View\display( 'entry/header', 'post' ) ?>
 
     <div class="entry__content entry__content--single">
         <?php the_content() ?>
@@ -15,7 +15,7 @@
             'date' => false,
             'taxonomies' => ['category', 'post_tag'],
             'className' => 'taproot-meta entry__footer__taxonomies',
-        ]); ?>
+        ]) ?>
         <?php Hybrid\View\display( 'nav/postnav' ) ?>
     </footer>
 

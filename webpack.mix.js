@@ -9,13 +9,13 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
+ * @copyright 2020 Sky Shabatura
  * @link      https://taproot-theme.com
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
 
 // Import required packages.
-const mix               = require( 'laravel-mix' );
+const mix = require( 'laravel-mix' );
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 
 /*
@@ -44,70 +44,55 @@ if ( process.env.export ) {
  */
 
 /*
- * Sets the development path to assets. By default, this is the `/resources`
- * folder in the theme.
+ * Sets the development path to assets.
  */
 const devPath  = 'resources';
 
 /*
- * Sets the path to the generated assets. By default, this is the `/dist` folder
- * in the theme. If doing something custom, make sure to change this everywhere.
+ * Path to the generated assets.
  */
 mix.setPublicPath( './' );
 
 /*
- * Set Laravel Mix options.
- *
- * @link https://laravel.com/docs/5.6/mix#postcss
- * @link https://laravel.com/docs/5.6/mix#url-processing
+ * Laravel Mix options.
  */
 mix.options( {
-    postCss        : [
+    postCss : [
         require( 'postcss-preset-env' )(),
         require('postcss-sort-media-queries')({
             sort: 'mobile-first'
-            // sort: function(a, b) {
-            // custom sorting function
-            // }
         })
     ],
     processCssUrls : false
 } );
 
 /*
- * Builds sources maps for assets.
- *
- * @link https://laravel.com/docs/5.6/mix#css-source-maps
+ * Build sources maps for assets.
  */
 mix.sourceMaps();
 
 /*
- * Versioning and cache busting. Append a unique hash for production assets. If
- * you only want versioned assets in production, do a conditional check for
- * `mix.inProduction()`.
- *
- * @link https://laravel.com/docs/5.6/mix#versioning-and-cache-busting
+ * Versioning and cache busting.
  */
 mix.version();
 
 /*
  * Compile JavaScript.
- *
- * @link https://laravel.com/docs/5.6/mix#working-with-scripts
  */
 
+ // JS module output
 mix.react( `${devPath}/js/app.js`,                'dist/js' )
    .react( `${devPath}/js/customize-controls.js`, 'dist/js' )
-   .react( `${devPath}/js/customize-preview.js`,  'dist/js' )
    .react( `${devPath}/js/editor.js`,             'dist/js' );
 
+// Combine Customize Preview scripts
+mix.scripts([
+    `${devPath}/js/customize-preview/footer-monitor.js`,
+    `${devPath}/js/customize-preview/functions-preview.js`
+], 'dist/js/customize-preview.js');
+
 /*
- * Compile CSS. Mix supports Sass, Less, Stylus, and plain CSS, and has functions
- * for each of them.
- *
- * @link https://laravel.com/docs/5.6/mix#working-with-stylesheets
- * @link https://laravel.com/docs/5.6/mix#sass
- * @link https://github.com/sass/node-sass#options
+ * Compile CSS.
  */
 
 // Sass configuration.
@@ -124,44 +109,25 @@ mix.sass( `${devPath}/scss/screen.scss`,             'dist/css', sassConfig )
 
 /*
  * Add custom Webpack configuration.
- *
- * Laravel Mix doesn't currently minimize images while using its `.copy()`
- * function, so we're using the `CopyWebpackPlugin` for processing and copying
- * images into the distribution folder.
- *
- * @link https://laravel.com/docs/5.6/mix#custom-webpack-configuration
- * @link https://webpack.js.org/configuration/
  */
 mix.webpackConfig( {
     stats       : 'minimal',
     devtool     : mix.inProduction() ? false : 'source-map',
     performance : { hints  : false    },
     externals   : { jquery : 'jQuery' },
-    resolve     : {
-        alias : {
-            // Alias for Hybrid Customize assets.
-            // Import from `hybrid-customize/js` or `~hybrid-customize/scss`.
-            'hybrid-customize' : path.resolve( __dirname, 'vendor/justintadlock/hybrid-customize/resources/' ),
-
-            // alias for customize-preview directory
-            'customize-preview' : path.resolve( __dirname, 'resources/js/customize-preview/' ),
-        }
-    },
     plugins     : [
         // @link https://github.com/webpack-contrib/copy-webpack-plugin
         new CopyWebpackPlugin( [
             { from : `${devPath}/svg`,   to : 'dist/svg'   },
         ]),
-    ]
+    ],
 });
 
+/*
+ * Monitor files for changes and inject your changes into the browser.
+ */
 if ( process.env.sync ) {
 
-    /*
-     * Monitor files for changes and inject your changes into the browser.
-     *
-     * @link https://laravel.com/docs/5.6/mix#browsersync-reloading
-     */
     mix.browserSync( {
         proxy : 'localhost',
         files : [

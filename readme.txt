@@ -24,4 +24,4 @@ Taproot is based on the [Mythic](https://github.com/justintadlock/mythic) starte
 
 ## Copyright and License
 Taproot is licensed under the [GNU GPL](https://www.gnu.org/licenses/gpl-2.0.html), version 2 or later.
-2017-2019 © Sky Shabatura
+2017-2020 © Sky Shabatura
