@@ -4,7 +4,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
+ * @copyright 2020 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -12,7 +12,6 @@
 namespace Taproot\Providers;
 
 use Hybrid\Tools\ServiceProvider;
-
 use Taproot\Editor\Editor as Controller;
 
 /**

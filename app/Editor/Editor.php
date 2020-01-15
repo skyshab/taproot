@@ -100,7 +100,7 @@ class Editor implements Bootable {
         ]);
 
         // Action to add editor styles
-        do_action( 'taproot\editor\styles', $styles );
+        do_action( 'taproot/editor/styles', $styles );
 
         // Add internal styles
         $this->styles($styles);
@@ -117,23 +117,8 @@ class Editor implements Bootable {
      */
     public function editorData() {
 
-        $header_image = Mod::get( 'header_image', get_parent_theme_file_uri('/dist/images/header.jpg') );
-
-        if ('remove-header' === $header_image ) {
-            $header_image = false;
-        }
-
-        $data = [
-            "headerImage"               => $header_image,
-            "headerOverlayColor"        => Mod::get( 'header--hero--overlay-color' ),
-            "headerOverlayOpacity"      => Mod::get( 'header--hero--overlay-opacity' ),
-            "headerHeroDefaultColor"    => Mod::get( 'header--hero--default-color', Mod::get( 'header--default-color' ) ),
-            "headerHeroHoverColor"      => Mod::get( 'header--hero--default-color--hover' ),
-        ];
-
-        $data = apply_filters('taproot/editor-data', $data);
-
-        return sprintf( 'var taprootEditorData = %s;', wp_json_encode($data) );
+        $data = apply_filters( 'taproot/editor-data', [] );
+        return sprintf( 'var taprootEditorData = %s;', wp_json_encode( $data ) );
     }
 
     /**
@@ -220,7 +205,7 @@ class Editor implements Bootable {
 
         // Custom Property: Default Hero Header Color
         $styles->customProperty([
-            'name' => 'header--hero--default-color',
+            'name' => 'header--hero--text-color',
             'value' => get_post_meta( get_the_ID(), 'taprooot_hero_default_color', true ),
         ]);
 
@@ -243,28 +228,33 @@ class Editor implements Bootable {
         add_theme_support( 'editor-color-palette', [
             [
                 'name'  => __( 'Text Color', 'taproot' ),
-                'slug'  => 'theme-text',
-                'color' => get_theme_mod( 'typography--body--text-color', '#8c8c8c' )
+                'slug'  => 'text',
+                'color' => Mod::get( 'colors--text-color', '#8c8c8c' )
             ],
             [
                 'name'  => __( 'Accent Color', 'taproot' ),
-                'slug'  => 'theme-accent',
-                'color' => get_theme_mod( 'colors--theme--accent', '#00a0d1' )
+                'slug'  => 'accent',
+                'color' => Mod::get( 'colors--accent', '#00a0d1' )
+            ],
+            [
+                'name'  => __( 'Accent Contrast Color', 'taproot' ),
+                'slug'  => 'accent-contrast',
+                'color' => Mod::get( 'colors--accent-contrast', '#ffffff' )
             ],
             [
                 'name'  => __( 'Meta Light', 'taproot' ),
-                'slug'  => 'theme-meta-light',
-                'color' => get_theme_mod( 'colors--theme--meta-light', '#f4f4f4' )
+                'slug'  => 'meta-light',
+                'color' => Mod::get( 'colors--meta-light', '#f4f4f4' )
             ],
             [
                 'name'  => __( 'Meta Medium', 'taproot' ),
-                'slug'  => 'theme-meta-medium',
-                'color' => get_theme_mod( 'colors--theme--meta-medium', '#d8d8d8' )
+                'slug'  => 'meta-medium',
+                'color' => Mod::get( 'colors--meta-medium', '#d8d8d8' )
             ],
             [
                 'name'  => __( 'Meta Dark', 'taproot' ),
-                'slug'  => 'theme-meta-dark',
-                'color' => get_theme_mod( 'colors--theme--meta-dark', '#a5a5a5' )
+                'slug'  => 'meta-dark',
+                'color' => Mod::get( 'colors--meta-dark', '#a5a5a5' )
             ]
         ]);
 
