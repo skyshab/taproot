@@ -206,7 +206,7 @@ class Width extends Range {
                 });
             });
         });
-        JS;
+JS;
 
         // Tablet
         $script .= <<< JS
@@ -224,7 +224,7 @@ class Width extends Range {
                 });
             });
         });
-        JS;
+JS;
 
         // Desktop
         $script .= <<< JS
@@ -242,7 +242,7 @@ class Width extends Range {
                 });
             });
         });
-        JS;
+JS;
 
         return $script;
     }

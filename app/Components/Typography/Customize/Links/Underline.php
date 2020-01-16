@@ -153,6 +153,6 @@ class Underline extends Radio {
                 }
             });
         });
-        JS;
+JS;
     }
 }

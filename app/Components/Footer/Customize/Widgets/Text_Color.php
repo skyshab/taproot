@@ -78,6 +78,6 @@ class Text_Color extends Color {
                 });
             });
         });
-        JS;
+JS;
     }
 }

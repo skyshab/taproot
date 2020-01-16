@@ -99,6 +99,6 @@ class Is_Rounded extends Checkbox {
                 });
             });
         });
-        JS;
+JS;
     }
 }

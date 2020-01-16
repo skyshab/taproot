@@ -104,6 +104,6 @@ class Align extends Select {
                 });
             });
         });
-        JS;
+JS;
     }
 }

@@ -96,6 +96,6 @@ class Icon_Size extends Range {
                 });
             });
         });
-        JS;
+JS;
     }
 }

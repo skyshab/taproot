@@ -82,6 +82,6 @@ class Hide extends Checkbox {
                 }
             });
         });
-        JS;
+JS;
     }
 }

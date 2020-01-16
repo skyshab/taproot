@@ -108,6 +108,6 @@ class Font_Family extends Select {
                 });
             });
         });
-        JS;
+JS;
     }
 }

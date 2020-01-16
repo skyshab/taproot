@@ -134,7 +134,7 @@ class Font_Size extends Range {
                 });
             });
         });
-        JS;
+JS;
 
         // Tablet
         if( isset( $this->devices ) && in_array( 'tablet', $this->devices ) ) {
@@ -150,7 +150,7 @@ class Font_Size extends Range {
                     });
                 });
             });
-            JS;
+JS;
         }
 
         // Desktop
@@ -167,7 +167,7 @@ class Font_Size extends Range {
                     });
                 });
             });
-            JS;
+JS;
         }
 
         // Return custom property scripts

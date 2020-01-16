@@ -97,6 +97,6 @@ class Padding extends Range {
                 });
             });
         });
-        JS;
+JS;
     }
 }

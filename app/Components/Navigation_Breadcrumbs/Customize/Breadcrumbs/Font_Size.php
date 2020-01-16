@@ -101,6 +101,6 @@ class Font_Size extends Range {
                 });
             });
         });
-        JS;
+JS;
     }
 }

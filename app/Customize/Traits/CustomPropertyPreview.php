@@ -40,7 +40,7 @@ trait CustomPropertyPreview {
                 });
             });
         });
-        JS;
+JS;
 
         // Tablet
         if( isset( $this->devices ) && in_array( 'tablet', $this->devices ) ) {
@@ -55,7 +55,7 @@ trait CustomPropertyPreview {
                     });
                 });
             });
-            JS;
+JS;
         }
 
         // Desktop
@@ -71,7 +71,7 @@ trait CustomPropertyPreview {
                     });
                 });
             });
-            JS;
+JS;
         }
 
         // Return custom property scripts

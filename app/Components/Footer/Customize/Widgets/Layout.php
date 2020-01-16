@@ -183,7 +183,7 @@ class Layout extends Select {
                 });
             });
         });
-        JS;
+JS;
 
         // Tablet
         if( isset( $this->devices ) && in_array( 'tablet', $this->devices ) ) {
@@ -237,7 +237,7 @@ class Layout extends Select {
                     });
                 });
             });
-            JS;
+JS;
         }
 
         // Desktop
@@ -292,7 +292,7 @@ class Layout extends Select {
                     });
                 });
             });
-            JS;
+JS;
         }
 
         // Return custom property scripts

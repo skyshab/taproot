@@ -78,6 +78,6 @@ class Heading_Color extends Color {
                 });
             });
         });
-        JS;
+JS;
     }
 }

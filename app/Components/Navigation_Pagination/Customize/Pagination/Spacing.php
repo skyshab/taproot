@@ -108,6 +108,6 @@ class Spacing extends Range {
                 });
             });
         });
-        JS;
+JS;
     }
 }

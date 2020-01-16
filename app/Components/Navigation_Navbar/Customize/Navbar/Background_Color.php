@@ -87,6 +87,6 @@ class Background_Color extends Color {
                 });
             });
         });
-        JS;
+JS;
     }
 }

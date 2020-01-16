@@ -89,6 +89,6 @@ class Separator_Color extends Color {
                 });
             });
         });
-        JS;
+JS;
     }
 }

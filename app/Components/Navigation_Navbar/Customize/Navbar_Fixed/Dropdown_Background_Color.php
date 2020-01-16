@@ -103,6 +103,6 @@ class Dropdown_Background_Color extends Color {
                 });
             });
         });
-        JS;
+JS;
     }
 }

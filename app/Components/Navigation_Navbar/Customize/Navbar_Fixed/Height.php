@@ -96,6 +96,6 @@ class Height extends Range {
                 });
             });
         });
-        JS;
+JS;
     }
 }

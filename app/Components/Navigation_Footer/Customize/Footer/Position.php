@@ -103,6 +103,6 @@ class Position extends Select {
                 }
             });
         });
-        JS;
+JS;
     }
 }

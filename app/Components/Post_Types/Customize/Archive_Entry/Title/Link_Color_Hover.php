@@ -75,6 +75,6 @@ class Link_Color_Hover extends Color {
                 });
             });
         });
-        JS;
+JS;
     }
 }

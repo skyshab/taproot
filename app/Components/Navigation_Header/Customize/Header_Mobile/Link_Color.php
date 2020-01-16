@@ -82,6 +82,6 @@ class Link_Color extends Color {
                 });
             });
         });
-        JS;
+JS;
     }
 }

@@ -81,6 +81,6 @@ class Font_Styles extends FontStylesAbstract {
                 });
             });
         });
-        JS;
+JS;
     }
 }

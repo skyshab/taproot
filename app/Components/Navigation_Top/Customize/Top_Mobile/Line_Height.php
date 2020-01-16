@@ -103,6 +103,6 @@ class Line_Height extends Range {
                 });
             });
         });
-        JS;
+JS;
     }
 }

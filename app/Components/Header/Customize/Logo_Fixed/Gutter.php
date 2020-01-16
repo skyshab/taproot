@@ -103,6 +103,6 @@ class Gutter extends Range {
                 });
             });
         });
-        JS;
+JS;
     }
 }

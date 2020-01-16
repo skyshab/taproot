@@ -80,6 +80,6 @@ class Dropdown_Link_Color extends Color {
                 });
             });
         });
-        JS;
+JS;
     }
 }

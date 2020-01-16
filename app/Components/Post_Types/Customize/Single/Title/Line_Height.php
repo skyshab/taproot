@@ -163,7 +163,7 @@ class Line_Height extends Range {
                 });
             });
         });
-        JS;
+JS;
 
         // Tablet
         if( isset( $this->devices ) && in_array( 'tablet', $this->devices ) ) {
@@ -179,7 +179,7 @@ class Line_Height extends Range {
                     });
                 });
             });
-            JS;
+JS;
         }
 
         // Desktop
@@ -196,7 +196,7 @@ class Line_Height extends Range {
                     });
                 });
             });
-            JS;
+JS;
         }
 
         // Return custom property scripts

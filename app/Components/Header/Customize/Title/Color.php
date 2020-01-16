@@ -78,6 +78,6 @@ class Color extends ColorAbstract {
                 });
             });
         });
-        JS;
+JS;
     }
 }

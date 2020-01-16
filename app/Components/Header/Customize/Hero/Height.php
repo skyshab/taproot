@@ -141,7 +141,7 @@ class Height extends Range {
                 });
             });
         });
-        JS;
+JS;
 
         // Tablet
         if( isset( $this->devices ) && in_array( 'tablet', $this->devices ) ) {
@@ -158,7 +158,7 @@ class Height extends Range {
                     });
                 });
             });
-            JS;
+JS;
         }
 
         // Desktop
@@ -176,7 +176,7 @@ class Height extends Range {
                     });
                 });
             });
-            JS;
+JS;
         }
 
         // Return style scripts

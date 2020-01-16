@@ -96,6 +96,6 @@ class Width extends Range {
                 });
             });
         });
-        JS;
+JS;
     }
 }
