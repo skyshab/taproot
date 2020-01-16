@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Taproot 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/taproot\n"
-"POT-Creation-Date: 2020-01-01 13:07:23+00:00\n"
+"POT-Creation-Date: 2020-01-16 18:25:01+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -46,46 +46,46 @@ msgstr ""
 msgid "Footer"
 msgstr ""
 
-#: app/Components/Footer/Customize/Widgets/Layout.php:64
-#: app/Components/Footer/Customize/Widgets/Layout.php:70
-#: app/Components/Footer/Customize/Widgets/Layout.php:80
+#: app/Components/Footer/Customize/Widgets/Layout.php:72
+#: app/Components/Footer/Customize/Widgets/Layout.php:78
+#: app/Components/Footer/Customize/Widgets/Layout.php:88
 msgid "Halves"
 msgstr ""
 
-#: app/Components/Footer/Customize/Widgets/Layout.php:65
-#: app/Components/Footer/Customize/Widgets/Layout.php:71
-#: app/Components/Footer/Customize/Widgets/Layout.php:81
+#: app/Components/Footer/Customize/Widgets/Layout.php:73
+#: app/Components/Footer/Customize/Widgets/Layout.php:79
+#: app/Components/Footer/Customize/Widgets/Layout.php:89
 #: app/Components/Images/Controller.php:68
 msgid "Full"
 msgstr ""
 
-#: app/Components/Footer/Customize/Widgets/Layout.php:68
-#: app/Components/Footer/Customize/Widgets/Layout.php:78
+#: app/Components/Footer/Customize/Widgets/Layout.php:76
+#: app/Components/Footer/Customize/Widgets/Layout.php:86
 msgid "Quarters"
 msgstr ""
 
-#: app/Components/Footer/Customize/Widgets/Layout.php:69
-#: app/Components/Footer/Customize/Widgets/Layout.php:79
+#: app/Components/Footer/Customize/Widgets/Layout.php:77
+#: app/Components/Footer/Customize/Widgets/Layout.php:87
 msgid "Thirds"
 msgstr ""
 
-#: app/Components/Footer/Customize/Widgets/Layout.php:72
-#: app/Components/Footer/Customize/Widgets/Layout.php:82
+#: app/Components/Footer/Customize/Widgets/Layout.php:80
+#: app/Components/Footer/Customize/Widgets/Layout.php:90
 msgid "One Third / Two Thirds"
 msgstr ""
 
-#: app/Components/Footer/Customize/Widgets/Layout.php:73
-#: app/Components/Footer/Customize/Widgets/Layout.php:83
+#: app/Components/Footer/Customize/Widgets/Layout.php:81
+#: app/Components/Footer/Customize/Widgets/Layout.php:91
 msgid "Two Thirds / One Third"
 msgstr ""
 
-#: app/Components/Footer/Customize/Widgets/Layout.php:74
-#: app/Components/Footer/Customize/Widgets/Layout.php:84
+#: app/Components/Footer/Customize/Widgets/Layout.php:82
+#: app/Components/Footer/Customize/Widgets/Layout.php:92
 msgid "Quarter / Quarter / Half"
 msgstr ""
 
-#: app/Components/Footer/Customize/Widgets/Layout.php:75
-#: app/Components/Footer/Customize/Widgets/Layout.php:85
+#: app/Components/Footer/Customize/Widgets/Layout.php:83
+#: app/Components/Footer/Customize/Widgets/Layout.php:93
 msgid "Half / Quarter / Quarter"
 msgstr ""
 
@@ -97,7 +97,7 @@ msgstr ""
 msgid "Site Icon"
 msgstr ""
 
-#: app/Components/Header/Controller.php:93
+#: app/Components/Header/Controller.php:92
 msgid "Default Header Image"
 msgstr ""
 
@@ -135,25 +135,25 @@ msgstr ""
 msgid "Tagline"
 msgstr ""
 
-#: app/Components/Header/Customize/Layout/Layout.php:66
+#: app/Components/Header/Customize/Layout/Layout.php:74
 msgid "Vertical"
 msgstr ""
 
-#: app/Components/Header/Customize/Layout/Layout.php:67
+#: app/Components/Header/Customize/Layout/Layout.php:75
 msgid "Horizontal"
 msgstr ""
 
-#: app/Components/Header/Customize/Styles_Fixed/Fixed_Type.php:56
+#: app/Components/Header/Customize/Styles_Fixed/Fixed_Type.php:66
 msgid "Fade In"
 msgstr ""
 
-#: app/Components/Header/Customize/Styles_Fixed/Fixed_Type.php:57
+#: app/Components/Header/Customize/Styles_Fixed/Fixed_Type.php:67
 #: app/Components/Navigation_Header/Customize/Header_Mobile/Type.php:69
 #: app/Components/Navigation_Navbar/Customize/Navbar_Mobile/Type.php:69
 msgid "Slide In"
 msgstr ""
 
-#: app/Components/Header/Customize/Styles_Fixed/Fixed_Type.php:58
+#: app/Components/Header/Customize/Styles_Fixed/Fixed_Type.php:68
 msgid "Sticky"
 msgstr ""
 
@@ -173,7 +173,7 @@ msgstr ""
 msgid "Medium Large"
 msgstr ""
 
-#: app/Components/Images/Controller.php:67 app/Editor/Editor.php:287
+#: app/Components/Images/Controller.php:67 app/Editor/Editor.php:277
 msgid "Large"
 msgstr ""
 
@@ -197,7 +197,7 @@ msgstr ""
 #: app/Components/Navigation_Top/Customize/Top/Align.php:60
 #: app/Components/Navigation_Top/Customize/Top_Fixed/Align.php:59
 #: app/Components/Navigation_Top/Customize/Top_Mobile/Align.php:60
-#: app/Components/Post_Types/Customize/Archive_Entry/Link/Position.php:57
+#: app/Components/Post_Types/Customize/Archive_Entry/Link/Position.php:65
 msgid "Left"
 msgstr ""
 
@@ -225,7 +225,7 @@ msgstr ""
 #: app/Components/Navigation_Top/Customize/Top/Align.php:61
 #: app/Components/Navigation_Top/Customize/Top_Fixed/Align.php:60
 #: app/Components/Navigation_Top/Customize/Top_Mobile/Align.php:61
-#: app/Components/Post_Types/Customize/Archive_Entry/Link/Position.php:56
+#: app/Components/Post_Types/Customize/Archive_Entry/Link/Position.php:64
 msgid "Right"
 msgstr ""
 
@@ -329,20 +329,20 @@ msgstr ""
 msgid "Full Width"
 msgstr ""
 
-#: app/Components/Post_Types/Customize/Archive_Entry/Link/Type.php:56
-#: app/Components/Typography/Customize/Links/Underline.php:60
+#: app/Components/Post_Types/Customize/Archive_Entry/Link/Type.php:66
+#: app/Components/Typography/Customize/Links/Underline.php:59
 msgid "None"
 msgstr ""
 
-#: app/Components/Post_Types/Customize/Archive_Entry/Link/Type.php:57
+#: app/Components/Post_Types/Customize/Archive_Entry/Link/Type.php:67
 msgid "Inline"
 msgstr ""
 
-#: app/Components/Post_Types/Customize/Archive_Entry/Link/Type.php:58
+#: app/Components/Post_Types/Customize/Archive_Entry/Link/Type.php:68
 msgid "Link"
 msgstr ""
 
-#: app/Components/Post_Types/Customize/Archive_Entry/Link/Type.php:59
+#: app/Components/Post_Types/Customize/Archive_Entry/Link/Type.php:69
 msgid "Button"
 msgstr ""
 
@@ -370,16 +370,16 @@ msgstr ""
 msgid "Heading Styles"
 msgstr ""
 
-#: app/Components/Typography/Customize/Links/Underline.php:61
+#: app/Components/Typography/Customize/Links/Underline.php:60
 #: app/Customize/Controls/Font_Styles/Control.php:54
 msgid "Underline"
 msgstr ""
 
-#: app/Components/Typography/Customize/Links/Underline.php:62
+#: app/Components/Typography/Customize/Links/Underline.php:61
 msgid "On Hover"
 msgstr ""
 
-#: app/Customize/Controls/Device_Picker.php:72
+#: app/Customize/Controls/Device_Picker.php:68
 msgid "Enter %s preview mode"
 msgstr ""
 
@@ -403,51 +403,55 @@ msgstr ""
 msgid "click to enable"
 msgstr ""
 
-#: app/Editor/Editor.php:245
+#: app/Editor/Editor.php:230
 msgid "Text Color"
 msgstr ""
 
-#: app/Editor/Editor.php:250
+#: app/Editor/Editor.php:235
 msgid "Accent Color"
 msgstr ""
 
-#: app/Editor/Editor.php:255
+#: app/Editor/Editor.php:240
+msgid "Accent Contrast Color"
+msgstr ""
+
+#: app/Editor/Editor.php:245
 msgid "Meta Light"
 msgstr ""
 
-#: app/Editor/Editor.php:260
+#: app/Editor/Editor.php:250
 msgid "Meta Medium"
 msgstr ""
 
-#: app/Editor/Editor.php:265
+#: app/Editor/Editor.php:255
 msgid "Meta Dark"
 msgstr ""
 
-#: app/Editor/Editor.php:275
+#: app/Editor/Editor.php:265
 msgid "Small"
 msgstr ""
 
-#: app/Editor/Editor.php:276
+#: app/Editor/Editor.php:266
 msgid "S"
 msgstr ""
 
-#: app/Editor/Editor.php:281
+#: app/Editor/Editor.php:271
 msgid "Regular"
 msgstr ""
 
-#: app/Editor/Editor.php:282
+#: app/Editor/Editor.php:272
 msgid "M"
 msgstr ""
 
-#: app/Editor/Editor.php:288
+#: app/Editor/Editor.php:278
 msgid "L"
 msgstr ""
 
-#: app/Editor/Editor.php:293
+#: app/Editor/Editor.php:283
 msgid "Larger"
 msgstr ""
 
-#: app/Editor/Editor.php:294
+#: app/Editor/Editor.php:284
 msgid "XL"
 msgstr ""
 
