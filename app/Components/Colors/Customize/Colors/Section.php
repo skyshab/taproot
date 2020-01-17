@@ -60,5 +60,11 @@ class Section extends SectionAbstract {
      *
      * @since 2.0.0
      */
-    public function sections( $manager ){}
+    public function sections( $manager ){
+
+        // Remove the core header color control from this section.
+        if( $manager->get_control( 'header_textcolor' ) ) {
+            $manager->remove_control( 'header_textcolor' );
+        }
+    }
 }
