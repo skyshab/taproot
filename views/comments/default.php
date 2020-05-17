@@ -22,14 +22,6 @@
 
     <?php endif ?>
 
-    <?php if ( ! comments_open() ) : ?>
-
-        <p class="comments__closed">
-            <?php esc_html_e( 'Comments are closed.', 'taproot' ) ?>
-        </p>
-
-    <?php endif ?>
-
     <?php comment_form() ?>
 
 </section>
