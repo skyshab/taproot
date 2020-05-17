@@ -16,3 +16,4 @@ import './customize-controls/Color.js';
 import './customize-controls/Range.js';
 import './customize-controls/FontStyles.js';
 import './customize-controls/DevicePicker.js';
+import './customize-controls/Multicheck.js';

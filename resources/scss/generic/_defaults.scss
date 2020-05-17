@@ -100,10 +100,15 @@ dt {
     font-weight: bold;
 }
 
-dd {
+dl, dt, dd {
     margin: 0;
     padding: 0;
 }
+
+dd + dt {
+    margin-top: var( --block-spacing--small );
+}
+
 
 // Fieldsets.
 fieldset {
@@ -160,6 +165,14 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"] {
     cursor: pointer;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+    display: inline-block;
+    text-shadow: none;
 }
 
 input[type="number"],

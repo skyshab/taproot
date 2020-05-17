@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Taproot 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/taproot\n"
-"POT-Creation-Date: 2020-01-16 18:25:01+00:00\n"
+"POT-Creation-Date: 2020-05-13 10:42:06+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -15,6 +15,54 @@ msgstr ""
 
 #: app/Components/Buttons/Customize/Customize.php:63
 msgid "Buttons"
+msgstr ""
+
+#: app/Components/Colors/Controller.php:47
+msgid "Text Color"
+msgstr ""
+
+#: app/Components/Colors/Controller.php:52
+msgid "Accent Color"
+msgstr ""
+
+#: app/Components/Colors/Controller.php:57
+msgid "Accent Contrast Color"
+msgstr ""
+
+#: app/Components/Colors/Controller.php:62
+msgid "Meta Light"
+msgstr ""
+
+#: app/Components/Colors/Controller.php:67
+msgid "Meta Medium"
+msgstr ""
+
+#: app/Components/Colors/Controller.php:72
+msgid "Meta Dark"
+msgstr ""
+
+#: app/Components/Colors/Controller.php:84
+msgid "Accent to accent"
+msgstr ""
+
+#: app/Components/Colors/Controller.php:89
+msgid "Vivid cyan blue to vivid purple"
+msgstr ""
+
+#: app/Components/Colors/Controller.php:94
+msgid "Vivid green cyan to vivid cyan blue"
+msgstr ""
+
+#: app/Components/Colors/Controller.php:99
+msgid "Light green cyan to vivid green cyan"
+msgstr ""
+
+#: app/Components/Colors/Controller.php:104
+msgid "Luminous vivid amber to luminous vivid orange"
+msgstr ""
+
+#: app/Components/Colors/Controller.php:109
+msgid "Luminous vivid orange to vivid red"
 msgstr ""
 
 #: app/Components/Fonts/Customize/Fonts/Section.php:86
@@ -173,7 +221,8 @@ msgstr ""
 msgid "Medium Large"
 msgstr ""
 
-#: app/Components/Images/Controller.php:67 app/Editor/Editor.php:277
+#: app/Components/Images/Controller.php:67
+#: app/Components/Typography/Controller.php:60 app/Editor/Editor.php:241
 msgid "Large"
 msgstr ""
 
@@ -197,7 +246,7 @@ msgstr ""
 #: app/Components/Navigation_Top/Customize/Top/Align.php:60
 #: app/Components/Navigation_Top/Customize/Top_Fixed/Align.php:59
 #: app/Components/Navigation_Top/Customize/Top_Mobile/Align.php:60
-#: app/Components/Post_Types/Customize/Archive_Entry/Link/Position.php:65
+#: app/Components/Post_Types/Customize/Archive_Entry/Link/Position.php:67
 msgid "Left"
 msgstr ""
 
@@ -225,7 +274,7 @@ msgstr ""
 #: app/Components/Navigation_Top/Customize/Top/Align.php:61
 #: app/Components/Navigation_Top/Customize/Top_Fixed/Align.php:60
 #: app/Components/Navigation_Top/Customize/Top_Mobile/Align.php:61
-#: app/Components/Post_Types/Customize/Archive_Entry/Link/Position.php:64
+#: app/Components/Post_Types/Customize/Archive_Entry/Link/Position.php:66
 msgid "Right"
 msgstr ""
 
@@ -310,8 +359,28 @@ msgstr ""
 msgid "Pagination"
 msgstr ""
 
+#: app/Components/Navigation_Postnav/Template.php:66
+msgid "PREV"
+msgstr ""
+
+#: app/Components/Navigation_Postnav/Template.php:68
+msgid "NEXT"
+msgstr ""
+
 #: app/Components/Navigation_Top/Customize/Customize.php:64
 msgid "Top Nav"
+msgstr ""
+
+#: app/Components/Post_Types/Customize/Archive/Customize.php:75
+msgid "Archive"
+msgstr ""
+
+#: app/Components/Post_Types/Customize/Archive/Customize.php:76
+#: app/Components/Post_Types/Customize/Archive_Entry/Customize.php:70
+#: app/Components/Post_Types/Customize/Customize.php:62
+#: app/Components/Post_Types/Customize/Post_Type/Customize.php:83
+#: app/Components/Post_Types/Customize/Single/Customize.php:71
+msgid "Customizing"
 msgstr ""
 
 #: app/Components/Post_Types/Customize/Archive/Layout/Layout.php:65
@@ -327,6 +396,10 @@ msgstr ""
 #: app/Components/Post_Types/Customize/Archive/Layout/Layout.php:67
 #: app/Components/Post_Types/Customize/Single/Layout/Layout.php:67
 msgid "Full Width"
+msgstr ""
+
+#: app/Components/Post_Types/Customize/Archive_Entry/Customize.php:69
+msgid "Archive Entry"
 msgstr ""
 
 #: app/Components/Post_Types/Customize/Archive_Entry/Link/Type.php:66
@@ -346,12 +419,52 @@ msgstr ""
 msgid "Button"
 msgstr ""
 
-#: app/Components/Post_Types/Customize/Customize.php:45
+#: app/Components/Post_Types/Customize/Customize.php:61
 msgid "Post Types"
+msgstr ""
+
+#: app/Components/Post_Types/Customize/Settings/Enable.php:83
+msgid "Posts"
+msgstr ""
+
+#: app/Components/Post_Types/Customize/Settings/Enable.php:84
+msgid "Pages"
+msgstr ""
+
+#: app/Components/Post_Types/Customize/Single/Customize.php:70
+msgid "Single"
 msgstr ""
 
 #: app/Components/Sidebar/Customize/Customize.php:63
 msgid "Sidebar"
+msgstr ""
+
+#: app/Components/Typography/Controller.php:48 app/Editor/Editor.php:229
+msgid "Small"
+msgstr ""
+
+#: app/Components/Typography/Controller.php:49 app/Editor/Editor.php:230
+msgid "S"
+msgstr ""
+
+#: app/Components/Typography/Controller.php:54 app/Editor/Editor.php:235
+msgid "Regular"
+msgstr ""
+
+#: app/Components/Typography/Controller.php:55 app/Editor/Editor.php:236
+msgid "M"
+msgstr ""
+
+#: app/Components/Typography/Controller.php:61 app/Editor/Editor.php:242
+msgid "L"
+msgstr ""
+
+#: app/Components/Typography/Controller.php:66 app/Editor/Editor.php:247
+msgid "Larger"
+msgstr ""
+
+#: app/Components/Typography/Controller.php:67 app/Editor/Editor.php:248
+msgid "XL"
 msgstr ""
 
 #: app/Components/Typography/Customize/Customize.php:70
@@ -403,58 +516,6 @@ msgstr ""
 msgid "click to enable"
 msgstr ""
 
-#: app/Editor/Editor.php:230
-msgid "Text Color"
-msgstr ""
-
-#: app/Editor/Editor.php:235
-msgid "Accent Color"
-msgstr ""
-
-#: app/Editor/Editor.php:240
-msgid "Accent Contrast Color"
-msgstr ""
-
-#: app/Editor/Editor.php:245
-msgid "Meta Light"
-msgstr ""
-
-#: app/Editor/Editor.php:250
-msgid "Meta Medium"
-msgstr ""
-
-#: app/Editor/Editor.php:255
-msgid "Meta Dark"
-msgstr ""
-
-#: app/Editor/Editor.php:265
-msgid "Small"
-msgstr ""
-
-#: app/Editor/Editor.php:266
-msgid "S"
-msgstr ""
-
-#: app/Editor/Editor.php:271
-msgid "Regular"
-msgstr ""
-
-#: app/Editor/Editor.php:272
-msgid "M"
-msgstr ""
-
-#: app/Editor/Editor.php:278
-msgid "L"
-msgstr ""
-
-#: app/Editor/Editor.php:283
-msgid "Larger"
-msgstr ""
-
-#: app/Editor/Editor.php:284
-msgid "XL"
-msgstr ""
-
 #: app/setup.php:89
 msgid "Page Builder Template"
 msgstr ""
@@ -481,6 +542,14 @@ msgstr ""
 msgid ""
 "Taproot requires at least PHP version %1$s. You are running version %2$s. "
 "Please upgrade and try again."
+msgstr ""
+
+#: dist/node_modules/node-wp-i18n/test/fixtures/makepot/nested-theme/include/include.php:2
+msgid "Include"
+msgstr ""
+
+#: dist/node_modules/node-wp-i18n/test/fixtures/makepot/nested-theme/subdir/index.php:2
+msgid "Index"
 msgstr ""
 
 #: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:95
@@ -568,6 +637,14 @@ msgstr ""
 #: vendor/justintadlock/hybrid-core/src/functions-filters.php:209
 #. Translators: Used as a placeholder for untitled posts on non-singular views.
 msgid "(Untitled)"
+msgstr ""
+
+#: vendor/skyshab/rootstrap-panels/src/Rootstrap_Custom_Panel.php:48
+msgid "Back"
+msgstr ""
+
+#: vendor/skyshab/rootstrap-panels/src/Rootstrap_Custom_Panel.php:54
+msgid "Help"
 msgstr ""
 
 #: views/comment/default.php:11 views/comment/ping.php:8

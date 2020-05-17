@@ -12,7 +12,6 @@
  * @link      https://taproot-theme.com
  */
 
-
-import './app/header.js';
-import './app/footer.js';
-import './app/nav-menus.js';
+import '../../app/Components/Header/assets/js/header.js';
+import '../../app/Components/Footer/assets/js/footer.js';
+import '../../app/Components/Navigation/assets/js/nav-menus.js';

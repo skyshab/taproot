@@ -1,0 +1,106 @@
+////
+/// Media text block.
+///
+/// @group  Blocks
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.wp-block-media-text {
+	display:               grid;
+	grid-template-rows:    auto;
+	align-items:           center;
+	grid-gap:              0 var( --block-spacing--large );
+	grid-template-areas:
+		"media-text-media media-text-content"
+		"resizer resizer";
+	grid-template-columns: 50% auto;
+	margin: var( --block-spacing--large ) 0;
+
+    @include screen('mobile') {
+		padding: 0 var( --block-spacing--large );
+    }
+
+	&.alignfull {
+        padding: 0 var( --block-spacing--large );
+	}
+
+	&[class*=background-color], &[style*=background-color] {
+		padding: var( --block-spacing--large );
+    }
+
+	&.is-vertically-aligned {
+
+        &-top {
+            align-items: start;
+        }
+
+        &-center {
+            align-items: center;
+        }
+
+        &-bottom {
+            align-items: end;
+        }
+	}
+
+	&.has-media-on-the-right {
+		grid-template-areas:
+			"media-text-content media-text-media"
+			"resizer resizer";
+		grid-template-columns: auto 50%;
+    }
+
+    &.is-stacked-on-mobile {
+        @include screen('mobile') {
+            grid-template-columns: 100% !important; // Overwrite core's inline style.
+            grid-template-areas:
+                "media-text-media"
+                "media-text-content";
+        }
+    }
+
+	&__media {
+        grid-area: media-text-media;
+        margin-bottom: 0;
+        line-height: 0;
+
+        .is-stacked-on-mobile & {
+            @include screen('mobile') {
+                margin-bottom: 1em;
+            }
+        }
+	}
+
+	&__content {
+		word-break: break-word;
+		grid-area:  media-text-content;
+		max-width:  768px;
+    }
+
+    > figure {
+        > img, > video {
+            max-width:      unset;
+            width:          100%;
+            vertical-align: middle;
+        }
+    }
+
+	&.is-image-fill figure {
+		height: 100%;
+		min-height: 250px;
+        background-size: cover;
+
+        // visually hidden
+        > img {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+	}
+}

@@ -9,27 +9,21 @@
 
 // Build font style from our font style control values.
 function taprootFontStyles( value ) {
-    var fontStyles = value.split( '|' ),
-        styles = {},
-        $ = jQuery.noConflict();
+    value = value.split( '|' );
+    let styles = {};
 
-    if ( 0 <= $.inArray( 'bold', fontStyles ) ) {
-        styles['font-weight'] = 'bold';
-    }
+    styles['font-weight']       = ( value.includes( 'bold' ) ) ? 'bold' : 'normal';
+    styles['font-style']        = ( value.includes( 'italic' ) ) ? 'italic' : 'normal';
+    styles['text-decoration']   = ( value.includes( 'underline' ) ) ? 'underline' : 'none';
 
-    if ( 0 <= $.inArray( 'italic', fontStyles ) ) {
-        styles['font-style'] = 'italic';
-    }
-
-    if ( 0 <= $.inArray( 'underline', fontStyles ) ) {
-        styles['text-decoration'] = 'underline';
-    }
-
-    if ( 0 <= $.inArray( 'uppercase', fontStyles ) ) {
+    if( value.includes( 'uppercase' ) ) {
         styles['text-transform'] = 'uppercase';
-
-    } else if ( 0 <= $.inArray( 'capitalize', fontStyles ) ) {
+    }
+    else if( value.includes( 'capitalize' ) ) {
         styles['text-transform'] = 'capitalize';
+    }
+    else {
+        styles['text-transform'] = 'none';
     }
 
     return styles;
@@ -39,10 +33,10 @@ function taprootFontStyles( value ) {
 // Adds quotes if needed. Checks if "default" is set, and returns unset if so.
 function getFontFamily( font ) {
 
-    if( 'default' === font || !font ) {
+    if( 'default' === font || ! font ) {
         return 'unset';
     }
-    else if( font.includes('"') ) {
+    else if( font.includes( '"' ) ) {
         return font;
     }
     else {
@@ -90,7 +84,7 @@ function maybeConvertToEm( value ) {
     }
 
     // If a unit is set, return value
-    if( value.includes('px') || value.includes('%') || value.includes('em') ) {
+    if( value.includes( 'px' ) || value.includes( '%' ) || value.includes( 'em' ) ) {
         return value;
     }
 

@@ -1,0 +1,23 @@
+////
+/// Editor - Media + Text Styles
+///
+/// These styles apply to the media + text block only in the editor.
+///
+/// @group  Styles
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+// Import component styles inside the editor styles wrapper
+.editor-styles-wrapper {
+    @import 'block';
+}
+
+[data-align="full"] .wp-block-media-text {
+	padding-left:  var( --block-spacing--large );
+	padding-right: var( --block-spacing--large );
+}
+
+.wp-block-media-text .block-editor-inner-blocks {
+	padding: 0;
+}

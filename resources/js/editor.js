@@ -1,9 +1,7 @@
 /**
- * Primary front-end script.
+ * Editor script.
  *
- * Primary JavaScript file. Any includes or anything imported should
- * be filtered through this file and eventually saved back into the
- * `/dist/js/app.js` file.
+ * Primary JavaScript file for theme editor functionality.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
@@ -12,6 +10,4 @@
  * @link      https://taproot-theme.com
  */
 
-
 import './editor/sidebar/index.js';
-import './editor/blocks/buttons/index.js';

@@ -1,0 +1,17 @@
+////
+/// Public Styles - Background
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+@import 'calendar';
+@import 'media';
+@import 'gallery';
+
+// Widget Titles
+.widget__title {
+    padding-top: 0;
+    margin-bottom: 0.6em;
+}
