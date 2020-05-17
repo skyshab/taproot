@@ -70,12 +70,12 @@ class Editor implements Bootable {
 
         // Register Sidebar Panel Scripts
         wp_enqueue_script(
-            'taproot-editor-sidebar-js',
+            'taproot-editor',
             asset( 'js/editor.js' ),
             array( 'wp-plugins', 'wp-edit-post', 'wp-element', 'wp-components', 'wp-data', 'wp-editor' ),
         false, true);
 
-        wp_add_inline_script( 'taproot-editor-sidebar-js', $this->editorData() );
+        wp_add_inline_script( 'taproot-editor', $this->editorData() );
     }
 
     /**
