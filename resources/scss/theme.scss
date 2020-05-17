@@ -1,0 +1,46 @@
+////
+/// Primary theme styles.
+///
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+// Tools
+@import 'tools/_index';
+
+// Generic
+@import 'generic/_index';
+
+// General
+@import 'general/_index';
+
+// Blocks
+@import 'blocks/_index';
+
+// Widgets
+@import 'widgets/_index';
+
+// Utilities
+@import 'utilities/_index';
+
+// Components
+@import '../../app/Components/Colors/assets/scss/_public';
+@import '../../app/Components/Layout/assets/scss/_public';
+@import '../../app/Components/Header/assets/scss/_public';
+@import '../../app/Components/Footer/assets/scss/_public';
+@import '../../app/Components/Typography/assets/scss/_public';
+@import '../../app/Components/Navigation/assets/scss/_public';
+@import '../../app/Components/Navigation_Header/assets/scss/_public';
+@import '../../app/Components/Navigation_Navbar/assets/scss/_public';
+@import '../../app/Components/Navigation_Top/assets/scss/_public';
+@import '../../app/Components/Navigation_Footer/assets/scss/_public';
+@import '../../app/Components/Navigation_Postnav/assets/scss/_public';
+@import '../../app/Components/Navigation_Pagination/assets/scss/_public';
+@import '../../app/Components/Navigation_Breadcrumbs/assets/scss/_public';
+@import '../../app/Components/Background/assets/scss/_public';
+@import '../../app/Components/Buttons/assets/scss/_public';
+@import '../../app/Components/Sidebar/assets/scss/_public';
+@import '../../app/Components/Search/assets/scss/_public';
+@import '../../app/Components/Post_Types/assets/scss/_public';
+@import '../../app/Components/Icons/assets/scss/_public';
+@import '../../app/Components/Comments/assets/scss/_public';

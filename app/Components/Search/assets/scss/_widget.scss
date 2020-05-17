@@ -1,0 +1,25 @@
+////
+/// Site Background Color
+///
+/// @group  Components\Background
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.widget--search {
+
+    .searchform {
+
+        // Submit button
+        &__submit {
+            background-color:   var(--sidebar--accent-color);
+            color:              var(--sidebar--accent-contrast);
+        }
+
+        // Search input
+        &__search {
+            background-color:   white;
+        }
+    }
+}
+

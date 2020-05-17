@@ -6,17 +6,6 @@
 /// @link   https://taproot-theme.com
 ////
 
-/// Loops through the editor font sizes and adds utility classes for them. This
-/// handles the `.has-{$size}-font-size` classes added via Gutenberg, which may
-/// be useful elsewhere.
-
-@each $font-size-name, $font-size-value in editor-font-sizes() {
-
-    .has-#{ $font-size-name }-font-size {
-        font-size: #{ $font-size-value };
-    }
-}
-
 // Create Classes for opacity.
 // This is used on overlays without explicit content
 
@@ -88,71 +77,4 @@
     &-270 {
         transform: rotate(270deg);
     }
-}
-
-
-// Color classes
-
-
-// Text Colors
-
-// Text color
-.has-text-color {
-    color:              var( --colors--text );
-}
-// Accent color
-.has-accent-color {
-    color:              var( --colors--accent );
-}
-
-// Accent contrast color
-.has-accent-contrast-color {
-    color:              var( --colors--accent-contrast );
-}
-
-// Meta Light color
-.has-meta-light-color {
-    color:              var( --colors--meta-light );
-}
-
-// Meta Medium color
-.has-meta-medium-color {
-    color:              var( --colors--meta-medium );
-}
-
-// Meta Dark color
-.has-meta-dark-color {
-    color:              var( --colors--meta-dark );
-}
-
-// Backgrounds
-
-// Text color as background
-.has-text-background-color {
-    background-color:   var( --colors--text );
-}
-
-// Accent color as background
-.has-accent-background-color {
-    background-color:   var( --colors--accent );
-}
-
-// Accent color as background
-.has-accent-contrast-background-color {
-    background-color:   var( --colors--accent-contrast );
-}
-
-// Meta Light color as background
-.has-meta-light-background-color {
-    background-color:   var( --colors--meta-light );
-}
-
-// Meta Medium color as background
-.has-meta-medium-background-color {
-    background-color:   var( --colors--meta-medium );
-}
-
-// Meta Dark color as background
-.has-meta-dark-background-color {
-    background-color:   var( --colors--meta-dark );
 }

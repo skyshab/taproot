@@ -1,0 +1,18 @@
+////
+/// Component Editor Styles
+///
+/// @group  Components\Typography
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+// Import custom properties
+@import '_custom-properties';
+
+// Import editor font size classes
+@import 'editor-font-sizes';
+
+// heading blocks
+.wp-block-heading {
+    @import 'headings';
+}
