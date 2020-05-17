@@ -14,7 +14,6 @@
 namespace Taproot\Editor;
 
 use Hybrid\Contracts\Bootable;
-
 use Rootstrap\Styles\Styles;
 use Taproot\Tools\Mod;
 use function Taproot\Tools\asset;
@@ -222,41 +221,6 @@ class Editor implements Bootable {
      * @since 1.4.0
      */
     public function setup() {
-
-        // Editor color palette. These colors are also defined in the
-        // `resources/scss/settings/_colors.scss` file.
-        add_theme_support( 'editor-color-palette', [
-            [
-                'name'  => __( 'Text Color', 'taproot' ),
-                'slug'  => 'text',
-                'color' => Mod::get( 'colors--text-color', '#8c8c8c' )
-            ],
-            [
-                'name'  => __( 'Accent Color', 'taproot' ),
-                'slug'  => 'accent',
-                'color' => Mod::get( 'colors--accent', '#00a0d1' )
-            ],
-            [
-                'name'  => __( 'Accent Contrast Color', 'taproot' ),
-                'slug'  => 'accent-contrast',
-                'color' => Mod::get( 'colors--accent-contrast', '#ffffff' )
-            ],
-            [
-                'name'  => __( 'Meta Light', 'taproot' ),
-                'slug'  => 'meta-light',
-                'color' => Mod::get( 'colors--meta-light', '#f4f4f4' )
-            ],
-            [
-                'name'  => __( 'Meta Medium', 'taproot' ),
-                'slug'  => 'meta-medium',
-                'color' => Mod::get( 'colors--meta-medium', '#d8d8d8' )
-            ],
-            [
-                'name'  => __( 'Meta Dark', 'taproot' ),
-                'slug'  => 'meta-dark',
-                'color' => Mod::get( 'colors--meta-dark', '#a5a5a5' )
-            ]
-        ]);
 
         // Editor block font sizes. These font sizes are also defined in the
         // `resources/scss/settings/_fonts.scss` file.
