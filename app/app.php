@@ -63,7 +63,8 @@ array_map( function( $component ) use ( $taproot ) {
     'Background',
     'Post_Types',
     'Images',
-    'General'
+    'General',
+    'Comments'
 ]);
 
 # ------------------------------------------------------------------------------
