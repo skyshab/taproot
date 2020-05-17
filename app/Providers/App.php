@@ -57,7 +57,7 @@ class App extends ServiceProvider {
         add_action( 'wp_enqueue_scripts', function() {
 
             // Enqueue theme styles
-            wp_enqueue_style( $this->app->resolve( 'styles/handle' ), asset( 'css/screen.css' ), null, null );
+            wp_enqueue_style( $this->app->resolve( 'styles/handle' ), asset( 'css/theme.css' ), null, null );
 
             // Enqueue theme scripts
             wp_enqueue_script( 'taproot-app', asset( 'js/app.js' ), null, null, true );
