@@ -61,12 +61,13 @@ class Customize extends CustomizeComponent {
      * @access public
      * @return void
      */
-    public function panels($manager) {
+    public function panels( $manager ) {
 
         $post_type = get_post_type_object( $this->post_type );
 
         $manager->add_panel( new Custom_Panel( $manager, $this->panel, [
-            'title' => sprintf( "%s Archive Entry", $post_type->labels->name ),
+            'title' => __( 'Archive Entry', 'taproot' ),
+            'pre_title_label' => __( 'Customizing', 'taproot' ),
             'panel' => $this->post_type
         ]));
     }

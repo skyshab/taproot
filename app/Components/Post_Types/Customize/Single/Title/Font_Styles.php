@@ -57,7 +57,7 @@ class Font_Styles extends FontStylesAbstract {
     public function styles( $styles ) {
 
         $styles->add([
-            'selector'  => ".entry--type-{$this->post_type} .entry__title",
+            'selector'  => ".single-{$this->post_type} .entry__title",
             'styles'    => app('typography')->get_font_styles( $this->id )
         ]);
     }
@@ -90,7 +90,7 @@ class Font_Styles extends FontStylesAbstract {
             value.bind( function( to ) {
                 rootstrap.style({
                     id: "{$this->id}",
-                    selector: ".entry--type-{$this->post_type} .entry__title",
+                    selector: ".single-{$this->post_type} .entry__title",
                     styles: taprootFontStyles( to ),
                 });
             });

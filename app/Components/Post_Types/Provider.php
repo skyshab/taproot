@@ -14,6 +14,7 @@
 namespace Taproot\Components\Post_Types;
 
 use Hybrid\Tools\ServiceProvider;
+use Taproot\Tools\Mod;
 use Taproot\Components\Post_Types\Customize\Customize                       as Component;
 use Taproot\Components\Post_Types\Customize\Post_Type\Customize             as ComponentPostType;
 use Taproot\Components\Post_Types\Customize\Single\Customize                as ComponentSingle;
@@ -70,7 +71,7 @@ class Provider extends ServiceProvider {
         add_action( 'init', function() use ( $components ) {
 
             // Supported post types array
-            $supported = apply_filters('components/post-types/supported-post-types', ['post', 'page'] );
+            $supported = apply_filters('components/post-types/customizer-support', explode( ',', Mod::get( 'enabled-post-types', 'post,page' ) ) );
 
             // Get all supported public post types
             $post_types = array_intersect( get_post_types( ['public' => TRUE] ), $supported );

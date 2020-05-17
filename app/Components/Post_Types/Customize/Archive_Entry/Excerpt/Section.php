@@ -45,7 +45,7 @@ class Section extends SectionAbstract {
      * @since 2.0.0
      * @var string
      */
-    public $title = 'Archive Excerpt';
+    public $title = 'Excerpt';
 
     /**
      * Controls

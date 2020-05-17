@@ -41,7 +41,7 @@ class Font_Size extends Range {
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Button Font Size';
+    public $label = 'Link Font Size';
 
     /**
      * Default
@@ -49,7 +49,7 @@ class Font_Size extends Range {
      * @since 2.0.0
      * @var string
      */
-    public $default = '0.8em';
+    public $default = '1em';
 
     /**
      * Range atts

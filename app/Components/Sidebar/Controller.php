@@ -81,13 +81,16 @@ class Controller implements Bootable {
      */
     public function sidebar_classes( $classes ) {
 
-        if( Layout::get_layout() !== 'full' )
+        if( Layout::get_layout() !== 'full' ) {
             $classes[] = sprintf( 'sidebar--%s', Layout::get_layout() );
+        }
 
-        if( Mod::get( 'layout--boxed--enable' ) )
+        if( Mod::get( 'layout--boxed--enable' ) ) {
             $classes[] = 'boxed-layout';
-        else
+        }
+        else {
             $classes[] = 'fullscreen-layout';
+        }
 
         return $classes;
     }

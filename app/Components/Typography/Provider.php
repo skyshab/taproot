@@ -34,6 +34,9 @@ class Provider extends ServiceProvider {
      */
     public function register() {
 
+        // Bind a single instance of our controller class.
+        $this->app->singleton( Controller::class );
+
         // Bind a single instance of our customize component class.
         $this->app->singleton( Customize::class );
 
@@ -49,6 +52,9 @@ class Provider extends ServiceProvider {
      * @return void
      */
     public function boot() {
+
+        // Boot the controller class instance.
+        $this->app->resolve( Controller::class )->boot();
 
         // Add customize component to collection.
         $this->app->resolve( 'customize/components' )->add( 'typography', $this->app->resolve( Customize::class ) );

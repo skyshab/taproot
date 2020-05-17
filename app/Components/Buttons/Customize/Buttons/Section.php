@@ -55,13 +55,11 @@ class Section extends SectionAbstract {
      */
     public $controls = [
         'Background_Color',
-        'Border_Color',
         'Text_Color',
-        'Is_Rounded',
         'Font_Size',
         'Line_Height',
         'Padding',
-        'Border_Width',
+        'Border_Radius',
         'Font_Family',
         'Font_Styles'
     ];

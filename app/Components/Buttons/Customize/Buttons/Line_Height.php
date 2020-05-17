@@ -62,15 +62,10 @@ class Line_Height extends Range {
      */
     public $atts = [
         'unitless' => [
-            'min' => 0.5,
-            'max' => 3,
-            'step' => 0.01,
+            'min' => 2,
+            'max' => 4,
+            'step' => 0.1,
             'default' => 2.5
-        ],
-        'px' => [
-            'min' => 0,
-            'max' => 72,
-            'default' => 36
         ]
     ];
 }

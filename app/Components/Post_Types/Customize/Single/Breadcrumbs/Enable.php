@@ -45,7 +45,7 @@ class Enable extends Checkbox {
      * @since 2.0.0
      * @var string
      */
-    public $default = TRUE;
+    public $default = FALSE;
 
     /**
      * Transport

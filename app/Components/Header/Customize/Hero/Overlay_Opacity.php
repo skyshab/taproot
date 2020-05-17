@@ -74,7 +74,7 @@ class Overlay_Opacity extends Range {
 
             $manager->selective_refresh->add_partial( $this->id, [
                 'selector'            => '#taproot-overlay',
-                'render_callback'     => 'Taproot\Components\Header\Functions::get_overlay',
+                'render_callback'     => 'Taproot\Components\Header\Template::get_overlay',
                 'container_inclusive' => true,
                 'fallback_refresh'    => false
             ]);

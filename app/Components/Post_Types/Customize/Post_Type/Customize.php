@@ -80,7 +80,9 @@ class Customize extends CustomizeComponent {
 
         $manager->add_panel( new Custom_Panel( $manager, $this->panel, [
             'title' => $post_type->labels->name,
-            'panel' => 'post-types'
+            'pre_title_label' => __( 'Customizing', 'taproot' ),
+            'panel' => 'post-types',
+            'priority' => 100
         ]));
     }
 }

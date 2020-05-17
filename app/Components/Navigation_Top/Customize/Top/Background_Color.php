@@ -15,7 +15,7 @@ namespace Taproot\Components\Navigation_Top\Customize\Top;
 
 use Taproot\Customize\Controls\Color\Color;
 use Taproot\Components\Navigation_Navbar\Functions;
-use function Taproot\Tools\theme_mod;
+use Taproot\Tools\Mod;
 
 /**
  * Class for color controls
@@ -61,7 +61,7 @@ class Background_Color extends Color {
         $styles->add([
             'selector' => '.menu--top',
             'styles' => [
-                'background-color' => theme_mod( $this->id ),
+                'background-color' => Mod::get( $this->id ),
             ],
         ]);
     }

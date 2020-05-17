@@ -52,7 +52,7 @@ class Text_Color extends Color {
         $styles->customProperty([
             'name'      => 'archive--title--text-color',
             'value'     => theme_mod( $this->id ),
-            'selector'  => ".entry--type-{$this->post_type}"
+            'selector'  => ".archive-header--{$this->post_type}"
         ]);
     }
 
@@ -70,8 +70,8 @@ class Text_Color extends Color {
             value.bind( function( to ) {
                 rootstrap.customProperty({
                     name: 'archive--title--text-color',
-                    selector: ".entry--type-{$this->post_type}",
-                    value: { color: to }
+                    selector: ".archive-header--{$this->post_type}",
+                    value: to
                 });
             });
         });

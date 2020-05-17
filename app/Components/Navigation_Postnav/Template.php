@@ -45,7 +45,7 @@ class Template {
     private $args;
 
     /**
-     * Adds actions on the appropriate customize action hooks.
+     * Output postnav markup
      *
      * @since  2.0.0
      * @access public
@@ -61,14 +61,14 @@ class Template {
         // Store the context
         $this->context = $context;
 
-        // Store the args
+        // Merge defaults and store the args
         $this->args = wp_parse_args( $args, [
-            'prev_text' => Mod::get( 'navigation--postnav--prev-text' ),
+            'prev_text' => __('PREV', 'taproot'),
             'prev_icon' => '<',
-            'next_text' => Mod::get( 'navigation--postnav--next-text' ),
+            'next_text' => __('NEXT', 'taproot'),
             'next_icon' => '>',
-            'nav_class' => 'postnav',
-            'link_class' => 'postnav__link'
+            'nav_class' => 'has-separators',
+            'link_class' => ''
         ]);
 
         // open post nav
@@ -114,21 +114,21 @@ class Template {
      */
     private function get_prev() {
 
-        // return empty div if no previous post, to insure the "next" link aligns to the left side
-        if( !$this->has_prev_link() ) {
-            return sprintf( '<div class="%1$s %1$s--prev"></div>', $this->args['link_class']);
-        }
+        $content = sprintf( '<div class="postnav__link postnav__link--prev %s">', $this->args['link_class'] );
 
-        $prev_post = get_previous_post();
-        $prev_content = sprintf('<span class="screen-reader-text">%s</span>', $prev_post->post_title );
-        $prev_content .= $this->args['prev_icon'];
+            if( $this->has_prev_link() ) {
 
-        if( $this->args['prev_text'] ) {
-            $prev_content .= sprintf( '<span class="prev-text">%s</span>', wp_kses( $this->args['prev_text'], $this->allowed() ) );
-        }
+                $prev_post = get_previous_post();
+                $prev_content = sprintf('<span class="screen-reader-text">%s</span>', $prev_post->post_title );
+                $prev_content .= $this->args['prev_icon'];
 
-        $content = sprintf( '<div class="%1$s %1$s--prev">', $this->args['link_class']);
-            $content .= get_previous_post_link( '%link', $prev_content );
+                if( $this->args['prev_text'] ) {
+                    $prev_content .= sprintf( '<span class="prev-text">%s</span>', $this->args['prev_text'] );
+                }
+
+                $content .= get_previous_post_link( '%link', $prev_content );
+            }
+
         $content .= '</div>';
 
         return $content;
@@ -143,39 +143,25 @@ class Template {
      */
     private function get_next() {
 
-        if( !$this->has_next_link() ) return '';
+        $content = sprintf( '<div class="postnav__link postnav__link--next %s">', $this->args['link_class'] );
 
-        $next_post = get_next_post();
-        $next_content = sprintf('<span class="screen-reader-text">%s</span>', $next_post->post_title );
+            if( $this->has_next_link() ) {
 
-        if( $this->args['next_text'] ) {
-            $next_content .= sprintf( '<span class="next-text">%s</span>', wp_kses( $this->args['next_text'], $this->allowed() ) );
-        }
+                $next_post = get_next_post();
+                $next_content = sprintf('<span class="screen-reader-text">%s</span>', $next_post->post_title );
 
-        $next_content .= $this->args['next_icon'];
+                if( $this->args['next_text'] ) {
+                    $next_content .= sprintf( '<span class="next-text">%s</span>', $this->args['next_text'] );
+                }
 
-        $content = sprintf( '<div class="%1$s %1$s--next">', esc_attr( $this->args['link_class'] ) );
-            $content .= get_next_post_link( '%link', $next_content );
+                $next_content .= $this->args['next_icon'];
+
+                $content .= get_next_post_link( '%link', $next_content );
+            }
+
         $content .= '</div>';
 
         return $content;
-    }
-
-    /**
-     * Return Allowed HTML
-     *
-     * @since  2.0.0
-     * @access private
-     * @return array
-     */
-    private function allowed() {
-        return [
-            'em' => [],
-            'strong' => [],
-            'i' => [
-                'class' => []
-            ]
-        ];
     }
 
     /**
@@ -187,10 +173,16 @@ class Template {
      */
     private function classes() {
 
-        $classes =  $this->args['nav_class'];
+        $classes = 'postnav';
 
         if( $this->context ) {
-            $classes .= sprintf( ' postnav--%s ', $this->context );
+            $classes .= sprintf( ' postnav--%s', $this->context );
+        }
+
+        $classes .= sprintf( ' postnav--%s ', get_post_type() );
+
+        if( $this->args['nav_class'] ) {
+            $classes .= $this->args['nav_class'];
         }
 
         return $classes;

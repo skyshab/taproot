@@ -129,7 +129,7 @@ class Font_Size extends Range {
             value.bind( function( to ) {
                 rootstrap.customProperty({
                     name: 'archive--title--font-size',
-                    selector: ".entry--type-{$this->post_type}",
+                    selector: ".archive-header--{$this->post_type}",
                     value: to
                 });
             });
@@ -144,7 +144,7 @@ JS;
                 value.bind( function( to ) {
                     rootstrap.customProperty({
                         name: 'archive--title--font-size',
-                        selector: ".entry--type-{$this->post_type}",
+                        selector: ".archive-header--{$this->post_type}",
                         screen: 'tablet',
                         value: to,
                     });
@@ -161,7 +161,7 @@ JS;
                 value.bind( function( to ) {
                     rootstrap.customProperty({
                         name: 'archive--title--font-size',
-                        selector: ".entry--type-{$this->post_type}",
+                        selector: ".archive-header--{$this->post_type}",
                         screen: 'desktop',
                         value: to,
                     });

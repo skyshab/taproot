@@ -152,6 +152,7 @@ JS;
                     rootstrap.style({
                         id: "{$this->id}--tablet",
                         selector: '.app-header--has-custom-header:not(.app-header--fixed)',
+                        screen: 'tablet-and-up',
                         styles: {
                             "min-height": to
                         }
@@ -170,6 +171,7 @@ JS;
                     rootstrap.style({
                         id: "{$this->id}--desktop",
                         selector: '.app-header--has-custom-header:not(.app-header--fixed)',
+                        screen: 'desktop',
                         styles: {
                             "min-height": to
                         }

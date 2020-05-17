@@ -1,8 +1,8 @@
 <?php
 /**
- * Hide Logo When Fixed Header.
+ * Buttons Border Radius
  *
- * This class handles the customizer control for hiding the logo in the fixed header.
+ * This class handles the customizer control for the buttons border radius.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -13,19 +13,26 @@
 
 namespace Taproot\Components\Buttons\Customize\Buttons;
 
-use Taproot\Customize\Controls\Checkbox\Checkbox;
+use Taproot\Customize\Controls\Range\Range;
 use Taproot\Tools\Mod;
+use Taproot\Customize\Traits\CustomPropertyStyles;
+use Taproot\Customize\Traits\CustomPropertyEditor;
+use Taproot\Customize\Traits\CustomPropertyPreview;
 
 /**
- * Class for checkbox control
+ * Class for range control
  *
  * @since  2.0.0
  * @access public
  */
-class Is_Rounded extends Checkbox {
+class Border_Radius extends Range {
+
+    use CustomPropertyStyles;
+    use CustomPropertyEditor;
+    use CustomPropertyPreview;
 
     /**
-     * Stores control ID
+     * Custom control id
      *
      * @since 2.0.0
      * @var string
@@ -33,28 +40,33 @@ class Is_Rounded extends Checkbox {
     public $id = 'buttons--border-radius';
 
     /**
-     * Stores control label
+     * Label
      *
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Enable Rounded Buttons';
+    public $label = 'Border Radius';
 
     /**
      * Default
      *
      * @since 2.0.0
-     * @var bool
+     * @var array
      */
-    public $default = FALSE;
+    public $default = '0px';
 
     /**
-     * Transport
+     * Range atts
      *
      * @since 2.0.0
-     * @var string
+     * @var array
      */
-    public $transport = 'postMessage';
+    public $atts = [
+        'px' => [
+            'max' => 50,
+            'default' => 0
+        ],
+    ];
 
     /**
      * Styles
@@ -66,7 +78,7 @@ class Is_Rounded extends Checkbox {
 
         $styles->customProperty([
             'name'  => $this->id,
-            'value' => ( Mod::get( $this->id ) ) ? '100px' : FALSE,
+            'value' => Mod::get( $this->id ),
         ]);
     }
 
@@ -95,7 +107,7 @@ class Is_Rounded extends Checkbox {
             value.bind( function( to ) {
                 rootstrap.customProperty({
                     name: "{$this->id}",
-                    value: (to) ? '100px' : '0px'
+                    value: to
                 });
             });
         });

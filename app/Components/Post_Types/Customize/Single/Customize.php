@@ -67,7 +67,8 @@ class Customize extends CustomizeComponent {
         $post_type = get_post_type_object( $this->post_type );
 
         $manager->add_panel( new Custom_Panel( $manager, $this->panel, [
-            'title' => sprintf( 'Single %s', $post_type->labels->singular_name ),
+            'title' => __('Single', 'taproot'),
+            'pre_title_label' => __( 'Customizing', 'taproot' ),
             'panel' => $this->post_type
         ]));
     }

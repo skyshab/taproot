@@ -71,13 +71,14 @@ class Title extends Control {
      * @param  array - $manager
      * @return void
      */
-    public function partials($manager) {
+    public function partials( $manager ) {
 
         if( isset( $manager->selective_refresh ) ) {
             $manager->selective_refresh->add_partial( $this->id, [
-                'selector' => '.bottom-bar__container',
-                'container_inclusive' => false,
-                'render_callback' => 'Taproot\Components\Footer\Functions::footer_credits',
+                'selector'              => ".archive-header__title--{$this->post_type}",
+                'container_inclusive'   => FALSE,
+                'fallback_refresh'      => FALSE,
+                'render_callback'       => 'get_the_archive_title',
             ]);
         }
     }

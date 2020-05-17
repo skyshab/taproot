@@ -55,7 +55,6 @@ class Section extends SectionAbstract {
      */
     public $controls = [
         'Background_Color',
-        'Border_Color',
         'Text_Color'
     ];
 }

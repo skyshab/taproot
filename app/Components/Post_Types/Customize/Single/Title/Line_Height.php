@@ -88,21 +88,21 @@ class Line_Height extends Range {
         $styles->customProperty([
             'name'      => 'entry--title--line-height',
             'value'     => theme_mod( $this->id ),
-            'selector'  => ".entry--type-{$this->post_type}"
+            'selector'  => ".single-{$this->post_type}"
         ]);
 
         $styles->customProperty([
             'name'      => 'entry--title--line-height',
             'value'     => theme_mod( "{$this->id}--tablet" ),
             'screen'    => 'tablet-and-up',
-            'selector'  => ".entry--type-{$this->post_type}"
+            'selector'  => ".single-{$this->post_type}"
         ]);
 
         $styles->customProperty([
             'name'      => 'entry--title--line-height',
             'value'     => theme_mod( "{$this->id}--desktop" ),
             'screen'    => 'desktop',
-            'selector'  => ".entry--type-{$this->post_type}"
+            'selector'  => ".single-{$this->post_type}"
         ]);
     }
 
@@ -158,7 +158,7 @@ class Line_Height extends Range {
             value.bind( function( to ) {
                 rootstrap.customProperty({
                     name: 'entry--title--line-height',
-                    selector: ".entry--type-{$this->post_type}",
+                    selector: ".single-{$this->post_type}",
                     value: to
                 });
             });
@@ -173,7 +173,7 @@ JS;
                 value.bind( function( to ) {
                     rootstrap.customProperty({
                         name: 'entry--title--line-height',
-                        selector: ".entry--type-{$this->post_type}",
+                        selector: ".single-{$this->post_type}",
                         screen: 'tablet',
                         value: to,
                     });
@@ -190,7 +190,7 @@ JS;
                 value.bind( function( to ) {
                     rootstrap.customProperty({
                         name: 'entry--title--line-height',
-                        selector: ".entry--type-{$this->post_type}",
+                        selector: ".single-{$this->post_type}",
                         screen: 'desktop',
                         value: to,
                     });

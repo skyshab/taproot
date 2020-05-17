@@ -25,6 +25,22 @@ use Rootstrap_Custom_Panel as Custom_Panel;
 class Customize extends CustomizeComponent {
 
     /**
+     * Namespace
+     *
+     * @since 2.0.0
+     * @var string
+     */
+    public $namespace = __NAMESPACE__;
+
+    /**
+     * Sections to load
+     *
+     * @since 2.0.0
+     * @var array
+     */
+    public $sections = [ 'Settings' ];
+
+    /**
      * Panel id
      *
      * @since 2.0.0
@@ -42,8 +58,9 @@ class Customize extends CustomizeComponent {
     public function panels( $manager ) {
 
         $manager->add_panel( new Custom_Panel( $manager, $this->panel, [
-            'title'     => __( 'Post Types', 'taproot' ),
-            'priority'  => 70,
+            'title' => __( 'Post Types', 'taproot' ),
+            'pre_title_label' => __( 'Customizing', 'taproot' ),
+            'priority' => 70,
         ]));
     }
 }

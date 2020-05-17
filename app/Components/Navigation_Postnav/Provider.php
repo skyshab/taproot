@@ -14,7 +14,6 @@
 namespace Taproot\Components\Navigation_Postnav;
 
 use Hybrid\Tools\ServiceProvider;
-use Taproot\Components\Navigation_Postnav\Customize\Customize;
 
 /**
  * Component service provider class.
@@ -33,8 +32,8 @@ class Provider extends ServiceProvider {
      */
     public function register() {
 
-        // Bind a single instance of our customize component class.
-        $this->app->singleton( Customize::class );
+        // Bind a single instance of our Controller class.
+        $this->app->singleton( Controller::class );
 
         // Bind our postnav template class.
         $this->app->bind( 'postnav/template', Template::class );
@@ -49,7 +48,7 @@ class Provider extends ServiceProvider {
      */
     public function boot() {
 
-        // Add customize component to collection.
-        $this->app->resolve( 'customize/components' )->add( 'navigation/postnav', $this->app->resolve( Customize::class ) );
+        // Boot the Controller instance.
+        $this->app->resolve( Controller::class )->boot();
     }
 }

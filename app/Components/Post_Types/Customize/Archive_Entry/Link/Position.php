@@ -13,7 +13,9 @@
 
 namespace Taproot\Components\Post_Types\Customize\Archive_Entry\Link;
 
-use Taproot\Customize\Controls\Select\Select;/**
+use Taproot\Customize\Controls\Select\Select;
+
+/**
  * Class for checkbox control
  *
  * @since  2.0.0
