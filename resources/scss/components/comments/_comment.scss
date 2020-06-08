@@ -1,0 +1,38 @@
+////
+/// Comment component.
+///
+/// This component styles the single comment interface on single posts.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+.comment {
+
+    // Comment Wrapper.
+    &__body {
+        padding: var( --text-spacing );
+        margin-bottom: var( --text-spacing );
+        border: 1px solid var( --colors--meta-medium );
+    }
+
+    // Full comment text/content.
+    &__content {
+
+        &> :last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    // Metadata wrapper.
+    &__meta {
+        margin-bottom: 1em;
+    }
+
+    // Individual metadata items.
+    &__avatar {
+        margin-right: 1em;
+    }
+}

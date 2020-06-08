@@ -1,0 +1,56 @@
+////
+/// Entry component.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.entry {
+
+    margin-left: auto;
+    margin-right: auto;
+
+    // Page entry header
+    &__header {
+        margin-bottom: var( --block-spacing );
+    }
+
+    // Entry titles
+    &__title {
+        margin: 0;
+        font-size:      var( --entry--title--font-size );
+        line-height:    var( --entry--title--line-height );
+        color:          var( --entry--title--text-color );
+    }
+
+    // Entry text content
+    &__content, &__summary {
+        // @extend %clearfix;
+    }
+
+    // Entry meta
+    &__byline {
+
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 0;
+
+        &__item {
+
+            margin-right: 0.8em;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .taproot-icon {
+            margin-right: 0.2em;
+        }
+    }
+
+    &-term-group {
+        display: inline-block;
+        width: 100%;
+    }
+}

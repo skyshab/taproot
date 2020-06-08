@@ -1,0 +1,33 @@
+////
+/// Entry - Single Posts
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.entry {
+
+    // Single featured image
+    &_image {
+        display: block;
+        margin-bottom: var( --block-spacing );
+    }
+
+    // Single meta
+    &__byline--single {
+        margin: 0;
+        margin-top: 0.4em;
+        font-size:      var( --entry--meta--font-size );
+        color:          var( --entry--meta--text-color );
+
+        .taproot-icon {
+            color:      var( --entry--meta--icon-color );
+        }
+
+        a, a:visited {
+            color: inherit;
+        }
+    }
+}
+

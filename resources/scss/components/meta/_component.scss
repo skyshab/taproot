@@ -1,0 +1,54 @@
+////
+/// Meta Component
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.taproot-meta {
+
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    &__item {
+
+        &__label {
+            font-weight: bold;
+        }
+
+        &__label, .taproot-icon {
+            margin-right: 0.5em;
+        }
+    }
+
+    &__terms {
+
+        flex: 1;
+
+        a {
+            white-space: nowrap;
+            color: inherit;
+        }
+    }
+
+    &.has-text-align {
+
+        &-right {
+            justify-content: flex-end;
+        }
+
+        &-center {
+            justify-content: center;
+        }
+    }
+
+    &.is-style-stacked {
+        display: block;
+        .taproot-meta__item {
+            display: inline-block;
+            width: 100%;
+        }
+    }
+}

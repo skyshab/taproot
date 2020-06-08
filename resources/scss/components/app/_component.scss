@@ -1,0 +1,40 @@
+////
+/// App Component
+///
+/// @group  components/app
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.app {
+
+    // center in body
+    margin: 0 auto;
+    position: relative; // needed for the slide navigation
+    z-index: 2;
+
+    // main
+    &-main {
+        width: 100%;
+        margin: 0 auto;
+        background-color: white;
+    }
+
+    // content
+    &-content {
+
+        margin: 0 auto;
+        background-color: white;
+        overflow: hidden; // safari - prevent the sidebar in fullwidth layout from going off screen
+
+        // content container
+        &__container {
+
+            display: flex;
+
+            @include screen('tablet-and-under') {
+                flex-direction: column;
+            }
+        }
+    }
+}

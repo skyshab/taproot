@@ -1,0 +1,15 @@
+////
+/// Entry - Archive Page
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+// Archive page title
+.archive-header__title {
+    margin-top: 0;
+    font-size:          var( --archive--title--font-size );
+    line-height:        var( --archive--title--line-height );
+    color:              var( --archive--title--text-color );
+}
