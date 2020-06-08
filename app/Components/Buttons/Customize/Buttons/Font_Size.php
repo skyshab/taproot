@@ -15,6 +15,7 @@
 
 namespace Taproot\Components\Buttons\Customize\Buttons;
 
+use Taproot\Tools\Mod;
 use Taproot\Customize\Controls\Range\Range;
 use Taproot\Customize\Traits\CustomPropertyStyles;
 use Taproot\Customize\Traits\CustomPropertyEditor;
@@ -76,4 +77,19 @@ class Font_Size extends Range {
             'max' => 32,
         ]
     ];
+
+    /**
+     * Editor styles
+     *
+     * @since  2.0.0
+     * @access public
+     * @return void
+     */
+    public function editorStyles( $styles ) {
+
+        $styles->customProperty([
+            'name'      => $this->id,
+            'value'     => Mod::get( $this->id ),
+        ]);
+    }
 }

@@ -13,6 +13,7 @@
 
 namespace Taproot\Components\Buttons\Customize\Buttons;
 
+use Taproot\Tools\Mod;
 use Taproot\Customize\Controls\Color\Color;
 use Taproot\Customize\Traits\CustomPropertyStyles;
 use Taproot\Customize\Traits\CustomPropertyEditor;
@@ -45,4 +46,19 @@ class Background_Color extends Color {
      * @var string
      */
     public $label = 'Background Color';
+
+    /**
+     * Editor styles
+     *
+     * @since  2.0.0
+     * @access public
+     * @return void
+     */
+    public function editorStyles( $styles ) {
+
+        $styles->customProperty([
+            'name'      => $this->id,
+            'value'     => Mod::get( $this->id ),
+        ]);
+    }
 }

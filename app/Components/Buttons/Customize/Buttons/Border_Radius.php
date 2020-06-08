@@ -13,8 +13,8 @@
 
 namespace Taproot\Components\Buttons\Customize\Buttons;
 
-use Taproot\Customize\Controls\Range\Range;
 use Taproot\Tools\Mod;
+use Taproot\Customize\Controls\Range\Range;
 use Taproot\Customize\Traits\CustomPropertyStyles;
 use Taproot\Customize\Traits\CustomPropertyEditor;
 use Taproot\Customize\Traits\CustomPropertyPreview;

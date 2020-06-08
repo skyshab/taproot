@@ -13,6 +13,7 @@
 
 namespace Taproot\Components\Buttons\Customize\Buttons;
 
+use Taproot\Tools\Mod;
 use Taproot\Customize\Controls\Range\Range;
 use Taproot\Customize\Traits\CustomPropertyStyles;
 use Taproot\Customize\Traits\CustomPropertyEditor;
@@ -71,4 +72,19 @@ class Padding extends Range {
             'max' => 4,
         ]
     ];
+
+    /**
+     * Editor styles
+     *
+     * @since  2.0.0
+     * @access public
+     * @return void
+     */
+    public function editorStyles( $styles ) {
+
+        $styles->customProperty([
+            'name'      => $this->id,
+            'value'     => Mod::get( $this->id ),
+        ]);
+    }
 }
