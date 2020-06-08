@@ -13,6 +13,7 @@
 
 namespace Taproot\Components\Typography\Customize\Body;
 
+use Taproot\Tools\Mod;
 use Taproot\Customize\Controls\Color\Color;
 use Taproot\Customize\Traits\CustomPropertyStyles;
 use Taproot\Customize\Traits\CustomPropertyEditor;
@@ -53,4 +54,31 @@ class Text_Color extends Color {
      * @var string
      */
     public $default = '#8c8c8c';
+
+
+    /**
+     * Styles
+     *
+     * @since  2.0.0
+     * @access public
+     * @return void
+     */
+    public function styles( $styles ) {
+
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => Mod::get( $this->id ),
+        ]);
+    }
+
+    /**
+     * Editor Styles
+     *
+     * @since  2.0.0
+     * @access public
+     * @return void
+     */
+    public function editorStyles( $styles ) {
+        $this->styles( $styles );
+    }
 }

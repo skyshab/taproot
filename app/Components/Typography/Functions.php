@@ -67,30 +67,4 @@ class Functions {
 
         return $styles;
     }
-
-    /**
-     * Maybe convert to em?
-     *
-     * Utility to convert unitless values to em.
-     * Used to define block spacing that maintains vertical rhythm.
-     *
-     * @since  2.0.0
-     * @param string    $value - the value to maybe convert
-     * @return string
-     */
-    public static function maybe_convert_to_em( $value = false ) {
-
-        // if nothing is set, bail
-        if( !$value ) return false;
-
-        // if px, %, or ems unit is used, return value
-        if( strpos($value, 'px') !== false || strpos($value, '%') !== false || strpos($value, 'em') !== false ) {
-            return $value;
-        }
-
-        // otherwise, make sure there's no unit, and add 'em'
-        else {
-            return sprintf( '%sem',  (float) filter_var( $value, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION ) );
-        }
-    }
 }

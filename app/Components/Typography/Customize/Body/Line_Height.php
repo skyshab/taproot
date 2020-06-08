@@ -15,8 +15,9 @@ namespace Taproot\Components\Typography\Customize\Body;
 
 use Taproot\Customize\Controls\Range\Range;
 use Taproot\Customize\Traits\CustomPropertyEditor;
+use Taproot\Tools\CSS_Units;
 use function Taproot\Tools\theme_mod;
-use function Hybrid\app;
+
 
 /**
  * Class for range control
@@ -98,10 +99,10 @@ class Line_Height extends Range {
             'screen'    => 'default'
         ]);
 
-        // Block Spacing
+        // Text Spacing
         $styles->customProperty([
-            'name'      => 'block-spacing',
-            'value'     => app('typography')->maybe_convert_to_em( theme_mod( $this->id ) ),
+            'name'      => 'text-spacing',
+            'value'     => CSS_Units::convert_unit( theme_mod( $this->id ), 'em' ),
             'screen'    => 'default'
         ]);
 
@@ -112,10 +113,17 @@ class Line_Height extends Range {
             'screen'    => 'tablet'
         ]);
 
+        // Text Spacing: Tablet
+        $styles->customProperty([
+            'name'      => 'text-spacing',
+            'value'     => CSS_Units::convert_unit( theme_mod( "{$this->id}--tablet" ), 'em' ),
+            'screen'    => 'tablet-and-up'
+        ]);
+
         // Block Spacing: Tablet
         $styles->customProperty([
             'name'      => 'block-spacing',
-            'value'     => app('typography')->maybe_convert_to_em( theme_mod( "{$this->id}--tablet" ) ),
+            'value'     => CSS_Units::convert_unit( theme_mod( "{$this->id}--tablet" ), 'rem' ),
             'screen'    => 'tablet-and-up'
         ]);
 
@@ -126,10 +134,17 @@ class Line_Height extends Range {
             'screen'    => 'desktop'
         ]);
 
+        // Text Spacing: Desktop
+        $styles->customProperty([
+            'name'      => 'text-spacing',
+            'value'     => CSS_Units::convert_unit( theme_mod( "{$this->id}--desktop" ), 'em' ),
+            'screen'    => 'desktop'
+        ]);
+
         // Block Spacing: Desktop
         $styles->customProperty([
             'name'      => 'block-spacing',
-            'value'     => app('typography')->maybe_convert_to_em( theme_mod( "{$this->id}--desktop" ) ),
+            'value'     => CSS_Units::convert_unit( theme_mod( "{$this->id}--desktop" ), 'rem' ),
             'screen'    => 'desktop'
         ]);
     }
@@ -152,7 +167,7 @@ class Line_Height extends Range {
                     value: to
                 });
                 rootstrap.customProperty({
-                    name: 'block-spacing',
+                    name: 'text-spacing',
                     value: maybeConvertToEm( to )
                 });
             });
@@ -171,7 +186,7 @@ JS;
                         screen: 'tablet'
                     });
                     rootstrap.customProperty({
-                        name: 'block-spacing',
+                        name: 'text-spacing',
                         screen: 'tablet-and-up',
                         value: maybeConvertToEm( to )
                     });
@@ -192,7 +207,7 @@ JS;
                         screen: 'desktop'
                     });
                     rootstrap.customProperty({
-                        name: 'block-spacing',
+                        name: 'text-spacing',
                         screen: 'desktop',
                         value: maybeConvertToEm( to )
                     });
