@@ -1,7 +1,5 @@
 <article <?php Hybrid\Attr\display( 'entry' ) ?>>
 
-    <?php Hybrid\app('images/template')->the_featured_image( ['class' => 'entry_image'], 'page' ) ?>
-
     <?php Hybrid\View\display( 'entry/header', 'page' ) ?>
 
     <div class="entry__content entry__content--page">

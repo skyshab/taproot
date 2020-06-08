@@ -2,9 +2,9 @@
 
     <div class="app-content__container container">
 
-        <main <?php Hybrid\Attr\display( 'app-main' ) ?>>
+        <main <?php Hybrid\Attr\display( 'app-main', 'archive' ) ?>>
 
-            <?php Hybrid\View\display( 'partials', 'archive-header' ) ?>
+            <?php Hybrid\View\display( 'entry/header', 'archive' ) ?>
 
             <?php if ( have_posts() ) : ?>
 

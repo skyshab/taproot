@@ -2,7 +2,7 @@
 
     <div class="app-content__container container">
 
-        <main <?php Hybrid\Attr\display( 'app-main' ) ?>>
+        <main <?php Hybrid\Attr\display( 'app-main', 'single' ) ?>>
 
             <?php Hybrid\app('breadcrumbs/template')->breadcrumbs() ?>
 
