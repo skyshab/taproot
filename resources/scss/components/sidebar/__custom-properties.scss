@@ -1,7 +1,7 @@
 ////
 /// Component Custom Properties
 ///
-/// @group  Components
+/// @group  Components/Buttons
 /// @author Sky Shabatura <theme@sky.camp>
 /// @link   https://taproot-theme.com
 ////
@@ -20,12 +20,12 @@
     --sidebar--min-width:           250px;
     --sidebar--font-size:           var( --typography--body--font-size );
     --sidebar--line-height:         var( --typography--body--line-height );
-    --sidebar--block-spacing:       var( --block-spacing );
+    --sidebar--text-spacing:        var( --text-spacing );
 
     // Desktop size and spacing
     @include screen('desktop') {
         --sidebar--font-size:       16px;
         --sidebar--line-height:     1.5;
-        --sidebar--block-spacing:   1.5em;
+        --sidebar--text-spacing:   1.5em;
     }
 }

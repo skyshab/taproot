@@ -15,8 +15,8 @@ namespace Taproot\Components\Sidebar\Customize\Sidebar;
 
 use Taproot\Customize\Controls\Range\Range;
 use Taproot\Tools\Mod;
+use Taproot\Tools\CSS_Units;
 use function Taproot\Tools\theme_mod;
-use function Hybrid\app;
 
 /**
  * Class for range control
@@ -97,10 +97,10 @@ class Line_Height extends Range {
             'screen' => 'default'
         ]);
 
-        // Block Spacing
+        // Text Spacing
         $styles->customProperty([
-            'name' => 'sidebar--block-spacing',
-            'value' => app('typography')->maybe_convert_to_em( theme_mod( $this->id ) ),
+            'name' => 'sidebar--text-spacing',
+            'value' => CSS_Units::convert_unit( theme_mod( $this->id ), 'em' ),
             'screen' => 'default'
         ]);
 
@@ -111,10 +111,10 @@ class Line_Height extends Range {
             'screen' => 'tablet'
         ]);
 
-        // Block Spacing: Tablet
+        // Text Spacing: Tablet
         $styles->customProperty([
-            'name' => 'sidebar--block-spacing',
-            'value' => app('typography')->maybe_convert_to_em( theme_mod( "{$this->id}--tablet" ) ),
+            'name' => 'sidebar--text-spacing',
+            'value' => CSS_Units::convert_unit( theme_mod( "{$this->id}--tablet" ), 'em' ),
             'screen' => 'tablet-and-up'
         ]);
 
@@ -125,10 +125,10 @@ class Line_Height extends Range {
             'screen' => 'desktop'
         ]);
 
-        // Block Spacing: Desktop
+        // Text Spacing: Desktop
         $styles->customProperty([
-            'name' => 'sidebar--block-spacing',
-            'value' => app('typography')->maybe_convert_to_em( theme_mod( "{$this->id}--desktop" ) ),
+            'name' => 'sidebar--text-spacing',
+            'value' => CSS_Units::convert_unit( theme_mod( "{$this->id}--desktop" ), 'em' ),
             'screen' => 'desktop'
         ]);
     }
@@ -151,7 +151,7 @@ class Line_Height extends Range {
                     value: to
                 });
                 rootstrap.customProperty({
-                    name: 'sidebar--block-spacing',
+                    name: 'sidebar--text-spacing',
                     value: maybeConvertToEm( to )
                 });
             });
@@ -170,7 +170,7 @@ JS;
                         screen: 'tablet'
                     });
                     rootstrap.customProperty({
-                        name: 'sidebar--block-spacing',
+                        name: 'sidebar--text-spacing',
                         screen: 'tablet-and-up',
                         value: maybeConvertToEm( to )
                     });
@@ -191,7 +191,7 @@ JS;
                         screen: 'desktop'
                     });
                     rootstrap.customProperty({
-                        name: 'sidebar--block-spacing',
+                        name: 'sidebar--text-spacing',
                         screen: 'desktop',
                         value: maybeConvertToEm( to )
                     });
