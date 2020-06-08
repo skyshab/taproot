@@ -72,16 +72,3 @@ add_action( 'wp_enqueue_scripts', function() {
  * @return string
  */
 add_filter( 'hybrid/template/path', function() { return 'views'; } );
-
-/**
- * Add custom theme templates.
- *
- * @since  2.0.0
- * @access public
- * @return void
- */
-add_action( 'hybrid/templates/register', function( $templates ) {
-    $templates->add('templates/builder.php',        ['label' => __('Page Builder Template', 'taproot')]);
-    $templates->add('templates/blank.php',          ['label' => __('Blank Template', 'taproot')]);
-    $templates->add('templates/blocks.php',         ['label' => __('Block Editor Template', 'taproot')]);
-});
