@@ -1,15 +1,15 @@
 {
     "/dist/js/app.js": "/dist/js/app.js?id=ce0efa2b750891573fc9",
+    "/dist/css/theme.css": "/dist/css/theme.css?id=43fd9093d7ba64c9efe7",
+    "/dist/css/editor.css": "/dist/css/editor.css?id=802d4f1df301eb7dbaa4",
     "/dist/css/customize-controls.css": "/dist/css/customize-controls.css?id=2be32028e4f0159acd49",
     "/dist/js/app.js.map": "/dist/js/app.js.map?id=e6fd4f4f6e826302924a",
+    "/dist/css/theme.css.map": "/dist/css/theme.css.map?id=3197a95c089aec9b643f",
+    "/dist/css/editor.css.map": "/dist/css/editor.css.map?id=68d249a325a78d4b2abb",
     "/dist/css/customize-controls.css.map": "/dist/css/customize-controls.css.map?id=1435649a82f35f25fc80",
     "/dist/js/customize-controls.js": "/dist/js/customize-controls.js?id=dd126f33dda7bbe4e303",
     "/dist/js/customize-controls.js.map": "/dist/js/customize-controls.js.map?id=27ccf3d23c1e1b960d42",
     "/dist/js/editor.js": "/dist/js/editor.js?id=cfdd34af741a35cb8d02",
     "/dist/js/editor.js.map": "/dist/js/editor.js.map?id=bb1f515357f4df678fc6",
-    "/dist/js/customize-preview.js": "/dist/js/customize-preview.js?id=3688fb6519809dc80bd8",
-    "/dist/css/theme.css": "/dist/css/theme.css?id=46c42f0a358728c1c3d7",
-    "/dist/css/editor.css": "/dist/css/editor.css?id=50461438c7d9b427e5c8",
-    "/dist/css/theme.css.map": "/dist/css/theme.css.map?id=6e33fed0786d947b7f9f",
-    "/dist/css/editor.css.map": "/dist/css/editor.css.map?id=a9e8ff88de2233276a0c"
+    "/dist/js/customize-preview.js": "/dist/js/customize-preview.js?id=3688fb6519809dc80bd8"
 }

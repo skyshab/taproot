@@ -1454,10 +1454,8 @@ figure.wp-block-gallery,
 }
 
 .has-block-padding--sides {
-	padding-left: 1.5rem;
-	padding-left: var(--block-spacing);
-	padding-right: 1.5rem;
-	padding-right: var(--block-spacing);
+	padding-left: var(--block-padding);
+	padding-right: var(--block-padding);
 }
 
 .has-layout-padding {
