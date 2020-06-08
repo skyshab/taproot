@@ -1,0 +1,16 @@
+////
+/// HTML element.
+///
+/// @group  Elements
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+html {
+
+    // use border box by default
+    box-sizing: border-box;
+
+    // prevent ios from hijacking the font size
+    -webkit-text-size-adjust: 100%;
+}

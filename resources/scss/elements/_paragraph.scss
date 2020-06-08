@@ -1,0 +1,16 @@
+////
+/// Paragraph element.
+///
+/// @group  Elements
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+p {
+    @extend .has-text-spacing;
+
+    &:empty {
+        display: none;
+    }
+}

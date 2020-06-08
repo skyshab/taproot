@@ -1,0 +1,37 @@
+////
+/// List elements.
+///
+/// @group  Elements
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+ol, ul, dl {
+    @extend .has-text-spacing;
+}
+
+ul, ol {
+    list-style-position: outside;
+    padding-left: 1.15em;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+li > ul, li > ol {
+    margin: 0;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dl, dt, dd {
+    margin: 0;
+    padding: 0;
+}
+
+dd + dt {
+    margin-top: var( --text-spacing--small ); // todo - there is no small
+}

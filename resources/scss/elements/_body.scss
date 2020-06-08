@@ -1,0 +1,25 @@
+////
+/// Body element.
+///
+/// @group  Elements
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+body {
+
+    margin: 0;
+    overflow-x: hidden;
+
+    // prevent top and bottom elastic scrolling in Chrome.
+    // This does not work yet in Safari
+    overscroll-behavior: auto none;
+
+    // used to layer slide in mobile navigation
+    z-index: 1;
+
+    // used for mobile navigation
+    &.noscroll {
+        overflow: hidden;
+    }
+}

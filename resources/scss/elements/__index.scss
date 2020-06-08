@@ -1,0 +1,71 @@
+////
+/// Elements
+///
+/// Base styles for each element type.
+///
+/// @group  Elements
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+// Import the individual elements
+@import 'html';
+@import 'body';
+@import 'headings';
+@import 'paragraph';
+@import 'table';
+@import 'lists';
+@import 'inputs';
+@import 'image';
+@import 'figure';
+@import 'hr';
+@import 'blockquote';
+@import 'pre';
+@import 'code';
+
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+cite, em, i {
+    font-style: italic;
+}
+
+big {
+    font-size: 125%;
+}
+
+small {
+    font-size: 80%;
+}
+
+b, strong {
+    font-weight: bolder;
+}
+
+q {
+    quotes: "“" "”" "‘" "’";
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+summary {
+    display: list-item;
+}
