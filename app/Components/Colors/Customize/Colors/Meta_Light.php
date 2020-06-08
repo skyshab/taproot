@@ -13,6 +13,7 @@
 
 namespace Taproot\Components\Colors\Customize\Colors;
 
+use Taproot\Tools\Mod;
 use Taproot\Customize\Controls\Color\Color;
 use Taproot\Customize\Traits\CustomPropertyStyles;
 use Taproot\Customize\Traits\CustomPropertyEditor;
@@ -61,4 +62,19 @@ class Meta_Light extends Color {
      * @var string
      */
     public $default = '#f4f4f4';
+
+    /**
+     * Editor styles
+     *
+     * @since  2.0.0
+     * @access public
+     * @return void
+     */
+    public function editorStyles( $styles ) {
+
+        $styles->customProperty([
+            'name'      => $this->id,
+            'value'     => Mod::get( $this->id ),
+        ]);
+    }
 }
