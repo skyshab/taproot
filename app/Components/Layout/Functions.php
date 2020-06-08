@@ -32,20 +32,37 @@ class Functions {
      */
     public static function get_layout() {
 
-        $layout = apply_filters('taproot/layout', 'right');
-
+        // Get the post type
         $post_type = ( get_post_type() ) ? get_post_type() : 'post';
 
+        // Default layout
+        $layout = 'right';
+
+        // Archive layout
         if( is_home() || is_archive() ) {
             $layout = Mod::get( "{$post_type}--archive--layout--layout", $layout );
         }
+
+        // Pages, posts and custom post singles
         elseif( is_singular() ) {
-            // First, check for non-hierarchical first, then hierarchical
+            // First, check for non-hierarchical, then hierarchical in customizer settings
             $default = Mod::get( "{$post_type}--single--layout--layout", Mod::get( "{$post_type}--layout--layout", $layout ) );
+            // Get layout from post meta
             $single_layout = get_post_meta( get_the_ID(), 'taproot_page_layout', true );
-            $layout = ($single_layout) ? $single_layout : $default;
+            // If there's a layout set for the single and it's not "default"
+            if( $single_layout && 'default' !== $single_layout ) {
+                $layout = $single_layout;
+            }
+            // No single layout set, use the customizer settings
+            else {
+                $layout = $default;
+            }
         }
 
+        // Filter to change the layout
+        $layout = apply_filters( 'taproot/layout', $layout, $post_type );
+
+        // Return the layout
         return $layout;
     }
 

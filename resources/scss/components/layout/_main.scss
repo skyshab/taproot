@@ -1,0 +1,32 @@
+////
+/// Layout - main
+///
+/// Layout styles for the main element.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.app-main {
+
+    order: 1;
+    min-width: 0; // this is needed with flexbox to prevent pre elements breaking the layout
+    max-width:              var( --content-width );
+
+    @extend .has-layout-padding--top;
+    @extend .has-layout-padding--bottom;
+
+    @include screen('desktop') {
+
+        flex: 0 1           var( --content-width );
+
+        &--sidebar-right {
+            padding-right:  var( --layout-padding );
+        }
+
+        &--sidebar-left {
+            padding-left:   var( --layout-padding );
+        }
+    }
+}

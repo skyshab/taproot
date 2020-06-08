@@ -93,7 +93,7 @@ class Width extends Range {
 
             $styles->customProperty([
                 'screen' => 'layout-is-fullwidth',
-                'name' => 'layout--container--padding',
+                'name' => 'layout-padding',
                 'value' => Functions::get_full_layout_padding()
             ]);
 
@@ -126,25 +126,25 @@ class Width extends Range {
 
         // mobile
         $styles->customProperty([
-            'name' => $this->id,
+            'name' => 'container-width',
             'value' => Mod::get($this->id)
         ]);
 
         $styles->customProperty([
-            'name' => 'layout--container--padding',
+            'name' => 'layout-padding',
             'value' => Functions::get_padding_from_width( Mod::get($this->id), 'vw' )
         ]);
 
         // tablet
         $styles->customProperty([
             'screen' => 'tablet-and-up',
-            'name' => $this->id,
+            'name' => 'container-width',
             'value' => Mod::get("{$this->id}--tablet")
         ]);
 
         $styles->customProperty([
             'screen' => 'tablet-and-up',
-            'name' => 'layout--container--padding',
+            'name' => 'layout-padding',
             'value' => Functions::get_padding_from_width( Mod::get("{$this->id}--tablet"), 'vw' )
         ]);
 
@@ -154,31 +154,31 @@ class Width extends Range {
 
         $styles->customProperty([
             'screen' => 'desktop',
-            'name' => $this->id,
+            'name' => 'container-width',
             'value' => $site_width_desktop
         ]);
 
         $styles->customProperty([
             'screen' => 'desktop',
-            'name' => 'layout--container--padding',
+            'name' => 'layout-padding',
             'value' => Functions::get_padding_from_width($site_width_desktop, 'vw')
         ]);
 
         $styles->customProperty([
             'screen' => 'desktop',
-            'name' => "{$this->id}-as-decimal",
+            'name' => 'container-width-as-decimal',
             'value' => Functions::get_layout_width('desktop')
         ]);
 
         $styles->customProperty([
             'screen' => 'desktop',
-            'name' => "{$this->id}-as-vw",
+            'name' => 'container-width-as-vw',
             'value' => Functions::get_layout_width('desktop', 'vw')
         ]);
 
         $styles->customProperty([
             'screen' => 'desktop',
-            'name' => "{$this->id}-as-percentage",
+            'name' => 'container-width-as-percentage',
             'value' => Functions::get_layout_width('desktop', '%')
         ]);
     }
@@ -197,11 +197,11 @@ class Width extends Range {
         wp.customize( "{$this->id}", function( value ) {
             value.bind( function( to ) {
                 rootstrap.customProperty({
-                    name: "{$this->id}",
+                    name: 'container-width',
                     value: to
                 });
                 rootstrap.customProperty({
-                    name: 'layout--container--padding',
+                    name: 'layout-padding',
                     value: getPaddingFromWidth(to, 'vw')
                 });
             });
@@ -214,12 +214,12 @@ JS;
             value.bind( function( to ) {
                 rootstrap.customProperty({
                     screen: 'tablet-and-up',
-                    name: "{$this->id}",
+                    name: 'container-width',
                     value: to
                 });
                 rootstrap.customProperty({
                     screen: 'tablet-and-up',
-                    name: 'layout--container--padding',
+                    name: 'layout-padding',
                     value: getPaddingFromWidth(to, 'vw')
                 });
             });
@@ -232,12 +232,12 @@ JS;
             value.bind( function( to ) {
                 rootstrap.customProperty({
                     screen: 'desktop',
-                    name: "{$this->id}",
+                    name: 'container-width',
                     value: to.replace('vw', '%')
                 });
                 rootstrap.customProperty({
                     screen: 'desktop',
-                    name: 'layout--container--padding',
+                    name: 'layout-padding',
                     value: getPaddingFromWidth(to, 'vw')
                 });
             });

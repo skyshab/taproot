@@ -1,0 +1,34 @@
+////
+/// Boxed Layout Styles
+///
+/// Styles for when using a boxed layout.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+body.boxed-layout {
+
+    .app {
+        max-width: var( --container-max-width );
+    }
+
+    @include screen('desktop') {
+
+        padding: var( --layout--boxed--outer-padding );
+
+        &.app-header--has-fixed, &.app-footer--has-fixed {
+            width: calc( 100vw - 2 * var( --layout--boxed--outer-padding ) );
+            max-width: var( --container-max-width );
+        }
+    }
+}
+
+.app-main--full.boxed-layout .alignwide {
+
+    @include screen('desktop') {
+        width: calc( (100vw - (2 * var(--layout--boxed--outer-padding) ) ) * var(--container-width-as-decimal) );
+        margin-left: calc( (( (100vw - (2 * var(--layout--boxed--outer-padding) ) ) * var(--container-width-as-decimal)) - 100%) / -2);
+    }
+}

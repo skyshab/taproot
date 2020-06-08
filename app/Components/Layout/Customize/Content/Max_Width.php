@@ -80,7 +80,7 @@ class Max_Width extends Range {
     public function styles( $styles ) {
 
         $styles->customProperty([
-            'name'  => $this->id,
+            'name'  => 'content-width',
             'value' => Mod::get( $this->id )
         ]);
     }

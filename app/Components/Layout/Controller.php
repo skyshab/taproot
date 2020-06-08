@@ -86,9 +86,6 @@ class Controller implements Bootable {
         if( Mod::get( 'layout--boxed--enable' ) ) {
             $classes[] = 'boxed-layout';
         }
-        else {
-            $classes[] = 'fullscreen-layout';
-        }
 
         return $classes;
     }

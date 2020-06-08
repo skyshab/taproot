@@ -1,0 +1,19 @@
+////
+/// Component Custom Properties
+///
+/// @group  Components/Buttons
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+:root {
+
+    --content-width: 640px;
+    --container-width: 90vw;
+    --container-width-as-decimal: 0.9;
+    --container-width-as-vw: 90vw;
+    --container-width-as-percentage: 90%;
+    --container-max-width: 1060px;
+    --layout-padding: calc( ( 100vw - var( --container-width ) ) / 2 );
+    --layout-padding-inverse: calc( var( --layout-padding ) * -1 );
+}
