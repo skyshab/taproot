@@ -86,10 +86,44 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./app/Components/Footer/assets/js/footer.js":
-/*!***************************************************!*\
-  !*** ./app/Components/Footer/assets/js/footer.js ***!
-  \***************************************************/
+/***/ "./resources/js/app.js":
+/*!*****************************!*\
+  !*** ./resources/js/app.js ***!
+  \*****************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_header_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app/header.js */ "./resources/js/app/header.js");
+/* harmony import */ var _app_header_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_app_header_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _app_footer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app/footer.js */ "./resources/js/app/footer.js");
+/* harmony import */ var _app_footer_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_app_footer_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _app_nav_menus_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app/nav-menus.js */ "./resources/js/app/nav-menus.js");
+/* harmony import */ var _app_nav_menus_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_app_nav_menus_js__WEBPACK_IMPORTED_MODULE_2__);
+/**
+ * Primary front-end script.
+ *
+ * Primary JavaScript file. Any includes or anything imported should
+ * be filtered through this file and eventually saved back into the
+ * `/dist/js/app.js` file.
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2020 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://taproot-theme.com
+ */
+
+
+
+
+/***/ }),
+
+/***/ "./resources/js/app/footer.js":
+/*!************************************!*\
+  !*** ./resources/js/app/footer.js ***!
+  \************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -192,10 +226,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /***/ }),
 
-/***/ "./app/Components/Header/assets/js/header.js":
-/*!***************************************************!*\
-  !*** ./app/Components/Header/assets/js/header.js ***!
-  \***************************************************/
+/***/ "./resources/js/app/header.js":
+/*!************************************!*\
+  !*** ./resources/js/app/header.js ***!
+  \************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -599,10 +633,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /***/ }),
 
-/***/ "./app/Components/Navigation/assets/js/nav-menus.js":
-/*!**********************************************************!*\
-  !*** ./app/Components/Navigation/assets/js/nav-menus.js ***!
-  \**********************************************************/
+/***/ "./resources/js/app/nav-menus.js":
+/*!***************************************!*\
+  !*** ./resources/js/app/nav-menus.js ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -1234,40 +1268,6 @@ function () {
 document.addEventListener('DOMContentLoaded', function () {
   var navMenus = new NavMenus();
 });
-
-/***/ }),
-
-/***/ "./resources/js/app.js":
-/*!*****************************!*\
-  !*** ./resources/js/app.js ***!
-  \*****************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _app_Components_Header_assets_js_header_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../app/Components/Header/assets/js/header.js */ "./app/Components/Header/assets/js/header.js");
-/* harmony import */ var _app_Components_Header_assets_js_header_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_app_Components_Header_assets_js_header_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _app_Components_Footer_assets_js_footer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../app/Components/Footer/assets/js/footer.js */ "./app/Components/Footer/assets/js/footer.js");
-/* harmony import */ var _app_Components_Footer_assets_js_footer_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_app_Components_Footer_assets_js_footer_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _app_Components_Navigation_assets_js_nav_menus_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../app/Components/Navigation/assets/js/nav-menus.js */ "./app/Components/Navigation/assets/js/nav-menus.js");
-/* harmony import */ var _app_Components_Navigation_assets_js_nav_menus_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_app_Components_Navigation_assets_js_nav_menus_js__WEBPACK_IMPORTED_MODULE_2__);
-/**
- * Primary front-end script.
- *
- * Primary JavaScript file. Any includes or anything imported should
- * be filtered through this file and eventually saved back into the
- * `/dist/js/app.js` file.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2020 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- * @link      https://taproot-theme.com
- */
-
-
-
 
 /***/ }),
 

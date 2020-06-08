@@ -4,10 +4,10 @@
  *
  * This class handles the getting theme mod values with fallback.
  *
- * @package   Rootstrap
+ * @package   Taproot
  * @author    Sky Shabatura
  * @copyright Copyright (c) 2020, Sky Shabatura
- * @link      https://github.com/skyshab/rootstrap
+ * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 

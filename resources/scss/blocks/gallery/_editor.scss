@@ -11,4 +11,18 @@
 // Import component styles inside the editor styles wrapper
 .editor-styles-wrapper {
     @import 'block';
+
+    .components-form-file-upload {
+        width: 100%;
+    }
+
+    .blocks-gallery-caption {
+        width: 100%;
+        margin-top: 16px;
+    }
+
+    .blocks-gallery-grid {
+        margin: 0!important;
+    }
 }
+

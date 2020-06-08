@@ -6,12 +6,6 @@
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
 
-:root {
-	--block-spacing--small: 1rem;
-	--block-spacing: 1.5em;
-	--block-spacing--large: 2rem;
-}
-
 #customize-preview > iframe {
 	position: static;
 }
@@ -607,11 +601,5 @@ body .wp-full-overlay #customize-preview iframe.resizing {
 .customize-control-nav_menu_locations input[type=checkbox] {
 	border: 1px solid #7e8993;
 	background: #fff;
-}
-
-@media ( min-width: 768px ) and ( max-width: 1024px ){
-	:root {
-		--block-spacing: 1.6em;
-	}
 }
 /*# sourceMappingURL=customize-controls.css.map*/

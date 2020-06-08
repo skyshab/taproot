@@ -10,12 +10,13 @@
 
 // Import component styles inside the editor styles wrapper
 .editor-styles-wrapper {
-    @import 'block';
+    @import 'common';
+    @import 'editor-screens';
 }
 
 [data-align="full"] .wp-block-media-text {
-	padding-left:  var( --block-spacing--large );
-	padding-right: var( --block-spacing--large );
+	padding-left:  var( --block-padding );
+	padding-right: var( --block-padding );
 }
 
 .wp-block-media-text .block-editor-inner-blocks {

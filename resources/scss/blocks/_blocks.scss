@@ -1,0 +1,66 @@
+////
+/// Block styles.
+///
+/// General front end styles for block editor blocks.
+///
+/// @group  Blocks
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+// Blocks that always have block padding
+.wp-block-cover,
+.wp-block-preformatted,
+.wp-block-code,
+.wp-block-verse {
+    @extend .has-block-padding;
+}
+
+// blocks with block padding under certain conditions
+.wp-block-group,
+.wp-block-columns,
+.wp-block-media-text {
+
+    &.alignfull {
+
+        @include screen('mobile') {
+            padding-left: var( --layout-padding );
+            padding-right: var( --layout-padding );
+        }
+    }
+
+    &.has-background, &[style*=background-color] {
+
+        @extend .has-block-padding;
+
+        &.alignfull {
+
+            @include screen('mobile') {
+                padding: var( --layout-padding );
+            }
+
+            .alignfull:not(.has-background) {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+// Blocks with block spacing
+.wp-block-columns,
+.wp-block-audio,
+.wp-block-file,
+figure.wp-block-gallery,
+.wp-block-table {
+    @extend .has-block-spacing;
+}
+
+// blocks with block spacing only when not full width
+.wp-block-cover,
+.wp-block-media-text {
+
+    &:not(.alignfull) {
+        @extend .has-block-spacing;
+    }
+}

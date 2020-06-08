@@ -10,6 +10,8 @@
     quotes: "" "";
     position: relative;
     clear: both;
+    margin-left: 0;
+    margin-right: 0;
     padding: 0.8em 0.8em 0.8em 3em;
     background-color: var( --colors--meta-light );
 
@@ -29,10 +31,14 @@
     p {
         font-size: 1.25em;
         font-style: italic;
-    }
 
-    p:last-of-type {
-        margin-bottom: 0;
+        &:first-of-type {
+            margin-top: 0;
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
     }
 
     cite {

@@ -1,0 +1,65 @@
+////
+/// Spacing classes.
+///
+/// Utility classes for controlling margin and padding
+///
+/// @group  Utilities
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+// Text Spacing
+
+.has-text-spacing {
+    margin-top:     var( --text-spacing );
+    margin-bottom:  var( --text-spacing );
+}
+
+
+// Text Padding
+
+.has-text-padding {
+    padding:        var( --text-spacing );
+}
+
+.has-text-padding--sides {
+    padding-left:   var( --text-spacing );
+    padding-right:  var( --text-spacing );
+}
+
+
+// Block Padding
+
+.has-block-spacing {
+    margin-top:     var( --block-spacing );
+    margin-bottom:  var( --block-spacing );
+}
+
+.has-block-padding {
+    padding:        var( --block-padding );
+}
+
+.has-block-padding--sides {
+    padding-left:   var( --block-spacing );
+    padding-right:  var( --block-spacing );
+}
+
+
+// Layout padding
+
+.has-layout-padding {
+    padding:        var( --layout-padding );
+}
+
+.has-layout-padding--sides {
+    padding-left:   var( --layout-padding );
+    padding-right:  var( --layout-padding );
+}
+
+.has-layout-padding--top {
+    padding-top:    var( --layout-padding );
+}
+
+.has-layout-padding--bottom {
+    padding-bottom:  var( --layout-padding );
+}

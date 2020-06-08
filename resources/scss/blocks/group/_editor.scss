@@ -11,11 +11,10 @@
 // Import component styles inside the editor styles wrapper
 .editor-styles-wrapper {
     @import 'block';
-}
 
-.wp-block-group {
-
-    > *:not([class*=align]):not(.block-editor-inner-blocks) {
-        max-width: 100%;
-    }
+    // remove the space around group blocks in the block editor
+    .wp-block[data-type="core/group"] {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
 }

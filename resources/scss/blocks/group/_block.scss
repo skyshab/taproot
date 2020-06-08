@@ -6,29 +6,24 @@
 /// @link   https://taproot-theme.com
 ////
 
-
 .wp-block-group {
 
-    &::after {
-        content:    ".";
-        display:    block;
-        height:     0;
-        clear:      both;
-        visibility: hidden;
+    &.has-background, &[style*=background-color] {
+
+        .wp-block-group__inner-container {
+
+            > :first-child {
+                margin-top: 0;
+            }
+
+            > :last-child {
+                margin-bottom: 0;
+            }
+        }
     }
 
-    &.has-background {
-        margin-bottom: var( --block-spacing ); // use larger block spacing unit here?
-        padding:       var( --block-spacing );
-    }
-
-    &.alignfull.has-background > .alignfull:not(.has-background) {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    > *:not([class*=align]):not(.block-editor-inner-blocks) {
-        max-width: var(--layout--content--max-width);
+    &__inner-container {
+        max-width: var( --content-width );
         margin-left: auto;
         margin-right: auto;
     }

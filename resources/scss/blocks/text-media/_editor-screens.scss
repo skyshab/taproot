@@ -1,0 +1,28 @@
+////
+/// Media text block - public mobile styles.
+///
+/// @group  Blocks
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+@media ( max-width: 1200px ) {
+
+    .wp-block-media-text.is-stacked-on-mobile {
+
+        grid-template-columns: 100% !important;
+        grid-gap: var( --block-padding ) 0;
+        grid-template-areas:
+            "media-text-media"
+            "media-text-content";
+
+        &.alignfull {
+            .wp-block-media-text__media, .wp-block-media-text__content {
+                margin: 0 auto;
+                width: var(--container-width);
+                max-width: var(--container-max-width);
+            }
+        }
+    }
+}

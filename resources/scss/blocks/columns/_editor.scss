@@ -12,3 +12,8 @@
 .editor-styles-wrapper {
     @import 'block';
 }
+
+// Editor specific styling. Make sure columns span correctly.
+.block-editor-inner-blocks {
+    flex: 1;
+}

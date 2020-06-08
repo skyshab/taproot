@@ -1,0 +1,72 @@
+////
+/// Media text block.
+///
+/// @group  Blocks
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.wp-block-media-text {
+
+	display:               grid;
+	grid-template-rows:    auto;
+	align-items:           center;
+	grid-gap:              0 var( --block-padding );
+	grid-template-areas:
+		"media-text-media media-text-content"
+		"resizer resizer";
+    grid-template-columns: 50% auto;
+
+	&.has-media-on-the-right {
+		grid-template-areas:
+			"media-text-content media-text-media"
+			"resizer resizer";
+		grid-template-columns: auto 50%;
+    }
+
+	&__media {
+        grid-area: media-text-media;
+        margin: 0;
+        line-height: 0;
+	}
+
+	&__content {
+		word-break: break-word;
+		grid-area:  media-text-content;
+        max-width: var( --content-width );
+
+        > :first-child {
+            margin-top: 0;
+        }
+
+        > :last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    > figure {
+        > img, > video {
+            max-width:      unset;
+            width:          100%;
+            vertical-align: middle;
+        }
+    }
+
+	&.is-image-fill figure {
+		height: 100%;
+		min-height: 250px;
+        background-size: cover;
+
+        // visually hidden
+        > img {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+	}
+}

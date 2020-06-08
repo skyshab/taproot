@@ -9,11 +9,11 @@
 .wp-block-latest-posts {
 
     &.alignleft {
-        margin-right: var( --block-spacing--large );
+        margin-right: var( --text-spacing );
     }
 
     &.alignright {
-        margin-left: var( --block-spacing--large );
+        margin-left: var( --text-spacing );
     }
 
     &.is-grid {

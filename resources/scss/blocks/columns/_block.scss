@@ -6,39 +6,47 @@
 /// @link   https://taproot-theme.com
 ////
 
-.wp-block-columns {
-    display: flex;
-    flex-direction: column;
+// Individual columns.
 
-    &.alignfull {
-        padding: 0 var( --block-spacing--large );
+.wp-block-column {
+
+    // inner contents
+    & > :first-child {
+        margin-top: 0;
+    }
+
+    & > :last-child {
+        margin-bottom: 0;
     }
 }
 
-// Individual columns.
-.wp-block-column {
-    flex: 1;
-}
 
+@include screen('mobile') {
 
-// Editor specific styling. Make sure columns span correctly.
-.block-editor-inner-blocks {
-    flex: 1;
+    .wp-block-column {
+
+        margin-bottom: var( --text-spacing );
+
+        // last column
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }
 
 @include screen('tablet-and-up') {
 
     .wp-block-columns {
+        display: flex;
         flex-direction: row;
-
-        // Add styles based on the number of columns. Supports 2-6 columns.
-        &.has-2-columns {}
-
     }
 
     // Individual columns.
     .wp-block-column {
-        margin-right: var( --block-spacing--large );
+
+        margin-right: var( --block-spacing );
+
+        // last column
         &:last-child {
             margin-right: 0;
         }
