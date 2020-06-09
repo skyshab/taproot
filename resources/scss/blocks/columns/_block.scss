@@ -45,6 +45,7 @@
     .wp-block-column {
 
         margin-right: var( --block-spacing );
+        flex-basis: 50%;
 
         // last column
         &:last-child {
