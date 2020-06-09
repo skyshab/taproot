@@ -93,9 +93,13 @@
 
 
     // Sticky posts.
-    &.sticky {
+    &.is-sticky {
         border: 1px solid var( --colors--meta-medium );
         border-bottom: none;
         @extend .has-block-padding;
+
+        > :last-child {
+            margin-bottom: 0;
+        }
     }
 }
