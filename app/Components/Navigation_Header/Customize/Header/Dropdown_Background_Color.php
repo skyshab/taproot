@@ -61,8 +61,8 @@ class Dropdown_Background_Color extends Color {
         $styles->add([
             'selector' => '.menu--header__item.has-children  .menu__sub-menu',
             'styles' => [
-                'background-color' => Mod::get( 'nav--header--dropdown--background-color' ),
-                'border-color' => Mod::get( 'nav--header--dropdown--background-color' )
+                'background-color'  => Mod::get( $this->id ),
+                'border-color'      => Mod::get( $this->id )
                  // border color is needed for the pointers
             ],
             'screen' => Functions::get_desktop_screen(),
