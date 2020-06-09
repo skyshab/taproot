@@ -37,15 +37,19 @@ class Template {
         $defaults = [
             'class'     => 'entry__link',
             'text'      => Mod::get( "{$post_type}--archive-entry--link--readmore" ),
-            'button'    => ('button' === Mod::get( "{$post_type}--archive-entry--link--type" ) ) ? true : false,
             'position'  => Mod::get( "{$post_type}--archive-entry--link--position" ),
+            'type'      => Mod::get( "{$post_type}--archive-entry--link--type" )
         ];
 
         $args = wp_parse_args( $args, $defaults);
 
+        if( $args['type'] === 'none' || $args['type'] === 'inline' ) {
+            return;
+        }
+
         $link_class = $args['class'];
 
-        if( $args['button'] ) {
+        if( $args['type'] && 'button' === $args['type'] ) {
             $link_class .= ' taproot-button';
         }
 
