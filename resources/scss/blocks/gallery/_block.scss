@@ -6,168 +6,50 @@
 /// @link   https://taproot-theme.com
 ////
 
-// // The wrapper element for the entire gallery.
-// figure.wp-block-gallery {
-//     display:         flex;
-//     flex-wrap:       wrap;
-//     list-style-type: none;
-//     padding:         0;
-//     margin:          0 -8px 0 -8px;
-
-//     // Left/right aligned gallery. Note that this refers to the entire
-//     // gallery and not individual images.
-//     &.alignleft,
-//     &.alignright {
-//         max-width: content-width() / 2;
-//         width:     100%;
-//     }
-// }
-
-// // The wrapper for individual gallery images/figures.
-// .blocks-gallery-item {
-//     margin:          8px;
-//     display:         flex;
-//     flex-grow:       1;
-//     flex-direction:  column;
-//     justify-content: center;
-//     position:        relative;
-
-//     // Image figure.
-//     figure {
-//         margin:      0;
-//         height:      100%;
-
-//         // IE11 doesn't support flex and can't read this.
-//         @supports( position: sticky ) {
-//             display:         flex;
-//             align-items:     flex-end;
-//             justify-content: flex-start;
-//         }
-//     }
-
-//     img {
-//         display:   block;
-//         max-width: 100%;
-//         height:    auto;
-
-//         // Set an explicit width for IE.
-//         width: 100%;
-
-//         // IE11 can't read this.
-//         @supports( position: sticky ) {
-//             width: auto;
-//         }
-//     }
-
-//     figcaption {
-//         position:   absolute;
-//         bottom:     0;
-//         width:      100%;
-//         max-height: 100%;
-//         padding:    40px 10px 5px;
-//         text-align: center;
-//         color:      #ffffff;
-//         background: linear-gradient(
-//             0deg,
-//             rgba( #000000, 0.7 ) 0,
-//             rgba( #000000, 0.3 ) 60%,
-//             transparent
-//         );
-
-//         img {
-//             display: inline;
-//         }
-//     }
-// }
-
-// // Cropped images.
-// .is-cropped .blocks-gallery-item {
-//     a,
-//     img {
-//         flex:       1;
-//         width:      100%;
-
-//         // IE11 doesn't support object-fit.
-//         @supports( position: sticky ) {
-//             flex:       1;
-//             height:     100%;
-//             object-fit: cover;
-//         }
-//     }
-// }
-
-// // Fallback to 2 columns.
-// .blocks-gallery-item {
-//     width: calc( 100% / 2 - 16px );
-// }
-
-// // 1 column.
-// .columns-1 .blocks-gallery-item {
-//     width: calc( 100% / 1 - 16px );
-// }
-
-// // 3-8 columns on larger screens.
-// @media ( min-width: break( small ) ) {
-
-//     @for $i from 3 through 8 {
-
-//         .columns-#{ $i } .blocks-gallery-item {
-//             width: calc( 100% / #{ $i } - 16px );
-//         }
-//     }
-// }
-
-
-$grid-unit-20: 8px;
-
-$content-width: 640px;
-
-// Styles from Twenty Twenty
-
-figure.wp-block-gallery,
-.blocks-gallery-grid {
+figure.wp-block-gallery, .blocks-gallery-grid {
 	display: flex;
 	flex-wrap: wrap;
-	list-style-type: none;
 	padding: 0;
-	margin: 0;
+    margin: 0;
+}
 
-	.blocks-gallery-image,
-	.blocks-gallery-item {
-		// Add space between thumbnails, and unset right most thumbnails later.
-		margin: 0 $grid-unit-20 $grid-unit-20 0;
+.blocks-gallery-grid {
+	list-style-type: none;
+}
+
+figure.wp-block-gallery {
+
+    --gallery-grid-spacing: 1em;
+
+	.blocks-gallery-image, .blocks-gallery-item {
+
+        // Add space between thumbnails, and unset right most thumbnails later.
+		margin: 0 var( --gallery-grid-spacing ) var( --gallery-grid-spacing ) 0;
+		width: calc( 50% - var( --gallery-grid-spacing ) );
 		display: flex;
 		flex-grow: 1;
 		flex-direction: column;
 		justify-content: center;
 		position: relative;
 
+		&:nth-of-type(even) {
+			margin-right: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
 		figure {
 			margin: 0;
 			height: 100%;
-
-			// IE doesn't support flex so omit that.
-			@supports (position: sticky) {
-				display: flex;
-				align-items: flex-end;
-				justify-content: flex-start;
-			}
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
 		}
 
 		img {
 			display: block;
-			max-width: 100%;
-			height: auto;
-		}
-
-		// IE doesn't handle cropping, so we need an explicit width here.
-		img {
-			width: 100%;
-
-			// IE11 doesn't read rules inside this query. They are applied only to modern browsers.
-			@supports (position: sticky) {
-				width: auto;
-			}
 		}
 
 		figcaption {
@@ -179,7 +61,6 @@ figure.wp-block-gallery,
 			padding: 40px 10px 9px;
 			color: white;
 			text-align: center;
-			// font-size: $default-font-size;
 			background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0, rgba(0, 0, 0, 0.3) 70%, transparent);
 
 			img {
@@ -189,46 +70,35 @@ figure.wp-block-gallery,
 	}
 
 	// Cropped
-	&.is-cropped .blocks-gallery-image,
-	&.is-cropped .blocks-gallery-item {
-		a,
-		img {
-			// IE11 doesn't support object-fit, so just make sure images aren't skewed.
-			// The following rules are for all browsers.
-			width: 100%;
+    &.is-cropped {
 
-			// IE11 doesn't read rules inside this query. They are applied only to modern browsers.
-			@supports (position: sticky) {
-				height: 100%;
-				flex: 1;
-				object-fit: cover;
-			}
-		}
-	}
+        .blocks-gallery-image, .blocks-gallery-item {
 
-	// On mobile and responsive viewports, we allow only 1 or 2 columns at the most.
-	& .blocks-gallery-image,
-	& .blocks-gallery-item {
-		width: calc(50% - #{ $grid-unit-20 });
+            a, img {
+                width: 100%;
+                height: 100%;
+                flex: 1;
+                object-fit: cover;
+            }
+        }
+    }
 
-		&:nth-of-type(even) {
-			margin-right: 0;
-		}
-	}
-
-	&.columns-1 .blocks-gallery-image,
-	&.columns-1 .blocks-gallery-item {
-		width: 100%;
-		margin-right: 0;
-	}
+    // Single column.
+    &.columns-1 {
+        .blocks-gallery-image, .blocks-gallery-item {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
 
 	// Beyond mobile viewports, we allow up to 8 columns.
 	@include screen('tablet-and-up') {
+
 		@for $i from 3 through 8 {
 			&.columns-#{ $i } .blocks-gallery-image,
 			&.columns-#{ $i } .blocks-gallery-item {
-				width: calc(#{ 100% / $i } - #{ $grid-unit-20 * ( $i - 1 ) / $i });
-				margin-right: $grid-unit-20;
+				width: calc(#{ 100% / $i } - var( --gallery-grid-spacing ) * #{( $i - 1 ) / $i} );
+				margin-right: var( --gallery-grid-spacing );
 			}
 		}
 
@@ -241,15 +111,8 @@ figure.wp-block-gallery,
 		}
 	}
 
-	// Last item always needs margins reset.
-	.blocks-gallery-image:last-child,
-	.blocks-gallery-item:last-child {
-		margin-right: 0;
-	}
-
 	// Apply max-width to floated items that have no intrinsic width.
-	&.alignleft,
-	&.alignright {
+	&.alignleft, &.alignright {
 		max-width: calc( var( --content-width ) / 2 );
 		width: 100%;
 	}
