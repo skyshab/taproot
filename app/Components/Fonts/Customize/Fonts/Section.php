@@ -86,7 +86,7 @@ class Section extends SectionAbstract {
             esc_html__( 'Visit', 'taproot' ),
             esc_url( 'https://fonts.google.com' ),
             esc_html__( 'Google Fonts', 'taproot' ),
-            esc_html__( 'to create your font profile. Paste in the font list from the end of the embed URL, or add desired fonts using the following formula: Each font name should be separated by a "|" and use a "+" for spaces. Also supports font weight syntax.', 'taproot' ),
+            esc_html__( "to create a font profile. Paste in the font list from the end of the embed URL. Each font name should be separated by a \"|\" and use a \"+\" for spaces. To start using the fonts, save and refresh the customizer.", 'taproot' ),
             esc_html__( 'Example: Oswald|Roboto+Slab:400,700', 'taproot' )
         );
     }

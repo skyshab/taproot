@@ -61,5 +61,5 @@ class Google extends Control {
      * @since 2.0.0
      * @var string
      */
-    public $transport = 'refresh';
+    public $transport = 'postMessage';
 }
