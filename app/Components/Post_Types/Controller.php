@@ -37,8 +37,6 @@ class Controller implements Bootable {
         add_filter( 'post_class', [ $this, 'entry_classes' ]  );
         add_filter( 'excerpt_more', [ $this, 'excerpt_more' ]  );
         add_filter( 'excerpt_length', [ $this, 'excerpt_length' ] );
-        add_filter( 'hybrid/view/entry/header/hierarchy', [ $this, 'post_header_display' ] );
-        add_filter( 'taproot/featured-image/display', [ $this, 'featured_image_display' ], 10, 2 );
         add_filter( 'get_the_archive_title', [ $this, 'get_the_archive_title' ] );
         add_filter( 'taproot/breadcrumbs/supported-post-types', [ $this, 'breadcrumbs_support' ] );
     }
@@ -91,46 +89,6 @@ class Controller implements Bootable {
         $custom_length = Mod::get( "{$post_type}--archive-entry--excerpt--length" );
 
         return ( $custom_length ) ? $custom_length : $length;
-    }
-
-    /**
-     * Post title and meta display.
-     *
-     * Don't display post title and meta if we are showing them in the header.
-     *
-     * @since 2.0.0
-     * @param array
-     * @return array.
-     */
-    public function post_header_display( $hierarchy ) {
-
-        $display = get_post_meta( get_the_ID(), 'taproot_post_title_display', true );
-
-        if( 'header' === $display  || 'hide' === $display ) {
-            return [];
-        }
-
-        return $hierarchy;
-    }
-
-    /**
-     * Featured Image display.
-     *
-     * Don't display featured image if we are showing it in the header.
-     *
-     * @since 2.0.0
-     * @param array
-     * @return array.
-     */
-    public function featured_image_display( $display, $type ) {
-
-        if( is_singular() ) {
-            if( 'featured' === app('header/template')->get_custom_header_type() && 'header' !== $type ) {
-                return false;
-            }
-        }
-
-        return true;
     }
 
     /**

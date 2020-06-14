@@ -14,6 +14,7 @@
 namespace Taproot\Components\Post_Types;
 
 use Taproot\Tools\Mod;
+use function Taproot\Tools\get_the_single_id;
 
 /**
  * Template functions class.
@@ -66,5 +67,59 @@ class Template {
             esc_html( get_the_title() ),
             esc_html( $args['text'] )
         );
+    }
+
+    /**
+     * Returns the post title HTML.
+     *
+     * @since  5.0.0
+     * @access public
+     * @param  array  $args
+     * @return string
+     */
+    function get_the_title( array $args = [] ) {
+
+        $post_id = get_the_single_id();
+
+        $args = wp_parse_args( $args, [
+            'text'   => '%s',
+            'tag'    => is_front_page() ? 'h2' : 'h1',
+            'class'  => 'entry__title',
+            'before' => '',
+            'after'  => ''
+        ]);
+
+        if( $post_id ) {
+            $text = single_post_title( '', false );
+        }
+        elseif( is_archive() ) {
+           $text = get_the_archive_title();
+        }
+        else {
+            $text = the_title( '', '', false );
+        }
+
+        $text = sprintf( $args['text'], $text );
+
+        $html = sprintf(
+            '<%1$s class="%2$s">%3$s</%1$s>',
+            tag_escape( $args['tag'] ),
+            esc_attr( $args['class'] ),
+            $text
+        );
+
+        return apply_filters( 'taproot/entry/title', $args['before'] . $html . $args['after'] );
+    }
+
+    /**
+     * Displays the post title.
+     *
+     * @since  5.0.0
+     * @access public
+     * @param  array  $args
+     * @return string
+     */
+    function the_title( array $args = [] ) {
+        echo static::get_the_title( $args );
     }
 }
