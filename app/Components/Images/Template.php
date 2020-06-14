@@ -32,7 +32,7 @@ class Template {
     public static function the_featured_image( $args = [], $type = '' ) {
 
         // Filter to determine whether we should display the featured image
-        if( ! apply_filters( 'featured-image/display', TRUE, $type ) ) {
+        if( ! apply_filters( 'taproot/featured-image/display', TRUE, $type ) ) {
             return;
         }
 
