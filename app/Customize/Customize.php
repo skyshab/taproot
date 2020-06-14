@@ -375,7 +375,7 @@ class Customize implements Bootable {
      */
     public function controlsEnqueue() {
         wp_enqueue_script( 'taproot-customize-controls', asset( 'js/customize-controls.js' ), [ 'customize-controls' ], null, true );
-        wp_enqueue_style( 'taproot-customize-controls', asset( 'css/customize-controls.css' ), [], null );
+        wp_enqueue_style( 'taproot-customize-controls',  asset( 'css/customize-controls.css' ), [], null );
     }
 
     /**
@@ -386,6 +386,7 @@ class Customize implements Bootable {
      * @return void
      */
     public function previewEnqueue() {
-        wp_enqueue_script( 'taproot-customize-preview', asset( 'js/customize-preview.js' ), ['customize-preview'], filemtime( get_template_directory().'/style.css' ), true );
+        wp_enqueue_script( 'taproot-customize-preview', asset( 'js/customize-preview.js' ), [ 'customize-preview' ], filemtime( get_template_directory().'/style.css' ), true );
+        wp_enqueue_style( 'taproot-customize-preview',  asset( 'css/customize-preview.css' ), [], null );
     }
 }
