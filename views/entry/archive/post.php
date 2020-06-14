@@ -38,7 +38,7 @@
     </div>
 
     <div class="entry__footer entry__footer--archive">
-        <?php  Hybrid\app('post-types/template')->entry_link() ?>
+        <?php  Hybrid\app('entry/template')->entry_link() ?>
     </div>
 
 </article>

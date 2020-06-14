@@ -61,7 +61,7 @@ array_map( function( $component ) use ( $taproot ) {
     'Search',
     'Sidebar',
     'Background',
-    'Post_Types',
+    'Entry',
     'Images',
     'General',
     'Comments'
