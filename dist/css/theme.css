@@ -2837,6 +2837,9 @@ a:hover, a:active {
 	width: 100%;
 }
 
+.entry__header--archive {
+	margin-bottom: 1em;
+}
 .entry__header > :last-child {
 	margin-bottom: 1.5rem;
 	margin-bottom: var(--block-spacing);
@@ -3090,211 +3093,6 @@ a:hover, a:active {
 	display: inline-block;
 	width: 100%;
 }
-
-:root {
-	/* -----------------------------------------------------------------------------
-	 * Colors - Typography
-	 * ----------------------------------------------------------------------------- */
-	/* -----------------------------------------------------------------------------
-	 * Colors - Iconography
-	 * ----------------------------------------------------------------------------- */
-	--color-icon-focus: var( --colors--accent );
-	/* -----------------------------------------------------------------------------
-	 * Colors - UI
-	 * ----------------------------------------------------------------------------- */
-	--color-accent-primary: var( --colors--accent );
-	--color-accent-primary-hover: var( --colors--accent );
-	--color-accent-primary-active: rgba(var(--color-accent-primary), 0.9);
-	--color-accent-primary-background: rgba(var(--color-accent-primary), 0.07);
-	--color-accent-primary-multiday: rgba(var(--color-accent-primary), 0.24);
-	--color-accent-primary-multiday-hover: rgba(var(--color-accent-primary), 0.34);
-	--color-accent-primary-week-event: rgba(var(--color-accent-primary), 0.1);
-	--color-accent-primary-week-event-hover: rgba(var(--color-accent-primary), 0.2);
-	--color-accent-primary-week-event-featured: rgba(var(--color-accent-primary), 0.04);
-	--color-accent-primary-week-event-featured-hover: rgba(var(--color-accent-primary), 0.14);
-	--color-accent-secondary: #141827;
-	--color-accent-secondary-hover: rgba(var(--color-accent-secondary), 0.8);
-	--color-accent-secondary-active: rgba(var(--color-accent-secondary), 0.9);
-	--color-accent-secondary-background: rgba(var(--color-accent-secondary), 0.07);
-	/* -----------------------------------------------------------------------------
-	 * Colors - Borders & Misc
-	 * ----------------------------------------------------------------------------- */
-}
-
-.tribe-common .tribe-common-c-btn,
-.tribe-common a.tribe-common-c-btn {
-	background-color: #00a0d1;
-	background-color: var(--color-accent-primary);
-}
-.tribe-common .tribe-common-c-btn:focus, .tribe-common .tribe-common-c-btn:hover,
-.tribe-common a.tribe-common-c-btn:focus,
-.tribe-common a.tribe-common-c-btn:hover {
-	background-color: #00a0d1;
-	background-color: var(--color-accent-primary-hover);
-}
-.tribe-common .tribe-common-c-btn:active,
-.tribe-common a.tribe-common-c-btn:active {
-	background-color: rgba(#00a0d1, 0.9);
-	background-color: var(--color-accent-primary-active);
-}
-.tribe-common .tribe-common-c-btn:disabled,
-.tribe-common a.tribe-common-c-btn:disabled {
-	background-color: rgba(#00a0d1, 0.07);
-	background-color: var(--color-accent-primary-background);
-}
-.tribe-common .datepicker .datepicker-switch:hover, .tribe-common .datepicker .datepicker-switch:focus {
-	color: rgba(#141827, 0.8);
-	color: var(--color-accent-secondary-hover);
-}
-.tribe-common .datepicker .datepicker-switch:active {
-	color: rgba(#141827, 0.9);
-	color: var(--color-accent-secondary-active);
-}
-.tribe-common .datepicker .day.current,
-.tribe-common .datepicker .month.current,
-.tribe-common .datepicker .year.current {
-	background: rgba(#00a0d1, 0.07);
-	background: var(--color-accent-primary-background);
-}
-.tribe-common .datepicker .day.current:hover, .tribe-common .datepicker .day.current:focus, .tribe-common .datepicker .day.current.focused,
-.tribe-common .datepicker .month.current:hover,
-.tribe-common .datepicker .month.current:focus,
-.tribe-common .datepicker .month.current.focused,
-.tribe-common .datepicker .year.current:hover,
-.tribe-common .datepicker .year.current:focus,
-.tribe-common .datepicker .year.current.focused {
-	background: rgba(#00a0d1, 0.07);
-	background: var(--color-accent-primary-background);
-}
-.tribe-common .datepicker .day.active,
-.tribe-common .datepicker .month.active,
-.tribe-common .datepicker .year.active {
-	background: #00a0d1;
-	background: var(--color-accent-primary);
-}
-.tribe-common .datepicker .day.active:hover, .tribe-common .datepicker .day.active:focus, .tribe-common .datepicker .day.active.focused,
-.tribe-common .datepicker .month.active:hover,
-.tribe-common .datepicker .month.active:focus,
-.tribe-common .datepicker .month.active.focused,
-.tribe-common .datepicker .year.active:hover,
-.tribe-common .datepicker .year.active:focus,
-.tribe-common .datepicker .year.active.focused {
-	background: #00a0d1;
-	background: var(--color-accent-primary);
-}
-.tribe-common .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date,
-.tribe-common .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date-link {
-	color: #00a0d1;
-	color: var(--color-accent-primary);
-}
-.tribe-common .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date-link:hover, .tribe-common .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date-link:focus {
-	color: #00a0d1;
-	color: var(--color-accent-primary-hover);
-}
-.tribe-common .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date-link:active {
-	color: rgba(#00a0d1, 0.9);
-	color: var(--color-accent-primary-active);
-}
-.tribe-common .tribe-events-calendar-month__day--past .tribe-events-calendar-month__mobile-events-icon--event {
-	background-color: var(--color-icon-active);
-}
-.tribe-common .tribe-events-calendar-month__day-cell--mobile:hover, .tribe-common .tribe-events-calendar-month__day-cell--mobile:focus {
-	background-color: var(--color-background-secondary);
-}
-.tribe-common .tribe-events-calendar-month__day-cell--selected {
-	background-color: #00a0d1;
-	background-color: var(--color-accent-primary);
-}
-.tribe-common .tribe-events-calendar-month__day-cell--selected:hover, .tribe-common .tribe-events-calendar-month__day-cell--selected:focus {
-	background-color: #00a0d1;
-	background-color: var(--color-accent-primary);
-}
-.tribe-common .tribe-events-calendar-month__day-date-link {
-	color: #141827;
-	color: var(--color-accent-secondary);
-}
-.tribe-common .tribe-events-calendar-month__day-date-link:hover, .tribe-common .tribe-events-calendar-month__day-date-link:focus {
-	color: rgba(#141827, 0.8);
-	color: var(--color-accent-secondary-hover);
-}
-.tribe-common .tribe-events-calendar-month__day-date-link:active {
-	color: rgba(#141827, 0.9);
-	color: var(--color-accent-secondary-active);
-}
-.tribe-common .tribe-events-calendar-month__mobile-events-icon--event {
-	background-color: #00a0d1;
-	background-color: var(--color-accent-primary);
-}
-.tribe-common .tribe-events-c-ical__link:before {
-	content: "+";
-	background-image: none;
-	height: 16px;
-}
-.tribe-common .tribe-events-c-ical__link:hover:before {
-	background-image: none;
-}
-.tribe-common .tribe-common-svgicon--featured {
-	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='20' xmlns='http:…3E%3Cpath d='M0 0h16v20l-7.902-5.122L0 20z' fill='%23334aff'/%3E%3C/svg%3E");
-	display: none;
-}
-.tribe-common .tribe-events-c-ical__link {
-	color: #00a0d1;
-	color: var(--color-accent-primary);
-	border-color: currentColor;
-}
-.tribe-common .tribe-events-c-ical__link:hover, .tribe-common .tribe-events-c-ical__link:focus, .tribe-common .tribe-events-c-ical__link:active {
-	background-color: #00a0d1;
-	background-color: var(--color-accent-primary);
-}
-.tribe-common .tribe-events-calendar-latest-past__event-row--featured .tribe-events-calendar-latest-past__event-date-tag-datetime:after {
-	background-color: #00a0d1;
-	background-color: var(--color-accent-primary);
-}
-.tribe-common .tribe-events-calendar-month-mobile-events__mobile-event-datetime-featured-text {
-	color: #00a0d1;
-	color: var(--color-accent-primary);
-}
-.tribe-common .tribe-events-c-events-bar__search-button:before {
-	background-color: #00a0d1;
-	background-color: var(--color-accent-primary);
-}
-.tribe-common .tribe-events-calendar-month__calendar-event--featured:before {
-	background-color: #00a0d1;
-	background-color: var(--color-accent-primary);
-}
-.tribe-common .tribe-events-c-view-selector__button:before {
-	background-color: #00a0d1;
-	background-color: var(--color-accent-primary);
-}
-
-.tribe-block__venue .tribe-block__venue__meta .tribe-block__venue__address a {
-	color: #00a0d1;
-	color: var(--color-accent-primary);
-}
-
-.tribe-events .tribe-events-calendar-list__event-row--featured .tribe-events-calendar-list__event-date-tag-datetime:after {
-	background-color: #00a0d1;
-	background-color: var(--color-accent-primary);
-}
-
-.tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-list__event-datetime-featured-text {
-	color: #00a0d1;
-	color: var(--color-accent-primary);
-}
-
-.tribe-events-calendar-list__event {
-	border: none !important;
-}
-
-.entry--type-tribe_events {
-	margin-bottom: 1.5rem;
-	margin-bottom: var(--block-spacing);
-}
-
-.tribe-events-single.tribe-blocks-editor {
-	margin-bottom: 0 !important;
-}
-
 @media (min-width: 480px){
 	.alignleft, .alignright {
 		max-width: 50%;
@@ -3310,7 +3108,6 @@ a:hover, a:active {
 		margin-left: var(--text-spacing);
 	}
 }
-
 @media ( min-width: 768px ){
 	.wp-block-columns {
 		display: flex;
@@ -3518,7 +3315,6 @@ a:hover, a:active {
 		padding: 0 1em;
 	}
 }
-
 @media ( min-width: 768px ) and ( max-width: 1024px ){
 	.app-main--sidebar-right .alignwide, .app-main--sidebar-left .alignwide {
 		width: 90vw;
@@ -3533,13 +3329,11 @@ a:hover, a:active {
 		--footer--widgets--gutter: 1.5em;
 	}
 }
-
 @media (min-width: 783px){
 	.admin-bar .app-header:not(.app-header--fixed) .skip-link:focus {
 		transform: translateY(32px);
 	}
 }
-
 @media ( min-width: 1025px ){
 	.app-main, .sidebar {
 		box-sizing: content-box;
@@ -3775,7 +3569,6 @@ a:hover, a:active {
 		padding: 0 1em;
 	}
 }
-
 @media (min-width: break(small)){
 	.wp-block-latest-posts.columns-2 li {
 		width: calc( ( 100% / 2 ) - 16px );
@@ -3793,7 +3586,6 @@ a:hover, a:active {
 		width: calc( ( 100% / 6 ) - 16px );
 	}
 }
-
 @media ( max-width: 1024px ){
 	.app-content__container {
 		flex-direction: column;
@@ -3961,13 +3753,11 @@ a:hover, a:active {
 		padding-bottom: 1.5em;
 	}
 }
-
 @media (max-width: 782px){
 	.admin-bar .app-header:not(.app-header--fixed) .skip-link:focus {
 		transform: translateY(46px);
 	}
 }
-
 @media ( max-width: 767px ){
 	.wp-block-group.alignfull,
 .wp-block-columns.alignfull,
@@ -4177,12 +3967,7 @@ a:hover, a:active {
 	.comments__list .children {
 		padding-left: 0.62em;
 	}
-	.tribe-mobile #main {
-		padding-top: calc( ( 100vw - 90vw) / 2 );
-		padding-top: var(--layout-padding);
-	}
 }
-
 @media (prefers-reduced-motion: reduce){
 	.wp-social-link {
 		transition-duration: 0s;
