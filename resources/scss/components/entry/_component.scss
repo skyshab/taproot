@@ -7,7 +7,11 @@
 ////
 
 @import 'entry';
-@import 'single';
-@import 'page';
+@import 'header';
+@import 'title';
+@import 'image';
+@import 'content';
+@import 'byline';
 @import 'archive';
-@import 'archive-entry';
+@import 'archive-page';
+@import 'footer';

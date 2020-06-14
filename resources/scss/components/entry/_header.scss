@@ -1,0 +1,18 @@
+////
+/// Entry - Header
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.entry__header {
+
+    &--archive {
+        // margin-bottom: 1em;
+    }
+
+    > :last-child {
+        margin-bottom: var( --block-spacing );
+    }
+}

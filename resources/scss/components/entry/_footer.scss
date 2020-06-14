@@ -1,0 +1,16 @@
+////
+/// Entry - Footer
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.entry__footer {
+
+    &--archive {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: var( --block-spacing );
+    }
+}

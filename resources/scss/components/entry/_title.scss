@@ -1,0 +1,42 @@
+////
+/// Entry component.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.entry__title {
+
+    margin: 0;
+    font-size:      var( --entry--title--font-size );
+    line-height:    var( --entry--title--line-height );
+    color:          var( --entry--title--text-color );
+
+    &--archive {
+
+        padding-top:    0;
+        margin-bottom:  0.2em;
+        line-height:    1.13em;
+        font-size:      var( --archive-entry--title--font-size );
+        color:          var( --archive-entry--title--link-color );
+
+        a, a:visited {
+            color: inherit;
+        }
+
+        a:hover {
+            color:      var( --archive-entry--title--link-color--hover );
+        }
+    }
+}
+
+
+// Archive page title
+.archive-header__title {
+    margin-top: 0;
+    font-size:          var( --archive--title--font-size );
+    line-height:        var( --archive--title--line-height );
+    color:              var( --archive--title--text-color );
+}
+
