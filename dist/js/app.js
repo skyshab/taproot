@@ -1282,6 +1282,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /***/ }),
 
+/***/ "./resources/scss/customize-preview.scss":
+/*!***********************************************!*\
+  !*** ./resources/scss/customize-preview.scss ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/scss/editor.scss":
 /*!************************************!*\
   !*** ./resources/scss/editor.scss ***!
@@ -1305,16 +1316,17 @@ document.addEventListener('DOMContentLoaded', function () {
 /***/ }),
 
 /***/ 0:
-/*!*************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/scss/theme.scss ./resources/scss/editor.scss ./resources/scss/customize-controls.scss ***!
-  \*************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/scss/theme.scss ./resources/scss/editor.scss ./resources/scss/customize-controls.scss ./resources/scss/customize-preview.scss ***!
+  \*****************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /Users/sky/Repos/skyshab/taproot/resources/js/app.js */"./resources/js/app.js");
 __webpack_require__(/*! /Users/sky/Repos/skyshab/taproot/resources/scss/theme.scss */"./resources/scss/theme.scss");
 __webpack_require__(/*! /Users/sky/Repos/skyshab/taproot/resources/scss/editor.scss */"./resources/scss/editor.scss");
-module.exports = __webpack_require__(/*! /Users/sky/Repos/skyshab/taproot/resources/scss/customize-controls.scss */"./resources/scss/customize-controls.scss");
+__webpack_require__(/*! /Users/sky/Repos/skyshab/taproot/resources/scss/customize-controls.scss */"./resources/scss/customize-controls.scss");
+module.exports = __webpack_require__(/*! /Users/sky/Repos/skyshab/taproot/resources/scss/customize-preview.scss */"./resources/scss/customize-preview.scss");
 
 
 /***/ })

@@ -105,7 +105,8 @@ var sassConfig = {
 // Compile SASS/CSS.
 mix.sass( `${devPath}/scss/theme.scss`,              'dist/css', sassConfig )
    .sass( `${devPath}/scss/editor.scss`,             'dist/css', sassConfig )
-   .sass( `${devPath}/scss/customize-controls.scss`, 'dist/css', sassConfig );
+   .sass( `${devPath}/scss/customize-controls.scss`, 'dist/css', sassConfig )
+   .sass( `${devPath}/scss/customize-preview.scss`,  'dist/css', sassConfig );
 
 /*
  * Add custom Webpack configuration.

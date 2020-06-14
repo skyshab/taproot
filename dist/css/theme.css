@@ -1821,42 +1821,42 @@ body.boxed-layout .app {
 	grid-template-rows: auto auto 1fr auto;
 }
 
-.additional-header-content {
+.app-header__hero {
 	z-index: 1;
 }
-.additional-header-content__title {
+.app-header__hero__title {
+	margin-top: 0;
 	margin-bottom: 12px;
 	color: inherit;
 }
-.additional-header-content__meta {
+.app-header__hero__meta {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	color: inherit;
+	margin: 0;
 }
-.additional-header-content__meta svg {
+.app-header__hero__meta svg {
 	margin-right: 0.3em;
 }
-.additional-header-content__meta a {
+.app-header__hero__meta a {
 	color: inherit;
 }
-.additional-header-content__author {
+.app-header__hero__author {
 	margin-right: 1em;
 	display: flex;
 	align-items: center;
 }
-.app-header--has-custom-header .additional-header-content {
+.app-header--has-custom-header .app-header__hero {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	height: 100%;
-	padding: calc( ( 100vw - 90vw) / 2 );
-	padding: var(--layout-padding);
-	padding-top: 0;
+	padding-bottom: calc( ( 100vw - 90vw) / 2 );
+	padding-bottom: var(--layout-padding);
 }
-
-.app-header--has-custom-header.app-header--fixed .additional-header-content {
+.app-header--has-custom-header.app-header--fixed .app-header__hero {
 	display: none;
 }
 
@@ -2832,10 +2832,16 @@ a:hover, a:active {
 	margin-left: auto;
 	margin-right: auto;
 }
-.entry__header {
+.entry-term-group {
+	display: inline-block;
+	width: 100%;
+}
+
+.entry__header > :last-child {
 	margin-bottom: 1.5rem;
 	margin-bottom: var(--block-spacing);
 }
+
 .entry__title {
 	margin: 0;
 	font-size: 2.5em;
@@ -2843,66 +2849,6 @@ a:hover, a:active {
 	line-height: 1.2;
 	line-height: var(--entry--title--line-height);
 	color: var(--entry--title--text-color);
-}
-.entry__byline {
-	display: flex;
-	flex-wrap: wrap;
-	margin-top: 0;
-}
-.entry__byline__item {
-	margin-right: 0.8em;
-	flex-shrink: 0;
-	display: flex;
-	align-items: center;
-}
-.entry__byline .taproot-icon {
-	margin-right: 0.2em;
-}
-.entry-term-group {
-	display: inline-block;
-	width: 100%;
-}
-
-.entry_image {
-	display: block;
-	margin-bottom: 1.5rem;
-	margin-bottom: var(--block-spacing);
-}
-.entry__byline--single {
-	margin: 0;
-	margin-top: 0.4em;
-	font-size: 1em;
-	font-size: var(--entry--meta--font-size);
-	color: inherit;
-	color: var(--entry--meta--text-color);
-}
-.entry__byline--single .taproot-icon {
-	color: inherit;
-	color: var(--entry--meta--icon-color);
-}
-.entry__byline--single a, .entry__byline--single a:visited {
-	color: inherit;
-}
-
-.archive-header__title {
-	margin-top: 0;
-	font-size: 2.5em;
-	font-size: var(--archive--title--font-size);
-	line-height: 1.2;
-	line-height: var(--archive--title--line-height);
-	color: var( --typography--headings--text-color );
-	color: var(--archive--title--text-color);
-}
-
-.entry--archive {
-	border-top: 1px solid #d8d8d8;
-	border-top: 1px solid var(--colors--meta-medium);
-	padding-top: 1.5rem;
-	padding-top: var(--block-spacing);
-}
-.entry--archive:last-of-type {
-	border-bottom: 1px solid #d8d8d8;
-	border-bottom: 1px solid var(--colors--meta-medium);
 }
 .entry__title--archive {
 	padding-top: 0;
@@ -2920,6 +2866,64 @@ a:hover, a:active {
 	color: #00a0d1;
 	color: var(--archive-entry--title--link-color--hover);
 }
+
+.archive-header__title {
+	margin-top: 0;
+	font-size: 2.5em;
+	font-size: var(--archive--title--font-size);
+	line-height: 1.2;
+	line-height: var(--archive--title--line-height);
+	color: var( --typography--headings--text-color );
+	color: var(--archive--title--text-color);
+}
+
+.entry_image {
+	display: block;
+	margin-bottom: 1.5rem;
+	margin-bottom: var(--block-spacing);
+}
+.entry__image--archive {
+	margin-bottom: 1.5rem;
+	margin-bottom: var(--block-spacing);
+}
+
+.entry__content--archive > :first-child, .entry__summary--archive > :first-child {
+	margin-top: 0;
+}
+.entry__content--archive:last-child :last-child, .entry__summary--archive:last-child :last-child {
+	margin-bottom: 1.5em;
+	margin-bottom: var(--text-spacing);
+}
+
+.entry__byline {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 0;
+}
+.entry__byline__item {
+	margin-right: 0.8em;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+}
+.entry__byline .taproot-icon {
+	margin-right: 0.2em;
+}
+.entry__byline--single {
+	margin: 0;
+	margin-top: 0.4em;
+	font-size: 1em;
+	font-size: var(--entry--meta--font-size);
+	color: inherit;
+	color: var(--entry--meta--text-color);
+}
+.entry__byline--single .taproot-icon {
+	color: inherit;
+	color: var(--entry--meta--icon-color);
+}
+.entry__byline--single a, .entry__byline--single a:visited {
+	color: inherit;
+}
 .entry__byline--archive {
 	font-size: var(--archive-entry--meta--font-size);
 	color: var(--archive-entry--meta--text-color);
@@ -2934,25 +2938,16 @@ a:hover, a:active {
 .entry__byline--archive .taproot-icon {
 	color: var(--archive-entry--meta--icon-color);
 }
-.entry__content--archive > :first-child, .entry__summary--archive > :first-child {
-	margin-top: 0;
+
+.entry--archive {
+	border-top: 1px solid #d8d8d8;
+	border-top: 1px solid var(--colors--meta-medium);
+	padding-top: 1.5rem;
+	padding-top: var(--block-spacing);
 }
-.entry__content--archive:last-child :last-child, .entry__summary--archive:last-child :last-child {
-	margin-bottom: 1.5em;
-	margin-bottom: var(--text-spacing);
-}
-.entry__image--archive {
-	margin-bottom: 1.5rem;
-	margin-bottom: var(--block-spacing);
-}
-.entry__header--archive {
-	margin-bottom: 1em;
-}
-.entry__footer--archive {
-	display: flex;
-	flex-direction: column;
-	margin-bottom: 1.5rem;
-	margin-bottom: var(--block-spacing);
+.entry--archive:last-of-type {
+	border-bottom: 1px solid #d8d8d8;
+	border-bottom: 1px solid var(--colors--meta-medium);
 }
 .entry__link {
 	font-size: 1em;
@@ -2965,6 +2960,17 @@ a:hover, a:active {
 }
 .entry.is-sticky > :last-child {
 	margin-bottom: 0;
+}
+
+.archive-header__description p {
+	margin-top: 0;
+}
+
+.entry__footer--archive {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1.5rem;
+	margin-bottom: var(--block-spacing);
 }
 
 .taproot-icon {
