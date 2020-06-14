@@ -56,3 +56,45 @@ function asset( $path ) {
 
     return get_theme_file_uri( 'dist' . $path );
 }
+
+/**
+ * Get the single ID.
+ *
+ * Single "home" page does not work reliably with get_the_ID.
+ * This function will return the single ID instead of the id
+ * of the first post in the loop.
+ *
+ * @since  2.0.0
+ * @access public
+ * @return int
+ */
+function get_the_single_id() {
+
+    if( is_front_page() && is_home() ) {
+
+        // Front Page and Blog Page
+        return false;
+
+    } elseif( is_front_page() ) {
+
+        // Static Front Page
+        $post_id = get_option( 'page_on_front' );
+
+    } elseif( is_home() ) {
+
+        // Static Blog Page
+        $post_id = get_option( 'page_for_posts' );
+
+    } elseif( is_singular() ) {
+
+        // Single pages, posts, cpts, etc
+        $post_id = get_the_ID();
+
+    } else {
+
+        // Everything else
+        return false;
+    }
+
+    return $post_id;
+}
