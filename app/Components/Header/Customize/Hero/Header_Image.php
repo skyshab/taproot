@@ -56,13 +56,42 @@ class Header_Image extends Control {
             // `the_custom_header_markup()` function unless video is supported.
             if ( ! current_theme_supports( 'custom-header', 'video' ) ) {
                 $manager->selective_refresh->add_partial( $this->id, [
-                    'selector'            => '#wp-custom-header',
+                    'selector'            => '.app-header--has-custom-header--default #wp-custom-header',
                     'render_callback'     => 'the_custom_header_markup',
                     'container_inclusive' => true,
                     'fallback_refresh'    => false
                 ]);
             }
         }
+    }
+
+    /**
+     * Preview Styles
+     *
+     * @since  2.0.0
+     * @access public
+     * @return string
+     */
+    public function previewStyles() {
+
+        return <<< JS
+        wp.customize( "{$this->id}", function( value ) {
+
+            value.bind( function( to ) {
+
+                const header = document.querySelector( '.app-header' );
+
+                if( header.classList.contains('app-header--has-custom-header--default') ) {
+
+                    if( ! to || '' === to || 'remove-header' === to ) {
+                        header.classList.remove('app-header--has-custom-header');
+                    } else {
+                        header.classList.add('app-header--has-custom-header');
+                    }
+                }
+            });
+        });
+JS;
     }
 
     /**

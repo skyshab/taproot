@@ -68,7 +68,7 @@ class Overlay_Color extends Color {
         if ( isset( $manager->selective_refresh ) ) {
 
             $manager->selective_refresh->add_partial( $this->id, [
-                'selector'            => '#taproot-overlay',
+                'selector'            => '#custom-header-overlay',
                 'render_callback'     => 'Taproot\Components\Header\Template::get_overlay',
                 'container_inclusive' => true,
                 'fallback_refresh'    => false

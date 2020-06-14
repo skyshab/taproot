@@ -15,6 +15,7 @@ namespace Taproot\Components\Header;
 
 use Hybrid\Contracts\Bootable;
 use Taproot\Tools\Mod;
+use function Taproot\Tools\get_the_single_id;
 use function Hybrid\app;
 use function Hybrid\View\render;
 use function wp_get_attachment_image_src as get_featured_url;
@@ -40,12 +41,12 @@ class Controller implements Bootable {
         add_filter( 'hybrid/attr/app-header/class', [ $this, 'header_classes' ], 10, 2 );
         add_filter( 'hybrid/site/title', [ $this, 'site_title' ]  );
         add_filter( 'hybrid/site/description', [ $this, 'site_description' ]  );
-        add_action( 'taproot/header/additional-content', [ $this, 'additional_content' ] );
-        add_filter( 'theme_mod_header_image', [ $this, 'custom_header' ], 100 );
-        add_filter( 'theme_mod_header--hero--overlay-color', [ $this, 'hero_overlay_color' ], 100 );
-        add_filter( 'theme_mod_header--hero--overlay-opacity', [ $this, 'hero_overlay_opacity' ], 100 );
+        add_action( 'taproot/header/content', [ $this, 'hero_content' ] );
         add_filter( 'get_header_image_tag', [ $this, 'add_overlay' ], 100 );
         add_filter( 'taproot/editor-data', [ $this, 'editor_data' ] );
+        add_filter( 'taproot/featured-image/display', [ $this, 'featured_image_display' ], 10, 2 );
+        add_filter( 'taproot/entry/title', [ $this, 'post_title_display' ] );
+        add_filter( 'hybrid/view/entry/byline/hierarchy', [ $this, 'post_byline_display' ] );
     }
 
     /**
@@ -109,7 +110,7 @@ class Controller implements Bootable {
             $fixed_type = Mod::get( 'header--fixed--fixed-type' );
 
             // Don't do sticky headers on custom header pages
-            if( $this->hasCustomHeader() && 'sticky' === $fixed_type ) {
+            if( app( 'header/template' )->has_custom_header_url() && 'sticky' === $fixed_type ) {
                 $classes[] = 'app-header--static';
             }
             else {
@@ -162,153 +163,27 @@ class Controller implements Bootable {
             $classes[] = 'app-header--has-topnav';
         }
 
-        // Custom header image
-        if( $this->hasCustomHeader() ) {
+        // Custom header
+        if( app( 'header/template' )->has_custom_header() ) {
             $classes[] = 'app-header--has-custom-header';
         }
 
+        // Custom header
+        if( app( 'header/template' )->has_custom_header_url() ) {
+            $classes[] = 'app-header--has-custom-header-image';
+        }
+
+        // Add the type in the customize preview, even if there isn't a current image.
+        // This allows populating the "default" image where needed.
+        if( is_customize_preview() || app( 'header/template' )->has_custom_header_url() ) {
+
+            // If header type, add class
+            if( $header_type = app( 'header/template' )->get_custom_header_type() ) {
+                $classes[] = sprintf( 'app-header--has-custom-header--%s', $header_type );
+            }
+        }
+
         return $classes;
-    }
-
-    /**
-     * Filter for Custom Header Image display
-     *
-     * Only display header image on front page
-     *
-     * @since 2.0.0
-     * @return string
-     */
-    public function custom_header( $value = false ) {
-
-        // Single posts pages and custom post types
-        if( is_singular() ) {
-
-            // Get hero type
-            $header_image_type = app( 'header/template' )->get_custom_header_type();
-
-            // No hero image
-            if( 'none' === $header_image_type ) {
-                return false;
-            }
-
-            // Featured image for hero
-            elseif( 'featured' === $header_image_type ) {
-                return get_featured_url( featured_id( get_the_ID() ), 'full', false )[0];
-            }
-
-            // Custom hero image
-            elseif( 'custom' === $header_image_type ) {
-                return get_post_meta( get_the_ID(), 'taproot_custom_header_image', true );
-            }
-
-            // Default hero image
-            elseif( $value ) {
-                return $value;
-            }
-
-            return false;
-        }
-
-        // Return the hero image value
-        return $value;
-    }
-
-    /**
-     * Does the page have a custom header?
-     *
-     * @since 2.0.0
-     * @return void
-     */
-    public function hasCustomHeader() {
-
-        // Get the custom header
-        $custom_header = Mod::get( 'header_image', TRUE );
-
-        // If string 'remove-header' return false.
-        // This keyword is used by core.
-        if( 'remove-header' === $custom_header ) {
-            $custom_header = false;
-        }
-
-        // Is there a custom header or not
-        return ( $custom_header ) ? true : false;
-    }
-
-    /**
-     * Filter for custom header overlay color
-     *
-     *
-     * @since 2.0.0
-     * @param string
-     * @return string
-     */
-    public function hero_overlay_color( $value ) {
-
-        // Default homepage
-        if ( is_front_page() && is_home() ) {
-            return $value;
-        }
-
-        // Single posts pages and custom post types
-        if( is_singular() ) {
-
-            // Get the post id
-            $post_id = get_the_ID();
-
-            // Get the overlay type
-            $overlay_color_type = get_post_meta( $post_id, 'taprooot_hero_overlay_type', true );
-
-            // If custom overlay is set on the post, return the color value
-            if( 'custom' === $overlay_color_type ) {
-                return get_post_meta( $post_id, 'taprooot_hero_overlay_color', true );
-            }
-
-            // If no overlay option, return null
-            elseif( 'none' === $overlay_color_type ) {
-                return null;
-            }
-        }
-
-        // Return the overlay color value
-        return $value;
-    }
-
-    /**
-     * Filter for custom header overlay display
-     *
-     *
-     * @since 2.0.0
-     * @param string
-     * @return string
-     */
-    public function hero_overlay_opacity( $value ) {
-
-        // Default homepage
-        if ( is_front_page() && is_home() ) {
-            return $value;
-        }
-
-        // Single posts pages and custom post types
-        if( is_singular() ) {
-
-            // Get the post id
-            $post_id = get_the_ID();
-
-            // Get the overlay type
-            $overlay_color_type = get_post_meta( $post_id, 'taprooot_hero_overlay_type', true );
-
-            // Custom overlay
-            if( 'custom' === $overlay_color_type ) {
-                return get_post_meta( $post_id, 'taprooot_hero_overlay_opacity', true );
-            }
-
-            // No overlay
-            elseif( 'none' === $overlay_color_type ) {
-                return null;
-            }
-        }
-
-        return $value;
     }
 
     /**
@@ -320,7 +195,13 @@ class Controller implements Bootable {
      * @return string
      */
     public function add_overlay( $html ) {
-        return $html . app('header/template')->get_overlay();
+
+        if ( is_front_page() && is_home() ) {
+
+            $html .= app('header/template')->get_custom_header_overlay();
+        }
+
+        return $html;
     }
 
     /**
@@ -330,16 +211,92 @@ class Controller implements Bootable {
      * @param string
      * @return string
      */
-    public function additional_content() {
+    public function hero_content() {
 
-        // Get single post setting
-        $display = get_post_meta( get_the_ID(), 'taproot_post_title_display', true );
+        if( ! app('header/template')->has_custom_header_title() ) {
+            return;
+        }
 
-        // If the post is not set to display title in hero or if not singular, bail.
-        if( 'header' !== $display || ! is_singular() ) return;
-
-        \Hybrid\View\display( 'partials/custom-header-content' );
+        \Hybrid\View\display( 'partials/app-header-hero' );
     }
+
+    /**
+     * Post byline display.
+     *
+     * Don't display post byline if we are showing it in the header.
+     *
+     * @since 2.0.0
+     * @param array
+     * @return array.
+     */
+    public function post_byline_display( $hierarchy ) {
+
+        $post_id = get_the_single_id();
+
+        if( $post_id ) {
+
+            // Get the title display option.
+            $display = get_post_meta( $post_id, 'taproot_post_title_display', true );
+
+            // Are we showing the post title in the header or hiding it?
+            if( 'header' === $display  || 'hide' === $display ) {
+                return [];
+            }
+        }
+
+        // Otherwise, display the post header as per the hierarchy
+        return $hierarchy;
+    }
+
+
+    /**
+     * Featured Image display.
+     *
+     * Don't display featured image if we are showing it in the header.
+     *
+     * @since 2.0.0
+     * @param array
+     * @return array.
+     */
+    public function featured_image_display( $display, $type ) {
+
+        if( is_singular() ) {
+            if( 'featured' === app('header/template')->get_custom_header_type() && 'header' !== $type ) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * Post title and meta display.
+     *
+     * Don't display post title and meta if we are showing them in the header.
+     *
+     * @since 2.0.0
+     * @param array
+     * @return array
+     */
+    public function post_title_display( $markup ) {
+
+        $post_id = get_the_single_id();
+
+        if( $post_id ) {
+
+            // Get the title display option.
+            $display = get_post_meta( $post_id, 'taproot_post_title_display', true );
+
+            // Are we showing the post title in the header or hiding it?
+            if( 'header' === $display  || 'hide' === $display ) {
+                return '';
+            }
+        }
+
+        // Otherwise, display the post header item
+        return $markup;
+    }
+
 
     /**
      * Display Site Title filter

@@ -9,11 +9,12 @@
 /// @link   https://taproot-theme.com
 ////
 
-.additional-header-content {
+.app-header__hero {
 
     z-index: 1;
 
     &__title {
+        margin-top: 0;
         margin-bottom: 12px;
         color: inherit;
     }
@@ -23,6 +24,7 @@
         align-items: center;
         justify-content: center;
         color: inherit;
+        margin: 0;
 
         svg {
             margin-right: 0.3em;
@@ -45,12 +47,12 @@
         justify-content: center;
         align-items: center;
         height: 100%;
-        padding: var( --layout-padding );
-        padding-top: 0;
+        padding-bottom: var( --layout-padding );
     }
-}
 
-// hide additional header content when fixed header
-.app-header--has-custom-header.app-header--fixed .additional-header-content {
-    display: none;
+
+    // hide additional header content when fixed header
+    .app-header--has-custom-header.app-header--fixed & {
+        display: none;
+    }
 }
