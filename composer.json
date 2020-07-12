@@ -33,7 +33,7 @@
         "skyshab/rootstrap-devices": "dev-master",
         "skyshab/rootstrap-screens": "dev-master",
         "skyshab/rootstrap-styles": "dev-master",
-        "skyshab/rootstrap-tabs": "dev-master",
+        "skyshab/rootstrap-tabs": "^1.0",
         "skyshab/rootstrap-sequences": "dev-master",
         "skyshab/rootstrap-defaults": "dev-master",
         "skyshab/rootstrap-panels": "dev-master"

@@ -13,6 +13,7 @@
 
 namespace Taproot;
 
+
 /**
  * Set up base theme support.
  *
@@ -72,3 +73,18 @@ add_action( 'wp_enqueue_scripts', function() {
  * @return string
  */
 add_filter( 'hybrid/template/path', function() { return 'views'; } );
+
+
+// Temporary fix for Hybrid Archive Description filters
+remove_filter(  'hybrid/archive/description', 'wpautop',    30 );
+add_filter(     'hybrid/archive/description', 'do_blocks',  25 );
+
+
+
+add_filter( 'components/entry/customizer-support', function( $post_types ) {
+
+    // $post_types[] = 'product';
+
+    return $post_types;
+} );
+
