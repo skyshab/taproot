@@ -1,5 +1,5 @@
 <div class="app-content">
-    <div class="app-content__container container">
+    <div class="app-content__container container tribe-yo">
         <main <?php Hybrid\Attr\display( 'app-main', 'single', ['id' => 'main'] ) ?>>
             <?php if ( have_posts() ) : ?>
                 <?php while ( have_posts() ) : the_post(); ?>

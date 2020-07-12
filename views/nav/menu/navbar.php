@@ -8,7 +8,7 @@
                 <?php Hybrid\Menu\display_name( $data->location ) ?>
             </h3>
 
-            <?php Hybrid\View\display( 'partials', 'menu-toggle' ) ?>
+            <?php $engine->display( 'partials', 'menu-toggle' ) ?>
 
             <?php wp_nav_menu( [
                 'theme_location' => $data->location,

@@ -15,24 +15,14 @@
 
         <a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'taproot' ) ?></a>
 
-        <?php Hybrid\View\display( 'nav/menu', 'top', [ 'location' => 'top' ] ) ?>
+        <?php $engine->display( 'header/image', $view->slugs() ) ?>
 
-        <div class="app-header__container container">
+        <?php $engine->display( 'nav/menu', 'top', [ 'location' => 'top' ] ) ?>
 
-            <div class="app-header__branding">
-                <?php the_custom_logo() ?>
-                <div class="app-header__branding__content">
-                    <?php Hybrid\Site\display_title() ?>
-                    <?php Hybrid\Site\display_description() ?>
-                </div>
-            </div>
+        <?php $engine->display( 'header/main', $view->slugs() ) ?>
 
-            <?php Hybrid\View\display( 'nav/menu', 'header', [ 'location' => 'header' ] ) ?>
+        <?php $engine->display( 'header/content', $view->slugs() ) ?>
 
-        </div>
-
-        <?php do_action('taproot/header/content') ?>
-
-        <?php Hybrid\View\display( 'nav/menu', 'navbar', [ 'location' => 'navbar' ] ) ?>
+        <?php $engine->display( 'nav/menu', 'navbar', [ 'location' => 'navbar' ] ) ?>
 
     </header>

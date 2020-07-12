@@ -13,7 +13,7 @@
         <div class="searchform__inputs">
             <input type="search" class="searchform__search" placeholder="<?php esc_attr_e( 'Search &hellip;', 'taproot' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
             <button type="submit" class="searchform__submit">
-                <?php echo Hybrid\app('icons')->location('search-submit', ['icon' => 'search']) ?>
+                <?php Hybrid\app('icons')->display( ['icon' => 'search'] ) ?>
             </button>
         </div>
     </label>

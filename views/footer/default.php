@@ -1,6 +1,6 @@
     <footer <?php Hybrid\Attr\display( 'app-footer' ) ?>>
 
-        <?php Hybrid\View\display( 'nav/menu', 'footer', [ 'location' => 'footer' ] ) ?>
+        <?php $engine->display( 'nav/menu', 'footer', [ 'location' => 'footer' ] ) ?>
 
         <div class="app-footer__container container">
             <?php do_action('taproot/footer-widgets') ?>

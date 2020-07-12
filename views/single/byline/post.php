@@ -1,4 +1,4 @@
-<div class="byline entry__byline">
+<p class="byline post__byline">
 
     <?php Hybrid\Post\display_author([
         'class' => 'entry__author',
@@ -10,12 +10,6 @@
         'class' => 'entry__published',
         'before' => '<span class="byline__item">' . Hybrid\app('icons')->render( ['icon' => 'calendar'] ),
         'after' => '</span>'
-    ])?>
-
-    <?php Hybrid\Post\display_comments_link([
-        'class' => 'entry__comments',
-        'before' => '<span class="byline__item">' . Hybrid\app('icons')->render( ['icon' => 'comments'] ),
-        'after' => '</span>',
     ])?>
 
     <?php if( taxonomy_exists('category') ):
@@ -35,5 +29,4 @@
             'class' => 'entry__terms--post_tag'
         ]);
     endif; ?>
-
-</div>
+</p>

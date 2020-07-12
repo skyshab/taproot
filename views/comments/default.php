@@ -16,7 +16,7 @@
                 'callback' => function( $comment, $args, $depth ) {
                     Hybrid\View\display( 'comment', Hybrid\Comment\hierarchy(), compact( 'comment', 'args', 'depth' ) );
                 }
-            ] ) ?>
+            ]) ?>
 
         </ol>
 

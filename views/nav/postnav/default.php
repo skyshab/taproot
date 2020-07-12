@@ -7,6 +7,6 @@
  */
 
 Hybrid\app('postnav/template')->the_postnav( 'default', [
-    'prev_icon' => Hybrid\app('icons')->location('postnav-prev', ['icon' => 'chevron-right', 'class' => 'flip-h']),
-    'next_icon' => Hybrid\app('icons')->location('postnav-next', ['icon' => 'chevron-right']),
+    'prev_icon' => Hybrid\app('icons')->render( ['icon' => 'chevron-right', 'class' => 'flip-h'] ),
+    'next_icon' => Hybrid\app('icons')->render( ['icon' => 'chevron-right'] ),
 ]);
