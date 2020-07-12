@@ -32,6 +32,24 @@ function theme_mod( $id, $fallback = null ) {
 }
 
 /**
+ * Get post type specific setting
+ *
+ * @since  2.0.0
+ * @param string $setting
+ * @param mixed $default
+ * @param string $post_type
+ * @return mixed
+ */
+function post_type_mod( $setting, $default = false, $post_type = false  ) {
+
+    if( ! $post_type ) {
+        $post_type = get_post_type();
+    }
+
+    return Mod::get( "{$post_type}--{$setting}", $default );
+}
+
+/**
  * Helper function for outputting an asset URL in the theme. This integrates
  * with Laravel Mix for handling cache busting. If used when you enqueue a script
  * or style, it'll append an ID to the filename.
