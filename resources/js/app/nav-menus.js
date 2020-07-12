@@ -26,7 +26,6 @@ class NavMenus {
         this.body = document.querySelector('body');
         this.app = document.querySelector('.app');
         this.header = document.querySelector('.app-header');
-        this.isBoxedLayout = this.header.classList.contains('boxed-layout');
         this.hasAdminBar = this.body.classList.contains('admin-bar') ;
         this.scrollElems = document.querySelectorAll('.menu__item--current > a[href*=\\#]');
 

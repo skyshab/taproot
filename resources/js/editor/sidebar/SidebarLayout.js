@@ -1,8 +1,8 @@
 /**
- * Post Title Component
+ * Layout Picker Component
  *
- * This file handles the JavaScript for creating a select control
- * for post title options in the block editor theme sidebar panel.
+ * This file handles the JavaScript for creating a layout picker
+ * control in the block editor theme sidebar panel.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
@@ -11,41 +11,40 @@
  * @link      https://taproot-theme.com
  */
 
-
-const { compose } = wp.compose;
 const {
     withSelect,
     withDispatch
 } = wp.data;
+const { compose } = wp.compose;
 const { SelectControl } = wp.components;
 const { __ } = wp.i18n;
 
-
-export const PostTitleOptions = compose(
+export const SidebarLayout = compose(
     withDispatch( function( dispatch, props ) {
         return {
             setMetaFieldValue: function( value ) {
-                dispatch('core/editor').editPost( {meta: {[props.fieldName]: value}} );
+                dispatch('core/editor').editPost( {meta: {[props.fieldName]: value}} )
             }
         }
     }),
     withSelect( function( select, props ) {
         return {
-            metaFieldValue: select('core/editor').getEditedPostAttribute('meta')[props.fieldName],
+            metaFieldValue: select('core/editor').getEditedPostAttribute('meta')[props.fieldName]
         }
     })
 )( props => {
     return (
         <SelectControl
-            label={ __('Post Title') }
+            label={ __('Sidebar Layout') }
             value={ props.metaFieldValue }
             options={[
-                { label: __('Show in Content'), value: 'content' },
-                { label: __('Show in Hero Area'), value: 'header' },
-                { label: __('Hide'), value: 'hide' }
+                { label: __('Default'), value: 'default' },
+                { label: __('No Sidebar'), value: 'full' },
+                { label: __('Sidebar on Right'), value: 'right' },
+                { label: __('Sidebar on Left'), value: 'left' }
             ]}
             onChange={ content => {
-                props.setMetaFieldValue(content)
+                props.setMetaFieldValue( content );
             }} />
     )
 })

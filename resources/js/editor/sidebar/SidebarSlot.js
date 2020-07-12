@@ -1,5 +1,5 @@
 /**
- * Layout Slot
+ * Sidebar Slot
  *
  * This file handles the JavaScript for creating a slot for adding
  * additional controls to the layout section.
@@ -16,11 +16,11 @@
  */
 const { createSlotFill } = wp.components;
 
-const { Fill, Slot } = createSlotFill( 'LayoutSlot' );
-const LayoutSlot = ( { children } ) => (
+const { Fill, Slot } = createSlotFill( 'SidebarSlot' );
+const SidebarSlot = ( { children } ) => (
     <Fill>{ children }</Fill>
 );
 
-LayoutSlot.Slot = Slot;
+SidebarSlot.Slot = Slot;
 
-export {LayoutSlot};
+export {SidebarSlot};

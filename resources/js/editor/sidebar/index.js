@@ -11,16 +11,20 @@
  * @link      https://taproot-theme.com
  */
 
-import {LayoutPicker} from './LayoutPicker.js';
-import {PostTitleOptions} from './PostTitleOptions.js';
-import {HeroImage} from './HeroImage.js';
-import {HeroOverlay} from './HeroOverlay.js';
-import {HeroTextColors} from './HeroTextColors.js';
-import {LayoutSlot} from './LayoutSlot.js';
+import {SidebarLayout} from './SidebarLayout.js';
+import {HeaderImage} from './HeaderImage.js';
+import {HeaderOverlay} from './HeaderOverlay.js';
+import {HeaderTextColors} from './HeaderTextColors.js';
+import {DisableTopPadding} from './DisableTopPadding.js';
+import {DisableBottomPadding} from './DisableBottomPadding.js';
+import {SidebarSlot} from './SidebarSlot.js';
+import {ContentLayout} from './ContentLayout.js';
+import {HeaderTitleDisplay} from './HeaderTitleDisplay.js';
+import {HideFeaturedImage} from './HideFeaturedImage.js';
+import {HidePostTitle} from './HidePostTitle.js';
 
-// Action for adding items to the layout section slot
-wp.hooks.doAction( 'taproot-single-layout-slot', LayoutSlot );
-
+// Action for adding items to the sidebar section slot
+wp.hooks.doAction( 'taproot-editor-sidebar-slot', SidebarSlot );
 
 ( wp => {
 
@@ -52,22 +56,29 @@ wp.hooks.doAction( 'taproot-single-layout-slot', LayoutSlot );
                             title={ __( 'Taproot Page Settings' ) }
                         >
                             <Panel>
-                                <PanelBody title={ __( 'Layout' ) } initialOpen={ false } >
-                                    <LayoutPicker fieldName='taproot_page_layout' />
-                                    <LayoutSlot.Slot>
+
+                                <PanelBody                  title={ __( 'Custom Header' ) } initialOpen={ false } >
+                                    <HeaderImage/>
+                                    <HeaderOverlay/>
+                                    <HeaderTextColors       fieldName='_taproot_header_text_color'/>
+                                    <HeaderTitleDisplay     fieldName='_taproot_header_display_title'/>
+                                </PanelBody>
+
+                                <PanelBody                  title={ __( 'Sidebar' ) } initialOpen={ false } >
+                                    <SidebarLayout          fieldName='_taproot_page_layout' />
+                                    <SidebarSlot.Slot>
                                         {(fills) => (<>{ fills }</>)}
-                                    </LayoutSlot.Slot>
+                                    </SidebarSlot.Slot>
                                 </PanelBody>
 
-                                <PanelBody title={ __( 'Post Title' ) } initialOpen={ false } >
-                                    <PostTitleOptions fieldName='taproot_post_title_display' />
+                                <PanelBody                  title={ __( 'Content' ) } initialOpen={ false } >
+                                    <ContentLayout          fieldName='_taproot_post_content_layout' />
+                                    <HidePostTitle          fieldName='_taproot_post_title_hide' />
+                                    <HideFeaturedImage      fieldName='_taproot_post_featured_image_hide' />
+                                    <DisableTopPadding      fieldName='_taproot_disable_main_top_padding'/>
+                                    <DisableBottomPadding   fieldName='_taproot_disable_main_bottom_padding'/>
                                 </PanelBody>
 
-                                <PanelBody title={ __( 'Hero Area' ) } initialOpen={ false } >
-                                    <HeroImage/>
-                                    <HeroOverlay/>
-                                    <HeroTextColors/>
-                                </PanelBody>
                             </Panel>
 
                         </PluginSidebar>

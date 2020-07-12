@@ -25,26 +25,24 @@ const { PostTypeSupportCheck } = wp.editor;
 const { MediaUpload } = wp.blockEditor;
 const { __ } = wp.i18n;
 
-
 /**
  * Internal dependencies
  */
-import { HeroPreview } from './HeroPreview';
+import { HeaderPreview } from './HeaderPreview';
 
-
-function HeroImageEdit({
-    heroImage,
-    heroImageType,
-    setHeroImage,
-    setHeroImageType
+function HeaderImageEdit({
+    headerImage,
+    headerImageType,
+    setHeaderImage,
+    setHeaderImageType
 }) {
 
     // create image select
     const imageSelect =  (
         <PostTypeSupportCheck supportKeys="thumbnail">
             <SelectControl
-                label={ __('Hero Header Image') }
-                value={ heroImageType }
+                label={ __('Header Image') }
+                value={ headerImageType }
                 options={[
                     { label: __('None'), value: 'none' },
                     { label: __('Default'), value: 'default' },
@@ -52,14 +50,14 @@ function HeroImageEdit({
                     { label: __('Custom'), value: 'custom' }
                 ]}
                 onChange={ content => {
-                    setHeroImageType(content);
+                    setHeaderImageType(content);
                 }} />
         </PostTypeSupportCheck>
     )
 
     // create the button to add an image
-    const addImage = (open) => {
-        if ( 'custom' === heroImageType ) return (
+    const addImage = open => {
+        if ( 'custom' === headerImageType ) return (
             <button
                 class="components-button is-button is-default"
                 style={{marginRight: '10px' }}
@@ -71,11 +69,11 @@ function HeroImageEdit({
 
     // clear the saved image value
     const reset = () => {
-        setHeroImage('');
+        setHeaderImage('');
     }
 
     // button to clear the saved image value
-    const imageReset = ( 'custom' === heroImageType && heroImage ) ? (
+    const imageReset = ( 'custom' === headerImageType && headerImage ) ? (
         <button
             class="components-button is-button is-default"
             onClick={reset} >
@@ -88,14 +86,14 @@ function HeroImageEdit({
         <MediaUpload
             type="image"
             label={ __('Custom Header Image') }
-            value={ heroImage }
+            value={ headerImage }
             onSelect={ imageObject => {
-                if(imageObject.sizes) {
-                    setHeroImage(imageObject.sizes.full.url);
+                if( imageObject.sizes ) {
+                    setHeaderImage( imageObject.sizes.full.url );
                 }
             }}
             render={ ({open}) => [
-                <HeroPreview/>,
+                <HeaderPreview/>,
                 imageSelect,
                 addImage(open),
                 imageReset
@@ -104,39 +102,38 @@ function HeroImageEdit({
     )
 }
 
-
-export const HeroImage = compose([
+export const HeaderImage = compose([
     withSelect( function( select ) {
         return {
-            heroImage: select('core/editor').getEditedPostAttribute('meta')['taproot_custom_header_image'],
-            heroImageType: select('core/editor').getEditedPostAttribute('meta')['taproot_custom_header_image_type'],
+            headerImage: select('core/editor').getEditedPostAttribute('meta')['_taproot_header_image'],
+            headerImageType: select('core/editor').getEditedPostAttribute('meta')['_taproot_header_image_type'],
         }
     }),
     withDispatch( function( dispatch ) {
         return {
-            setHeroImage: function( value ) {
-                dispatch('core/editor').editPost({meta:{taproot_custom_header_image: value}})
+            setHeaderImage: function( value ) {
+                dispatch('core/editor').editPost( { meta: { _taproot_header_image: value } } );
             },
-            setHeroImageType: function( value ) {
-                dispatch('core/editor').editPost( {meta: { taproot_custom_header_image_type: value}} );
+            setHeaderImageType: function( value ) {
 
-                if ('custom' !== value) {
-                    dispatch('core/editor').editPost({meta:{taproot_custom_header_image: ''}})
+                dispatch('core/editor').editPost( { meta: { _taproot_header_image_type: value } } );
+
+                if( 'custom' !== value ) {
+                    dispatch('core/editor').editPost( { meta: { _taproot_header_image: '' } } );
                 }
-                if('none' === value) {
+
+                if( 'none' === value ) {
                     dispatch('core/editor').editPost({
                         meta: {
-                            taprooot_hero_overlay_type: 'default',
-                            taprooot_hero_overlay_color: '',
-                            taprooot_hero_overlay_color_name: '',
-                            taprooot_hero_overlay_opacity: 50,
-                            taprooot_hero_default_color: '',
-                            taprooot_hero_default_hover_color: ''
+                            _taproot_header_overlay_type: 'default',
+                            _taproot_header_overlay_color: '',
+                            _taproot_header_overlay_color_name: '',
+                            _taproot_header_overlay_opacity: 50,
+                            _taproot_header_text_color: ''
                         }
                     })
                 }
             }
-
         }
     })
-])(HeroImageEdit)
+])(HeaderImageEdit)

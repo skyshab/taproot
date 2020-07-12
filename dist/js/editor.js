@@ -170,17 +170,207 @@ var ColorPickerControl = compose([wp.blockEditor.withColorContext, ifCondition(f
 
 /***/ }),
 
-/***/ "./resources/js/editor/sidebar/HeroImage.js":
-/*!**************************************************!*\
-  !*** ./resources/js/editor/sidebar/HeroImage.js ***!
-  \**************************************************/
-/*! exports provided: HeroImage */
+/***/ "./resources/js/editor/sidebar/ContentLayout.js":
+/*!******************************************************!*\
+  !*** ./resources/js/editor/sidebar/ContentLayout.js ***!
+  \******************************************************/
+/*! exports provided: ContentLayout */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeroImage", function() { return HeroImage; });
-/* harmony import */ var _HeroPreview__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HeroPreview */ "./resources/js/editor/sidebar/HeroPreview.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContentLayout", function() { return ContentLayout; });
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+/**
+ * Entry Header Layout
+ *
+ * Adds a setting to the block editor theme sidebar panel.
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2020 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://taproot-theme.com
+ */
+var _wp$data = wp.data,
+    withSelect = _wp$data.withSelect,
+    withDispatch = _wp$data.withDispatch;
+var compose = wp.compose.compose;
+var SelectControl = wp.components.SelectControl;
+var __ = wp.i18n.__;
+var ContentLayout = compose(withDispatch(function (dispatch, props) {
+  return {
+    setMetaFieldValue: function setMetaFieldValue(value) {
+      dispatch('core/editor').editPost({
+        meta: _defineProperty({}, props.fieldName, value)
+      });
+    }
+  };
+}), withSelect(function (select, props) {
+  return {
+    metaFieldValue: select('core/editor').getEditedPostAttribute('meta')[props.fieldName]
+  };
+}))(function (props) {
+  return React.createElement(SelectControl, {
+    label: __('Content Layout'),
+    value: props.metaFieldValue,
+    options: [{
+      label: __('Default'),
+      value: 'default'
+    }, {
+      label: __('Left'),
+      value: 'left'
+    }, {
+      label: __('Center'),
+      value: 'center'
+    }, {
+      label: __('Wide'),
+      value: 'wide'
+    }, {
+      label: __('Wide/Left'),
+      value: 'wide-left'
+    }, {
+      label: __('Wide/Center'),
+      value: 'wide-center'
+    }],
+    onChange: function onChange(content) {
+      props.setMetaFieldValue(content);
+    }
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/editor/sidebar/DisableBottomPadding.js":
+/*!*************************************************************!*\
+  !*** ./resources/js/editor/sidebar/DisableBottomPadding.js ***!
+  \*************************************************************/
+/*! exports provided: DisableBottomPadding */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DisableBottomPadding", function() { return DisableBottomPadding; });
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+/**
+ * Disable Main Bottom Padding Component
+ *
+ * This file handles the JavaScript for the setting that disables Main bottom padding.
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2020 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://taproot-theme.com
+ */
+
+/**
+ * WordPress dependencies
+ */
+var __ = wp.i18n.__;
+var compose = wp.compose.compose;
+var ToggleControl = wp.components.ToggleControl;
+var _wp$data = wp.data,
+    withSelect = _wp$data.withSelect,
+    withDispatch = _wp$data.withDispatch;
+var DisableBottomPadding = compose(withDispatch(function (dispatch, props) {
+  return {
+    setCheckboxValue: function setCheckboxValue(value) {
+      dispatch('core/editor').editPost({
+        meta: _defineProperty({}, props.fieldName, value)
+      });
+    }
+  };
+}), withSelect(function (select, props) {
+  return {
+    checkboxValue: select('core/editor').getEditedPostAttribute('meta')[props.fieldName]
+  };
+}))(function (props) {
+  // return the component
+  return React.createElement(ToggleControl, {
+    label: __('Disable Bottom Padding'),
+    checked: props.checkboxValue,
+    onChange: function onChange(isChecked) {
+      isChecked = isChecked ? 1 : 0;
+      props.setCheckboxValue(isChecked);
+    }
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/editor/sidebar/DisableTopPadding.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/editor/sidebar/DisableTopPadding.js ***!
+  \**********************************************************/
+/*! exports provided: DisableTopPadding */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DisableTopPadding", function() { return DisableTopPadding; });
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+/**
+ * Disable Main Top Padding Component
+ *
+ * This file handles the JavaScript for the setting that disables Main top padding.
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2020 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://taproot-theme.com
+ */
+
+/**
+ * WordPress dependencies
+ */
+var __ = wp.i18n.__;
+var compose = wp.compose.compose;
+var ToggleControl = wp.components.ToggleControl;
+var _wp$data = wp.data,
+    withSelect = _wp$data.withSelect,
+    withDispatch = _wp$data.withDispatch;
+var DisableTopPadding = compose(withDispatch(function (dispatch, props) {
+  return {
+    setCheckboxValue: function setCheckboxValue(value) {
+      dispatch('core/editor').editPost({
+        meta: _defineProperty({}, props.fieldName, value)
+      });
+    }
+  };
+}), withSelect(function (select, props) {
+  return {
+    checkboxValue: select('core/editor').getEditedPostAttribute('meta')[props.fieldName]
+  };
+}))(function (props) {
+  // return the component
+  return React.createElement(ToggleControl, {
+    label: __('Disable Top Padding'),
+    checked: props.checkboxValue,
+    onChange: function onChange(isChecked) {
+      isChecked = isChecked ? 1 : 0;
+      props.setCheckboxValue(isChecked);
+    }
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/editor/sidebar/HeaderImage.js":
+/*!****************************************************!*\
+  !*** ./resources/js/editor/sidebar/HeaderImage.js ***!
+  \****************************************************/
+/*! exports provided: HeaderImage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeaderImage", function() { return HeaderImage; });
+/* harmony import */ var _HeaderPreview__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HeaderPreview */ "./resources/js/editor/sidebar/HeaderPreview.js");
 /**
  * Header Image Picker Component
  *
@@ -211,17 +401,17 @@ var __ = wp.i18n.__;
 
 
 
-function HeroImageEdit(_ref) {
-  var heroImage = _ref.heroImage,
-      heroImageType = _ref.heroImageType,
-      setHeroImage = _ref.setHeroImage,
-      setHeroImageType = _ref.setHeroImageType;
+function HeaderImageEdit(_ref) {
+  var headerImage = _ref.headerImage,
+      headerImageType = _ref.headerImageType,
+      setHeaderImage = _ref.setHeaderImage,
+      setHeaderImageType = _ref.setHeaderImageType;
   // create image select
   var imageSelect = React.createElement(PostTypeSupportCheck, {
     supportKeys: "thumbnail"
   }, React.createElement(SelectControl, {
-    label: __('Hero Header Image'),
-    value: heroImageType,
+    label: __('Header Image'),
+    value: headerImageType,
     options: [{
       label: __('None'),
       value: 'none'
@@ -236,12 +426,12 @@ function HeroImageEdit(_ref) {
       value: 'custom'
     }],
     onChange: function onChange(content) {
-      setHeroImageType(content);
+      setHeaderImageType(content);
     }
   })); // create the button to add an image
 
   var addImage = function addImage(open) {
-    if ('custom' === heroImageType) return React.createElement("button", {
+    if ('custom' === headerImageType) return React.createElement("button", {
       "class": "components-button is-button is-default",
       style: {
         marginRight: '10px'
@@ -252,11 +442,11 @@ function HeroImageEdit(_ref) {
 
 
   var reset = function reset() {
-    setHeroImage('');
+    setHeaderImage('');
   }; // button to clear the saved image value
 
 
-  var imageReset = 'custom' === heroImageType && heroImage ? React.createElement("button", {
+  var imageReset = 'custom' === headerImageType && headerImage ? React.createElement("button", {
     "class": "components-button is-button is-default",
     onClick: reset
   }, __('Clear')) : null; // return the custom header image picker component
@@ -264,44 +454,44 @@ function HeroImageEdit(_ref) {
   return React.createElement(MediaUpload, {
     type: "image",
     label: __('Custom Header Image'),
-    value: heroImage,
+    value: headerImage,
     onSelect: function onSelect(imageObject) {
       if (imageObject.sizes) {
-        setHeroImage(imageObject.sizes.full.url);
+        setHeaderImage(imageObject.sizes.full.url);
       }
     },
     render: function render(_ref2) {
       var open = _ref2.open;
-      return [React.createElement(_HeroPreview__WEBPACK_IMPORTED_MODULE_0__["HeroPreview"], null), imageSelect, addImage(open), imageReset];
+      return [React.createElement(_HeaderPreview__WEBPACK_IMPORTED_MODULE_0__["HeaderPreview"], null), imageSelect, addImage(open), imageReset];
     }
   });
 }
 
-var HeroImage = compose([withSelect(function (select) {
+var HeaderImage = compose([withSelect(function (select) {
   return {
-    heroImage: select('core/editor').getEditedPostAttribute('meta')['taproot_custom_header_image'],
-    heroImageType: select('core/editor').getEditedPostAttribute('meta')['taproot_custom_header_image_type']
+    headerImage: select('core/editor').getEditedPostAttribute('meta')['_taproot_header_image'],
+    headerImageType: select('core/editor').getEditedPostAttribute('meta')['_taproot_header_image_type']
   };
 }), withDispatch(function (dispatch) {
   return {
-    setHeroImage: function setHeroImage(value) {
+    setHeaderImage: function setHeaderImage(value) {
       dispatch('core/editor').editPost({
         meta: {
-          taproot_custom_header_image: value
+          _taproot_header_image: value
         }
       });
     },
-    setHeroImageType: function setHeroImageType(value) {
+    setHeaderImageType: function setHeaderImageType(value) {
       dispatch('core/editor').editPost({
         meta: {
-          taproot_custom_header_image_type: value
+          _taproot_header_image_type: value
         }
       });
 
       if ('custom' !== value) {
         dispatch('core/editor').editPost({
           meta: {
-            taproot_custom_header_image: ''
+            _taproot_header_image: ''
           }
         });
       }
@@ -309,36 +499,35 @@ var HeroImage = compose([withSelect(function (select) {
       if ('none' === value) {
         dispatch('core/editor').editPost({
           meta: {
-            taprooot_hero_overlay_type: 'default',
-            taprooot_hero_overlay_color: '',
-            taprooot_hero_overlay_color_name: '',
-            taprooot_hero_overlay_opacity: 50,
-            taprooot_hero_default_color: '',
-            taprooot_hero_default_hover_color: ''
+            _taproot_header_overlay_type: 'default',
+            _taproot_header_overlay_color: '',
+            _taproot_header_overlay_color_name: '',
+            _taproot_header_overlay_opacity: 50,
+            _taproot_header_text_color: ''
           }
         });
       }
     }
   };
-})])(HeroImageEdit);
+})])(HeaderImageEdit);
 
 /***/ }),
 
-/***/ "./resources/js/editor/sidebar/HeroOverlay.js":
-/*!****************************************************!*\
-  !*** ./resources/js/editor/sidebar/HeroOverlay.js ***!
-  \****************************************************/
-/*! exports provided: HeroOverlay */
+/***/ "./resources/js/editor/sidebar/HeaderOverlay.js":
+/*!******************************************************!*\
+  !*** ./resources/js/editor/sidebar/HeaderOverlay.js ***!
+  \******************************************************/
+/*! exports provided: HeaderOverlay */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeroOverlay", function() { return HeroOverlay; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeaderOverlay", function() { return HeaderOverlay; });
 /* harmony import */ var _controls_colorPicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../controls/colorPicker */ "./resources/js/editor/controls/colorPicker.js");
 /**
- * Hero Overlay
+ * Header Image Overlay
  *
- * This file handles the JavaScript for the hero overlay settings in the editor.
+ * This file handles the JavaScript for the header image overlay settings in the editor.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
@@ -364,7 +553,7 @@ var __ = wp.i18n.__;
 
 
 
-function HeroOverlayEdit(_ref) {
+function HeaderOverlayEdit(_ref) {
   var imageType = _ref.imageType,
       colors = _ref.colors,
       overlayType = _ref.overlayType,
@@ -374,7 +563,7 @@ function HeroOverlayEdit(_ref) {
       updateOverlayColor = _ref.updateOverlayColor,
       updateOverlayOpacity = _ref.updateOverlayOpacity;
   return 'none' !== imageType && React.createElement(React.Fragment, null, React.createElement(SelectControl, {
-    label: __('Hero Overlay'),
+    label: __('Overlay'),
     value: overlayType,
     options: [{
       label: __('Default'),
@@ -390,14 +579,14 @@ function HeroOverlayEdit(_ref) {
       return updateOverlayType(value);
     }
   }), 'custom' === overlayType && React.createElement(_controls_colorPicker__WEBPACK_IMPORTED_MODULE_0__["ColorPickerControl"], {
-    label: __('Hero Overlay Color'),
+    label: __('Overlay Color'),
     value: overlayColor,
     onChange: function onChange(value) {
       return updateOverlayColor(value);
     },
     colors: colors
   }), 'custom' === overlayType && React.createElement(RangeControl, {
-    label: __('Hero Overlay Opacity'),
+    label: __('Overlay Opacity'),
     value: overlayOpacity,
     onChange: function onChange(value) {
       return updateOverlayOpacity(value);
@@ -409,18 +598,25 @@ function HeroOverlayEdit(_ref) {
   }));
 }
 
-var HeroOverlay = compose([withSelect(function (select) {
+var HeaderOverlay = compose([withSelect(function (select) {
   var _select = select('core/editor'),
       getEditedPostAttribute = _select.getEditedPostAttribute;
 
-  var settings = select('core/block-editor').getSettings();
+  var settings = select('core/block-editor').getSettings(); // Make sure default image type is 'none'
+
+  var imageType = getEditedPostAttribute('meta')['_taproot_header_image_type'];
+
+  if (!imageType) {
+    imageType = 'none';
+  }
+
   return {
-    imageType: getEditedPostAttribute('meta')['taproot_custom_header_image_type'],
+    imageType: imageType,
     colors: settings.colors,
-    overlayType: getEditedPostAttribute('meta')['taprooot_hero_overlay_type'],
-    overlayColor: getEditedPostAttribute('meta')['taprooot_hero_overlay_color'],
-    overlayColorName: getEditedPostAttribute('meta')['taprooot_hero_overlay_color_name'],
-    overlayOpacity: getEditedPostAttribute('meta')['taprooot_hero_overlay_opacity']
+    overlayType: getEditedPostAttribute('meta')['_taproot_header_overlay_type'],
+    overlayColor: getEditedPostAttribute('meta')['_taproot_header_overlay_color'],
+    overlayColorName: getEditedPostAttribute('meta')['_taproot_header_overlay_color_name'],
+    overlayOpacity: getEditedPostAttribute('meta')['_taproot_header_overlay_opacity']
   };
 }), withDispatch(function (dispatch, _ref2) {
   var colors = _ref2.colors;
@@ -428,7 +624,7 @@ var HeroOverlay = compose([withSelect(function (select) {
     updateOverlayType: function updateOverlayType(value) {
       dispatch('core/editor').editPost({
         meta: {
-          taprooot_hero_overlay_type: value
+          _taproot_header_overlay_type: value
         }
       });
     },
@@ -439,43 +635,43 @@ var HeroOverlay = compose([withSelect(function (select) {
 
       dispatch('core/editor').editPost({
         meta: {
-          taprooot_hero_overlay_color: value
+          _taproot_header_overlay_color: value
         }
       });
       var colorObj = wp.blockEditor.getColorObjectByColorValue(colors, value);
       var colorSlug = colorObj && colorObj.slug ? colorObj.slug : '';
       dispatch('core/editor').editPost({
         meta: {
-          taprooot_hero_overlay_color_name: colorSlug
+          _taproot_header_overlay_color_name: colorSlug
         }
       });
     },
     updateOverlayOpacity: function updateOverlayOpacity(value) {
       dispatch('core/editor').editPost({
         meta: {
-          taprooot_hero_overlay_opacity: value
+          _taproot_header_overlay_opacity: value
         }
       });
     }
   };
-})])(HeroOverlayEdit);
+})])(HeaderOverlayEdit);
 
 /***/ }),
 
-/***/ "./resources/js/editor/sidebar/HeroPreview.js":
-/*!****************************************************!*\
-  !*** ./resources/js/editor/sidebar/HeroPreview.js ***!
-  \****************************************************/
-/*! exports provided: HeroPreview */
+/***/ "./resources/js/editor/sidebar/HeaderPreview.js":
+/*!******************************************************!*\
+  !*** ./resources/js/editor/sidebar/HeaderPreview.js ***!
+  \******************************************************/
+/*! exports provided: HeaderPreview */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeroPreview", function() { return HeroPreview; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeaderPreview", function() { return HeaderPreview; });
 /**
- * Hero Preview
+ * Header Image Preview
  *
- * This file handles the JavaScript for the hero image preview.
+ * This file handles the JavaScript for the header image preview.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
@@ -491,43 +687,41 @@ var withSelect = wp.data.withSelect;
 var compose = wp.compose.compose;
 var __ = wp.i18n.__;
 
-function HeroPreviewEdit(_ref) {
+function HeaderPreviewEdit(_ref) {
   var imageSource = _ref.imageSource,
       overlayType = _ref.overlayType,
       overlayColor = _ref.overlayColor,
       overlayOpacity = _ref.overlayOpacity,
-      defaultColor = _ref.defaultColor,
-      defaultHoverColor = _ref.defaultHoverColor;
-  return imageSource && React.createElement(React.Fragment, null, React.createElement("style", null, ".taproot-overlay-preview-text:hover {color: ".concat(defaultHoverColor, "!important;}")), React.createElement("div", {
-    className: "media-preview-wrapper"
+      defaultColor = _ref.defaultColor;
+  return imageSource && React.createElement(React.Fragment, null, React.createElement("div", {
+    className: "taproot-header-image-preview"
   }, React.createElement("img", {
     src: imageSource,
-    "class": "media-preview"
+    "class": "taproot-header-image"
   }), 'none' !== overlayType && React.createElement("div", {
     className: "taproot-overlay",
     style: {
       backgroundColor: overlayColor,
       opacity: overlayOpacity
     }
-  }), React.createElement("a", {
-    href: "#",
+  }), React.createElement("p", {
     "class": "taproot-overlay-preview-text",
     style: {
       color: defaultColor
     }
-  }, __('Hero Preview'))));
+  }, __('Header Preview'))));
 }
 
-var HeroPreview = compose([withSelect(function (select) {
+var HeaderPreview = compose([withSelect(function (select) {
   var _select = select('core'),
       getMedia = _select.getMedia;
 
   var _select2 = select('core/editor'),
       getEditedPostAttribute = _select2.getEditedPostAttribute;
 
+  var imageType = getEditedPostAttribute('meta')['_taproot_header_image_type'];
+  var customImage = getEditedPostAttribute('meta')['_taproot_header_image'];
   var imageSource = false;
-  var imageType = getEditedPostAttribute('meta')['taproot_custom_header_image_type'];
-  var customImage = getEditedPostAttribute('meta')['taproot_custom_header_image'];
   var featuredImage = 0;
 
   if (getEditedPostAttribute('featured_media')) {
@@ -546,11 +740,10 @@ var HeroPreview = compose([withSelect(function (select) {
     imageSource = customImage;
   }
 
-  var overlayType = getEditedPostAttribute('meta')['taprooot_hero_overlay_type'];
-  var overlayColor = getEditedPostAttribute('meta')['taprooot_hero_overlay_color'];
-  var overlayOpacity = getEditedPostAttribute('meta')['taprooot_hero_overlay_opacity'];
-  var defaultColor = getEditedPostAttribute('meta')['taprooot_hero_default_color'];
-  var defaultHoverColor = getEditedPostAttribute('meta')['taprooot_hero_default_hover_color'];
+  var overlayType = getEditedPostAttribute('meta')['_taproot_header_overlay_type'];
+  var overlayColor = getEditedPostAttribute('meta')['_taproot_header_overlay_color'];
+  var overlayOpacity = getEditedPostAttribute('meta')['_taproot_header_overlay_opacity'];
+  var defaultColor = getEditedPostAttribute('meta')['_taproot_header_text_color'];
 
   if (typeof taprootEditorData !== 'undefined') {
     if (!overlayType || 'default' === overlayType) {
@@ -559,11 +752,7 @@ var HeroPreview = compose([withSelect(function (select) {
     }
 
     if (!defaultColor) {
-      defaultColor = taprootEditorData.headerHeroDefaultColor;
-    }
-
-    if (!defaultHoverColor) {
-      defaultHoverColor = taprootEditorData.headerHeroHoverColor;
+      defaultColor = taprootEditorData.headerHeaderDefaultColor;
     }
   }
 
@@ -572,28 +761,29 @@ var HeroPreview = compose([withSelect(function (select) {
     overlayType: overlayType,
     overlayColor: overlayColor,
     overlayOpacity: parseInt(overlayOpacity, 10) / 100,
-    defaultColor: defaultColor,
-    defaultHoverColor: defaultHoverColor
+    defaultColor: defaultColor
   };
-})])(HeroPreviewEdit);
+})])(HeaderPreviewEdit);
 
 /***/ }),
 
-/***/ "./resources/js/editor/sidebar/HeroTextColors.js":
-/*!*******************************************************!*\
-  !*** ./resources/js/editor/sidebar/HeroTextColors.js ***!
-  \*******************************************************/
-/*! exports provided: HeroTextColors */
+/***/ "./resources/js/editor/sidebar/HeaderTextColors.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/editor/sidebar/HeaderTextColors.js ***!
+  \*********************************************************/
+/*! exports provided: HeaderTextColors */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeroTextColors", function() { return HeroTextColors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeaderTextColors", function() { return HeaderTextColors; });
 /* harmony import */ var _controls_colorPicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../controls/colorPicker */ "./resources/js/editor/controls/colorPicker.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 /**
- * Hero Overlay
+ * Header Text Color
  *
- * This file handles the JavaScript for the hero overlay settings in the editor.
+ * This file handles the JavaScript for the header text color settings in the editor.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
@@ -616,42 +806,21 @@ var __ = wp.i18n.__;
 
 
 
-function HeroTextColorsEdit(_ref) {
-  var imageType = _ref.imageType,
-      colors = _ref.colors,
-      heroDefaultColor = _ref.heroDefaultColor,
-      heroDefaultHoverColor = _ref.heroDefaultHoverColor,
-      updateDefaultColor = _ref.updateDefaultColor,
-      updateDefaultHoverColor = _ref.updateDefaultHoverColor;
-  return 'none' !== imageType && React.createElement(React.Fragment, null, React.createElement(_controls_colorPicker__WEBPACK_IMPORTED_MODULE_0__["ColorPickerControl"], {
-    label: __('Hero Text Color'),
-    value: heroDefaultColor,
+function HeaderTextColorsEdit(_ref) {
+  var colors = _ref.colors,
+      headerDefaultColor = _ref.headerDefaultColor,
+      updateDefaultColor = _ref.updateDefaultColor;
+  return React.createElement(React.Fragment, null, React.createElement(_controls_colorPicker__WEBPACK_IMPORTED_MODULE_0__["ColorPickerControl"], {
+    label: __('Header Text Color'),
+    value: headerDefaultColor,
     onChange: function onChange(value) {
       return updateDefaultColor(value);
-    },
-    colors: colors
-  }), React.createElement(_controls_colorPicker__WEBPACK_IMPORTED_MODULE_0__["ColorPickerControl"], {
-    label: __('Hero Link Hover Color'),
-    value: heroDefaultHoverColor,
-    onChange: function onChange(value) {
-      return updateDefaultHoverColor(value);
     },
     colors: colors
   }));
 }
 
-var HeroTextColors = compose([withSelect(function (select) {
-  var _select = select('core/editor'),
-      getEditedPostAttribute = _select.getEditedPostAttribute;
-
-  var settings = select('core/block-editor').getSettings();
-  return {
-    imageType: getEditedPostAttribute('meta')['taproot_custom_header_image_type'],
-    colors: settings.colors,
-    heroDefaultColor: getEditedPostAttribute('meta')['taprooot_hero_default_color'],
-    heroDefaultHoverColor: getEditedPostAttribute('meta')['taprooot_hero_default_hover_color']
-  };
-}), withDispatch(function (dispatch) {
+var HeaderTextColors = compose([withDispatch(function (dispatch, props) {
   return {
     updateDefaultColor: function updateDefaultColor(value) {
       if (!value) {
@@ -659,37 +828,210 @@ var HeroTextColors = compose([withSelect(function (select) {
       }
 
       dispatch('core/editor').editPost({
-        meta: {
-          taprooot_hero_default_color: value
-        }
-      });
-    },
-    updateDefaultHoverColor: function updateDefaultHoverColor(value) {
-      if (!value) {
-        value = '';
-      }
-
-      dispatch('core/editor').editPost({
-        meta: {
-          taprooot_hero_default_hover_color: value
-        }
+        meta: _defineProperty({}, props.fieldName, value)
       });
     }
   };
-})])(HeroTextColorsEdit);
+}), withSelect(function (select, props) {
+  var _select = select('core/editor'),
+      getEditedPostAttribute = _select.getEditedPostAttribute;
+
+  var settings = select('core/block-editor').getSettings();
+  return {
+    colors: settings.colors,
+    headerDefaultColor: getEditedPostAttribute('meta')[props.fieldName]
+  };
+})])(HeaderTextColorsEdit);
 
 /***/ }),
 
-/***/ "./resources/js/editor/sidebar/LayoutPicker.js":
-/*!*****************************************************!*\
-  !*** ./resources/js/editor/sidebar/LayoutPicker.js ***!
-  \*****************************************************/
-/*! exports provided: LayoutPicker */
+/***/ "./resources/js/editor/sidebar/HeaderTitleDisplay.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/editor/sidebar/HeaderTitleDisplay.js ***!
+  \***********************************************************/
+/*! exports provided: HeaderTitleDisplay */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LayoutPicker", function() { return LayoutPicker; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeaderTitleDisplay", function() { return HeaderTitleDisplay; });
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+/**
+ * Enable Header Title
+ *
+ * This file handles the JavaScript for the setting that adds the title to the header content.
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2020 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://taproot-theme.com
+ */
+
+/**
+ * WordPress dependencies
+ */
+var __ = wp.i18n.__;
+var compose = wp.compose.compose;
+var ToggleControl = wp.components.ToggleControl;
+var _wp$data = wp.data,
+    withSelect = _wp$data.withSelect,
+    withDispatch = _wp$data.withDispatch;
+var HeaderTitleDisplay = compose(withDispatch(function (dispatch, props) {
+  return {
+    setCheckboxValue: function setCheckboxValue(value) {
+      dispatch('core/editor').editPost({
+        meta: _defineProperty({}, props.fieldName, value)
+      });
+    }
+  };
+}), withSelect(function (select, props) {
+  return {
+    checkboxValue: select('core/editor').getEditedPostAttribute('meta')[props.fieldName]
+  };
+}))(function (props) {
+  // return the component
+  return React.createElement(ToggleControl, {
+    label: __('Display title in header'),
+    checked: props.checkboxValue,
+    onChange: function onChange(isChecked) {
+      isChecked = isChecked ? 1 : 0;
+      props.setCheckboxValue(isChecked);
+    }
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/editor/sidebar/HideFeaturedImage.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/editor/sidebar/HideFeaturedImage.js ***!
+  \**********************************************************/
+/*! exports provided: HideFeaturedImage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HideFeaturedImage", function() { return HideFeaturedImage; });
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+/**
+ * Display Featured Image.
+ *
+ * This file handles the JavaScript for the setting in the editor theme panel.
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2020 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://taproot-theme.com
+ */
+
+/**
+ * WordPress dependencies
+ */
+var __ = wp.i18n.__;
+var compose = wp.compose.compose;
+var ToggleControl = wp.components.ToggleControl;
+var _wp$data = wp.data,
+    withSelect = _wp$data.withSelect,
+    withDispatch = _wp$data.withDispatch;
+var HideFeaturedImage = compose(withDispatch(function (dispatch, props) {
+  return {
+    setCheckboxValue: function setCheckboxValue(value) {
+      dispatch('core/editor').editPost({
+        meta: _defineProperty({}, props.fieldName, value)
+      });
+    }
+  };
+}), withSelect(function (select, props) {
+  return {
+    checkboxValue: select('core/editor').getEditedPostAttribute('meta')[props.fieldName]
+  };
+}))(function (props) {
+  // return the component
+  return React.createElement(ToggleControl, {
+    label: __('Hide Featured Image'),
+    checked: props.checkboxValue,
+    onChange: function onChange(isChecked) {
+      isChecked = isChecked ? 1 : 0;
+      props.setCheckboxValue(isChecked);
+    }
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/editor/sidebar/HidePostTitle.js":
+/*!******************************************************!*\
+  !*** ./resources/js/editor/sidebar/HidePostTitle.js ***!
+  \******************************************************/
+/*! exports provided: HidePostTitle */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HidePostTitle", function() { return HidePostTitle; });
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+/**
+ * Display Featured Image.
+ *
+ * This file handles the JavaScript for the setting in the editor theme panel.
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2020 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://taproot-theme.com
+ */
+
+/**
+ * WordPress dependencies
+ */
+var __ = wp.i18n.__;
+var compose = wp.compose.compose;
+var ToggleControl = wp.components.ToggleControl;
+var _wp$data = wp.data,
+    withSelect = _wp$data.withSelect,
+    withDispatch = _wp$data.withDispatch;
+var HidePostTitle = compose(withDispatch(function (dispatch, props) {
+  return {
+    setCheckboxValue: function setCheckboxValue(value) {
+      dispatch('core/editor').editPost({
+        meta: _defineProperty({}, props.fieldName, value)
+      });
+    }
+  };
+}), withSelect(function (select, props) {
+  return {
+    checkboxValue: select('core/editor').getEditedPostAttribute('meta')[props.fieldName]
+  };
+}))(function (props) {
+  // return the component
+  return React.createElement(ToggleControl, {
+    label: __('Hide Title'),
+    checked: props.checkboxValue,
+    onChange: function onChange(isChecked) {
+      isChecked = isChecked ? 1 : 0;
+      props.setCheckboxValue(isChecked);
+    }
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/editor/sidebar/SidebarLayout.js":
+/*!******************************************************!*\
+  !*** ./resources/js/editor/sidebar/SidebarLayout.js ***!
+  \******************************************************/
+/*! exports provided: SidebarLayout */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SidebarLayout", function() { return SidebarLayout; });
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /**
@@ -710,7 +1052,7 @@ var _wp$data = wp.data,
 var compose = wp.compose.compose;
 var SelectControl = wp.components.SelectControl;
 var __ = wp.i18n.__;
-var LayoutPicker = compose(withDispatch(function (dispatch, props) {
+var SidebarLayout = compose(withDispatch(function (dispatch, props) {
   return {
     setMetaFieldValue: function setMetaFieldValue(value) {
       dispatch('core/editor').editPost({
@@ -724,13 +1066,13 @@ var LayoutPicker = compose(withDispatch(function (dispatch, props) {
   };
 }))(function (props) {
   return React.createElement(SelectControl, {
-    label: __('Page Layout'),
+    label: __('Sidebar Layout'),
     value: props.metaFieldValue,
     options: [{
       label: __('Default'),
       value: 'default'
     }, {
-      label: __('Full (No Sidebar)'),
+      label: __('No Sidebar'),
       value: 'full'
     }, {
       label: __('Sidebar on Right'),
@@ -747,18 +1089,18 @@ var LayoutPicker = compose(withDispatch(function (dispatch, props) {
 
 /***/ }),
 
-/***/ "./resources/js/editor/sidebar/LayoutSlot.js":
-/*!***************************************************!*\
-  !*** ./resources/js/editor/sidebar/LayoutSlot.js ***!
-  \***************************************************/
-/*! exports provided: LayoutSlot */
+/***/ "./resources/js/editor/sidebar/SidebarSlot.js":
+/*!****************************************************!*\
+  !*** ./resources/js/editor/sidebar/SidebarSlot.js ***!
+  \****************************************************/
+/*! exports provided: SidebarSlot */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LayoutSlot", function() { return LayoutSlot; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SidebarSlot", function() { return SidebarSlot; });
 /**
- * Layout Slot
+ * Sidebar Slot
  *
  * This file handles the JavaScript for creating a slot for adding
  * additional controls to the layout section.
@@ -775,81 +1117,17 @@ __webpack_require__.r(__webpack_exports__);
  */
 var createSlotFill = wp.components.createSlotFill;
 
-var _createSlotFill = createSlotFill('LayoutSlot'),
+var _createSlotFill = createSlotFill('SidebarSlot'),
     Fill = _createSlotFill.Fill,
     Slot = _createSlotFill.Slot;
 
-var LayoutSlot = function LayoutSlot(_ref) {
+var SidebarSlot = function SidebarSlot(_ref) {
   var children = _ref.children;
   return React.createElement(Fill, null, children);
 };
 
-LayoutSlot.Slot = Slot;
+SidebarSlot.Slot = Slot;
 
-
-/***/ }),
-
-/***/ "./resources/js/editor/sidebar/PostTitleOptions.js":
-/*!*********************************************************!*\
-  !*** ./resources/js/editor/sidebar/PostTitleOptions.js ***!
-  \*********************************************************/
-/*! exports provided: PostTitleOptions */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostTitleOptions", function() { return PostTitleOptions; });
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-/**
- * Post Title Component
- *
- * This file handles the JavaScript for creating a select control
- * for post title options in the block editor theme sidebar panel.
- *
- * @package   Taproot
- * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2020 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- * @link      https://taproot-theme.com
- */
-var compose = wp.compose.compose;
-var _wp$data = wp.data,
-    withSelect = _wp$data.withSelect,
-    withDispatch = _wp$data.withDispatch;
-var SelectControl = wp.components.SelectControl;
-var __ = wp.i18n.__;
-var PostTitleOptions = compose(withDispatch(function (dispatch, props) {
-  return {
-    setMetaFieldValue: function setMetaFieldValue(value) {
-      dispatch('core/editor').editPost({
-        meta: _defineProperty({}, props.fieldName, value)
-      });
-    }
-  };
-}), withSelect(function (select, props) {
-  return {
-    metaFieldValue: select('core/editor').getEditedPostAttribute('meta')[props.fieldName]
-  };
-}))(function (props) {
-  return React.createElement(SelectControl, {
-    label: __('Post Title'),
-    value: props.metaFieldValue,
-    options: [{
-      label: __('Show in Content'),
-      value: 'content'
-    }, {
-      label: __('Show in Hero Area'),
-      value: 'header'
-    }, {
-      label: __('Hide'),
-      value: 'hide'
-    }],
-    onChange: function onChange(content) {
-      props.setMetaFieldValue(content);
-    }
-  });
-});
 
 /***/ }),
 
@@ -862,12 +1140,17 @@ var PostTitleOptions = compose(withDispatch(function (dispatch, props) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _LayoutPicker_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LayoutPicker.js */ "./resources/js/editor/sidebar/LayoutPicker.js");
-/* harmony import */ var _PostTitleOptions_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PostTitleOptions.js */ "./resources/js/editor/sidebar/PostTitleOptions.js");
-/* harmony import */ var _HeroImage_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./HeroImage.js */ "./resources/js/editor/sidebar/HeroImage.js");
-/* harmony import */ var _HeroOverlay_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./HeroOverlay.js */ "./resources/js/editor/sidebar/HeroOverlay.js");
-/* harmony import */ var _HeroTextColors_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./HeroTextColors.js */ "./resources/js/editor/sidebar/HeroTextColors.js");
-/* harmony import */ var _LayoutSlot_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./LayoutSlot.js */ "./resources/js/editor/sidebar/LayoutSlot.js");
+/* harmony import */ var _SidebarLayout_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SidebarLayout.js */ "./resources/js/editor/sidebar/SidebarLayout.js");
+/* harmony import */ var _HeaderImage_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HeaderImage.js */ "./resources/js/editor/sidebar/HeaderImage.js");
+/* harmony import */ var _HeaderOverlay_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./HeaderOverlay.js */ "./resources/js/editor/sidebar/HeaderOverlay.js");
+/* harmony import */ var _HeaderTextColors_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./HeaderTextColors.js */ "./resources/js/editor/sidebar/HeaderTextColors.js");
+/* harmony import */ var _DisableTopPadding_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./DisableTopPadding.js */ "./resources/js/editor/sidebar/DisableTopPadding.js");
+/* harmony import */ var _DisableBottomPadding_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./DisableBottomPadding.js */ "./resources/js/editor/sidebar/DisableBottomPadding.js");
+/* harmony import */ var _SidebarSlot_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./SidebarSlot.js */ "./resources/js/editor/sidebar/SidebarSlot.js");
+/* harmony import */ var _ContentLayout_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ContentLayout.js */ "./resources/js/editor/sidebar/ContentLayout.js");
+/* harmony import */ var _HeaderTitleDisplay_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./HeaderTitleDisplay.js */ "./resources/js/editor/sidebar/HeaderTitleDisplay.js");
+/* harmony import */ var _HideFeaturedImage_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./HideFeaturedImage.js */ "./resources/js/editor/sidebar/HideFeaturedImage.js");
+/* harmony import */ var _HidePostTitle_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./HidePostTitle.js */ "./resources/js/editor/sidebar/HidePostTitle.js");
 /**
  * Block Editor Custom Settings Panel.
  *
@@ -885,9 +1168,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // Action for adding items to the layout section slot
 
-wp.hooks.doAction('taproot-single-layout-slot', _LayoutSlot_js__WEBPACK_IMPORTED_MODULE_5__["LayoutSlot"]);
+
+
+
+
+ // Action for adding items to the sidebar section slot
+
+wp.hooks.doAction('taproot-editor-sidebar-slot', _SidebarSlot_js__WEBPACK_IMPORTED_MODULE_6__["SidebarSlot"]);
 
 (function (wp) {
   var _wp$editPost = wp.editPost,
@@ -914,21 +1202,33 @@ wp.hooks.doAction('taproot-single-layout-slot', _LayoutSlot_js__WEBPACK_IMPORTED
         icon: "carrot",
         title: __('Taproot Page Settings')
       }, React.createElement(Panel, null, React.createElement(PanelBody, {
-        title: __('Layout'),
+        title: __('Custom Header'),
         initialOpen: false
-      }, React.createElement(_LayoutPicker_js__WEBPACK_IMPORTED_MODULE_0__["LayoutPicker"], {
-        fieldName: "taproot_page_layout"
-      }), React.createElement(_LayoutSlot_js__WEBPACK_IMPORTED_MODULE_5__["LayoutSlot"].Slot, null, function (fills) {
+      }, React.createElement(_HeaderImage_js__WEBPACK_IMPORTED_MODULE_1__["HeaderImage"], null), React.createElement(_HeaderOverlay_js__WEBPACK_IMPORTED_MODULE_2__["HeaderOverlay"], null), React.createElement(_HeaderTextColors_js__WEBPACK_IMPORTED_MODULE_3__["HeaderTextColors"], {
+        fieldName: "_taproot_header_text_color"
+      }), React.createElement(_HeaderTitleDisplay_js__WEBPACK_IMPORTED_MODULE_8__["HeaderTitleDisplay"], {
+        fieldName: "_taproot_header_display_title"
+      })), React.createElement(PanelBody, {
+        title: __('Sidebar'),
+        initialOpen: false
+      }, React.createElement(_SidebarLayout_js__WEBPACK_IMPORTED_MODULE_0__["SidebarLayout"], {
+        fieldName: "_taproot_page_layout"
+      }), React.createElement(_SidebarSlot_js__WEBPACK_IMPORTED_MODULE_6__["SidebarSlot"].Slot, null, function (fills) {
         return React.createElement(React.Fragment, null, fills);
       })), React.createElement(PanelBody, {
-        title: __('Post Title'),
+        title: __('Content'),
         initialOpen: false
-      }, React.createElement(_PostTitleOptions_js__WEBPACK_IMPORTED_MODULE_1__["PostTitleOptions"], {
-        fieldName: "taproot_post_title_display"
-      })), React.createElement(PanelBody, {
-        title: __('Hero Area'),
-        initialOpen: false
-      }, React.createElement(_HeroImage_js__WEBPACK_IMPORTED_MODULE_2__["HeroImage"], null), React.createElement(_HeroOverlay_js__WEBPACK_IMPORTED_MODULE_3__["HeroOverlay"], null), React.createElement(_HeroTextColors_js__WEBPACK_IMPORTED_MODULE_4__["HeroTextColors"], null))))));
+      }, React.createElement(_ContentLayout_js__WEBPACK_IMPORTED_MODULE_7__["ContentLayout"], {
+        fieldName: "_taproot_post_content_layout"
+      }), React.createElement(_HidePostTitle_js__WEBPACK_IMPORTED_MODULE_10__["HidePostTitle"], {
+        fieldName: "_taproot_post_title_hide"
+      }), React.createElement(_HideFeaturedImage_js__WEBPACK_IMPORTED_MODULE_9__["HideFeaturedImage"], {
+        fieldName: "_taproot_post_featured_image_hide"
+      }), React.createElement(_DisableTopPadding_js__WEBPACK_IMPORTED_MODULE_4__["DisableTopPadding"], {
+        fieldName: "_taproot_disable_main_top_padding"
+      }), React.createElement(_DisableBottomPadding_js__WEBPACK_IMPORTED_MODULE_5__["DisableBottomPadding"], {
+        fieldName: "_taproot_disable_main_bottom_padding"
+      }))))));
     }
   });
 })(window.wp);

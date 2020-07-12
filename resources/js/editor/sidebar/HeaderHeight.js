@@ -1,7 +1,7 @@
 /**
- * Hero Overlay
+ * Header Image Overlay
  *
- * This file handles the JavaScript for the hero overlay settings in the editor.
+ * This file handles the JavaScript for the header overlay settings in the editor.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
@@ -20,17 +20,17 @@ const { RangeControl } = wp.components;
 const { __ } = wp.i18n;
 
 
-function HeroHeightEdit( {
-    heroHeight,
-    updateHeroHeight
+function HeaderHeightEdit( {
+    headerHeight,
+    updateHeaderHeight
 } ) {
 
     return (
         <>
         <RangeControl
-            label={ __( 'Hero Header Height' ) }
-            value={ heroHeight }
-            onChange={ value => updateHeroHeight(value) }
+            label={ __( 'Header Height' ) }
+            value={ headerHeight }
+            onChange={ value => updateHeaderHeight(value) }
             min={ 0 }
             max={ 100 }
             step={ 1 }
@@ -40,20 +40,20 @@ function HeroHeightEdit( {
     );
 }
 
-export const HeroHeight = compose( [
+export const HeaderHeight = compose( [
     withSelect( ( select ) => {
 
         const { getEditedPostAttribute } = select('core/editor');
 
         return {
-            heroHeight: getEditedPostAttribute('meta')['taprooot_hero_height']
+            headerHeight: getEditedPostAttribute('meta')['_taproot_header_height']
         };
     }),
     withDispatch( function( dispatch ) {
         return {
-            updateHeroHeight: value => {
-                dispatch('core/editor').editPost({ meta: { taprooot_hero_height: value } });
+            updateHeaderHeight: value => {
+                dispatch('core/editor').editPost({ meta: { _taproot_header_height: value } });
             }
         }
     })
-])( HeroHeightEdit );
+])( HeaderHeightEdit );

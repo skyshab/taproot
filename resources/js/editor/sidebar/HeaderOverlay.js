@@ -1,7 +1,7 @@
 /**
- * Hero Overlay
+ * Header Image Overlay
  *
- * This file handles the JavaScript for the hero overlay settings in the editor.
+ * This file handles the JavaScript for the header image overlay settings in the editor.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
@@ -25,7 +25,7 @@ const { __ } = wp.i18n;
 import { ColorPickerControl } from '../controls/colorPicker';
 
 
-function HeroOverlayEdit( {
+function HeaderOverlayEdit( {
     imageType,
     colors,
     overlayType,
@@ -39,7 +39,7 @@ function HeroOverlayEdit( {
     return 'none' !== imageType && (
         <>
         <SelectControl
-            label={ __('Hero Overlay') }
+            label={ __('Overlay') }
             value={ overlayType }
             options={[
                 { label: __('Default'), value: 'default' },
@@ -51,7 +51,7 @@ function HeroOverlayEdit( {
 
         { 'custom' === overlayType &&
             <ColorPickerControl
-                label={__('Hero Overlay Color')}
+                label={__('Overlay Color')}
                 value={overlayColor}
                 onChange={ value => updateOverlayColor(value) }
                 colors={ colors }
@@ -60,7 +60,7 @@ function HeroOverlayEdit( {
 
         { 'custom' === overlayType &&
             <RangeControl
-                label={ __( 'Hero Overlay Opacity' ) }
+                label={ __( 'Overlay Opacity' ) }
                 value={ overlayOpacity }
                 onChange={ value => updateOverlayOpacity(value) }
                 min={ 0 }
@@ -73,19 +73,25 @@ function HeroOverlayEdit( {
     );
 }
 
-export const HeroOverlay = compose( [
+export const HeaderOverlay = compose( [
     withSelect( ( select ) => {
 
         const { getEditedPostAttribute } = select('core/editor');
         const settings = select( 'core/block-editor' ).getSettings();
 
+        // Make sure default image type is 'none'
+        let imageType = getEditedPostAttribute('meta')['_taproot_header_image_type'];
+        if( ! imageType ) {
+            imageType = 'none';
+        }
+
         return {
-            imageType: getEditedPostAttribute('meta')['taproot_custom_header_image_type'],
+            imageType: imageType,
             colors: settings.colors,
-            overlayType: getEditedPostAttribute('meta')['taprooot_hero_overlay_type'],
-            overlayColor: getEditedPostAttribute('meta')['taprooot_hero_overlay_color'],
-            overlayColorName: getEditedPostAttribute('meta')['taprooot_hero_overlay_color_name'],
-            overlayOpacity: getEditedPostAttribute('meta')['taprooot_hero_overlay_opacity']
+            overlayType: getEditedPostAttribute('meta')['_taproot_header_overlay_type'],
+            overlayColor: getEditedPostAttribute('meta')['_taproot_header_overlay_color'],
+            overlayColorName: getEditedPostAttribute('meta')['_taproot_header_overlay_color_name'],
+            overlayOpacity: getEditedPostAttribute('meta')['_taproot_header_overlay_opacity']
         };
     }),
     withDispatch( function( dispatch, {colors} ) {
@@ -93,22 +99,22 @@ export const HeroOverlay = compose( [
         return {
 
             updateOverlayType: value => {
-                dispatch('core/editor').editPost({ meta: { taprooot_hero_overlay_type: value } });
+                dispatch('core/editor').editPost({ meta: { _taproot_header_overlay_type: value } });
             },
             updateOverlayColor: value => {
                 if(!value) {
                     value = '';
                 }
-                dispatch('core/editor').editPost({ meta: { taprooot_hero_overlay_color: value } });
+                dispatch('core/editor').editPost({ meta: { _taproot_header_overlay_color: value } });
 
                 const colorObj = wp.blockEditor.getColorObjectByColorValue(colors, value);
                 const colorSlug = (colorObj && colorObj.slug) ? colorObj.slug : ''
 
-                dispatch('core/editor').editPost({ meta: { taprooot_hero_overlay_color_name: colorSlug } });
+                dispatch('core/editor').editPost({ meta: { _taproot_header_overlay_color_name: colorSlug } });
             },
             updateOverlayOpacity: value => {
-                dispatch('core/editor').editPost({ meta: { taprooot_hero_overlay_opacity: value } });
+                dispatch('core/editor').editPost({ meta: { _taproot_header_overlay_opacity: value } });
             }
         }
     })
-])( HeroOverlayEdit );
+])( HeaderOverlayEdit );

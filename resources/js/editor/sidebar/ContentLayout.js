@@ -1,8 +1,7 @@
 /**
- * Layout Picker Component
+ * Entry Header Layout
  *
- * This file handles the JavaScript for creating a layout picker
- * control in the block editor theme sidebar panel.
+ * Adds a setting to the block editor theme sidebar panel.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
@@ -21,7 +20,7 @@ const { SelectControl } = wp.components;
 const { __ } = wp.i18n;
 
 
-export const LayoutPicker = compose(
+export const ContentLayout = compose(
     withDispatch( function( dispatch, props ) {
         return {
             setMetaFieldValue: function( value ) {
@@ -37,13 +36,15 @@ export const LayoutPicker = compose(
 )( props => {
     return (
         <SelectControl
-            label={ __('Page Layout') }
+            label={ __('Content Layout') }
             value={ props.metaFieldValue }
             options={[
                 { label: __('Default'), value: 'default' },
-                { label: __('Full (No Sidebar)'), value: 'full' },
-                { label: __('Sidebar on Right'), value: 'right' },
-                { label: __('Sidebar on Left'), value: 'left' }
+                { label: __('Left'), value: 'left' },
+                { label: __('Center'), value: 'center' },
+                { label: __('Wide'), value: 'wide' },
+                { label: __('Wide/Left'), value: 'wide-left' },
+                { label: __('Wide/Center'), value: 'wide-center' },
             ]}
             onChange={ content => {
                 props.setMetaFieldValue( content );
