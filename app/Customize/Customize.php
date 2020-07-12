@@ -59,46 +59,46 @@ class Customize implements Bootable {
      */
     public function boot() {
 
-        add_filter( 'init', [ $this, 'setup' ], 100 );
+        add_filter( 'init',                                 [ $this, 'setup' ], 100 );
 
         // Register panels
-        add_action('rootstrap/customize-register/panels', [$this, 'panels']);
+        add_action('rootstrap/customize-register/panels',   [ $this, 'panels' ] );
 
         // Register sections
-        add_action("rootstrap/customize-register/sections", [$this, 'sections']);
+        add_action("rootstrap/customize-register/sections", [ $this, 'sections' ] );
 
         // Register settings
-        add_action("rootstrap/customize-register/settings", [$this, 'settings']);
+        add_action("rootstrap/customize-register/settings", [ $this, 'settings' ] );
 
         // Register controls
-        add_action("rootstrap/customize-register/controls", [$this, 'controls']);
+        add_action("rootstrap/customize-register/controls", [ $this, 'controls' ] );
 
         // Register partials
-        add_action("rootstrap/customize-register/partials", [$this, 'partials']);
+        add_action("rootstrap/customize-register/partials", [ $this, 'partials' ] );
 
         // Add any customizer modifications
-        add_action( 'customize_register', [$this, 'customize_register_after'], PHP_INT_MAX );
+        add_action( 'customize_register',                   [ $this, 'customize_register_after' ], PHP_INT_MAX );
 
         // Register defaults
-        add_action( 'rootstrap/defaults', [$this, 'defaults'] );
+        add_action( 'rootstrap/defaults',                   [ $this, 'defaults' ] );
 
         // Register Tabs
-        add_filter( 'rootstrap/tabs', [ $this, 'tabs' ] );
+        add_filter( 'rootstrap/tabs',                       [ $this, 'tabs' ] );
 
         // Register Sequences
-        add_filter( 'rootstrap/sequences', [ $this, 'sequences' ] );
+        add_filter( 'rootstrap/sequences',                  [ $this, 'sequences' ] );
 
         // Editor styles
-        add_action( 'taproot/editor/styles', [$this, 'editorStyles'] );
+        add_action( 'taproot/editor/styles',                [ $this, 'editorStyles' ] );
 
         // Enqueue scripts and styles.
-        add_action( 'customize_controls_enqueue_scripts', [ $this, 'controlsEnqueue'] );
+        add_action( 'customize_controls_enqueue_scripts',   [ $this, 'controlsEnqueue' ] );
 
         // Enqueue preview scripts.
-        add_action( 'customize_preview_init', [ $this, 'previewEnqueue' ] );
+        add_action( 'customize_preview_init',               [ $this, 'previewEnqueue' ] );
 
         // Add preview live style scripts
-        add_action( 'customize_preview_init', [ $this, 'previewStyles' ], 100 );
+        add_action( 'customize_preview_init',               [ $this, 'previewStyles' ], 100 );
     }
 
     /**
@@ -118,6 +118,11 @@ class Customize implements Bootable {
 
             // Store panel
             $this->panels[] = $panel;
+
+            // Make sure we have sections defined
+            if( ! is_array( $panel->section_objects ) ) {
+                continue;
+            }
 
             // Loop through the sections
             foreach( $panel->section_objects as $section ) {

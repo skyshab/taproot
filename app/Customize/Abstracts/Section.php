@@ -70,6 +70,14 @@ abstract class Section {
     public $description;
 
     /**
+     * Stores associated post type
+     *
+     * @since 2.0.0
+     * @var string
+     */
+    public $post_type = false;
+
+    /**
      * Stores namespace
      *
      * @since 2.0.0
@@ -98,10 +106,13 @@ abstract class Section {
      *
      * @return void
      */
-    public function __construct( $panel ) {
+    public function __construct( $panel, $post_type = false ) {
 
         // Store the panel
         $this->panel = $panel;
+
+        // Store the post type, if assigned
+        $this->post_type = $post_type;
 
         // If section name not provided, generate automatically
         if( '' === $this->id ) {
@@ -109,9 +120,20 @@ abstract class Section {
         }
 
         // Create and store controls for this section
-        array_map( function($classname) {
-            $classname = sprintf('%s\%s', $this->namespace, $classname);
-            $this->control_objects[] = new $classname( $this->id );
+        array_map( function( $control ) {
+
+            // The control class name
+            $control = sprintf( "%s\%s", $this->namespace, $control );
+
+            // Instantiate the control class
+            $control = new $control( $this->id );
+
+            // Assign the post_type
+            $control->post_type = $this->post_type;
+
+            // Store the control instance in the section
+            $this->control_objects[] = $control;
+
         }, $this->controls );
     }
 
@@ -122,7 +144,7 @@ abstract class Section {
      * @access public
      * @return void
      */
-    public function sections($manager) {
+    public function sections( $manager ) {
         $manager->add_section( $this->id, [
             'title'         => esc_html__( $this->title, 'taproot' ),
             'panel'         => $this->panel,
