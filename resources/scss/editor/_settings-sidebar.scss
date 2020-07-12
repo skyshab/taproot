@@ -14,11 +14,11 @@
 
 .taproot-theme-sidebar {
 
-    .components-base-control, .media-preview-wrapper {
+    .components-base-control, .taproot-header-image-preview {
         margin: 16px 0;
     }
 
-    .media-preview-wrapper {
+    .taproot-header-image-preview {
         position: relative;
         display: flex;
         align-items: center;
@@ -30,6 +30,7 @@
     }
 
     .taproot-overlay-preview-text {
+        color: white;
         text-decoration: none;
         display: flex;
         position: absolute;

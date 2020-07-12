@@ -1,0 +1,47 @@
+////
+/// Layout Component
+///
+/// @group  Components/layout
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+.woocommerce {
+
+    // Hide the emoji icon
+    &-product-gallery__trigger img {
+        display: none!important;
+    }
+
+    // Buttons
+    .button.alt.single_add_to_cart_button{
+
+        // Make sure there's a border to match height with woo components
+        border: 1px solid transparent;
+    }
+
+    // Make Woo buttons match default theme buttons
+    .button.alt.single_add_to_cart_button, .button.add_to_cart_button {
+
+        @extend .wp-block-button__link;
+    }
+
+    // Make the quantity field be the same size as the button next to it.
+    .woocommerce .quantity .qty {
+        padding: 0 4px;
+        font-size: var(--buttons--font-size);
+        line-height: var(--buttons--line-height);
+    }
+
+}
+
+// Shop page
+.shop_table .coupon {
+
+    display: inline-flex;
+
+    input {
+        min-width: 150px;
+    }
+}

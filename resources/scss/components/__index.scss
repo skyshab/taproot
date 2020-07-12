@@ -7,7 +7,6 @@
 
 // Components
 @import 'app/_public';
-@import 'background/_public';
 @import 'colors/_public';
 @import 'layout/_public';
 @import 'header/_public';
@@ -24,7 +23,12 @@
 @import 'navigation-breadcrumbs/_public';
 @import 'buttons/_public';
 @import 'search/_public';
-@import 'entry/_public';
 @import 'icons/_public';
 @import 'comments/_public';
 @import 'meta/_public';
+@import 'media/_public';
+@import 'byline/_public';
+@import 'entry/_public';
+@import 'archive/_public';
+@import 'post/_public';
+@import 'woocommerce/_public';

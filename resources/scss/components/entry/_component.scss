@@ -6,12 +6,92 @@
 /// @link   https://taproot-theme.com
 ////
 
-@import 'entry';
-@import 'header';
-@import 'title';
-@import 'image';
-@import 'content';
-@import 'byline';
-@import 'archive';
-@import 'archive-page';
-@import 'footer';
+.entry {
+
+    &--archive {
+
+        border-top: 1px solid var( --colors--meta-medium );
+        padding-top: var( --block-spacing );
+
+        &:last-of-type {
+            border-bottom: 1px solid var( --colors--meta-medium );
+        }
+    }
+
+    &__header {
+        margin-bottom: 1em;
+    }
+
+    &__title {
+
+        padding-top:    0;
+        margin-top:     0;
+        margin-bottom:  0.2em;
+        line-height:    1.13em;
+        font-size:      var( --entry--title--font-size );
+        color:          var( --entry--title--link-color );
+
+        a, a:visited {
+            color: inherit;
+        }
+
+        a:hover {
+            color:      var( --entry--title--link-color--hover );
+        }
+    }
+
+    &__image {
+        margin-bottom: var( --block-spacing );
+    }
+
+    &__byline {
+
+        font-size:      var( --entry--byline--font-size );
+        color:          var( --entry--byline--text-color );
+
+        .taproot-icon {
+            color: var( --entry--byline--icon-color );
+        }
+    }
+
+    &__content {
+        @extend %clearfix;
+    }
+
+    &__content, &__summary {
+
+        > :first-child {
+            margin-top: 0;
+        }
+
+        &:last-child :last-child {
+            margin-bottom: var( --text-spacing );
+        }
+    }
+
+    &__footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__link {
+        font-size: var( --entry--link--font-size );
+        margin-bottom: var( --block-spacing );
+    }
+
+    // Sticky posts.
+    &.is-sticky {
+        border: 1px solid var( --colors--meta-medium );
+        border-bottom: none;
+        @extend .has-block-padding;
+
+        .entry__link, .entry__content > :last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.featured-image-link {
+    display: block;
+    line-height: 1;
+}

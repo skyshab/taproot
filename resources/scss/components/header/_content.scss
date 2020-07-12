@@ -9,36 +9,16 @@
 /// @link   https://taproot-theme.com
 ////
 
-.app-header__hero {
+.app-header__content {
 
     z-index: 1;
+    overflow: hidden;
 
     &__title {
         margin-top: 0;
         margin-bottom: 12px;
         color: inherit;
-    }
-
-    &__meta {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: inherit;
-        margin: 0;
-
-        svg {
-            margin-right: 0.3em;
-        }
-
-        a {
-            color: inherit;
-        }
-    }
-
-    &__author {
-        margin-right: 1em;
-        display: flex;
-        align-items: center;
+        text-align: center;
     }
 
     .app-header--has-custom-header & {
@@ -47,12 +27,22 @@
         justify-content: center;
         align-items: center;
         height: 100%;
-        padding-bottom: var( --layout-padding );
+        padding-bottom: var( --layout-spacing );
     }
-
 
     // hide additional header content when fixed header
     .app-header--has-custom-header.app-header--fixed & {
         display: none;
+    }
+
+    // Default min heights.
+    min-height: 175px;
+
+    @include screen('tablet-and-up') {
+        min-height: 250px;
+    }
+
+    @include screen('desktop') {
+        min-height: 300px;
     }
 }

@@ -1,0 +1,20 @@
+////
+/// Component Custom Properties
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+:root {
+
+    // Post Archive Title
+    --archive--title--text-color: var( --typography--headings--text-color );
+    --archive--title--font-size: 2em;
+    --archive--title--line-height: 1.2;
+
+    // Laptop and up
+    @include screen('laptop-and-up') {
+        --archive--title--font-size: 2.5em;
+    }
+}

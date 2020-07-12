@@ -9,4 +9,8 @@
 img {
     max-width: 100%;
     height: auto;
+
+    .alignfull &, .alignwide & {
+        width: 100%;
+    }
 }

@@ -1,0 +1,29 @@
+////
+/// Site Background Color
+///
+/// @group  Components\Background
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.byline {
+
+    margin-top: 0;
+
+    &__item {
+        margin-right: 0.5em;
+        display: inline-block;
+    }
+
+    a:link, a:visited {
+        color: inherit;
+    }
+
+    a:hover {
+        color: var( --colors--accent );
+    }
+
+    .taproot-icon {
+        margin: 0 0.25em 0.25em 0;
+    }
+}

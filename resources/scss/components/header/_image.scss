@@ -9,7 +9,7 @@
 /// @link   https://taproot-theme.com
 ////
 
-.wp-custom-header {
+.app-header__image {
 
     position: absolute;
     top: 0;
@@ -35,18 +35,15 @@
 
     height: auto;
 
-    .wp-custom-header {
+    .app-header__image {
         display: none;
     }
 }
 
-
-/* top nav, header container, additional header content, navbar*/
-.app-header--has-custom-header {
+// Has header image
+.app-header--has-header-image {
 
     &:not(.app-header--fixed) {
-
-        color: var( --header--hero--text-color );
 
         min-height: 275px;
 
@@ -57,17 +54,5 @@
         @include screen('desktop') {
             min-height: 100vh;
         }
-
-        a:hover {
-            color: var( --header--hero--link-color--hover );
-        }
-    }
-
-    max-height: 100vh;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-
-    &.app-header--has-topnav {
-        grid-template-rows: auto auto 1fr auto;
     }
 }

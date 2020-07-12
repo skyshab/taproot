@@ -22,12 +22,12 @@
         width:              var( --sidebar--min-width );
 
         &--right {
-            padding-left:   var( --layout-padding );
+            padding-left:   var( --layout-spacing );
         }
 
         &--left {
             order: 0;
-            padding-right:  var( --layout-padding );
+            padding-right:  var( --layout-spacing );
         }
     }
 }

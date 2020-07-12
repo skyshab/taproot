@@ -1,0 +1,24 @@
+////
+/// Component Custom Properties
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+:root {
+
+    // Single Post/Page Title
+    --post--title--color: var( --typography--headings--text-color );
+    --post--title--font-size: 2em;
+    --post--title--line-height: 1.2;
+
+    @include screen('laptop-and-up') {
+        --post--title--font-size: 2.5em;
+    }
+
+    // Single Post Meta
+    --post--byline--font-size: 1em;
+    --post--byline--text-color: inherit;
+    --post--byline--icon-color: inherit;
+}

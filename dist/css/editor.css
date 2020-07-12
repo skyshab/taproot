@@ -139,24 +139,48 @@
 
 .has-layout-padding {
 	padding: calc( ( 100vw - 90vw) / 2 );
-	padding: var(--layout-padding);
+	padding: var(--layout-spacing);
 }
 
 .has-layout-padding--sides {
 	padding-left: calc( ( 100vw - 90vw) / 2 );
-	padding-left: var(--layout-padding);
+	padding-left: var(--layout-spacing);
 	padding-right: calc( ( 100vw - 90vw) / 2 );
-	padding-right: var(--layout-padding);
+	padding-right: var(--layout-spacing);
 }
 
 .has-layout-padding--top {
 	padding-top: calc( ( 100vw - 90vw) / 2 );
-	padding-top: var(--layout-padding);
+	padding-top: var(--layout-spacing);
 }
 
 .has-layout-padding--bottom {
 	padding-bottom: calc( ( 100vw - 90vw) / 2 );
-	padding-bottom: var(--layout-padding);
+	padding-bottom: var(--layout-spacing);
+}
+
+.has-layout-spacing {
+	margin-top: calc( ( 100vw - 90vw) / 2 );
+	margin-top: var(--layout-spacing);
+	margin-bottom: calc( ( 100vw - 90vw) / 2 );
+	margin-bottom: var(--layout-spacing);
+}
+
+.has-layout-spacing--sides {
+	margin-left: calc( ( 100vw - 90vw) / 2 );
+	margin-left: var(--layout-spacing);
+	margin-right: calc( ( 100vw - 90vw) / 2 );
+	margin-right: var(--layout-spacing);
+}
+
+.has-layout-spacing--top {
+	margin-top: calc( ( 100vw - 90vw) / 2 );
+	margin-top: var(--layout-spacing);
+}
+
+.has-layout-spacing--bottom {
+	margin-bottom: calc( ( 100vw - 90vw) / 2 );
+	margin-bottom: var(--layout-spacing);
 }
 
 .has-background-dim-10 {
@@ -251,19 +275,20 @@
 	stroke: none !important;
 }
 
-.taproot-theme-sidebar .components-base-control, .taproot-theme-sidebar .media-preview-wrapper {
+.taproot-theme-sidebar .components-base-control, .taproot-theme-sidebar .taproot-header-image-preview {
 	margin: 16px 0;
 }
-.taproot-theme-sidebar .media-preview-wrapper {
+.taproot-theme-sidebar .taproot-header-image-preview {
 	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
-.taproot-theme-sidebar .media-preview-wrapper img {
+.taproot-theme-sidebar .taproot-header-image-preview img {
 	display: block;
 }
 .taproot-theme-sidebar .taproot-overlay-preview-text {
+	color: white;
 	text-decoration: none;
 	display: flex;
 	position: absolute;
@@ -293,9 +318,9 @@
 .editor-styles-wrapper .editor-post-title__input {
 	font-family: inherit;
 	font-weight: normal;
-	color: var(--entry--title--text-color);
-	font-size: var(--entry--title--font-size);
-	line-height: var(--entry--title--line-height);
+	color: var(--post--title--text-color);
+	font-size: var(--post--title--font-size);
+	line-height: var(--post--title--line-height);
 }
 
 .editor-styles-wrapper .wp-block pre {
@@ -368,6 +393,10 @@
 	max-width: var(--content-width);
 	margin-left: auto;
 	margin-right: auto;
+}
+.alignfull .editor-styles-wrapper .wp-block-group__inner-container {
+	max-width: min(1060px, 90vw);
+	max-width: min(var(--container-max-width), var(--container-width));
 }
 .editor-styles-wrapper .wp-block[data-type="core/group"] {
 	margin-top: 0;
@@ -1498,12 +1527,9 @@
 :root {
 	--content-width: 640px;
 	--container-width: 90vw;
-	--container-width-as-decimal: 0.9;
-	--container-width-as-vw: 90vw;
-	--container-width-as-percentage: 90%;
 	--container-max-width: 1060px;
-	--layout-padding: calc( ( 100vw - var( --container-width ) ) / 2 );
-	--layout-padding-inverse: calc( var( --layout-padding ) * -1 );
+	--layout-spacing: calc( ( 100vw - var( --container-width ) ) / 2 );
+	--layout-spacing-inverse: calc( var( --layout-spacing ) * -1 );
 }
 
 @media (min-width: 480px){

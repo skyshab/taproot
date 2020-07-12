@@ -8,43 +8,15 @@
 /// @link   https://taproot-theme.com
 ////
 
-// Blocks that always have block padding
+// Blocks with block padding
 .wp-block-cover,
 .wp-block-preformatted,
 .wp-block-code,
-.wp-block-verse {
+.wp-block-verse,
+.wp-block-group.has-background,
+.wp-block-columns.has-background,
+.wp-block-media-text.has-background {
     @extend .has-block-padding;
-}
-
-// blocks with block padding under certain conditions
-.wp-block-group,
-.wp-block-columns,
-.wp-block-media-text {
-
-    &.alignfull {
-
-        @include screen('mobile') {
-            padding-left: var( --layout-padding );
-            padding-right: var( --layout-padding );
-        }
-    }
-
-    &.has-background, &[style*=background-color] {
-
-        @extend .has-block-padding;
-
-        &.alignfull {
-
-            @include screen('mobile') {
-                padding: var( --layout-padding );
-            }
-
-            .alignfull:not(.has-background) {
-                padding-left: 0;
-                padding-right: 0;
-            }
-        }
-    }
 }
 
 // Blocks with block spacing
@@ -52,15 +24,8 @@
 .wp-block-audio,
 .wp-block-file,
 figure.wp-block-gallery,
-.wp-block-table {
+.wp-block-table,
+.wp-block-cover:not(.alignfull),
+.wp-block-media-text:not(.alignfull) {
     @extend .has-block-spacing;
-}
-
-// blocks with block spacing only when not full width
-.wp-block-cover,
-.wp-block-media-text {
-
-    &:not(.alignfull) {
-        @extend .has-block-spacing;
-    }
 }

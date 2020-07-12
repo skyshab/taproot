@@ -11,6 +11,9 @@ html {
     // use border box by default
     box-sizing: border-box;
 
+    // default background to white
+    background-color: white;
+
     // prevent ios from hijacking the font size
     -webkit-text-size-adjust: 100%;
 }

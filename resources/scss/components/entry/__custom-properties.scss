@@ -8,36 +8,17 @@
 
 :root {
 
-    // Single Post/Page Title
-    --entry--title--color: var( --typography--headings--text-color );
-    --entry--title--font-size: 2em;
-    --entry--title--line-height: 1.2;
-
-    @include screen('laptop-and-up') {
-        --entry--title--font-size: 2.5em;
-    }
-
-    // Single Post Meta
-    --entry--meta--font-size: 1em;
-    --entry--meta--text-color: inherit;
-    --entry--meta--icon-color: inherit;
-
-    // Post Archive Title
-    --archive--title--text-color: var( --typography--headings--text-color );
-    --archive--title--font-size: 2em;
-    --archive--title--line-height: 1.2;
-
-    // Laptop and up
-    @include screen('laptop-and-up') {
-        --archive--title--font-size: 2.5em;
-    }
-
     // Archive Entry Title
-    --archive-entry--title--font-size: 1.8em;
-    --archive-entry--title--line-height: 1;
-    --archive-entry--title--link-color: var( --typography--headings--text-color );
-    --archive-entry--title--link-color--hover: var( --colors--accent );
+    --entry--title--font-size: 1.8em;
+    --entry--title--line-height: 1;
+    --entry--title--link-color: var( --typography--headings--text-color );
+    --entry--title--link-color--hover: var( --colors--accent );
 
     // Archive Entry Link
-    --archive-entry--link--font-size: 1em;
+    --entry--link--font-size: 1em;
+
+    // Entry Byline
+    --entry--byline--font-size: 1em;
+    --entry--byline--icon-color: inherit;
+    --entry--byline--text-color: inherit;
 }

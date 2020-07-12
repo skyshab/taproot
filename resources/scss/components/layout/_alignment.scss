@@ -8,14 +8,6 @@
 /// @link   https://taproot-theme.com
 ////
 
-.alignfull, .alignwide {
-
-    // force image to fill space
-    img {
-        width: 100%;
-    }
-}
-
 .alignfull {
 
     @include screen('tablet-and-under') {
@@ -25,32 +17,122 @@
     }
 
     @include screen('desktop') {
-        .app-main--full & {
+        .app-main--no-sidebar & {
             width: 100vw;
             max-width: 100vw;
             margin-left: calc( 50% - 50vw );
         }
     }
-}
 
+    @include screen('mobile') {
+        padding-left: var( --layout-spacing );
+        padding-right: var( --layout-spacing );
+    }
+
+    &.has-background {
+
+        @include screen('tablet-and-under') {
+            .app-main--has-sidebar & {
+                padding: var( --layout-spacing );
+            }
+        }
+
+        .app-main--no-sidebar & {
+            padding: var( --layout-spacing );
+        }
+
+        .alignfull:not(.has-background) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
 
 .alignwide {
 
-    .app-main--sidebar-right &, .app-main--sidebar-left & {
+    .app-main--has-sidebar & {
 
         @include screen('tablet') {
             width: var(--container-width);
             max-width: var(--container-max-width);
             margin-left: calc( (var(--container-width) - 100%) / -2 );
         }
+
+        @include screen('tablet-and-under') {
+            margin-top: var(--layout-spacing);
+            margin-bottom: var(--layout-spacing);
+        }
     }
 
-    .app-main--full & {
+    .app-main--no-sidebar & {
+
+        @extend .has-layout-spacing;
 
         @include screen('tablet-and-up') {
             width: var(--container-width);
             max-width: var(--container-max-width);
-            margin-left: calc( (var(--container-width) - 100%) / -2 );
+            margin-left: calc( ( min( var(--container-max-width), var(--container-width) ) - 100% ) / -2 );
         }
     }
+}
+
+
+// Mixin to generate wide styles
+@mixin wide-styles() {
+
+    .post__content {
+
+        &--wide, &--left {
+
+            .alignwide {
+                margin-left: 0;
+            }
+
+            .alignfull {
+                margin-left: calc( min( var(--container-max-width), var(--container-width) ) / 2 - 50vw );
+            }
+        }
+
+        &--right {
+
+            .alignwide {
+                margin-left: calc( var(--content-width) - min( var(--container-max-width), var(--container-width) ) );
+            }
+
+            .alignfull {
+                margin-left: calc( (min( var(--container-max-width), var(--container-width) ) / 2 - 50vw) + (var(--content-width) - min( var(--container-max-width), var(--container-width) )) );
+            }
+        }
+    }
+
+}
+
+// Wide Content Option
+.app-main {
+
+    // Sidebar Layouts - tablet only
+    &--has-sidebar {
+        @include screen('tablet') {
+            @include wide-styles();
+        }
+    }
+
+    // No Sidebar Layout - tablet and up
+    &--no-sidebar {
+        @include screen('tablet-and-up') {
+            @include wide-styles();
+        }
+    }
+}
+
+
+
+// do these need to be specific to the sidebar layout type?
+
+:not(.alignfull) + .alignfull {
+    margin-top: var(--layout-spacing);
+}
+
+.alignfull + :not(.alignfull) {
+    margin-top: var(--layout-spacing);
 }

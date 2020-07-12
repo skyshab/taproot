@@ -11,6 +11,7 @@
     background-color: var( --colors--accent );
     color: var( --header--text-color );
     width: 100%;
+    max-height: 100vh;
     position: relative;
 
     a:hover {
@@ -18,6 +19,7 @@
     }
 
     &__branding {
+
         display: grid;
         align-items: center;
 
@@ -26,108 +28,135 @@
             grid-area: content;
         }
 
-        // prevent the branding from being squished when next to
-        // a header menu that is expanded.
-        // this can push the nav out of the container on mobile,
-        // so only do tablet and up
+        // Prevent branding from being 'squished' when next to a header menu that is expanded.
+        // This can push the nav out of the container on mobile, so only do tablet and up.
         @include screen('tablet-and-up') {
             flex-shrink: 0;
         }
     }
 
     @include screen('mobile') {
-        &--mobile--horizontal {
 
-            .app-header__branding {
-                @include branding_styles('horizontal');
+        &--mobile {
+
+            &--horizontal {
+
+                .app-header__branding {
+                    @include branding_styles('horizontal');
+                }
+
+                .app-header__logo-link {
+                    margin: 0 var( --header--logo--gutter ) 0 0;
+                }
+
+                .app-header__main {
+                    flex-direction: row;
+                }
             }
 
-            .app-header__logo-link {
-                margin: 0 var( --header--logo--gutter ) 0 0;
-            }
+            &--vertical {
 
-            .app-header__container {
-                flex-direction: row;
-            }
-        }
-        &--mobile--vertical {
+                .app-header__branding {
+                    @include branding_styles('vertical');
+                }
 
-            .app-header__branding {
-                @include branding_styles('vertical');
-            }
+                .app-header__logo-link {
+                    margin: 0 0 var( --header--logo--gutter ) 0;
+                }
 
-            .app-header__logo-link {
-                margin: 0 0 var( --header--logo--gutter ) 0;
-            }
-
-            .app-header__container {
-                flex-direction: column;
+                .app-header__main {
+                    flex-direction: column;
+                }
             }
         }
     }
 
     @include screen('tablet-and-up') {
-        &--tablet--horizontal {
 
-            .app-header__branding {
-                @include branding_styles('horizontal');
+        &--tablet {
+
+            &--horizontal {
+
+                .app-header {
+
+                    &__branding {
+                        @include branding_styles('horizontal');
+                    }
+
+                    &__logo-link {
+                        margin: 0 var( --header--logo--gutter ) 0 0;
+                    }
+
+                    &__main {
+                        flex-direction: row;
+                    }
+                }
             }
 
-            .app-header__logo-link {
-                margin: 0 var( --header--logo--gutter ) 0 0;
-            }
+            &--vertical {
 
-            .app-header__container {
-                flex-direction: row;
+                .app-header {
+
+                    &__branding {
+                        @include branding_styles('vertical');
+                    }
+
+                    &__logo-link {
+                        margin: 0 0 var( --header--logo--gutter ) 0;
+                    }
+
+                    &__main {
+                        flex-direction: column;
+                    }
+                }
             }
         }
-        &--tablet--vertical {
 
-            .app-header__branding {
-                @include branding_styles('vertical');
-            }
-
-            .app-header__logo-link {
-                margin: 0 0 var( --header--logo--gutter ) 0;
-            }
-
-            .app-header__container {
-                flex-direction: column;
-            }
-        }
     }
 
     @include screen('desktop') {
-        &--desktop--horizontal {
 
-            .app-header__branding {
-                @include branding_styles('horizontal');
+        &--desktop {
+
+            &--horizontal {
+
+                .app-header {
+
+                    &__branding {
+                        @include branding_styles('horizontal');
+                    }
+
+                    &__logo-link {
+                        margin: 0 var( --header--logo--gutter ) 0 0;
+                    }
+
+                    &__main {
+                        flex-direction: row;
+                    }
+                }
             }
 
-            .app-header__logo-link {
-                margin: 0 var( --header--logo--gutter ) 0 0;
-            }
+            &--vertical {
 
-            .app-header__container {
-                flex-direction: row;
-            }
-        }
-        &--desktop--vertical {
+                .app-header {
 
-            .app-header__branding {
-                @include branding_styles('vertical');
-            }
+                    &__branding {
+                        @include branding_styles('vertical');
+                    }
 
-            .app-header__logo-link {
-                margin: 0 0 var( --header--logo--gutter ) 0;
-            }
+                    &__logo-link {
+                        margin: 0 0 var( --header--logo--gutter ) 0;
+                    }
 
-            .app-header__container {
-                flex-direction: column;
+                    &__main {
+                        flex-direction: column;
+                    }
+                }
             }
         }
 
         &.fixed-type--sticky {
+
             transition: background 0.5s ease-in-out;
             position: sticky;
             z-index: 2;
@@ -139,14 +168,14 @@
         }
     }
 
-    // Logo link.
+    // Logo link
     &__logo-link {
         grid-area: logo;
         display: grid;
         width:  var( --header--logo--width );
     }
 
-    // The site title.
+    // Site title
     &__title {
         grid-area: title;
         align-self: end;
@@ -157,8 +186,9 @@
         line-height: var( --header--title--line-height );
     }
 
-    // Site title link.
+    // Site title link
     &__title-link {
+
         color: inherit;
         text-decoration: none;
 
@@ -171,7 +201,7 @@
         }
     }
 
-    // The site description.
+    // Site description
     &__description {
         grid-area: tagline;
         align-self: start;
@@ -185,25 +215,23 @@
     &--fixed {
 
         @include screen('desktop') {
+
             position: fixed;
             width: 100%;
             z-index: 2;
             top: 0;
             transform: translateZ(0);
-
-            // customize defaults
             background-color: #000000;
-
             color: var( --header--fixed--text-color );
 
             a:hover {
                 color: var( --header--fixed--link-color--hover );
             }
-        };
+        }
     }
 
-    // Container
-    &__container {
+    // Main Container.
+    &__main {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -211,13 +239,18 @@
         padding-bottom: var( --header--padding );
     }
 
-    &--fullwidth {
+    // Has a custom header.
+    &--has-custom-header {
 
-        .app-header__container, .menu--top__container, .menu--navbar {
-            width: 100%;
-            max-width: 100%;
-            padding-left: var( --header--padding );
-            padding-right: var( --header--padding );
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+
+        &:not(.app-header--fixed) {
+            color: var( --header--image--text-color );
+        }
+
+        &.app-header--has-topnav {
+            grid-template-rows: auto auto 1fr auto;
         }
     }
 }

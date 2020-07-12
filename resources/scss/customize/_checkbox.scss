@@ -9,7 +9,6 @@
 /// @link   https://taproot-theme.com
 ////
 
-
 .customize-control-taproot-checkbox {
     position: relative;
     font-weight: 600;
@@ -30,30 +29,33 @@
     }
 }
 
-// style all checkboxes in controls
+// Style checkboxes in all of our controls
 .customize-control {
 
-    input[type=checkbox] {
-        margin: 0;
-        margin-right: 10px;
-        display: inline-flex;
-        min-width: 20px;
-        width: 20px;
-        height: 20px;
-        border: none;
-        box-shadow: none;
-        background: #EEEEEE;
+    &-taproot-checkbox,
+    &-taproot-range {
 
-        &:checked:before {
+        input[type=checkbox] {
             margin: 0;
-            width: inherit;
-            height: inherit;
-            box-sizing: border-box;
-            margin-left: -1px;
+            margin-right: 10px;
+            display: inline-flex;
+            min-width: 20px;
+            width: 20px;
+            height: 20px;
+            border: none;
+            box-shadow: none;
+            background: #EEEEEE;
+
+            &:checked:before {
+                margin: 0;
+                width: inherit;
+                height: inherit;
+                box-sizing: border-box;
+                margin-left: -1px;
+            }
         }
     }
 }
-
 
 // don't add top margin when first control in a section
 .section-meta + .customize-control-checkbox {
