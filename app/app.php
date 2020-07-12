@@ -26,21 +26,24 @@ $taproot = new Application();
 # Register core service providers.
 # ------------------------------------------------------------------------------
 
-array_map( function( $component ) use ( $taproot ) {
-    $taproot->provider( "Taproot\Providers\\${component}" );
-}, [
-    'App',
-    'Rootstrap',
-    'Customize',
-    'Editor'
-]);
+// App
+$taproot->provider( 'Taproot\Providers\App' );
+
+// Rootstrap
+$taproot->provider( 'Taproot\Providers\Rootstrap' );
+
+// Customizer
+$taproot->provider( 'Taproot\Customize\Provider' );
+
+// Editor
+$taproot->provider( 'Taproot\Editor\Provider' );
 
 # ------------------------------------------------------------------------------
 # Register component service providers.
 # ------------------------------------------------------------------------------
 
 array_map( function( $component ) use ( $taproot ) {
-    $taproot->provider( "Taproot\Components\\${component}\Provider" );
+    $taproot->provider( "Taproot\Components\\${component}\Component" );
 }, [
     'Header',
     'Layout',

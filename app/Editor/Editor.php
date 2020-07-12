@@ -128,67 +128,92 @@ class Editor implements Bootable {
      */
     public function register_post_meta() {
 
-        register_meta( 'post', 'taproot_page_layout', [
+        register_meta( 'post', '_taproot_page_layout', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'string',
         ]);
 
-        register_meta( 'post', 'taproot_post_title_display', [
+        register_meta( 'post', '_taproot_post_title_hide', [
             'show_in_rest' => true,
             'single' => true,
-            'type' => 'string',
+            'type' => 'number',
+            'default' => 1
         ]);
 
-        register_meta( 'post', 'taproot_custom_header_image_type', [
-            'show_in_rest' => true,
-            'single' => true,
-            'type' => 'string',
-        ]);
-
-        register_meta( 'post', 'taproot_custom_header_image', [
-            'show_in_rest' => true,
-            'single' => true,
-            'type' => 'string',
-        ]);
-
-        register_meta( 'post', 'taprooot_hero_overlay_type', [
-            'show_in_rest' => true,
-            'single' => true,
-            'type' => 'string',
-        ]);
-
-        register_meta( 'post', 'taprooot_hero_overlay_color', [
-            'show_in_rest' => true,
-            'single' => true,
-            'type' => 'string',
-        ]);
-
-        register_meta( 'post', 'taprooot_hero_overlay_color_name', [
-            'show_in_rest' => true,
-            'single' => true,
-            'type' => 'string',
-        ]);
-
-        register_meta( 'post', 'taprooot_hero_overlay_opacity', [
+        register_meta( 'post', '_taproot_post_featured_image_hide', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'number',
         ]);
 
-        register_meta( 'post', 'taprooot_hero_default_color', [
+        register_meta( 'post', '_taproot_post_content_layout', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'string',
         ]);
 
-        register_meta( 'post', 'taprooot_hero_default_hover_color', [
+        register_meta( 'post', '_taproot_disable_main_top_padding', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'number',
+        ]);
+
+        register_meta( 'post', '_taproot_disable_main_bottom_padding', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'number',
+        ]);
+
+        register_meta( 'post', '_taproot_header_image_type', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'string',
         ]);
 
-        register_meta( 'post', 'taprooot_hero_height', [
+        register_meta( 'post', '_taproot_header_image', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'string',
+        ]);
+
+        register_meta( 'post', '_taproot_header_overlay_type', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'string',
+        ]);
+
+        register_meta( 'post', '_taproot_header_overlay_color', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'string',
+        ]);
+
+        register_meta( 'post', '_taproot_header_overlay_color_name', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'string',
+        ]);
+
+        register_meta( 'post', '_taproot_header_overlay_opacity', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'number',
+        ]);
+
+        register_meta( 'post', '_taproot_header_text_color', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'string',
+        ]);
+
+        register_meta( 'post', '_taproot_header_height', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'number',
+        ]);
+
+        register_meta( 'post', '_taproot_header_display_title', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'number',
@@ -202,16 +227,10 @@ class Editor implements Bootable {
      */
     public function styles( $styles ) {
 
-        // Custom Property: Default Hero Header Color
+        // Custom Property: Default Header Image Header Color
         $styles->customProperty([
-            'name' => 'header--hero--text-color',
-            'value' => get_post_meta( get_the_ID(), 'taprooot_hero_default_color', true ),
-        ]);
-
-        // Custom Property: Default Hero Header Link Hover Color
-        $styles->customProperty([
-            'name' => 'header--hero--link-color--hover',
-            'value' => get_post_meta( get_the_ID(), 'taprooot_hero_default_hover_color', true ),
+            'name' => 'header--image--text-color',
+            'value' => get_post_meta( get_the_ID(), '_taproot_header_text_color', true ),
         ]);
     }
 

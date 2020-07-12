@@ -9,10 +9,9 @@
  * @link      https://taproot-theme.com
  */
 
-namespace Taproot\Providers;
+namespace Taproot\Editor;
 
 use Hybrid\Tools\ServiceProvider;
-use Taproot\Editor\Editor as Controller;
 
 /**
  * Editor service provider class.
@@ -20,7 +19,7 @@ use Taproot\Editor\Editor as Controller;
  * @since  1.0.0
  * @access public
  */
-class Editor extends ServiceProvider {
+class Provider extends ServiceProvider {
 
     /**
      * Register classes and bind to the container.
@@ -30,7 +29,7 @@ class Editor extends ServiceProvider {
      * @return void
      */
     public function register() {
-        $this->app->singleton( Controller::class );
+        $this->app->singleton( 'editor', Editor::class );
     }
 
     /**
@@ -41,6 +40,6 @@ class Editor extends ServiceProvider {
      * @return void
      */
     public function boot() {
-        $this->app->resolve( Controller::class )->boot();
+        $this->app->resolve( 'editor' )->boot();
     }
 }

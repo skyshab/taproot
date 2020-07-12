@@ -32,7 +32,7 @@ class App extends ServiceProvider {
     public function register() {
 
         // Bind theme stylesheet handle
-        $this->app->instance('styles/handle', 'taproot-screen');
+        $this->app->instance( 'styles/handle', 'taproot-screen' );
 
         // Bind the Laravel Mix manifest for cache-busting
         $this->app->singleton( 'taproot/mix', function() {
