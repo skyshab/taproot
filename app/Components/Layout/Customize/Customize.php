@@ -13,15 +13,15 @@
 
 namespace Taproot\Components\Layout\Customize;
 
-use Taproot\Customize\Abstracts\Component as CustomizeComponent;
+use Taproot\Customize\Abstracts\Panel;
 
 /**
- * Extend CustomizeComponent class
+ * Extend Panel class
  *
  * @since  2.0.0
  * @access public
  */
-class Customize extends CustomizeComponent {
+class Customize extends Panel {
 
     /**
      * Namespace
@@ -46,7 +46,6 @@ class Customize extends CustomizeComponent {
      * @var array
      */
     public $sections = [
-        'Boxed',
         'Container',
         'Content'
     ];
@@ -58,7 +57,7 @@ class Customize extends CustomizeComponent {
      * @access public
      * @return void
      */
-    public function panels($manager) {
+    public function panels( $manager ) {
 
         $manager->add_panel( $this->panel, [
             'title' => __( 'Layout', 'taproot' ),

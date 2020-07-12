@@ -54,7 +54,6 @@ class Section extends SectionAbstract {
      * @var array
      */
     public $controls = [
-        'Is_Fullwidth',
         'Background_Color',
         'Text_Color',
         'Link_Color_Hover',

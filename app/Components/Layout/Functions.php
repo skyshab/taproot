@@ -14,6 +14,8 @@
 namespace Taproot\Components\Layout;
 
 use Taproot\Tools\Mod;
+use function Taproot\Tools\get_the_single_id;
+use function Taproot\Tools\post_type_mod;
 
 /**
  * Template tags class.
@@ -32,156 +34,160 @@ class Functions {
      */
     public static function get_layout() {
 
-        // Get the post type
-        $post_type = ( get_post_type() ) ? get_post_type() : 'post';
-
         // Default layout
-        $layout = 'right';
+        $layout = 'full';
 
-        // Archive layout
-        if( is_home() || is_archive() ) {
-            $layout = Mod::get( "{$post_type}--archive--layout--layout", $layout );
-        }
+        if( $post_id = get_the_single_id() ) {
 
-        // Pages, posts and custom post singles
-        elseif( is_singular() ) {
-            // First, check for non-hierarchical, then hierarchical in customizer settings
-            $default = Mod::get( "{$post_type}--single--layout--layout", Mod::get( "{$post_type}--layout--layout", $layout ) );
             // Get layout from post meta
-            $single_layout = get_post_meta( get_the_ID(), 'taproot_page_layout', true );
-            // If there's a layout set for the single and it's not "default"
-            if( $single_layout && 'default' !== $single_layout ) {
-                $layout = $single_layout;
+            $single_layout = get_post_meta( $post_id, '_taproot_page_layout', true );
+
+            if( $single_layout ) {
+
+                if( 'default' === $single_layout ) {
+
+                    if( is_home() ) {
+                        $layout = Mod::get( "post--archive--layout--sidebar-layout", $layout );
+                    }
+                    elseif( post_type_mod( 'layout--sidebar-layout' ) ) {
+                        $layout = post_type_mod( 'layout--sidebar-layout' );
+                    }
+                }
+                else {
+                    $layout = $single_layout;
+                }
             }
-            // No single layout set, use the customizer settings
-            else {
-                $layout = $default;
+            elseif( post_type_mod( 'layout--sidebar-layout' ) ) {
+                $layout = post_type_mod( 'layout--sidebar-layout' );
             }
         }
+        // Archive layouts
+        elseif( is_home() || is_archive() ) {
+            $layout = post_type_mod( 'archive--layout--sidebar-layout' );
+        }
 
-        // Filter to change the layout
-        $layout = apply_filters( 'taproot/layout', $layout, $post_type );
-
-        // Return the layout
-        return $layout;
+        // Filter layout before returning
+        return apply_filters( 'taproot/layout', $layout );
     }
 
     /**
-     * Is boxed layout activated?
+     * Disable Main Top Padding?
      *
      * @since  2.0.0
      * @return bool
      */
-    public static function is_boxed_layout() {
-        return ( Mod::get( 'layout--boxed--enable' ) ) ? true : false;
+    public static function disable_main_top_padding() {
+
+        $disable_top_padding = false;
+        $post_id = get_the_single_id();
+
+        if( $post_id ) {
+            $disable_top_padding = get_post_meta( $post_id, '_taproot_disable_main_top_padding', true );
+        }
+
+        return $disable_top_padding;
     }
 
     /**
-     * Get Layout breakpoint
-     *
-     * Utility to calculate the width when containers reach their full size
+     * Disable Main Bottom Padding?
      *
      * @since  2.0.0
-     * @return int
+     * @return bool
      */
-    public static function get_full_layout_width() {
+    public static function disable_main_bottom_padding() {
 
-        $max_width = Mod::get('layout--container--max-width');
-        $max_width_int = (int) filter_var($max_width, FILTER_SANITIZE_NUMBER_INT);
+        $disable_bottom_padding = false;
+        $post_id = get_the_single_id();
 
-        if( static::is_boxed_layout() ) {
-            $layout_padding = Mod::get('layout--boxed--outer-padding');
-        } else {
-            $site_width = static::get_layout_width('desktop', 'vw');
-            $layout_padding = static::get_padding_from_width( $site_width, 'vw' );
+        if( $post_id ) {
+            $disable_bottom_padding = get_post_meta( $post_id, '_taproot_disable_main_bottom_padding', true );
         }
 
-        $layout_padding_int = (int) filter_var($layout_padding, FILTER_SANITIZE_NUMBER_INT);
+        return $disable_bottom_padding;
+    }
 
-        $width = false;
+   /**
+     * Get content layout
+     *
+     * @since  2.0.0
+     * @return bool
+     */
+    public static function get_content_layout() {
 
-        if(strpos($layout_padding, 'vw') !== false) {
-            $percentage = (100 - (2 * $layout_padding_int) ) / 100;
-            $width = $max_width_int / $percentage;
+        $default = post_type_mod( 'layout--content-layout' );
+
+        $post_id = get_the_single_id();
+        $layout = get_post_meta( $post_id, '_taproot_post_content_layout', true );
+
+        if( $layout && $layout !== 'default' ) {
+            return $layout;
         }
-        elseif(strpos($layout_padding, 'px') !== false) {
-            $width = $max_width_int + (2 * $layout_padding_int);
-        }
 
-        if( $width <= 1025 ) {
-            return 1025;
-        }
-
-        return round($width);
+        return $default;
     }
 
     /**
-     * Get Full Layout Padding
-     *
-     * Utility to calculate the padding in px when a layout reaches its max width
+     * Get post header layout
      *
      * @since  2.0.0
-     * @return string
+     * @return bool
      */
-    public static function get_full_layout_padding() {
+    public static function get_post_header_footer_layout() {
 
-        if( ! static::get_layout_width('desktop') || ! static::get_full_layout_width() ) {
-            return false;
+        $layout = static::get_content_layout();
+
+        if( 'wide' === $layout || 'wide-left' === $layout || 'wide-center' === $layout ) {
+            return 'wide';
         }
 
-        $portion = (1 - static::get_layout_width('desktop') ) / 2;
-        $width = (int) static::get_full_layout_width();
-
-        return $portion * $width . 'px';
+        return $layout;
     }
 
     /**
-     * Get Layout Width
-     *
-     * Utility to get container layout width and format in vw, %, or as a decimal
+     * Get post content layout
      *
      * @since  2.0.0
-     * @return string
+     * @return bool
      */
-    public static function get_layout_width( $screen = 'mobile', $unit = 'decimal' ) {
+    public static function get_post_content_layout() {
 
-        $width = Mod::get( sprintf('layout--container--width--%s', $screen) );
+        $layout = static::get_content_layout();
 
-        if( ! $width ) {
-            return false;
+        if( 'wide-left' === $layout ) {
+            return 'left';
+        }
+        elseif( 'wide-center' === $layout ) {
+            return 'center';
         }
 
-        $width_int = (int) filter_var($width, FILTER_SANITIZE_NUMBER_INT);
-
-        if( 'decimal' === $unit ) {
-            return $width_int / 100;
-        }
-
-        return $width_int . $unit;
+        return $layout;
     }
 
     /**
-     * Get Padding from Width
-     *
-     * Utility to calculate side padding values
-     * from a width defined in vw or %.
+     * Get entry footer layout
      *
      * @since  2.0.0
-     * @param mixed $width - the width in vw, %, or unitless value
-     * @param string $unit - unit to add to the returned string
-     * @return string
+     * @return bool
      */
-    public static function get_padding_from_width( $width, $unit = false ) {
+    public static function get_archive_content_layout() {
 
-        if( ! $width ) return false;
+        $default = post_type_mod( 'archive--layout--content-layout' );
 
-        $width_int = (int) filter_var($width, FILTER_SANITIZE_NUMBER_INT);
-        $padding = (100 - $width_int) / 2;
+        // If we're on the static page set to display posts, use the page settings.
+        $post_id = get_the_single_id();
 
-        if($unit) {
-            $padding .= $unit;
+        if( $layout = get_post_meta( $post_id, '_taproot_post_content_layout', true ) ) {
+
+            if( $layout === 'default' ) {
+                return $default;
+            }
+            elseif( 'wide' === $layout || 'wide-left' === $layout || 'wide-center' === $layout ) {
+                return 'wide';
+            }
+
+            return $layout;
         }
 
-        return $padding;
+        return $default;
     }
 }

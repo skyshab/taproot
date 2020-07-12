@@ -50,7 +50,7 @@ class Font_Styles extends FontStylesAbstract {
 
         $styles->add([
             'selector' => '.taproot-button, .wp-block-button__link, .comment-respond__submit',
-            'styles' => app('typography')->get_font_styles( $this->id )
+            'styles' => app('typography/functions')->get_font_styles( $this->id )
         ]);
     }
 
@@ -65,7 +65,7 @@ class Font_Styles extends FontStylesAbstract {
 
         $styles->add([
             'selector' => '.editor-styles-wrapper .wp-block-button .wp-block-button__link, .editor-styles-wrapper .taproot-button',
-            'styles' => app('typography')->get_font_styles( $this->id )
+            'styles' => app('typography/functions')->get_font_styles( $this->id )
         ]);
     }
 

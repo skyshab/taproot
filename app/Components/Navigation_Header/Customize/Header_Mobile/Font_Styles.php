@@ -51,7 +51,7 @@ class Font_Styles extends FontStylesAbstract {
 
         $styles->add([
             'selector' => '.menu--header__link',
-            'styles' => app('typography')->get_font_styles( $this->id ),
+            'styles' => app('typography/functions')->get_font_styles( $this->id ),
             'screen' => Functions::get_mobile_screen(),
         ]);
     }

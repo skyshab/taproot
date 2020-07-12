@@ -56,7 +56,7 @@ class Font_Family extends Select {
      * @var string
      */
     public function get_choices() {
-        return app('fonts')->get_font_choices();
+        return app('fonts/functions')->get_font_choices();
     }
 
     /**
@@ -72,7 +72,7 @@ class Font_Family extends Select {
         $styles->add([
             'selector' => '.app-header__title',
             'styles' => [
-                'font-family' => app('fonts')->get_font_family( theme_mod( $this->id ) ),
+                'font-family' => app('fonts/functions')->get_font_family( theme_mod( $this->id ) ),
             ]
         ]);
     }

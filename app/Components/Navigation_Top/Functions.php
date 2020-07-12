@@ -14,8 +14,7 @@
 namespace Taproot\Components\Navigation_Top;
 
 use Taproot\Tools\Mod;
-
-use Taproot\Components\Navigation\Functions as Nav;
+use function Hybrid\app;
 
 /**
  * Template tags class.
@@ -26,6 +25,16 @@ use Taproot\Components\Navigation\Functions as Nav;
 class Functions {
 
     /**
+     * Get mobile breakpoint
+     *
+     * @since 2.0.0
+     * @return string
+     */
+    public static function get_breakpoint() {
+        return Mod::get( 'navigation--top-mobile--breakpoint' );
+    }
+
+    /**
      * Get mobile screen
      *
      * @since 2.0.0
@@ -34,7 +43,7 @@ class Functions {
      * @return string
      */
     public static function get_mobile_screen() {
-        return Nav::get_mobile_screen( Mod::get( 'navigation--top-mobile--breakpoint' ) );
+        return app('navigation/functions')->get_mobile_screen( static::get_breakpoint() );
     }
 
     /**
@@ -44,6 +53,36 @@ class Functions {
      * @return string
      */
     public static function get_desktop_screen() {
-        return Nav::get_desktop_screen( Mod::get( 'navigation--top-mobile--breakpoint' ) );
+        return app('navigation/functions')->get_desktop_screen( static::get_breakpoint() );
+    }
+
+    /**
+     * Hide the top nav when not mobile?
+     *
+     * @since 2.0.0
+     * @return bool
+     */
+    public static function hide_the_nav() {
+        return Mod::get( 'navigation--top--hide' );
+    }
+
+    /**
+     * Hide the top when mobile?
+     *
+     * @since 2.0.0
+     * @return bool
+     */
+    public static function hide_the_mobile_nav() {
+        return Mod::get( 'navigation--top-mobile--hide' );
+    }
+
+    /**
+     * Hide the top when fixed?
+     *
+     * @since 2.0.0
+     * @return bool
+     */
+    public static function hide_the_fixed_nav() {
+        return Mod::get( 'navigation--top-fixed--hide' );
     }
 }

@@ -51,10 +51,10 @@ class SVG extends Icons {
      *
      * @since 2.0.0
      *
-     * @param array $args - attributes used to construct the SVG
+     * @param mixed $args - attributes used to construct the SVG
      * @return string - Returns SVG markup
      */
-    public function get( $args = [] ) {
+    public function render( $args = [] ) {
 
         // if just passed the icon id, create an array
         if( $args && ! is_array( $args ) ) {
@@ -77,14 +77,14 @@ class SVG extends Icons {
         }
 
         // Set ARIA.
-        $aria_labelledby = '';
+        $aria_labeledby = '';
 
         if( $args['title'] && $args['desc'] ) {
-            $aria_labelledby = 'title desc';
+            $aria_labeledby = 'title desc';
         }
 
         // Begin SVG markup.
-        $svg = sprintf( '<svg class="taproot-icon taproot-icon--%s %s" role="presentation" aria-hidden="%s" aria-labelledby="%s" alt="">', esc_attr( $args['icon'] ), esc_attr( $args['class'] ), esc_attr( $aria_hidden ), esc_attr( $aria_labelledby ) );
+        $svg = sprintf( '<svg class="taproot-icon taproot-icon--%s %s" role="presentation" aria-hidden="%s" aria-labeledby="%s" alt="">', esc_attr( $args['icon'] ), esc_attr( $args['class'] ), esc_attr( $aria_hidden ), esc_attr( $aria_labeledby ) );
 
         // If there is a title, display it.
         if( $args['title'] ) {
@@ -103,5 +103,16 @@ class SVG extends Icons {
         $svg .= '</svg>';
 
         return $svg;
+    }
+
+    /**
+     * Print icon markup
+     *
+     * @since 2.0.0
+     * @param mixed $args - attributes used to construct the icon
+     * @return void
+     */
+    public function display( $args = [] ) {
+        echo $this->render( $args );
     }
 }

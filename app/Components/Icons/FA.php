@@ -23,7 +23,7 @@ class FA extends Icons {
      * @param array $args - attributes used to construct the icon output
      * @return string - Returns icon markup
      */
-    public function get( $args = array() ) {
+    public function render( $args = array() ) {
 
         // if just passed the icon id, create an array
         if( $args && !is_array( $args ) ) $args = array('icon' => $args);
@@ -41,5 +41,16 @@ class FA extends Icons {
             $aria_hidden = ' aria-hidden="true"';
 
         return sprintf( '<i class="taproot-icon taproot-icon--%s fa fa-%s %s" %s></i>', esc_attr( $args['icon'] ), esc_attr( $args['icon'] ), esc_attr( $args['class'] ),  esc_attr( $aria_hidden ) );
+    }
+
+    /**
+     * Print icon markup
+     *
+     * @since 2.0.0
+     * @param mixed $args - attributes used to construct the icon
+     * @return void
+     */
+    public function display( $args = [] ) {
+        echo $this->render( $args );
     }
 }

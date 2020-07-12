@@ -52,9 +52,9 @@ array_map( function( $component ) use ( $taproot ) {
     'Navigation_Navbar',
     'Navigation_Top',
     'Navigation_Footer',
-    'Navigation_Postnav',
-    'Navigation_Pagination',
-    'Navigation_Breadcrumbs',
+    'Postnav',
+    'Pagination',
+    'Breadcrumbs',
     'Footer',
     'Fonts',
     'Typography',
@@ -63,11 +63,12 @@ array_map( function( $component ) use ( $taproot ) {
     'Buttons',
     'Search',
     'Sidebar',
-    'Background',
-    'Entry',
     'Images',
-    'General',
-    'Comments'
+    'Comments',
+    'Page',
+    'Post',
+    'Post_Title',
+    'Woocommerce'
 ]);
 
 # ------------------------------------------------------------------------------

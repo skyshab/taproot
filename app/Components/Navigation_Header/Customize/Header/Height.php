@@ -1,8 +1,8 @@
 <?php
 /**
- * Hero height.
+ * Header height.
  *
- * This class handles the customizer control for the hero height.
+ * This class handles the customizer control for the header height.
  *
  * @package   Taproot
  * @author    Sky Shabatura

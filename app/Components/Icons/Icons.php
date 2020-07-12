@@ -33,19 +33,18 @@ abstract class Icons {
      * Get icon markup
      *
      * @since 2.0.0
-     * @param array $args - attributes used to construct the icon
+     * @param mixed $args - attributes used to construct the icon
      * @return string - Returns icon markup
      */
-    public function get( $args ) {}
+    public function render( $args ) {}
 
     /**
-     * Filter icon by location
+     * Print icon markup
      *
      * @since 2.0.0
-     * @param       array $args
-     * @return      string
+     * @param mixed $args - attributes used to construct the icon
+     * @return void
      */
-    public function location( $location, $args ) {
-        return $this->get( apply_filters( 'taproot/icon/' . $location, $args ) );
-    }
+    public function display( $args ) {}
+
 }

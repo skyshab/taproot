@@ -51,7 +51,7 @@ class Font_Styles extends FontStylesAbstract {
         // Font Style
         $styles->add([
             'selector' => 'h1, h2, h3, h4, h5, h6',
-            'styles' => app('typography')->get_font_styles( $this->id )
+            'styles' => app('typography/functions')->get_font_styles( $this->id )
         ]);
     }
 

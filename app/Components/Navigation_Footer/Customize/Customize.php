@@ -13,15 +13,15 @@
 
 namespace Taproot\Components\Navigation_Footer\Customize;
 
-use Taproot\Customize\Abstracts\Component as CustomizeComponent;
+use Taproot\Customize\Abstracts\Panel;
 
 /**
- * Extend CustomizeComponent class
+ * Extend Panel class
  *
  * @since  2.0.0
  * @access public
  */
-class Customize extends CustomizeComponent {
+class Customize extends Panel {
 
     /**
      * Namespace

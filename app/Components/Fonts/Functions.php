@@ -27,7 +27,6 @@ class Functions {
      * Get Font Family if not set to default
      *
      * @since 2.0.0
-     *
      * @param string $font
      * @return string
      */
@@ -48,7 +47,6 @@ class Functions {
      * Get Font Choices
      *
      * @since 2.0.0
-     *
      * @return array
      */
     public static function get_font_choices() {
@@ -86,12 +84,38 @@ class Functions {
      * Extract font list if full embed code is entered.
      *
      * @since 2.0.0
-     *
      * @param string $fonts
      * @return string - Returns a list of fonts in Google Font API format
      */
     public static function sanitize_google_fonts( $fonts ) {
         preg_match('/family=([\s\S]*?)"/', $fonts, $matches);
         return ( $matches ) ? sanitize_text_field( $matches[1] ) : sanitize_text_field( $fonts );
+    }
+
+    /**
+     * Has Google Fonts?
+     *
+     * @since 2.0.0
+     * @return bool
+     */
+    public static function has_google_fonts() {
+        return ( Mod::get( 'taproot-google-fonts' ) ) ? true : false;
+    }
+
+    /**
+     * Get Google Fonts URL
+     *
+     * @since 2.0.0
+     * @return string
+     */
+    public static function get_google_fonts_url() {
+
+        $google_fonts = Mod::get( 'taproot-google-fonts' );
+
+        if( $google_fonts ) {
+            return sprintf( '//fonts.googleapis.com/css?family=%s', esc_attr( $google_fonts ) );
+        }
+
+        return '';
     }
 }

@@ -24,30 +24,60 @@ use Taproot\Tools\Mod;
 class Functions {
 
     /**
-     * Output Footer Credits
-     *
-     * We need to run this through kses filter with allwoances for certain html and shortcodes
+     * Get the footer credits
      *
      * @since 2.0.0
      * @return string
      */
-    public static function footer_credits() {
+    public static function get_the_footer_credits() {
+        return Mod::get( 'footer--bottom-bar--content');
+    }
 
-        // define allowed html
-        $allowed = [
-            'a' => [
-                'href' => [],
-                'title' => [],
-                'class' => []
-            ],
-            'br' => [],
-            'em' => [],
-            'strong' => [],
-            'i' => [
-                'class' => []
-            ]
-        ];
+    /**
+     *  Is fixed footer enabled?
+     *
+     * @since 2.0.0
+     * @return bool
+     */
+    public static function has_fixed_footer() {
+        return Mod::get( 'footer--is-fixed' );
+    }
 
-        echo wp_kses( Mod::get( 'footer--bottom-bar--content'), $allowed );
+    /**
+     *  Get Array of Footer Sidebars
+     *
+     * @since 2.0.0
+     * @return array - Returns an array of footer sidebar ids and Names
+     */
+    public static function get_the_footer_sidebars() {
+
+        $footer_sidebars = array(
+            'footer-1' => 'Footer Sidebar 1',
+            'footer-2' => 'Footer Sidebar 2',
+            'footer-3' => 'Footer Sidebar 3',
+            'footer-4' => 'Footer Sidebar 4'
+        );
+
+        return apply_filters( 'taproot/footer-sidebars/list', $footer_sidebars );
+    }
+
+    /**
+     *  Has Active Footer Sidebars?
+     *
+     * @since 2.0.0
+     * @return bool
+     */
+    public static function has_active_footer_sidebars() {
+
+        $has_footer_sidebars = false;
+
+        foreach ( static::get_the_footer_sidebars() as $sidebar => $name ) {
+            if( is_active_sidebar( $sidebar ) ) {
+                $has_footer_sidebars = true;
+                break;
+            }
+        }
+
+        return ( $has_footer_sidebars ) ? true : false;
     }
 }

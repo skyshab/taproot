@@ -67,7 +67,7 @@ class Padding extends Range {
     public function styles( $styles ) {
 
         $styles->add([
-            'selector' => '.app-header--fixed .app-header__container',
+            'selector' => '.app-header--fixed .app-header__main',
             'styles' => [
                 'padding-top'    => theme_mod( $this->id ),
                 'padding-bottom' => theme_mod( $this->id )
@@ -90,7 +90,7 @@ class Padding extends Range {
             value.bind( function( to ) {
                 rootstrap.style({
                     id: "{$this->id}",
-                    selector: '.app-header--fixed .app-header__container',
+                    selector: '.app-header--fixed .app-header__main',
                     screen: 'desktop',
                     styles: {
                         'padding-top': to,

@@ -57,7 +57,7 @@ class Font_Family extends Select {
      * @var string
      */
     public function get_choices() {
-        return app('fonts')->get_font_choices();
+        return app('fonts/functions')->get_font_choices();
     }
 
     /**
@@ -71,7 +71,7 @@ class Font_Family extends Select {
 
         $styles->customProperty([
             'name'  => $this->id,
-            'value' => app('fonts')->get_font_family( theme_mod( $this->id ) ),
+            'value' => app('fonts/functions')->get_font_family( theme_mod( $this->id ) ),
         ]);
     }
 
@@ -86,7 +86,7 @@ class Font_Family extends Select {
 
         $styles->customProperty([
             'name'  => $this->id,
-            'value' => app('fonts')->get_font_family( Mod::get( $this->id ) ),
+            'value' => app('fonts/functions')->get_font_family( Mod::get( $this->id ) ),
         ]);
     }
 

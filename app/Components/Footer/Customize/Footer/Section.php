@@ -55,7 +55,6 @@ class Section extends SectionAbstract {
      */
     public $controls = [
         'Is_Fixed',
-        'Is_Fullwidth',
         'Background_Color',
         'Text_Color',
         'Link_Color_Hover',

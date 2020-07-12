@@ -22,37 +22,49 @@ namespace Taproot\Components\Images;
 class Template {
 
     /**
-     * Displays the featured image.
+     * Get the featured image markup.
      *
      * @since  2.0.0
-     * @param  array   $args
-     * @param  string  $type
-     * @return void
+     * @param  array $args
+     * @return string
      */
-    public static function the_featured_image( $args = [], $type = '' ) {
+    public static function get_the_featured_image( array $args ) {
 
-        // Filter to determine whether we should display the featured image
-        if( ! apply_filters( 'taproot/featured-image/display', TRUE, $type ) ) {
-            return;
-        }
+        $image = '';
 
-        $post_id = get_the_ID();
+        $args = wp_parse_args( $args, [
+            'size' => 'full',
+            'link' => false,
+            'class' => '',
+            'post_id' => get_the_ID(),
+            'before' => '',
+            'after' => ''
+        ]);
 
-        if( has_post_thumbnail( $post_id ) ) {
+        if( isset( $args['post_id'] ) && has_post_thumbnail( $args['post_id'] ) ) {
 
-            $args = wp_parse_args( $args, [
-                'size' => 'full',
-                'link' => false,
-                'class' => ''
-            ]);
-
-            $html = get_the_post_thumbnail( $post_id, $args['size'], ['class' => $args['class']] );
+            $image = get_the_post_thumbnail( $args['post_id'], $args['size'], ['class' => $args['class']] );
 
             if( $args['link'] ) {
-                $html = sprintf( '<a href="%s" title="%s">%s</a>', get_permalink( $post_id ), get_the_title(), $html );
+                $image = sprintf( '<a href="%s" title="%s" class="featured-image-link">%s</a>', get_permalink(  $args['post_id'] ), get_the_title(), $image );
             }
-
-            echo $html;
         }
+
+        if( $image && '' !== $image ) {
+            $image = $args['before'] . $image . $args['after'];
+        }
+
+        return apply_filters( 'taproot/featured-image', $image, $args );
+    }
+
+    /**
+     * Get the featured image markup.
+     *
+     * @since  2.0.0
+     * @param  array $args
+     * @return void
+     */
+    public static function the_featured_image( array $args ) {
+        echo static::get_the_featured_image( $args );
     }
 }

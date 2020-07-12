@@ -13,15 +13,15 @@
 
 namespace Taproot\Components\Header\Customize;
 
-use Taproot\Customize\Abstracts\Component as CustomizeComponent;
+use Taproot\Customize\Abstracts\Panel;
 
 /**
- * Extend CustomizeComponent class
+ * Extend Panel class
  *
  * @since  2.0.0
  * @access public
  */
-class Customize extends CustomizeComponent {
+class Customize extends Panel {
 
     /**
      * Namespace
@@ -49,13 +49,14 @@ class Customize extends CustomizeComponent {
         'Styles',
         'Styles_Fixed',
         'Layout',
-        'Hero',
+        'Image',
         'Logo',
         'Logo_Fixed',
         'Title',
         'Title_Fixed',
         'Tagline',
-        'Tagline_Fixed'
+        'Tagline_Fixed',
+        'Content'
     ];
 
     /**

@@ -13,6 +13,8 @@
 
 namespace Taproot\Components\Colors;
 
+use Taproot\Tools\Mod;
+
 /**
  * Template tags class.
  *
@@ -44,5 +46,29 @@ class Functions {
         }
 
         return sprintf( 'rgb(%s, %s, %s)', $r, $g, $b );
+    }
+
+    /**
+     * Get theme color
+     *
+     * @param string $color - color name
+     * @return string color
+     */
+    public static function get_theme_color( $color_name ) {
+
+        $theme_colors = [
+            'text' =>               Mod::get( 'colors--text', '#8c8c8c' ),
+            'accent' =>             Mod::get( 'colors--accent', '#00a0d1' ),
+            'accent-contrast' =>    Mod::get( 'colors--accent-contrast', '#ffffff' ),
+            'meta-light' =>         Mod::get( 'colors--meta-light', '#f4f4f4' ),
+            'meta-medium' =>        Mod::get( 'colors--meta-medium', '#d8d8d8' ),
+            'meta-dark' =>          Mod::get( 'colors--meta-dark', '#a5a5a5' )
+        ];
+
+        if( isset( $theme_colors[$color_name] ) ) {
+            return $theme_colors[$color_name];
+        }
+
+        return '';
     }
 }

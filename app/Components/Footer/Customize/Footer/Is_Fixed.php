@@ -14,8 +14,6 @@
 namespace Taproot\Components\Footer\Customize\Footer;
 
 use Taproot\Customize\Controls\Checkbox\Checkbox;
-use Taproot\Components\Layout\Functions as Layout;
-use function Taproot\Tools\theme_mod;
 
 /**
  * Class for checkbox control
@@ -57,24 +55,4 @@ class Is_Fixed extends Checkbox {
      */
     public $transport = 'refresh';
 
-    /**
-     * Styles
-     *
-     * @since  2.0.0
-     * @access public
-     * @return void
-     */
-    public function styles( $styles ) {
-
-        if( Layout::is_boxed_layout() && theme_mod( $this->id ) ) {
-
-            $styles->add([
-                'selector' => '.app-footer--fixed',
-                'styles' => [
-                    'margin-bottom' => theme_mod( 'layout--boxed--outer-padding' )
-                ],
-                'screen' => 'desktop'
-            ]);
-        }
-    }
 }

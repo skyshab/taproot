@@ -13,8 +13,6 @@
 
 namespace Taproot\Components\Navigation;
 
-use Taproot\Tools\Mod;
-
 /**
  * Template tags class.
  *

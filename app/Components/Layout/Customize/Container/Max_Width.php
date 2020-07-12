@@ -41,7 +41,7 @@ class Max_Width extends Range {
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Max Container Width';
+    public $label = 'Max Width';
 
     /**
      * Default value
@@ -83,5 +83,27 @@ class Max_Width extends Range {
             'name'  => 'container-max-width',
             'value' => Mod::get( $this->id )
         ]);
+    }
+
+    /**
+     * Preview Styles
+     *
+     * @since  2.0.0
+     * @access public
+     * @return void
+     */
+    public function previewStyles() {
+
+        $script = <<< JS
+        wp.customize( "{$this->id}", function( value ) {
+            value.bind( function( to ) {
+                rootstrap.customProperty({
+                    name: 'container-max-width',
+                    value: to
+                });
+            });
+        });
+JS;
+        return $script;
     }
 }

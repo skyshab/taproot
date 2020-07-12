@@ -53,5 +53,8 @@ class Section extends SectionAbstract {
      * @since 2.0.0
      * @var array
      */
-    public $controls = ['Max_Width'];
+    public $controls = [
+        'Max_Width',
+        'Spacing'
+    ];
 }
