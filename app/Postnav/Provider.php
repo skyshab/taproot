@@ -11,10 +11,9 @@
  * @link      https://taproot-theme.com
  */
 
-namespace Taproot\Components\Colors;
+namespace Taproot\Postnav;
 
 use Hybrid\Tools\ServiceProvider;
-use Taproot\Components\Colors\Customize\Customize;
 
 /**
  * Component service provider class.
@@ -22,7 +21,7 @@ use Taproot\Components\Colors\Customize\Customize;
  * @since  2.0.0
  * @access public
  */
-class Component extends ServiceProvider {
+class Provider extends ServiceProvider {
 
     /**
      * Register classes and bind to the container.
@@ -33,14 +32,14 @@ class Component extends ServiceProvider {
      */
     public function register() {
 
-        // Bind a single instance of our hooks class.
-        $this->app->singleton( Hooks::class );
+        // Bind a single instance of our Hooks class.
+        $this->app->singleton( 'postnav/hooks', Hooks::class );
 
-        // Bind a single instance of the component customize class.
-        $this->app->singleton( Customize::class );
+        // Bind our postnav template class.
+        $this->app->bind( 'postnav/template', Template::class );
 
-        // Bind a single instance of the component functions class.
-        $this->app->singleton( 'colors/functions', Functions::class );
+        // Bind our postnav functions class.
+        $this->app->bind( 'postnav/functions', Functions::class );
     }
 
     /**
@@ -52,10 +51,7 @@ class Component extends ServiceProvider {
      */
     public function boot() {
 
-        // Boot the component hooks.
-        $this->app->resolve( Hooks::class )->boot();
-
-        // Add customize component to collection.
-        $this->app->resolve( 'customize/components' )->add( 'colors', $this->app->resolve( Customize::class ) );
+        // Boot the Hooks instance.
+        $this->app->resolve( 'postnav/hooks' )->boot();
     }
 }
