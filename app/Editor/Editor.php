@@ -34,9 +34,9 @@ class Editor implements Bootable {
      * @return void
      */
     public function boot() {
-        add_action( 'enqueue_block_editor_assets', [ $this, 'assets' ] );
-        add_action( 'init', [ $this, 'register_post_meta' ] );
-        add_action( 'after_setup_theme', [ $this, 'setup' ], 5 );
+        add_action( 'enqueue_block_editor_assets',  [ $this, 'assets' ] );
+        add_action( 'init',                         [ $this, 'register_post_meta' ] );
+        add_action( 'after_setup_theme',            [ $this, 'setup' ], 5 );
     }
 
     /**
