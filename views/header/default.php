@@ -15,6 +15,8 @@
 
         <a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'taproot' ) ?></a>
 
+        <?php do_action( 'app-header-before' ) ?>
+
         <?php $engine->display( 'header/image', $view->slugs() ) ?>
 
         <?php $engine->display( 'nav/menu', 'top', [ 'location' => 'top' ] ) ?>
@@ -24,5 +26,7 @@
         <?php $engine->display( 'header/content', $view->slugs() ) ?>
 
         <?php $engine->display( 'nav/menu', 'navbar', [ 'location' => 'navbar' ] ) ?>
+
+        <?php do_action( 'app-header-after' ) ?>
 
     </header>

@@ -10,5 +10,3 @@ $engine->display( 'content', Hybrid\Template\hierarchy() );
 
 // Load footer template
 $engine->display( 'footer', Hybrid\Template\hierarchy() );
-
-
