@@ -13,9 +13,9 @@
 
 namespace Taproot\Customize;
 
-use WP_Customize_Manager;
 use Hybrid\Contracts\Bootable;
 use Hybrid\App;
+use WP_Customize_Manager;
 use function Taproot\Tools\asset;
 
 /**
@@ -49,6 +49,22 @@ class Customize implements Bootable {
      * @var array
      */
     public $controls = [];
+
+    /**
+     * Stores tabs
+     *
+     * @since 2.0.0
+     * @var array
+     */
+    public $tabs = [];
+
+    /**
+     * Stores sequences
+     *
+     * @since 2.0.0
+     * @var array
+     */
+    public $sequences = [];
 
     /**
      * Adds actions on the appropriate customize action hooks.
@@ -111,33 +127,48 @@ class Customize implements Bootable {
     public function setup() {
 
         // Get panels collection
-        $panels = App::resolve( 'customize/components' );
+        $components = App::resolve( 'customize/components' );
 
         // Loop through the panels
-        foreach( $panels->all() as $id => $panel ) {
+        foreach( $components->all() as $id => $component ) {
 
-            // Store panel
-            $this->panels[] = $panel;
-
-            // Make sure we have sections defined
-            if( ! is_array( $panel->section_objects ) ) {
+            // Make sure this is a component instance
+            if( ! $component instanceof Component ) {
                 continue;
             }
 
+            // If there is a title defined, create a new customizer panel.
+            if( $component->panel() instanceof Panel ) {
+                $this->panels[] = $component->panel();
+            }
+
             // Loop through the sections
-            foreach( $panel->section_objects as $section ) {
+            foreach( $component->sections() as $section ) {
 
-                // Store section
-                $this->sections[] = $section;
+                // If there's a section title defined, create a new customizer section.
+                if( $section->title ) {
+                    $this->sections[] = $section;
+                }
 
-                // Loop through the controls
-                foreach( $section->control_objects as $control ) {
-
-                    // Store control
+                // Store the section controls
+                foreach( $section->controls() as $control ) {
                     $this->controls[] = $control;
                 }
             }
+
+            // Store any tabs
+            if( ! empty( $component->tabs() ) ) {
+                $this->tabs = array_merge( $this->tabs, $component->tabs() );
+            }
+
+            // Store any sequences
+            if( ! empty( $component->sequences() ) ) {
+                $this->sequences = array_merge( $this->sequences, $component->sequences() );
+            }
         }
+
+        // Do setup actions
+        do_action( 'taproot/customize/setup', $this );
 
         // Theme stylesheet handle
         $handle = App::resolve( 'styles/handle' );
@@ -232,41 +263,6 @@ class Customize implements Bootable {
     }
 
     /**
-     * Customize register after
-     *
-     * This provides a hook for adding modifications to core or third-party
-     * customizer components that may not have been added yet.
-     *
-     * @since  2.0.0
-     * @access public
-     * @param  object  $manager - Instance of WP_Customize_Manager
-     * @return void
-     */
-    public function customize_register_after( WP_Customize_Manager $manager ) {
-
-        // Panels
-        foreach( $this->panels as $panel ) {
-            if( method_exists( $panel, 'customize_register_after') ) {
-                $panel->customize_register_after( $manager );
-            }
-        }
-
-        // Sections
-        foreach( $this->sections as $section ) {
-            if( method_exists( $section, 'customize_register_after') ) {
-                $section->customize_register_after( $manager );
-            }
-        }
-
-        // Controls
-        foreach( $this->controls as $control ) {
-            if( method_exists( $control, 'customize_register_after') ) {
-                $control->customize_register_after( $manager );
-            }
-        }
-    }
-
-    /**
      * Defaults
      *
      * @since  2.0.0
@@ -334,6 +330,30 @@ class Customize implements Bootable {
     }
 
     /**
+     * Customize register after
+     *
+     * This provides a hook for adding modifications to core or third-party
+     * customizer components that may not have been added yet.
+     *
+     * @since  2.0.0
+     * @access public
+     * @param  object  $manager - Instance of WP_Customize_Manager
+     * @return void
+     */
+    public function customize_register_after( WP_Customize_Manager $manager ) {
+
+        // Controls
+        foreach( $this->controls as $control ) {
+            if( method_exists( $control, 'customize_register_after') ) {
+                $control->customize_register_after( $manager );
+            }
+        }
+
+        // Action hook for customize register after
+        do_action( 'taproot/customize/customize-register-after', $manager );
+    }
+
+    /**
      * Tabs
      *
      * @since  2.0.0
@@ -343,13 +363,7 @@ class Customize implements Bootable {
      */
     public function tabs( $tabs ) {
 
-        foreach( $this->panels as $panel ) {
-            if( method_exists( $panel, 'tabs') ) {
-                $tabs = $panel->tabs($tabs);
-            }
-        }
-
-        return $tabs;
+        return array_merge( $tabs, $this->tabs );
     }
 
     /**
@@ -362,13 +376,7 @@ class Customize implements Bootable {
      */
     public function sequences( $sequences ) {
 
-        foreach( $this->panels as $panel ) {
-            if( method_exists( $panel, 'sequences') ) {
-                $sequences = $panel->sequences($sequences);
-            }
-        }
-
-        return $sequences;
+        return array_merge( $sequences, $this->sequences );
     }
 
     /**

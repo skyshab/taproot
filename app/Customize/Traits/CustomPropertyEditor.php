@@ -32,42 +32,29 @@ trait CustomPropertyEditor {
      */
     public function editorStyles( $styles ) {
 
-        // mobile default
+        // Mobile
         $styles->customProperty([
-            'name' => $this->id,
-            'value' => Mod::get($this->id),
-            'selector' => '.editor-styles-wrapper .wp-block',
+            'name'  => $this->id,
+            'value' => Mod::get( $this->id ),
         ]);
 
         // Tablet
         if( isset( $this->devices ) && in_array( 'tablet', $this->devices ) ) {
 
-            // tablet size when settings panel closed, use mobile when open
             $styles->customProperty([
-                'name' => $this->id,
-                'value' => Mod::get("{$this->id}--tablet"),
-                'screen' => 'editor-tablet',
-                'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
-            ]);
-
-            // tablet size when settings panel open
-            $styles->customProperty([
-                'name' => $this->id,
-                'value' => Mod::get("{$this->id}--tablet"),
-                'screen' => 'editor-desktop',
-                'selector' => '.editor-styles-wrapper .wp-block',
+                'name'      => "{$this->id}--tablet",
+                'value'     => Mod::get("{$this->id}--tablet"),
+                'screen'    => 'editor-tablet'
             ]);
         }
 
         // Desktop
         if( isset( $this->devices ) && in_array( 'desktop', $this->devices ) ) {
 
-            // desktop size when settings panel closed
             $styles->customProperty([
-                'name' => $this->id,
-                'value' => Mod::get("{$this->id}--desktop"),
-                'screen' => 'editor-desktop',
-                'selector' => '.edit-post-layout:not(.is-sidebar-opened)'
+                'name'      => "{$this->id}--desktop",
+                'value'     => Mod::get("{$this->id}--desktop"),
+                'screen'    => 'editor-desktop'
             ]);
         }
     }

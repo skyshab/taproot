@@ -12,8 +12,6 @@
 namespace Taproot\Customize;
 
 use Hybrid\Tools\ServiceProvider;
-use Taproot\Customize\Panels\Post_Types;
-use Taproot\Customize\Panels\General;
 use Hybrid\Tools\Collection;
 
 /**
@@ -32,10 +30,22 @@ class Provider extends ServiceProvider {
      * @return void
      */
     public function register() {
+
+        // Bind the main customize class
         $this->app->singleton( 'customize', Customize::class );
+
+        // Bind a new Collection to store customize components.
         $this->app->singleton( 'customize/components', Collection::class );
-        $this->app->singleton( 'customize/post-types', Post_Types::class );
-        $this->app->singleton( 'customize/general', General::class );
+
+        // Bind customize component for post types panel
+        $this->app->singleton( 'customize/post-types', function() {
+
+            return new Component([
+                'id'        => 'post-types',
+                'title'     => __('Post Types', 'taproot') ,
+                'priority'  => 70,
+            ]);
+        });
     }
 
     /**
@@ -46,9 +56,17 @@ class Provider extends ServiceProvider {
      * @return void
      */
     public function boot() {
+
+        // Boot the main customize class.
         $this->app->resolve( 'customize' )->boot();
+
+        // Get the customize component collection.
         $customize = $this->app->resolve( 'customize/components' );
-        $customize->add( 'customize/post-types', $this->app->resolve( 'customize/post-types' ) );
-        $customize->add( 'customize/general', $this->app->resolve( 'customize/general' ) );
+
+        // Get the customize component
+        $component = $this->app->resolve( 'customize/post-types' );
+
+        // Add the customize component to the collection.
+        $customize->add( 'post-types', $component );
     }
 }

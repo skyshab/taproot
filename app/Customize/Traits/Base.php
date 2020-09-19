@@ -29,14 +29,24 @@ trait Base {
      */
     public $section;
 
+
+    /**
+     * Stores post type
+     *
+     * @since 2.0.0
+     * @var string
+     */
+    public $post_type;
+
     /**
      * Constructor
      *
      * @return void
      */
-    public function __construct( $section = '' ) {
+    public function __construct( $section = '', $post_type = null ) {
 
         $this->section = $section;
+        $this->post_type = $post_type;
 
         // If controls name not provided, generate automatically
         if( '' === $this->id ) {

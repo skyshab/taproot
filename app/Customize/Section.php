@@ -1,8 +1,8 @@
 <?php
 /**
- * Abstract section class.
+ * Section class.
  *
- * This class is used to register customizer sections, settings, controls and partials.
+ * This class is used to to add a new section to the customizer.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -11,7 +11,9 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Customize\Abstracts;
+namespace Taproot\Customize;
+
+use Taproot\Customize\Contracts\Section as Contract;
 
 /**
  * Creates a new Section class.
@@ -19,7 +21,7 @@ namespace Taproot\Customize\Abstracts;
  * @since  2.0.0
  * @access public
  */
-abstract class Section {
+class Section implements Contract {
 
     /**
      * Stores panel id
@@ -35,7 +37,7 @@ abstract class Section {
      * @since 2.0.0
      * @var string
      */
-    public $id = '';
+    public $id;
 
     /**
      * Stores section name
@@ -59,7 +61,7 @@ abstract class Section {
      * @since 2.0.0
      * @var integer
      */
-    public $priority = 10;
+    public $priority;
 
     /**
      * Stores description
@@ -75,15 +77,7 @@ abstract class Section {
      * @since 2.0.0
      * @var string
      */
-    public $post_type = false;
-
-    /**
-     * Stores namespace
-     *
-     * @since 2.0.0
-     * @var string
-     */
-    public $namespace;
+    public $post_type;
 
     /**
      * Stores control classnames
@@ -91,65 +85,82 @@ abstract class Section {
      * @since 2.0.0
      * @var array
      */
-    public $controls = [];
+    public $controls;
 
     /**
-     * Stores control objects
+     * Constructor.
      *
      * @since 2.0.0
-     * @var array
-     */
-    public $control_objects = [];
-
-    /**
-     * Constructor
-     *
+     * @param array $args
      * @return void
      */
-    public function __construct( $panel, $post_type = false ) {
+    public function __construct( $args = [] ) {
 
-        // Store the panel
-        $this->panel = $panel;
+        $args = wp_parse_args( $args, [
+            'id'        => false,
+            'name'      => false,
+            'title'     => '',
+            'priority'  => 10,
+            'panel'     => false,
+            'post_type' => false,
+            'controls'  => [],
+        ]);
 
-        // Store the post type, if assigned
-        $this->post_type = $post_type;
-
-        // If section name not provided, generate automatically
-        if( '' === $this->id ) {
-            $this->id = "{$this->panel}--{$this->name}";
+        foreach( $args as $key => $val ) {
+            if( property_exists( get_called_class(), $key ) ) {
+                $this->{$key} = $val;
+            }
         }
 
-        // Create and store controls for this section
-        array_map( function( $control ) {
-
-            // The control class name
-            $control = sprintf( "%s\%s", $this->namespace, $control );
-
-            // Instantiate the control class
-            $control = new $control( $this->id );
-
-            // Assign the post_type
-            $control->post_type = $this->post_type;
-
-            // Store the control instance in the section
-            $this->control_objects[] = $control;
-
-        }, $this->controls );
+        // If section name not provided, generate automatically
+        if( ! $this->id && $this->name ) {
+            $this->id = "{$this->panel}--{$this->name}";
+        }
     }
 
     /**
-     * Register sections
+     * Register section.
      *
      * @since  2.0.0
      * @access public
      * @return void
      */
     public function sections( $manager ) {
+
+        if( ! $this->title ) {
+            return;
+        }
+
         $manager->add_section( $this->id, [
-            'title'         => esc_html__( $this->title, 'taproot' ),
+            'title'         => $this->title,
             'panel'         => $this->panel,
             'priority'      => $this->priority,
             'description'   => $this->description
         ]);
+    }
+
+    /**
+     * Get the control instances.
+     *
+     * @since  2.0.0
+     * @access public
+     * @return array
+     */
+    public function controls() {
+
+        $controls = [];
+
+        // Instantiate the control objects and add to array
+        foreach( $this->controls as $control ) {
+
+            // Make sure the class exists
+            if( ! class_exists( $control ) ) {
+                continue;
+            }
+
+            $controls[] = new $control( $this->id, $this->post_type );
+        }
+
+        return $controls;
     }
 }
