@@ -11,7 +11,7 @@
  * @link      https://taproot-theme.com
  */
 
-namespace Taproot\Components\Footer;
+namespace Taproot\Footer;
 
 use Hybrid\Contracts\Bootable;
 use function Hybrid\app;
@@ -36,6 +36,7 @@ class Hooks implements Bootable {
         add_filter( 'hybrid/attr/app-footer/class', [ $this, 'footer_classes' ], 100, 2  );
         add_action( 'taproot/footer-widgets',       [ $this, 'footer_sidebars' ] );
         add_action( 'taproot/footer-credits',       [ $this, 'footer_credits' ] );
+        add_action( 'customize_register', [ $this, 'customize_register' ], PHP_INT_MAX );
     }
 
     /**
@@ -97,5 +98,33 @@ class Hooks implements Bootable {
      */
     public function footer_credits() {
         app('footer/template')->the_footer_credits();
+    }
+
+    /**
+     * Customize Register
+     *
+     * @since  2.0.0
+     * @access public
+     * @param object $manager
+     * @return void
+     */
+    public function customize_register( $manager ) {
+
+        // make footer sidebars appear in the customizer last
+        if( $manager->get_section( 'sidebar-widgets-footer-1' ) ) {
+            $manager->get_section( 'sidebar-widgets-footer-1' )->priority = 500;
+        }
+
+        if( $manager->get_section( 'sidebar-widgets-footer-2' ) ) {
+            $manager->get_section( 'sidebar-widgets-footer-2' )->priority = 510;
+        }
+
+        if( $manager->get_section( 'sidebar-widgets-footer-3' ) ) {
+            $manager->get_section( 'sidebar-widgets-footer-3' )->priority = 520;
+        }
+
+        if( $manager->get_section( 'sidebar-widgets-footer-4' ) ) {
+            $manager->get_section( 'sidebar-widgets-footer-4' )->priority = 530;
+        }
     }
 }

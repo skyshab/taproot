@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Footer\Customize\Footer;
+namespace Taproot\Footer\Customize\Footer;
 
 use Taproot\Customize\Controls\Checkbox\Checkbox;
 

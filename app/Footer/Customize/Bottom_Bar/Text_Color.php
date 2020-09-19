@@ -1,8 +1,8 @@
 <?php
 /**
- * Header Background Color.
+ * Footer Default Color.
  *
- * This class handles the customizer control for the header background color.
+ * This class handles the customizer control for the footer color.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Footer\Customize\Bottom_Bar;
+namespace Taproot\Footer\Customize\Bottom_Bar;
 
 use Taproot\Customize\Controls\Color\Color;
 use function Taproot\Tools\theme_mod;
@@ -22,23 +22,23 @@ use function Taproot\Tools\theme_mod;
  * @since  2.0.0
  * @access public
  */
-class Background_Color extends Color {
+class Text_Color extends Color {
 
     /**
-     * Custom control id
+     * Control id
      *
      * @since 2.0.0
      * @var string
      */
-    public $name = 'background-color';
+    public $name = 'text-color';
 
     /**
-     * Stores control label
+     * Control label
      *
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Background Color';
+    public $label = 'Text Color';
 
     /**
      * Default
@@ -46,7 +46,7 @@ class Background_Color extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $default = '#000000';
+    public $default = '#ffffff';
 
     /**
      * Styles
@@ -58,10 +58,10 @@ class Background_Color extends Color {
     public function styles( $styles ) {
 
         $styles->add([
-            'selector' => '.bottom-bar',
-            'styles' => array(
-                'background-color' => theme_mod( $this->id )
-            ),
+            'selector' => '.app-footer, .app-footer a',
+            'styles' => [
+                'color' => theme_mod( $this->id ),
+            ]
         ]);
     }
 
@@ -79,9 +79,9 @@ class Background_Color extends Color {
             value.bind( function( to ) {
                 rootstrap.style({
                     id: "{$this->id}",
-                    selector: '.bottom-bar',
+                    selector: '.bottom-bar, .bottom-bar a',
                     styles: {
-                        'background-color': to
+                        color: to
                     },
                 });
             });

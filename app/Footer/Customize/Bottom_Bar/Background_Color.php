@@ -1,8 +1,8 @@
 <?php
 /**
- * Footer Widgets Default Color.
+ * Header Background Color.
  *
- * This class handles the customizer control for the footer widgets default color.
+ * This class handles the customizer control for the header background color.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Footer\Customize\Widgets;
+namespace Taproot\Footer\Customize\Bottom_Bar;
 
 use Taproot\Customize\Controls\Color\Color;
 use function Taproot\Tools\theme_mod;
@@ -22,23 +22,31 @@ use function Taproot\Tools\theme_mod;
  * @since  2.0.0
  * @access public
  */
-class Text_Color extends Color {
+class Background_Color extends Color {
 
     /**
-     * Control id
+     * Custom control id
      *
      * @since 2.0.0
      * @var string
      */
-    public $name = 'text-color';
+    public $name = 'background-color';
 
     /**
-     * Control label
+     * Stores control label
      *
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Text Color';
+    public $label = 'Background Color';
+
+    /**
+     * Default
+     *
+     * @since 2.0.0
+     * @var string
+     */
+    public $default = '#000000';
 
     /**
      * Styles
@@ -50,10 +58,10 @@ class Text_Color extends Color {
     public function styles( $styles ) {
 
         $styles->add([
-            'selector' => '.app-footer__widget',
-            'styles' => [
-                'color' => theme_mod( $this->id )
-            ],
+            'selector' => '.bottom-bar',
+            'styles' => array(
+                'background-color' => theme_mod( $this->id )
+            ),
         ]);
     }
 
@@ -71,9 +79,9 @@ class Text_Color extends Color {
             value.bind( function( to ) {
                 rootstrap.style({
                     id: "{$this->id}",
-                    selector: '.app-footer__widget',
+                    selector: '.bottom-bar',
                     styles: {
-                        color: to
+                        'background-color': to
                     },
                 });
             });

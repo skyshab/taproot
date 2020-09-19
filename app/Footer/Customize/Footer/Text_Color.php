@@ -1,8 +1,8 @@
 <?php
 /**
- * Footer Default Hover Color.
+ * Footer Text Color.
  *
- * This class handles the customizer control for the footer hover color.
+ * This class handles the customizer control for the footer color.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Footer\Customize\Footer;
+namespace Taproot\Footer\Customize\Footer;
 
 use Taproot\Customize\Controls\Color\Color;
 use Taproot\Customize\Traits\CustomPropertyStyles;
@@ -23,24 +23,32 @@ use Taproot\Customize\Traits\CustomPropertyPreview;
  * @since  2.0.0
  * @access public
  */
-class Link_Color_Hover extends Color {
+class Text_Color extends Color {
 
     use CustomPropertyStyles;
     use CustomPropertyPreview;
 
     /**
-     * Stores name
+     * Control name
      *
      * @since 2.0.0
      * @var string
      */
-    public $id = 'footer--link-color--hover';
+    public $id = 'footer--text-color';
 
     /**
-     * Stores control label
+     * Control label
      *
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Link Color: Hover';
+    public $label = 'Text Color';
+
+    /**
+     * Default
+     *
+     * @since 2.0.0
+     * @var string
+     */
+    public $default = '#ffffff';
 }

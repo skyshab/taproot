@@ -1,8 +1,8 @@
 <?php
 /**
- * Footer Widgets Heading Color.
+ * Footer Widgets Default Color.
  *
- * This class handles the customizer control for the footer widgets heading color.
+ * This class handles the customizer control for the footer widgets default color.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Footer\Customize\Widgets;
+namespace Taproot\Footer\Customize\Widgets;
 
 use Taproot\Customize\Controls\Color\Color;
 use function Taproot\Tools\theme_mod;
@@ -22,7 +22,7 @@ use function Taproot\Tools\theme_mod;
  * @since  2.0.0
  * @access public
  */
-class Heading_Color extends Color {
+class Text_Color extends Color {
 
     /**
      * Control id
@@ -30,7 +30,7 @@ class Heading_Color extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'heading-color';
+    public $name = 'text-color';
 
     /**
      * Control label
@@ -38,7 +38,7 @@ class Heading_Color extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Heading Color';
+    public $label = 'Text Color';
 
     /**
      * Styles
@@ -50,7 +50,7 @@ class Heading_Color extends Color {
     public function styles( $styles ) {
 
         $styles->add([
-            'selector' => '.app-footer__widget h1, .app-footer__widget h2, .app-footer__widget h3, .app-footer__widget h4, .app-footer__widget h5, .app-footer__widget h6',
+            'selector' => '.app-footer__widget',
             'styles' => [
                 'color' => theme_mod( $this->id )
             ],
@@ -71,7 +71,7 @@ class Heading_Color extends Color {
             value.bind( function( to ) {
                 rootstrap.style({
                     id: "{$this->id}",
-                    selector: '.app-footer__widget h1, .app-footer__widget h2, .app-footer__widget h3, .app-footer__widget h4, .app-footer__widget h5, .app-footer__widget h6',
+                    selector: '.app-footer__widget',
                     styles: {
                         color: to
                     },

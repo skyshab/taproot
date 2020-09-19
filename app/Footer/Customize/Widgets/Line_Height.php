@@ -1,8 +1,8 @@
 <?php
 /**
- * Widget Spacing.
+ * Line Height
  *
- * This class handles the customizer control for the widget spacing.
+ * This class handles the component line height.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Footer\Customize\Widgets;
+namespace Taproot\Footer\Customize\Widgets;
 
 use Taproot\Customize\Controls\Range\Range;
 use Taproot\Customize\Traits\CustomPropertyStyles;
@@ -23,7 +23,7 @@ use Taproot\Customize\Traits\CustomPropertyPreview;
  * @since  2.0.0
  * @access public
  */
-class Gutter extends Range {
+class Line_Height extends Range {
 
     use CustomPropertyStyles;
     use CustomPropertyPreview;
@@ -34,7 +34,7 @@ class Gutter extends Range {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'gutter';
+    public $name = 'line-height';
 
     /**
      * Label
@@ -42,7 +42,7 @@ class Gutter extends Range {
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Widgets Spacing';
+    public $label = 'Line Height';
 
     /**
      * Devices
@@ -58,7 +58,7 @@ class Gutter extends Range {
      * @since 2.0.0
      * @var string
      */
-    public $default = '16px';
+    public $default = '1.4';
 
     /**
      * Range atts
@@ -67,13 +67,15 @@ class Gutter extends Range {
      * @var array
      */
     public $atts = [
-        'vw' => [
-            'max' => 20,
-            'default' => 5
+        'unitless' => [
+            'min' => 0.5,
+            'max' => 3,
+            'step' => 0.01,
+            'default' => 1
         ],
         'px' => [
-            'max' => 100,
-            'default' => 24
+            'min' => 0,
+            'max' => 72,
         ]
     ];
 }

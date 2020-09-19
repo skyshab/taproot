@@ -13,7 +13,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Footer\Customize\Widgets;
+namespace Taproot\Footer\Customize\Widgets;
 
 use Taproot\Customize\Controls\Range\Range;
 use Taproot\Customize\Traits\CustomPropertyStyles;
@@ -25,7 +25,7 @@ use Taproot\Customize\Traits\CustomPropertyPreview;
  * @since  2.0.0
  * @access public
  */
-class Font_Size extends Range {
+class Title_Font_Size extends Range {
 
     use CustomPropertyStyles;
     use CustomPropertyPreview;
@@ -36,7 +36,7 @@ class Font_Size extends Range {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'font-size';
+    public $name = 'title--font-size';
 
     /**
      * Label
@@ -44,7 +44,7 @@ class Font_Size extends Range {
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Font Size';
+    public $label = 'Title Font Size';
 
     /**
      * Devices
@@ -60,7 +60,7 @@ class Font_Size extends Range {
      * @since 2.0.0
      * @var string
      */
-    public $default = '16px';
+    public $default = '1.5em';
 
     /**
      * Range atts
@@ -70,16 +70,16 @@ class Font_Size extends Range {
      */
     public $atts = [
         'em' => [
-            'min' => 0.6,
-            'max' => 2,
+            'min' => 0.8,
+            'max' => 4,
         ],
         'rem' => [
-            'min' => 0.6,
-            'max' => 2,
+            'min' => 0.8,
+            'max' => 4,
         ],
         'px' => [
-            'min' => 10,
-            'max' => 32,
+            'min' => 14,
+            'max' => 72,
         ]
     ];
 }

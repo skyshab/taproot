@@ -1,8 +1,8 @@
 <?php
 /**
- * Footer Default Color.
+ * Footer Widgets Color.
  *
- * This class handles the customizer control for the footer color.
+ * This class handles the customizer control for the footer widgets link color.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Footer\Customize\Bottom_Bar;
+namespace Taproot\Footer\Customize\Widgets;
 
 use Taproot\Customize\Controls\Color\Color;
 use function Taproot\Tools\theme_mod;
@@ -22,7 +22,7 @@ use function Taproot\Tools\theme_mod;
  * @since  2.0.0
  * @access public
  */
-class Text_Color extends Color {
+class Link_Color extends Color {
 
     /**
      * Control id
@@ -30,7 +30,7 @@ class Text_Color extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'text-color';
+    public $name = 'link-color';
 
     /**
      * Control label
@@ -38,15 +38,7 @@ class Text_Color extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Text Color';
-
-    /**
-     * Default
-     *
-     * @since 2.0.0
-     * @var string
-     */
-    public $default = '#ffffff';
+    public $label = 'Link Hover';
 
     /**
      * Styles
@@ -58,10 +50,10 @@ class Text_Color extends Color {
     public function styles( $styles ) {
 
         $styles->add([
-            'selector' => '.app-footer, .app-footer a',
+            'selector' => '.app-footer__widget a:link, .app-footer__widget a:visited',
             'styles' => [
-                'color' => theme_mod( $this->id ),
-            ]
+                'color' => theme_mod( $this->id )
+            ],
         ]);
     }
 
@@ -79,7 +71,7 @@ class Text_Color extends Color {
             value.bind( function( to ) {
                 rootstrap.style({
                     id: "{$this->id}",
-                    selector: '.bottom-bar, .bottom-bar a',
+                    selector: '.app-footer__widget a:link, .app-footer__widget a:visited',
                     styles: {
                         color: to
                     },

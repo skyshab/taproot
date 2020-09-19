@@ -1,8 +1,8 @@
 <?php
 /**
- * Padding.
+ * Line Height
  *
- * This class handles the customizer control for the component padding.
+ * This class handles the component line height.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Footer\Customize\Footer;
+namespace Taproot\Footer\Customize\Widgets;
 
 use Taproot\Customize\Controls\Range\Range;
 use Taproot\Customize\Traits\CustomPropertyStyles;
@@ -23,18 +23,18 @@ use Taproot\Customize\Traits\CustomPropertyPreview;
  * @since  2.0.0
  * @access public
  */
-class Padding extends Range {
+class Title_Line_Height extends Range {
 
     use CustomPropertyStyles;
     use CustomPropertyPreview;
 
     /**
-     * Custom control name
+     * Custom control ID
      *
      * @since 2.0.0
      * @var string
      */
-    public $id = 'footer--padding';
+    public $name = 'title--line-height';
 
     /**
      * Label
@@ -42,15 +42,7 @@ class Padding extends Range {
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Footer Padding';
-
-    /**
-     * Default value
-     *
-     * @since 2.0.0
-     * @var array
-     */
-    public $default = '24px';
+    public $label = 'Title Line Height';
 
     /**
      * Devices
@@ -61,19 +53,29 @@ class Padding extends Range {
     public $devices = ['mobile', 'tablet', 'desktop'];
 
     /**
+     * Default
+     *
+     * @since 2.0.0
+     * @var string
+     */
+    public $default = '1.2';
+
+    /**
      * Range atts
      *
      * @since 2.0.0
      * @var array
      */
     public $atts = [
-        'vw' => [
-            'max' => 20,
-            'default' => 5
+        'unitless' => [
+            'min' => 0.5,
+            'max' => 3,
+            'step' => 0.01,
+            'default' => 1
         ],
         'px' => [
-            'max' => 100,
-            'default' => 24
+            'min' => 0,
+            'max' => 72,
         ]
     ];
 }

@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Footer\Customize\Bottom_Bar;
+namespace Taproot\Footer\Customize\Bottom_Bar;
 
 use Taproot\Customize\Controls\Control\Control;
 
@@ -85,7 +85,7 @@ class Content extends Control {
             $manager->selective_refresh->add_partial( $this->id, [
                 'selector' => '.bottom-bar__container',
                 'container_inclusive' => false,
-                'render_callback' => 'Taproot\Components\Footer\Functions::footer_credits',
+                'render_callback' => 'Taproot\Footer\Template::get_the_footer_credits',
             ]);
         }
     }
