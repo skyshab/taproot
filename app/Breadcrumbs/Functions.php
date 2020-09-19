@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Breadcrumbs;
+namespace Taproot\Breadcrumbs;
 
 use Taproot\Tools\Mod;
 use function Taproot\Tools\post_type_mod;
@@ -23,17 +23,6 @@ use function Taproot\Tools\post_type_mod;
  * @access public
  */
 class Functions {
-
-    /**
-     * Use the home icon?
-     *
-     * @since  2.0.0
-     * @access public
-     * @return bool
-     */
-    public static function use_home_icon() {
-       return Mod::get( 'navigation--breadcrumbs--has-home-icon' );
-    }
 
     /**
      * Has breadcrumbs?

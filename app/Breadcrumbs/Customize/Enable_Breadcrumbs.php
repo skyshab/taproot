@@ -1,8 +1,8 @@
 <?php
 /**
- * Hide Logo When Fixed Header.
+ * Enable Breadcrumbs.
  *
- * This class handles the customizer control for hiding the logo in the fixed header.
+ * This class handles the customizer control for enabling the breadcrumbs functionality.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Breadcrumbs\Customize\Breadcrumbs;
+namespace Taproot\Breadcrumbs\Customize;
 
 use Taproot\Customize\Controls\Checkbox\Checkbox;
 
@@ -21,7 +21,7 @@ use Taproot\Customize\Controls\Checkbox\Checkbox;
  * @since  2.0.0
  * @access public
  */
-class Has_Separators extends Checkbox {
+class Enable_Breadcrumbs extends Checkbox {
 
     /**
      * Stores control ID
@@ -29,7 +29,7 @@ class Has_Separators extends Checkbox {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'has-separators';
+    public $name = 'enable';
 
     /**
      * Stores control label
@@ -37,15 +37,15 @@ class Has_Separators extends Checkbox {
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Use Separators';
+    public $label = 'Enable Breadcrumbs';
 
     /**
-     * Default
+     * Stores default value
      *
      * @since 2.0.0
-     * @var bool
+     * @var string
      */
-    public $default = TRUE;
+    public $default = FALSE;
 
     /**
      * Transport

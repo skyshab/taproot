@@ -6,12 +6,12 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2020 Sky Shabatura
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- * @link      https://taproot-theme.com
+ * @copyright Copyright (c) 2020, Sky Shabatura
+ * @link      https://github.com/skyshab/taproot
+ * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Breadcrumbs;
+namespace Taproot\Breadcrumbs;
 
 use Hybrid\Contracts\Bootable;
 use function Hybrid\app;
@@ -32,31 +32,9 @@ class Hooks implements Bootable {
      * @return void
      */
     public function boot() {
-        //add_filter( 'hybrid/breadcrumbs/trail',                 [ $this, 'breadcrumbs_home_icon' ] );
         add_filter( 'taproot/breadcrumbs/supported-post-types', [ $this, 'breadcrumbs_support' ] );
         add_filter( 'hybrid/breadcrumbs/crumb/Home',            [ $this, 'crumb_home' ] );
-
-    }
-
-    /**
-     * Add breadcrumbs home icon
-     *
-     * @since 2.0.0
-     * @param string    $html
-     * @return string
-     */
-    public function breadcrumbs_home_icon( $html ) {
-
-        // If icon not enabled, just return the markup
-        if( ! app('breadcrumbs/functions')->use_home_icon() ) {
-            return $html;
-        }
-
-        // Get the icon markup
-        $icon = app('icons')->render( 'home' );
-
-        // Replace the default markup with icon markup
-        return str_replace('<span itemprop="name">Home</span>', $icon, $html );
+        add_filter( 'hybrid/breadcrumbs/build/Post',            [ $this, 'build_post' ] );
     }
 
     /**
@@ -79,11 +57,20 @@ class Hooks implements Bootable {
     }
 
     /**
-     * Single Breadcrumb Build Class
+     * Crumb Home
      *
      * @since 1.4.0
      */
     public function crumb_home() {
         return Crumb_Home::class;
+    }
+
+    /**
+     * Build Post
+     *
+     * @since 1.4.0
+     */
+    public function build_post() {
+        return Build_Post::class;
     }
 }

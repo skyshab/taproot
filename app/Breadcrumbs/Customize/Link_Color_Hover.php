@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Breadcrumbs\Customize\Breadcrumbs;
+namespace Taproot\Breadcrumbs\Customize;
 
 use Taproot\Customize\Controls\Color\Color;
 use function Taproot\Tools\theme_mod;

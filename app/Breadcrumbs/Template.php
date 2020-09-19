@@ -5,13 +5,13 @@
  * This class contains helper functions for use in the theme view templates.
  *
  * @package   Taproot
- * @author    Sky Shabatura
+ * @author    Sky Shabatura <theme@sky.camp>
  * @copyright Copyright (c) 2020, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Breadcrumbs;
+namespace Taproot\Breadcrumbs;
 
 use Hybrid\Breadcrumbs\Trail as Breadcrumbs;
 use function Hybrid\app;
@@ -34,7 +34,7 @@ class Template {
      */
     public static function get_the_breadcrumbs( $args = [] ) {
 
-        // check if current post type supports breadcrumbs
+        // Check if current post type supports breadcrumbs
         if( ! app('breadcrumbs/functions')->has_breadcrumbs() ) {
             return '';
         }
@@ -46,7 +46,7 @@ class Template {
             'showSeparators'    => app('breadcrumbs/functions')->has_separators(),
         ]);
 
-        // not a good way to add the styles to the breadcrumbs container
+        // There is not a good way to add the styles to the breadcrumbs container.
         // $styles = ( $args['customTextColor'] ) ? sprintf('color: %s', $args['customTextColor']) : '';
 
         $classes = 'breadcrumbs';
@@ -63,7 +63,10 @@ class Template {
             $classes .= ' has-separators';
         }
 
-        return Breadcrumbs::render( ['post' => get_post(), 'container_class' => $classes] );
+        return Breadcrumbs::render([
+            'post'              => get_post(),
+            'container_class'   => $classes
+        ]);
     }
 
     /**

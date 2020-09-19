@@ -4,14 +4,14 @@
  *
  * Creates the home crumb.
  *
- * @package   HybridBreadcrumbs
- * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright Copyright (c) 2018, Justin Tadlock
- * @link      https://github.com/justintadlock/hybrid-breadcrumbs
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright Copyright (c) 2020, Sky Shabatura
+ * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Breadcrumbs;
+namespace Taproot\Breadcrumbs;
 
 use Hybrid\Breadcrumbs\Crumb\Home;
 

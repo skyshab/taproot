@@ -1,8 +1,10 @@
 <?php
 /**
- * Header Default Color.
+ * Font Size.
  *
- * This class handles the customizer control for the header color.
+ * This class handles the customizer control for the  * Font Size.
+ *
+ * This class handles the component font size.font size.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -11,34 +13,55 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Breadcrumbs\Customize\Breadcrumbs;
+namespace Taproot\Breadcrumbs\Customize;
 
-use Taproot\Customize\Controls\Color\Color;
+use Taproot\Customize\Controls\Range\Range;
 use function Taproot\Tools\theme_mod;
 
 /**
- * Class for color controls
+ * Class for range control
  *
  * @since  2.0.0
  * @access public
  */
-class Text_Color extends Color {
+class Font_Size extends Range {
 
     /**
-     * Control id
+     * Custom control ID
      *
      * @since 2.0.0
      * @var string
      */
-    public $name = 'text-color';
+    public $name = 'font-size';
 
     /**
-     * Control label
+     * Label
      *
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Breadcrumbs Color';
+    public $label = 'Font Size';
+
+    /**
+     * Range atts
+     *
+     * @since 2.0.0
+     * @var array
+     */
+    public $atts = [
+        'em' => [
+            'min' => 0.6,
+            'max' => 2,
+        ],
+        'rem' => [
+            'min' => 0.6,
+            'max' => 2,
+        ],
+        'px' => [
+            'min' => 10,
+            'max' => 32,
+        ]
+    ];
 
     /**
      * Styles
@@ -48,15 +71,16 @@ class Text_Color extends Color {
      * @return void
      */
     public function styles( $styles ) {
+
         $styles->add([
-            'selector' => '.breadcrumbs__crumb',
+            'selector' => '.breadcrumbs',
             'styles' => [
-                'color' => theme_mod( $this->id ),
+                'font-size' => theme_mod( $this->id ),
             ],
         ]);
     }
 
-   /**
+    /**
      * Preview Styles
      *
      * @since  2.0.0
@@ -70,9 +94,9 @@ class Text_Color extends Color {
             value.bind( function( to ) {
                 rootstrap.style({
                     id: "{$this->id}",
-                    selector: '.breadcrumbs__crumb',
+                    selector: ".breadcrumbs",
                     styles: {
-                        color: to
+                        'font-size': to
                     },
                 });
             });
