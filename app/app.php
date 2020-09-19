@@ -23,53 +23,50 @@
 $taproot = new Application();
 
 # ------------------------------------------------------------------------------
-# Register core service providers.
-# ------------------------------------------------------------------------------
-
-// App
-$taproot->provider( 'Taproot\Providers\App' );
-
-// Rootstrap
-$taproot->provider( 'Taproot\Providers\Rootstrap' );
-
-// Customizer
-$taproot->provider( 'Taproot\Customize\Provider' );
-
-// Editor
-$taproot->provider( 'Taproot\Editor\Provider' );
-
-# ------------------------------------------------------------------------------
-# Register component service providers.
+# Register theme service providers.
 # ------------------------------------------------------------------------------
 
 array_map( function( $component ) use ( $taproot ) {
-    $taproot->provider( "Taproot\Components\\${component}\Component" );
+    $taproot->provider( "Taproot\\${component}\Provider" );
 }, [
+    'Theme',
+    'Rootstrap',
+    'Customize',
+    'Editor',
+    'General',
     'Header',
+    'Footer',
+    'Sidebar',
     'Layout',
+    'Colors',
+    'Typography',
+    'Fonts',
     'Navigation',
-    'Navigation_Header',
-    'Navigation_Navbar',
-    'Navigation_Top',
-    'Navigation_Footer',
+    'Navigation\Top',
+    'Navigation\Header',
+    'Navigation\Navbar',
+    'Navigation\Footer',
+    'Post_Types',
+    'Post_Types\Page',
+    'Post_Types\Post',
+    'Post_Title',
     'Postnav',
     'Pagination',
     'Breadcrumbs',
-    'Footer',
-    'Fonts',
-    'Typography',
-    'Icons',
-    'Colors',
-    'Buttons',
-    'Search',
-    'Sidebar',
-    'Images',
     'Comments',
-    'Page',
-    'Post',
-    'Post_Title',
-    'Woocommerce'
+    'Search',
+    'Buttons',
+    'Images',
+    'Icons',
 ]);
+
+# ------------------------------------------------------------------------------
+# Register provider for post type "product" only if Woocommerce is installed.
+# ------------------------------------------------------------------------------
+
+if( class_exists( 'woocommerce' ) ) {
+    $taproot->provider( 'Taproot\Post_Types\Product\Provider' );
+}
 
 # ------------------------------------------------------------------------------
 # Perform bootstrap actions.
