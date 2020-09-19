@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Navigation_Header\Customize\Header_Fixed;
+namespace Taproot\Pagination\Customize\Pagination;
 
 use Taproot\Customize\Controls\Color\Color;
 use function Taproot\Tools\theme_mod;
@@ -30,7 +30,7 @@ class Link_Color extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'color';
+    public $name = 'link-color';
 
     /**
      * Control label
@@ -50,11 +50,8 @@ class Link_Color extends Color {
     public function styles( $styles ) {
 
         $styles->add([
-            'selector' => '.app-header--fixed .menu--header__link:link, .app-header--fixed .menu--header__link:visited',
-            'styles' => [
-                'color' => theme_mod( $this->id ),
-            ],
-            'screen' => 'desktop',
+            'selector' => '.pagination__item--prev .pagination__anchor, .pagination__item--next .pagination__anchor',
+            'styles' => [ 'color' => theme_mod( $this->id ) ],
         ]);
     }
 
@@ -72,11 +69,10 @@ class Link_Color extends Color {
             value.bind( function( to ) {
                 rootstrap.style({
                     id: "{$this->id}",
-                    selector: '.app-header--fixed .menu--header__link:link, .app-header--fixed .menu--header__link:visited',
-                    screen: 'desktop',
+                    selector: '.pagination__item--prev .pagination__anchor, .pagination__item--next .pagination__anchor',
                     styles: {
                         color: to
-                    }
+                    },
                 });
             });
         });

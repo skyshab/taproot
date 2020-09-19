@@ -1,8 +1,8 @@
 <?php
 /**
- * Fixed Header Background Color.
+ * Header Default Color.
  *
- * This class handles the customizer control for the fixed header background color.
+ * This class handles the customizer control for the header color.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Header\Customize\Styles_Fixed;
+namespace Taproot\Pagination\Customize\Pagination_Hover;
 
 use Taproot\Customize\Controls\Color\Color;
 use function Taproot\Tools\theme_mod;
@@ -22,31 +22,23 @@ use function Taproot\Tools\theme_mod;
  * @since  2.0.0
  * @access public
  */
-class Background_Color extends Color {
+class Text_Color extends Color {
 
     /**
-     * Stores control ID
+     * Control id
      *
      * @since 2.0.0
      * @var string
      */
-    public $name = 'background-color';
+    public $name = 'text-color';
 
     /**
-     * Stores control label
+     * Control label
      *
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Background Color';
-
-    /**
-     * Stores default value
-     *
-     * @since 2.0.0
-     * @var string
-     */
-    public $default = '#000000';
+    public $label = 'Text Color';
 
     /**
      * Styles
@@ -58,11 +50,8 @@ class Background_Color extends Color {
     public function styles( $styles ) {
 
         $styles->add([
-            'selector' => '.app-header--fixed',
-            'styles' => [
-                'background-color' => theme_mod( $this->id ),
-            ],
-            'screen' => 'desktop'
+            'selector'  => '.pagination__item--number .pagination__anchor:hover, .pagination__item--dots .pagination__anchor:hover',
+            'styles'    => [ 'color' => theme_mod( $this->id ) ],
         ]);
     }
 
@@ -80,10 +69,9 @@ class Background_Color extends Color {
             value.bind( function( to ) {
                 rootstrap.style({
                     id: "{$this->id}",
-                    selector: '.app-header--fixed',
-                    screen: 'desktop',
+                    selector: '.pagination__item--number .pagination__anchor:hover, .pagination__item--dots .pagination__anchor:hover',
                     styles: {
-                        'background-color': to
+                        color: to
                     },
                 });
             });

@@ -1,8 +1,8 @@
 <?php
 /**
- * Link Color Hover.
+ * Font Size.
  *
- * This class handles the customizer control for the component link color.
+ * This class handles the customizer control for the component font size.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -11,34 +11,55 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Navigation_Header\Customize\Header_Fixed;
+namespace Taproot\Pagination\Customize\Pagination;
 
-use Taproot\Customize\Controls\Color\Color;
+use Taproot\Customize\Controls\Range\Range;
 use function Taproot\Tools\theme_mod;
 
 /**
- * Class for color controls
+ * Class for range control
  *
  * @since  2.0.0
  * @access public
  */
-class Link_Color_Hover extends Color {
+class Font_Size extends Range {
 
     /**
-     * Control id
+     * Custom control ID
      *
      * @since 2.0.0
      * @var string
      */
-    public $name = 'link-color--hover';
+    public $name = 'font-size';
 
     /**
-     * Control label
+     * Label
      *
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Link Color: Hover';
+    public $label = 'Font Size';
+
+    /**
+     * Range atts
+     *
+     * @since 2.0.0
+     * @var array
+     */
+    public $atts = [
+        'em' => [
+            'min' => 0.6,
+            'max' => 2,
+        ],
+        'rem' => [
+            'min' => 0.6,
+            'max' => 2,
+        ],
+        'px' => [
+            'min' => 10,
+            'max' => 32,
+        ]
+    ];
 
     /**
      * Styles
@@ -50,11 +71,8 @@ class Link_Color_Hover extends Color {
     public function styles( $styles ) {
 
         $styles->add([
-            'selector' => '.app-header--fixed .menu--header__link:hover',
-            'styles' => [
-                'color' => theme_mod( $this->id ),
-            ],
-            'screen' => 'desktop',
+            'selector' => '.pagination__item',
+            'styles' => [ 'font-size' => theme_mod( $this->id ) ],
         ]);
     }
 
@@ -72,11 +90,10 @@ class Link_Color_Hover extends Color {
             value.bind( function( to ) {
                 rootstrap.style({
                     id: "{$this->id}",
-                    selector: '.app-header--fixed .menu--header__link:hover',
-                    screen: 'desktop',
+                    selector: '.pagination__item',
                     styles: {
-                        color: to
-                    }
+                        'font-size': to
+                    },
                 });
             });
         });

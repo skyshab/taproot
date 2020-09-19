@@ -11,10 +11,9 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Navigation_Navbar\Customize\Navbar;
+namespace Taproot\Pagination\Customize\Pagination;
 
 use Taproot\Customize\Controls\Color\Color;
-use Taproot\Components\Navigation_Navbar\Functions;
 use function Taproot\Tools\theme_mod;
 
 /**
@@ -42,14 +41,6 @@ class Background_Color extends Color {
     public $label = 'Background Color';
 
     /**
-     * Default
-     *
-     * @since 2.0.0
-     * @var string
-     */
-    public $default = '#000000';
-
-    /**
      * Styles
      *
      * @since  2.0.0
@@ -59,10 +50,8 @@ class Background_Color extends Color {
     public function styles( $styles ) {
 
         $styles->add([
-            'selector' => '.menu--navbar',
-            'styles' => [
-                'background-color' => theme_mod( $this->id ),
-            ],
+            'selector' => '.pagination__item--number .pagination__anchor, .pagination__item--dots .pagination__anchor',
+            'styles' => [ 'background-color' => theme_mod( $this->id ) ],
         ]);
     }
 
@@ -80,7 +69,7 @@ class Background_Color extends Color {
             value.bind( function( to ) {
                 rootstrap.style({
                     id: "{$this->id}",
-                    selector: '.menu--navbar',
+                    selector: '.pagination__item--number .pagination__anchor, .pagination__item--dots .pagination__anchor',
                     styles: {
                         'background-color': to
                     },

@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Breadcrumbs\Customize\Breadcrumbs;
+namespace Taproot\Pagination\Customize\Pagination;
 
 use Taproot\Customize\Controls\Checkbox\Checkbox;
 
@@ -21,7 +21,7 @@ use Taproot\Customize\Controls\Checkbox\Checkbox;
  * @since  2.0.0
  * @access public
  */
-class Has_Home_Icon extends Checkbox {
+class Is_Rounded extends Checkbox {
 
     /**
      * Stores control ID
@@ -29,7 +29,7 @@ class Has_Home_Icon extends Checkbox {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'has-home-icon';
+    public $name = 'is-rounded';
 
     /**
      * Stores control label
@@ -37,7 +37,7 @@ class Has_Home_Icon extends Checkbox {
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Enable Home Icon';
+    public $label = 'Use Circles';
 
     /**
      * Default
@@ -51,7 +51,7 @@ class Has_Home_Icon extends Checkbox {
      * Transport
      *
      * @since 2.0.0
-     * @var string
+     * @var bool
      */
     public $transport = 'refresh';
 }

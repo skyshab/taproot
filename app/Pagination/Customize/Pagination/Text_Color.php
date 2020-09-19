@@ -1,8 +1,8 @@
 <?php
 /**
- * Link Color.
+ * Header Default Color.
  *
- * This class handles the customizer control for the component link color.
+ * This class handles the customizer control for the header color.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -11,10 +11,9 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Navigation_Header\Customize\Header;
+namespace Taproot\Pagination\Customize\Pagination;
 
 use Taproot\Customize\Controls\Color\Color;
-use Taproot\Components\Navigation_Header\Functions;
 use function Taproot\Tools\theme_mod;
 
 /**
@@ -23,7 +22,7 @@ use function Taproot\Tools\theme_mod;
  * @since  2.0.0
  * @access public
  */
-class Link_Color extends Color {
+class Text_Color extends Color {
 
     /**
      * Control id
@@ -31,7 +30,7 @@ class Link_Color extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'color';
+    public $name = 'text-color';
 
     /**
      * Control label
@@ -39,7 +38,7 @@ class Link_Color extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Link Color';
+    public $label = 'Text Color';
 
     /**
      * Styles
@@ -51,11 +50,8 @@ class Link_Color extends Color {
     public function styles( $styles ) {
 
         $styles->add([
-            'selector' => '.menu--header__link:link, .menu--header__link:visited',
-            'styles' => [
-                'color' => theme_mod( $this->id ),
-            ],
-            'screen' => Functions::get_desktop_screen(),
+            'selector'  => '.pagination__item--number .pagination__anchor, .pagination__item--dots .pagination__anchor',
+            'styles'    => [ 'color' => theme_mod( $this->id ) ],
         ]);
     }
 
@@ -73,8 +69,7 @@ class Link_Color extends Color {
             value.bind( function( to ) {
                 rootstrap.style({
                     id: "{$this->id}",
-                    selector: '.menu--header__link:link, .menu--header__link:visited',
-                    screen: getDesktopScreen( wp.customize.instance('navigation--header-mobile--breakpoint').get() ),
+                    selector: '.pagination__item--number .pagination__anchor, .pagination__item--dots .pagination__anchor',
                     styles: {
                         color: to
                     }
