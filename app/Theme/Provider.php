@@ -1,6 +1,6 @@
 <?php
 /**
- * App service provider.
+ * Theme service provider.
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
@@ -9,10 +9,9 @@
  * @link      https://taproot-theme.com
  */
 
-namespace Taproot\Providers;
+namespace Taproot\Theme;
 
 use Hybrid\Tools\ServiceProvider;
-use function Taproot\Tools\asset;
 
 /**
  * App service provider.
@@ -20,7 +19,7 @@ use function Taproot\Tools\asset;
  * @since  1.0.0
  * @access public
  */
-class App extends ServiceProvider {
+class Provider extends ServiceProvider {
 
     /**
      * Register classes and bind to the container.
@@ -30,6 +29,9 @@ class App extends ServiceProvider {
      * @return void
      */
     public function register() {
+
+        // Bind a single instance of our hooks class.
+        $this->app->singleton( 'theme/hooks', Hooks::class );;
 
         // Bind theme stylesheet handle
         $this->app->instance( 'styles/handle', 'taproot-screen' );
@@ -45,7 +47,7 @@ class App extends ServiceProvider {
     }
 
     /**
-     * Boot Class Instances
+     * Boot Class Instances.
      *
      * @since  1.0.0
      * @access public
@@ -53,14 +55,7 @@ class App extends ServiceProvider {
      */
     public function boot() {
 
-        // Enqueue theme resources
-        add_action( 'wp_enqueue_scripts', function() {
-
-            // Enqueue theme styles
-            wp_enqueue_style( $this->app->resolve( 'styles/handle' ), asset( 'css/theme.css' ), null, null );
-
-            // Enqueue theme scripts
-            wp_enqueue_script( 'taproot-app', asset( 'js/app.js' ), null, null, true );
-        });
+        // Boot the theme hooks.
+        $this->app->resolve( 'theme/hooks' )->boot();
     }
 }
