@@ -1,8 +1,8 @@
 <?php
 /**
- * Buttons Text Color.
+ * Text Color.
  *
- * This class handles the customizer control for the buttons text color.
+ * This class handles the button text color.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -11,9 +11,8 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Buttons\Customize\Buttons;
+namespace Taproot\Buttons\Customize\Buttons_Hover;
 
-use Taproot\Tools\Mod;
 use Taproot\Customize\Controls\Color\Color;
 use Taproot\Customize\Traits\CustomPropertyStyles;
 use Taproot\Customize\Traits\CustomPropertyEditor;
@@ -37,7 +36,7 @@ class Text_Color extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $id = 'buttons--text-color';
+    public $id = 'buttons--hover--text-color';
 
     /**
      * Control label
@@ -46,19 +45,4 @@ class Text_Color extends Color {
      * @var string
      */
     public $label = 'Text Color';
-
-    /**
-     * Editor styles
-     *
-     * @since  2.0.0
-     * @access public
-     * @return void
-     */
-    public function editorStyles( $styles ) {
-
-        $styles->customProperty([
-            'name'      => $this->id,
-            'value'     => Mod::get( $this->id ),
-        ]);
-    }
 }

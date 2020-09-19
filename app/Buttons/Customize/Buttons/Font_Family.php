@@ -1,8 +1,8 @@
 <?php
 /**
- * Buttons Border Radius
+ * Font Family
  *
- * This class handles the customizer control for the buttons border radius.
+ * This class handles the customizer control for the font family.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -11,33 +11,28 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Buttons\Customize\Buttons;
+namespace Taproot\Buttons\Customize\Buttons;
 
+use Taproot\Customize\Controls\Select\Select;
 use Taproot\Tools\Mod;
-use Taproot\Customize\Controls\Range\Range;
-use Taproot\Customize\Traits\CustomPropertyStyles;
-use Taproot\Customize\Traits\CustomPropertyEditor;
-use Taproot\Customize\Traits\CustomPropertyPreview;
+use function Taproot\Tools\theme_mod;
+use function Hybrid\app;
 
 /**
- * Class for range control
+ * Class for checkbox control
  *
  * @since  2.0.0
  * @access public
  */
-class Border_Radius extends Range {
-
-    use CustomPropertyStyles;
-    use CustomPropertyEditor;
-    use CustomPropertyPreview;
+class Font_Family extends Select {
 
     /**
-     * Custom control id
+     * Control ID
      *
      * @since 2.0.0
      * @var string
      */
-    public $id = 'buttons--border-radius';
+    public $id = 'buttons--font-family';
 
     /**
      * Label
@@ -45,40 +40,38 @@ class Border_Radius extends Range {
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Border Radius';
+    public $label = 'Font Family';
 
     /**
      * Default
      *
      * @since 2.0.0
-     * @var array
+     * @var string
      */
-    public $default = '0px';
+    public $default = 'default';
 
     /**
-     * Range atts
+     * Get Choices
      *
      * @since 2.0.0
-     * @var array
+     * @var string
      */
-    public $atts = [
-        'px' => [
-            'max' => 50,
-            'default' => 0
-        ],
-    ];
+    public function get_choices() {
+        return app('fonts/functions')->get_font_choices();
+    }
 
     /**
      * Styles
      *
-     * @since 2.0.0
-     * @var string
+     * @since  2.0.0
+     * @access public
+     * @return void
      */
     public function styles( $styles ) {
 
         $styles->customProperty([
             'name'  => $this->id,
-            'value' => Mod::get( $this->id ),
+            'value' => app('fonts/functions')->get_font_family( theme_mod( $this->id ) ),
         ]);
     }
 
@@ -90,7 +83,11 @@ class Border_Radius extends Range {
      * @return void
      */
     public function editorStyles( $styles ) {
-        $this->styles( $styles );
+
+        $styles->customProperty([
+            'name'  => $this->id,
+            'value' => app('fonts/functions')->get_font_family( Mod::get( $this->id ) ),
+        ]);
     }
 
     /**
@@ -107,7 +104,7 @@ class Border_Radius extends Range {
             value.bind( function( to ) {
                 rootstrap.customProperty({
                     name: "{$this->id}",
-                    value: to
+                    value: getFontFamily( to )
                 });
             });
         });

@@ -1,8 +1,8 @@
 <?php
 /**
- * Padding.
+ * Background Color.
  *
- * This class handles the customizer control for the padding.
+ * This class handles the customizer control for the background color.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -11,21 +11,21 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Buttons\Customize\Buttons;
+namespace Taproot\Buttons\Customize\Buttons;
 
 use Taproot\Tools\Mod;
-use Taproot\Customize\Controls\Range\Range;
+use Taproot\Customize\Controls\Color\Color;
 use Taproot\Customize\Traits\CustomPropertyStyles;
 use Taproot\Customize\Traits\CustomPropertyEditor;
 use Taproot\Customize\Traits\CustomPropertyPreview;
 
 /**
- * Class for range control
+ * Class for color controls
  *
  * @since  2.0.0
  * @access public
  */
-class Padding extends Range {
+class Background_Color extends Color {
 
     use CustomPropertyStyles;
     use CustomPropertyEditor;
@@ -37,41 +37,15 @@ class Padding extends Range {
      * @since 2.0.0
      * @var string
      */
-    public $id = 'buttons--padding';
+    public $id = 'buttons--background-color';
 
     /**
-     * Label
+     * Stores control label
      *
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Padding';
-
-    /**
-     * Default
-     *
-     * @since 2.0.0
-     * @var array
-     */
-    public $default = '1.25em';
-
-    /**
-     * Range atts
-     *
-     * @since 2.0.0
-     * @var array
-     */
-    public $atts = [
-        'px' => [
-            'max' => 50,
-        ],
-        'em' => [
-            'max' => 4,
-        ],
-        'rem' => [
-            'max' => 4,
-        ]
-    ];
+    public $label = 'Background Color';
 
     /**
      * Editor styles

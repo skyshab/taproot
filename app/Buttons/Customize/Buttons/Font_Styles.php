@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Buttons\Customize\Buttons;
+namespace Taproot\Buttons\Customize\Buttons;
 
 use Taproot\Customize\Controls\Font_Styles\Font_Styles as FontStylesAbstract;
 use function Hybrid\app;

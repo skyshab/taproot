@@ -1,8 +1,8 @@
 <?php
 /**
- * Text Color.
+ * Background Color.
  *
- * This class handles the button text color.
+ * This class handles the customizer control for the background color.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Buttons\Customize\Buttons_Hover;
+namespace Taproot\Buttons\Customize\Buttons_Hover;
 
 use Taproot\Customize\Controls\Color\Color;
 use Taproot\Customize\Traits\CustomPropertyStyles;
@@ -24,25 +24,25 @@ use Taproot\Customize\Traits\CustomPropertyPreview;
  * @since  2.0.0
  * @access public
  */
-class Text_Color extends Color {
+class Background_Color extends Color {
 
     use CustomPropertyStyles;
     use CustomPropertyEditor;
     use CustomPropertyPreview;
 
     /**
-     * Control id
+     * Custom control id
      *
      * @since 2.0.0
      * @var string
      */
-    public $id = 'buttons--hover--text-color';
+    public $id = 'buttons--hover--background-color';
 
     /**
-     * Control label
+     * Stores control label
      *
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Text Color';
+    public $label = 'Background Color';
 }

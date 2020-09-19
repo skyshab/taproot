@@ -1,8 +1,8 @@
 <?php
 /**
- * Background Color.
+ * Line Height
  *
- * This class handles the customizer control for the background color.
+ * This class handles the component line height.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -11,41 +11,64 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Buttons\Customize\Buttons;
+namespace Taproot\Buttons\Customize\Buttons;
 
 use Taproot\Tools\Mod;
-use Taproot\Customize\Controls\Color\Color;
+use Taproot\Customize\Controls\Range\Range;
 use Taproot\Customize\Traits\CustomPropertyStyles;
 use Taproot\Customize\Traits\CustomPropertyEditor;
 use Taproot\Customize\Traits\CustomPropertyPreview;
 
 /**
- * Class for color controls
+ * Class for range control
  *
  * @since  2.0.0
  * @access public
  */
-class Background_Color extends Color {
+class Line_Height extends Range {
 
     use CustomPropertyStyles;
     use CustomPropertyEditor;
     use CustomPropertyPreview;
 
     /**
-     * Custom control id
+     * Custom control ID
      *
      * @since 2.0.0
      * @var string
      */
-    public $id = 'buttons--background-color';
+    public $id = 'buttons--line-height';
 
     /**
-     * Stores control label
+     * Label
      *
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Background Color';
+    public $label = 'Line Height';
+
+    /**
+     * Default
+     *
+     * @since 2.0.0
+     * @var string
+     */
+    public $default = '2.5';
+
+    /**
+     * Range atts
+     *
+     * @since 2.0.0
+     * @var array
+     */
+    public $atts = [
+        'unitless' => [
+            'min' => 2,
+            'max' => 4,
+            'step' => 0.1,
+            'default' => 2.5
+        ]
+    ];
 
     /**
      * Editor styles
