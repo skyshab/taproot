@@ -11,7 +11,7 @@
  * @link      https://taproot-theme.com
  */
 
-namespace Taproot\Components\Fonts;
+namespace Taproot\Fonts;
 
 use Hybrid\Contracts\Bootable;
 use function Hybrid\app;

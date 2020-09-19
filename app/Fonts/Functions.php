@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Fonts;
+namespace Taproot\Fonts;
 
 use Taproot\Tools\Mod;
 

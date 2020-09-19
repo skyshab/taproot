@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Fonts\Customize\Fonts;
+namespace Taproot\Fonts\Customize;
 
 use Taproot\Customize\Controls\Control\Control;
 
@@ -45,7 +45,7 @@ class Google extends Control {
      * @since 2.0.0
      * @var string
      */
-    public $sanitize_callback = 'Taproot\Components\Fonts\Functions::sanitize_google_fonts';
+    public $sanitize_callback = 'Taproot\Fonts\Functions::sanitize_google_fonts';
 
     /**
      * Label
