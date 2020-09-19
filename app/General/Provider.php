@@ -11,10 +11,10 @@
  * @link      https://taproot-theme.com
  */
 
-namespace Taproot\Components\Navigation_Footer;
+namespace Taproot\General;
 
 use Hybrid\Tools\ServiceProvider;
-use Taproot\Components\Navigation_Footer\Customize\Customize;
+use Taproot\Customize\Component;
 
 /**
  * Component service provider class.
@@ -22,7 +22,7 @@ use Taproot\Components\Navigation_Footer\Customize\Customize;
  * @since  2.0.0
  * @access public
  */
-class Component extends ServiceProvider {
+class Provider extends ServiceProvider {
 
     /**
      * Register classes and bind to the container.
@@ -34,13 +34,17 @@ class Component extends ServiceProvider {
     public function register() {
 
         // Bind a single instance of our hooks class.
-        $this->app->singleton( Hooks::class );
+        $this->app->singleton( 'general/hooks', Hooks::class );;
 
-        // Bind a single instance of our customize component class.
-        $this->app->singleton( Customize::class );
+        // Bind customize component for general panel
+        $this->app->singleton( 'general/customize', function() {
 
-        // Bind a single instance of the component functions class.
-        $this->app->singleton( 'nav/footer/functions', Functions::class );
+            return new Component([
+                'id'        => 'general',
+                'title'     => __('General', 'taproot') ,
+                'priority'  => 10,
+            ]);
+        });
     }
 
     /**
@@ -53,9 +57,15 @@ class Component extends ServiceProvider {
     public function boot() {
 
         // Boot the component hooks.
-        $this->app->resolve( Hooks::class )->boot();
+        $this->app->resolve( 'general/hooks' )->boot();
 
-        // Add customize component to collection.
-        $this->app->resolve( 'customize/components' )->add( 'navigation/footer', $this->app->resolve( Customize::class ) );
+        // Get the customize component collection.
+        $customize = $this->app->resolve( 'customize/components' );
+
+        // Get the customize component
+        $component = $this->app->resolve( 'general/customize' );
+
+        // Add the customize component to the collection.
+        $customize->add( 'general/customize', $component );
     }
 }
