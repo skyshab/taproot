@@ -1,8 +1,8 @@
 <?php
 /**
- * Link Color.
+ * Text Color.
  *
- * This class handles the customizer control for the component link color.
+ * This class handles the customizer control for the component text color.
  *
  * @package   Taproot
  * @author    Sky Shabatura
@@ -11,10 +11,9 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Navigation_Header\Customize\Header_Mobile;
+namespace Taproot\Post_Types\Customize\Entry\Byline;
 
 use Taproot\Customize\Controls\Color\Color;
-use Taproot\Components\Navigation_Header\Functions;
 use function Taproot\Tools\theme_mod;
 
 /**
@@ -23,7 +22,7 @@ use function Taproot\Tools\theme_mod;
  * @since  2.0.0
  * @access public
  */
-class Link_Color extends Color {
+class Text_Color extends Color {
 
     /**
      * Control id
@@ -31,7 +30,7 @@ class Link_Color extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'color';
+    public $name = 'text-color';
 
     /**
      * Control label
@@ -39,7 +38,7 @@ class Link_Color extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Link Color';
+    public $label = 'Byline Text Color';
 
     /**
      * Styles
@@ -50,15 +49,12 @@ class Link_Color extends Color {
      */
     public function styles( $styles ) {
 
-        $styles->add([
-            'selector' => '.menu--header__link:link, .menu--header__link:visited',
-            'styles' => [
-                'color' => theme_mod( $this->id ),
-            ],
-            'screen' => Functions::get_mobile_screen()
+        $styles->customProperty([
+            'name'      => 'entry--byline--text-color',
+            'value'     => theme_mod( $this->id ),
+            'selector'  => ".entry--type-{$this->post_type}"
         ]);
     }
-
 
     /**
      * Preview Styles
@@ -72,13 +68,10 @@ class Link_Color extends Color {
         return <<< JS
         wp.customize( "{$this->id}", function( value ) {
             value.bind( function( to ) {
-                rootstrap.style({
-                    id: "{$this->id}",
-                    selector: '.menu--header__link:link, .menu--header__link:visited',
-                    screen: getMobileScreen( wp.customize.instance('navigation--header-mobile--breakpoint').get() ),
-                    styles: {
-                        color: to
-                    }
+                rootstrap.customProperty({
+                    name: 'entry--byline--text-color',
+                    selector: ".entry--type-{$this->post_type}",
+                    value: to
                 });
             });
         });
