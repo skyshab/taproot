@@ -11,7 +11,7 @@
  * @link      https://taproot-theme.com
  */
 
-namespace Taproot\Components\Navigation;
+namespace Taproot\Post_Title;
 
 use Hybrid\Tools\ServiceProvider;
 
@@ -21,7 +21,7 @@ use Hybrid\Tools\ServiceProvider;
  * @since  2.0.0
  * @access public
  */
-class Component extends ServiceProvider {
+class Provider extends ServiceProvider {
 
     /**
      * Register classes and bind to the container.
@@ -33,13 +33,13 @@ class Component extends ServiceProvider {
     public function register() {
 
         // Bind a single instance of our hooks class.
-        $this->app->singleton( Hooks::class );
+        $this->app->singleton( 'post-title/hooks', Hooks::class );
 
-        // Bind a single instance of our customize component class.
-        $this->app->singleton( Customize::class );
+        // Bind a single instance of the component template class.
+        $this->app->singleton( 'post-title/template', Template::class );
 
         // Bind a single instance of the component functions class.
-        $this->app->singleton( 'navigation/functions', Functions::class );
+        $this->app->singleton( 'post-title/functions', Functions::class );
     }
 
     /**
@@ -52,9 +52,6 @@ class Component extends ServiceProvider {
     public function boot() {
 
         // Boot the component hooks.
-        $this->app->resolve( Hooks::class )->boot();
-
-        // Add customize component to collection.
-        $this->app->resolve( 'customize/components' )->add( 'navigation', $this->app->resolve( Customize::class ) );
+        $this->app->resolve( 'post-title/hooks' )->boot();
     }
 }
