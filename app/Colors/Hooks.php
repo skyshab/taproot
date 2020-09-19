@@ -11,7 +11,7 @@
  * @link      https://taproot-theme.com
  */
 
-namespace Taproot\Components\Colors;
+namespace Taproot\Colors;
 
 use Hybrid\Contracts\Bootable;
 use function Hybrid\app;
@@ -33,6 +33,7 @@ class Hooks implements Bootable {
      */
     public function boot() {
         add_action( 'after_setup_theme', [ $this, 'editor_colors' ], 5 );
+        add_action( 'customize_register', [ $this, 'customize_register' ], PHP_INT_MAX );
     }
 
     /**
@@ -112,4 +113,17 @@ class Hooks implements Bootable {
             ],
         ]);
     }
+
+    /**
+     * Remove header text color from our colors section.
+     *
+     * @since 2.0.0
+     */
+    function customize_register( $manager ) {
+
+        if( $manager->get_control( 'header_textcolor' ) ) {
+            $manager->remove_control( 'header_textcolor' );
+        }
+    }
+
 }

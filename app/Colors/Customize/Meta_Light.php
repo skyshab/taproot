@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Colors\Customize\Colors;
+namespace Taproot\Colors\Customize;
 
 use Taproot\Tools\Mod;
 use Taproot\Customize\Controls\Color\Color;
@@ -25,7 +25,7 @@ use Taproot\Customize\Traits\CustomPropertyPreview;
  * @since  2.0.0
  * @access public
  */
-class Accent_Contrast extends Color {
+class Meta_Light extends Color {
 
     use CustomPropertyStyles;
     use CustomPropertyEditor;
@@ -37,7 +37,7 @@ class Accent_Contrast extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $id = 'colors--accent-contrast';
+    public $id = 'colors--meta-light';
 
     /**
      * Control label
@@ -45,7 +45,7 @@ class Accent_Contrast extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Accent Contrast Color';
+    public $label = 'Meta Light Color';
 
     /**
      * Hide the alpha channel
@@ -61,7 +61,7 @@ class Accent_Contrast extends Color {
      * @since 2.0.0
      * @var string
      */
-    public $default = '#ffffff';
+    public $default = '#f4f4f4';
 
     /**
      * Editor styles

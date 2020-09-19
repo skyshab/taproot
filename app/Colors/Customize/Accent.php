@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Colors\Customize\Colors;
+namespace Taproot\Colors\Customize;
 
 use Taproot\Tools\Mod;
 use Taproot\Customize\Controls\Color\Color;
