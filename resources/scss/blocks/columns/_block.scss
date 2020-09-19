@@ -6,6 +6,12 @@
 /// @link   https://taproot-theme.com
 ////
 
+// Columns wrapper with background
+.wp-block-columns.has-background {
+    @extend .has-block-padding;
+    @extend .has-block-spacing;
+}
+
 // Individual columns.
 
 .wp-block-column {

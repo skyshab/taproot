@@ -1,0 +1,59 @@
+////
+/// Block alignment styles
+///
+/// Styles for blocks that use the alignwide and alignfull classes.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+// Alignfull styles
+@mixin alignfull-content-styles() {
+
+    .post__content {
+
+        &--wide, &--left {
+            .alignfull {
+                margin-left: calc( min( var(--container-max-width), var(--container-width) ) / 2 - 50vw );
+            }
+        }
+
+        &--right {
+            .alignfull {
+                margin-left: calc( (min( var(--container-max-width), var(--container-width) ) / 2 - 50vw) + (var(--content-width) - min( var(--container-max-width), var(--container-width) )) );
+            }
+        }
+    }
+}
+
+// Add space around alignfull elements when not adjacent to other alignfull elements
+@mixin alignfull-spacing-styles() {
+
+    :not(.alignfull) + .alignfull {
+        margin-top: var(--layout-spacing);
+    }
+    .alignfull + :not(.alignfull) {
+        margin-top: var(--layout-spacing);
+    }
+}
+
+
+// Alignwide styles
+@mixin alignwide-content-styles() {
+
+    .post__content {
+
+        &--wide, &--left {
+            .alignwide {
+                margin-left: 0;
+            }
+        }
+
+        &--right {
+            .alignwide {
+                margin-left: calc( var(--content-width) - min( var(--container-max-width), var(--container-width) ) );
+            }
+        }
+    }
+}

@@ -8,4 +8,6 @@
 
 .wp-block-preformatted {
     background-color: var( --colors--meta-light );
+
+    @extend .has-block-padding;
 }

@@ -6,7 +6,6 @@
 /// @link   https://taproot-theme.com
 ////
 
-
 // mixin to generate mobile nav styles
 @mixin mobile-styles( $screen ) {
 
@@ -19,31 +18,24 @@
             padding: 1em 0;
         }
 
-        &.mobile-type-dropdown-slide,
-        &.mobile-type-dropdown-fade,
-        &.mobile-type-slide,
-        &.mobile-type-fullscreen {
-            position: absolute;
-            justify-content: flex-end;
-            height: 100%;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            padding: inherit;
+        &.mobile-type {
+
+            &-dropdown {
+                &-slide, &-fade {
+                    .menu__items {
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 90%;
+                    }
+                }
+            }
         }
 
-        &.mobile-type-dropdown-slide,
-        &.mobile-type-dropdown-fade {
-            .menu__items {
-                left: 50%;
-                transform: translateX(-50%);
-                width: 90%;
-            }
+        .menu--header__items {
+            background-color: var( --navigation--header-mobile--background-color );
         }
     }
 }
-
 
 // mixin to generate desktop nav styles
 @mixin desktop-styles( $screen ) {
@@ -52,16 +44,16 @@
     }
 }
 
+// Menu link color
+a.menu--header__link {
+    color: var( --navigation--header--color );
+}
 
 .menu--header {
 
     &__link {
         font-size: var( --navigation--header--font-size );
         line-height: var( --navigation--header--height );
-
-        &:link, &:visited {
-            color: inherit;
-        }
     }
 
     .menu--toggle {
@@ -69,9 +61,7 @@
         order: 2;
     }
 
-    // ****************
-    // * Mobile Styles
-    // ****************
+    // Mobile Styles
 
     // always mobile
     @include mobile-styles( 'always' );
@@ -86,10 +76,7 @@
         @include mobile-styles( 'tablet-and-under' );
     };
 
-
-    // ****************
-    // * Desktop Styles
-    // ****************
+    // Desktop Styles
 
     // never mobile styles
     @include desktop-styles( 'never' );
@@ -104,3 +91,45 @@
         @include desktop-styles( 'tablet-and-under' );
     };
 }
+
+
+// Stacked vertical header styles
+.app-header {
+
+    @include screen('mobile') {
+
+        &--mobile--vertical {
+
+            .menu--header.mobile-at {
+                &-always, &-mobile, &-tablet-and-under {
+                    margin-top: 1em;
+                }
+            }
+        }
+    }
+
+    @include screen('tablet-and-under') {
+
+        &--tablet--vertical {
+
+            .menu--header.mobile-at {
+                &-always, &-tablet-and-under {
+                    margin-top: 1em;
+                }
+            }
+        }
+    }
+
+    @include screen('desktop') {
+
+        &--desktop--vertical {
+
+            .menu--header.mobile-at {
+                &-always {
+                    margin-top: 1em;
+                }
+            }
+        }
+    }
+}
+

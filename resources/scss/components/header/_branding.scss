@@ -1,0 +1,92 @@
+////
+/// Header branding styles.
+///
+/// @group  Components\Header
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.app-header {
+
+    &__branding {
+
+        display: grid;
+        align-items: center;
+
+        // Wrapper around the title and description.
+        &__content {
+            grid-area: content;
+        }
+
+        // Prevent branding from being 'squished' when next to a header menu that is expanded.
+        // This can push the nav out of the container on mobile, so only do tablet and up.
+
+        // Does this need to be tied to the breakpoint for the header nav?
+        @include screen('tablet-and-up') {
+            flex-shrink: 0;
+        }
+
+        // This seems to make things work with horizontal layout
+        flex: 1 0 auto;
+    }
+
+    @include screen('mobile') {
+
+        &--mobile {
+
+            &--horizontal {
+
+                .app-header__branding {
+                    @include branding_styles('horizontal');
+                }
+            }
+
+            &--vertical {
+
+                .app-header__branding {
+                    @include branding_styles('vertical');
+                }
+            }
+        }
+    }
+
+    @include screen('tablet') {
+
+        &--tablet {
+
+            &--horizontal {
+
+                .app-header__branding {
+                    @include branding_styles('horizontal');
+                }
+            }
+
+            &--vertical {
+
+                .app-header__branding {
+                    @include branding_styles('vertical');
+                }
+            }
+        }
+    }
+
+    @include screen('desktop') {
+
+        &--desktop {
+
+            &--horizontal {
+
+                .app-header__branding {
+                    @include branding_styles('horizontal');
+                }
+            }
+
+            &--vertical {
+
+                .app-header__branding {
+                    @include branding_styles('vertical');
+                }
+            }
+        }
+    }
+}

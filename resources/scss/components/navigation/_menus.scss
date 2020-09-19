@@ -35,13 +35,8 @@
         }
     }
 
-    // default color
-    &__link, &__link:visited, &__link:hover {
-        color: white;
-    }
-
     &__link {
-        display: block;
+        display: flex;
         position: relative;
         text-decoration: none;
         transition: color .5s ease-in-out, background-color .4s ease-in-out;

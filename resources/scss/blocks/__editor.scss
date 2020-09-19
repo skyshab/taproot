@@ -40,84 +40,53 @@
 
     // Base block styles
     .wp-block  {
-        max-width:          var( --content-width );
-        font-family:        var( --typography--body--font-family, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif );
-        font-size:          var( --typography--body--font-size );
-        line-height:        var( --typography--body--line-height );
-    }
+        width:              var(--container-width);
+        max-width:          var(--content-width);
+        font-family:        var(--typography--body--font-family, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif );
 
+        // wide and full block styles
+        &[data-align=full],
+        &[data-align=wide] {
 
-    // Blocks that always have block padding
-    .wp-block-cover,
-    .wp-block-preformatted,
-    .wp-block-code,
-    .wp-block-verse {
-        @extend .has-block-padding;
-    }
+            width: auto;
 
-    // blocks with block padding under certain conditions
-    .wp-block-group,
-    .wp-block-columns,
-    .wp-block-media-text {
+            .wp-block-image {
+                width: 100%;
+            }
 
-        &.has-background, &[style*=background-color] {
-
-            @extend .has-block-padding;
-
-            &.alignfull {
-
-                .alignfull:not( .has-background ) {
-                    padding-left: 0;
-                    padding-right: 0;
-                }
+            // force image to fill space
+            img {
+                width: 100%;
             }
         }
-    }
 
-    // Blocks with block spacing
-    .wp-block-columns,
-    .wp-block-audio,
-    .wp-block-file,
-    figure.wp-block-gallery,
-    .wp-block-table {
-        @extend .has-block-spacing;
-    }
+        // full block styles
+        &[data-align=full] {
+            max-width: none;
+        }
 
-    // blocks with block spacing only when not full width
-    .wp-block-cover,
-    .wp-block-media-text {
-
-        &:not(.alignfull) {
-            @extend .has-block-spacing;
+        // wide block styles
+        &[data-align=wide] {
+            max-width: 100%;
+            width: var(--container-width);
+            max-width: var(--container-max-width);
         }
     }
+}
 
-     // wide and full block styles
-     .block-editor-block-list__block[data-align=full],
-     .block-editor-block-list__block[data-align=wide],
-     .alignfull, .alignwide {
+// Allow button blocks to be aligned
+.block-editor-inner-blocks {
+    flex: unset;
+}
 
-         width: auto;
+// allow full blocks to butt up against each other
+.wp-block[data-align=full] {
 
-         .wp-block-image {
-             width: 100%;
-         }
+    > .block-editor-block-list__block {
+        margin-bottom: 0;
+    }
 
-         // force image to fill space
-         img {
-             width: 100%;
-         }
-     }
-
-     // full block styles
-     .block-editor-block-list__block[data-align=full],
-     .alignfull {
-         max-width: none;
-     }
-
-     // wide block styles
-     .block-editor-block-list__block[data-align=wide],
-     .alignwide {
-         max-width: 100%;
-     }
+    + .wp-block[data-align=full] > .block-editor-block-list__block {
+        margin-top: 0;
+    }
 }

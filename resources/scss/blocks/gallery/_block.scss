@@ -21,6 +21,8 @@ figure.wp-block-gallery {
 
     --gallery-grid-spacing: 1em;
 
+    @extend .has-block-spacing;
+
 	.blocks-gallery-image, .blocks-gallery-item {
 
         // Add space between thumbnails, and unset right most thumbnails later.

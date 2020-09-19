@@ -6,6 +6,7 @@
 /// @link   https://taproot-theme.com
 ////
 
+
 h1,
 h2,
 h3,
@@ -13,8 +14,8 @@ h4,
 h5,
 h6 {
     font-weight: normal;
-    color:          var( --typography--headings--text-color );
-    font-family:    var( --typography--headings--font-family );
+    color:          var(--typography--headings--text-color);
+    font-family:    var(--typography--headings--font-family);
 }
 
 h1, h2, h3 {
@@ -22,31 +23,31 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size:      var( --typography--h1--font-size );
-    line-height:    var( --typography--h1--line-height )
+    font-size:      var(--typography--h1--font-size);
+    line-height:    var(--typography--h1--line-height);
 }
 
 h2 {
-    font-size:      var( --typography--h2--font-size );
-    line-height:    var( --typography--h2--line-height )
+    font-size:      var(--typography--h2--font-size);
+    line-height:    var(--typography--h2--line-height);
 }
 
 h3 {
-    font-size:      var( --typography--h3--font-size );
-    line-height:    var(--typography--h3--line-height )
+    font-size:      var(--typography--h3--font-size);
+    line-height:    var(--typography--h3--line-height);
 }
 
 h4 {
-    font-size:      var( --typography--h4--font-size );
-    line-height:    var( --typography--h4--line-height )
+    font-size:      var(--typography--h4--font-size);
+    line-height:    var(--typography--h4--line-height);
 }
 
 h5 {
-    font-size:      var( --typography--h5--font-size );
-    line-height:    var( --typography--h5--line-height )
+    font-size:      var(--typography--h5--font-size);
+    line-height:    var(--typography--h5--line-height);
 }
 
 h6 {
-    font-size:      var(--typography--h6--font-size );
-    line-height:    var( --typography--h6--line-height )
+    font-size:      var(--typography--h6--font-size);
+    line-height:    var(--typography--h6--line-height);
 }

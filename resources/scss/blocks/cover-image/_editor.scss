@@ -12,3 +12,17 @@
 .editor-styles-wrapper {
     @import 'block';
 }
+
+// Block padding and spacing
+.wp-block-cover {
+    @extend .has-block-spacing;
+    @extend .has-block-padding;
+}
+
+.wp-block[data-align=full] > {
+
+    .wp-block-cover {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}

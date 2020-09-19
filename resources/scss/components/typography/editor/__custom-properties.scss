@@ -1,0 +1,44 @@
+////
+/// Component Custom Properties
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+:root {
+
+    // Tablet
+
+    // Body base styles
+    --typography--body--font-size--tablet:   18px;
+    --typography--body--line-height--tablet: 1.6;
+
+    // Heading font sizes
+    --typography--h1--font-size--tablet: 2.5em;
+    --typography--h2--font-size--tablet: 2em;
+    --typography--h3--font-size--tablet: 1.5em;
+    --typography--h4--font-size--tablet: 1.13em;
+    --typography--h5--font-size--tablet: 1em;
+    --typography--h6--font-size--tablet: 1em;
+    --text-spacing--tablet:  1.6em;
+    --block-spacing--tablet: 1.6rem;
+    --block-padding--tablet: 2rem;
+
+    // Desktop
+
+    // Body base styles
+    --typography--body--font-size--desktop:   18px;
+    --typography--body--line-height--desktop: 1.6;
+
+    // Heading font sizes
+    --typography--h1--font-size--desktop: 3em;
+    --typography--h2--font-size--desktop: 2.25em;
+    --typography--h3--font-size--desktop: 1.75em;
+    --typography--h4--font-size--desktop: 1.25em;
+    --typography--h5--font-size--desktop: 1em;
+    --typography--h6--font-size--desktop: 1em;
+    --text-spacing--desktop:  1.6em;
+    --block-spacing--desktop: 1.6rem;
+    --block-padding--desktop: 2rem;
+}

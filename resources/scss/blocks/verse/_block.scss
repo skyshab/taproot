@@ -8,4 +8,5 @@
 
 .wp-block-verse {
     background-color: var( --colors--meta-light );
+    @extend .has-block-padding;
 }

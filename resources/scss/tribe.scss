@@ -1,0 +1,324 @@
+////
+/// Primary theme styles.
+///
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+:root {
+	/* -----------------------------------------------------------------------------
+	 * Colors - Typography
+	 * ----------------------------------------------------------------------------- */
+
+	// --color-text-primary: #141827;
+	// --color-text-primary-light: rgba(var(--color-text-primary), 0.62);
+	// --color-text-secondary: #5D5D5D;
+	// --color-text-disabled: #D5D5D5;
+
+	/* -----------------------------------------------------------------------------
+	 * Colors - Iconography
+	 * ----------------------------------------------------------------------------- */
+
+	// --color-icon-primary: #5D5D5D;
+	// --color-icon-secondary: #BABABA;
+	// --color-icon-active: #141827;
+	// --color-icon-disabled: #D5D5D5;
+	--color-icon-focus: var( --colors--accent );
+
+	/* -----------------------------------------------------------------------------
+	 * Colors - UI
+	 * ----------------------------------------------------------------------------- */
+
+	--color-accent-primary: var( --colors--accent );
+	--color-accent-primary-hover: var( --colors--accent );
+	--color-accent-primary-active: rgba(var(--color-accent-primary), 0.9);
+	--color-accent-primary-background: rgba(var(--color-accent-primary), 0.07);
+	--color-accent-primary-multiday: rgba(var(--color-accent-primary), 0.24);
+	--color-accent-primary-multiday-hover: rgba(var(--color-accent-primary), 0.34);
+	--color-accent-primary-week-event: rgba(var(--color-accent-primary), 0.1);
+	--color-accent-primary-week-event-hover: rgba(var(--color-accent-primary), 0.2);
+	--color-accent-primary-week-event-featured: rgba(var(--color-accent-primary), 0.04);
+	--color-accent-primary-week-event-featured-hover: rgba(var(--color-accent-primary), 0.14);
+	--color-accent-secondary: #141827;
+	--color-accent-secondary-hover: rgba(var(--color-accent-secondary), 0.8);
+	--color-accent-secondary-active: rgba(var(--color-accent-secondary), 0.9);
+	--color-accent-secondary-background: rgba(var(--color-accent-secondary), 0.07);
+
+	/* -----------------------------------------------------------------------------
+	 * Colors - Borders & Misc
+	 * ----------------------------------------------------------------------------- */
+
+	// --color-border-default: #D5D5D5;
+	// --color-border-secondary: #E4E4E4;
+	// --color-border-hover: #5D5D5D;
+	// --color-border-active: #141827;
+	// --color-background: #FFFFFF;
+	// --color-background-transparent: rgba(var(--color-background), 0.6);
+	// --color-background-secondary: #F7F6F6;
+	// --color-background-messages: rgba(var(--color-text-primary), 0.07);
+	// --color-background-secondary-hover: #F0EEEE;
+	// --color-box-shadow: rgba(#000000, 0.14);
+	// --color-box-shadow-secondary: rgba(#000000, 0.1);
+	// --color-scroll-track: rgba(#000000, 0.25);
+	// --color-scroll-bar: rgba(#000000, 0.5);
+
+}
+
+.tribe-common {
+
+	.tribe-common-c-btn,
+	a.tribe-common-c-btn {
+
+		background-color: var(--color-accent-primary);
+
+		&:focus,
+		&:hover {
+			background-color: var(--color-accent-primary-hover);
+		}
+
+		&:active {
+			background-color: var(--color-accent-primary-active);
+		}
+
+		&:disabled {
+			background-color: var(--color-accent-primary-background);
+		}
+    }
+
+	.datepicker {
+
+		.datepicker-switch {
+
+			&:hover,
+			&:focus {
+				color: var(--color-accent-secondary-hover);
+			}
+
+			&:active {
+				color: var(--color-accent-secondary-active);
+			}
+		}
+
+		.day,
+		.month,
+		.year {
+
+			&.current {
+				background: var(--color-accent-primary-background);
+
+				&:hover,
+				&:focus,
+				&.focused {
+					background: var(--color-accent-primary-background);
+				}
+			}
+
+			&.active {
+				background: var(--color-accent-primary);
+
+				&:hover,
+				&:focus,
+				&.focused {
+					background: var(--color-accent-primary);
+				}
+			}
+		}
+    }
+
+	.tribe-events-calendar-month__day--current {
+
+		.tribe-events-calendar-month__day-date,
+		.tribe-events-calendar-month__day-date-link {
+			color: var(--color-accent-primary);
+		}
+
+		.tribe-events-calendar-month__day-date-link {
+
+			&:hover,
+			&:focus {
+				color: var(--color-accent-primary-hover);
+			}
+
+			&:active {
+				color: var(--color-accent-primary-active);
+			}
+		}
+	}
+
+	.tribe-events-calendar-month__day--past {
+
+		.tribe-events-calendar-month__mobile-events-icon--event {
+			background-color: var(--color-icon-active);
+		}
+	}
+
+	.tribe-events-calendar-month__day-cell--mobile {
+
+		&:hover,
+		&:focus {
+			background-color: var(--color-background-secondary);
+		}
+	}
+
+	.tribe-events-calendar-month__day-cell--selected {
+		background-color: var(--color-accent-primary);
+
+		&:hover,
+		&:focus {
+			background-color: var(--color-accent-primary);
+		}
+	}
+
+	.tribe-events-calendar-month__day-date-link {
+		color: var(--color-accent-secondary);
+
+		&:hover,
+		&:focus {
+			color: var(--color-accent-secondary-hover);
+		}
+
+		&:active {
+			color: var(--color-accent-secondary-active);
+		}
+	}
+
+	.tribe-events-calendar-month__mobile-events-icon--event {
+		background-color: var(--color-accent-primary);
+    }
+
+    .tribe-events-c-ical__link:before {
+
+        // can't use variable inside the url
+        //background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M6 1v10m5-5H1' fill='none' fill-rule='evenodd' stroke='red' stroke-linecap='square' stroke-width='1.5'/%3E%3C/svg%3E");
+
+        content: "+";
+        background-image: none;
+        height: 16px;
+    }
+
+    .tribe-events-c-ical__link:hover:before {
+        background-image: none;
+    }
+
+    // Featured badge
+    // Can't seem to get this one working. The fill attribute doesn't seem to work correctly here?
+    .tribe-common-svgicon--featured {
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='20' xmlns='http:…3E%3Cpath d='M0 0h16v20l-7.902-5.122L0 20z' fill='%23334aff'/%3E%3C/svg%3E");
+        display: none;
+    }
+
+    .tribe-events-c-ical__link {
+
+        color: var(--color-accent-primary);
+        border-color: currentColor;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: var(--color-accent-primary);
+		}
+    }
+
+
+    .tribe-events-calendar-latest-past__event-row--featured {
+
+		.tribe-events-calendar-latest-past__event-date-tag-datetime {
+
+			&:after {
+				background-color: var(--color-accent-primary);
+			}
+		}
+    }
+
+
+	.tribe-events-calendar-month-mobile-events__mobile-event-datetime-featured-text {
+		color: var(--color-accent-primary);
+    }
+
+
+	.tribe-events-c-events-bar__search-button {
+
+		&:before {
+			background-color: var(--color-accent-primary);
+		}
+	}
+
+	.tribe-events-calendar-month__calendar-event--featured {
+
+		&:before {
+			background-color: var(--color-accent-primary);
+		}
+    }
+
+	.tribe-events-c-view-selector__button {
+
+		&:before {
+			background-color: var(--color-accent-primary);
+		}
+	}
+}
+
+
+.tribe-block__venue .tribe-block__venue__meta .tribe-block__venue__address a {
+    color: var(--color-accent-primary);
+}
+
+// .tribe-block__events-link .tribe-block__btn--link a {
+//     color: var(--color-accent-primary);
+// }
+
+.tribe-events .tribe-events-calendar-list__event-row--featured .tribe-events-calendar-list__event-date-tag-datetime:after {
+    background-color: var(--color-accent-primary);
+}
+
+.tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-list__event-datetime-featured-text {
+    color: var(--color-accent-primary);
+}
+
+
+// custom theme styles
+
+.tribe-events-calendar-list__event {
+    border: none!important;
+}
+
+.entry--type-tribe_events {
+    margin-bottom: var( --block-spacing );
+}
+
+.tribe-events-single.tribe-blocks-editor {
+    margin-bottom: 0!important;
+}
+
+// override the top padding for tribe mobile styles
+
+@include screen('mobile'){
+    .tribe-mobile #main {
+        padding-top: var( --layout-padding );
+    }
+}
+
+// Set the background color
+.tribe-events {
+    background-color: white;
+}
+
+// Let's override the container class when using our own templates.
+// Do we need to do something to prevent this from affecting the
+// default event templates?
+
+.tribe-common.tribe-events .tribe-events-l-container {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+// Prevent the calendar page search icon from filling the search element on focus.
+.tribe-events .tribe-events-c-search__input-control--keyword .tribe-events-c-search__input:focus {
+    background-repeat: no-repeat;
+
+    // prevent tribe branding color search icon when field is focused. How can we change the color here with a var?
+    background-image: url( "data:image/svg+xml;charset=utf-8,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 18.711l-6.044-6.044a7.782 7.782 0 0 0 1.688-4.845c0-2.089-.822-4.044-2.288-5.533C11.866.822 9.91 0 7.822 0S3.778.822 2.29 2.289A7.801 7.801 0 0 0 0 7.822c0 2.09.822 4.045 2.289 5.534a7.801 7.801 0 0 0 5.533 2.288c1.778 0 3.467-.6 4.845-1.688L18.71 20 20 18.711zM3.578 12.067c-2.334-2.334-2.334-6.156 0-8.49a5.968 5.968 0 0 1 4.244-1.755c1.6 0 3.111.622 4.245 1.756 2.333 2.333 2.333 6.155 0 8.489a5.968 5.968 0 0 1-4.245 1.755c-1.6 0-3.11-.622-4.244-1.755z' fill='%235D5D5D'/%3E%3C/svg%3E" );
+}

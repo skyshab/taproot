@@ -24,13 +24,20 @@
     }
 }
 
+// Menu link color
+a.menu--top__link {
+    color: var( --navigation--top--color );
+}
+
 .menu--top {
 
     z-index: 2;
 
+    background-color:   var( --navigation--top--background-color );
+
     &__link {
-        font-size: var(--navigation--top--font-size );
-        line-height: var(--navigation--top--line-height );
+        font-size:      var( --navigation--top--font-size );
+        line-height:    var( --navigation--top--line-height );
     }
 
     // always mobile

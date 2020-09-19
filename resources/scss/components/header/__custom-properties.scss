@@ -10,10 +10,8 @@
 
     // Colors
     --header--text-color:               var( --colors--accent-contrast );
-    --header--fixed--text-color:        var( --header--text-color );
-    --header--image--text-color:         var( --header--text-color );
-    --header--link-color--hover:        var( --colors--accent-contrast );
-    --header--fixed--link-color--hover: var( --header--link-color--hover );
+    --header--image--text-color:        var( --header--text-color );
+    --header--background-color:         var( --colors--accent );
 
     // Mobile/default
     --header--padding: 1rem;

@@ -10,11 +10,15 @@
 
 // Import component styles inside the editor styles wrapper
 .editor-styles-wrapper {
-    @import 'block';
-}
 
-// we'll use our own table padding and line height in the form
-.wp-block-table__cell-content {
-    padding: 0;
-    line-height: inherit;
+    @import 'block';
+
+    .wp-block-table {
+
+        // we'll use our own table padding and line height in the form
+        &__cell-content {
+            padding: 0;
+            line-height: inherit;
+        }
+    }
 }

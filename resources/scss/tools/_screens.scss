@@ -6,10 +6,16 @@
 /// @link   https://taproot-theme.com
 ////
 
+// public screens
 $screen--mobile-max: '767px';
 $screen--tablet-min: '768px';
 $screen--tablet-max: '1024px';
 $screen--desktop-min: '1025px';
+
+// editor screens
+$screen--editor-mobile-max: '360px';
+$screen--editor-tablet-min: '361px';
+$screen--editor-desktop-min: '781px';
 
 // The screen mixin
 @mixin screen( $screen ) {
@@ -36,8 +42,20 @@ $screen--desktop-min: '1025px';
         $query: "( min-width: #{$screen--desktop-min} )";
     }
 
+    @if ( $screen == 'editor-mobile' ) {
+        $query: "( max-width: #{$screen--editor-mobile-max} )";
+    }
+
+    @if ( $screen == 'editor-tablet' ) {
+        $query: "( min-width: #{$screen--editor-tablet-min} )";
+    }
+
+    @if ( $screen == 'editor-desktop' ) {
+        $query: "( min-width: #{$screen--editor-desktop-min} )";
+    }
+
     @if( $query != '' ) {
-        @media #{$query}  { @content; }
+        @media #{$query} { @content; }
     }
     @else {
       @content;

@@ -10,15 +10,72 @@
 
 // Import component styles inside the editor styles wrapper
 .editor-styles-wrapper {
+
     @import 'common';
-    @import 'editor-screens';
+
+    .wp-block-media-text {
+
+        @extend .has-block-spacing;
+
+        &.has-background, &[style*=background-color] {
+            @extend .has-block-padding;
+        }
+
+        .block-editor-inner-blocks {
+            padding: 0;
+        }
+
+        // Make inside blocks fill space
+        &__content {
+
+            max-width: unset;
+
+            .wp-block {
+                width: 100%;
+            }
+        }
+    }
+
+    .wp-block[data-align=full] > {
+
+        .wp-block-media-text {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-left:  var( --block-padding );
+            padding-right: var( --block-padding );
+
+            .wp-block[data-align=full] > .wp-block:not( .has-background ) {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
 }
 
-[data-align="full"] .wp-block-media-text {
-	padding-left:  var( --block-padding );
-	padding-right: var( --block-padding );
+
+// Responsive editor styles
+#start-resizable-editor-section {
+    display: none;
 }
 
-.wp-block-media-text .block-editor-inner-blocks {
-	padding: 0;
+@include screen('editor-mobile') {
+
+    .wp-block-media-text.is-stacked-on-mobile {
+
+        grid-template-columns: 100% !important;
+        grid-gap: var( --block-padding ) 0;
+        grid-template-areas:
+            "media-text-media"
+            "media-text-content";
+
+        .wp-block[data-align=full] & {
+            .wp-block-media-text__media, .wp-block-media-text__content {
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+#end-resizable-editor-section {
+    display: none;
 }

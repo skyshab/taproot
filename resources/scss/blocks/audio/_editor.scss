@@ -10,5 +10,10 @@
 
 // Import component styles inside the editor styles wrapper
 .editor-styles-wrapper {
+
     @import 'block';
+
+    .wp-block-audio{
+        @extend .has-block-spacing;
+    }
 }

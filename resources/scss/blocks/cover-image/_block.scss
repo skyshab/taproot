@@ -8,6 +8,7 @@
 
 // The cover image `<div>` element. The image is added as a background.
 .wp-block-cover {
+
     position:            relative;
     background-size:     cover;
     background-position: 50%;
@@ -17,6 +18,12 @@
     display:             flex;
     justify-content:     center;
     align-items:         center;
+
+    @extend .has-block-padding;
+
+    &:not(.alignfull) {
+        @extend .has-block-spacing;
+    }
 
     // Parallax images should have a fixed background so that the image
     // stays in place while everything else scrolls.
@@ -64,4 +71,3 @@
         width: 100%;
     }
 }
-

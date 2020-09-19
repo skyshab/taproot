@@ -23,5 +23,9 @@
         grid-template-columns: auto;
         grid-template-areas: "logo" "content";
         justify-items: center;
+
+        &__content {
+            text-align: center;
+        }
     }
 }

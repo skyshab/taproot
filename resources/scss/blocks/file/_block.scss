@@ -8,6 +8,8 @@
 
 .wp-block-file {
 
+    @extend .has-block-spacing;
+
     &.aligncenter {
         text-align: center;
     }

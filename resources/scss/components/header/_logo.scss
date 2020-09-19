@@ -1,0 +1,78 @@
+////
+/// Header logo styles.
+///
+/// @group  Components\Header
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.app-header {
+
+    // Logo link
+    &__logo-link {
+        grid-area: logo;
+        display: grid;
+        width:  var( --header--logo--width );
+    }
+
+    @include screen('mobile') {
+
+        &--mobile {
+
+            &--horizontal {
+
+                .app-header__logo-link {
+                    margin: 0 var( --header--logo--gutter ) 0 0;
+                }
+            }
+
+            &--vertical {
+
+                .app-header__logo-link {
+                    margin: 0 0 var( --header--logo--gutter ) 0;
+                }
+            }
+        }
+    }
+
+    @include screen('tablet-and-up') {
+
+        &--tablet {
+
+            &--horizontal {
+
+                .app-header__logo-link {
+                    margin: 0 var( --header--logo--gutter ) 0 0;
+                }
+            }
+
+            &--vertical {
+
+                .app-header__logo-link {
+                    margin: 0 0 var( --header--logo--gutter ) 0;
+                }
+            }
+        }
+
+    }
+
+    @include screen('desktop') {
+
+        &--desktop {
+
+            &--horizontal {
+
+                .app-header__logo-link {
+                    margin: 0 var( --header--logo--gutter ) 0 0;
+                }
+            }
+
+            &--vertical {
+
+                .app-header__logo-link {
+                    margin: 0 0 var( --header--logo--gutter ) 0;
+                }
+            }
+        }
+    }
+}

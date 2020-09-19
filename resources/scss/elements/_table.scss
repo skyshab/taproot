@@ -7,26 +7,26 @@
 ////
 
 
-table {
-    border-collapse: collapse;
-    width: 100%;
-    border: 1px solid var( --colors--meta-medium );
-}
+// table {
+//     border-collapse: collapse;
+//     width: 100%;
+//     border: 1px solid var( --colors--meta-medium );
+// }
 
-thead {
-    background-color: var( --colors--meta-light );
-}
+// thead {
+//     background-color: var( --colors--meta-light );
+// }
 
-thead, tr:not(:last-child) {
-    border-bottom: 1px solid var( --colors--meta-medium );
-}
+// thead, tr:not(:last-child) {
+//     border-bottom: 1px solid var( --colors--meta-medium );
+// }
 
-th, td {
-    padding: 0.4em;
-    border: none;
-    text-align: left;
+// th, td {
+//     padding: 0.4em;
+//     border: none;
+//     text-align: left;
 
-    &:not(:last-child) {
-        border-right: 1px solid var( --colors--meta-medium );
-    }
-}
+//     &:not(:last-child) {
+//         border-right: 1px solid var( --colors--meta-medium );
+//     }
+// }

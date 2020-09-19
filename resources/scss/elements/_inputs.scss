@@ -233,3 +233,7 @@ select[disabled], input[disabled] {
 textarea {
     min-height:  200px;
 }
+
+input:focus, textarea:focus {
+    outline: 2px solid var(--colors--accent);
+}

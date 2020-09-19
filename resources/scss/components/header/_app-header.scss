@@ -1,0 +1,16 @@
+////
+/// Header styles.
+///
+/// @group  Components\Header
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.app-header {
+
+    background-color: var( --header--background-color );
+    color: var( --header--text-color );
+    width: 100%;
+    max-height: 100vh;
+    position: relative;
+}

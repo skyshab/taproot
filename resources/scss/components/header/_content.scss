@@ -1,48 +1,78 @@
 ////
-/// Custom header component.
+/// Header content.
 ///
-/// This handles the output of `the_custom_header_markup()` from core WP's
-/// `custom-header` feature.
-///
-/// @group  Components
+/// @group  components/header
 /// @author Sky Shabatura <theme@sky.camp>
 /// @link   https://taproot-theme.com
 ////
 
-.app-header__content {
+.app-header {
 
-    z-index: 1;
-    overflow: hidden;
+    &__content {
 
-    &__title {
-        margin-top: 0;
-        margin-bottom: 12px;
-        color: inherit;
-        text-align: center;
-    }
+        z-index: 1;
+        overflow: hidden;
 
-    .app-header--has-custom-header & {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        padding-bottom: var( --layout-spacing );
-    }
+        &__title {
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: inherit;
+            text-align: center;
+        }
 
-    // hide additional header content when fixed header
-    .app-header--has-custom-header.app-header--fixed & {
-        display: none;
-    }
+        // Content byline
+        &__byline {
 
-    // Default min heights.
-    min-height: 175px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: inherit;
+            margin: 0;
 
-    @include screen('tablet-and-up') {
-        min-height: 250px;
-    }
+            svg {
+                margin-right: 0.3em;
+            }
 
-    @include screen('desktop') {
-        min-height: 300px;
+            a {
+                color: inherit;
+            }
+
+            &__item {
+
+                margin-right: 0.8em;
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .app-header--has-custom-header & {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding-bottom: var( --layout-spacing );
+        }
+
+        // hide additional header content when fixed header
+        .app-header--has-custom-header.app-header--fixed & {
+            display: none;
+        }
+
+        // Default min heights.
+        min-height: 175px;
+
+        @include screen('tablet-and-up') {
+            min-height: 250px;
+        }
+
+        @include screen('desktop') {
+            min-height: 300px;
+        }
     }
 }

@@ -1,0 +1,50 @@
+////
+/// Block alignment styles
+///
+/// Styles for blocks that use the alignwide and alignfull classes.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.alignwide {
+    width: var(--container-width);
+    max-width: var(--container-max-width);
+}
+
+.app-main {
+
+    // Sidebar Layouts - tablet only
+    &--has-sidebar {
+
+        @include screen('tablet') {
+
+            .alignwide {
+                margin-left: calc( (var(--container-width) - 100%) / -2 );
+            }
+
+            @include alignwide-content-styles();
+        }
+
+        @include screen('desktop') {
+
+            .alignwide {
+                max-width: 100%;
+            }
+        }
+    }
+
+    // No Sidebar Layout - tablet and up
+    &--no-sidebar {
+
+        @include screen('tablet-and-up') {
+
+            .alignwide {
+                margin-left: calc( ( min( var(--container-max-width), var(--container-width) ) - 100% ) / -2 );
+            }
+
+            @include alignwide-content-styles();
+        }
+    }
+}

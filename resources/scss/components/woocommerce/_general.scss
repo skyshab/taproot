@@ -1,0 +1,29 @@
+////
+/// Global WooCommerce styles.
+///
+/// @group  woocommerce
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.woocommerce {
+
+    #main {
+
+        // Buttons
+        .button {
+            border: 1px solid transparent;
+            @extend .wp-block-button__link;
+        }
+
+        // Match all input borders to theme color
+        input {
+            border-color: var(--colors--meta-medium);
+        }
+
+        // Loading icons
+        #submit.loading::after, .button.loading::after {
+            top: auto;
+        }
+    }
+}

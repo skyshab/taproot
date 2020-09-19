@@ -30,6 +30,10 @@
     }
 }
 
+// Menu link color
+a.menu--footer__link {
+    color: var( --navigation--footer--color );
+}
 
 .menu--footer {
 
@@ -40,14 +44,8 @@
     order: 1;
 
     &__link {
-        font-size: var( --nav--footer--font-size );
-        line-height: var( --nav--footer--line-height );
-
-        &:link, &:visited {
-
-            // customize default
-            color: #ffffff;
-        }
+        font-size: var( --navigation--footer--font-size );
+        line-height: var( --navigation--footer--line-height );
     }
 
     // always mobile

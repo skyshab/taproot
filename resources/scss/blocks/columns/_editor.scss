@@ -8,12 +8,70 @@
 /// @link   https://taproot-theme.com
 ////
 
-// Import component styles inside the editor styles wrapper
-.editor-styles-wrapper {
-    @import 'block';
+// blocks with block padding under certain conditions
+.wp-block-columns{
+
+    @extend .has-block-spacing;
+
+    &.has-background, &[style*=background-color] {
+
+        @extend .has-block-padding;
+
+        &.alignfull {
+
+            .alignfull:not( .has-background ) {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
 }
 
-// Editor specific styling. Make sure columns span correctly.
-.block-editor-inner-blocks {
-    flex: 1;
+.wp-block-column {
+
+    margin-bottom: var( --text-spacing );
+
+    // inner contents
+    & > :first-child {
+        margin-top: 0;
+    }
+
+    & > :last-child {
+        margin-bottom: 0;
+    }
+
+    // last column
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// Responsive editor styles
+#start-resizable-editor-section {
+    display: none;
+}
+
+@include screen('editor-tablet') {
+
+    .wp-block-columns {
+        display: flex;
+        flex-direction: row;
+    }
+
+    // Individual columns.
+    .wp-block-column {
+
+        margin-right: var( --block-spacing );
+        flex-basis: 50%;
+
+        // last column
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+// End responsive editor styles
+#end-resizable-editor-section {
+    display: none;
 }

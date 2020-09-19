@@ -6,29 +6,46 @@
 /// @link   https://taproot-theme.com
 ////
 
-.widget--calendar {
+.wp-calendar-table {
 
-    table {
-        border-top: none;
-        background: white;
-        margin-bottom: 0;
-    }
+    background: white;
+    margin-bottom: 0;
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid var( --colors--meta-medium );
+    border-top: none;
 
     tbody {
         border-bottom: 1px solid var( --colors--meta-medium );
     }
 
-    td, th {
+    thead {
+        background-color: var( --colors--meta-light );
+    }
+
+    thead, tr:not(:last-child) {
+        border-bottom: 1px solid var( --colors--meta-medium );
+    }
+
+    th, td {
+        padding: 0.4em;
+        border: none;
         text-align: center;
+
+        &:not(:last-child) {
+            border-right: 1px solid var( --colors--meta-medium );
+        }
     }
 
     tfoot {
 
         td {
             border: none;
+
             &:first-child {
                 text-align: left;
             }
+
             &:last-child {
                 text-align: right;
             }
@@ -39,7 +56,7 @@
         background-color: var( --sidebar--accent-color );
         color: white;
         padding: 0.5em;
-      }
+    }
 }
 
 .wp-calendar-nav {

@@ -10,7 +10,12 @@
 
 // Import component styles inside the editor styles wrapper
 .editor-styles-wrapper {
+
     @import 'block';
+
+    figure.wp-block-gallery {
+        @extend .has-block-spacing;
+    }
 
     .components-form-file-upload {
         width: 100%;

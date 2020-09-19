@@ -1,5 +1,5 @@
 ////
-/// Custom header component.
+/// Custom header image.
 ///
 /// This handles the output of `the_custom_header_markup()` from core WP's
 /// `custom-header` feature.
@@ -9,50 +9,52 @@
 /// @link   https://taproot-theme.com
 ////
 
-.app-header__image {
+.app-header {
 
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    z-index: 0;
+    &__image {
 
-    // Header image.
-    img {
-        display: block;
-        object-fit: cover;
-        max-width: none;
-        height: 100%;
-        width: 100%;
-    }
-}
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: 0;
 
-
-// fixed header styles
-.app-header--fixed {
-
-    height: auto;
-
-    .app-header__image {
-        display: none;
-    }
-}
-
-// Has header image
-.app-header--has-header-image {
-
-    &:not(.app-header--fixed) {
-
-        min-height: 275px;
-
-        @include screen('tablet-and-up') {
-            min-height: 56vw;
+        // Header image.
+        img {
+            display: block;
+            object-fit: cover;
+            max-width: none;
+            height: 100%;
+            width: 100%;
         }
+    }
 
-        @include screen('desktop') {
-            min-height: 100vh;
+    // fixed header styles
+    &--fixed {
+
+        height: auto;
+
+        .app-header__image {
+            display: none;
+        }
+    }
+
+    // Has header image
+    &--has-header-image {
+
+        &:not(.app-header--fixed) {
+
+            min-height: 275px;
+
+            @include screen('tablet-and-up') {
+                min-height: 56vw;
+            }
+
+            @include screen('desktop') {
+                min-height: 100vh;
+            }
         }
     }
 }

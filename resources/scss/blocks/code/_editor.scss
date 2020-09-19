@@ -10,14 +10,16 @@
 
 // Import component styles inside the editor styles wrapper
 .editor-styles-wrapper {
+
     @import 'block';
-}
 
-.wp-block-code {
-    padding: 2em;
+    .wp-block-code {
 
-    .block-editor-plain-text {
-        color: inherit;
-        background-color: transparent;
+        @extend .has-block-padding;
+
+        .block-editor-plain-text {
+            color: inherit;
+            background-color: transparent;
+        }
     }
 }

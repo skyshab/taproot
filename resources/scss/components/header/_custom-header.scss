@@ -1,0 +1,24 @@
+////
+/// Custom header styles.
+///
+/// @group  Components\Header
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.app-header {
+
+    &--has-custom-header {
+
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+
+        &:not(.app-header--fixed) {
+            color: var( --header--image--text-color );
+        }
+
+        &.app-header--has-topnav {
+            grid-template-rows: auto auto 1fr auto;
+        }
+    }
+}

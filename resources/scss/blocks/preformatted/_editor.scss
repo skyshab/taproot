@@ -11,12 +11,15 @@
 // Import component styles inside the editor styles wrapper
 .editor-styles-wrapper {
     @import 'block';
-}
 
-.wp-block-preformatted {
-    pre {
-        color: inherit;
-        padding: 2em;
-        font-size: 0.862em;
+    .wp-block-preformatted {
+
+        @extend .has-block-padding;
+
+        pre {
+            color: inherit;
+            padding: 2em;
+            font-size: 0.862em;
+        }
     }
 }

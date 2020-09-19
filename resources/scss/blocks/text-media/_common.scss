@@ -16,6 +16,19 @@
 		"media-text-media media-text-content"
 		"resizer resizer";
     grid-template-columns: 50% auto;
+    max-width: 100%;
+
+    &.has-background {
+        @extend .has-block-padding;
+    }
+
+    &:not(.alignfull) {
+        @extend .has-block-spacing;
+    }
+
+    &.alignwide, &.alignfull {
+        max-width: unset;
+    }
 
 	&.has-media-on-the-right {
 		grid-template-areas:
@@ -33,7 +46,6 @@
 	&__content {
 		word-break: break-word;
 		grid-area:  media-text-content;
-        max-width: var( --content-width );
 
         > :first-child {
             margin-top: 0;

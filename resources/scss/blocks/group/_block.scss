@@ -10,6 +10,8 @@
 
     &.has-background, &[style*=background-color] {
 
+        @extend .has-block-padding;
+
         .wp-block-group__inner-container {
 
             > :first-child {

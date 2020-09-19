@@ -1,0 +1,33 @@
+////
+/// Checkout page styles.
+///
+/// @group  woocommerce
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+// remove top margins from message paragraphs
+.payment_box p {
+    margin-top: 0;
+}
+
+// checkout button
+#place_order {
+    @extend .wp-block-button__link;
+}
+
+// notifications
+.woocommerce-info {
+
+    border-top-color: var(--colors--accent);
+
+    &::before {
+        color: var(--colors--accent);
+    }
+}
+
+// shop table
+.woocommerce table.shop_table {
+    border-color: var(--colors--meta-medium);
+    border-radius: 0;
+}

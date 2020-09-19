@@ -10,6 +10,7 @@
 @mixin mobile-styles( $screen ) {
 
     &.mobile-at-#{$screen} {
+
         .menu--navbar__container {
             height: 3.2em;
             display: flex;
@@ -20,6 +21,10 @@
             .menu--navbar__container {
                 justify-content: flex-end;
             }
+        }
+
+        .menu--navbar__items {
+            background-color: var( --navigation--navbar-mobile--background-color );
         }
     }
 }
@@ -36,12 +41,16 @@
     }
 }
 
+// Menu link color
+a.menu--navbar__link {
+    color: var( --navigation--navbar--color );
+}
+
 .menu--navbar {
 
     // needed for custom header image
     position: relative;
-
-    background-color: black;
+    background-color:   var( --navigation--navbar--background-color );
 
     &__link {
         font-size:      var( --navigation--navbar--font-size );
