@@ -11,10 +11,9 @@
  * @link      https://taproot-theme.com
  */
 
-namespace Taproot\Components\Buttons;
+namespace Taproot\Search;
 
 use Hybrid\Tools\ServiceProvider;
-use Taproot\Components\Buttons\Customize\Customize;
 
 /**
  * Component service provider class.
@@ -22,7 +21,7 @@ use Taproot\Components\Buttons\Customize\Customize;
  * @since  2.0.0
  * @access public
  */
-class Component extends ServiceProvider {
+class Provider extends ServiceProvider {
 
     /**
      * Register classes and bind to the container.
@@ -33,8 +32,8 @@ class Component extends ServiceProvider {
      */
     public function register() {
 
-        // Bind a single instance of our customize component class.
-        $this->app->singleton( Customize::class );
+        // Bind a single instance of our hooks class.
+        $this->app->singleton( 'search/hooks', Hooks::class );
     }
 
     /**
@@ -46,7 +45,7 @@ class Component extends ServiceProvider {
      */
     public function boot() {
 
-        // Add customize component to collection.
-        $this->app->resolve( 'customize/components' )->add( 'buttons',  $this->app->resolve( Customize::class ) );
+        // Boot the component hooks.
+        $this->app->resolve( 'search/hooks' )->boot();
     }
 }
