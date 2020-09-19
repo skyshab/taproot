@@ -13,7 +13,7 @@
  * @link      https://taproot-theme.com
  */
 
-namespace Taproot\Components\Images;
+namespace Taproot\Images;
 
 use Hybrid\Tools\ServiceProvider;
 
@@ -23,7 +23,7 @@ use Hybrid\Tools\ServiceProvider;
  * @since  2.0.0
  * @access public
  */
-class Component extends ServiceProvider {
+class Provider extends ServiceProvider {
 
     /**
      * Register classes and bind to the container.
@@ -35,7 +35,7 @@ class Component extends ServiceProvider {
     public function register() {
 
         // Bind a single instance of our hooks class.
-        $this->app->singleton( Hooks::class );
+        $this->app->singleton( 'images/hooks', Hooks::class );
 
         // Bind a single instance of the component functions class.
         $this->app->singleton( 'images/functions', Functions::class );
@@ -54,6 +54,6 @@ class Component extends ServiceProvider {
     public function boot() {
 
         // Boot the component hooks.
-        $this->app->resolve( Hooks::class )->boot();
+        $this->app->resolve( 'images/hooks' )->boot();
     }
 }

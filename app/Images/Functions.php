@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Images;
+namespace Taproot\Images;
 
 use function Taproot\Tools\get_the_single_id;
 

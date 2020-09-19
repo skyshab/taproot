@@ -11,7 +11,7 @@
  * @link      https://taproot-theme.com
  */
 
-namespace Taproot\Components\Images;
+namespace Taproot\Images;
 
 use Hybrid\Contracts\Bootable;
 use function Hybrid\app;
