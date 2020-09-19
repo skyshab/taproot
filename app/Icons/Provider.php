@@ -11,7 +11,7 @@
  * @link      https://taproot-theme.com
  */
 
-namespace Taproot\Components\Icons;
+namespace Taproot\Icons;
 
 use Hybrid\Tools\ServiceProvider;
 
@@ -21,7 +21,7 @@ use Hybrid\Tools\ServiceProvider;
  * @since  2.0.0
  * @access public
  */
-class Component extends ServiceProvider {
+class Provider extends ServiceProvider {
 
     /**
      * Register classes and bind to the container.
@@ -33,9 +33,9 @@ class Component extends ServiceProvider {
     public function register() {
 
         // Bind a single instance of our Icons class.
-        $this->app->bind( 'Taproot\Components\Icons\Icons', 'Taproot\Components\Icons\SVG' );
+        $this->app->bind( 'Taproot\Icons\Icons', 'Taproot\Icons\SVG' );
 
         // Create alias for Icons class.
-        $this->app->alias( 'Taproot\Components\Icons\Icons', 'icons' );
+        $this->app->alias( 'Taproot\Icons\Icons', 'icons' );
     }
 }

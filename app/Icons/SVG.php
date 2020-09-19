@@ -6,7 +6,7 @@
  * @since 2.0.0
  */
 
-namespace Taproot\Components\Icons;
+namespace Taproot\Icons;
 
 /**
  * Class that handles SVG icons.
