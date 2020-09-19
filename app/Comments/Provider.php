@@ -11,7 +11,7 @@
  * @link      https://taproot-theme.com
  */
 
-namespace Taproot\Components\Comments;
+namespace Taproot\Comments;
 
 use Hybrid\Tools\ServiceProvider;
 
@@ -21,7 +21,7 @@ use Hybrid\Tools\ServiceProvider;
  * @since  2.0.0
  * @access public
  */
-class Component extends ServiceProvider {
+class Provider extends ServiceProvider {
 
     /**
      * Register classes and bind to the container.
@@ -33,7 +33,7 @@ class Component extends ServiceProvider {
     public function register() {
 
         // Bind a single instance of our hooks class.
-        $this->app->singleton( Hooks::class );
+        $this->app->singleton( 'comments/hooks', Hooks::class );
     }
 
     /**
@@ -46,6 +46,6 @@ class Component extends ServiceProvider {
     public function boot() {
 
         // Boot the component hooks.
-        $this->app->resolve( Hooks::class )->boot();
+        $this->app->resolve( 'comments/hooks' )->boot();
     }
 }

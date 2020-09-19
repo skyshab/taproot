@@ -11,7 +11,7 @@
  * @link      https://taproot-theme.com
  */
 
-namespace Taproot\Components\Comments;
+namespace Taproot\Comments;
 
 use Hybrid\Contracts\Bootable;
 
