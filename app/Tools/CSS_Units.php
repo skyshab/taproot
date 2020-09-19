@@ -40,7 +40,7 @@ class CSS_Units {
         // Parse the string into an array of attributes
         $value_array = static::parse_value( $string );
 
-        // The numberic value
+        // The numeric value
         $value = $value_array['value'];
 
         // The unit of measurement

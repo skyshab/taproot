@@ -78,9 +78,8 @@ function asset( $path ) {
 /**
  * Get the single ID.
  *
- * Single "home" page does not work reliably with get_the_ID.
- * This function will return the single ID instead of the id
- * of the first post in the loop.
+ * More concise way to get a single id
+ * when the page might be a static home or blog page.
  *
  * @since  2.0.0
  * @access public
@@ -96,23 +95,18 @@ function get_the_single_id() {
     } elseif( is_front_page() ) {
 
         // Static Front Page
-        $post_id = get_option( 'page_on_front' );
+        return get_option( 'page_on_front' );
 
     } elseif( is_home() ) {
 
         // Static Blog Page
-        $post_id = get_option( 'page_for_posts' );
+        return get_option( 'page_for_posts' );
 
     } elseif( is_singular() ) {
 
         // Single pages, posts, cpts, etc
-        $post_id = get_the_ID();
-
-    } else {
-
-        // Everything else
-        return false;
+        return get_the_ID();
     }
 
-    return $post_id;
+    return false;
 }
