@@ -11,11 +11,10 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Layout\Customize\Content;
+namespace Taproot\Layout\Customize\Container;
 
 use Taproot\Customize\Controls\Range\Range;
 use Taproot\Customize\Traits\CustomPropertyPreview;
-use Taproot\Customize\Traits\CustomPropertyEditor;
 use Taproot\Tools\Mod;
 
 /**
@@ -27,7 +26,6 @@ use Taproot\Tools\Mod;
 class Max_Width extends Range {
 
     use CustomPropertyPreview;
-    use CustomPropertyEditor;
 
     /**
      * Custom control ID
@@ -51,7 +49,7 @@ class Max_Width extends Range {
      * @since 2.0.0
      * @var array
      */
-    public $default = '640px';
+    public $default = '1060px';
 
     /**
      * Range atts
@@ -61,13 +59,15 @@ class Max_Width extends Range {
      */
     public $atts = [
         'px' => [
+            'min'   => 600,
             'max'   => 1600,
-            'default' => 980
+            'default' => 1060
         ],
         'rem' => [
-            'max'   => 50,
-            'default' => 42
-        ]
+            'min'   => 10,
+            'max'   => 100,
+            'default' => 62
+        ],
     ];
 
     /**
@@ -80,9 +80,21 @@ class Max_Width extends Range {
     public function styles( $styles ) {
 
         $styles->customProperty([
-            'name'  => 'content-width',
+            'name'  => 'container-max-width',
             'value' => Mod::get( $this->id )
         ]);
+    }
+
+    /**
+     * Editor Styles
+     *
+     * @since  2.0.0
+     * @access public
+     * @param object $styles
+     * @return void
+     */
+    public function editorStyles( $styles ) {
+        $this->styles( $styles );
     }
 
     /**
@@ -98,7 +110,7 @@ class Max_Width extends Range {
         wp.customize( "{$this->id}", function( value ) {
             value.bind( function( to ) {
                 rootstrap.customProperty({
-                    name: 'content-width',
+                    name: 'container-max-width',
                     value: to
                 });
             });

@@ -11,10 +11,9 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Layout\Customize\Container;
+namespace Taproot\Layout\Customize\Content;
 
 use Taproot\Customize\Controls\Range\Range;
-use Taproot\Customize\Traits\CustomPropertyPreview;
 use Taproot\Tools\Mod;
 
 /**
@@ -24,8 +23,6 @@ use Taproot\Tools\Mod;
  * @access public
  */
 class Max_Width extends Range {
-
-    use CustomPropertyPreview;
 
     /**
      * Custom control ID
@@ -49,7 +46,7 @@ class Max_Width extends Range {
      * @since 2.0.0
      * @var array
      */
-    public $default = '1060px';
+    public $default = '640px';
 
     /**
      * Range atts
@@ -59,15 +56,13 @@ class Max_Width extends Range {
      */
     public $atts = [
         'px' => [
-            'min'   => 600,
             'max'   => 1600,
-            'default' => 1060
+            'default' => 640
         ],
         'rem' => [
-            'min'   => 10,
-            'max'   => 100,
-            'default' => 62
-        ],
+            'max'   => 50,
+            'default' => 42
+        ]
     ];
 
     /**
@@ -80,7 +75,7 @@ class Max_Width extends Range {
     public function styles( $styles ) {
 
         $styles->customProperty([
-            'name'  => 'container-max-width',
+            'name'  => 'content-width',
             'value' => Mod::get( $this->id )
         ]);
     }
@@ -98,12 +93,27 @@ class Max_Width extends Range {
         wp.customize( "{$this->id}", function( value ) {
             value.bind( function( to ) {
                 rootstrap.customProperty({
-                    name: 'container-max-width',
+                    name: 'content-width',
                     value: to
                 });
             });
         });
 JS;
         return $script;
+    }
+
+    /**
+     * Editor Styles
+     *
+     * @since  2.0.0
+     * @access public
+     * @return void
+     */
+    public function editorStyles( $styles ) {
+
+        $styles->customProperty([
+            'name'  => 'content-width',
+            'value' => Mod::get($this->id),
+        ]);
     }
 }

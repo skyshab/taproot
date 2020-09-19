@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Layout;
+namespace Taproot\Layout;
 
 use Taproot\Tools\Mod;
 use function Taproot\Tools\get_the_single_id;
@@ -63,7 +63,7 @@ class Functions {
         }
         // Archive layouts
         elseif( is_home() || is_archive() ) {
-            $layout = post_type_mod( 'archive--layout--sidebar-layout' );
+            $layout = post_type_mod( 'archive--layout--sidebar-layout', $layout );
         }
 
         // Filter layout before returning

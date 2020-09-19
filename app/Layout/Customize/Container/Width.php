@@ -11,10 +11,11 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Layout\Customize\Container;
+namespace Taproot\Layout\Customize\Container;
 
 use Taproot\Customize\Controls\Range\Range;
 use Taproot\Tools\Mod;
+use Taproot\Tools\CSS_Units;
 
 /**
  * Class for range control
@@ -84,23 +85,59 @@ class Width extends Range {
 
         // mobile
         $styles->customProperty([
-            'name' => 'container-width',
+            'name'  => 'container-width',
             'value' => Mod::get($this->id)
         ]);
 
         // tablet
         $styles->customProperty([
-            'screen' => 'tablet-and-up',
-            'name' => 'container-width',
-            'value' => Mod::get("{$this->id}--tablet")
+            'screen'    => 'tablet-and-up',
+            'name'      => 'container-width',
+            'value'     => Mod::get("{$this->id}--tablet")
         ]);
 
         // desktop
         $styles->customProperty([
-            'screen' => 'desktop',
-            'name' => 'container-width',
-            'value' => Mod::get("{$this->id}--desktop")
+            'screen'    => 'desktop',
+            'name'      => 'container-width',
+            'value'     => Mod::get("{$this->id}--desktop")
         ]);
+    }
+
+    /**
+     * Editor Styles
+     *
+     * @since  2.0.0
+     * @access public
+     * @return void
+     */
+    public function editorStyles( $styles ) {
+
+        // Mobile
+        $styles->customProperty([
+            'name'  => 'container-width',
+            'value' => CSS_Units::convert_unit( Mod::get( $this->id ), '%' ),
+        ]);
+
+        // Tablet
+        if( isset( $this->devices ) && in_array( 'tablet', $this->devices ) ) {
+
+            $styles->customProperty([
+                'name'      => 'container-width--tablet',
+                'value'     => CSS_Units::convert_unit( Mod::get( "{$this->id}--tablet" ), '%' ),
+                'screen'    => 'editor-tablet'
+            ]);
+        }
+
+        // Desktop
+        if( isset( $this->devices ) && in_array( 'desktop', $this->devices ) ) {
+
+            $styles->customProperty([
+                'name'      => 'container-width--desktop',
+                'value'     => CSS_Units::convert_unit( Mod::get( "{$this->id}--desktop" ), '%' ),
+                'screen'    => 'editor-desktop'
+            ]);
+        }
     }
 
     /**

@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Components\Layout\Customize\Content;
+namespace Taproot\Layout\Customize\Content;
 
 use Taproot\Customize\Controls\Range\Range;
 use Taproot\Customize\Traits\CustomPropertyStyles;
