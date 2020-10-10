@@ -63,7 +63,7 @@ mix.options( {
             sort: 'mobile-first'
         })
     ],
-    processCssUrls : false
+    processCssUrls : false,
 } );
 
 /*
@@ -104,9 +104,12 @@ var sassConfig = {
 
 // Compile SASS/CSS.
 mix.sass( `${devPath}/scss/theme.scss`,              'dist/css', sassConfig )
-   .sass( `${devPath}/scss/editor.scss`,             'dist/css', sassConfig )
    .sass( `${devPath}/scss/customize-controls.scss`, 'dist/css', sassConfig )
    .sass( `${devPath}/scss/customize-preview.scss`,  'dist/css', sassConfig );
+
+
+// Compile editor styles without combining media queries
+mix.sass( `${devPath}/scss/editor.scss`, 'dist/css', sassConfig );
 
 /*
  * Add custom Webpack configuration.
