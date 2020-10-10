@@ -35,13 +35,7 @@ if ( file_exists( get_parent_theme_file_path( 'vendor/autoload.php' ) ) ) {
 require_once( get_parent_theme_file_path( 'app/Tools/functions-tools.php' ) );
 
 # ------------------------------------------------------------------------------
-# Run theme setup.
-# ------------------------------------------------------------------------------
-
-require_once( get_parent_theme_file_path( 'app/setup.php' ) );
-
-# ------------------------------------------------------------------------------
-# Create a new application.
+# Run the theme.
 # ------------------------------------------------------------------------------
 
 require_once( get_parent_theme_file_path( 'app/app.php' ) );
