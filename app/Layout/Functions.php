@@ -35,7 +35,7 @@ class Functions {
     public static function get_layout() {
 
         // Default layout
-        $layout = 'full';
+        $layout = 'right';
 
         if( $post_id = get_the_single_id() ) {
 

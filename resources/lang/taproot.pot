@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Taproot 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/taproot\n"
-"POT-Creation-Date: 2020-10-16 16:42:28+00:00\n"
+"POT-Creation-Date: 2020-10-17 15:44:45+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -26,6 +26,19 @@ msgstr ""
 #: app/Navigation/Top/Customize/Top_Mobile/Align.php:60
 #: app/Post_Types/Customize/Content_Layout.php:67
 #: app/Post_Types/Customize/Entry/Link/Position.php:67
+#: taproot/app/Breadcrumbs/Customize/Align.php:59
+#: taproot/app/Navigation/Footer/Customize/Footer/Align.php:60
+#: taproot/app/Navigation/Footer/Customize/Footer_Mobile/Align.php:60
+#: taproot/app/Navigation/Header/Customize/Header/Align.php:60
+#: taproot/app/Navigation/Header/Customize/Header_Fixed/Align.php:59
+#: taproot/app/Navigation/Navbar/Customize/Navbar/Align.php:60
+#: taproot/app/Navigation/Navbar/Customize/Navbar_Fixed/Align.php:59
+#: taproot/app/Navigation/Navbar/Customize/Navbar_Mobile/Toggle_Side.php:67
+#: taproot/app/Navigation/Top/Customize/Top/Align.php:60
+#: taproot/app/Navigation/Top/Customize/Top_Fixed/Align.php:59
+#: taproot/app/Navigation/Top/Customize/Top_Mobile/Align.php:60
+#: taproot/app/Post_Types/Customize/Content_Layout.php:67
+#: taproot/app/Post_Types/Customize/Entry/Link/Position.php:67
 msgid "Left"
 msgstr ""
 
@@ -40,6 +53,17 @@ msgstr ""
 #: app/Navigation/Top/Customize/Top_Fixed/Align.php:61
 #: app/Navigation/Top/Customize/Top_Mobile/Align.php:62
 #: app/Post_Types/Customize/Content_Layout.php:68
+#: taproot/app/Breadcrumbs/Customize/Align.php:60
+#: taproot/app/Navigation/Footer/Customize/Footer/Align.php:62
+#: taproot/app/Navigation/Footer/Customize/Footer_Mobile/Align.php:62
+#: taproot/app/Navigation/Header/Customize/Header/Align.php:62
+#: taproot/app/Navigation/Header/Customize/Header_Fixed/Align.php:61
+#: taproot/app/Navigation/Navbar/Customize/Navbar/Align.php:62
+#: taproot/app/Navigation/Navbar/Customize/Navbar_Fixed/Align.php:61
+#: taproot/app/Navigation/Top/Customize/Top/Align.php:62
+#: taproot/app/Navigation/Top/Customize/Top_Fixed/Align.php:61
+#: taproot/app/Navigation/Top/Customize/Top_Mobile/Align.php:62
+#: taproot/app/Post_Types/Customize/Content_Layout.php:68
 msgid "Center"
 msgstr ""
 
@@ -55,287 +79,360 @@ msgstr ""
 #: app/Navigation/Top/Customize/Top_Fixed/Align.php:60
 #: app/Navigation/Top/Customize/Top_Mobile/Align.php:61
 #: app/Post_Types/Customize/Entry/Link/Position.php:66
+#: taproot/app/Breadcrumbs/Customize/Align.php:61
+#: taproot/app/Navigation/Footer/Customize/Footer/Align.php:61
+#: taproot/app/Navigation/Footer/Customize/Footer_Mobile/Align.php:61
+#: taproot/app/Navigation/Header/Customize/Header/Align.php:61
+#: taproot/app/Navigation/Header/Customize/Header_Fixed/Align.php:60
+#: taproot/app/Navigation/Navbar/Customize/Navbar/Align.php:61
+#: taproot/app/Navigation/Navbar/Customize/Navbar_Fixed/Align.php:60
+#: taproot/app/Navigation/Navbar/Customize/Navbar_Mobile/Toggle_Side.php:68
+#: taproot/app/Navigation/Top/Customize/Top/Align.php:61
+#: taproot/app/Navigation/Top/Customize/Top_Fixed/Align.php:60
+#: taproot/app/Navigation/Top/Customize/Top_Mobile/Align.php:61
+#: taproot/app/Post_Types/Customize/Entry/Link/Position.php:66
 msgid "Right"
 msgstr ""
 
 #: app/Breadcrumbs/Provider.php:52 app/Post_Types/Page/Provider.php:79
 #: app/Post_Types/Post/Provider.php:98 app/Post_Types/Product/Provider.php:90
+#: taproot/app/Breadcrumbs/Provider.php:52
+#: taproot/app/Post_Types/Page/Provider.php:79
+#: taproot/app/Post_Types/Post/Provider.php:98
+#: taproot/app/Post_Types/Product/Provider.php:90
 msgid "Breadcrumbs"
 msgstr ""
 
 #: app/Buttons/Provider.php:43 app/Buttons/Provider.php:66
+#: taproot/app/Buttons/Provider.php:43 taproot/app/Buttons/Provider.php:66
 msgid "Buttons"
 msgstr ""
 
-#: app/Buttons/Provider.php:58
+#: app/Buttons/Provider.php:58 taproot/app/Buttons/Provider.php:58
 msgid "Buttons Hover"
 msgstr ""
 
-#: app/Colors/Hooks.php:48
+#: app/Colors/Hooks.php:48 taproot/app/Colors/Hooks.php:48
 msgid "Text Color"
 msgstr ""
 
-#: app/Colors/Hooks.php:53
+#: app/Colors/Hooks.php:53 taproot/app/Colors/Hooks.php:53
 msgid "Accent Color"
 msgstr ""
 
-#: app/Colors/Hooks.php:58
+#: app/Colors/Hooks.php:58 taproot/app/Colors/Hooks.php:58
 msgid "Accent Contrast Color"
 msgstr ""
 
-#: app/Colors/Hooks.php:63
+#: app/Colors/Hooks.php:63 taproot/app/Colors/Hooks.php:63
 msgid "Meta Light"
 msgstr ""
 
-#: app/Colors/Hooks.php:68
+#: app/Colors/Hooks.php:68 taproot/app/Colors/Hooks.php:68
 msgid "Meta Medium"
 msgstr ""
 
-#: app/Colors/Hooks.php:73
+#: app/Colors/Hooks.php:73 taproot/app/Colors/Hooks.php:73
 msgid "Meta Dark"
 msgstr ""
 
-#: app/Colors/Hooks.php:85
+#: app/Colors/Hooks.php:85 taproot/app/Colors/Hooks.php:85
 msgid "Accent to accent"
 msgstr ""
 
-#: app/Colors/Hooks.php:90
+#: app/Colors/Hooks.php:90 taproot/app/Colors/Hooks.php:90
 msgid "Vivid cyan blue to vivid purple"
 msgstr ""
 
-#: app/Colors/Hooks.php:95
+#: app/Colors/Hooks.php:95 taproot/app/Colors/Hooks.php:95
 msgid "Vivid green cyan to vivid cyan blue"
 msgstr ""
 
-#: app/Colors/Hooks.php:100
+#: app/Colors/Hooks.php:100 taproot/app/Colors/Hooks.php:100
 msgid "Light green cyan to vivid green cyan"
 msgstr ""
 
-#: app/Colors/Hooks.php:105
+#: app/Colors/Hooks.php:105 taproot/app/Colors/Hooks.php:105
 msgid "Luminous vivid amber to luminous vivid orange"
 msgstr ""
 
-#: app/Colors/Hooks.php:110
+#: app/Colors/Hooks.php:110 taproot/app/Colors/Hooks.php:110
 msgid "Luminous vivid orange to vivid red"
 msgstr ""
 
-#: app/Colors/Provider.php:47
+#: app/Colors/Provider.php:47 taproot/app/Colors/Provider.php:47
 msgid "Colors"
 msgstr ""
 
 #: app/Customize/Controls/Device_Picker.php:69
+#: taproot/app/Customize/Controls/Device_Picker.php:69
 #. translators: the name of the preview device.
 msgid "Enter %s preview mode"
 msgstr ""
 
 #: app/Customize/Controls/Font_Styles/Control.php:52
+#: taproot/app/Customize/Controls/Font_Styles/Control.php:52
 msgid "Bold"
 msgstr ""
 
 #: app/Customize/Controls/Font_Styles/Control.php:53
+#: taproot/app/Customize/Controls/Font_Styles/Control.php:53
 msgid "Italic"
 msgstr ""
 
 #: app/Customize/Controls/Font_Styles/Control.php:54
 #: app/Typography/Customize/Links/Underline.php:60
+#: taproot/app/Customize/Controls/Font_Styles/Control.php:54
+#: taproot/app/Typography/Customize/Links/Underline.php:60
 msgid "Underline"
 msgstr ""
 
 #: app/Customize/Controls/Font_Styles/Control.php:55
+#: taproot/app/Customize/Controls/Font_Styles/Control.php:55
 msgid "Uppercase"
 msgstr ""
 
 #: app/Customize/Controls/Font_Styles/Control.php:56
+#: taproot/app/Customize/Controls/Font_Styles/Control.php:56
 msgid "Capitalize"
 msgstr ""
 
 #: app/Customize/Controls/Range/Control.php:175
+#: taproot/app/Customize/Controls/Range/Control.php:175
 msgid "click to enable"
 msgstr ""
 
-#: app/Customize/Panel.php:100
+#: app/Customize/Panel.php:100 taproot/app/Customize/Panel.php:100
 msgid "Customizing"
 msgstr ""
 
 #: app/Customize/Provider.php:45 app/Post_Types/Provider.php:39
+#: taproot/app/Customize/Provider.php:45 taproot/app/Post_Types/Provider.php:39
 msgid "Post Types"
 msgstr ""
 
 #: app/Editor/Editor.php:292 app/Typography/Hooks.php:48
+#: taproot/app/Editor/Editor.php:292 taproot/app/Typography/Hooks.php:48
 msgid "Small"
 msgstr ""
 
 #: app/Editor/Editor.php:293 app/Typography/Hooks.php:49
+#: taproot/app/Editor/Editor.php:293 taproot/app/Typography/Hooks.php:49
 msgid "S"
 msgstr ""
 
 #: app/Editor/Editor.php:298 app/Typography/Hooks.php:54
+#: taproot/app/Editor/Editor.php:298 taproot/app/Typography/Hooks.php:54
 msgid "Regular"
 msgstr ""
 
 #: app/Editor/Editor.php:299 app/Typography/Hooks.php:55
+#: taproot/app/Editor/Editor.php:299 taproot/app/Typography/Hooks.php:55
 msgid "M"
 msgstr ""
 
 #: app/Editor/Editor.php:304 app/Images/Hooks.php:69
-#: app/Typography/Hooks.php:60
+#: app/Typography/Hooks.php:60 taproot/app/Editor/Editor.php:304
+#: taproot/app/Images/Hooks.php:69 taproot/app/Typography/Hooks.php:60
 msgid "Large"
 msgstr ""
 
 #: app/Editor/Editor.php:305 app/Typography/Hooks.php:61
+#: taproot/app/Editor/Editor.php:305 taproot/app/Typography/Hooks.php:61
 msgid "L"
 msgstr ""
 
 #: app/Editor/Editor.php:310 app/Typography/Hooks.php:66
+#: taproot/app/Editor/Editor.php:310 taproot/app/Typography/Hooks.php:66
 msgid "Larger"
 msgstr ""
 
 #: app/Editor/Editor.php:311 app/Typography/Hooks.php:67
+#: taproot/app/Editor/Editor.php:311 taproot/app/Typography/Hooks.php:67
 msgid "XL"
 msgstr ""
 
 #: app/Fonts/Provider.php:49 app/Fonts/Provider.php:55
+#: taproot/app/Fonts/Provider.php:49 taproot/app/Fonts/Provider.php:55
 msgid "Google Fonts"
 msgstr ""
 
-#: app/Fonts/Provider.php:53
+#: app/Fonts/Provider.php:53 taproot/app/Fonts/Provider.php:53
 msgid "Visit"
 msgstr ""
 
-#: app/Fonts/Provider.php:56
+#: app/Fonts/Provider.php:56 taproot/app/Fonts/Provider.php:56
 msgid ""
 "to create a font profile. Paste in the font list from the end of the embed "
 "URL. Each font name should be separated by a \"|\" and use a \"+\" for "
 "spaces. To start using the fonts, save and refresh the customizer."
 msgstr ""
 
-#: app/Fonts/Provider.php:57
+#: app/Fonts/Provider.php:57 taproot/app/Fonts/Provider.php:57
 msgid "Example: Oswald|Roboto+Slab:400,700"
 msgstr ""
 
 #: app/Footer/Customize/Widgets/Layout.php:72
 #: app/Footer/Customize/Widgets/Layout.php:78
 #: app/Footer/Customize/Widgets/Layout.php:88
+#: taproot/app/Footer/Customize/Widgets/Layout.php:72
+#: taproot/app/Footer/Customize/Widgets/Layout.php:78
+#: taproot/app/Footer/Customize/Widgets/Layout.php:88
 msgid "Halves"
 msgstr ""
 
 #: app/Footer/Customize/Widgets/Layout.php:73
 #: app/Footer/Customize/Widgets/Layout.php:79
 #: app/Footer/Customize/Widgets/Layout.php:89 app/Images/Hooks.php:70
+#: taproot/app/Footer/Customize/Widgets/Layout.php:73
+#: taproot/app/Footer/Customize/Widgets/Layout.php:79
+#: taproot/app/Footer/Customize/Widgets/Layout.php:89
+#: taproot/app/Images/Hooks.php:70
 msgid "Full"
 msgstr ""
 
 #: app/Footer/Customize/Widgets/Layout.php:76
 #: app/Footer/Customize/Widgets/Layout.php:86
+#: taproot/app/Footer/Customize/Widgets/Layout.php:76
+#: taproot/app/Footer/Customize/Widgets/Layout.php:86
 msgid "Quarters"
 msgstr ""
 
 #: app/Footer/Customize/Widgets/Layout.php:77
 #: app/Footer/Customize/Widgets/Layout.php:87
+#: taproot/app/Footer/Customize/Widgets/Layout.php:77
+#: taproot/app/Footer/Customize/Widgets/Layout.php:87
 msgid "Thirds"
 msgstr ""
 
 #: app/Footer/Customize/Widgets/Layout.php:80
 #: app/Footer/Customize/Widgets/Layout.php:90
+#: taproot/app/Footer/Customize/Widgets/Layout.php:80
+#: taproot/app/Footer/Customize/Widgets/Layout.php:90
 msgid "One Third / Two Thirds"
 msgstr ""
 
 #: app/Footer/Customize/Widgets/Layout.php:81
 #: app/Footer/Customize/Widgets/Layout.php:91
+#: taproot/app/Footer/Customize/Widgets/Layout.php:81
+#: taproot/app/Footer/Customize/Widgets/Layout.php:91
 msgid "Two Thirds / One Third"
 msgstr ""
 
 #: app/Footer/Customize/Widgets/Layout.php:82
 #: app/Footer/Customize/Widgets/Layout.php:92
+#: taproot/app/Footer/Customize/Widgets/Layout.php:82
+#: taproot/app/Footer/Customize/Widgets/Layout.php:92
 msgid "Quarter / Quarter / Half"
 msgstr ""
 
 #: app/Footer/Customize/Widgets/Layout.php:83
 #: app/Footer/Customize/Widgets/Layout.php:93
+#: taproot/app/Footer/Customize/Widgets/Layout.php:83
+#: taproot/app/Footer/Customize/Widgets/Layout.php:93
 msgid "Half / Quarter / Quarter"
 msgstr ""
 
-#: app/Footer/Hooks.php:63
+#: app/Footer/Hooks.php:63 taproot/app/Footer/Hooks.php:63
 #. translators: name of each footer widget area
 msgid "Footer %s"
 msgstr ""
 
-#: app/Footer/Provider.php:52
+#: app/Footer/Provider.php:52 taproot/app/Footer/Provider.php:52
 msgid "Footer"
 msgstr ""
 
-#: app/Footer/Provider.php:58
+#: app/Footer/Provider.php:58 taproot/app/Footer/Provider.php:58
 msgid "Footer Styles"
 msgstr ""
 
-#: app/Footer/Provider.php:70
+#: app/Footer/Provider.php:70 taproot/app/Footer/Provider.php:70
 msgid "Footer Widgets"
 msgstr ""
 
-#: app/Footer/Provider.php:87
+#: app/Footer/Provider.php:87 taproot/app/Footer/Provider.php:87
 msgid "Bottom Bar"
 msgstr ""
 
-#: app/General/Hooks.php:49
+#: app/General/Hooks.php:49 taproot/app/General/Hooks.php:49
 msgid "Site Icon"
 msgstr ""
 
-#: app/General/Provider.php:44
+#: app/General/Provider.php:44 taproot/app/General/Provider.php:44
 msgid "General"
 msgstr ""
 
 #: app/Header/Customize/Layout/Layout.php:74
+#: taproot/app/Header/Customize/Layout/Layout.php:74
 msgid "Vertical"
 msgstr ""
 
 #: app/Header/Customize/Layout/Layout.php:75
+#: taproot/app/Header/Customize/Layout/Layout.php:75
 msgid "Horizontal"
 msgstr ""
 
 #: app/Header/Customize/Styles_Fixed/Fixed_Type.php:66
+#: taproot/app/Header/Customize/Styles_Fixed/Fixed_Type.php:66
 msgid "Fade In"
 msgstr ""
 
 #: app/Header/Customize/Styles_Fixed/Fixed_Type.php:67
 #: app/Navigation/Header/Customize/Header_Mobile/Type.php:69
 #: app/Navigation/Navbar/Customize/Navbar_Mobile/Type.php:69
+#: taproot/app/Header/Customize/Styles_Fixed/Fixed_Type.php:67
+#: taproot/app/Navigation/Header/Customize/Header_Mobile/Type.php:69
+#: taproot/app/Navigation/Navbar/Customize/Navbar_Mobile/Type.php:69
 msgid "Slide In"
 msgstr ""
 
 #: app/Header/Customize/Styles_Fixed/Fixed_Type.php:68
+#: taproot/app/Header/Customize/Styles_Fixed/Fixed_Type.php:68
 msgid "Sticky"
 msgstr ""
 
-#: app/Header/Hooks.php:86
+#: app/Header/Hooks.php:86 taproot/app/Header/Hooks.php:86
 msgid "Default Header Image"
 msgstr ""
 
 #: app/Header/Provider.php:50
 #: app/Post_Types/Product/Customize/Menu_Location.php:68
+#: taproot/app/Header/Provider.php:50
+#: taproot/app/Post_Types/Product/Customize/Menu_Location.php:68
 msgid "Header"
 msgstr ""
 
 #: app/Header/Provider.php:56 app/Header/Provider.php:175
+#: taproot/app/Header/Provider.php:56 taproot/app/Header/Provider.php:175
 msgid "Header Styles"
 msgstr ""
 
 #: app/Header/Provider.php:66 app/Navigation/Header/Provider.php:88
+#: taproot/app/Header/Provider.php:66
+#: taproot/app/Navigation/Header/Provider.php:88
 msgid "Header Fixed"
 msgstr ""
 
 #: app/Header/Provider.php:78 app/Layout/Provider.php:47
 #: app/Post_Types/Page/Provider.php:59 app/Post_Types/Post/Provider.php:68
 #: app/Post_Types/Post/Provider.php:127 app/Post_Types/Product/Provider.php:70
-#: app/Post_Types/Product/Provider.php:119
+#: app/Post_Types/Product/Provider.php:119 taproot/app/Header/Provider.php:78
+#: taproot/app/Layout/Provider.php:47
+#: taproot/app/Post_Types/Page/Provider.php:59
+#: taproot/app/Post_Types/Post/Provider.php:68
+#: taproot/app/Post_Types/Post/Provider.php:127
+#: taproot/app/Post_Types/Product/Provider.php:70
+#: taproot/app/Post_Types/Product/Provider.php:119
 msgid "Layout"
 msgstr ""
 
-#: app/Header/Provider.php:84
+#: app/Header/Provider.php:84 taproot/app/Header/Provider.php:84
 msgid "Image"
 msgstr ""
 
 #: app/Header/Provider.php:96 app/Header/Provider.php:106
-#: app/Header/Provider.php:183
+#: app/Header/Provider.php:183 taproot/app/Header/Provider.php:96
+#: taproot/app/Header/Provider.php:106 taproot/app/Header/Provider.php:183
 msgid "Logo"
 msgstr ""
 
@@ -343,46 +440,62 @@ msgstr ""
 #: app/Header/Provider.php:191 app/Post_Types/Page/Provider.php:68
 #: app/Post_Types/Post/Provider.php:77 app/Post_Types/Post/Provider.php:136
 #: app/Post_Types/Post/Provider.php:161 app/Post_Types/Product/Provider.php:79
-#: app/Post_Types/Product/Provider.php:128
+#: app/Post_Types/Product/Provider.php:128 taproot/app/Header/Provider.php:116
+#: taproot/app/Header/Provider.php:131 taproot/app/Header/Provider.php:191
+#: taproot/app/Post_Types/Page/Provider.php:68
+#: taproot/app/Post_Types/Post/Provider.php:77
+#: taproot/app/Post_Types/Post/Provider.php:136
+#: taproot/app/Post_Types/Post/Provider.php:161
+#: taproot/app/Post_Types/Product/Provider.php:79
+#: taproot/app/Post_Types/Product/Provider.php:128
 msgid "Title"
 msgstr ""
 
 #: app/Header/Provider.php:142 app/Header/Provider.php:158
-#: app/Header/Provider.php:199
+#: app/Header/Provider.php:199 taproot/app/Header/Provider.php:142
+#: taproot/app/Header/Provider.php:158 taproot/app/Header/Provider.php:199
 msgid "Tagline"
 msgstr ""
 
 #: app/Header/Provider.php:170 app/Layout/Provider.php:53
+#: taproot/app/Header/Provider.php:170 taproot/app/Layout/Provider.php:53
 msgid "Content"
 msgstr ""
 
 #: app/Header/Provider.php:177 app/Header/Provider.php:185
 #: app/Header/Provider.php:193 app/Header/Provider.php:201
+#: taproot/app/Header/Provider.php:177 taproot/app/Header/Provider.php:185
+#: taproot/app/Header/Provider.php:193 taproot/app/Header/Provider.php:201
 msgid "default"
 msgstr ""
 
 #: app/Header/Provider.php:178 app/Header/Provider.php:186
 #: app/Header/Provider.php:194 app/Header/Provider.php:202
+#: taproot/app/Header/Provider.php:178 taproot/app/Header/Provider.php:186
+#: taproot/app/Header/Provider.php:194 taproot/app/Header/Provider.php:202
 msgid "fixed"
 msgstr ""
 
-#: app/Icons/FA.php:33 app/Icons/SVG.php:66
+#: app/Icons/FA.php:33 app/Icons/SVG.php:66 taproot/app/Icons/FA.php:33
+#: taproot/app/Icons/SVG.php:66
 msgid "Please define an icon name."
 msgstr ""
 
-#: app/Images/Hooks.php:66
+#: app/Images/Hooks.php:66 taproot/app/Images/Hooks.php:66
 msgid "Thumbnail"
 msgstr ""
 
-#: app/Images/Hooks.php:67
+#: app/Images/Hooks.php:67 taproot/app/Images/Hooks.php:67
 msgid "Medium"
 msgstr ""
 
-#: app/Images/Hooks.php:68
+#: app/Images/Hooks.php:68 taproot/app/Images/Hooks.php:68
 msgid "Medium Large"
 msgstr ""
 
 #: app/Layout/Provider.php:62 app/Navigation/Footer/Provider.php:67
+#: taproot/app/Layout/Provider.php:62
+#: taproot/app/Navigation/Footer/Provider.php:67
 msgid "Container"
 msgstr ""
 
@@ -395,14 +508,25 @@ msgstr ""
 #: app/Navigation/Top/Customize/Top/Align.php:63
 #: app/Navigation/Top/Customize/Top_Fixed/Align.php:62
 #: app/Navigation/Top/Customize/Top_Mobile/Align.php:63
+#: taproot/app/Navigation/Footer/Customize/Footer/Align.php:63
+#: taproot/app/Navigation/Footer/Customize/Footer_Mobile/Align.php:63
+#: taproot/app/Navigation/Header/Customize/Header/Align.php:63
+#: taproot/app/Navigation/Header/Customize/Header_Fixed/Align.php:62
+#: taproot/app/Navigation/Navbar/Customize/Navbar/Align.php:63
+#: taproot/app/Navigation/Navbar/Customize/Navbar_Fixed/Align.php:62
+#: taproot/app/Navigation/Top/Customize/Top/Align.php:63
+#: taproot/app/Navigation/Top/Customize/Top_Fixed/Align.php:62
+#: taproot/app/Navigation/Top/Customize/Top_Mobile/Align.php:63
 msgid "Fill"
 msgstr ""
 
 #: app/Navigation/Footer/Customize/Footer/Position.php:59
+#: taproot/app/Navigation/Footer/Customize/Footer/Position.php:59
 msgid "Before Widget Area"
 msgstr ""
 
 #: app/Navigation/Footer/Customize/Footer/Position.php:60
+#: taproot/app/Navigation/Footer/Customize/Footer/Position.php:60
 msgid "After Widget Area"
 msgstr ""
 
@@ -410,6 +534,10 @@ msgstr ""
 #: app/Navigation/Header/Customize/Header_Mobile/Breakpoint.php:65
 #: app/Navigation/Navbar/Customize/Navbar_Mobile/Breakpoint.php:65
 #: app/Navigation/Top/Customize/Top_Mobile/Breakpoint.php:65
+#: taproot/app/Navigation/Footer/Customize/Footer_Mobile/Breakpoint.php:65
+#: taproot/app/Navigation/Header/Customize/Header_Mobile/Breakpoint.php:65
+#: taproot/app/Navigation/Navbar/Customize/Navbar_Mobile/Breakpoint.php:65
+#: taproot/app/Navigation/Top/Customize/Top_Mobile/Breakpoint.php:65
 msgid "Never Mobile"
 msgstr ""
 
@@ -417,6 +545,10 @@ msgstr ""
 #: app/Navigation/Header/Customize/Header_Mobile/Breakpoint.php:66
 #: app/Navigation/Navbar/Customize/Navbar_Mobile/Breakpoint.php:66
 #: app/Navigation/Top/Customize/Top_Mobile/Breakpoint.php:66
+#: taproot/app/Navigation/Footer/Customize/Footer_Mobile/Breakpoint.php:66
+#: taproot/app/Navigation/Header/Customize/Header_Mobile/Breakpoint.php:66
+#: taproot/app/Navigation/Navbar/Customize/Navbar_Mobile/Breakpoint.php:66
+#: taproot/app/Navigation/Top/Customize/Top_Mobile/Breakpoint.php:66
 msgid "Mobile Only"
 msgstr ""
 
@@ -424,72 +556,101 @@ msgstr ""
 #: app/Navigation/Header/Customize/Header_Mobile/Breakpoint.php:67
 #: app/Navigation/Navbar/Customize/Navbar_Mobile/Breakpoint.php:67
 #: app/Navigation/Top/Customize/Top_Mobile/Breakpoint.php:67
+#: taproot/app/Navigation/Footer/Customize/Footer_Mobile/Breakpoint.php:67
+#: taproot/app/Navigation/Header/Customize/Header_Mobile/Breakpoint.php:67
+#: taproot/app/Navigation/Navbar/Customize/Navbar_Mobile/Breakpoint.php:67
+#: taproot/app/Navigation/Top/Customize/Top_Mobile/Breakpoint.php:67
 msgid "Tablet and under"
 msgstr ""
 
 #: app/Navigation/Footer/Provider.php:49 app/Navigation/Footer/Provider.php:78
+#: taproot/app/Navigation/Footer/Provider.php:49
+#: taproot/app/Navigation/Footer/Provider.php:78
 msgid "Footer Nav"
 msgstr ""
 
 #: app/Navigation/Header/Customize/Header_Mobile/Type.php:67
 #: app/Navigation/Navbar/Customize/Navbar_Mobile/Type.php:67
+#: taproot/app/Navigation/Header/Customize/Header_Mobile/Type.php:67
+#: taproot/app/Navigation/Navbar/Customize/Navbar_Mobile/Type.php:67
 msgid "Dropdown - Slide"
 msgstr ""
 
 #: app/Navigation/Header/Customize/Header_Mobile/Type.php:68
 #: app/Navigation/Navbar/Customize/Navbar_Mobile/Type.php:68
+#: taproot/app/Navigation/Header/Customize/Header_Mobile/Type.php:68
+#: taproot/app/Navigation/Navbar/Customize/Navbar_Mobile/Type.php:68
 msgid "Dropdown - Fade"
 msgstr ""
 
 #: app/Navigation/Header/Customize/Header_Mobile/Type.php:70
 #: app/Navigation/Navbar/Customize/Navbar_Mobile/Type.php:70
+#: taproot/app/Navigation/Header/Customize/Header_Mobile/Type.php:70
+#: taproot/app/Navigation/Navbar/Customize/Navbar_Mobile/Type.php:70
 msgid "Fullscreen"
 msgstr ""
 
 #: app/Navigation/Header/Provider.php:49 app/Navigation/Header/Provider.php:106
+#: taproot/app/Navigation/Header/Provider.php:49
+#: taproot/app/Navigation/Header/Provider.php:106
 msgid "Header Nav"
 msgstr ""
 
 #: app/Navigation/Header/Provider.php:68
+#: taproot/app/Navigation/Header/Provider.php:68
 msgid "Header Mobile"
 msgstr ""
 
 #: app/Navigation/Navbar/Provider.php:49 app/Navigation/Navbar/Provider.php:111
 #: app/Post_Types/Product/Customize/Menu_Location.php:69
+#: taproot/app/Navigation/Navbar/Provider.php:49
+#: taproot/app/Navigation/Navbar/Provider.php:111
+#: taproot/app/Post_Types/Product/Customize/Menu_Location.php:69
 msgid "Navbar"
 msgstr ""
 
 #: app/Navigation/Navbar/Provider.php:69
+#: taproot/app/Navigation/Navbar/Provider.php:69
 msgid "Navbar Mobile"
 msgstr ""
 
 #: app/Navigation/Navbar/Provider.php:91
+#: taproot/app/Navigation/Navbar/Provider.php:91
 msgid "Navbar Fixed"
 msgstr ""
 
-#: app/Navigation/Provider.php:47
+#: app/Navigation/Provider.php:47 taproot/app/Navigation/Provider.php:47
 msgid "Navigation"
 msgstr ""
 
 #: app/Navigation/Top/Provider.php:49 app/Navigation/Top/Provider.php:66
 #: app/Navigation/Top/Provider.php:78 app/Navigation/Top/Provider.php:94
+#: taproot/app/Navigation/Top/Provider.php:49
+#: taproot/app/Navigation/Top/Provider.php:66
+#: taproot/app/Navigation/Top/Provider.php:78
+#: taproot/app/Navigation/Top/Provider.php:94
 msgid "Top Nav"
 msgstr ""
 
-#: app/Pagination/Hooks.php:51
+#: app/Pagination/Hooks.php:51 taproot/app/Pagination/Hooks.php:51
 msgid "&lt; prev"
 msgstr ""
 
-#: app/Pagination/Hooks.php:52
+#: app/Pagination/Hooks.php:52 taproot/app/Pagination/Hooks.php:52
 msgid "next &gt;"
 msgstr ""
 
 #: app/Pagination/Provider.php:49 app/Pagination/Provider.php:62
-#: app/Pagination/Provider.php:71 views/nav/pagination/post.php:4
+#: app/Pagination/Provider.php:71 taproot/app/Pagination/Provider.php:49
+#: taproot/app/Pagination/Provider.php:62
+#: taproot/app/Pagination/Provider.php:71
+#: taproot/views/nav/pagination/post.php:4 views/nav/pagination/post.php:4
 msgid "Pagination"
 msgstr ""
 
-#: app/Post_Title/Template.php:136
+#: app/Post_Title/Template.php:136 taproot/app/Post_Title/Template.php:136
+#: taproot/vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:101
+#: taproot/vendor/justintadlock/hybrid-core/src/Util/Title.php:150
 #: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:101
 #: vendor/justintadlock/hybrid-core/src/Util/Title.php:150
 #. Translators: %s is the search query.
@@ -497,185 +658,217 @@ msgid "Search results for: %s"
 msgstr ""
 
 #: app/Post_Types/Customize/Content_Layout.php:69
+#: taproot/app/Post_Types/Customize/Content_Layout.php:69
 msgid "Wide"
 msgstr ""
 
 #: app/Post_Types/Customize/Content_Layout.php:70
+#: taproot/app/Post_Types/Customize/Content_Layout.php:70
 msgid "Wide/Left"
 msgstr ""
 
 #: app/Post_Types/Customize/Content_Layout.php:71
+#: taproot/app/Post_Types/Customize/Content_Layout.php:71
 msgid "Wide/Center"
 msgstr ""
 
 #: app/Post_Types/Customize/Entry/Link/Type.php:66
 #: app/Typography/Customize/Links/Underline.php:59
+#: taproot/app/Post_Types/Customize/Entry/Link/Type.php:66
+#: taproot/app/Typography/Customize/Links/Underline.php:59
 msgid "None"
 msgstr ""
 
 #: app/Post_Types/Customize/Entry/Link/Type.php:67
+#: taproot/app/Post_Types/Customize/Entry/Link/Type.php:67
 msgid "Inline"
 msgstr ""
 
 #: app/Post_Types/Customize/Entry/Link/Type.php:68
 #: app/Post_Types/Post/Provider.php:182
+#: taproot/app/Post_Types/Customize/Entry/Link/Type.php:68
+#: taproot/app/Post_Types/Post/Provider.php:182
 msgid "Link"
 msgstr ""
 
 #: app/Post_Types/Customize/Entry/Link/Type.php:69
+#: taproot/app/Post_Types/Customize/Entry/Link/Type.php:69
 msgid "Button"
 msgstr ""
 
 #: app/Post_Types/Page/Provider.php:41
+#: taproot/app/Post_Types/Page/Provider.php:41
 msgid "Pages"
 msgstr ""
 
 #: app/Post_Types/Page/Provider.php:52
+#: taproot/app/Post_Types/Page/Provider.php:52
 msgid "Page"
 msgstr ""
 
 #: app/Post_Types/Post/Provider.php:50
+#: taproot/app/Post_Types/Post/Provider.php:50
 msgid "Posts"
 msgstr ""
 
 #: app/Post_Types/Post/Provider.php:61
+#: taproot/app/Post_Types/Post/Provider.php:61
 msgid "Post"
 msgstr ""
 
 #: app/Post_Types/Post/Provider.php:88 app/Post_Types/Post/Provider.php:172
+#: taproot/app/Post_Types/Post/Provider.php:88
+#: taproot/app/Post_Types/Post/Provider.php:172
 msgid "Byline"
 msgstr ""
 
 #: app/Post_Types/Post/Provider.php:106
+#: taproot/app/Post_Types/Post/Provider.php:106
 msgid "Post Nav"
 msgstr ""
 
 #: app/Post_Types/Post/Provider.php:120
+#: taproot/app/Post_Types/Post/Provider.php:120
 msgid "Post Archive"
 msgstr ""
 
 #: app/Post_Types/Post/Provider.php:154
+#: taproot/app/Post_Types/Post/Provider.php:154
 msgid "Post Entry"
 msgstr ""
 
 #: app/Post_Types/Post/Provider.php:193
+#: taproot/app/Post_Types/Post/Provider.php:193
 msgid "Excerpt"
 msgstr ""
 
 #: app/Post_Types/Product/Customize/Menu_Location.php:67
+#: taproot/app/Post_Types/Product/Customize/Menu_Location.php:67
 msgid "Top"
 msgstr ""
 
 #: app/Post_Types/Product/Provider.php:50
+#: taproot/app/Post_Types/Product/Provider.php:50
 msgid "Products"
 msgstr ""
 
 #: app/Post_Types/Product/Provider.php:63
+#: taproot/app/Post_Types/Product/Provider.php:63
 msgid "Product"
 msgstr ""
 
 #: app/Post_Types/Product/Provider.php:98
+#: taproot/app/Post_Types/Product/Provider.php:98
 msgid "Postnav"
 msgstr ""
 
 #: app/Post_Types/Product/Provider.php:112
+#: taproot/app/Post_Types/Product/Provider.php:112
 msgid "Product Archive"
 msgstr ""
 
 #: app/Post_Types/Product/Provider.php:145
 #: app/Post_Types/Product/Template.php:39
+#: taproot/app/Post_Types/Product/Provider.php:145
+#: taproot/app/Post_Types/Product/Template.php:39
 msgid "Cart"
 msgstr ""
 
 #: app/Post_Types/Product/Provider.php:152
+#: taproot/app/Post_Types/Product/Provider.php:152
 msgid "Cart Widget"
 msgstr ""
 
-#: app/Postnav/Template.php:64
+#: app/Postnav/Template.php:64 taproot/app/Postnav/Template.php:64
 msgid "PREV"
 msgstr ""
 
-#: app/Postnav/Template.php:66
+#: app/Postnav/Template.php:66 taproot/app/Postnav/Template.php:66
 msgid "NEXT"
 msgstr ""
 
 #: app/Sidebar/Customize/Settings/Layout.php:67
+#: taproot/app/Sidebar/Customize/Settings/Layout.php:67
 msgid "Right Sidebar"
 msgstr ""
 
 #: app/Sidebar/Customize/Settings/Layout.php:68
+#: taproot/app/Sidebar/Customize/Settings/Layout.php:68
 msgid "Left Sidebar"
 msgstr ""
 
 #: app/Sidebar/Customize/Settings/Layout.php:69
+#: taproot/app/Sidebar/Customize/Settings/Layout.php:69
 msgid "No Sidebar"
 msgstr ""
 
 #: app/Sidebar/Provider.php:44 app/Sidebar/Provider.php:50
+#: taproot/app/Sidebar/Provider.php:44 taproot/app/Sidebar/Provider.php:50
 msgid "Sidebar"
 msgstr ""
 
-#: app/Sidebar/Provider.php:60
+#: app/Sidebar/Provider.php:60 taproot/app/Sidebar/Provider.php:60
 msgid "Sidebar Colors"
 msgstr ""
 
 #: app/Typography/Customize/Links/Underline.php:61
+#: taproot/app/Typography/Customize/Links/Underline.php:61
 msgid "On Hover"
 msgstr ""
 
-#: app/Typography/Provider.php:47
+#: app/Typography/Provider.php:47 taproot/app/Typography/Provider.php:47
 msgid "Typography"
 msgstr ""
 
-#: app/Typography/Provider.php:53
+#: app/Typography/Provider.php:53 taproot/app/Typography/Provider.php:53
 msgid "Body"
 msgstr ""
 
-#: app/Typography/Provider.php:64
+#: app/Typography/Provider.php:64 taproot/app/Typography/Provider.php:64
 msgid "Headings"
 msgstr ""
 
-#: app/Typography/Provider.php:74
+#: app/Typography/Provider.php:74 taproot/app/Typography/Provider.php:74
 msgid "h1"
 msgstr ""
 
-#: app/Typography/Provider.php:86
+#: app/Typography/Provider.php:86 taproot/app/Typography/Provider.php:86
 msgid "h2"
 msgstr ""
 
-#: app/Typography/Provider.php:98
+#: app/Typography/Provider.php:98 taproot/app/Typography/Provider.php:98
 msgid "h3"
 msgstr ""
 
-#: app/Typography/Provider.php:110
+#: app/Typography/Provider.php:110 taproot/app/Typography/Provider.php:110
 msgid "h4"
 msgstr ""
 
-#: app/Typography/Provider.php:122
+#: app/Typography/Provider.php:122 taproot/app/Typography/Provider.php:122
 msgid "h5"
 msgstr ""
 
-#: app/Typography/Provider.php:134
+#: app/Typography/Provider.php:134 taproot/app/Typography/Provider.php:134
 msgid "h6"
 msgstr ""
 
-#: app/Typography/Provider.php:146
+#: app/Typography/Provider.php:146 taproot/app/Typography/Provider.php:146
 msgid "Links"
 msgstr ""
 
-#: app/Typography/Provider.php:157
+#: app/Typography/Provider.php:157 taproot/app/Typography/Provider.php:157
 msgid "Heading Styles"
 msgstr ""
 
-#: app/Typography/Provider.php:171
+#: app/Typography/Provider.php:171 taproot/app/Typography/Provider.php:171
 msgid "all headings"
 msgstr ""
 
-#: app/Typography/Provider.php:181
+#: app/Typography/Provider.php:181 taproot/app/Typography/Provider.php:181
 msgid "headings"
 msgstr ""
 
-#: compat.php:69
+#: compat.php:69 taproot/compat.php:69
 #. Translators: 1 is the required WordPress version and 2 is the user's current
 #. version.
 msgid ""
@@ -683,7 +876,7 @@ msgid ""
 "%2$s. Please upgrade and try again."
 msgstr ""
 
-#: compat.php:78
+#: compat.php:78 taproot/compat.php:78
 #. Translators: 1 is the required PHP version and 2 is the user's current
 #. version.
 msgid ""
@@ -691,244 +884,303 @@ msgid ""
 "Please upgrade and try again."
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:95
 #: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:95
 msgid "Browse:"
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:97
 #: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:97
 msgid "Home"
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:98
+#: taproot/vendor/justintadlock/hybrid-core/src/Util/Title.php:164
 #: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:98
 #: vendor/justintadlock/hybrid-core/src/Util/Title.php:164
 msgid "404 Not Found"
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:99
+#: taproot/vendor/justintadlock/hybrid-core/src/Util/Title.php:97
 #: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:99
 #: vendor/justintadlock/hybrid-core/src/Util/Title.php:97
 msgid "Archives"
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:103
 #: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:103
 #. Translators: %s is the page number.
 msgid "Page %s"
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:105
 #: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:105
 #. Translators: %s is the page number.
 msgid "Comment Page %s"
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:107
+#: taproot/vendor/justintadlock/hybrid-core/src/Util/Title.php:279
 #: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:107
 #: vendor/justintadlock/hybrid-core/src/Util/Title.php:279
 #. Translators: Minute archive title. %s is the minute time format.
 msgid "Minute %s"
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:109
 #: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:109
 #. Translators: Weekly archive title. %s is the week date format.
 msgid "Week %s"
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-core/src/Comment/functions-comment.php:276
 #: vendor/justintadlock/hybrid-core/src/Comment/functions-comment.php:276
 msgid "Edit"
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-core/src/Media/Meta.php:179
+#: taproot/vendor/justintadlock/hybrid-core/src/Media/functions-media.php:203
 #: vendor/justintadlock/hybrid-core/src/Media/Meta.php:179
 #: vendor/justintadlock/hybrid-core/src/Media/functions-media.php:203
 #. Translators: Media dimensions - 1 is width and 2 is height.
 msgid "%1$s &#215; %2$s"
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-core/src/Media/Meta.php:272
 #: vendor/justintadlock/hybrid-core/src/Media/Meta.php:272
 #. Translators: %s is the focal length of a camera.
 msgid "%s mm"
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-core/src/Media/Meta.php:364
 #: vendor/justintadlock/hybrid-core/src/Media/Meta.php:364
 #. Translators: %s is the shutter speed of a camera.
 msgid "%s sec"
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-core/src/Pagination/Pagination.php:526
 #: vendor/justintadlock/hybrid-core/src/Pagination/Pagination.php:526
 msgid "&hellip;"
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-core/src/Site/functions-site.php:186
 #: vendor/justintadlock/hybrid-core/src/Site/functions-site.php:186
 msgid "https://wordpress.org"
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-core/src/Site/functions-site.php:187
 #: vendor/justintadlock/hybrid-core/src/Site/functions-site.php:187
 msgid "WordPress"
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-core/src/Util/Title.php:238
 #: vendor/justintadlock/hybrid-core/src/Util/Title.php:238
 #. Translators: 1 is the week number and 2 is the year.
 msgid "Week %1$s of %2$s"
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-core/src/functions-filters.php:209
 #: vendor/justintadlock/hybrid-core/src/functions-filters.php:209
 #. Translators: Used as a placeholder for untitled posts on non-singular views.
 msgid "(Untitled)"
 msgstr ""
 
+#: taproot/vendor/skyshab/rootstrap-panels/src/Rootstrap_Custom_Panel.php:48
 #: vendor/skyshab/rootstrap-panels/src/Rootstrap_Custom_Panel.php:48
 msgid "Back"
 msgstr ""
 
+#: taproot/vendor/skyshab/rootstrap-panels/src/Rootstrap_Custom_Panel.php:54
 #: vendor/skyshab/rootstrap-panels/src/Rootstrap_Custom_Panel.php:54
 msgid "Help"
 msgstr ""
 
-#: views/archive/search.php:14
+#: taproot/views/archive/search.php:14 views/archive/search.php:14
 msgid "No results found. Search again?"
 msgstr ""
 
+#: taproot/views/comment/default.php:11 taproot/views/comment/ping.php:8
 #: views/comment/default.php:11 views/comment/ping.php:8
 #. Translators: 1 is the comment date and 2 is the time.
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: views/comment/default.php:25
+#: taproot/views/comment/default.php:25 views/comment/default.php:25
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: views/content/404.php:6
+#: taproot/views/content/404.php:6 views/content/404.php:6
 msgid "Whoops!"
 msgstr ""
 
-#: views/content/404.php:7
+#: taproot/views/content/404.php:7 views/content/404.php:7
 msgid "This page does not exist. Try a search?"
 msgstr ""
 
-#: views/entry/search.php:17
+#: taproot/views/entry/search.php:17 views/entry/search.php:17
 msgid "View Result"
 msgstr ""
 
-#: views/header/default.php:16
+#: taproot/views/header/default.php:16 views/header/default.php:16
 msgid "Skip to content"
 msgstr ""
 
-#: views/nav/pagination/comments.php:2 views/nav/pagination/posts.php:2
+#: taproot/views/nav/pagination/comments.php:2
+#: taproot/views/nav/pagination/posts.php:2 views/nav/pagination/comments.php:2
+#: views/nav/pagination/posts.php:2
 msgid "&larr; Previous"
 msgstr ""
 
-#: views/nav/pagination/comments.php:3 views/nav/pagination/posts.php:3
+#: taproot/views/nav/pagination/comments.php:3
+#: taproot/views/nav/pagination/posts.php:3 views/nav/pagination/comments.php:3
+#: views/nav/pagination/posts.php:3
 msgid "Next &rarr;"
 msgstr ""
 
+#: taproot/views/nav/pagination/comments.php:4
 #: views/nav/pagination/comments.php:4
 msgid "Comments Navigation"
 msgstr ""
 
-#: views/nav/pagination/posts.php:4
+#: taproot/views/nav/pagination/posts.php:4 views/nav/pagination/posts.php:4
 msgid "Posts Navigation"
 msgstr ""
 
-#: views/partials/searchform.php:12
+#: taproot/views/partials/searchform.php:12 views/partials/searchform.php:12
 msgid "Search for:"
 msgstr ""
 
-#: views/partials/searchform.php:14
+#: taproot/views/partials/searchform.php:14 views/partials/searchform.php:14
 msgid "Search &hellip;"
 msgstr ""
 
+#: taproot/views/single/attachment-audio.php:13
 #: views/single/attachment-audio.php:13
 msgid "Audio Info"
 msgstr ""
 
+#: taproot/views/single/attachment-audio.php:16
+#: taproot/views/single/attachment-video.php:16
 #: views/single/attachment-audio.php:16 views/single/attachment-video.php:16
 msgid "Run Time"
 msgstr ""
 
+#: taproot/views/single/attachment-audio.php:17
 #: views/single/attachment-audio.php:17
 msgid "Artist"
 msgstr ""
 
+#: taproot/views/single/attachment-audio.php:18
 #: views/single/attachment-audio.php:18
 msgid "Album"
 msgstr ""
 
+#: taproot/views/single/attachment-audio.php:19
 #: views/single/attachment-audio.php:19
 msgid "Track Number"
 msgstr ""
 
+#: taproot/views/single/attachment-audio.php:20
 #: views/single/attachment-audio.php:20
 msgid "Year"
 msgstr ""
 
+#: taproot/views/single/attachment-audio.php:21
 #: views/single/attachment-audio.php:21
 msgid "Genre"
 msgstr ""
 
+#: taproot/views/single/attachment-audio.php:22
+#: taproot/views/single/attachment-video.php:18
 #: views/single/attachment-audio.php:22 views/single/attachment-video.php:18
 msgid "Name"
 msgstr ""
 
+#: taproot/views/single/attachment-audio.php:23
+#: taproot/views/single/attachment-video.php:19
 #: views/single/attachment-audio.php:23 views/single/attachment-video.php:19
 msgid "Mime Type"
 msgstr ""
 
+#: taproot/views/single/attachment-audio.php:24
+#: taproot/views/single/attachment-video.php:20
 #: views/single/attachment-audio.php:24 views/single/attachment-video.php:20
 msgid "Type"
 msgstr ""
 
+#: taproot/views/single/attachment-audio.php:25
+#: taproot/views/single/attachment-video.php:21
 #: views/single/attachment-audio.php:25 views/single/attachment-video.php:21
 msgid "Size"
 msgstr ""
 
+#: taproot/views/single/attachment-image.php:11
 #: views/single/attachment-image.php:11
 msgid "Image Info"
 msgstr ""
 
+#: taproot/views/single/attachment-image.php:14
 #: views/single/attachment-image.php:14
 msgid "Dimensions:"
 msgstr ""
 
+#: taproot/views/single/attachment-image.php:15
 #: views/single/attachment-image.php:15
 msgid "Date:"
 msgstr ""
 
+#: taproot/views/single/attachment-image.php:16
 #: views/single/attachment-image.php:16
 msgid "Camera:"
 msgstr ""
 
+#: taproot/views/single/attachment-image.php:17
 #: views/single/attachment-image.php:17
 msgid "Aperture:"
 msgstr ""
 
+#: taproot/views/single/attachment-image.php:18
 #: views/single/attachment-image.php:18
 msgid "Focal Length:"
 msgstr ""
 
+#: taproot/views/single/attachment-image.php:19
 #: views/single/attachment-image.php:19
 msgid "ISO:"
 msgstr ""
 
+#: taproot/views/single/attachment-image.php:20
 #: views/single/attachment-image.php:20
 msgid "Shutter Speed:"
 msgstr ""
 
+#: taproot/views/single/attachment-image.php:21
 #: views/single/attachment-image.php:21
 msgid "Name:"
 msgstr ""
 
+#: taproot/views/single/attachment-image.php:22
 #: views/single/attachment-image.php:22
 msgid "Mime Type:"
 msgstr ""
 
+#: taproot/views/single/attachment-image.php:23
 #: views/single/attachment-image.php:23
 msgid "Type:"
 msgstr ""
 
+#: taproot/views/single/attachment-image.php:24
 #: views/single/attachment-image.php:24
 msgid "Size:"
 msgstr ""
 
+#: taproot/views/single/attachment-video.php:13
 #: views/single/attachment-video.php:13
 msgid "Video Info"
 msgstr ""
 
+#: taproot/views/single/attachment-video.php:17
 #: views/single/attachment-video.php:17
 msgid "Dimensions"
 msgstr ""
@@ -957,68 +1209,84 @@ msgid "https://sky.camp"
 msgstr ""
 
 #: app/Navigation/Footer/Hooks.php:49
+#: taproot/app/Navigation/Footer/Hooks.php:49
 msgctxt "nav menu location"
 msgid "Footer Nav"
 msgstr ""
 
 #: app/Navigation/Header/Hooks.php:49
+#: taproot/app/Navigation/Header/Hooks.php:49
 msgctxt "nav menu location"
 msgid "Header"
 msgstr ""
 
 #: app/Navigation/Navbar/Hooks.php:49
+#: taproot/app/Navigation/Navbar/Hooks.php:49
 msgctxt "nav menu location"
 msgid "Navbar"
 msgstr ""
 
-#: app/Navigation/Top/Hooks.php:49
+#: app/Navigation/Top/Hooks.php:49 taproot/app/Navigation/Top/Hooks.php:49
 msgctxt "nav menu location"
 msgid "Top Nav"
 msgstr ""
 
-#: app/Sidebar/Hooks.php:51
+#: app/Sidebar/Hooks.php:51 taproot/app/Sidebar/Hooks.php:51
 msgctxt "sidebar"
 msgid "Primary"
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:96
 #: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:96
 msgctxt "breadcrumbs aria label"
 msgid "Breadcrumbs"
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-breadcrumbs/src/Crumb/Day.php:45
 #: vendor/justintadlock/hybrid-breadcrumbs/src/Crumb/Day.php:45
 msgctxt "daily archives date format"
 msgid "j"
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-core/src/Util/Title.php:253
 #: vendor/justintadlock/hybrid-core/src/Util/Title.php:253
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-breadcrumbs/src/Crumb/Minute.php:45
+#: taproot/vendor/justintadlock/hybrid-core/src/Util/Title.php:280
 #: vendor/justintadlock/hybrid-breadcrumbs/src/Crumb/Minute.php:45
 #: vendor/justintadlock/hybrid-core/src/Util/Title.php:280
 msgctxt "minute archives time format"
 msgid "i"
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-breadcrumbs/src/Crumb/MinuteHour.php:45
+#: taproot/vendor/justintadlock/hybrid-core/src/Util/Title.php:293
 #: vendor/justintadlock/hybrid-breadcrumbs/src/Crumb/MinuteHour.php:45
 #: vendor/justintadlock/hybrid-core/src/Util/Title.php:293
 msgctxt "minute and hour archives time format"
 msgid "g:i a"
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-breadcrumbs/src/Crumb/Month.php:45
 #: vendor/justintadlock/hybrid-breadcrumbs/src/Crumb/Month.php:45
 msgctxt "monthly archives date format"
 msgid "F"
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-breadcrumbs/src/Crumb/Week.php:36
+#: taproot/vendor/justintadlock/hybrid-core/src/Util/Title.php:239
 #: vendor/justintadlock/hybrid-breadcrumbs/src/Crumb/Week.php:36
 #: vendor/justintadlock/hybrid-core/src/Util/Title.php:239
 msgctxt "weekly archives date format"
 msgid "W"
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-breadcrumbs/src/Crumb/Year.php:45
+#: taproot/vendor/justintadlock/hybrid-core/src/Util/Title.php:224
+#: taproot/vendor/justintadlock/hybrid-core/src/Util/Title.php:240
 #: vendor/justintadlock/hybrid-breadcrumbs/src/Crumb/Year.php:45
 #: vendor/justintadlock/hybrid-core/src/Util/Title.php:224
 #: vendor/justintadlock/hybrid-core/src/Util/Title.php:240
@@ -1026,12 +1294,14 @@ msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-core/src/Post/functions-post.php:334
 #: vendor/justintadlock/hybrid-core/src/Post/functions-post.php:334
 #. Translators: Separates tags, categories, etc. when displaying a post.
 msgctxt "taxonomy terms separator"
 msgid ", "
 msgstr ""
 
+#: taproot/vendor/justintadlock/hybrid-core/src/Util/Title.php:265
 #: vendor/justintadlock/hybrid-core/src/Util/Title.php:265
 msgctxt "hour archives time format"
 msgid "g a"
