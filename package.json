@@ -1,7 +1,7 @@
 {
     "name": "taproot",
     "version": "2.0.0",
-    "description": "Taproot is a multipurpose theme built on Hybrid Core and the Mythic started theme",
+    "description": "Taproot is a multipurpose WordPress theme",
     "author": "Sky Shabatura",
     "license": "GPL-2.0+",
     "homepage": "https://taproot-theme.com",
@@ -20,8 +20,7 @@
         "lint:php": "cross-env ./vendor/bin/phpcs . --runtime-set testVersion 5.6- -s",
         "i18n": "npm run i18n:textdomain && npm run i18n:pot",
         "i18n:textdomain": "npx wpi18n addtextdomain --exclude=vendor,node_modules",
-        "i18n:pot": "npx wpi18n makepot",
-        "rename": "theme-claim"
+        "i18n:pot": "npx wpi18n makepot"
     },
     "repository": {
         "type": "git",
@@ -31,29 +30,22 @@
         "url": "https://github.com/skyshab/taproot/issues"
     },
     "devDependencies": {
-        "@babel/preset-react": "^7.7.4",
-        "browser-sync": "^2.26.3",
-        "browser-sync-webpack-plugin": "2.2.2",
+        "@babel/preset-react": "^7.12.1",
         "copy-webpack-plugin": "^5.1.1",
         "cross-env": "^5.2.0",
         "eslint": "^5.12.0",
         "eslint-config-wordpress": "^2.0.0",
         "imagemin-mozjpeg": "^8.0.0",
         "imagemin-webpack-plugin": "^2.4.0",
-        "laravel-mix": "^4.0.14",
+        "laravel-mix": "^5.0.5",
         "node-wp-i18n": "^1.2.2",
         "postcss-preset-env": "^6.5.0",
         "postcss-sort-media-queries": "^1.0.9",
         "rimraf": "^2.6.3",
-        "sass": "^1.24.0",
-        "sass-loader": "^7.1.0",
+        "sass": "^1.27.0",
+        "sass-loader": "^8.0.2",
         "stylelint": "^9.9.0",
         "stylelint-config-wordpress": "^13.1.0",
-        "theme-claim": "^0.1.2",
         "vue-template-compiler": "^2.6.11"
-    },
-    "dependencies": {
-        "classnames": "^2.2.6",
-        "tailwindcss": "^1.1.4"
     }
 }

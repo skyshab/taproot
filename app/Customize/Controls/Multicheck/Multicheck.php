@@ -119,7 +119,7 @@ abstract class Multicheck {
             'section'   => $this->section,
             'settings'  => $this->id,
             'priority'  => $this->priority,
-            'label'     => esc_html__($this->label, 'taproot'),
+            'label'     => $this->label,
             'choices'   => $this->get_choices(),
             'description' => $this->description
         ]));

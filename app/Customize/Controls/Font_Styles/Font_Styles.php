@@ -119,7 +119,7 @@ abstract class Font_Styles {
             'section'   => $this->section,
             'settings'  => $this->id,
             'priority'  => $this->priority,
-            'label'     => esc_html__($this->label, 'taproot')
+            'label'     => $this->label
         ]));
     }
 }

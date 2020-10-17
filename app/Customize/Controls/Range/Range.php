@@ -255,7 +255,7 @@ abstract class Range {
             'priority'  => $this->priority,
             'devices'   => $this->devices,
             'atts'      => $this->atts(),
-            'label'     => esc_html__($this->label, 'taproot')
+            'label'     => $this->label
         ]));
     }
 

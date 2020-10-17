@@ -184,9 +184,7 @@ Color.prototype.toString = function (flag) {
  */
 
 
-var AlphaColor =
-/*#__PURE__*/
-function () {
+var AlphaColor = /*#__PURE__*/function () {
   function AlphaColor(control) {
     _classCallCheck(this, AlphaColor);
 
@@ -468,9 +466,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
  * @copyright 2020 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
-var DevicePicker =
-/*#__PURE__*/
-function () {
+var DevicePicker = /*#__PURE__*/function () {
   function DevicePicker() {
     _classCallCheck(this, DevicePicker);
 
@@ -538,9 +534,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
  * @copyright 2020 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
-var TaprootFontStyles =
-/*#__PURE__*/
-function () {
+var TaprootFontStyles = /*#__PURE__*/function () {
   // initiate control
   function TaprootFontStyles(control) {
     _classCallCheck(this, TaprootFontStyles);
@@ -709,9 +703,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
  * @copyright 2020 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
-var Multicheck =
-/*#__PURE__*/
-function () {
+var Multicheck = /*#__PURE__*/function () {
   function Multicheck() {
     _classCallCheck(this, Multicheck);
 
@@ -774,9 +766,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
  * @copyright 2020 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
-var TaprootRange =
-/*#__PURE__*/
-function () {
+var TaprootRange = /*#__PURE__*/function () {
   function TaprootRange(control) {
     var _this = this;
 

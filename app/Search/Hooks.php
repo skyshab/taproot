@@ -47,7 +47,7 @@ class Hooks implements Bootable {
 
         if ( $template ) {
             ob_start();
-            include $template;
+            get_template_part( 'views/partials/searchform' );
             $form = ob_get_clean();
         }
 

@@ -34,7 +34,7 @@ class Provider extends ServiceProvider {
     public function register() {
 
         // Bind a single instance of our hooks class.
-        $this->app->singleton( 'colors/hooks', Hooks::class );;
+        $this->app->singleton( 'colors/hooks', Hooks::class );
 
         // Bind a single instance of the component functions class.
         $this->app->singleton( 'colors/functions', Functions::class );

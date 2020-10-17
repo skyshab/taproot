@@ -120,7 +120,7 @@ abstract class Control {
             'section'   => $this->section,
             'settings'  => $this->id,
             'priority'  => $this->priority,
-            'label'     => esc_html__($this->label, 'taproot'),
+            'label'     => $this->label,
         ]);
     }
 }

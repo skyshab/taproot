@@ -115,7 +115,7 @@ class Functions {
 
         // Featured image for header
         elseif( 'featured' === $header_image_type ) {
-            return get_the_post_thumbnail_url( $post_id, 'full' );;
+            return get_the_post_thumbnail_url( $post_id, 'full' );
         }
 
         // Custom header image

@@ -188,10 +188,6 @@
     }
 
     .tribe-events-c-ical__link:before {
-
-        // can't use variable inside the url
-        //background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M6 1v10m5-5H1' fill='none' fill-rule='evenodd' stroke='red' stroke-linecap='square' stroke-width='1.5'/%3E%3C/svg%3E");
-
         content: "+";
         background-image: none;
         height: 16px;
@@ -204,7 +200,6 @@
     // Featured badge
     // Can't seem to get this one working. The fill attribute doesn't seem to work correctly here?
     .tribe-common-svgicon--featured {
-        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='20' xmlns='http:…3E%3Cpath d='M0 0h16v20l-7.902-5.122L0 20z' fill='%23334aff'/%3E%3C/svg%3E");
         display: none;
     }
 
@@ -319,6 +314,6 @@
 .tribe-events .tribe-events-c-search__input-control--keyword .tribe-events-c-search__input:focus {
     background-repeat: no-repeat;
 
-    // prevent tribe branding color search icon when field is focused. How can we change the color here with a var?
-    background-image: url( "data:image/svg+xml;charset=utf-8,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 18.711l-6.044-6.044a7.782 7.782 0 0 0 1.688-4.845c0-2.089-.822-4.044-2.288-5.533C11.866.822 9.91 0 7.822 0S3.778.822 2.29 2.289A7.801 7.801 0 0 0 0 7.822c0 2.09.822 4.045 2.289 5.534a7.801 7.801 0 0 0 5.533 2.288c1.778 0 3.467-.6 4.845-1.688L18.71 20 20 18.711zM3.578 12.067c-2.334-2.334-2.334-6.156 0-8.49a5.968 5.968 0 0 1 4.244-1.755c1.6 0 3.111.622 4.245 1.756 2.333 2.333 2.333 6.155 0 8.489a5.968 5.968 0 0 1-4.245 1.755c-1.6 0-3.11-.622-4.244-1.755z' fill='%235D5D5D'/%3E%3C/svg%3E" );
+    // // prevent tribe branding color search icon when field is focused. How can we change the color here with a var?
+    // background-image: url( "data:image/svg+xml;charset=utf-8,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 18.711l-6.044-6.044a7.782 7.782 0 0 0 1.688-4.845c0-2.089-.822-4.044-2.288-5.533C11.866.822 9.91 0 7.822 0S3.778.822 2.29 2.289A7.801 7.801 0 0 0 0 7.822c0 2.09.822 4.045 2.289 5.534a7.801 7.801 0 0 0 5.533 2.288c1.778 0 3.467-.6 4.845-1.688L18.71 20 20 18.711zM3.578 12.067c-2.334-2.334-2.334-6.156 0-8.49a5.968 5.968 0 0 1 4.244-1.755c1.6 0 3.111.622 4.245 1.756 2.333 2.333 2.333 6.155 0 8.489a5.968 5.968 0 0 1-4.245 1.755c-1.6 0-3.11-.622-4.244-1.755z' fill='%235D5D5D'/%3E%3C/svg%3E" );
 }

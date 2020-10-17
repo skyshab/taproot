@@ -31,7 +31,7 @@ class Provider extends ServiceProvider {
     public function register() {
 
         // Bind a single instance of our hooks class.
-        $this->app->singleton( 'theme/hooks', Hooks::class );;
+        $this->app->singleton( 'theme/hooks', Hooks::class );
 
         // Bind theme stylesheet handle
         $this->app->instance( 'styles/handle', 'taproot-screen' );

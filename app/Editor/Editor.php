@@ -118,7 +118,7 @@ class Editor implements Bootable {
 
         $data = apply_filters( 'taproot/editor-data', [] );
         return sprintf( 'var taprootEditorData = %s;', wp_json_encode( $data ) );
-    }
+    }  
 
     /**
      * Register post meta fields for the editor sidebar
@@ -132,91 +132,135 @@ class Editor implements Bootable {
             'show_in_rest' => true,
             'single' => true,
             'type' => 'string',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }            
         ]);
 
         register_meta( 'post', '_taproot_post_title_hide', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'number',
-            'default' => 1
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }            
         ]);
 
         register_meta( 'post', '_taproot_post_featured_image_hide', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'number',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
         ]);
 
         register_meta( 'post', '_taproot_post_content_layout', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'string',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
         ]);
 
         register_meta( 'post', '_taproot_disable_main_top_padding', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'number',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
         ]);
 
         register_meta( 'post', '_taproot_disable_main_bottom_padding', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'number',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
         ]);
 
         register_meta( 'post', '_taproot_header_image_type', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'string',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
         ]);
 
         register_meta( 'post', '_taproot_header_image', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'string',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
         ]);
 
         register_meta( 'post', '_taproot_header_overlay_type', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'string',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
         ]);
 
         register_meta( 'post', '_taproot_header_overlay_color', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'string',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
         ]);
 
         register_meta( 'post', '_taproot_header_overlay_color_name', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'string',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
         ]);
 
         register_meta( 'post', '_taproot_header_overlay_opacity', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'number',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
         ]);
 
         register_meta( 'post', '_taproot_header_text_color', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'string',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
         ]);
 
         register_meta( 'post', '_taproot_header_height', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'number',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
         ]);
 
         register_meta( 'post', '_taproot_header_display_title', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'number',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
         ]);
     }
 

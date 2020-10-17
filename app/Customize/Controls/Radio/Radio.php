@@ -135,7 +135,7 @@ abstract class Radio {
             'priority'  => $this->priority,
             'devices'   => $this->devices,
             'choices'   => $this->get_choices(),
-            'label'     => esc_html__($this->label, 'taproot'),
+            'label'     => $this->label,
         ]));
     }
 }

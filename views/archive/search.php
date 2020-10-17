@@ -6,12 +6,13 @@
 
     <?php if ( have_posts() ) : ?>
         <div <?php Hybrid\Attr\display( 'archive__entries', 'search' ) ?>>
-
             <?php while ( have_posts() ) : the_post(); ?>
                 <?php $engine->display( 'entry', 'search' ) ?>
             <?php endwhile ?>
-
         </div>
+    <?php else: ?>
+        <p><?php esc_html_e( 'No results found. Search again?', 'taproot' ) ?></p>   
+        <?php get_search_form() ?>           
     <?php endif ?>
 
     <footer <?php Hybrid\Attr\display( 'archive__footer', 'search' ) ?> >

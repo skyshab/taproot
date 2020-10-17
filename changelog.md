@@ -1,14 +1,22 @@
 # Change Log
 
 = 2.0.0 =
-* 12/28/19
+* 10/17/20
 
 ## Breaking Changes
 
-This release contains breaking changes, and may require reconfiguring some customizer settings.
+This release contains breaking changes, and may require reconfiguring the customizer or single post settings.
 
-* New - Refactored theme customizer functionality
 * New - Added per post type customizer controls/styles
+* New - Additional options for the content layout
+* New - Added support for responsive preview styles in the block editor
+* New - Added template support for WooCommerce
+* New - Added template support for the Events Calendar
+* General - Refactored app structure
+* General - Refactored theme customizer functionality
+* Genearl - Increased minimum supported PHP version to 7.0
+* General - Improved breadcrumbs support
+* Fix - Numerous bug fixes
 
 = 1.4.0 =
 * 08/28/19

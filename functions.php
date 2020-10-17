@@ -15,7 +15,7 @@
 # Compatibility check for WP and PHP.
 # ------------------------------------------------------------------------------
 
-if ( version_compare( $GLOBALS['wp_version'], '5.0.0', '<' ) || version_compare( PHP_VERSION, '5.6', '<' ) ) {
+if ( version_compare( $GLOBALS['wp_version'], '5.0.0', '<' ) || version_compare( PHP_VERSION, '7.0', '<' ) ) {
     require_once( get_parent_theme_file_path( 'compat.php' ) );
     return;
 }

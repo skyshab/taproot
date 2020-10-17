@@ -150,9 +150,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * Navigation Menu Interactions
  */
-var TaprootFooter =
-/*#__PURE__*/
-function () {
+var TaprootFooter = /*#__PURE__*/function () {
   /**
    * Initiate class
    */
@@ -254,9 +252,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * Fixed Header Class
  */
-var TaprootHeader =
-/*#__PURE__*/
-function () {
+var TaprootHeader = /*#__PURE__*/function () {
   /**
    * Initiate class
    */
@@ -663,9 +659,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * Navigation Menu Interactions
  */
-var NavMenus =
-/*#__PURE__*/
-function () {
+var NavMenus = /*#__PURE__*/function () {
   /**
    * Initiate class
    */

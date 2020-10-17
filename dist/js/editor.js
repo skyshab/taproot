@@ -147,14 +147,14 @@ function ColorPickerControlEdit(_ref) {
   var colorObject = wp.blockEditor.getColorObjectByColorValue(colors, value);
   var colorName = colorObject && colorObject.name;
   var ariaLabel = sprintf(colorIndicatorAriaLabel, label.toLowerCase(), colorName || value);
-  var labelElement = React.createElement(React.Fragment, null, label, value && React.createElement(ColorIndicator, {
+  var labelElement = /*#__PURE__*/React.createElement(React.Fragment, null, label, value && /*#__PURE__*/React.createElement(ColorIndicator, {
     colorValue: value,
     "aria-label": ariaLabel
   }));
-  return React.createElement(BaseControl, {
+  return /*#__PURE__*/React.createElement(BaseControl, {
     className: "editor-color-palette-control",
     label: labelElement
-  }, React.createElement(ColorPalette, _extends({
+  }, /*#__PURE__*/React.createElement(ColorPalette, _extends({
     className: "editor-color-palette-control__color-palette",
     value: value,
     onChange: onChange
@@ -212,7 +212,7 @@ var ContentLayout = compose(withDispatch(function (dispatch, props) {
     metaFieldValue: select('core/editor').getEditedPostAttribute('meta')[props.fieldName]
   };
 }))(function (props) {
-  return React.createElement(SelectControl, {
+  return /*#__PURE__*/React.createElement(SelectControl, {
     label: __('Content Layout'),
     value: props.metaFieldValue,
     options: [{
@@ -289,7 +289,7 @@ var DisableBottomPadding = compose(withDispatch(function (dispatch, props) {
   };
 }))(function (props) {
   // return the component
-  return React.createElement(ToggleControl, {
+  return /*#__PURE__*/React.createElement(ToggleControl, {
     label: __('Disable Bottom Padding'),
     checked: props.checkboxValue,
     onChange: function onChange(isChecked) {
@@ -348,7 +348,7 @@ var DisableTopPadding = compose(withDispatch(function (dispatch, props) {
   };
 }))(function (props) {
   // return the component
-  return React.createElement(ToggleControl, {
+  return /*#__PURE__*/React.createElement(ToggleControl, {
     label: __('Disable Top Padding'),
     checked: props.checkboxValue,
     onChange: function onChange(isChecked) {
@@ -407,9 +407,9 @@ function HeaderImageEdit(_ref) {
       setHeaderImage = _ref.setHeaderImage,
       setHeaderImageType = _ref.setHeaderImageType;
   // create image select
-  var imageSelect = React.createElement(PostTypeSupportCheck, {
+  var imageSelect = /*#__PURE__*/React.createElement(PostTypeSupportCheck, {
     supportKeys: "thumbnail"
-  }, React.createElement(SelectControl, {
+  }, /*#__PURE__*/React.createElement(SelectControl, {
     label: __('Header Image'),
     value: headerImageType,
     options: [{
@@ -431,7 +431,7 @@ function HeaderImageEdit(_ref) {
   })); // create the button to add an image
 
   var addImage = function addImage(open) {
-    if ('custom' === headerImageType) return React.createElement("button", {
+    if ('custom' === headerImageType) return /*#__PURE__*/React.createElement("button", {
       "class": "components-button is-button is-default",
       style: {
         marginRight: '10px'
@@ -446,12 +446,12 @@ function HeaderImageEdit(_ref) {
   }; // button to clear the saved image value
 
 
-  var imageReset = 'custom' === headerImageType && headerImage ? React.createElement("button", {
+  var imageReset = 'custom' === headerImageType && headerImage ? /*#__PURE__*/React.createElement("button", {
     "class": "components-button is-button is-default",
     onClick: reset
   }, __('Clear')) : null; // return the custom header image picker component
 
-  return React.createElement(MediaUpload, {
+  return /*#__PURE__*/React.createElement(MediaUpload, {
     type: "image",
     label: __('Custom Header Image'),
     value: headerImage,
@@ -462,7 +462,7 @@ function HeaderImageEdit(_ref) {
     },
     render: function render(_ref2) {
       var open = _ref2.open;
-      return [React.createElement(_HeaderPreview__WEBPACK_IMPORTED_MODULE_0__["HeaderPreview"], null), imageSelect, addImage(open), imageReset];
+      return [/*#__PURE__*/React.createElement(_HeaderPreview__WEBPACK_IMPORTED_MODULE_0__["HeaderPreview"], null), imageSelect, addImage(open), imageReset];
     }
   });
 }
@@ -562,7 +562,7 @@ function HeaderOverlayEdit(_ref) {
       updateOverlayType = _ref.updateOverlayType,
       updateOverlayColor = _ref.updateOverlayColor,
       updateOverlayOpacity = _ref.updateOverlayOpacity;
-  return 'none' !== imageType && React.createElement(React.Fragment, null, React.createElement(SelectControl, {
+  return 'none' !== imageType && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SelectControl, {
     label: __('Overlay'),
     value: overlayType,
     options: [{
@@ -578,14 +578,14 @@ function HeaderOverlayEdit(_ref) {
     onChange: function onChange(value) {
       return updateOverlayType(value);
     }
-  }), 'custom' === overlayType && React.createElement(_controls_colorPicker__WEBPACK_IMPORTED_MODULE_0__["ColorPickerControl"], {
+  }), 'custom' === overlayType && /*#__PURE__*/React.createElement(_controls_colorPicker__WEBPACK_IMPORTED_MODULE_0__["ColorPickerControl"], {
     label: __('Overlay Color'),
     value: overlayColor,
     onChange: function onChange(value) {
       return updateOverlayColor(value);
     },
     colors: colors
-  }), 'custom' === overlayType && React.createElement(RangeControl, {
+  }), 'custom' === overlayType && /*#__PURE__*/React.createElement(RangeControl, {
     label: __('Overlay Opacity'),
     value: overlayOpacity,
     onChange: function onChange(value) {
@@ -693,18 +693,18 @@ function HeaderPreviewEdit(_ref) {
       overlayColor = _ref.overlayColor,
       overlayOpacity = _ref.overlayOpacity,
       defaultColor = _ref.defaultColor;
-  return imageSource && React.createElement(React.Fragment, null, React.createElement("div", {
+  return imageSource && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
     className: "taproot-header-image-preview"
-  }, React.createElement("img", {
+  }, /*#__PURE__*/React.createElement("img", {
     src: imageSource,
     "class": "taproot-header-image"
-  }), 'none' !== overlayType && React.createElement("div", {
+  }), 'none' !== overlayType && /*#__PURE__*/React.createElement("div", {
     className: "taproot-overlay",
     style: {
       backgroundColor: overlayColor,
       opacity: overlayOpacity
     }
-  }), React.createElement("p", {
+  }), /*#__PURE__*/React.createElement("p", {
     "class": "taproot-overlay-preview-text",
     style: {
       color: defaultColor
@@ -810,7 +810,7 @@ function HeaderTextColorsEdit(_ref) {
   var colors = _ref.colors,
       headerDefaultColor = _ref.headerDefaultColor,
       updateDefaultColor = _ref.updateDefaultColor;
-  return React.createElement(React.Fragment, null, React.createElement(_controls_colorPicker__WEBPACK_IMPORTED_MODULE_0__["ColorPickerControl"], {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_controls_colorPicker__WEBPACK_IMPORTED_MODULE_0__["ColorPickerControl"], {
     label: __('Header Text Color'),
     value: headerDefaultColor,
     onChange: function onChange(value) {
@@ -892,7 +892,7 @@ var HeaderTitleDisplay = compose(withDispatch(function (dispatch, props) {
   };
 }))(function (props) {
   // return the component
-  return React.createElement(ToggleControl, {
+  return /*#__PURE__*/React.createElement(ToggleControl, {
     label: __('Display title in header'),
     checked: props.checkboxValue,
     onChange: function onChange(isChecked) {
@@ -951,7 +951,7 @@ var HideFeaturedImage = compose(withDispatch(function (dispatch, props) {
   };
 }))(function (props) {
   // return the component
-  return React.createElement(ToggleControl, {
+  return /*#__PURE__*/React.createElement(ToggleControl, {
     label: __('Hide Featured Image'),
     checked: props.checkboxValue,
     onChange: function onChange(isChecked) {
@@ -1010,7 +1010,7 @@ var HidePostTitle = compose(withDispatch(function (dispatch, props) {
   };
 }))(function (props) {
   // return the component
-  return React.createElement(ToggleControl, {
+  return /*#__PURE__*/React.createElement(ToggleControl, {
     label: __('Hide Title'),
     checked: props.checkboxValue,
     onChange: function onChange(isChecked) {
@@ -1065,7 +1065,7 @@ var SidebarLayout = compose(withDispatch(function (dispatch, props) {
     metaFieldValue: select('core/editor').getEditedPostAttribute('meta')[props.fieldName]
   };
 }))(function (props) {
-  return React.createElement(SelectControl, {
+  return /*#__PURE__*/React.createElement(SelectControl, {
     label: __('Sidebar Layout'),
     value: props.metaFieldValue,
     options: [{
@@ -1123,7 +1123,7 @@ var _createSlotFill = createSlotFill('SidebarSlot'),
 
 var SidebarSlot = function SidebarSlot(_ref) {
   var children = _ref.children;
-  return React.createElement(Fill, null, children);
+  return /*#__PURE__*/React.createElement(Fill, null, children);
 };
 
 SidebarSlot.Slot = Slot;
@@ -1191,42 +1191,42 @@ wp.hooks.doAction('taproot-editor-sidebar-slot', _SidebarSlot_js__WEBPACK_IMPORT
 
   registerPlugin('tr-theme-sidebar', {
     render: function render() {
-      return React.createElement(PostTypeSupportCheck, {
+      return /*#__PURE__*/React.createElement(PostTypeSupportCheck, {
         supportKeys: "custom-fields"
-      }, React.createElement(Fragment, null, React.createElement(PluginSidebarMoreMenuItem, {
+      }, /*#__PURE__*/React.createElement(Fragment, null, /*#__PURE__*/React.createElement(PluginSidebarMoreMenuItem, {
         target: "taproot-theme-sidebar",
         icon: "carrot"
-      }, __('Taproot Theme Settings')), React.createElement(PluginSidebar, {
+      }, __('Taproot Theme Settings')), /*#__PURE__*/React.createElement(PluginSidebar, {
         name: "taproot-theme-sidebar",
         className: "taproot-theme-sidebar",
         icon: "carrot",
         title: __('Taproot Page Settings')
-      }, React.createElement(Panel, null, React.createElement(PanelBody, {
+      }, /*#__PURE__*/React.createElement(Panel, null, /*#__PURE__*/React.createElement(PanelBody, {
         title: __('Custom Header'),
         initialOpen: false
-      }, React.createElement(_HeaderImage_js__WEBPACK_IMPORTED_MODULE_1__["HeaderImage"], null), React.createElement(_HeaderOverlay_js__WEBPACK_IMPORTED_MODULE_2__["HeaderOverlay"], null), React.createElement(_HeaderTextColors_js__WEBPACK_IMPORTED_MODULE_3__["HeaderTextColors"], {
+      }, /*#__PURE__*/React.createElement(_HeaderImage_js__WEBPACK_IMPORTED_MODULE_1__["HeaderImage"], null), /*#__PURE__*/React.createElement(_HeaderOverlay_js__WEBPACK_IMPORTED_MODULE_2__["HeaderOverlay"], null), /*#__PURE__*/React.createElement(_HeaderTextColors_js__WEBPACK_IMPORTED_MODULE_3__["HeaderTextColors"], {
         fieldName: "_taproot_header_text_color"
-      }), React.createElement(_HeaderTitleDisplay_js__WEBPACK_IMPORTED_MODULE_8__["HeaderTitleDisplay"], {
+      }), /*#__PURE__*/React.createElement(_HeaderTitleDisplay_js__WEBPACK_IMPORTED_MODULE_8__["HeaderTitleDisplay"], {
         fieldName: "_taproot_header_display_title"
-      })), React.createElement(PanelBody, {
+      })), /*#__PURE__*/React.createElement(PanelBody, {
         title: __('Sidebar'),
         initialOpen: false
-      }, React.createElement(_SidebarLayout_js__WEBPACK_IMPORTED_MODULE_0__["SidebarLayout"], {
+      }, /*#__PURE__*/React.createElement(_SidebarLayout_js__WEBPACK_IMPORTED_MODULE_0__["SidebarLayout"], {
         fieldName: "_taproot_page_layout"
-      }), React.createElement(_SidebarSlot_js__WEBPACK_IMPORTED_MODULE_6__["SidebarSlot"].Slot, null, function (fills) {
-        return React.createElement(React.Fragment, null, fills);
-      })), React.createElement(PanelBody, {
+      }), /*#__PURE__*/React.createElement(_SidebarSlot_js__WEBPACK_IMPORTED_MODULE_6__["SidebarSlot"].Slot, null, function (fills) {
+        return /*#__PURE__*/React.createElement(React.Fragment, null, fills);
+      })), /*#__PURE__*/React.createElement(PanelBody, {
         title: __('Content'),
         initialOpen: false
-      }, React.createElement(_ContentLayout_js__WEBPACK_IMPORTED_MODULE_7__["ContentLayout"], {
+      }, /*#__PURE__*/React.createElement(_ContentLayout_js__WEBPACK_IMPORTED_MODULE_7__["ContentLayout"], {
         fieldName: "_taproot_post_content_layout"
-      }), React.createElement(_HidePostTitle_js__WEBPACK_IMPORTED_MODULE_10__["HidePostTitle"], {
+      }), /*#__PURE__*/React.createElement(_HidePostTitle_js__WEBPACK_IMPORTED_MODULE_10__["HidePostTitle"], {
         fieldName: "_taproot_post_title_hide"
-      }), React.createElement(_HideFeaturedImage_js__WEBPACK_IMPORTED_MODULE_9__["HideFeaturedImage"], {
+      }), /*#__PURE__*/React.createElement(_HideFeaturedImage_js__WEBPACK_IMPORTED_MODULE_9__["HideFeaturedImage"], {
         fieldName: "_taproot_post_featured_image_hide"
-      }), React.createElement(_DisableTopPadding_js__WEBPACK_IMPORTED_MODULE_4__["DisableTopPadding"], {
+      }), /*#__PURE__*/React.createElement(_DisableTopPadding_js__WEBPACK_IMPORTED_MODULE_4__["DisableTopPadding"], {
         fieldName: "_taproot_disable_main_top_padding"
-      }), React.createElement(_DisableBottomPadding_js__WEBPACK_IMPORTED_MODULE_5__["DisableBottomPadding"], {
+      }), /*#__PURE__*/React.createElement(_DisableBottomPadding_js__WEBPACK_IMPORTED_MODULE_5__["DisableBottomPadding"], {
         fieldName: "_taproot_disable_main_bottom_padding"
       }))))));
     }

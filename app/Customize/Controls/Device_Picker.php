@@ -46,26 +46,29 @@ class Device_Picker {
         $current_device = 'desktop';
 
         // if only mobile
-        if( !$devices || empty($devices) ) {
+        if( ! $devices || empty( $devices ) ) {
             return;
         }
 
-        if( in_array('mobile', $devices) && count($devices) <= 1 ) {
+        if( in_array( 'mobile', $devices ) && count( $devices ) <= 1 ) {
             return;
         }
 
         // if desktop device doesn't exist
-        if( !in_array('desktop', $devices) ) {
-            $current_device = end($devices);
+        if( ! in_array( 'desktop', $devices ) ) {
+            $current_device = end( $devices );
         }
 
         // open component
-        $html = sprintf('<span class="device-picker" data-current-device="%s">', esc_attr($current_device) );
+        $html = sprintf( '<span class="device-picker" data-current-device="%s">', esc_attr( $current_device ) );
 
         // get each device
-        foreach( $devices as $device) {
-            $html .= sprintf('<span class="device-picker__device device-picker__device--%1$s" data-device="%1$s">', esc_attr($device) );
-            $html .= sprintf('<span class="screen-reader-text">%s</span>', sprintf( esc_html__( 'Enter %s preview mode', 'taproot' ), $device ));
+        foreach( $devices as $device ) {
+
+            /* translators: the name of the preview device. */
+            $label = sprintf( esc_html__( 'Enter %s preview mode', 'taproot' ), $device );
+            $html .= sprintf( '<span class="device-picker__device device-picker__device--%1$s" data-device="%1$s">', esc_attr( $device ) );
+            $html .= sprintf( '<span class="screen-reader-text">%s</span>', $label );
             $html .= '</span>';
         }
 

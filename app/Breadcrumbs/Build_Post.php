@@ -32,8 +32,12 @@ class Build_Post extends Post {
 	 */
     public function make() {
 
-        // Get the referral URL
-        $referrer = $_SERVER['HTTP_REFERER'];
+        // Get the referral URL, if it exists
+        if( isset( $_SERVER['HTTP_REFERER'] ) ) {
+            $referrer = wp_unslash( filter_input( INPUT_SERVER, 'HTTP_REFERER', FILTER_SANITIZE_STRING ) );
+        } else {
+            return;
+        }
 
         // Extract the slug
         $slug = array_pop( explode( '/', rtrim( $referrer, '/' ) ) );

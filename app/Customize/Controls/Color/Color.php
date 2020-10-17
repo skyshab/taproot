@@ -113,7 +113,7 @@ abstract class Color {
             'settings'      => $this->id,
             'priority'      => $this->priority,
             'hide_alpha'    => $this->hide_alpha,
-            'label'         => esc_html__($this->label, 'taproot'),
+            'label'         => $this->label,
         ]));
     }
 

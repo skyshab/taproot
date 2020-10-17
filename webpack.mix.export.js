@@ -42,7 +42,9 @@ let folders = [
     'resources/js',      // Required for WordPress.org theme review.
     'resources/scss',    // Required for WordPress.org theme review.
     'views',
-    'vendor'
+    'vendor', 
+    'tribe', 
+    'tribe-events'
 ];
 
 // Delete the previous export to start clean.
@@ -72,7 +74,7 @@ mix.then( () => {
     let files = [
         'mix-manifest.json',
         `${exportPath}/vendor/bin`,
-         `${exportPath}/vendor/composer/installers`
+        `${exportPath}/vendor/composer/installers`
     ];
 
     files.forEach( file => {

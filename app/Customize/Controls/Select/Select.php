@@ -141,7 +141,7 @@ abstract class Select {
             'type'      => 'select',
             'section'   => $this->section,
             'settings'  => $this->settings,
-            'label'     => esc_html__($this->label, 'taproot'),
+            'label'     => $this->label,
             'priority'  => $this->priority,
             'devices'   => $this->devices,
             'choices'   => $this->get_choices()

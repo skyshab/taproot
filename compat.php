@@ -62,21 +62,21 @@ add_action( 'template_redirect',  function() {
  */
 function taproot_compatability_message() {
 
-    if ( version_compare( $GLOBALS['wp_version'], '4.9.6', '<' ) ) {
+    if ( version_compare( $GLOBALS['wp_version'], '5.4.0', '<' ) ) {
 
         return sprintf(
             // Translators: 1 is the required WordPress version and 2 is the user's current version.
             __( 'Taproot requires at least WordPress version %1$s. You are running version %2$s. Please upgrade and try again.', 'taproot' ),
-            '4.9.6',
+            '5.4.0',
             $GLOBALS['wp_version']
         );
 
-    } elseif ( version_compare( PHP_VERSION, '5.6', '<' ) ) {
+    } elseif ( version_compare( PHP_VERSION, '7.0', '<' ) ) {
 
         return sprintf(
             // Translators: 1 is the required PHP version and 2 is the user's current version.
             __( 'Taproot requires at least PHP version %1$s. You are running version %2$s. Please upgrade and try again.', 'taproot' ),
-            '5.6',
+            '7.0',
             PHP_VERSION
         );
     }

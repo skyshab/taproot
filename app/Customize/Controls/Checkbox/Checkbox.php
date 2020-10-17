@@ -122,7 +122,7 @@ abstract class Checkbox {
             'settings'  => $this->settings,
             'priority'  => $this->priority,
             'devices'   => $this->devices,
-            'label'     => esc_html__($this->label, 'taproot')
+            'label'     => $this->label
         ]));
     }
 

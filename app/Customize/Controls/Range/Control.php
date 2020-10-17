@@ -178,7 +178,7 @@ class Control extends WP_Customize_Control {
             <select class="taproot-unit" data-reset_value="<?php echo esc_attr( $default_unit ); ?>" <?php echo esc_attr( $disabled ) ?> >
                 <?php foreach( $attributes as $unit => $atts ) {
                     $unit_name = ( 'unitless' === $unit ) ? '' : $unit;
-                    printf( '<option value="%s" %s %s>%s</option>', $unit, selected($unit_value, $unit, false), $this->get_attributes( $atts ), $unit_name );
+                    printf( '<option value="%s" %s %s>%s</option>', esc_attr( $unit ), selected($unit_value, $unit, false), $this->get_attributes( $atts ), esc_attr( $unit_name ) );
                 } ?>
             </select>
             <input type="hidden" class="taproot-range-value" <?php $this->input_attrs(); ?> value="<?php echo esc_attr( $this->value($setting_id) ); ?>" <?php $this->link($setting_id); ?> />
