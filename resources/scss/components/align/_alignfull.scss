@@ -25,12 +25,17 @@
     }
 
     @include screen('mobile') {
-        padding-left: var( --layout-spacing );
-        padding-right: var( --layout-spacing );
+        // padding-left: var( --layout-spacing );
+        // padding-right: var( --layout-spacing );
     }
 
     &.has-background {
 
+        @include screen('mobile') {
+            padding-left: var( --layout-spacing );
+            padding-right: var( --layout-spacing );
+        }
+    
         @include screen('tablet-and-under') {
             .app-main--has-sidebar & {
                 padding: var( --layout-spacing );
@@ -65,7 +70,9 @@
     // No Sidebar Layout
     &--no-sidebar {
 
-        @include alignfull-spacing-styles();
+        @include screen('tablet-and-under') {
+            @include alignfull-spacing-styles();
+        }
 
         @include screen('tablet-and-up') {
             @include alignfull-content-styles();
