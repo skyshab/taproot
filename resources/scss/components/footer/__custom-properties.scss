@@ -1,0 +1,37 @@
+////
+/// Component Custom Properties
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+:root {
+
+    // Colors
+    --footer--background-color: #232323;
+    --footer--text-color: #ffffff;
+    --footer--link-color--hover: var( --footer--text-color );
+
+    // Mobile/default
+    --footer--padding: 2rem;
+    --footer--widgets--layout: 100%;
+    --footer--widgets--gutter: 1em;
+    --footer--widgets--font-size: 16px;
+    --footer--widgets--line-height: 1.4;
+    --footer--widgets--title--font-size: 1.2em;
+    --footer--widgets--title--line-height: 1.2;
+
+    // Tablet
+    @include screen('tablet') {
+        --footer--widgets--layout: repeat(2, 1fr);
+        --footer--widgets--gutter: 1.5em;
+    }
+
+    // Desktop
+    @include screen('desktop') {
+        --footer--widgets--layout: repeat(3, 1fr);
+        --footer--widgets--gutter: 2em;
+    }
+}
+

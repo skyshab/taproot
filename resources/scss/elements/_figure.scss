@@ -1,0 +1,13 @@
+////
+/// Figure element.
+///
+/// @group  Elements
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+figure {
+    max-width: 100%;
+    margin: 0;
+    @extend .has-block-spacing;
+}

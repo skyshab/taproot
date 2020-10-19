@@ -1,18 +1,22 @@
 # Change Log
 
-= 1.4.2 =
-* 10/23/19
-* Fix - Namespacing issue
-* Fix - Custom template name collision
-* Fix - Post meta template error
+= 2.0.0 =
+* 10/17/20
 
-= 1.4.1 =
-* 10/19/19
-* Fix - Javascript errors in customizer in WP 5.3
-* New - Added accent contrast color to sidebars
-* New - Added support for inner container to cover block styles
-* New - Added slot to editor panel for plugin support
-* General - Misc widget style tweaks
+## Breaking Changes
+
+This release contains breaking changes, and may require reconfiguring the customizer or single post settings.
+
+* New - Added per post type customizer controls/styles
+* New - Additional options for the content layout
+* New - Added support for responsive preview styles in the block editor
+* New - Added template support for WooCommerce
+* New - Added template support for the Events Calendar
+* General - Refactored app structure
+* General - Refactored theme customizer functionality
+* Genearl - Increased minimum supported PHP version to 7.0
+* General - Improved breadcrumbs support
+* Fix - Numerous bug fixes
 
 = 1.4.0 =
 * 08/28/19
@@ -52,7 +56,6 @@
 * General - Improved widget styles for calendar and media widgets
 * General - Moved Color controls in Customizer
 * General - Changed default mobile nav types
-
 
 = 1.1.1 =
 * 04/28/19
@@ -149,9 +152,8 @@
 
 = 0.8.1 =
 * 08/01/17
-* Lots of changes.
+* Various changes.
 
 = 0.8.0 =
 * 02/01/17
 * Initial release in this format.
-

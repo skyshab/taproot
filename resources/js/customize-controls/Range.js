@@ -5,7 +5,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
+ * @copyright 2020 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
 
@@ -21,7 +21,7 @@ class TaprootRange {
 
         this.devicePicker = control.querySelector( '.device-picker' );
         this.devices = control.querySelectorAll( '.device-picker__device' );
-        this.controls = control.querySelectorAll( '.device-group__item' );
+        this.controls = control.querySelectorAll( '.customize-control-taproot-range__wrapper' );
 
         // initiate handlers
         this.controls.forEach( control => {
@@ -103,6 +103,8 @@ class TaprootRange {
         if (Math.floor(value) == value) {
             return 0;
         }
+
+        // There's an error here when unitless and no default?
         return value.toString().split('.')[1].length || 0;
     }
 
@@ -184,8 +186,8 @@ class TaprootRange {
 /**
  * Initiate Range
  */
-wp.customize.controlConstructor['range'] = wp.customize.Control.extend( {
-	ready: function() {
+wp.customize.controlConstructor['taproot-range'] = wp.customize.Control.extend( {
+    ready: function() {
         let range = new TaprootRange( this );
-	}
+    }
 });

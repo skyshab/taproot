@@ -1,0 +1,26 @@
+////
+/// Pre
+///
+/// Base styles for the pre element
+///
+/// @group  Elements
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+pre {
+    @extend .has-block-spacing;
+
+    max-width: 100%;
+    overflow: auto;
+    font-size: 0.862em;
+    font-family: monospace;
+
+    & > :first-child {
+        margin-top: 0;
+    }
+
+    & > :last-child {
+        margin-bottom: 0;
+    }
+}

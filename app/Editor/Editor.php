@@ -15,9 +15,8 @@ namespace Taproot\Editor;
 
 use Hybrid\Contracts\Bootable;
 use Rootstrap\Styles\Styles;
-use function Taproot\asset;
-use function Taproot\Customize\theme_mod;
-
+use Taproot\Tools\Mod;
+use function Taproot\Tools\asset;
 
 /**
  * Handles block editor functionality
@@ -27,19 +26,18 @@ use function Taproot\Customize\theme_mod;
  */
 class Editor implements Bootable {
 
-
-	/**
-	 * Adds actions on the appropriate customize action hooks.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return void
-	 */
-	public function boot() {
-        add_action( 'enqueue_block_editor_assets', [ $this, 'assets' ] );
-        add_action( 'init', [ $this, 'register_post_meta' ] );
+    /**
+     * Adds actions on the appropriate customize action hooks.
+     *
+     * @since  1.0.0
+     * @access public
+     * @return void
+     */
+    public function boot() {
+        add_action( 'enqueue_block_editor_assets',  [ $this, 'assets' ] );
+        add_action( 'init',                         [ $this, 'register_post_meta' ] );
+        add_action( 'after_setup_theme',            [ $this, 'setup' ], 5 );
     }
-
 
     /**
      *  Enqueue Editor Assets
@@ -65,22 +63,20 @@ class Editor implements Bootable {
         wp_register_style( 'wp-block-library-theme', '' );
 
         // Google Fonts
-        if( $google_fonts = theme_mod( 'taproot-google-fonts' ) ) {
+        if( $google_fonts = Mod::get( 'taproot-google-fonts' ) ) {
             $google_link = sprintf( '//fonts.googleapis.com/css?family=%s', esc_attr( $google_fonts ) );
             wp_enqueue_style('taproot-google-fonts', esc_url( $google_link ) );
         }
 
         // Register Sidebar Panel Scripts
         wp_enqueue_script(
-            'taproot-editor-sidebar-js',
+            'taproot-editor',
             asset( 'js/editor.js' ),
             array( 'wp-plugins', 'wp-edit-post', 'wp-element', 'wp-components', 'wp-data', 'wp-editor' ),
         false, true);
 
-        wp_add_inline_script( 'taproot-editor-sidebar-js', $this->editorData() );
-
+        wp_add_inline_script( 'taproot-editor', $this->editorData() );
     }
-
 
     /**
      * Get styles and vars for editor
@@ -93,22 +89,24 @@ class Editor implements Bootable {
         $styles = new Styles();
 
         // add screen
-        $styles->add_screen( 'editor-tablet', [
+        $styles->addScreen( 'editor-tablet', [
             'min' => '768px'
         ]);
 
         // add screen
-        $styles->add_screen( 'editor-desktop', [
+        $styles->addScreen( 'editor-desktop', [
             'min' => '960px'
         ]);
 
-        // get the style files
-        include_once 'styles/styles.php';
+        // Action to add editor styles
+        do_action( 'taproot/editor/styles', $styles );
+
+        // Add internal styles
+        $this->styles($styles);
 
         // generate and return CSS
-        return $styles->get_styles();
+        return $styles->getStyles();
     }
-
 
     /**
      * Get default header image data
@@ -118,39 +116,9 @@ class Editor implements Bootable {
      */
     public function editorData() {
 
-        if( theme_mod('header--hero--default-color', true) ) {
-            $heroDefaultColor = theme_mod('header--hero--default-color', true);
-        }
-        elseif( theme_mod('header--styles--default-color', true) ) {
-            $heroDefaultColor = theme_mod('header--styles--default-color', true);
-        }
-        else {
-            $heroDefaultColor = "#ffffff";
-        }
-
-
-        $header_image = theme_mod('header_image');
-        if ('remove-header' === $header_image ) {
-            $header_image = false;
-        }
-        elseif( ! $header_image ) {
-            $header_image = get_parent_theme_file_uri( '/dist/images/header.jpg');
-        }
-
-
-        $data = [
-            "headerImage" => $header_image,
-            "headerOverlayColor" => get_theme_mod('header--hero--overlay-color', theme_mod('colors--theme--accent', true) ),
-            "headerOverlayOpacity" => theme_mod('header--hero--overlay-opacity', true),
-            "headerHeroDefaultColor" => $heroDefaultColor,
-            "headerHeroHoverColor" => theme_mod('header--hero--default-color--hover', true),
-        ];
-
-        $data = apply_filters('taproot/editor-data', $data);
-
-        return sprintf( 'var taprootEditorData = %s;', wp_json_encode($data) );
-    }
-
+        $data = apply_filters( 'taproot/editor-data', [] );
+        return sprintf( 'var taprootEditorData = %s;', wp_json_encode( $data ) );
+    }  
 
     /**
      * Register post meta fields for the editor sidebar
@@ -160,72 +128,190 @@ class Editor implements Bootable {
      */
     public function register_post_meta() {
 
-        register_meta( 'post', 'taproot_page_layout', [
+        register_meta( 'post', '_taproot_page_layout', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'string',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }            
         ]);
 
-        register_meta( 'post', 'taproot_post_title_display', [
-            'show_in_rest' => true,
-            'single' => true,
-            'type' => 'string',
-        ]);
-
-        register_meta( 'post', 'taproot_custom_header_image_type', [
-            'show_in_rest' => true,
-            'single' => true,
-            'type' => 'string',
-        ]);
-
-        register_meta( 'post', 'taproot_custom_header_image', [
-            'show_in_rest' => true,
-            'single' => true,
-            'type' => 'string',
-        ]);
-
-        register_meta( 'post', 'taprooot_hero_overlay_type', [
-            'show_in_rest' => true,
-            'single' => true,
-            'type' => 'string',
-        ]);
-
-        register_meta( 'post', 'taprooot_hero_overlay_color', [
-            'show_in_rest' => true,
-            'single' => true,
-            'type' => 'string',
-        ]);
-
-        register_meta( 'post', 'taprooot_hero_overlay_color_name', [
-            'show_in_rest' => true,
-            'single' => true,
-            'type' => 'string',
-        ]);
-
-        register_meta( 'post', 'taprooot_hero_overlay_opacity', [
+        register_meta( 'post', '_taproot_post_title_hide', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'number',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }            
         ]);
 
-        register_meta( 'post', 'taprooot_hero_default_color', [
-            'show_in_rest' => true,
-            'single' => true,
-            'type' => 'string',
-        ]);
-
-        register_meta( 'post', 'taprooot_hero_default_hover_color', [
-            'show_in_rest' => true,
-            'single' => true,
-            'type' => 'string',
-        ]);
-
-        register_meta( 'post', 'taprooot_hero_height', [
+        register_meta( 'post', '_taproot_post_featured_image_hide', [
             'show_in_rest' => true,
             'single' => true,
             'type' => 'number',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
         ]);
 
+        register_meta( 'post', '_taproot_post_content_layout', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'string',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
+        ]);
+
+        register_meta( 'post', '_taproot_disable_main_top_padding', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'number',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
+        ]);
+
+        register_meta( 'post', '_taproot_disable_main_bottom_padding', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'number',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
+        ]);
+
+        register_meta( 'post', '_taproot_header_image_type', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'string',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
+        ]);
+
+        register_meta( 'post', '_taproot_header_image', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'string',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
+        ]);
+
+        register_meta( 'post', '_taproot_header_overlay_type', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'string',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
+        ]);
+
+        register_meta( 'post', '_taproot_header_overlay_color', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'string',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
+        ]);
+
+        register_meta( 'post', '_taproot_header_overlay_color_name', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'string',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
+        ]);
+
+        register_meta( 'post', '_taproot_header_overlay_opacity', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'number',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
+        ]);
+
+        register_meta( 'post', '_taproot_header_text_color', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'string',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
+        ]);
+
+        register_meta( 'post', '_taproot_header_height', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'number',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
+        ]);
+
+        register_meta( 'post', '_taproot_header_display_title', [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'number',
+            'auth_callback' => function() {
+                return current_user_can( 'edit_posts' );
+            }              
+        ]);
     }
 
+    /**
+     * Get Singular styles
+     *
+     * @since 1.4.0
+     */
+    public function styles( $styles ) {
+
+        // Custom Property: Default Header Image Header Color
+        $styles->customProperty([
+            'name' => 'header--image--text-color',
+            'value' => get_post_meta( get_the_ID(), '_taproot_header_text_color', true ),
+        ]);
+    }
+
+    /**
+     * Setup
+     *
+     * @since 1.4.0
+     */
+    public function setup() {
+
+        // Editor block font sizes. These font sizes are also defined in the
+        // `resources/scss/settings/_fonts.scss` file.
+        add_theme_support( 'editor-font-sizes', [
+            [
+                'name'      => __( 'Small', 'taproot' ),
+                'shortName' => __( 'S', 'taproot' ),
+                'size'      => 14,
+                'slug'      => 'small'
+            ],
+            [
+                'name'      => __( 'Regular', 'taproot' ),
+                'shortName' => __( 'M', 'taproot' ),
+                'size'      => 16,
+                'slug'      => 'regular'
+            ],
+            [
+                'name'      => __( 'Large', 'taproot' ),
+                'shortName' => __( 'L', 'taproot' ),
+                'size'      => 23,
+                'slug'      => 'large'
+            ],
+            [
+                'name'      => __( 'Larger', 'taproot' ),
+                'shortName' => __( 'XL', 'taproot' ),
+                'size'      => 32,
+                'slug'      => 'larger'
+            ]
+        ] );
+    }
 }

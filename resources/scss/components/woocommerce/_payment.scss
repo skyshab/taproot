@@ -1,0 +1,33 @@
+////
+/// WooCommerce payment box styles.
+///
+/// @group  woocommerce
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+#add_payment_method, .woocommerce-cart, .woocommerce-checkout {
+
+    // payment wrapper
+    #payment {
+
+        background: var(--colors--meta-light);
+        border-radius: 0;
+
+        // payment box
+        div.payment_box {
+            border-radius: 0;
+            background-color: var(--colors--meta-medium);
+
+            // payment box pointer color
+            &::before {
+                border-bottom-color: var(--colors--meta-medium);
+            }
+        }
+
+        // payment box separator
+        ul.payment_methods {
+            border-bottom-color:  var(--colors--meta-medium);
+        }
+    }
+}

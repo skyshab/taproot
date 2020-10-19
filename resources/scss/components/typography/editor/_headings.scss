@@ -1,0 +1,148 @@
+////
+/// Component: Typography
+///
+/// @group  Components\Typography
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.editor-styles-wrapper {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+
+       &.wp-block {
+           font-weight: normal;
+           color:          var(--typography--headings--text-color);
+           font-family:    var(--typography--headings--font-family);
+       }
+    }
+
+    h1,
+    h2,
+    h3 {
+        &.wp-block {
+            margin-top:     var( --block-spacing );
+            margin-bottom:  var( --block-spacing );
+        }
+    }
+
+    h5,
+    h6 {
+        &.wp-block {
+            margin-top:     1em;
+            margin-bottom:  1em;
+        }
+    }
+
+
+
+    h1.wp-block {
+        font-size:      var(--typography--h1--font-size);
+        line-height:    var(--typography--h1--line-height);
+    }
+
+    h2.wp-block {
+        font-size:      var(--typography--h2--font-size);
+        line-height:    var(--typography--h2--line-height);
+    }
+
+    h3.wp-block {
+        font-size:      var(--typography--h3--font-size);
+        line-height:    var(--typography--h3--line-height);
+    }
+
+    h4.wp-block {
+        font-size:      var(--typography--h4--font-size);
+        line-height:    var(--typography--h4--line-height);
+    }
+
+    h5.wp-block {
+        font-size:      var(--typography--h5--font-size);
+        line-height:    var(--typography--h5--line-height);
+    }
+
+    h6.wp-block {
+        font-size:      var(--typography--h6--font-size);
+        line-height:    var(--typography--h6--line-height);
+    }
+}
+
+
+// editor tablet
+@include screen( 'editor-tablet' ) {
+
+    .editor-styles-wrapper {
+
+        h1.wp-block {
+            font-size:      var(--typography--h1--font-size--tablet);
+            line-height:    var(--typography--h1--line-height--tablet);
+        }
+
+        h2.wp-block {
+            font-size:      var(--typography--h2--font-size--tablet);
+            line-height:    var(--typography--h2--line-height--tablet);
+        }
+
+        h3.wp-block {
+            font-size:      var(--typography--h3--font-size--tablet);
+            line-height:    var(--typography--h3--line-height--tablet);
+        }
+
+        h4.wp-block {
+            font-size:      var(--typography--h4--font-size--tablet);
+            line-height:    var(--typography--h4--line-height--tablet);
+        }
+
+        h5.wp-block {
+            font-size:      var(--typography--h5--font-size--tablet);
+            line-height:    var(--typography--h5--line-height--tablet);
+        }
+
+        h6.wp-block {
+            font-size:      var(--typography--h6--font-size--tablet);
+            line-height:    var(--typography--h6--line-height--tablet);
+        }
+    }
+};
+
+// editor desktop
+@include screen( 'editor-desktop' ) {
+
+    .editor-styles-wrapper {
+
+        h1.wp-block {
+            font-size:      var(--typography--h1--font-size--desktop);
+            line-height:    var(--typography--h1--line-height--desktop);
+        }
+
+        h2.wp-block {
+            font-size:      var(--typography--h2--font-size--desktop);
+            line-height:    var(--typography--h2--line-height--desktop);
+        }
+
+        h3.wp-block {
+            font-size:      var(--typography--h3--font-size--desktop);
+            line-height:    var(--typography--h3--line-height--desktop);
+        }
+
+        h4.wp-block {
+            font-size:      var(--typography--h4--font-size--desktop);
+            line-height:    var(--typography--h4--line-height--desktop);
+        }
+
+        h5.wp-block {
+            font-size:      var(--typography--h5--font-size--desktop);
+            line-height:    var(--typography--h5--line-height--desktop);
+        }
+
+        h6.wp-block {
+            font-size:      var(--typography--h6--font-size--desktop);
+            line-height:    var(--typography--h6--line-height--desktop);
+        }
+    }
+};

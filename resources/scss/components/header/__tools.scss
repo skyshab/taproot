@@ -1,0 +1,31 @@
+////
+/// Component Tools.
+///
+/// This file contains helper mixins to use in the component styles.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+// get styles for branding layout
+@mixin branding_styles( $type: 'horizontal' ) {
+
+    @if ( $type == 'horizontal' ) {
+        // grid-template-rows: 1fr 1fr;
+        grid-template-columns: fit-content(100%) auto;
+        grid-template-areas: "logo content";
+        justify-items: start;
+    }
+
+    @if ( $type == 'vertical' ) {
+        grid-template-rows: auto;
+        grid-template-columns: auto;
+        grid-template-areas: "logo" "content";
+        justify-items: center;
+
+        &__content {
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+////
+/// Site Background Color
+///
+/// @group  Components\Background
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.archive {
+
+    &__title {
+        margin-top: 0;
+        font-size:          var( --archive--title--font-size );
+        line-height:        var( --archive--title--line-height );
+        color:              var( --archive--title--text-color );
+    }
+
+    &__description {
+
+        > :first-child {
+            margin-top: 0;
+        }
+    }
+
+    &--left, &--center {
+        max-width: var(--content-width);
+    }
+
+    &--center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+

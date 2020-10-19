@@ -1,0 +1,31 @@
+////
+/// Component Custom Properties
+///
+/// @group  Components/Buttons
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+:root {
+
+    // Colors
+    --sidebar--background-color:    var( --colors--meta-light );
+    --sidebar--text-color:          var( --colors--text );
+    --sidebar--accent-color:        var( --colors--accent );
+    --sidebar--accent-contrast:     var( --colors--accent-contrast );
+    --sidebar--link-color:          var( --sidebar--accent-color );
+    --sidebar--link-color--hover:   var( --sidebar--accent-color );
+
+    // Element size and spacing
+    --sidebar--min-width:           250px;
+    --sidebar--font-size:           var( --typography--body--font-size );
+    --sidebar--line-height:         var( --typography--body--line-height );
+    --sidebar--text-spacing:        var( --text-spacing );
+
+    // Desktop size and spacing
+    @include screen('desktop') {
+        --sidebar--font-size:       16px;
+        --sidebar--line-height:     1.5;
+        --sidebar--text-spacing:   1.5em;
+    }
+}

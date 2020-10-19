@@ -1,0 +1,36 @@
+////
+/// Fixed header styles.
+///
+/// @group  Components\Header
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.app-header {
+
+    @include screen('desktop') {
+
+        // Fixed header styles
+        &--fixed {
+
+            position: fixed;
+            width: 100%;
+            z-index: 2;
+            top: 0;
+            transform: translateZ(0);
+        }
+
+        // Sticky header styles
+        &.fixed-type--sticky {
+
+            transition: background 0.5s ease-in-out;
+            position: sticky;
+            z-index: 2;
+            top: 0;
+
+            .admin-bar & {
+                top: 32px;
+            }
+        }
+    }
+}

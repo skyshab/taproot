@@ -1,0 +1,71 @@
+////
+/// Buttons Styles
+///
+/// @group  Components\Buttons
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+
+// Buttons Group
+.wp-block-buttons {
+
+    &.aligncenter {
+        text-align: center;
+    }
+
+    margin: var( --text-spacing ) 0;
+}
+
+// Individual buttons
+.wp-block-button {
+
+    display: inline-block;
+
+    + .wp-block-button {
+        margin-left: 1em;
+    }
+
+    &__link {
+
+        display: inline-block;
+        box-shadow: none;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        white-space: normal;
+        word-break: break-all;
+        border: none;
+        transition: all 0.4s ease-in-out;
+
+        background-color:       var( --buttons--background-color );
+        color:                  var( --buttons--text-color );
+        font-size:              var( --buttons--font-size );
+        line-height:            var( --buttons--line-height );
+        padding:              0 var( --buttons--padding );
+        border-radius:          var( --buttons--border-radius );
+        font-family:            var( --buttons--font-family );
+
+        &:visited {
+            color:              var( --buttons--text-color );
+        }
+
+        &:hover {
+            text-decoration:    none;
+            background-color:   var( --buttons--hover--background-color );
+            color:              var( --buttons--hover--text-color );
+        }
+
+        .is-style-outline & {
+
+            box-shadow: 0 0 0 4px inset, 0 0 0 9em white inset;
+            color: var( --buttons--background-color );
+
+            &:hover {
+                background-color: var( --buttons--background-color );
+                color: white!important;
+                box-shadow: none;
+            }
+        }
+    }
+}

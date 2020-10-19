@@ -1,0 +1,19 @@
+////
+/// Editor - Verse Block Styles
+///
+/// These styles apply to the verse block only in the editor.
+///
+/// @group  Styles
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+// Import component styles inside the editor styles wrapper
+.editor-styles-wrapper {
+
+    @import 'block';
+
+    .wp-block-verse {
+        @extend .has-block-padding;
+    }
+}

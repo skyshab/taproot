@@ -1,7 +1,7 @@
 ////
 /// Comments component.
 ///
-/// This component wraps the entire comments section.
+/// This component styles the comments interface on single posts.
 ///
 /// @group  Components
 /// @author Sky Shabatura <theme@sky.camp>
@@ -10,29 +10,23 @@
 
 .comments {
 
-	// Header/title for the comments section.
-	&__title {}
+    margin-top: var( --block-spacing );
 
-	// Comments list wrapper.
-	&__list {
+    // Comments list wrapper.
+    &__list {
 
         list-style: none;
         padding: 0;
 
-		// Children lists (note that WP doesn't have a filter -- the
-		// only way to change this class is with a custom Walker).
-		// @link https://core.trac.wordpress.org/ticket/44923
-		.children {
+        // Children lists
+        .children {
             list-style: none;
-            padding-left: var( --typography--body--block-spacing );
+            padding-left: var( --text-spacing );
 
-            // mobile styles 
+            // mobile styles
             @include screen('mobile') {
                 padding-left: 0.62em;
-            }   
+            }
         }
-	}
-
-	// Comments closed message.
-	&__closed {}
+    }
 }

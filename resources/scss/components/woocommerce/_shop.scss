@@ -1,0 +1,32 @@
+////
+/// Shop page styles.
+///
+/// @group  woocommerce
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.woocommerce.archive-product {
+
+    #main {
+
+        // Product entry wrapper
+        .woocommerce-loop-product__link {
+            color: inherit;
+        }
+
+        // Product entry
+        .entry--type-product {
+
+            // Add to cart button
+            .add_to_cart_button {
+                width: 100%;
+            }
+
+            // Product price
+            .price {
+                color: var(--colors--accent);
+            }
+        }
+    }
+}

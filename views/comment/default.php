@@ -13,8 +13,8 @@
                     Hybrid\Comment\render_time()
                 )
             ] ) ?>
-            <?php Hybrid\Comment\display_edit_link( [ 'before' => Taproot\Template\sep() ] ) ?>
-            <?php Hybrid\Comment\display_reply_link( [ 'before' => Taproot\Template\sep() ] ) ?>
+            <?php Hybrid\Comment\display_edit_link( [ 'before' => '<span class="sep">&middot;</span>' ] ) ?>
+            <?php Hybrid\Comment\display_reply_link( [ 'before' => '<span class="sep">&middot;</span>' ] ) ?>
         </header>
 
         <div class="comment__content">
@@ -28,7 +28,7 @@
             <?php endif ?>
 
             <?php comment_text() ?>
-            
+
         </div>
     </div>
 

@@ -1,45 +1,31 @@
 ////
 /// Block imports.
 ///
-/// Styles for individual blocks in the block editor. All of the core WP blocks
-/// are under the `/core` subfolder. Block styles for plugins should be in their
-/// own subfolders.
+/// Front end styles for individual block editor blocks.
 ///
 /// @group  Blocks
 /// @author Sky Shabatura <theme@sky.camp>
 /// @link   https://taproot-theme.com
 ////
 
-
-// Import core blocks.
-@import 'core/group';
-@import 'core/paragraph';
-@import 'core/audio';
-@import 'core/button';
-@import 'core/categories';
-@import 'core/code';
-@import 'core/columns';
-@import 'core/cover-image';
-@import 'core/embed';
-@import 'core/file';
-@import 'core/gallery';
-@import 'core/image';
-@import 'core/latest-posts';
-@import 'core/preformatted';
-@import 'core/pullquote';
-@import 'core/quote';
-@import 'core/separator';
-@import 'core/subhead';
-@import 'core/table';
-@import 'core/verse';
-@import 'core/text-media';
-
-// import custom block styles
-@import 'theme/meta';
-@import 'theme/title';
-@import 'theme/breadcrumbs';
-@import 'theme/postnav';
-
-
-// import global block styles
-@import 'block-styles';
+@import 'group/block';
+@import 'paragraph/block';
+@import 'audio/block';
+@import 'categories/block';
+@import 'code/block';
+@import 'columns/block';
+@import 'cover-image/block';
+@import 'embed/block';
+@import 'file/block';
+@import 'gallery/block';
+@import 'image/block';
+@import 'latest-posts/block';
+@import 'preformatted/block';
+@import 'pullquote/block';
+@import 'quote/block';
+@import 'separator/block';
+@import 'subhead/block';
+@import 'table/block';
+@import 'verse/block';
+@import 'text-media/block';
+@import 'social-links/block';

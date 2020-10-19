@@ -1,0 +1,29 @@
+////
+/// Component: Typography
+///
+/// @group  Components\Typography
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+a {
+    color:          var( --typography--links--color );
+
+    &:visited {
+        color:      var( --typography--links--color--visited );
+    }
+
+    &:hover {
+        color:      var( --typography--links--color--hover );
+    }
+
+    &:active {
+        color:      var( --typography--links--color--active );
+    }
+
+    text-decoration:    none;
+
+    &:hover, &:active {
+        text-decoration: underline;
+    }
+ }

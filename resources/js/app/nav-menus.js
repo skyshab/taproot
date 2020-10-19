@@ -7,7 +7,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
+ * @copyright 2020 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -26,7 +26,6 @@ class NavMenus {
         this.body = document.querySelector('body');
         this.app = document.querySelector('.app');
         this.header = document.querySelector('.app-header');
-        this.isBoxedLayout = this.header.classList.contains('boxed-layout');
         this.hasAdminBar = this.body.classList.contains('admin-bar') ;
         this.scrollElems = document.querySelectorAll('.menu__item--current > a[href*=\\#]');
 

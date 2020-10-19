@@ -1,14 +1,19 @@
 ////
-/// html base styles
+/// HTML element.
 ///
 /// @group  Elements
 /// @author Sky Shabatura <theme@sky.camp>
 /// @link   https://taproot-theme.com
 ////
 
-
 html {
-    background-color: var(--colors--theme--accent);
-    font-size: var( --typography--body--font-size );
-    line-height: var( --typography--body--line-height );
+
+    // use border box by default
+    box-sizing: border-box;
+
+    // default background to white
+    background-color: white;
+
+    // prevent ios from hijacking the font size
+    -webkit-text-size-adjust: 100%;
 }

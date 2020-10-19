@@ -1,0 +1,96 @@
+////
+/// Component styles
+///
+/// @group  Components\Background
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.pagination {
+
+    margin-top:                 var( --block-spacing );
+
+    // The list of items.
+    &__items {
+
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+
+        // if rounded
+        &--rounded {
+
+            .pagination__item {
+                &--dots, &--number, &--current {
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+
+    // Individual items.
+    &__item {
+
+        margin: 0 0.3em;
+        text-decoration: none;
+        height: 2em;
+        text-align: center;
+        color: inherit;
+        transition: all .4s ease-in-out;
+
+        &--prev, &--next {
+
+            .pagination__anchor {
+
+                color:          var( --colors--meta-dark );
+
+                &:hover {
+                    color:      var( --colors--accent );
+                }
+            }
+        }
+
+        &--prev {
+            padding-right: 0.3em;
+        }
+
+        &--next {
+            padding-left: 0.3em;
+        }
+
+        &--dots, &--number, &--current {
+
+            width: 2em;
+
+            .pagination__anchor:hover {
+                text-decoration: none;
+            }
+        }
+
+        &--number, &--dots {
+
+            background-color:   var( --colors--meta-medium );
+
+            .pagination__anchor {
+                color:          var( --colors--accent-contrast );
+            }
+        }
+
+        &--number:hover, &--current {
+            background-color:   var( --colors--accent );
+            color:              var( --colors--accent-contrast );
+        }
+    }
+
+    // The link or span element.
+    &__anchor {
+
+        line-height: 2em;
+
+        &--link {
+            display: block;
+        }
+    }
+}

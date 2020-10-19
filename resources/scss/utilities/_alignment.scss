@@ -14,15 +14,17 @@
 .align {
 
     @media( min-width: 480px ) {
-        &left {
-            float:     left;
-            margin:    0 var( --typography--body--block-spacing ) var( --typography--body--block-spacing ) 0;
+
+        &left, &right {
             max-width: 50%;
         }
+        &left {
+            float: left;
+            margin-right: var( --text-spacing );
+        }
         &right {
-            float:     right;
-            margin:    0 0 var( --typography--body--block-spacing ) var( --typography--body--block-spacing );
-            max-width: 50%;
+            float: right;
+            margin-left: var( --text-spacing );
         }
     }
 
@@ -32,7 +34,6 @@
         clear:        both;
     }
 }
-
 
 // Text alignment classes
 .has-text-align {
@@ -70,5 +71,21 @@
     }
     &--center {
         align-self: center;
+    }
+}
+
+// Grid item alignment
+.is-vertically-aligned {
+
+    &-top {
+        align-items: start;
+    }
+
+    &-center {
+        align-items: center;
+    }
+
+    &-bottom {
+        align-items: end;
     }
 }

@@ -1,0 +1,44 @@
+////
+/// File block.
+///
+/// @group  Blocks
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.wp-block-file {
+
+    @extend .has-block-spacing;
+
+    &.aligncenter {
+        text-align: center;
+    }
+
+    &.alignright {
+        text-align: right;
+    }
+
+    // todo: extend the theme button styles here instead.
+
+    &__button {
+        background:      #000000;
+        color:           #ffffff;
+        padding:         0.5em 1em;
+        text-decoration: none;
+
+        &:hover,
+        &:visited,
+        &:focus,
+        &:active {
+            color:           #ffffff;
+            opacity:         0.85;
+            text-decoration: none;
+        }
+    }
+}
+
+// Give the file block button some spacing to the left if there's another element
+// preceding it.
+* + .wp-block-file__button {
+    margin-left: 0.75em;
+}

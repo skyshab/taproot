@@ -1,0 +1,21 @@
+////
+/// Layout - general
+///
+/// General layout styles for the main and sidebar elements.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+@include screen('desktop') {
+
+    .app-main, .sidebar {
+
+        box-sizing: content-box;
+
+        * {
+            box-sizing: border-box;
+        }
+    }
+}

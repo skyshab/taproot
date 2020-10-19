@@ -1,0 +1,24 @@
+////
+/// Editor - Table Styles
+///
+/// These styles apply to the table block only in the editor.
+///
+/// @group  Styles
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+// Import component styles inside the editor styles wrapper
+.editor-styles-wrapper {
+
+    @import 'block';
+
+    .wp-block-table {
+
+        // we'll use our own table padding and line height in the form
+        &__cell-content {
+            padding: 0;
+            line-height: inherit;
+        }
+    }
+}

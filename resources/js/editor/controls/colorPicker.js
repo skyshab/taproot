@@ -9,43 +9,43 @@ const { __ } = wp.i18n;
 const colorIndicatorAriaLabel = __( '(current %s: %s)' );
 
 export function ColorPickerControlEdit( {
-	colors,
-	disableCustomColors,
-	label,
-	onChange,
-	value,
+    colors,
+    disableCustomColors,
+    label,
+    onChange,
+    value,
 } ) {
-	const colorObject = wp.blockEditor.getColorObjectByColorValue( colors, value );
-	const colorName = colorObject && colorObject.name;
-	const ariaLabel = sprintf( colorIndicatorAriaLabel, label.toLowerCase(), colorName || value );
+    const colorObject = wp.blockEditor.getColorObjectByColorValue( colors, value );
+    const colorName = colorObject && colorObject.name;
+    const ariaLabel = sprintf( colorIndicatorAriaLabel, label.toLowerCase(), colorName || value );
 
-	const labelElement = (
-		<>
-			{ label }
-			{ value && (
-				<ColorIndicator
-					colorValue={ value }
-					aria-label={ ariaLabel }
-				/>
-			) }
-		</>
-	);
+    const labelElement = (
+        <>
+            { label }
+            { value && (
+                <ColorIndicator
+                    colorValue={ value }
+                    aria-label={ ariaLabel }
+                />
+            ) }
+        </>
+    );
 
-	return (
-		<BaseControl
-			className="editor-color-palette-control"
-			label={ labelElement }>
-			<ColorPalette
-				className="editor-color-palette-control__color-palette"
-				value={ value }
-				onChange={ onChange }
-				{ ... { colors, disableCustomColors } }
-			/>
-		</BaseControl>
-	);
+    return (
+        <BaseControl
+            className="editor-color-palette-control"
+            label={ labelElement }>
+            <ColorPalette
+                className="editor-color-palette-control__color-palette"
+                value={ value }
+                onChange={ onChange }
+                { ... { colors, disableCustomColors } }
+            />
+        </BaseControl>
+    );
 }
 
 export const ColorPickerControl = compose( [
-	wp.blockEditor.withColorContext,
-	ifCondition( ( { hasColorsToChoose } ) => hasColorsToChoose ),
+    wp.blockEditor.withColorContext,
+    ifCondition( ( { hasColorsToChoose } ) => hasColorsToChoose ),
 ] )( ColorPickerControlEdit );

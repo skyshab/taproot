@@ -8,13 +8,13 @@
 ?>
 
 <form role="search" method="get" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-	<label>
-		<span class="visuallyhidden"><?php esc_html_e( 'Search for:', 'taproot' ); ?></span>
-		<div class="searchform__inputs">
-			<input type="search" class="searchform__search" placeholder="<?php esc_attr_e( 'Search &hellip;', 'taproot' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
-			<button type="submit" class="searchform__submit">
-                <?php Taproot\Template\Icons\render_location('search-submit', ['icon' => 'search']) ?>
+    <label>
+        <span class="visuallyhidden"><?php esc_html_e( 'Search for:', 'taproot' ); ?></span>
+        <div class="searchform__inputs">
+            <input type="search" class="searchform__search" placeholder="<?php esc_attr_e( 'Search &hellip;', 'taproot' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+            <button type="submit" class="searchform__submit">
+                <?php Hybrid\app('icons')->display( ['icon' => 'search'] ) ?>
             </button>
-		</div>
-	</label>
+        </div>
+    </label>
 </form>

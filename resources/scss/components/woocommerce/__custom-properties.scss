@@ -1,0 +1,81 @@
+////
+/// Component Custom Properties
+///
+/// @group  Components/Buttons
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+:root {
+    --cart-widget--background-color: black;
+    --cart-widget--color: white;
+}
+
+// Header nav
+.menu--header {
+    --cart-widget--background-color:    var(--header--background-color);
+    --cart-widget--color:               var(--navigation--header--color);
+}
+
+// Navbar
+.menu--navbar {
+    --cart-widget--background-color:    var(--navigation--navbar--background-color);
+    --cart-widget--color:               var(--navigation--navbar--color);
+}
+
+// Top nav
+.menu--top {
+    --cart-widget--background-color:    var(--navigation--top--background-color);
+    --cart-widget--color:               var(--navigation--top--color);
+}
+
+// header nav styles
+.menu--header.mobile-at {
+
+    @include screen('mobile') {
+
+        &-always, &-mobile, &-tablet-and-under {
+            --cart-widget--background-color:    var(--navigation--header-mobile--background-color);
+        }
+    }
+
+    @include screen('tablet-and-under') {
+
+        &-always, &-tablet-and-under {
+            --cart-widget--background-color:    var(--navigation--header-mobile--background-color);
+        }
+    }
+
+    @include screen('desktop') {
+
+        &-always {
+            --cart-widget--background-color:    var(--navigation--header-mobile--background-color);
+        }
+    }
+}
+
+
+// navbar styles
+.menu--navbar.mobile-at {
+
+    @include screen('mobile') {
+
+        &-always, &-mobile, &-tablet-and-under {
+            --cart-widget--background-color:    var(--navigation--navbar-mobile--background-color);
+        }
+    }
+
+    @include screen('tablet-and-under') {
+
+        &-always, &-tablet-and-under {
+            --cart-widget--background-color:    var(--navigation--navbar-mobile--background-color);
+        }
+    }
+
+    @include screen('desktop') {
+
+        &-always {
+            --cart-widget--background-color:    var(--navigation--navbar-mobile--background-color);
+        }
+    }
+}

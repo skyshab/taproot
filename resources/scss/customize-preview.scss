@@ -1,0 +1,18 @@
+////
+/// Customize preview stylesheet.
+///
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+// Only show the shortcut edit buttons when hovering the parent component.
+.customize-partial-edit-shortcuts-shown {
+
+    .customize-partial-edit-shortcut-button {
+        display: none;
+    }
+
+    :hover > .customize-partial-edit-shortcut .customize-partial-edit-shortcut-button {
+        display: block;
+    }
+}

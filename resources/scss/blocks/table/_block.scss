@@ -1,0 +1,44 @@
+////
+/// Table block.
+///
+/// @group  Blocks
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.wp-block-table {
+
+    @extend .has-block-spacing;
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid var( --colors--meta-medium );
+    }
+
+    thead {
+        background-color: var( --colors--meta-light );
+    }
+
+    thead, tr:not(:last-child) {
+        border-bottom: 1px solid var( --colors--meta-medium );
+    }
+
+    th, td {
+        padding: 0.4em;
+        border: none;
+        text-align: left;
+
+        &:not(:last-child) {
+            border-right: 1px solid var( --colors--meta-medium );
+        }
+    }
+
+    tr:first-of-type, &.is-style-stripes tr:nth-child( odd ) {
+        background-color: var( --colors--meta-light );
+    }
+
+    tr:first-of-type {
+        font-weight: bold;
+    }
+}

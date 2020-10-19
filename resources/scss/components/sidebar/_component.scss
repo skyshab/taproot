@@ -1,0 +1,63 @@
+////
+/// Layout Component
+///
+/// @group  Components/layout
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.sidebar {
+
+    z-index: 1;
+    position: relative;
+
+    font-size:              var(--sidebar--font-size);
+    line-height:            var(--sidebar--line-height);
+    background-color:       var(--sidebar--background-color);
+    color:                  var(--sidebar--text-color);
+
+    a:link, a:visited {
+        color:              var(--sidebar--link-color);
+    }
+
+    a:hover, a:active {
+        color:              var(--sidebar--link-color--hover);
+    }
+
+    &:before {
+        content: " ";
+        background-color:   var(--sidebar--background-color);
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        top: 0;
+        left: calc( 50% - 50vw );
+        z-index: -1;
+    }
+
+    @include screen('desktop') {
+
+        &--right:before {
+            right: auto;
+            left: 0;
+        }
+
+        &--left:before {
+            right: 0;
+            left: auto;
+        }
+    }
+
+    .widget {
+        margin:             var(--sidebar--text-spacing) auto;
+        max-width:          var(--content-width);
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}

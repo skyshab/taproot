@@ -1,0 +1,92 @@
+////
+/// Block Editor Styles.
+///
+/// Styles for individual blocks within the block editor.
+///
+/// @group  Blocks
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+@import 'group/editor';
+@import 'paragraph/editor';
+@import 'audio/editor';
+@import 'categories/editor';
+@import 'code/editor';
+@import 'columns/editor';
+@import 'cover-image/editor';
+@import 'embed/editor';
+@import 'file/editor';
+@import 'gallery/editor';
+@import 'image/editor';
+@import 'latest-posts/editor';
+@import 'preformatted/editor';
+@import 'pullquote/editor';
+@import 'quote/editor';
+@import 'separator/editor';
+@import 'subhead/editor';
+@import 'table/editor';
+@import 'verse/editor';
+@import 'text-media/editor';
+@import 'social-links/editor';
+
+
+// general block styles
+.editor-styles-wrapper {
+
+    &.edit-post-visual-editor {
+        color:              var( --colors--text );
+    }
+
+    // Base block styles
+    .wp-block  {
+        width:              var(--container-width);
+        max-width:          var(--content-width);
+        font-family:        var(--typography--body--font-family, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif );
+
+        // wide and full block styles
+        &[data-align=full],
+        &[data-align=wide] {
+
+            width: auto;
+
+            .wp-block-image {
+                width: 100%;
+            }
+
+            // force image to fill space
+            img {
+                width: 100%;
+            }
+        }
+
+        // full block styles
+        &[data-align=full] {
+            max-width: none;
+        }
+
+        // wide block styles
+        &[data-align=wide] {
+            max-width: 100%;
+            width: var(--container-width);
+            max-width: var(--container-max-width);
+        }
+    }
+}
+
+// Allow button blocks to be aligned
+.block-editor-inner-blocks {
+    flex: unset;
+}
+
+// allow full blocks to butt up against each other
+.wp-block[data-align=full] {
+
+    > .block-editor-block-list__block {
+        margin-bottom: 0;
+    }
+
+    + .wp-block[data-align=full] > .block-editor-block-list__block {
+        margin-top: 0;
+    }
+}

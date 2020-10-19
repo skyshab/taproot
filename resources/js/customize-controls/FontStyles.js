@@ -5,7 +5,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
+ * @copyright 2020 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
 
@@ -177,7 +177,7 @@ class TaprootFontStyles {
  * Initiate Control
  */
 wp.customize.controlConstructor['taproot-font-styles'] = wp.customize.Control.extend( {
-	ready: function() {
+    ready: function() {
         let fontStyles = new TaprootFontStyles( this );
-	}
+    }
 });

@@ -1,0 +1,20 @@
+////
+/// Elements editor styles
+///
+/// Base element styles to use in the block editor.
+///
+/// @group  Elements
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.editor-styles-wrapper {
+
+    .wp-block  {
+
+        @import 'pre';
+        @import 'paragraph';
+        @import 'lists';
+        @import 'table';
+    }
+}

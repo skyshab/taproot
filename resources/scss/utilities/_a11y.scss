@@ -9,27 +9,27 @@
 // Text only shown to screen readers.
 
 .screen-reader-text, .visuallyhidden {
-	clip:      rect( 1px, 1px, 1px, 1px );
-	clip-path: inset( 50% );
-	position:  absolute;
-	width:     1px;
-	height:    1px;
-	margin:    -1px;
-	overflow:  hidden;
-	padding:   0;
-	word-wrap: normal;
-	border:    none;
+    clip:      rect( 1px, 1px, 1px, 1px );
+    clip-path: inset( 50% );
+    position:  absolute;
+    width:     1px;
+    height:    1px;
+    margin:    -1px;
+    overflow:  hidden;
+    padding:   0;
+    word-wrap: normal;
+    border:    none;
 
-	&:active,
-	&:focus {
-		clip:            auto;
-		clip-path:       none;
-		display:         block;
-		height:          auto;
-		width:           auto;
-		z-index:         100000;
-		text-decoration: none;
-	}
+    &:active,
+    &:focus {
+        clip:            auto;
+        clip-path:       none;
+        display:         block;
+        height:          auto;
+        width:           auto;
+        z-index:         100000;
+        text-decoration: none;
+    }
 }
 
 

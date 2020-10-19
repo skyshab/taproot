@@ -1,0 +1,73 @@
+////
+/// Cover image block.
+///
+/// @group  Blocks
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+// The cover image `<div>` element. The image is added as a background.
+.wp-block-cover {
+
+    position:            relative;
+    background-size:     cover;
+    background-position: 50%;
+    height:              420px;
+    max-height:          100vh;
+    width:               100%;
+    display:             flex;
+    justify-content:     center;
+    align-items:         center;
+
+    @extend .has-block-padding;
+
+    &:not(.alignfull) {
+        @extend .has-block-spacing;
+    }
+
+    // Parallax images should have a fixed background so that the image
+    // stays in place while everything else scrolls.
+    &.has-parallax {
+        background-attachment: fixed;
+    }
+
+    // Background dim.
+    &.has-background-dim::before {
+        content:         "";
+        position:         absolute;
+        top:              0;
+        left:             0;
+        bottom:           0;
+        right:            0;
+    }
+
+    // The background dim can be any number from 10-100. We're just running
+    // a simple loop to add a black background color over the element.
+    @for $dim from 1 through 10 {
+
+        &.has-background-dim-#{ $dim * 10 }::before {
+            background-color: rgba( #000000, $dim * 0.1 );
+        }
+    }
+
+    // Left/Right text content.
+    &.has-left-content {
+        justify-content: flex-start;
+    }
+
+    &.has-right-content {
+        justify-content: flex-end;
+    }
+
+    // Floated left/right element.
+    &.alignleft,
+    &.alignright {
+        max-width: calc( var( --content-width ) / 2 );
+        width:     100%;
+    }
+
+    // Cover container
+    &__inner-container {
+        width: 100%;
+    }
+}

@@ -1,0 +1,66 @@
+////
+/// Cart styles.
+///
+/// @group  woocommerce
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.woocommerce-cart {
+
+    #main {
+
+        // Cart items table
+        .shop_table {
+
+            border-radius: 0;
+            border-color: var(--colors--meta-medium);
+
+            // Coupon code input
+            .coupon {
+
+                display: inline-flex;
+
+                input {
+                    min-width: 150px;
+                }
+            }
+
+            .button {
+                background: var(--colors--meta-medium);
+                border-radius: 0;
+
+                &:hover {
+                    background: var(--colors--meta-dark);
+                }
+            }
+        }
+
+        // Individual cart item
+        .woocommerce-cart-form__cart-item {
+
+            .qty {
+                line-height: 2.25em;
+                padding: 0;
+            }
+
+            a {
+                color: inherit;
+            }
+        }
+
+        // Proceed to checkout button
+        .wc-proceed-to-checkout {
+
+            font-size: 1.2em;
+
+            .button {
+
+                @extend .wp-block-button__link;
+
+                padding: 0.4em;
+                width: 100%;
+            }
+        }
+    }
+}
