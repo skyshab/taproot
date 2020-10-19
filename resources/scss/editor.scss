@@ -1,66 +1,24 @@
 ////
 /// Editor stylesheet.
 ///
-/// This is the primary editor stylesheet. It is used for the WordPress 5.0+
-/// block editor (Gutenberg) and is not intended for older versions of the
-/// WordPress edit screen.
-///
-/// @group  Styles
 /// @author Sky Shabatura <theme@sky.camp>
 /// @link   https://taproot-theme.com
 ////
 
-
-// Import settings and tools.
-@import 'settings/_index';
+// Tools
 @import 'tools/_index';
+
+// Utility classes
 @import 'utilities/_index';
 
-// var defaults
-:root {
-    // colors
-    @import 'custom-properties/colors';
+// General editor styles
+@import 'editor/_index';
 
-    // global vars
-    @import 'custom-properties/default';
+// Elements editor styles
+@import 'elements/_editor';
 
-    // mobile vars
-    @import 'custom-properties/mobile';
-}
+// Block editor styles
+@import 'blocks/_editor';
 
-// tablet vars
-@media ( min-width: 768px ) {
-    // use tablet vars when sidebar closed
-    .edit-post-layout:not(.is-sidebar-opened) {
-        @import 'custom-properties/tablet';
-    }
-}
-
-// desktop vars
-@media (min-width: 960px) {
-    // use tablet vars when settings sidebar is open
-    :root {
-        @import 'custom-properties/tablet';
-    }
-
-    // use desktop vars when settings sidebar is closed
-    .edit-post-layout:not(.is-sidebar-opened) {
-        @import 'custom-properties/desktop';
-    }
-}
-
-
-// Prefix all of the block styles with `.editor-styles-wrapper`
-.editor-styles-wrapper {
-    // get our block styles
-    @import 'blocks/_index';
-
-    // get editor only styles
-    @import 'editor/blocks/_index';
-}
-
-// get sidebar panel styles
-@import 'editor/sidebar/_index';
-
-// get general editor styles
-@import 'editor/general';
+// Component editor styles
+@import 'components/_editor';

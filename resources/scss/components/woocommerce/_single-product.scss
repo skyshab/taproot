@@ -1,0 +1,52 @@
+////
+/// Single product styles
+///
+/// @group  woocommerce
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.woocommerce {
+
+    #main {
+
+        .entry--type-product {
+
+            .price {
+                color: var(--colors--accent);
+                margin: 10px 0;
+            }
+
+            // Make the quantity field be the same size as the button next to it.
+            .quantity .qty {
+                padding: 0;
+                font-size: var(--buttons--font-size);
+                line-height: var(--buttons--line-height);
+            }
+
+            // Single product page tabs
+            .woocommerce-tabs .tabs {
+
+                &::before {
+                    border-color: var(--colors--meta-medium);
+                }
+
+                li:not(.active) {
+                    border-color: var(--colors--meta-medium);
+                    background-color: var(--colors--meta-light);
+                }
+            }
+
+            // Product review form
+            #respond {
+
+                // Submit review button
+                #submit {
+                    border-color: var(--colors--meta-medium);
+                    background-color: var(--colors--meta-light);
+                    border-radius: 0;
+                }
+            }
+        }
+    }
+}

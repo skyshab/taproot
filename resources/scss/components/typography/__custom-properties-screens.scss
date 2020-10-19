@@ -1,0 +1,49 @@
+////
+/// Component Custom Properties
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+:root {
+
+    // Mobile only
+    @include screen('mobile') {
+        --block-padding: var( --text-spacing );
+    }
+
+    // Tablet
+    @include screen('tablet-and-up') {
+
+        // Body base styles
+        --typography--body--font-size: 18px;
+        --typography--body--line-height: 1.6;
+
+        // Heading font sizes
+        --typography--h1--font-size: 2.5em;
+        --typography--h2--font-size: 2em;
+        --typography--h3--font-size: 1.5em;
+        --typography--h4--font-size: 1.13em;
+    }
+
+    // Desktop
+    @include screen('desktop') {
+
+        // Heading font sizes
+        --typography--h1--font-size: 3em;
+        --typography--h2--font-size: 2.25em;
+        --typography--h3--font-size: 1.75em;
+        --typography--h4--font-size: 1.25em;
+    }
+
+    // Spacing and padding
+
+    // Tablet and up
+    @include screen('tablet-and-up') {
+
+        --text-spacing:         1.6em;
+        --block-spacing:        1.6rem;
+        --block-padding:        2rem;
+    }
+}

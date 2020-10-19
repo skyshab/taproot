@@ -8,7 +8,7 @@
                 <?php Hybrid\Menu\display_name( $data->location ) ?>
             </h3>
 
-            <?php Taproot\Template\menu_toggle( $data->location ) ?>
+            <?php $engine->display( 'partials', 'menu-toggle' ) ?>
 
             <?php wp_nav_menu( [
                 'theme_location' => $data->location,
@@ -21,6 +21,6 @@
 
         </div>
 
-	</nav>
+    </nav>
 
 <?php endif ?>

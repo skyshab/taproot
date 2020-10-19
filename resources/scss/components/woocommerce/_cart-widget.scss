@@ -1,0 +1,106 @@
+////
+/// Cart nav widget.
+///
+/// @group  woocommerce
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.menu__item--cart-widget {
+
+    .cart-widget-wrapper  {
+        padding: 0;
+        position: relative;
+        text-align: center;
+        display: block;
+    }
+
+    .cart-widget-text {
+        margin-right: 0.6em;
+    }
+
+    // link
+    a {
+        color: var(--cart-widget--color);
+        display: flex;
+        align-items: center;
+    }
+
+    // icon
+    svg {
+        display: block;
+        margin: 0 auto;
+    }
+
+    // cart icon
+    .taproot-icon--shopping-cart {
+        font-size: 1.5em
+    }
+
+    // number
+    .cart-count {
+
+        background: var(--cart-widget--color);
+        color: var(--cart-widget--background-color);
+        display: block;
+        position: absolute;
+        font-size: 0.4em;
+        line-height: 2em;
+        height: 2em;
+        width: 2em;
+        border-radius: 50%;
+        top: -0.5em;
+        right: calc( 50% - 0.4em );
+        transform: translate(50%, 0px);
+        box-shadow: 0 0 0 0.2em;
+
+        &.cart-is-empty{
+            opacity: 0;
+        }
+    }
+}
+
+// fixed header styles
+.app-header--fixed {
+
+    .menu__item--cart-widget {
+
+        a {
+            padding: 0;
+        }
+    }
+}
+
+// mixin to generate desktop nav styles
+@mixin desktop-styles( $screen ) {
+
+    .menu.mobile-at-#{$screen} {
+
+        .cart-widget-text {
+            clip:      rect( 1px, 1px, 1px, 1px );
+            clip-path: inset( 50% );
+            position:  absolute;
+            width:     1px;
+            height:    1px;
+            margin:    -1px;
+            overflow:  hidden;
+            padding:   0;
+            word-wrap: normal;
+            border:    none;
+        }
+    }
+
+}
+
+// never mobile styles
+@include desktop-styles( 'never' );
+
+// mobile only styles
+@include screen('tablet-and-up') {
+    @include desktop-styles( 'mobile' );
+}
+
+// tablet and under styles
+@include screen('desktop') {
+    @include desktop-styles( 'tablet-and-under' );
+}

@@ -1,0 +1,76 @@
+////
+/// Editor - Button Block Styles
+///
+/// These styles apply to the verse block only in the editor.
+///
+/// @group  Styles
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+// Import component styles inside the editor styles wrapper
+.editor-styles-wrapper {
+
+    .wp-block-group {
+
+        &.has-background, &[style*=background-color] {
+
+            .wp-block-group__inner-container {
+
+                // > :first-child {
+                //     margin-top: 0;
+                // }
+
+                // > :last-child {
+                //     margin-bottom: 0;
+                // }
+            }
+        }
+
+        &__inner-container {
+            max-width: var(--content-width);
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+
+    // remove the space around group blocks in the block editor
+    .wp-block[data-type="core/group"] {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .wp-block[data-align=full] .wp-block-group__inner-container {
+        max-width: min( var(--container-max-width), var(--container-width) );
+
+        > * {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+
+
+    .wp-block-group {
+
+        &.has-background, &[style*=background-color] {
+
+            padding-top: var(--block-padding);
+            padding-bottom: var(--block-padding);
+
+            &.alignfull {
+
+                .alignfull:not( .has-background ) {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+
+    // override for default WP styles
+    [data-align=full] .wp-block-group>.wp-block-group__inner-container>.wp-block {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

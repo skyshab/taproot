@@ -7,7 +7,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
+ * @copyright 2020 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
@@ -53,11 +53,11 @@ class TaprootFooter {
      * Fixed footer toggle
      */
     fixedFooter() {
-		const footerHeight = this.footer.offsetHeight;
+        const footerHeight = this.footer.offsetHeight;
 
-		if ( 1025 > this.body.offsetWidth ) {
-			this.app.style.marginBottom = '';
-			this.footer.classList.remove( 'app-footer--fixed' );
+        if ( 1025 > this.body.offsetWidth ) {
+            this.app.style.marginBottom = '';
+            this.footer.classList.remove( 'app-footer--fixed' );
         } else {
             if ( footerHeight + 250 < this.windowHeight ) {
                 this.app.style.marginBottom = Math.floor( footerHeight ) + 'px';
@@ -67,7 +67,7 @@ class TaprootFooter {
                 this.footer.classList.remove( 'app-footer--fixed' );
             }
         }
-	}
+    }
 }
 
 

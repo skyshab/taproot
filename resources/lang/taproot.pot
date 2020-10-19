@@ -1,1326 +1,681 @@
-# <!=Copyright (C) 2019 Sky Shabatura
+# <!=Copyright (C) 2020 Sky Shabatura
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Taproot 1.4.0\n"
+"Project-Id-Version: Taproot 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/taproot\n"
-"POT-Creation-Date: 2019-08-29 12:57:20+00:00\n"
+"POT-Creation-Date: 2020-10-18 22:17:21+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Generator: node-wp-i18n 1.2.2\n"
+"X-Generator: node-wp-i18n 1.2.3\n"
 
-#: app/Customize/Controls/Device_Picker.php:72
-msgid "Enter %s preview mode"
-msgstr ""
-
-#: app/Customize/Controls/Font_Styles.php:54
-msgid "Bold"
-msgstr ""
-
-#: app/Customize/Controls/Font_Styles.php:55
-msgid "Italic"
-msgstr ""
-
-#: app/Customize/Controls/Font_Styles.php:56
-#: app/Customize/Panels/typography/links/section.php:75
-msgid "Underline"
-msgstr ""
-
-#: app/Customize/Controls/Font_Styles.php:57
-msgid "Uppercase"
-msgstr ""
-
-#: app/Customize/Controls/Font_Styles.php:58
-msgid "Capitalize"
-msgstr ""
-
-#: app/Customize/Controls/Responsive_Control.php:165
-msgid "click to enable"
-msgstr ""
-
-#: app/Customize/Customize.php:137
-msgid "Site Icon"
-msgstr ""
-
-#: app/Customize/Panels/blog/archive-excerpt/section.php:24
-msgid "Archive Excerpt"
-msgstr ""
-
-#: app/Customize/Panels/blog/archive-excerpt/section.php:39
-msgid "Excerpt Length"
-msgstr ""
-
-#: app/Customize/Panels/blog/archive-link/defaults.php:29
-msgid "read more"
-msgstr ""
-
-#: app/Customize/Panels/blog/archive-link/section.php:25
-msgid "Archive Link"
-msgstr ""
-
-#: app/Customize/Panels/blog/archive-link/section.php:44
-msgid "Post Link Style"
-msgstr ""
-
-#: app/Customize/Panels/blog/archive-link/section.php:46
-#: app/Customize/Panels/typography/links/section.php:74
-msgid "None"
-msgstr ""
-
-#: app/Customize/Panels/blog/archive-link/section.php:47
-msgid "Inline"
-msgstr ""
-
-#: app/Customize/Panels/blog/archive-link/section.php:48
-msgid "Link"
-msgstr ""
-
-#: app/Customize/Panels/blog/archive-link/section.php:49
-msgid "Button"
-msgstr ""
-
-#: app/Customize/Panels/blog/archive-link/section.php:63
-msgid "Post Link Position"
-msgstr ""
-
-#: app/Customize/Panels/blog/archive-link/section.php:65
-#: app/Customize/Panels/elements/breadcrumbs/section.php:62
-#: app/Customize/Panels/nav/footer/section.php:142
-#: app/Customize/Panels/nav/footer-mobile/section.php:95
-#: app/Customize/Panels/nav/header/section.php:144
-#: app/Customize/Panels/nav/header-fixed/section.php:156
-#: app/Customize/Panels/nav/navbar/section.php:85
-#: app/Customize/Panels/nav/navbar-fixed/section.php:98
-#: app/Customize/Panels/nav/navbar-mobile/section.php:125
-#: app/Customize/Panels/nav/top/section.php:71
-#: app/Customize/Panels/nav/top-fixed/section.php:142
-#: app/Customize/Panels/nav/top-mobile/section.php:98
-msgid "Right"
-msgstr ""
-
-#: app/Customize/Panels/blog/archive-link/section.php:66
-#: app/Customize/Panels/elements/breadcrumbs/section.php:60
-#: app/Customize/Panels/nav/footer/section.php:141
-#: app/Customize/Panels/nav/footer-mobile/section.php:94
-#: app/Customize/Panels/nav/header/section.php:143
-#: app/Customize/Panels/nav/header-fixed/section.php:155
-#: app/Customize/Panels/nav/navbar/section.php:84
-#: app/Customize/Panels/nav/navbar-fixed/section.php:97
-#: app/Customize/Panels/nav/navbar-mobile/section.php:124
-#: app/Customize/Panels/nav/top/section.php:70
-#: app/Customize/Panels/nav/top-fixed/section.php:141
-#: app/Customize/Panels/nav/top-mobile/section.php:97
+#: app/Breadcrumbs/Customize/Align.php:59
+#: app/Navigation/Footer/Customize/Footer/Align.php:60
+#: app/Navigation/Footer/Customize/Footer_Mobile/Align.php:60
+#: app/Navigation/Header/Customize/Header/Align.php:60
+#: app/Navigation/Header/Customize/Header_Fixed/Align.php:59
+#: app/Navigation/Navbar/Customize/Navbar/Align.php:60
+#: app/Navigation/Navbar/Customize/Navbar_Fixed/Align.php:59
+#: app/Navigation/Navbar/Customize/Navbar_Mobile/Toggle_Side.php:67
+#: app/Navigation/Top/Customize/Top/Align.php:60
+#: app/Navigation/Top/Customize/Top_Fixed/Align.php:59
+#: app/Navigation/Top/Customize/Top_Mobile/Align.php:60
+#: app/Post_Types/Customize/Content_Layout.php:67
+#: app/Post_Types/Customize/Entry/Link/Position.php:67
 msgid "Left"
 msgstr ""
 
-#: app/Customize/Panels/blog/archive-link/section.php:80
-msgid "Read More Text"
-msgstr ""
-
-#: app/Customize/Panels/blog/archive-link/section.php:87
-msgid "Button Link Font Size"
-msgstr ""
-
-#: app/Customize/Panels/blog/archive-meta/section.php:25
-msgid "Archive Meta"
-msgstr ""
-
-#: app/Customize/Panels/blog/archive-meta/section.php:37
-#: app/Customize/Panels/posts/meta/section.php:36
-msgid "Meta Color"
-msgstr ""
-
-#: app/Customize/Panels/blog/archive-meta/section.php:44
-#: app/Customize/Panels/posts/meta/section.php:43
-msgid "Meta Icon Color"
-msgstr ""
-
-#: app/Customize/Panels/blog/archive-meta/section.php:52
-#: app/Customize/Panels/posts/meta/section.php:51
-msgid "Meta Size"
-msgstr ""
-
-#: app/Customize/Panels/blog/archive-title/section.php:26
-msgid "Archive Title"
-msgstr ""
-
-#: app/Customize/Panels/blog/archive-title/section.php:38
-#: app/Customize/Panels/blog/title/section.php:52
-#: app/Customize/Panels/branding/title/section.php:69
-#: app/Customize/Panels/pages/title/section.php:38
-#: app/Customize/Panels/posts/title/section.php:39
-msgid "Title Color"
-msgstr ""
-
-#: app/Customize/Panels/blog/archive-title/section.php:45
-msgid "Title Color Hover"
-msgstr ""
-
-#: app/Customize/Panels/blog/archive-title/section.php:53
-#: app/Customize/Panels/blog/title/section.php:73
-#: app/Customize/Panels/footer/widgets/section.php:120
-#: app/Customize/Panels/pages/title/section.php:57
-#: app/Customize/Panels/posts/title/section.php:58
-msgid "Title Font Size"
-msgstr ""
-
-#: app/Customize/Panels/blog/archive-title/section.php:65
-#: app/Customize/Panels/blog/title/section.php:65
-#: app/Customize/Panels/pages/title/section.php:50
-#: app/Customize/Panels/posts/title/section.php:51
-msgid "Title Font Styles"
-msgstr ""
-
-#: app/Customize/Panels/blog/layout/section.php:21
-#: app/Customize/Panels/branding/layout/section.php:24
-#: app/Customize/Panels/pages/layout/section.php:21
-#: app/Customize/Panels/posts/layout/section.php:21
-#: app/Customize/Panels/register-panels.php:21
-msgid "Layout"
-msgstr ""
-
-#: app/Customize/Panels/blog/layout/section.php:40
-msgid "Blog Page Layout"
-msgstr ""
-
-#: app/Customize/Panels/blog/layout/section.php:42
-#: app/Customize/Panels/pages/layout/section.php:42
-#: app/Customize/Panels/posts/layout/section.php:42
-msgid "Right Sidebar"
-msgstr ""
-
-#: app/Customize/Panels/blog/layout/section.php:43
-#: app/Customize/Panels/pages/layout/section.php:43
-#: app/Customize/Panels/posts/layout/section.php:43
-msgid "Left Sidebar"
-msgstr ""
-
-#: app/Customize/Panels/blog/layout/section.php:44
-#: app/Customize/Panels/pages/layout/section.php:44
-#: app/Customize/Panels/posts/layout/section.php:44
-msgid "Full Width"
-msgstr ""
-
-#: app/Customize/Panels/blog/pagination/section.php:25
-#: app/Customize/Panels/blog/panel.php:38 views/nav/pagination/post.php:4
-msgid "Pagination"
-msgstr ""
-
-#: app/Customize/Panels/blog/pagination/section.php:38
-msgid "Pagination Size"
-msgstr ""
-
-#: app/Customize/Panels/blog/pagination/section.php:46
-msgid "Pagination Spacing"
-msgstr ""
-
-#: app/Customize/Panels/blog/pagination/section.php:70
-msgid "Use Circles"
-msgstr ""
-
-#: app/Customize/Panels/blog/pagination/section.php:78
-#: app/Customize/Panels/blog/pagination-hover/section.php:37
-msgid "Pagination Link Color"
-msgstr ""
-
-#: app/Customize/Panels/blog/pagination/section.php:85
-#: app/Customize/Panels/blog/pagination-hover/section.php:44
-msgid "Pagination Background Color"
-msgstr ""
-
-#: app/Customize/Panels/blog/pagination/section.php:92
-#: app/Customize/Panels/blog/pagination-hover/section.php:51
-msgid "Pagination Color"
-msgstr ""
-
-#: app/Customize/Panels/blog/pagination-hover/section.php:25
-msgid "Pagination - Hover"
-msgstr ""
-
-#: app/Customize/Panels/blog/panel.php:26
-msgid "Post Archives"
-msgstr ""
-
-#: app/Customize/Panels/blog/title/section.php:27
-#: app/Customize/Panels/branding/title/section.php:29
-#: app/Customize/Panels/pages/title/section.php:26
-#: app/Customize/Panels/posts/title/section.php:27
-msgid "Title"
-msgstr ""
-
-#: app/Customize/Panels/blog/title/section.php:46
-msgid "Blog Page Title"
-msgstr ""
-
-#: app/Customize/Panels/blog/title/section.php:82
-#: app/Customize/Panels/footer/widgets/section.php:129
-#: app/Customize/Panels/pages/title/section.php:66
-#: app/Customize/Panels/posts/title/section.php:67
-msgid "Title Line Height"
-msgstr ""
-
-#: app/Customize/Panels/branding/layout/section.php:37
-msgid "Branding Layout"
-msgstr ""
-
-#: app/Customize/Panels/branding/layout/section.php:39
-msgid "Vertical"
-msgstr ""
-
-#: app/Customize/Panels/branding/layout/section.php:40
-msgid "Horizontal"
-msgstr ""
-
-#: app/Customize/Panels/branding/logo/section.php:25
-msgid "Logo"
-msgstr ""
-
-#: app/Customize/Panels/branding/logo/section.php:44
-#: app/Customize/Panels/branding/logo-fixed/section.php:51
-msgid "Logo Width"
-msgstr ""
-
-#: app/Customize/Panels/branding/logo/section.php:58
-#: app/Customize/Panels/branding/logo-fixed/section.php:68
-msgid "Gutter Width"
-msgstr ""
-
-#: app/Customize/Panels/branding/logo-fixed/section.php:24
-msgid "Logo - Fixed"
-msgstr ""
-
-#: app/Customize/Panels/branding/logo-fixed/section.php:42
-#: app/Customize/Panels/branding/tagline-fixed/section.php:43
-#: app/Customize/Panels/branding/title-fixed/section.php:43
-msgid "Hide When Fixed"
-msgstr ""
-
-#: app/Customize/Panels/branding/panel.php:27
-msgid "Fixed Header"
-msgstr ""
-
-#: app/Customize/Panels/branding/tagline/section.php:28
-msgid "Tagline"
-msgstr ""
-
-#: app/Customize/Panels/branding/tagline/section.php:55
-msgid "Enable Site Tagline"
-msgstr ""
-
-#: app/Customize/Panels/branding/tagline/section.php:62
-msgid "Hide Tagline"
-msgstr ""
-
-#: app/Customize/Panels/branding/tagline/section.php:69
-msgid "Tagline Color"
-msgstr ""
-
-#: app/Customize/Panels/branding/tagline/section.php:84
-#: app/Customize/Panels/branding/title/section.php:84
-#: app/Customize/Panels/elements/buttons/section.php:130
-#: app/Customize/Panels/nav/footer/section.php:82
-#: app/Customize/Panels/nav/header/section.php:77
-#: app/Customize/Panels/nav/header-fixed/section.php:88
-#: app/Customize/Panels/nav/navbar/section.php:102
-#: app/Customize/Panels/nav/navbar-fixed/section.php:115
-#: app/Customize/Panels/nav/top/section.php:88
-#: app/Customize/Panels/nav/top-fixed/section.php:83
-#: app/Customize/Panels/typography/body/section.php:54
-#: app/Customize/Panels/typography/h1/section.php:53
-#: app/Customize/Panels/typography/h2/section.php:53
-#: app/Customize/Panels/typography/h3/section.php:53
-#: app/Customize/Panels/typography/h4/section.php:53
-#: app/Customize/Panels/typography/h5/section.php:53
-#: app/Customize/Panels/typography/h6/section.php:53
-#: app/Customize/Panels/typography/headings/section.php:54
-msgid "Font Family"
-msgstr ""
-
-#: app/Customize/Panels/branding/tagline/section.php:96
-#: app/Customize/Panels/branding/title/section.php:96
-#: app/Customize/Panels/elements/buttons/section.php:142
-#: app/Customize/Panels/nav/footer/section.php:94
-#: app/Customize/Panels/nav/header/section.php:89
-#: app/Customize/Panels/nav/header-fixed/section.php:100
-#: app/Customize/Panels/nav/header-mobile/section.php:146
-#: app/Customize/Panels/nav/navbar/section.php:114
-#: app/Customize/Panels/nav/navbar-fixed/section.php:127
-#: app/Customize/Panels/nav/navbar-mobile/section.php:159
-#: app/Customize/Panels/nav/top/section.php:100
-#: app/Customize/Panels/nav/top-fixed/section.php:95
-#: app/Customize/Panels/typography/h1/section.php:65
-#: app/Customize/Panels/typography/h2/section.php:65
-#: app/Customize/Panels/typography/h3/section.php:65
-#: app/Customize/Panels/typography/h4/section.php:65
-#: app/Customize/Panels/typography/h5/section.php:65
-#: app/Customize/Panels/typography/h6/section.php:65
-msgid "Font Styles"
-msgstr ""
-
-#: app/Customize/Panels/branding/tagline/section.php:103
-#: app/Customize/Panels/branding/tagline-fixed/section.php:52
-#: app/Customize/Panels/branding/title/section.php:103
-#: app/Customize/Panels/branding/title-fixed/section.php:52
-#: app/Customize/Panels/elements/buttons/section.php:76
-#: app/Customize/Panels/footer/widgets/section.php:102
-#: app/Customize/Panels/nav/footer/section.php:101
-#: app/Customize/Panels/nav/footer-mobile/section.php:70
-#: app/Customize/Panels/nav/header/section.php:96
-#: app/Customize/Panels/nav/header-fixed/section.php:107
-#: app/Customize/Panels/nav/header-mobile/section.php:153
-#: app/Customize/Panels/nav/navbar/section.php:135
-#: app/Customize/Panels/nav/top/section.php:121
-#: app/Customize/Panels/nav/top-fixed/section.php:102
-#: app/Customize/Panels/nav/top-mobile/section.php:73
-#: app/Customize/Panels/posts/nav/section.php:65
-#: app/Customize/Panels/typography/body/section.php:62
-#: app/Customize/Panels/typography/h1/section.php:72
-#: app/Customize/Panels/typography/h2/section.php:72
-#: app/Customize/Panels/typography/h3/section.php:72
-#: app/Customize/Panels/typography/h4/section.php:72
-#: app/Customize/Panels/typography/h5/section.php:72
-#: app/Customize/Panels/typography/h6/section.php:72
-#: app/Customize/Panels/typography/sidebar/section.php:38
-msgid "Font Size"
-msgstr ""
-
-#: app/Customize/Panels/branding/tagline/section.php:112
-#: app/Customize/Panels/branding/tagline-fixed/section.php:60
-#: app/Customize/Panels/branding/title/section.php:112
-#: app/Customize/Panels/branding/title-fixed/section.php:60
-#: app/Customize/Panels/footer/widgets/section.php:111
-#: app/Customize/Panels/nav/footer/section.php:109
-#: app/Customize/Panels/nav/footer-mobile/section.php:78
-#: app/Customize/Panels/nav/header-mobile/section.php:168
-#: app/Customize/Panels/nav/top/section.php:129
-#: app/Customize/Panels/nav/top-fixed/section.php:110
-#: app/Customize/Panels/nav/top-mobile/section.php:81
-#: app/Customize/Panels/typography/body/section.php:71
-#: app/Customize/Panels/typography/h1/section.php:81
-#: app/Customize/Panels/typography/h2/section.php:81
-#: app/Customize/Panels/typography/h3/section.php:81
-#: app/Customize/Panels/typography/h4/section.php:81
-#: app/Customize/Panels/typography/h5/section.php:81
-#: app/Customize/Panels/typography/h6/section.php:80
-#: app/Customize/Panels/typography/sidebar/section.php:47
-msgid "Line Height"
-msgstr ""
-
-#: app/Customize/Panels/branding/tagline/section.php:121
-#: app/Customize/Panels/branding/tagline-fixed/section.php:68
-msgid "Tagline Gutter"
-msgstr ""
-
-#: app/Customize/Panels/branding/tagline-fixed/section.php:26
-msgid "Tagline - Fixed"
-msgstr ""
-
-#: app/Customize/Panels/branding/title/section.php:55
-msgid "Enable Site Title"
-msgstr ""
-
-#: app/Customize/Panels/branding/title/section.php:62
-msgid "Hide Title"
-msgstr ""
-
-#: app/Customize/Panels/branding/title-fixed/section.php:26
-msgid "Title - Fixed"
-msgstr ""
-
-#: app/Customize/Panels/colors/sidebar/section.php:24
-msgid "Sidebar Colors"
-msgstr ""
-
-#: app/Customize/Panels/colors/sidebar/section.php:36
-#: app/Customize/Panels/elements/buttons/section.php:40
-#: app/Customize/Panels/footer/styles/section.php:64
-#: app/Customize/Panels/general/background/section.php:36
-#: app/Customize/Panels/nav/footer/section.php:53
-#: app/Customize/Panels/nav/navbar/section.php:53
-#: app/Customize/Panels/nav/navbar-fixed/section.php:66
-#: app/Customize/Panels/nav/top-fixed/section.php:53
-msgid "Background Color"
-msgstr ""
-
-#: app/Customize/Panels/colors/sidebar/section.php:42
-#: app/Customize/Panels/elements/breadcrumbs/section.php:103
-#: app/Customize/Panels/elements/buttons/section.php:55
-#: app/Customize/Panels/footer/widgets/section.php:80
-#: app/Customize/Panels/typography/body/section.php:39
-#: app/Customize/Panels/typography/h1/section.php:38
-#: app/Customize/Panels/typography/h2/section.php:38
-#: app/Customize/Panels/typography/h3/section.php:38
-#: app/Customize/Panels/typography/h4/section.php:38
-#: app/Customize/Panels/typography/h5/section.php:38
-#: app/Customize/Panels/typography/h6/section.php:38
-#: app/Customize/Panels/typography/headings/section.php:39
-#: app/functions-setup.php:81
-msgid "Text Color"
-msgstr ""
-
-#: app/Customize/Panels/colors/sidebar/section.php:48
-#: app/Customize/Panels/colors/theme/section.php:36
-#: app/Customize/Panels/test/theme/section.php:36 app/functions-setup.php:86
-msgid "Accent Color"
-msgstr ""
-
-#: app/Customize/Panels/colors/sidebar/section.php:54
-#: app/Customize/Panels/footer/widgets/section.php:87
-#: app/Customize/Panels/nav/footer/section.php:60
-#: app/Customize/Panels/nav/header/section.php:54
-#: app/Customize/Panels/nav/header-fixed/section.php:66
-#: app/Customize/Panels/nav/header-mobile/section.php:127
-#: app/Customize/Panels/nav/navbar/section.php:120
-#: app/Customize/Panels/nav/navbar-fixed/section.php:133
-#: app/Customize/Panels/nav/navbar-mobile/section.php:179
-#: app/Customize/Panels/nav/top/section.php:106
-#: app/Customize/Panels/nav/top-fixed/section.php:60
-#: app/Customize/Panels/posts/nav/section.php:51
-#: app/Customize/Panels/typography/links/section.php:36
-msgid "Link Color"
-msgstr ""
-
-#: app/Customize/Panels/colors/sidebar/section.php:60
-#: app/Customize/Panels/nav/footer/section.php:67
-#: app/Customize/Panels/nav/header/section.php:61
-#: app/Customize/Panels/nav/header-fixed/section.php:73
-#: app/Customize/Panels/nav/header-mobile/section.php:134
-#: app/Customize/Panels/nav/navbar/section.php:127
-#: app/Customize/Panels/nav/navbar-fixed/section.php:140
-#: app/Customize/Panels/nav/navbar-mobile/section.php:186
-#: app/Customize/Panels/nav/top/section.php:113
-#: app/Customize/Panels/nav/top-fixed/section.php:67
-msgid "Link Color: Hover"
-msgstr ""
-
-#: app/Customize/Panels/colors/theme/section.php:24
-msgid "Theme Colors"
-msgstr ""
-
-#: app/Customize/Panels/colors/theme/section.php:42
-msgid "Accent Contrast Color"
-msgstr ""
-
-#: app/Customize/Panels/colors/theme/section.php:48
-msgid "Meta Color - Light"
-msgstr ""
-
-#: app/Customize/Panels/colors/theme/section.php:54
-msgid "Meta Color - Medium"
-msgstr ""
-
-#: app/Customize/Panels/colors/theme/section.php:60
-msgid "Meta Color - Dark"
-msgstr ""
-
-#: app/Customize/Panels/elements/breadcrumbs/section.php:26
-#: app/Customize/Panels/pages/breadcrumbs/section.php:22
-#: app/Customize/Panels/posts/breadcrumbs/section.php:22
-msgid "Breadcrumbs"
-msgstr ""
-
-#: app/Customize/Panels/elements/breadcrumbs/section.php:43
-#: app/Customize/Panels/pages/breadcrumbs/section.php:41
-#: app/Customize/Panels/posts/breadcrumbs/section.php:41
-msgid "Enable Breadcrumbs"
-msgstr ""
-
-#: app/Customize/Panels/elements/breadcrumbs/section.php:58
-msgid "Breadcrumbs Align"
-msgstr ""
-
-#: app/Customize/Panels/elements/breadcrumbs/section.php:61
-#: app/Customize/Panels/nav/footer/section.php:143
-#: app/Customize/Panels/nav/footer-mobile/section.php:96
-#: app/Customize/Panels/nav/header/section.php:145
-#: app/Customize/Panels/nav/header-fixed/section.php:157
-#: app/Customize/Panels/nav/navbar/section.php:86
-#: app/Customize/Panels/nav/navbar-fixed/section.php:99
-#: app/Customize/Panels/nav/top/section.php:72
-#: app/Customize/Panels/nav/top-fixed/section.php:143
-#: app/Customize/Panels/nav/top-mobile/section.php:99
+#: app/Breadcrumbs/Customize/Align.php:60
+#: app/Navigation/Footer/Customize/Footer/Align.php:62
+#: app/Navigation/Footer/Customize/Footer_Mobile/Align.php:62
+#: app/Navigation/Header/Customize/Header/Align.php:62
+#: app/Navigation/Header/Customize/Header_Fixed/Align.php:61
+#: app/Navigation/Navbar/Customize/Navbar/Align.php:62
+#: app/Navigation/Navbar/Customize/Navbar_Fixed/Align.php:61
+#: app/Navigation/Top/Customize/Top/Align.php:62
+#: app/Navigation/Top/Customize/Top_Fixed/Align.php:61
+#: app/Navigation/Top/Customize/Top_Mobile/Align.php:62
+#: app/Post_Types/Customize/Content_Layout.php:68
 msgid "Center"
 msgstr ""
 
-#: app/Customize/Panels/elements/breadcrumbs/section.php:70
-msgid "Breadcrumbs Font Size"
+#: app/Breadcrumbs/Customize/Align.php:61
+#: app/Navigation/Footer/Customize/Footer/Align.php:61
+#: app/Navigation/Footer/Customize/Footer_Mobile/Align.php:61
+#: app/Navigation/Header/Customize/Header/Align.php:61
+#: app/Navigation/Header/Customize/Header_Fixed/Align.php:60
+#: app/Navigation/Navbar/Customize/Navbar/Align.php:61
+#: app/Navigation/Navbar/Customize/Navbar_Fixed/Align.php:60
+#: app/Navigation/Navbar/Customize/Navbar_Mobile/Toggle_Side.php:68
+#: app/Navigation/Top/Customize/Top/Align.php:61
+#: app/Navigation/Top/Customize/Top_Fixed/Align.php:60
+#: app/Navigation/Top/Customize/Top_Mobile/Align.php:61
+#: app/Post_Types/Customize/Entry/Link/Position.php:66
+msgid "Right"
 msgstr ""
 
-#: app/Customize/Panels/elements/breadcrumbs/section.php:82
-msgid "Use icon for home"
+#: app/Breadcrumbs/Provider.php:52 app/Post_Types/Page/Provider.php:79
+#: app/Post_Types/Post/Provider.php:98 app/Post_Types/Product/Provider.php:90
+msgid "Breadcrumbs"
 msgstr ""
 
-#: app/Customize/Panels/elements/breadcrumbs/section.php:95
-msgid "Use Separators"
-msgstr ""
-
-#: app/Customize/Panels/elements/breadcrumbs/section.php:110
-msgid "Hover Color"
-msgstr ""
-
-#: app/Customize/Panels/elements/buttons/section.php:28
-#: app/Customize/Panels/elements/panel.php:24
+#: app/Buttons/Provider.php:43 app/Buttons/Provider.php:66
 msgid "Buttons"
 msgstr ""
 
-#: app/Customize/Panels/elements/buttons/section.php:48
-msgid "Border Color"
+#: app/Buttons/Provider.php:58
+msgid "Buttons Hover"
 msgstr ""
 
-#: app/Customize/Panels/elements/buttons/section.php:67
-msgid "Use Rounded Corners"
+#: app/Colors/Hooks.php:48
+msgid "Text Color"
 msgstr ""
 
-#: app/Customize/Panels/elements/buttons/section.php:84
-#: app/Customize/Panels/header/hero/section.php:40
-msgid "Height"
+#: app/Colors/Hooks.php:53
+msgid "Accent Color"
 msgstr ""
 
-#: app/Customize/Panels/elements/buttons/section.php:92
-#: app/Customize/Panels/footer/styles/section.php:86
-#: app/Customize/Panels/header/styles/section.php:74
-#: app/Customize/Panels/header/styles-fixed/section.php:91
-msgid "Padding"
+#: app/Colors/Hooks.php:58
+msgid "Accent Contrast Color"
 msgstr ""
 
-#: app/Customize/Panels/elements/buttons/section.php:110
-msgid "Border Width"
+#: app/Colors/Hooks.php:63
+msgid "Meta Light"
 msgstr ""
 
-#: app/Customize/Panels/elements/buttons-hover/section.php:24
-msgid "Buttons - Hover"
+#: app/Colors/Hooks.php:68
+msgid "Meta Medium"
 msgstr ""
 
-#: app/Customize/Panels/elements/buttons-hover/section.php:36
-msgid "Hover Background Color"
+#: app/Colors/Hooks.php:73
+msgid "Meta Dark"
 msgstr ""
 
-#: app/Customize/Panels/elements/buttons-hover/section.php:43
-msgid "Hover Border Color"
+#: app/Colors/Hooks.php:85
+msgid "Accent to accent"
 msgstr ""
 
-#: app/Customize/Panels/elements/buttons-hover/section.php:50
-msgid "Hover Text Color"
+#: app/Colors/Hooks.php:90
+msgid "Vivid cyan blue to vivid purple"
 msgstr ""
 
-#: app/Customize/Panels/footer/bottom-bar/defaults.php:25
-msgid "Created with Taproot"
+#: app/Colors/Hooks.php:95
+msgid "Vivid green cyan to vivid cyan blue"
 msgstr ""
 
-#: app/Customize/Panels/footer/bottom-bar/section.php:24
-msgid "Bottom Bar"
+#: app/Colors/Hooks.php:100
+msgid "Light green cyan to vivid green cyan"
 msgstr ""
 
-#: app/Customize/Panels/footer/bottom-bar/section.php:36
-msgid "Bottom Bar Background Color"
+#: app/Colors/Hooks.php:105
+msgid "Luminous vivid amber to luminous vivid orange"
 msgstr ""
 
-#: app/Customize/Panels/footer/bottom-bar/section.php:43
-msgid "Bottom Bar Text Color"
+#: app/Colors/Hooks.php:110
+msgid "Luminous vivid orange to vivid red"
 msgstr ""
 
-#: app/Customize/Panels/footer/bottom-bar/section.php:50
-msgid "Bottom Bar Hover Color"
-msgstr ""
-
-#: app/Customize/Panels/footer/bottom-bar/section.php:59
-msgid "Made with the Taproot theme for Wordpress"
-msgstr ""
-
-#: app/Customize/Panels/footer/bottom-bar/section.php:63
-msgid "Bottom Bar Content"
-msgstr ""
-
-#: app/Customize/Panels/footer/styles/section.php:26
-msgid "Styles"
-msgstr ""
-
-#: app/Customize/Panels/footer/styles/section.php:45
-msgid "Enable Fixed Footer"
-msgstr ""
-
-#: app/Customize/Panels/footer/styles/section.php:58
-msgid "Enable Fullwidth Footer"
-msgstr ""
-
-#: app/Customize/Panels/footer/styles/section.php:71
-msgid "Default Color"
-msgstr ""
-
-#: app/Customize/Panels/footer/styles/section.php:78
-msgid "Default Hover Color"
-msgstr ""
-
-#: app/Customize/Panels/footer/widgets/section.php:27
-msgid "Widgets"
-msgstr ""
-
-#: app/Customize/Panels/footer/widgets/section.php:40
-msgid "Widgets Layout"
-msgstr ""
-
-#: app/Customize/Panels/footer/widgets/section.php:43
-#: app/Customize/Panels/footer/widgets/section.php:49
-#: app/Customize/Panels/footer/widgets/section.php:59
-msgid "Halves"
-msgstr ""
-
-#: app/Customize/Panels/footer/widgets/section.php:44
-#: app/Customize/Panels/footer/widgets/section.php:50
-#: app/Customize/Panels/footer/widgets/section.php:60
-#: app/functions-setup.php:224
-msgid "Full"
-msgstr ""
-
-#: app/Customize/Panels/footer/widgets/section.php:47
-#: app/Customize/Panels/footer/widgets/section.php:57
-msgid "Quarters"
-msgstr ""
-
-#: app/Customize/Panels/footer/widgets/section.php:48
-#: app/Customize/Panels/footer/widgets/section.php:58
-msgid "Thirds"
-msgstr ""
-
-#: app/Customize/Panels/footer/widgets/section.php:51
-#: app/Customize/Panels/footer/widgets/section.php:61
-msgid "One Third / Two Thirds"
-msgstr ""
-
-#: app/Customize/Panels/footer/widgets/section.php:52
-#: app/Customize/Panels/footer/widgets/section.php:62
-msgid "Two Thirds / One Third"
-msgstr ""
-
-#: app/Customize/Panels/footer/widgets/section.php:53
-#: app/Customize/Panels/footer/widgets/section.php:63
-msgid "Quarter / Quarter / Half"
-msgstr ""
-
-#: app/Customize/Panels/footer/widgets/section.php:54
-#: app/Customize/Panels/footer/widgets/section.php:64
-msgid "Half / Quarter / Quarter"
-msgstr ""
-
-#: app/Customize/Panels/footer/widgets/section.php:73
-msgid "Headings Color"
-msgstr ""
-
-#: app/Customize/Panels/footer/widgets/section.php:94
-msgid "Link Hover Color"
-msgstr ""
-
-#: app/Customize/Panels/footer/widgets/section.php:138
-msgid "Widgets Spacing"
-msgstr ""
-
-#: app/Customize/Panels/general/background/section.php:24
-msgid "Background"
-msgstr ""
-
-#: app/Customize/Panels/header/hero/section.php:26
-msgid "Hero Header"
-msgstr ""
-
-#: app/Customize/Panels/header/hero/section.php:61
-msgid "Overlay Color"
-msgstr ""
-
-#: app/Customize/Panels/header/hero/section.php:71
-msgid "Overlay Opacity"
-msgstr ""
-
-#: app/Customize/Panels/header/hero/section.php:85
-msgid "Hero Text Color"
-msgstr ""
-
-#: app/Customize/Panels/header/hero/section.php:92
-msgid "Hero Link Hover Color"
-msgstr ""
-
-#: app/Customize/Panels/header/image/section.php:26
-msgid ""
-"Choose a custom header image for the homepage. If using a static homepage, "
-"the page settings will be used instead."
-msgstr ""
-
-#: app/Customize/Panels/header/panel.php:26
-#: app/Customize/Panels/header/styles/section.php:25
-msgid "Header Styles"
-msgstr ""
-
-#: app/Customize/Panels/header/panel.php:28
-msgid "default"
-msgstr ""
-
-#: app/Customize/Panels/header/panel.php:29
-msgid "fixed"
-msgstr ""
-
-#: app/Customize/Panels/header/panel.php:30
-msgid "hero"
-msgstr ""
-
-#: app/Customize/Panels/header/styles/section.php:45
-msgid "Enable Fullwidth Header"
-msgstr ""
-
-#: app/Customize/Panels/header/styles/section.php:52
-#: app/Customize/Panels/header/styles-fixed/section.php:69
-msgid "Header Background Color"
-msgstr ""
-
-#: app/Customize/Panels/header/styles/section.php:59
-#: app/Customize/Panels/header/styles-fixed/section.php:76
-msgid "Header Default Color"
-msgstr ""
-
-#: app/Customize/Panels/header/styles/section.php:66
-#: app/Customize/Panels/header/styles-fixed/section.php:83
-msgid "Header Default Color: Hover"
-msgstr ""
-
-#: app/Customize/Panels/header/styles-fixed/section.php:25
-msgid "Header Styles Fixed"
-msgstr ""
-
-#: app/Customize/Panels/header/styles-fixed/section.php:45
-msgid "Enable Fixed Header"
-msgstr ""
-
-#: app/Customize/Panels/header/styles-fixed/section.php:58
-msgid "Fixed Header Type"
-msgstr ""
-
-#: app/Customize/Panels/header/styles-fixed/section.php:60
-msgid "Fade In"
-msgstr ""
-
-#: app/Customize/Panels/header/styles-fixed/section.php:61
-#: app/Customize/Panels/nav/header-mobile/section.php:85
-#: app/Customize/Panels/nav/navbar-mobile/section.php:83
-msgid "Slide In"
-msgstr ""
-
-#: app/Customize/Panels/header/styles-fixed/section.php:62
-msgid "Sticky"
-msgstr ""
-
-#: app/Customize/Panels/layout/boxed/section.php:25
-msgid "Boxed Layout"
-msgstr ""
-
-#: app/Customize/Panels/layout/boxed/section.php:42
-msgid "Use a boxed layout"
-msgstr ""
-
-#: app/Customize/Panels/layout/boxed/section.php:51
-msgid "Outer Padding"
-msgstr ""
-
-#: app/Customize/Panels/layout/container/section.php:25
-msgid "Container"
-msgstr ""
-
-#: app/Customize/Panels/layout/container/section.php:38
-msgid "Max Container Width"
-msgstr ""
-
-#: app/Customize/Panels/layout/container/section.php:57
-msgid "Container Width"
-msgstr ""
-
-#: app/Customize/Panels/layout/content/section.php:24
-msgid "Content"
-msgstr ""
-
-#: app/Customize/Panels/layout/content/section.php:37
-msgid "Max Content Width"
-msgstr ""
-
-#: app/Customize/Panels/layout/sidebar/section.php:25
-#: app/Customize/Panels/typography/sidebar/section.php:25
-msgid "Sidebar"
-msgstr ""
-
-#: app/Customize/Panels/layout/sidebar/section.php:38
-msgid "Sidebar Min Width"
-msgstr ""
-
-#: app/Customize/Panels/nav/footer/section.php:28
-#: app/Customize/Panels/nav/panel.php:59
-msgid "Footer Nav"
-msgstr ""
-
-#: app/Customize/Panels/nav/footer/section.php:45
-#: app/Customize/Panels/nav/header/section.php:46
-#: app/Customize/Panels/nav/navbar/section.php:45
-#: app/Customize/Panels/nav/top/section.php:45
-msgid "Hide when not mobile"
-msgstr ""
-
-#: app/Customize/Panels/nav/footer/section.php:117
-#: app/Customize/Panels/nav/header/section.php:120
-#: app/Customize/Panels/nav/header-fixed/section.php:131
-#: app/Customize/Panels/nav/header-mobile/section.php:186
-#: app/Customize/Panels/nav/navbar/section.php:143
-#: app/Customize/Panels/nav/top/section.php:137
-#: app/Customize/Panels/nav/top-fixed/section.php:118
-msgid "Menu Item Padding"
-msgstr ""
-
-#: app/Customize/Panels/nav/footer/section.php:139
-#: app/Customize/Panels/nav/footer-mobile/section.php:92
-#: app/Customize/Panels/nav/header/section.php:141
-#: app/Customize/Panels/nav/header-fixed/section.php:153
-#: app/Customize/Panels/nav/navbar/section.php:82
-#: app/Customize/Panels/nav/navbar-fixed/section.php:95
-#: app/Customize/Panels/nav/top/section.php:68
-#: app/Customize/Panels/nav/top-fixed/section.php:139
-#: app/Customize/Panels/nav/top-mobile/section.php:95
-msgid "Nav Align"
-msgstr ""
-
-#: app/Customize/Panels/nav/footer/section.php:144
-#: app/Customize/Panels/nav/header/section.php:146
-#: app/Customize/Panels/nav/header-fixed/section.php:158
-#: app/Customize/Panels/nav/navbar/section.php:87
-#: app/Customize/Panels/nav/navbar-fixed/section.php:100
-#: app/Customize/Panels/nav/top/section.php:73
-#: app/Customize/Panels/nav/top-fixed/section.php:144
-msgid "Fill"
-msgstr ""
-
-#: app/Customize/Panels/nav/footer/section.php:159
-msgid "Nav Position"
-msgstr ""
-
-#: app/Customize/Panels/nav/footer/section.php:161
-msgid "Before Widget Area"
-msgstr ""
-
-#: app/Customize/Panels/nav/footer/section.php:162
-msgid "After Widget Area"
-msgstr ""
-
-#: app/Customize/Panels/nav/footer-mobile/section.php:25
-msgid "Footer Nav Mobile"
-msgstr ""
-
-#: app/Customize/Panels/nav/footer-mobile/section.php:44
-#: app/Customize/Panels/nav/header-mobile/section.php:49
-#: app/Customize/Panels/nav/navbar-mobile/section.php:47
-#: app/Customize/Panels/nav/top-mobile/section.php:47
-msgid "Mobile Menu Breakpoint"
-msgstr ""
-
-#: app/Customize/Panels/nav/footer-mobile/section.php:46
-#: app/Customize/Panels/nav/header-mobile/section.php:51
-#: app/Customize/Panels/nav/navbar-mobile/section.php:49
-#: app/Customize/Panels/nav/top-mobile/section.php:49
-msgid "Never Mobile"
-msgstr ""
-
-#: app/Customize/Panels/nav/footer-mobile/section.php:47
-#: app/Customize/Panels/nav/header-mobile/section.php:52
-#: app/Customize/Panels/nav/navbar-mobile/section.php:50
-#: app/Customize/Panels/nav/top-mobile/section.php:50
-msgid "Mobile Only"
-msgstr ""
-
-#: app/Customize/Panels/nav/footer-mobile/section.php:48
-msgid "Tablet and Under"
-msgstr ""
-
-#: app/Customize/Panels/nav/footer-mobile/section.php:49
-#: app/Customize/Panels/nav/header-mobile/section.php:54
-#: app/Customize/Panels/nav/navbar-mobile/section.php:52
-#: app/Customize/Panels/nav/top-mobile/section.php:52
-msgid "Always Mobile"
-msgstr ""
-
-#: app/Customize/Panels/nav/footer-mobile/section.php:61
-#: app/Customize/Panels/nav/header-mobile/section.php:66
-#: app/Customize/Panels/nav/navbar-mobile/section.php:64
-#: app/Customize/Panels/nav/top-mobile/section.php:64
-msgid "Hide when mobile"
-msgstr ""
-
-#: app/Customize/Panels/nav/header/section.php:29
-#: app/Customize/Panels/nav/panel.php:37
-msgid "Header Nav"
-msgstr ""
-
-#: app/Customize/Panels/nav/header/section.php:104
-#: app/Customize/Panels/nav/header-fixed/section.php:115
-msgid "Menu Height"
-msgstr ""
-
-#: app/Customize/Panels/nav/header/section.php:153
-#: app/Customize/Panels/nav/header-fixed/section.php:165
-#: app/Customize/Panels/nav/navbar/section.php:157
-#: app/Customize/Panels/nav/navbar-fixed/section.php:170
-msgid "Dropdown Background Color"
-msgstr ""
-
-#: app/Customize/Panels/nav/header/section.php:160
-#: app/Customize/Panels/nav/header-fixed/section.php:172
-#: app/Customize/Panels/nav/navbar/section.php:164
-#: app/Customize/Panels/nav/navbar-fixed/section.php:177
-msgid "Dropdown Link Color"
-msgstr ""
-
-#: app/Customize/Panels/nav/header/section.php:167
-#: app/Customize/Panels/nav/header-fixed/section.php:179
-#: app/Customize/Panels/nav/navbar/section.php:171
-#: app/Customize/Panels/nav/navbar-fixed/section.php:184
-msgid "Dropdown Link Color: Hover"
-msgstr ""
-
-#: app/Customize/Panels/nav/header-fixed/section.php:28
-msgid "Header Nav - Fixed"
-msgstr ""
-
-#: app/Customize/Panels/nav/header-fixed/section.php:45
-#: app/Customize/Panels/nav/navbar-fixed/section.php:45
-#: app/Customize/Panels/nav/top-fixed/section.php:45
-msgid "Show When Fixed"
-msgstr ""
-
-#: app/Customize/Panels/nav/header-fixed/section.php:58
-#: app/Customize/Panels/nav/navbar-fixed/section.php:58
-msgid "Hide When Not Fixed"
-msgstr ""
-
-#: app/Customize/Panels/nav/header-mobile/section.php:29
-msgid "Header Nav Mobile"
-msgstr ""
-
-#: app/Customize/Panels/nav/header-mobile/section.php:53
-#: app/Customize/Panels/nav/navbar-mobile/section.php:51
-#: app/Customize/Panels/nav/top-mobile/section.php:51
-msgid "Tablet and under"
-msgstr ""
-
-#: app/Customize/Panels/nav/header-mobile/section.php:81
-#: app/Customize/Panels/nav/navbar-mobile/section.php:79
-msgid "Mobile Menu Type"
-msgstr ""
-
-#: app/Customize/Panels/nav/header-mobile/section.php:83
-#: app/Customize/Panels/nav/navbar-mobile/section.php:81
-msgid "Dropdown - Slide"
-msgstr ""
-
-#: app/Customize/Panels/nav/header-mobile/section.php:84
-#: app/Customize/Panels/nav/navbar-mobile/section.php:82
-msgid "Dropdown - Fade"
-msgstr ""
-
-#: app/Customize/Panels/nav/header-mobile/section.php:86
-#: app/Customize/Panels/nav/navbar-mobile/section.php:84
-msgid "Fullscreen"
-msgstr ""
-
-#: app/Customize/Panels/nav/header-mobile/section.php:93
-#: app/Customize/Panels/nav/navbar-mobile/section.php:140
-msgid "Icon Size"
-msgstr ""
-
-#: app/Customize/Panels/nav/header-mobile/section.php:107
-#: app/Customize/Panels/nav/navbar-mobile/section.php:132
-msgid "Icon Color"
-msgstr ""
-
-#: app/Customize/Panels/nav/header-mobile/section.php:114
-#: app/Customize/Panels/nav/navbar-mobile/section.php:165
-msgid "Menu Background Color"
-msgstr ""
-
-#: app/Customize/Panels/nav/header-mobile/section.php:120
-msgid "Separator Color"
-msgstr ""
-
-#: app/Customize/Panels/nav/navbar/section.php:28
-#: app/Customize/Panels/nav/panel.php:48
-msgid "Navbar"
-msgstr ""
-
-#: app/Customize/Panels/nav/navbar/section.php:60
-#: app/Customize/Panels/nav/navbar-fixed/section.php:74
-#: app/Customize/Panels/nav/navbar-mobile/section.php:99
-msgid "Navbar Height"
-msgstr ""
-
-#: app/Customize/Panels/nav/navbar-fixed/section.php:28
-msgid "Navbar - Fixed"
-msgstr ""
-
-#: app/Customize/Panels/nav/navbar-fixed/section.php:148
-#: app/Customize/Panels/nav/navbar-mobile/section.php:194
-msgid "Link Font Size"
-msgstr ""
-
-#: app/Customize/Panels/nav/navbar-fixed/section.php:156
-#: app/Customize/Panels/nav/navbar-mobile/section.php:220
-msgid "Link Padding"
-msgstr ""
-
-#: app/Customize/Panels/nav/navbar-mobile/section.php:28
-msgid "Navbar Mobile"
-msgstr ""
-
-#: app/Customize/Panels/nav/navbar-mobile/section.php:91
-msgid "Navbar Background Color"
-msgstr ""
-
-#: app/Customize/Panels/nav/navbar-mobile/section.php:122
-msgid "Mobile Toggle Side"
-msgstr ""
-
-#: app/Customize/Panels/nav/navbar-mobile/section.php:172
-msgid "Menu Separator Color"
-msgstr ""
-
-#: app/Customize/Panels/nav/navbar-mobile/section.php:202
-msgid "Link Line Height"
-msgstr ""
-
-#: app/Customize/Panels/nav/panel.php:26
-#: app/Customize/Panels/nav/top/section.php:28
-msgid "Top Nav"
-msgstr ""
-
-#: app/Customize/Panels/nav/top/section.php:53
-msgid "Nav Background Color"
-msgstr ""
-
-#: app/Customize/Panels/nav/top-fixed/section.php:28
-msgid "Top Nav - Fixed"
-msgstr ""
-
-#: app/Customize/Panels/nav/top-mobile/section.php:28
-msgid "Top Nav Mobile"
-msgstr ""
-
-#: app/Customize/Panels/pages/layout/section.php:40
-msgid "Page Layout"
-msgstr ""
-
-#: app/Customize/Panels/posts/layout/section.php:40
-msgid "Post Layout"
-msgstr ""
-
-#: app/Customize/Panels/posts/meta/section.php:24
-msgid "Meta"
-msgstr ""
-
-#: app/Customize/Panels/posts/nav/defaults.php:23
-msgid "PREV"
-msgstr ""
-
-#: app/Customize/Panels/posts/nav/defaults.php:26
-msgid "NEXT"
-msgstr ""
-
-#: app/Customize/Panels/posts/nav/section.php:26
-msgid "Post Navigation"
-msgstr ""
-
-#: app/Customize/Panels/posts/nav/section.php:45
-msgid "Enable Post Nav"
-msgstr ""
-
-#: app/Customize/Panels/posts/nav/section.php:58
-msgid "Link Color - Hover"
-msgstr ""
-
-#: app/Customize/Panels/posts/nav/section.php:79
-msgid "Previous Post Text"
-msgstr ""
-
-#: app/Customize/Panels/posts/nav/section.php:92
-msgid "Next Post Text"
-msgstr ""
-
-#: app/Customize/Panels/register-panels.php:16
-msgid "General"
-msgstr ""
-
-#: app/Customize/Panels/register-panels.php:26
-msgid "Header"
-msgstr ""
-
-#: app/Customize/Panels/register-panels.php:31
-msgid "Branding"
-msgstr ""
-
-#: app/Customize/Panels/register-panels.php:36
-msgid "Typography"
-msgstr ""
-
-#: app/Customize/Panels/register-panels.php:41
+#: app/Colors/Provider.php:47
 msgid "Colors"
 msgstr ""
 
-#: app/Customize/Panels/register-panels.php:46
-msgid "Elements"
+#: app/Customize/Controls/Device_Picker.php:69
+#. translators: the name of the preview device.
+msgid "Enter %s preview mode"
 msgstr ""
 
-#: app/Customize/Panels/register-panels.php:51
-msgid "Blog"
+#: app/Customize/Controls/Font_Styles/Control.php:52
+msgid "Bold"
 msgstr ""
 
-#: app/Customize/Panels/register-panels.php:56
-msgid "Posts"
+#: app/Customize/Controls/Font_Styles/Control.php:53
+msgid "Italic"
 msgstr ""
 
-#: app/Customize/Panels/register-panels.php:61
-msgid "Pages"
+#: app/Customize/Controls/Font_Styles/Control.php:54
+#: app/Typography/Customize/Links/Underline.php:60
+msgid "Underline"
 msgstr ""
 
-#: app/Customize/Panels/register-panels.php:66
-msgid "Footer"
+#: app/Customize/Controls/Font_Styles/Control.php:55
+msgid "Uppercase"
 msgstr ""
 
-#: app/Customize/Panels/register-panels.php:71
-msgid "Navigation"
+#: app/Customize/Controls/Font_Styles/Control.php:56
+msgid "Capitalize"
 msgstr ""
 
-#: app/Customize/Panels/test/theme/section.php:24
-msgid "Theme Test"
+#: app/Customize/Controls/Range/Control.php:175
+msgid "click to enable"
 msgstr ""
 
-#: app/Customize/Panels/typography/body/section.php:27
-msgid "Body"
+#: app/Customize/Panel.php:100
+msgid "Customizing"
 msgstr ""
 
-#: app/Customize/Panels/typography/fonts/section.php:21
-#: app/Customize/Panels/typography/fonts/section.php:26
+#: app/Customize/Provider.php:45 app/Post_Types/Provider.php:39
+msgid "Post Types"
+msgstr ""
+
+#: app/Editor/Editor.php:292 app/Typography/Hooks.php:48
+msgid "Small"
+msgstr ""
+
+#: app/Editor/Editor.php:293 app/Typography/Hooks.php:49
+msgid "S"
+msgstr ""
+
+#: app/Editor/Editor.php:298 app/Typography/Hooks.php:54
+msgid "Regular"
+msgstr ""
+
+#: app/Editor/Editor.php:299 app/Typography/Hooks.php:55
+msgid "M"
+msgstr ""
+
+#: app/Editor/Editor.php:304 app/Images/Hooks.php:69
+#: app/Typography/Hooks.php:60
+msgid "Large"
+msgstr ""
+
+#: app/Editor/Editor.php:305 app/Typography/Hooks.php:61
+msgid "L"
+msgstr ""
+
+#: app/Editor/Editor.php:310 app/Typography/Hooks.php:66
+msgid "Larger"
+msgstr ""
+
+#: app/Editor/Editor.php:311 app/Typography/Hooks.php:67
+msgid "XL"
+msgstr ""
+
+#: app/Fonts/Provider.php:49 app/Fonts/Provider.php:55
 msgid "Google Fonts"
 msgstr ""
 
-#: app/Customize/Panels/typography/fonts/section.php:24
+#: app/Fonts/Provider.php:53
 msgid "Visit"
 msgstr ""
 
-#: app/Customize/Panels/typography/fonts/section.php:27
+#: app/Fonts/Provider.php:56
 msgid ""
-" to create your font profile. Paste in the font list from the end of the "
-"embed URL, or add desired fonts using the following formula: Each font name "
-"should be separated by a \"|\" and use a \"+\" for spaces."
+"to create a font profile. Paste in the font list from the end of the embed "
+"URL. Each font name should be separated by a \"|\" and use a \"+\" for "
+"spaces. To start using the fonts, save and refresh the customizer."
 msgstr ""
 
-#: app/Customize/Panels/typography/fonts/section.php:45
-msgid "Google Fonts Code"
+#: app/Fonts/Provider.php:57
+msgid "Example: Oswald|Roboto+Slab:400,700"
 msgstr ""
 
-#: app/Customize/Panels/typography/h1/section.php:26
-msgid "H1"
+#: app/Footer/Customize/Widgets/Layout.php:72
+#: app/Footer/Customize/Widgets/Layout.php:78
+#: app/Footer/Customize/Widgets/Layout.php:88
+msgid "Halves"
 msgstr ""
 
-#: app/Customize/Panels/typography/h2/section.php:26
-msgid "H2"
+#: app/Footer/Customize/Widgets/Layout.php:73
+#: app/Footer/Customize/Widgets/Layout.php:79
+#: app/Footer/Customize/Widgets/Layout.php:89 app/Images/Hooks.php:70
+msgid "Full"
 msgstr ""
 
-#: app/Customize/Panels/typography/h3/section.php:26
-msgid "H3"
+#: app/Footer/Customize/Widgets/Layout.php:76
+#: app/Footer/Customize/Widgets/Layout.php:86
+msgid "Quarters"
 msgstr ""
 
-#: app/Customize/Panels/typography/h4/section.php:26
-msgid "H4"
+#: app/Footer/Customize/Widgets/Layout.php:77
+#: app/Footer/Customize/Widgets/Layout.php:87
+msgid "Thirds"
 msgstr ""
 
-#: app/Customize/Panels/typography/h5/section.php:26
-msgid "H5"
+#: app/Footer/Customize/Widgets/Layout.php:80
+#: app/Footer/Customize/Widgets/Layout.php:90
+msgid "One Third / Two Thirds"
 msgstr ""
 
-#: app/Customize/Panels/typography/h6/section.php:26
-msgid "H6"
+#: app/Footer/Customize/Widgets/Layout.php:81
+#: app/Footer/Customize/Widgets/Layout.php:91
+msgid "Two Thirds / One Third"
 msgstr ""
 
-#: app/Customize/Panels/typography/headings/section.php:27
-msgid "Headings"
+#: app/Footer/Customize/Widgets/Layout.php:82
+#: app/Footer/Customize/Widgets/Layout.php:92
+msgid "Quarter / Quarter / Half"
 msgstr ""
 
-#: app/Customize/Panels/typography/headings/section.php:66
-msgid "Heading Font Styles"
+#: app/Footer/Customize/Widgets/Layout.php:83
+#: app/Footer/Customize/Widgets/Layout.php:93
+msgid "Half / Quarter / Quarter"
 msgstr ""
 
-#: app/Customize/Panels/typography/links/section.php:24
-msgid "Links"
-msgstr ""
-
-#: app/Customize/Panels/typography/links/section.php:43
-msgid "Link Color Visited"
-msgstr ""
-
-#: app/Customize/Panels/typography/links/section.php:50
-msgid "Link Color Hover"
-msgstr ""
-
-#: app/Customize/Panels/typography/links/section.php:57
-msgid "Link Color Active"
-msgstr ""
-
-#: app/Customize/Panels/typography/links/section.php:72
-msgid "Link Underline"
-msgstr ""
-
-#: app/Customize/Panels/typography/links/section.php:76
-msgid "On Hover"
-msgstr ""
-
-#: app/Customize/Panels/typography/panel.php:28
-msgid "all headings"
-msgstr ""
-
-#: app/Customize/Panels/typography/panel.php:42
-msgid "headings"
-msgstr ""
-
-#: app/Customize/Panels/typography/panel.php:57
-msgid "Heading Styles"
-msgstr ""
-
-#: app/Customize/functions/functions-controls.php:114
-msgid "&#169;2019, My Awesome Site"
-msgstr ""
-
-#: app/Template/Icons/FA.php:36 app/Template/Icons/SVG.php:68
-msgid "Please define an icon name."
-msgstr ""
-
-#: app/Template/Nav/Nav.php:349
-msgid "&lt; prev"
-msgstr ""
-
-#: app/Template/Nav/Nav.php:350
-msgid "next &gt;"
-msgstr ""
-
-#: app/Template/Sidebar/Sidebar.php:80
+#: app/Footer/Hooks.php:63
 #. translators: name of each footer widget area
 msgid "Footer %s"
 msgstr ""
 
-#: app/Template/Template.php:118
-msgid "Page Builder"
+#: app/Footer/Provider.php:52
+msgid "Footer"
 msgstr ""
 
-#: app/Template/Template.php:119
-msgid "Blank Template"
+#: app/Footer/Provider.php:58
+msgid "Footer Styles"
 msgstr ""
 
-#: app/Template/Template.php:120
-msgid "Block Editor Template"
+#: app/Footer/Provider.php:70
+msgid "Footer Widgets"
 msgstr ""
 
-#: app/bootstrap-compat.php:37
+#: app/Footer/Provider.php:87
+msgid "Bottom Bar"
+msgstr ""
+
+#: app/General/Hooks.php:49
+msgid "Site Icon"
+msgstr ""
+
+#: app/General/Provider.php:44
+msgid "General"
+msgstr ""
+
+#: app/Header/Customize/Layout/Layout.php:74
+msgid "Vertical"
+msgstr ""
+
+#: app/Header/Customize/Layout/Layout.php:75
+msgid "Horizontal"
+msgstr ""
+
+#: app/Header/Customize/Styles_Fixed/Fixed_Type.php:66
+msgid "Fade In"
+msgstr ""
+
+#: app/Header/Customize/Styles_Fixed/Fixed_Type.php:67
+#: app/Navigation/Header/Customize/Header_Mobile/Type.php:69
+#: app/Navigation/Navbar/Customize/Navbar_Mobile/Type.php:69
+msgid "Slide In"
+msgstr ""
+
+#: app/Header/Customize/Styles_Fixed/Fixed_Type.php:68
+msgid "Sticky"
+msgstr ""
+
+#: app/Header/Hooks.php:86
+msgid "Default Header Image"
+msgstr ""
+
+#: app/Header/Provider.php:50
+#: app/Post_Types/Product/Customize/Menu_Location.php:68
+msgid "Header"
+msgstr ""
+
+#: app/Header/Provider.php:56 app/Header/Provider.php:175
+msgid "Header Styles"
+msgstr ""
+
+#: app/Header/Provider.php:66 app/Navigation/Header/Provider.php:88
+msgid "Header Fixed"
+msgstr ""
+
+#: app/Header/Provider.php:78 app/Layout/Provider.php:47
+#: app/Post_Types/Page/Provider.php:59 app/Post_Types/Post/Provider.php:68
+#: app/Post_Types/Post/Provider.php:127 app/Post_Types/Product/Provider.php:70
+#: app/Post_Types/Product/Provider.php:119
+msgid "Layout"
+msgstr ""
+
+#: app/Header/Provider.php:84
+msgid "Image"
+msgstr ""
+
+#: app/Header/Provider.php:96 app/Header/Provider.php:106
+#: app/Header/Provider.php:183
+msgid "Logo"
+msgstr ""
+
+#: app/Header/Provider.php:116 app/Header/Provider.php:131
+#: app/Header/Provider.php:191 app/Post_Types/Page/Provider.php:68
+#: app/Post_Types/Post/Provider.php:77 app/Post_Types/Post/Provider.php:136
+#: app/Post_Types/Post/Provider.php:161 app/Post_Types/Product/Provider.php:79
+#: app/Post_Types/Product/Provider.php:128
+msgid "Title"
+msgstr ""
+
+#: app/Header/Provider.php:142 app/Header/Provider.php:158
+#: app/Header/Provider.php:199
+msgid "Tagline"
+msgstr ""
+
+#: app/Header/Provider.php:170 app/Layout/Provider.php:53
+msgid "Content"
+msgstr ""
+
+#: app/Header/Provider.php:177 app/Header/Provider.php:185
+#: app/Header/Provider.php:193 app/Header/Provider.php:201
+msgid "default"
+msgstr ""
+
+#: app/Header/Provider.php:178 app/Header/Provider.php:186
+#: app/Header/Provider.php:194 app/Header/Provider.php:202
+msgid "fixed"
+msgstr ""
+
+#: app/Icons/FA.php:33 app/Icons/SVG.php:66
+msgid "Please define an icon name."
+msgstr ""
+
+#: app/Images/Hooks.php:66
+msgid "Thumbnail"
+msgstr ""
+
+#: app/Images/Hooks.php:67
+msgid "Medium"
+msgstr ""
+
+#: app/Images/Hooks.php:68
+msgid "Medium Large"
+msgstr ""
+
+#: app/Layout/Provider.php:62 app/Navigation/Footer/Provider.php:67
+msgid "Container"
+msgstr ""
+
+#: app/Navigation/Footer/Customize/Footer/Align.php:63
+#: app/Navigation/Footer/Customize/Footer_Mobile/Align.php:63
+#: app/Navigation/Header/Customize/Header/Align.php:63
+#: app/Navigation/Header/Customize/Header_Fixed/Align.php:62
+#: app/Navigation/Navbar/Customize/Navbar/Align.php:63
+#: app/Navigation/Navbar/Customize/Navbar_Fixed/Align.php:62
+#: app/Navigation/Top/Customize/Top/Align.php:63
+#: app/Navigation/Top/Customize/Top_Fixed/Align.php:62
+#: app/Navigation/Top/Customize/Top_Mobile/Align.php:63
+msgid "Fill"
+msgstr ""
+
+#: app/Navigation/Footer/Customize/Footer/Position.php:59
+msgid "Before Widget Area"
+msgstr ""
+
+#: app/Navigation/Footer/Customize/Footer/Position.php:60
+msgid "After Widget Area"
+msgstr ""
+
+#: app/Navigation/Footer/Customize/Footer_Mobile/Breakpoint.php:65
+#: app/Navigation/Header/Customize/Header_Mobile/Breakpoint.php:65
+#: app/Navigation/Navbar/Customize/Navbar_Mobile/Breakpoint.php:65
+#: app/Navigation/Top/Customize/Top_Mobile/Breakpoint.php:65
+msgid "Never Mobile"
+msgstr ""
+
+#: app/Navigation/Footer/Customize/Footer_Mobile/Breakpoint.php:66
+#: app/Navigation/Header/Customize/Header_Mobile/Breakpoint.php:66
+#: app/Navigation/Navbar/Customize/Navbar_Mobile/Breakpoint.php:66
+#: app/Navigation/Top/Customize/Top_Mobile/Breakpoint.php:66
+msgid "Mobile Only"
+msgstr ""
+
+#: app/Navigation/Footer/Customize/Footer_Mobile/Breakpoint.php:67
+#: app/Navigation/Header/Customize/Header_Mobile/Breakpoint.php:67
+#: app/Navigation/Navbar/Customize/Navbar_Mobile/Breakpoint.php:67
+#: app/Navigation/Top/Customize/Top_Mobile/Breakpoint.php:67
+msgid "Tablet and under"
+msgstr ""
+
+#: app/Navigation/Footer/Provider.php:49 app/Navigation/Footer/Provider.php:78
+msgid "Footer Nav"
+msgstr ""
+
+#: app/Navigation/Header/Customize/Header_Mobile/Type.php:67
+#: app/Navigation/Navbar/Customize/Navbar_Mobile/Type.php:67
+msgid "Dropdown - Slide"
+msgstr ""
+
+#: app/Navigation/Header/Customize/Header_Mobile/Type.php:68
+#: app/Navigation/Navbar/Customize/Navbar_Mobile/Type.php:68
+msgid "Dropdown - Fade"
+msgstr ""
+
+#: app/Navigation/Header/Customize/Header_Mobile/Type.php:70
+#: app/Navigation/Navbar/Customize/Navbar_Mobile/Type.php:70
+msgid "Fullscreen"
+msgstr ""
+
+#: app/Navigation/Header/Provider.php:49 app/Navigation/Header/Provider.php:106
+msgid "Header Nav"
+msgstr ""
+
+#: app/Navigation/Header/Provider.php:68
+msgid "Header Mobile"
+msgstr ""
+
+#: app/Navigation/Navbar/Provider.php:49 app/Navigation/Navbar/Provider.php:111
+#: app/Post_Types/Product/Customize/Menu_Location.php:69
+msgid "Navbar"
+msgstr ""
+
+#: app/Navigation/Navbar/Provider.php:69
+msgid "Navbar Mobile"
+msgstr ""
+
+#: app/Navigation/Navbar/Provider.php:91
+msgid "Navbar Fixed"
+msgstr ""
+
+#: app/Navigation/Provider.php:47
+msgid "Navigation"
+msgstr ""
+
+#: app/Navigation/Top/Provider.php:49 app/Navigation/Top/Provider.php:66
+#: app/Navigation/Top/Provider.php:78 app/Navigation/Top/Provider.php:94
+msgid "Top Nav"
+msgstr ""
+
+#: app/Pagination/Hooks.php:51
+msgid "&lt; prev"
+msgstr ""
+
+#: app/Pagination/Hooks.php:52
+msgid "next &gt;"
+msgstr ""
+
+#: app/Pagination/Provider.php:49 app/Pagination/Provider.php:62
+#: app/Pagination/Provider.php:71 views/nav/pagination/post.php:4
+msgid "Pagination"
+msgstr ""
+
+#: app/Post_Title/Template.php:136
+#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:101
+#: vendor/justintadlock/hybrid-core/src/Util/Title.php:150
+#. Translators: %s is the search query.
+msgid "Search results for: %s"
+msgstr ""
+
+#: app/Post_Types/Customize/Content_Layout.php:69
+msgid "Wide"
+msgstr ""
+
+#: app/Post_Types/Customize/Content_Layout.php:70
+msgid "Wide/Left"
+msgstr ""
+
+#: app/Post_Types/Customize/Content_Layout.php:71
+msgid "Wide/Center"
+msgstr ""
+
+#: app/Post_Types/Customize/Entry/Link/Type.php:66
+#: app/Typography/Customize/Links/Underline.php:59
+msgid "None"
+msgstr ""
+
+#: app/Post_Types/Customize/Entry/Link/Type.php:67
+msgid "Inline"
+msgstr ""
+
+#: app/Post_Types/Customize/Entry/Link/Type.php:68
+#: app/Post_Types/Post/Provider.php:182
+msgid "Link"
+msgstr ""
+
+#: app/Post_Types/Customize/Entry/Link/Type.php:69
+msgid "Button"
+msgstr ""
+
+#: app/Post_Types/Page/Provider.php:41
+msgid "Pages"
+msgstr ""
+
+#: app/Post_Types/Page/Provider.php:52
+msgid "Page"
+msgstr ""
+
+#: app/Post_Types/Post/Provider.php:50
+msgid "Posts"
+msgstr ""
+
+#: app/Post_Types/Post/Provider.php:61
+msgid "Post"
+msgstr ""
+
+#: app/Post_Types/Post/Provider.php:88 app/Post_Types/Post/Provider.php:172
+msgid "Byline"
+msgstr ""
+
+#: app/Post_Types/Post/Provider.php:106
+msgid "Post Nav"
+msgstr ""
+
+#: app/Post_Types/Post/Provider.php:120
+msgid "Post Archive"
+msgstr ""
+
+#: app/Post_Types/Post/Provider.php:154
+msgid "Post Entry"
+msgstr ""
+
+#: app/Post_Types/Post/Provider.php:193
+msgid "Excerpt"
+msgstr ""
+
+#: app/Post_Types/Product/Customize/Menu_Location.php:67
+msgid "Top"
+msgstr ""
+
+#: app/Post_Types/Product/Provider.php:50
+msgid "Products"
+msgstr ""
+
+#: app/Post_Types/Product/Provider.php:63
+msgid "Product"
+msgstr ""
+
+#: app/Post_Types/Product/Provider.php:98
+msgid "Postnav"
+msgstr ""
+
+#: app/Post_Types/Product/Provider.php:112
+msgid "Product Archive"
+msgstr ""
+
+#: app/Post_Types/Product/Provider.php:145
+#: app/Post_Types/Product/Template.php:39
+msgid "Cart"
+msgstr ""
+
+#: app/Post_Types/Product/Provider.php:152
+msgid "Cart Widget"
+msgstr ""
+
+#: app/Postnav/Template.php:64
+msgid "PREV"
+msgstr ""
+
+#: app/Postnav/Template.php:66
+msgid "NEXT"
+msgstr ""
+
+#: app/Sidebar/Customize/Settings/Layout.php:67
+msgid "Right Sidebar"
+msgstr ""
+
+#: app/Sidebar/Customize/Settings/Layout.php:68
+msgid "Left Sidebar"
+msgstr ""
+
+#: app/Sidebar/Customize/Settings/Layout.php:69
+msgid "No Sidebar"
+msgstr ""
+
+#: app/Sidebar/Provider.php:44 app/Sidebar/Provider.php:50
+msgid "Sidebar"
+msgstr ""
+
+#: app/Sidebar/Provider.php:60
+msgid "Sidebar Colors"
+msgstr ""
+
+#: app/Typography/Customize/Links/Underline.php:61
+msgid "On Hover"
+msgstr ""
+
+#: app/Typography/Provider.php:47
+msgid "Typography"
+msgstr ""
+
+#: app/Typography/Provider.php:53
+msgid "Body"
+msgstr ""
+
+#: app/Typography/Provider.php:64
+msgid "Headings"
+msgstr ""
+
+#: app/Typography/Provider.php:74
+msgid "h1"
+msgstr ""
+
+#: app/Typography/Provider.php:86
+msgid "h2"
+msgstr ""
+
+#: app/Typography/Provider.php:98
+msgid "h3"
+msgstr ""
+
+#: app/Typography/Provider.php:110
+msgid "h4"
+msgstr ""
+
+#: app/Typography/Provider.php:122
+msgid "h5"
+msgstr ""
+
+#: app/Typography/Provider.php:134
+msgid "h6"
+msgstr ""
+
+#: app/Typography/Provider.php:146
+msgid "Links"
+msgstr ""
+
+#: app/Typography/Provider.php:157
+msgid "Heading Styles"
+msgstr ""
+
+#: app/Typography/Provider.php:171
+msgid "all headings"
+msgstr ""
+
+#: app/Typography/Provider.php:181
+msgid "headings"
+msgstr ""
+
+#: compat.php:69
 #. Translators: 1 is the required WordPress version and 2 is the user's current
 #. version.
 msgid ""
@@ -1328,7 +683,7 @@ msgid ""
 "%2$s. Please upgrade and try again."
 msgstr ""
 
-#: app/bootstrap-compat.php:46
+#: compat.php:78
 #. Translators: 1 is the required PHP version and 2 is the user's current
 #. version.
 msgid ""
@@ -1336,112 +691,46 @@ msgid ""
 "Please upgrade and try again."
 msgstr ""
 
-#: app/functions-setup.php:91
-msgid "Meta Light"
-msgstr ""
-
-#: app/functions-setup.php:96
-msgid "Meta Medium"
-msgstr ""
-
-#: app/functions-setup.php:101
-msgid "Meta Dark"
-msgstr ""
-
-#: app/functions-setup.php:113
-msgid "Small"
-msgstr ""
-
-#: app/functions-setup.php:114
-msgid "S"
-msgstr ""
-
-#: app/functions-setup.php:119
-msgid "Regular"
-msgstr ""
-
-#: app/functions-setup.php:120
-msgid "M"
-msgstr ""
-
-#: app/functions-setup.php:125 app/functions-setup.php:223
-msgid "Large"
-msgstr ""
-
-#: app/functions-setup.php:126
-msgid "L"
-msgstr ""
-
-#: app/functions-setup.php:131
-msgid "Larger"
-msgstr ""
-
-#: app/functions-setup.php:132
-msgid "XL"
-msgstr ""
-
-#: app/functions-setup.php:203
-msgid "Default Header Image"
-msgstr ""
-
-#: app/functions-setup.php:220
-msgid "Thumbnail"
-msgstr ""
-
-#: app/functions-setup.php:221
-msgid "Medium"
-msgstr ""
-
-#: app/functions-setup.php:222
-msgid "Medium Large"
-msgstr ""
-
-#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:98
+#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:95
 msgid "Browse:"
 msgstr ""
 
-#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:100
+#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:97
 msgid "Home"
 msgstr ""
 
-#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:101
+#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:98
 #: vendor/justintadlock/hybrid-core/src/Util/Title.php:164
 msgid "404 Not Found"
 msgstr ""
 
-#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:102
+#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:99
 #: vendor/justintadlock/hybrid-core/src/Util/Title.php:97
 msgid "Archives"
 msgstr ""
 
-#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:104
-#: vendor/justintadlock/hybrid-core/src/Util/Title.php:150
-#. Translators: %s is the search query.
-msgid "Search results for: %s"
-msgstr ""
-
-#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:106
+#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:103
 #. Translators: %s is the page number.
 msgid "Page %s"
 msgstr ""
 
-#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:108
+#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:105
 #. Translators: %s is the page number.
 msgid "Comment Page %s"
 msgstr ""
 
-#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:110
+#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:107
 #: vendor/justintadlock/hybrid-core/src/Util/Title.php:279
 #. Translators: Minute archive title. %s is the minute time format.
 msgid "Minute %s"
 msgstr ""
 
-#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:112
+#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:109
 #. Translators: Weekly archive title. %s is the week date format.
 msgid "Week %s"
 msgstr ""
 
-#: vendor/justintadlock/hybrid-core/src/Comment/functions-comment.php:229
+#: vendor/justintadlock/hybrid-core/src/Comment/functions-comment.php:276
 msgid "Edit"
 msgstr ""
 
@@ -1483,6 +772,18 @@ msgstr ""
 msgid "(Untitled)"
 msgstr ""
 
+#: vendor/skyshab/rootstrap-panels/src/Rootstrap_Custom_Panel.php:48
+msgid "Back"
+msgstr ""
+
+#: vendor/skyshab/rootstrap-panels/src/Rootstrap_Custom_Panel.php:54
+msgid "Help"
+msgstr ""
+
+#: views/archive/search.php:14
+msgid "No results found. Search again?"
+msgstr ""
+
 #: views/comment/default.php:11 views/comment/ping.php:8
 #. Translators: 1 is the comment date and 2 is the time.
 msgid "%1$s at %2$s"
@@ -1492,117 +793,16 @@ msgstr ""
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: views/comments/default.php:28
-msgid "Comments are closed."
+#: views/content/404.php:6
+msgid "Whoops!"
 msgstr ""
 
-#: views/content/404.php:9
-msgid "Whoah, partner!"
+#: views/content/404.php:7
+msgid "This page does not exist. Try a search?"
 msgstr ""
 
-#: views/content/404.php:12
-msgid ""
-"It looks like you stumbled upon a page that does not exist. Perhaps rolling "
-"the dice with a search might help."
-msgstr ""
-
-#: views/entry/single/attachment-audio.php:16
-msgid "Audio Info"
-msgstr ""
-
-#: views/entry/single/attachment-audio.php:19
-#: views/entry/single/attachment-video.php:19
-msgid "Run Time"
-msgstr ""
-
-#: views/entry/single/attachment-audio.php:20
-msgid "Artist"
-msgstr ""
-
-#: views/entry/single/attachment-audio.php:21
-msgid "Album"
-msgstr ""
-
-#: views/entry/single/attachment-audio.php:22
-msgid "Track Number"
-msgstr ""
-
-#: views/entry/single/attachment-audio.php:23
-msgid "Year"
-msgstr ""
-
-#: views/entry/single/attachment-audio.php:24
-msgid "Genre"
-msgstr ""
-
-#: views/entry/single/attachment-audio.php:25
-#: views/entry/single/attachment-image.php:50
-#: views/entry/single/attachment-video.php:21
-msgid "Name"
-msgstr ""
-
-#: views/entry/single/attachment-audio.php:26
-#: views/entry/single/attachment-image.php:51
-#: views/entry/single/attachment-video.php:22
-msgid "Mime Type"
-msgstr ""
-
-#: views/entry/single/attachment-audio.php:27
-#: views/entry/single/attachment-image.php:52
-#: views/entry/single/attachment-video.php:23
-msgid "Type"
-msgstr ""
-
-#: views/entry/single/attachment-audio.php:28
-#: views/entry/single/attachment-image.php:53
-#: views/entry/single/attachment-video.php:24
-msgid "Size"
-msgstr ""
-
-#: views/entry/single/attachment-image.php:9
-#. Translators: %s is a list of image size links.
-msgid "Sizes: %s"
-msgstr ""
-
-#: views/entry/single/attachment-image.php:32
-msgid "Gallery"
-msgstr ""
-
-#: views/entry/single/attachment-image.php:40
-msgid "Image Info"
-msgstr ""
-
-#: views/entry/single/attachment-image.php:43
-#: views/entry/single/attachment-video.php:20
-msgid "Dimensions"
-msgstr ""
-
-#: views/entry/single/attachment-image.php:44
-msgid "Date"
-msgstr ""
-
-#: views/entry/single/attachment-image.php:45
-msgid "Camera"
-msgstr ""
-
-#: views/entry/single/attachment-image.php:46
-msgid "Aperture"
-msgstr ""
-
-#: views/entry/single/attachment-image.php:47
-msgid "Focal Length"
-msgstr ""
-
-#: views/entry/single/attachment-image.php:48
-msgid "ISO"
-msgstr ""
-
-#: views/entry/single/attachment-image.php:49
-msgid "Shutter Speed"
-msgstr ""
-
-#: views/entry/single/attachment-video.php:16
-msgid "Video Info"
+#: views/entry/search.php:17
+msgid "View Result"
 msgstr ""
 
 #: views/header/default.php:16
@@ -1625,20 +825,112 @@ msgstr ""
 msgid "Posts Navigation"
 msgstr ""
 
-#: views/partials/post-meta.php:39
-msgid "Author"
-msgstr ""
-
-#: views/partials/post-meta.php:48
-msgid "Published"
-msgstr ""
-
 #: views/partials/searchform.php:12
 msgid "Search for:"
 msgstr ""
 
 #: views/partials/searchform.php:14
 msgid "Search &hellip;"
+msgstr ""
+
+#: views/single/attachment-audio.php:13
+msgid "Audio Info"
+msgstr ""
+
+#: views/single/attachment-audio.php:16 views/single/attachment-video.php:16
+msgid "Run Time"
+msgstr ""
+
+#: views/single/attachment-audio.php:17
+msgid "Artist"
+msgstr ""
+
+#: views/single/attachment-audio.php:18
+msgid "Album"
+msgstr ""
+
+#: views/single/attachment-audio.php:19
+msgid "Track Number"
+msgstr ""
+
+#: views/single/attachment-audio.php:20
+msgid "Year"
+msgstr ""
+
+#: views/single/attachment-audio.php:21
+msgid "Genre"
+msgstr ""
+
+#: views/single/attachment-audio.php:22 views/single/attachment-video.php:18
+msgid "Name"
+msgstr ""
+
+#: views/single/attachment-audio.php:23 views/single/attachment-video.php:19
+msgid "Mime Type"
+msgstr ""
+
+#: views/single/attachment-audio.php:24 views/single/attachment-video.php:20
+msgid "Type"
+msgstr ""
+
+#: views/single/attachment-audio.php:25 views/single/attachment-video.php:21
+msgid "Size"
+msgstr ""
+
+#: views/single/attachment-image.php:11
+msgid "Image Info"
+msgstr ""
+
+#: views/single/attachment-image.php:14
+msgid "Dimensions:"
+msgstr ""
+
+#: views/single/attachment-image.php:15
+msgid "Date:"
+msgstr ""
+
+#: views/single/attachment-image.php:16
+msgid "Camera:"
+msgstr ""
+
+#: views/single/attachment-image.php:17
+msgid "Aperture:"
+msgstr ""
+
+#: views/single/attachment-image.php:18
+msgid "Focal Length:"
+msgstr ""
+
+#: views/single/attachment-image.php:19
+msgid "ISO:"
+msgstr ""
+
+#: views/single/attachment-image.php:20
+msgid "Shutter Speed:"
+msgstr ""
+
+#: views/single/attachment-image.php:21
+msgid "Name:"
+msgstr ""
+
+#: views/single/attachment-image.php:22
+msgid "Mime Type:"
+msgstr ""
+
+#: views/single/attachment-image.php:23
+msgid "Type:"
+msgstr ""
+
+#: views/single/attachment-image.php:24
+msgid "Size:"
+msgstr ""
+
+#: views/single/attachment-video.php:13
+msgid "Video Info"
+msgstr ""
+
+#: views/single/attachment-video.php:17
+msgid "Dimensions"
 msgstr ""
 
 #. Theme Name of the plugin/theme
@@ -1664,37 +956,32 @@ msgstr ""
 msgid "https://sky.camp"
 msgstr ""
 
-#: app/Template/Nav/Nav.php:63
-msgctxt "nav menu location"
-msgid "Header"
-msgstr ""
-
-#: app/Template/Nav/Nav.php:67
-msgctxt "nav menu location"
-msgid "Navbar"
-msgstr ""
-
-#: app/Template/Nav/Nav.php:71
-msgctxt "nav menu location"
-msgid "Top Nav"
-msgstr ""
-
-#: app/Template/Nav/Nav.php:75
+#: app/Navigation/Footer/Hooks.php:49
 msgctxt "nav menu location"
 msgid "Footer Nav"
 msgstr ""
 
-#: app/Template/Sidebar/Sidebar.php:64
+#: app/Navigation/Header/Hooks.php:49
+msgctxt "nav menu location"
+msgid "Header"
+msgstr ""
+
+#: app/Navigation/Navbar/Hooks.php:49
+msgctxt "nav menu location"
+msgid "Navbar"
+msgstr ""
+
+#: app/Navigation/Top/Hooks.php:49
+msgctxt "nav menu location"
+msgid "Top Nav"
+msgstr ""
+
+#: app/Sidebar/Hooks.php:51
 msgctxt "sidebar"
 msgid "Primary"
 msgstr ""
 
-#: app/Template/Utilities/functions-utilities.php:32
-msgctxt "meta separator"
-msgid "&middot;"
-msgstr ""
-
-#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:99
+#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:96
 msgctxt "breadcrumbs aria label"
 msgid "Breadcrumbs"
 msgstr ""

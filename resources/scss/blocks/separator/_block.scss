@@ -1,0 +1,18 @@
+////
+/// Separator block.
+///
+/// @group  Blocks
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.wp-block-separator {
+
+    &.is-style-dots {
+        border-top: 4px dotted;
+    }
+
+    &.is-style-wide {
+        border-top: 4px solid;
+    }
+}

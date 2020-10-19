@@ -1,16 +1,15 @@
 ////
-/// Body styles
+/// Body element.
 ///
 /// @group  Elements
 /// @author Sky Shabatura <theme@sky.camp>
 /// @link   https://taproot-theme.com
 ////
 
-
 body {
+
+    margin: 0;
     overflow-x: hidden;
-    color: var( --typography--body--text-color );
-    font-family: var( --typography--body--font-family );
 
     // prevent top and bottom elastic scrolling in Chrome.
     // This does not work yet in Safari
@@ -22,12 +21,5 @@ body {
     // used for mobile navigation
     &.noscroll {
         overflow: hidden;
-    }
-
-    // customize default
-    &.boxed-layout {
-        @include screen('desktop') {
-            padding: var(--layout--boxed--outer-padding);
-        }
     }
 }

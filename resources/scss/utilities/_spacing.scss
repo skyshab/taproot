@@ -1,0 +1,77 @@
+////
+/// Spacing classes.
+///
+/// Utility classes for controlling margin and padding
+///
+/// @group  Utilities
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+// Text Spacing
+.has-text-spacing {
+    margin-top:     var( --text-spacing );
+    margin-bottom:  var( --text-spacing );
+}
+
+// Text Padding
+.has-text-padding {
+    padding:        var( --text-spacing );
+}
+
+.has-text-padding--sides {
+    padding-left:   var( --text-spacing );
+    padding-right:  var( --text-spacing );
+}
+
+// Block Padding
+.has-block-spacing {
+    margin-top:     var( --block-spacing );
+    margin-bottom:  var( --block-spacing );
+}
+
+.has-block-padding {
+    padding:        var( --block-padding );
+}
+
+.has-block-padding--sides {
+    padding-left:   var( --block-padding );
+    padding-right:  var( --block-padding );
+}
+
+// Layout padding
+.has-layout-padding {
+    padding:        var( --layout-spacing );
+}
+
+.has-layout-padding--sides {
+    padding-left:   var( --layout-spacing );
+    padding-right:  var( --layout-spacing );
+}
+
+.has-layout-padding--top {
+    padding-top:    var( --layout-spacing );
+}
+
+.has-layout-padding--bottom {
+    padding-bottom: var( --layout-spacing );
+}
+
+// Layout spacing
+.has-layout-spacing {
+    margin-top:     var( --layout-spacing );
+    margin-bottom:  var( --layout-spacing );
+}
+
+.has-layout-spacing--sides {
+    margin-left:    var( --layout-spacing );
+    margin-right:   var( --layout-spacing );
+}
+
+.has-layout-spacing--top {
+    margin-top:     var( --layout-spacing );
+}
+
+.has-layout-spacing--bottom {
+    margin-bottom:  var( --layout-spacing );
+}

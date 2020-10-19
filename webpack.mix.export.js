@@ -7,7 +7,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
+ * @copyright 2020 Sky Shabatura
  * @link      https://taproot-theme.com
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
@@ -22,26 +22,29 @@ let exportPath = 'taproot';
 
 // Theme root-level files to include.
 let files = [
-	'style.css',
-	'changelog.md',
-	'functions.php',
-	'index.php',
-	'license.md',
-	'readme.md',
-	'readme.txt',        // Required for WordPress.org theme review.
+    'style.css',
+    'changelog.md',
+    'functions.php',
+    'compat.php',
+    'index.php',
+    'license.md',
+    'readme.md',
+    'readme.txt',        // Required for WordPress.org theme review.
     'screenshot.png',
     'screenshot.jpg',
 ];
 
 // Folders to include.
 let folders = [
-	'app',
-	'dist',
-	'resources/lang',
-	'resources/js',      // Required for WordPress.org theme review.
-	'resources/scss',    // Required for WordPress.org theme review.
-	'views',
-	'vendor'
+    'app',
+    'dist',
+    'resources/lang',
+    'resources/js',      // Required for WordPress.org theme review.
+    'resources/scss',    // Required for WordPress.org theme review.
+    'views',
+    'vendor', 
+    'tribe', 
+    'tribe-events'
 ];
 
 // Delete the previous export to start clean.
@@ -50,17 +53,17 @@ rimraf.sync( exportPath );
 // Loop through the root files and copy them over.
 files.forEach( file => {
 
-	if ( fs.existsSync( file ) ) {
-		mix.copy( file, `${exportPath}/${file}` );
-	}
+    if ( fs.existsSync( file ) ) {
+        mix.copy( file, `${exportPath}/${file}` );
+    }
 } );
 
 // Loop through the folders and copy them over.
 folders.forEach( folder => {
 
-	if ( fs.existsSync( folder ) ) {
-		mix.copyDirectory( folder, `${exportPath}/${folder}` );
-	}
+    if ( fs.existsSync( folder ) ) {
+        mix.copyDirectory( folder, `${exportPath}/${folder}` );
+    }
 } );
 
 // Delete the `vendor/bin` and `vendor/composer/installers` folder, which can
@@ -68,13 +71,13 @@ folders.forEach( folder => {
 // `mix-manifest.json` file in the root, which we don't need.
 mix.then( () => {
 
-	let files = [
-		'mix-manifest.json',
-		`${exportPath}/vendor/bin`,
-	 	`${exportPath}/vendor/composer/installers`
-	];
+    let files = [
+        'mix-manifest.json',
+        `${exportPath}/vendor/bin`,
+        `${exportPath}/vendor/composer/installers`
+    ];
 
-	files.forEach( file => {
-		rimraf.sync( file );
-	} );
+    files.forEach( file => {
+        rimraf.sync( file );
+    } );
 } );

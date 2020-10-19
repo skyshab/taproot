@@ -1,0 +1,21 @@
+////
+/// Editor - Separator Styles
+///
+/// These styles apply to the separator block only in the editor.
+///
+/// @group  Styles
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+// Import component styles inside the editor styles wrapper
+.editor-styles-wrapper {
+    @import 'block';
+}
+
+.block-editor-block-list__block[data-type="core/separator"] .block-editor-block-list__block-edit {
+    padding: 1px;
+}
+.block-editor-block-list__block[data-type="core/separator"] hr.wp-block-separator {
+    margin: 0.8em 0;
+}

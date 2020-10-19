@@ -1,168 +1,79 @@
 /**
  * Laravel Mix configuration file.
  *
- * Laravel Mix is a layer built on top of WordPress that simplifies much of the
- * complexity of building out a Webpack configuration file. Use this file to
- * configure how your assets are handled in the build process.
- *
  * @link https://laravel.com/docs/5.6/mix
- *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
+ * @copyright 2020 Sky Shabatura
  * @link      https://taproot-theme.com
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
 
-// Import required packages.
-const mix               = require( 'laravel-mix' );
+const mix = require( 'laravel-mix' );
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 
-/*
- * -----------------------------------------------------------------------------
- * Theme Export Process
- * -----------------------------------------------------------------------------
- * Configure the export process in `webpack.mix.export.js`. This bit of code
- * should remain at the top of the file here so that it bails early when the
- * `export` command is run.
- * -----------------------------------------------------------------------------
- */
-
-if ( process.env.export ) {
-	const exportTheme = require( './webpack.mix.export.js' );
-	return;
+// Export
+if( process.env.export ) {
+    const exportTheme = require( './webpack.mix.export.js' );
+    return;
 }
 
-/*
- * -----------------------------------------------------------------------------
- * Build Process
- * -----------------------------------------------------------------------------
- * The section below handles processing, compiling, transpiling, and combining
- * all of the theme's assets into their final location. This is the meat of the
- * build process.
- * -----------------------------------------------------------------------------
- */
-
-/*
- * Sets the development path to assets. By default, this is the `/resources`
- * folder in the theme.
- */
+// Set the development path
 const devPath  = 'resources';
 
-/*
- * Sets the path to the generated assets. By default, this is the `/dist` folder
- * in the theme. If doing something custom, make sure to change this everywhere.
- */
-mix.setPublicPath( './' );
+// Set path to the generated assets
+mix.setPublicPath( 'dist' );
 
-/*
- * Set Laravel Mix options.
- *
- * @link https://laravel.com/docs/5.6/mix#postcss
- * @link https://laravel.com/docs/5.6/mix#url-processing
- */
+// Laravel Mix
 mix.options( {
-	postCss        : [ require( 'postcss-preset-env' )() ],
-	processCssUrls : false
+    postCss : [
+        require( 'postcss-preset-env' )(),
+        require( 'postcss-sort-media-queries' )({
+            sort: 'mobile-first'
+        })
+    ],
+    processCssUrls : false,
 } );
 
-/*
- * Builds sources maps for assets.
- *
- * @link https://laravel.com/docs/5.6/mix#css-source-maps
- */
+// Build sources maps
 mix.sourceMaps();
 
-/*
- * Versioning and cache busting. Append a unique hash for production assets. If
- * you only want versioned assets in production, do a conditional check for
- * `mix.inProduction()`.
- *
- * @link https://laravel.com/docs/5.6/mix#versioning-and-cache-busting
- */
+// Versioning and cache busting
 mix.version();
 
-/*
- * Compile JavaScript.
- *
- * @link https://laravel.com/docs/5.6/mix#working-with-scripts
- */
+// JS module output
+mix.react( `${devPath}/js/app.js`,                'js' );
+mix.react( `${devPath}/js/customize-controls.js`, 'js' );
+mix.react( `${devPath}/js/editor.js`,             'js' );
+    
 
-mix.react( `${devPath}/js/app.js`,                'dist/js' )
-   .react( `${devPath}/js/customize-controls.js`, 'dist/js' )
-   .react( `${devPath}/js/customize-preview.js`,  'dist/js' )
-   .react( `${devPath}/js/editor.js`,             'dist/js' );
-
-
-/*
- * Compile CSS. Mix supports Sass, Less, Stylus, and plain CSS, and has functions
- * for each of them.
- *
- * @link https://laravel.com/docs/5.6/mix#working-with-stylesheets
- * @link https://laravel.com/docs/5.6/mix#sass
- * @link https://github.com/sass/node-sass#options
- */
-
-// Sass configuration.
-var sassConfig = {
-	outputStyle : 'expanded',
-	indentType  : 'tab',
-	indentWidth : 1
-};
-
-// Compile SASS/CSS.
-mix.sass( `${devPath}/scss/screen.scss`,             'dist/css', sassConfig )
-   .sass( `${devPath}/scss/editor.scss`,             'dist/css', sassConfig )
-   .sass( `${devPath}/scss/customize-controls.scss`, 'dist/css', sassConfig );
+// Combine Customize Preview scripts
+mix.scripts([
+    `${devPath}/js/customize-preview/footer-monitor.js`,
+    `${devPath}/js/customize-preview/functions-preview.js`
+], 'dist/js/customize-preview.js');
 
 
-/*
- * Add custom Webpack configuration.
- *
- * Laravel Mix doesn't currently minimize images while using its `.copy()`
- * function, so we're using the `CopyWebpackPlugin` for processing and copying
- * images into the distribution folder.
- *
- * @link https://laravel.com/docs/5.6/mix#custom-webpack-configuration
- * @link https://webpack.js.org/configuration/
- */
+// SASS compile
+mix.sass( `${devPath}/scss/theme.scss`,              'css' );
+mix.sass( `${devPath}/scss/customize-controls.scss`, 'css' );
+mix.sass( `${devPath}/scss/customize-preview.scss`,  'css' );
+
+// Compile editor styles
+mix.sass( `${devPath}/scss/editor.scss`, 'css' );
+
+// Webpack config
 mix.webpackConfig( {
-	stats       : 'minimal',
-	devtool     : mix.inProduction() ? false : 'source-map',
-	performance : { hints  : false    },
+    stats       : 'minimal',
+    devtool     : mix.inProduction() ? false : 'source-map',
+    performance : { hints  : false    },
     externals   : { jquery : 'jQuery' },
-	resolve     : {
-		alias : {
-			// Alias for Hybrid Customize assets.
-			// Import from `hybrid-customize/js` or `~hybrid-customize/scss`.
-            'hybrid-customize' : path.resolve( __dirname, 'vendor/justintadlock/hybrid-customize/resources/' ),
-
-            // alias for customize-preview directory
-            'customize-preview' : path.resolve( __dirname, 'resources/js/customize-preview/' ),
-		}
-	},
-	plugins     : [
-		// @link https://github.com/webpack-contrib/copy-webpack-plugin
-		new CopyWebpackPlugin( [
-			{ from : `${devPath}/svg`,   to : 'dist/svg'   },
-		]),
-	]
+    plugins     : [
+        new CopyWebpackPlugin( [
+            { 
+                from    : `${devPath}/svg`,   
+                to      : 'svg'   
+            },
+        ]),
+    ],
 });
-
-if ( process.env.sync ) {
-
-	/*
-	 * Monitor files for changes and inject your changes into the browser.
-	 *
-	 * @link https://laravel.com/docs/5.6/mix#browsersync-reloading
-	 */
-	mix.browserSync( {
-		proxy : 'localhost',
-		files : [
-			'dist/**/*',
-			`${devPath}/views/**/*.php`,
-			'app/**/*.php',
-			'functions.php'
-		]
-	});
-}

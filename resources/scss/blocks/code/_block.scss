@@ -1,0 +1,12 @@
+////
+/// Code block.
+///
+/// @group  Blocks
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.wp-block-code {
+    background-color: var( --colors--meta-light );
+    @extend .has-block-padding;
+}

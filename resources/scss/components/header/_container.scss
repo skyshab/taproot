@@ -1,0 +1,79 @@
+////
+/// Header container styles.
+///
+/// @group  Components\Header
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.app-header {
+
+    // Main Container.
+    &__main {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: var( --header--padding );
+        padding-bottom: var( --header--padding );
+    }
+
+    @include screen('mobile') {
+
+        &--mobile {
+
+            &--horizontal {
+
+                .app-header__main {
+                    flex-direction: row;
+                }
+            }
+
+            &--vertical {
+
+                .app-header__main {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+
+    @include screen('tablet') {
+
+        &--tablet {
+
+            &--horizontal {
+
+                .app-header__main {
+                    flex-direction: row;
+                }
+            }
+
+            &--vertical {
+
+                .app-header__main {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+
+    @include screen('desktop') {
+
+        &--desktop {
+
+            &--horizontal {
+
+                .app-header__main {
+                    flex-direction: row;
+                }
+            }
+
+            &--vertical {
+
+                .app-header__main {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}

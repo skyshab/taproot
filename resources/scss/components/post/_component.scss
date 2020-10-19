@@ -1,0 +1,83 @@
+////
+/// Post - Single posts of any post type.
+///
+/// @group  Components\Post
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.post {
+
+    margin-left: auto;
+    margin-right: auto;
+
+    &__header, &__content, &__footer {
+
+        &--left, &--right, &--center {
+            max-width: var(--content-width);
+        }
+
+        &--wide {
+            max-width: 100%;
+        }
+
+        &--left {
+            margin-left: 0;
+        }
+
+        &--right {
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        &--center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &__header {
+
+        > :last-child {
+            margin-bottom: var( --block-spacing );
+        }
+    }
+
+    &__title {
+        margin: 0;
+        font-size:      var( --post--title--font-size );
+        line-height:    var( --post--title--line-height );
+        color:          var( --post--title--text-color );
+    }
+
+    &__image {
+        display: block;
+        margin-bottom: var( --block-spacing );
+    }
+
+    &__byline {
+
+        margin-top: 0.4em;
+        font-size:      var( --post--byline--font-size );
+        color:          var( --post--byline--text-color );
+
+        .taproot-icon {
+            color:      var( --post--byline--icon-color );
+        }
+    }
+
+    &__content {
+
+        @extend %clearfix;
+
+        // First item
+        & > :first-child {
+            margin-top: 0;
+        }
+
+        // Last item
+        &:last-child > :last-child {
+            margin-bottom: 0;
+        }
+    }
+}

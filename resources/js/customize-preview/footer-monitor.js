@@ -7,19 +7,14 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura <theme@sky.camp>
- * @copyright 2019 Sky Shabatura
+ * @copyright 2020 Sky Shabatura
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
-
-
-const taprootFooter = document.querySelector('.app-footer');
-
-if ( taprootFooter.classList.contains('app-footer--has-fixed') ) {
-
-    const taprootFooterObserver = new ResizeObserver( () => {
-        window.dispatchEvent(new Event('resize'));
-    });
-
-    taprootFooterObserver.observe(taprootFooter);
+var taprootFooter = document.querySelector('.app-footer');
+if (taprootFooter.classList.contains('app-footer--has-fixed')) {
+  var taprootFooterObserver = new ResizeObserver(function () {
+    window.dispatchEvent(new Event('resize'));
+  });
+  taprootFooterObserver.observe(taprootFooter);
 }

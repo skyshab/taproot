@@ -1,0 +1,33 @@
+////
+/// Component Editor Styles
+///
+/// @group  Components\Typography
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+// Import custom properties
+@import '_custom-properties';
+
+// Editor specific custom properties
+@import 'editor/_custom-properties';
+
+// Import editor font size classes
+@import 'editor-font-sizes';
+
+// start responsive editor styles
+#start-resizable-editor-section {
+    display: none;
+}
+
+// Base styles
+@import 'editor/body';
+
+// Headings
+@import 'editor/headings';
+
+// end responsive editor styles
+#end-resizable-editor-section {
+    display: none;
+}
+

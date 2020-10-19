@@ -1,0 +1,21 @@
+////
+/// Editor Styles
+///
+/// These styles apply only in the editor.
+///
+/// @group  Styles
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+// Import component styles inside the editor styles wrapper
+.editor-styles-wrapper {
+
+    @import 'block';
+
+    // This fixes gutenberg plugin style issues with dropcaps.
+    // This will likely be removed later
+    .has-drop-cap:first-letter, .has-drop-cap:not(.is-selected):first-letter {
+        font-weight: 400;
+    }
+}

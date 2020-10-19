@@ -1,0 +1,16 @@
+////
+/// Public Styles - Buttons
+///
+/// @group  Components/Buttons
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+@import '_custom-properties';
+@import 'component';
+
+
+// Add a utility class for buttons.
+.taproot-button {
+    @extend .wp-block-button__link;
+}

@@ -1,0 +1,78 @@
+////
+/// Header content.
+///
+/// @group  components/header
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.app-header {
+
+    &__content {
+
+        z-index: 1;
+        overflow: hidden;
+
+        &__title {
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: inherit;
+            text-align: center;
+        }
+
+        // Content byline
+        &__byline {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: inherit;
+            margin: 0;
+
+            svg {
+                margin-right: 0.3em;
+            }
+
+            a {
+                color: inherit;
+            }
+
+            &__item {
+
+                margin-right: 0.8em;
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .app-header--has-custom-header & {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding-bottom: var( --layout-spacing );
+        }
+
+        // hide additional header content when fixed header
+        .app-header--has-custom-header.app-header--fixed & {
+            display: none;
+        }
+
+        // Default min heights.
+        min-height: 175px;
+
+        @include screen('tablet-and-up') {
+            min-height: 250px;
+        }
+
+        @include screen('desktop') {
+            min-height: 300px;
+        }
+    }
+}

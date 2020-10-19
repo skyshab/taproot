@@ -1,0 +1,16 @@
+////
+/// Container
+///
+/// Styles for elements with the .container class
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.container {
+    margin: 0 auto;
+    position: relative;
+    width:      var( --container-width );
+    max-width:  var( --container-max-width );
+}

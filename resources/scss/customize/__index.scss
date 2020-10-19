@@ -1,0 +1,24 @@
+////
+/// Customize controls styles.
+///
+/// Styles should focus on the customize controls panel. This covers panels,
+/// sections, and controls.
+///
+/// @group  CustomizeControls
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+@import 'tools/_index';
+@import 'general';
+@import 'select';
+@import 'radio';
+@import 'text';
+@import 'color';
+@import 'range';
+@import 'device-picker';
+@import 'checkbox';
+@import 'font-styles';
+@import 'header-image';
+@import 'multicheck';
+@import 'menus';

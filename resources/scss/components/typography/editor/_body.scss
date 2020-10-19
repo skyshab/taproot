@@ -1,0 +1,40 @@
+////
+/// Component Editor Styles
+///
+/// @group  Components\Typography
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+// Base font size
+.editor-styles-wrapper .wp-block {
+    font-size:      var(--typography--body--font-size);
+    line-height:    var(--typography--body--line-height);
+}
+
+@include screen('editor-mobile') {
+    :root {
+        --block-padding: var(--text-spacing);
+    }
+}
+
+// editor tablet
+@include screen( 'editor-tablet' ) {
+
+    :root {
+        --block-padding: 2em;
+    }
+
+    .editor-styles-wrapper .wp-block {
+        font-size:      var(--typography--body--font-size--tablet);
+        line-height:    var(--typography--body--line-height--tablet);
+    }
+};
+
+// editor desktop
+@include screen( 'editor-desktop' ) {
+    .editor-styles-wrapper .wp-block {
+        font-size:      var(--typography--body--font-size--desktop);
+        line-height:    var(--typography--body--line-height--desktop);
+    }
+};

@@ -1,0 +1,41 @@
+////
+/// Customize controls styles.
+///
+/// Styles should focus on the customize controls panel. This covers panels,
+/// sections, and controls.
+///
+/// @group  CustomizeControls
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.customize-control-select {
+
+    position: relative;
+
+    select {
+        width: 100%;
+        font-size: 14px;
+        height: 36px;
+        line-height: 36px;
+        color: #32373c;
+        border: none;
+        margin: 0!important;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding: 0 10px;
+        cursor: pointer;
+        @extend %shadow-box;
+
+        // base 64 inverted triagle image
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAcCAYAAAAAwr0iAAAAAXNSR0IArs4c6QAAAAlwSFlzAAAWJQAAFiUBSVIk8AAABsZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOmV4aWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vZXhpZi8xLjAvIgogICAgICAgICAgICB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIKICAgICAgICAgICAgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiCiAgICAgICAgICAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIKICAgICAgICAgICAgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIj4KICAgICAgICAgPHRpZmY6UmVzb2x1dGlvblVuaXQ+MjwvdGlmZjpSZXNvbHV0aW9uVW5pdD4KICAgICAgICAgPHRpZmY6Q29tcHJlc3Npb24+MDwvdGlmZjpDb21wcmVzc2lvbj4KICAgICAgICAgPHRpZmY6WFJlc29sdXRpb24+MTQ0PC90aWZmOlhSZXNvbHV0aW9uPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICAgICA8dGlmZjpZUmVzb2x1dGlvbj4xNDQ8L3RpZmY6WVJlc29sdXRpb24+CiAgICAgICAgIDxleGlmOlBpeGVsWURpbWVuc2lvbj4yODwvZXhpZjpQaXhlbFlEaW1lbnNpb24+CiAgICAgICAgIDxleGlmOlBpeGVsWERpbWVuc2lvbj4zMjwvZXhpZjpQaXhlbFhEaW1lbnNpb24+CiAgICAgICAgIDxleGlmOkNvbG9yU3BhY2U+MTwvZXhpZjpDb2xvclNwYWNlPgogICAgICAgICA8eG1wTU06T3JpZ2luYWxEb2N1bWVudElEPnhtcC5kaWQ6MEQ5RDM3M0MxMTIwNjgxMTgwODM4QzdDRjA2RTREMzk8L3htcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD4KICAgICAgICAgPHhtcE1NOkluc3RhbmNlSUQ+eG1wLmlpZDpFM0FBRDNGQUIzMzIxMUUzOThDMjhFQTFEODU0MEYyMDwveG1wTU06SW5zdGFuY2VJRD4KICAgICAgICAgPHhtcE1NOkRvY3VtZW50SUQ+eG1wLmRpZDpFM0FBRDNGQkIzMzIxMUUzOThDMjhFQTFEODU0MEYyMDwveG1wTU06RG9jdW1lbnRJRD4KICAgICAgICAgPHhtcE1NOkRlcml2ZWRGcm9tIHJkZjpwYXJzZVR5cGU9IlJlc291cmNlIj4KICAgICAgICAgICAgPHN0UmVmOmluc3RhbmNlSUQ+eG1wLmlpZDoxMzRDQzI3MTFGMjA2ODExODA4M0U1MTVEMzRCRjFFNzwvc3RSZWY6aW5zdGFuY2VJRD4KICAgICAgICAgICAgPHN0UmVmOmRvY3VtZW50SUQ+eG1wLmRpZDowRDlEMzczQzExMjA2ODExODA4MzhDN0NGMDZFNEQzOTwvc3RSZWY6ZG9jdW1lbnRJRD4KICAgICAgICAgPC94bXBNTTpEZXJpdmVkRnJvbT4KICAgICAgICAgPGRjOnN1YmplY3Q+CiAgICAgICAgICAgIDxyZGY6U2VxLz4KICAgICAgICAgPC9kYzpzdWJqZWN0PgogICAgICAgICA8eG1wOk1vZGlmeURhdGU+MjAxODoxMDoxNiAxNjoxMDozMTwveG1wOk1vZGlmeURhdGU+CiAgICAgICAgIDx4bXA6Q3JlYXRvclRvb2w+UGl4ZWxtYXRvciAzLjcuNTwveG1wOkNyZWF0b3JUb29sPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KEaHG5AAAAndJREFUSA29l8tqE3EUxjOTm8s8Rh4gdxAN7gSfwUfwAYRYil2JUAoFFy4Mgl0IbgQXguIFYuJaKBQUoVlJEcQSkpiL368kZZLM/Oc/6SR/GDpzLt/3nTPnDKnTarWeZbPZu8PhMLHNk8lkEoPBoOnq5p7Iv6dSqa3xwwUn3G6hUPgznU53XdfdmgC44IT7glVKjtSOT7Rl0weOGdcRXM6csNPpXHcc591kMklL3dwc61/hJ1T9P+HfKpfLnwG/7DuG8Xj8QgMZK6kXDGw45uQLAnjQcOxqOH5vYh7ABBsOr6jLDmAsFos/pHB/E7MAJthwBArAocCDfr9/EudagqXBOwHbS879QgcwXKyG6+4wMHEdsHTtgL2MuSKAgF6v91Lv630crwIMsMBcJuc5sEytZVWqP2gtM+uuJZVr+IbKv6nJ/+InwLcDBJIwGo2eX2UtyQUjiByeQAE4VcFDte9snbWcrd0ZGGAFHaOAarX6U+17vM4skEMuGEHk2I0CCMjlcoday+Moa0ksOeSCYTqhAvL5/F9V8oCBsj3EkkNuWE6oAAC63e4rzcJbm4EkhlhywsjxW5elX04ltfaj1vKaqvPFpnINX1+Tf6NWq331DVoyWnWAHAAF3DR1YbZ2TVtycK0FEKwO7Omb/iuZTPK4cLDhI2bBEfIQSUCpVDrVK3iUTqdXYLHhI2bFaTBEEgCOqnyiFfvmFcE9NnwGLl9XZAH1ev1cQ9gQmncSZZo28PmyGIzWW+DFEJnbbrdfa+huY1flbyqVyh1twcQbZ3MfuQOAQqSNaOgazK7GOuQ2Ao0x+jY85TIGhTiv9O+QPjr3Q/BD3f8BfzIlvHKRgGQAAAAASUVORK5CYII=');
+        background-size: 10px;
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+
+        &:focus {
+            border: none;
+            outline: none;
+        }
+    }
+}

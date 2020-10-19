@@ -1,0 +1,19 @@
+////
+/// Site description.
+///
+/// @group  Components\Header
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.app-header {
+
+    &__description {
+        grid-area: tagline;
+        align-self: start;
+        margin: 0;
+        font-size: var( --header--tagline--font-size );
+        line-height: var( --header--tagline--line-height );
+        margin-top: var( --header--tagline--gutter );
+    }
+}

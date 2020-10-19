@@ -1,0 +1,33 @@
+////
+/// Editor Styles
+///
+/// These styles apply only in the editor.
+///
+/// @group  Styles
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+// Import component styles inside the editor styles wrapper
+.editor-styles-wrapper {
+
+    @import 'block';
+
+    figure.wp-block-gallery {
+        @extend .has-block-spacing;
+    }
+
+    .components-form-file-upload {
+        width: 100%;
+    }
+
+    .blocks-gallery-caption {
+        width: 100%;
+        margin-top: 16px;
+    }
+
+    .blocks-gallery-grid {
+        margin: 0!important;
+    }
+}
+

@@ -1,61 +1,24 @@
 ////
-/// Custom header component.
+/// Custom header styles.
 ///
-/// This handles the output of `the_custom_header_markup()` from core WP's
-/// `custom-header` feature.
-///
-/// @group  Components
+/// @group  Components\Header
 /// @author Sky Shabatura <theme@sky.camp>
 /// @link   https://taproot-theme.com
 ////
 
-.wp-custom-header {
+.app-header {
 
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    z-index: 0;
+    &--has-custom-header {
 
-	// Header image.
-	img {
-        display: block;
-        object-fit: cover;
-        max-width: none;
-        height: 100%;
-        width: 100%;
-    }
-}
+        display: grid;
+        grid-template-rows: auto 1fr auto;
 
-
-// fixed header styles
-.app-header--fixed {
-
-    height: auto;
-
-    .wp-custom-header {
-        display: none;
-    }
-}
-
-
-/* top nav, header container, additional header content, navbar*/
-.app-header--has-custom-header {
-
-    &:not(.app-header--fixed) {
-        color: var( --header--hero--default-color );
-        a:hover {
-            color: var( --header--hero--link-color--hover );
+        &:not(.app-header--fixed) {
+            color: var( --header--image--text-color );
         }
-    }
 
-    max-height: 100vh;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-
-    &.app-header--has-topnav {
-        grid-template-rows: auto auto 1fr auto;
+        &.app-header--has-topnav {
+            grid-template-rows: auto auto 1fr auto;
+        }
     }
 }

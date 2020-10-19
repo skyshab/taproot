@@ -1,0 +1,19 @@
+////
+/// Code
+///
+/// Base styles for the code element
+///
+/// @group  Elements
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+code {
+
+    font-size: 0.9375em;
+    font-family: monospace;
+
+    pre & {
+        background-color: transparent;
+    }
+}

@@ -1,0 +1,35 @@
+////
+/// Editor Styles - Buttons
+///
+/// @group  Components/Buttons
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+@import '_custom-properties';
+@import 'component';
+
+
+// we don't need a bottom margin in the block editor interface
+.wp-block .wp-block-button {
+    margin: 0;
+}
+
+// put space between the link field and the button
+.block-library-button__inline-link {
+    margin-top: 1em;
+}
+
+// put space between buttons when there are multiple in the same block
+.block-editor-block-list__block[data-type="core/button"] + .block-editor-block-list__block[data-type="core/button"] {
+    margin-left: 1em;
+}
+
+// Block Style - Outline
+.is-style-outline .block-editor-rich-text__editable:focus {
+    box-shadow: 0 0 0 4px inset, 0 0 0 9em white inset;
+
+    &:hover {
+        box-shadow: none;
+    }
+}

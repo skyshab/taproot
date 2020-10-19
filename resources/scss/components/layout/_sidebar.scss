@@ -1,0 +1,33 @@
+////
+/// Layout - sidebar
+///
+/// Layout styles for the sidebar element.
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.sidebar {
+
+    order: 2;
+    flex: 1 0 100%;
+
+    @extend .has-layout-padding--top;
+    @extend .has-layout-padding--bottom;
+
+    @include screen('desktop') {
+
+        flex: 1 0 auto;
+        width:              var( --sidebar--min-width );
+
+        &--right {
+            padding-left:   var( --layout-spacing );
+        }
+
+        &--left {
+            order: 0;
+            padding-right:  var( --layout-spacing );
+        }
+    }
+}

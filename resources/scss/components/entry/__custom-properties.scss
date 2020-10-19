@@ -1,0 +1,24 @@
+////
+/// Component Custom Properties
+///
+/// @group  Components
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+:root {
+
+    // Archive Entry Title
+    --entry--title--font-size: 1.8em;
+    --entry--title--line-height: 1;
+    --entry--title--link-color: var( --typography--headings--text-color );
+    --entry--title--link-color--hover: var( --colors--accent );
+
+    // Archive Entry Link
+    --entry--link--font-size: 1em;
+
+    // Entry Byline
+    --entry--byline--font-size: 1em;
+    --entry--byline--icon-color: inherit;
+    --entry--byline--text-color: inherit;
+}

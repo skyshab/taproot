@@ -6,8 +6,6 @@
 /// @link   https://taproot-theme.com
 ////
 
-
-
 // create a basic white box with subtle shadow
 %shadow-box {
     border-radius: 0;
@@ -16,6 +14,7 @@
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
 
+// clear floated elements
 %clearfix {
     &:after {
         content: "";
