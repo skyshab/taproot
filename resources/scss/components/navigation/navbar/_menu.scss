@@ -7,10 +7,8 @@
 ////
 
 // Mixin to generate mobile nav styles
-@mixin mobile-styles( $screen ) {
-
+@mixin mobile-styles($screen) {
     &.mobile-at-#{$screen} {
-
         .menu--navbar__container {
             height: 3.2em;
             display: flex;
@@ -24,37 +22,42 @@
         }
 
         .menu--navbar__items {
-            background-color: var( --navigation--navbar-mobile--background-color );
+            background-color: var(
+                --navigation--navbar-mobile--background-color
+            );
         }
     }
 }
 
 // Mixin to generate desktop nav styles
-@mixin desktop-styles( $screen ) {
-
+@mixin desktop-styles($screen) {
     &.mobile-at-#{$screen} {
         .menu__sub-menu {
-            background-color:   var( --colors--accent );
-            border-color:       var( --colors--accent );
-            color:              var( --colors--accent-contrast );
+            background-color: var(--colors--accent);
+            border-color: var(--colors--accent);
+            color: var(--colors--accent-contrast);
+        }
+        .menu--navbar__items > .menu--navbar__item > .menu--navbar__link {
+            min-height: var(--navigation--navbar--height);
+            display: flex;
+            align-items: center;
         }
     }
 }
 
 // Menu link color
 a.menu--navbar__link {
-    color: var( --navigation--navbar--color );
+    color: var(--navigation--navbar--color);
 }
 
 .menu--navbar {
-
     // needed for custom header image
     position: relative;
-    background-color:   var( --navigation--navbar--background-color );
+    background-color: var(--navigation--navbar--background-color);
 
     &__link {
-        font-size:      var( --navigation--navbar--font-size );
-        line-height:    var( --navigation--navbar--line-height );
+        font-size: var(--navigation--navbar--font-size);
+        line-height: var(--navigation--navbar--line-height);
     }
 
     // ****************
@@ -62,32 +65,32 @@ a.menu--navbar__link {
     // ****************
 
     // always mobile
-    @include mobile-styles( 'always' );
+    @include mobile-styles('always');
 
     // mobile only styles
-    @include screen( 'mobile' ) {
-        @include mobile-styles( 'mobile' );
-    };
+    @include screen('mobile') {
+        @include mobile-styles('mobile');
+    }
 
     // tablet and under styles
-    @include screen( 'tablet-and-under' ) {
-        @include mobile-styles( 'tablet-and-under' );
-    };
+    @include screen('tablet-and-under') {
+        @include mobile-styles('tablet-and-under');
+    }
 
     // ****************
     // * Desktop Styles
     // ****************
 
     // never mobile styles
-    @include desktop-styles( 'never' );
+    @include desktop-styles('never');
 
     // mobile at mobile only styles
-    @include screen( 'tablet-and-up' ) {
-        @include desktop-styles( 'mobile' );
-    };
+    @include screen('tablet-and-up') {
+        @include desktop-styles('mobile');
+    }
 
     // mobile at tablet and under styles
-    @include screen( 'desktop' ) {
-        @include desktop-styles( 'tablet-and-under' );
-    };
+    @include screen('desktop') {
+        @include desktop-styles('tablet-and-under');
+    }
 }
