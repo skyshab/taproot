@@ -22,16 +22,6 @@
                 display: flex;
                 height: auto;
             }
-
-            a:before {
-                content: '';
-                display: inline-block;
-                width: 1.25em;
-            }
-
-            .menu__sub-menu a:before {
-                width: 2.5em;
-            }
         }
 
         .menu__items .menu__item.has-children > a {
