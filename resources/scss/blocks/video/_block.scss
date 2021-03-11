@@ -1,10 +1,15 @@
 ////
-/// Columns block.
+/// Video block.
 ///
 /// @group  Blocks
 /// @author Sky Shabatura <theme@sky.camp>
 /// @link   https://taproot-theme.com
 ////
 
-@import 'common';
-@import 'public-screens';
+.wp-block-video {
+    @extend .has-block-spacing;
+
+    video {
+        max-width: 100%;
+    }
+}

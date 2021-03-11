@@ -7,19 +7,22 @@
 ////
 
 .wp-block-image {
-    width:     fit-content;
-    max-width: 100%;
-
     img {
         max-width: 100%;
         display: block;
     }
+    figure {
+        &.alignleft,
+        &.alignright {
+            margin-top: 0;
+        }
+    }
 
     &.aligncenter {
-        display:      block;
-        margin-left:  auto;
+        display: block;
+        margin-left: auto;
         margin-right: auto;
-        text-align:   center;
+        text-align: center;
     }
 
     &.is-resized {
@@ -37,6 +40,4 @@
             max-width: none;
         }
     }
-
-    figcaption {}
 }

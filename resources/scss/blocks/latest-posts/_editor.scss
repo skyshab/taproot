@@ -10,5 +10,49 @@
 
 // Import component styles inside the editor styles wrapper
 .editor-styles-wrapper {
-    @import 'block';
+    @import 'common';
+
+    ul.wp-block-latest-posts__list {
+        list-style: none;
+    }
+
+    .wp-block-latest-posts.is-grid.alignfull {
+        padding: 0 var(--block-spacing);
+    }
+}
+
+// Responsive editor styles
+#start-resizable-editor-section {
+    display: none;
+}
+
+.editor-styles-wrapper {
+    .wp-block-latest-posts.is-grid {
+        @media (min-width: 600px) {
+            &:not(.columns-1) {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @include screen('editor-tablet') {
+            &.columns-3,
+            &.columns-5,
+            &.columns-6 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @include screen('editor-desktop') {
+            @for $i from 3 through 6 {
+                &.columns-#{ $i } {
+                    grid-template-columns: repeat(#{$i}, 1fr);
+                }
+            }
+        }
+    }
+}
+
+// End responsive editor styles
+#end-resizable-editor-section {
+    display: none;
 }

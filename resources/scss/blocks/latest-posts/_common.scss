@@ -1,0 +1,48 @@
+////
+/// Gallery block.
+///
+/// @group  Blocks
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.wp-block-latest-posts {
+    &__list {
+        list-style: none;
+        padding: 0;
+
+        &:not(.is-grid) li:not(last-of-type) {
+            margin-bottom: var(--block-spacing);
+        }
+    }
+
+    li > a {
+        font-size: 1.3rem;
+    }
+
+    &__featured-image.aligncenter + a {
+        display: block;
+        margin-top: 0.4rem;
+    }
+
+    &.is-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--block-spacing);
+        padding: 0;
+    }
+
+    &__post-date {
+        display: block;
+    }
+
+    img {
+        display: block;
+    }
+
+    li:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}

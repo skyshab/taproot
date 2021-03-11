@@ -1,39 +1,10 @@
 ////
-/// Editor Styles
+/// Gallery block - public responsive styles.
 ///
-/// These styles apply only in the editor.
-///
-/// @group  Styles
+/// @group  Blocks
 /// @author Sky Shabatura <theme@sky.camp>
 /// @link   https://taproot-theme.com
 ////
-
-// Import component styles inside the editor styles wrapper
-.editor-styles-wrapper {
-    @import 'common';
-
-    figure.wp-block-gallery {
-        @extend .has-block-spacing;
-    }
-
-    .blocks-gallery-caption {
-        width: 100%;
-        margin-top: 16px;
-    }
-
-    ul.blocks-gallery-grid {
-        padding-left: 0;
-    }
-
-    .wp-block-gallery.alignfull .blocks-gallery-grid {
-        padding: 0 var(--block-spacing);
-    }
-}
-
-// Responsive editor styles
-#start-resizable-editor-section {
-    display: none;
-}
 
 .wp-block-gallery {
     @media (min-width: 600px) {
@@ -42,7 +13,13 @@
         }
     }
 
-    @include screen('editor-tablet') {
+    @include screen('tablet-and-under') {
+        &.alignfull .blocks-gallery-grid {
+            padding: 0 var(--block-spacing);
+        }
+    }
+
+    @include screen('tablet-and-up') {
         &.columns-3,
         &.columns-5,
         &.columns-6 {
@@ -58,7 +35,7 @@
         }
     }
 
-    @include screen('editor-desktop') {
+    @include screen('desktop') {
         @for $i from 3 through 8 {
             &.columns-#{ $i } .blocks-gallery-grid {
                 grid-template-columns: repeat(#{$i}, 1fr);
@@ -67,6 +44,8 @@
     }
 }
 
-#end-resizable-editor-section {
-    display: none;
+@include screen('desktop') {
+    .app-main--no-sidebar .wp-block-gallery.alignfull .blocks-gallery-grid {
+        padding: 0 var(--block-spacing);
+    }
 }
