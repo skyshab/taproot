@@ -18,46 +18,46 @@ $screen--editor-tablet-min: '361px';
 $screen--editor-desktop-min: '781px';
 
 // The screen mixin
-@mixin screen( $screen ) {
-
+@mixin screen($screen) {
     $query: '';
 
-    @if ( $screen == 'mobile' ) {
-      $query: "( max-width: #{$screen--mobile-max} )";
+    @if ($screen == 'mobile') {
+        $query: '( max-width: #{$screen--mobile-max} )';
     }
 
-    @if ( $screen == 'tablet' ) {
-        $query: "( min-width: #{$screen--tablet-min} ) and ( max-width: #{$screen--tablet-max} )";
+    @if ($screen == 'tablet') {
+        $query: '( min-width: #{$screen--tablet-min} ) and ( max-width: #{$screen--tablet-max} )';
     }
 
-    @if ( $screen == 'tablet-and-under' ) {
-        $query: "( max-width: #{$screen--tablet-max} )";
+    @if ($screen == 'tablet-and-under') {
+        $query: '( max-width: #{$screen--tablet-max} )';
     }
 
-    @if ( $screen == 'tablet-and-up' ) {
-        $query: "( min-width: #{$screen--tablet-min} )";
+    @if ($screen == 'tablet-and-up') {
+        $query: '( min-width: #{$screen--tablet-min} )';
     }
 
-    @if ( $screen == 'desktop' ) {
-        $query: "( min-width: #{$screen--desktop-min} )";
+    @if ($screen == 'desktop') {
+        $query: '( min-width: #{$screen--desktop-min} )';
     }
 
-    @if ( $screen == 'editor-mobile' ) {
-        $query: "( max-width: #{$screen--editor-mobile-max} )";
+    @if ($screen == 'editor-mobile') {
+        $query: '( max-width: #{$screen--editor-mobile-max} )';
     }
 
-    @if ( $screen == 'editor-tablet' ) {
-        $query: "( min-width: #{$screen--editor-tablet-min} )";
+    @if ($screen == 'editor-tablet') {
+        $query: '( min-width: #{$screen--editor-tablet-min} )';
     }
 
-    @if ( $screen == 'editor-desktop' ) {
-        $query: "( min-width: #{$screen--editor-desktop-min} )";
+    @if ($screen == 'editor-desktop') {
+        $query: '( min-width: #{$screen--editor-desktop-min} )';
     }
 
-    @if( $query != '' ) {
-        @media #{$query} { @content; }
-    }
-    @else {
-      @content;
+    @if ($query != '') {
+        @media #{$query} {
+            @content;
+        }
+    } @else {
+        @content;
     }
 }
