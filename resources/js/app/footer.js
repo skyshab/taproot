@@ -12,12 +12,10 @@
  * @link      https://taproot-theme.com
  */
 
-
 /**
  * Navigation Menu Interactions
  */
 class TaprootFooter {
-
     /**
      * Initiate class
      */
@@ -26,14 +24,15 @@ class TaprootFooter {
         this.app = document.querySelector('.app');
         this.header = document.querySelector('.app-header');
         this.footer = document.querySelector('.app-footer');
-        this.hasFixedFooter = this.footer.classList.contains('app-footer--has-fixed');
+        this.hasFixedFooter = this.footer.classList.contains(
+            'app-footer--has-fixed'
+        );
         this.windowHeight = window.innerHeight;
 
-        if ( this.hasFixedFooter ) {
+        if (this.hasFixedFooter) {
             this.listeners();
         }
     }
-
 
     /**
      * Add event listeners
@@ -48,28 +47,26 @@ class TaprootFooter {
         });
     }
 
-
     /**
      * Fixed footer toggle
      */
     fixedFooter() {
         const footerHeight = this.footer.offsetHeight;
 
-        if ( 1025 > this.body.offsetWidth ) {
+        if (1025 > this.body.offsetWidth) {
             this.app.style.marginBottom = '';
-            this.footer.classList.remove( 'app-footer--fixed' );
-        } else {
-            if ( footerHeight + 250 < this.windowHeight ) {
-                this.app.style.marginBottom = Math.floor( footerHeight ) + 'px';
-                this.footer.classList.add( 'app-footer--fixed' );
+            this.footer.classList.remove('app-footer--fixed');
+        } else if (this.app.offsetHeight > this.windowHeight) {
+            if (footerHeight + 250 < this.windowHeight) {
+                this.app.style.marginBottom = Math.floor(footerHeight) + 'px';
+                this.footer.classList.add('app-footer--fixed');
             } else {
                 this.app.style.marginBottom = '';
-                this.footer.classList.remove( 'app-footer--fixed' );
+                this.footer.classList.remove('app-footer--fixed');
             }
         }
     }
 }
-
 
 /**
  * Run on document ready
