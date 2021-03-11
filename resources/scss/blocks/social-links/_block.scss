@@ -7,7 +7,6 @@
 ////
 
 .wp-social-link {
-
     display: block;
     width: 36px;
     height: 36px;
@@ -41,16 +40,15 @@
 }
 
 .wp-block-social-links {
-
     display: flex;
     justify-content: flex-start;
     padding-left: 0;
     padding-right: 0;
-    margin-left: 0;
 
     .wp-social-link {
-
-        a, a:hover {
+        width: auto;
+        a,
+        a:hover {
             text-decoration: none;
             border-bottom: 0;
             box-shadow: none;
@@ -59,11 +57,9 @@
 
     &.aligncenter {
         justify-content: center;
-        display: flex;
     }
 
     &:not(.is-style-logos-only) .wp-social-link {
-
         background-color: #f0f0f0;
         color: #444;
 
@@ -250,7 +246,6 @@
     }
 
     &.is-style-logos-only .wp-social-link {
-
         background: none;
         padding: 4px;
 
@@ -407,13 +402,9 @@
     }
 
     &.is-style-pill-shape .wp-social-link {
-
-        width: auto;
-
         a {
             padding-left: 16px;
             padding-right: 16px;
         }
     }
-
 }

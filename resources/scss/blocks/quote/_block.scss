@@ -7,13 +7,13 @@
 ////
 
 .wp-block-quote {
-    quotes: "" "";
+    quotes: '' '';
     position: relative;
     clear: both;
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0.8em 0.8em 0.8em 3em;
-    background-color: var( --colors--meta-light );
+    background-color: var(--colors--meta-light);
 
     &:before {
         position: absolute;
@@ -21,15 +21,16 @@
         line-height: 0;
         left: 0.1em;
         top: 0.65em;
-        font-family: Georgia,serif;
-        content: "\201C";
+        font-family: Georgia, serif;
+        content: '\201C';
         font-weight: 700;
         opacity: 0.3;
-        color: var( --colors--meta-dark );
+        color: var(--colors--meta-dark);
     }
 
     p {
-        font-size: 1.25em;
+        font-size: 1.2rem;
+        line-height: 1.4;
         font-style: italic;
 
         &:first-of-type {
@@ -43,5 +44,18 @@
 
     cite {
         font-weight: bold;
+        display: block;
+        margin-top: 0.5rem;
+    }
+
+    &.is-style-large {
+        p {
+            font-size: 2rem;
+            line-height: 1.25;
+        }
+
+        cite {
+            font-size: 1.2rem;
+        }
     }
 }

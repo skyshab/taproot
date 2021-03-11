@@ -8,41 +8,45 @@
 /// @link   https://taproot-theme.com
 ////
 
-// blocks with block padding under certain conditions
-.wp-block-columns{
+.editor-styles-wrapper {
+    // blocks with block padding under certain conditions
+    .wp-block-columns {
+        @extend .has-block-spacing;
 
-    @extend .has-block-spacing;
+        &.has-background,
+        &[style*='background-color'] {
+            @extend .has-block-padding;
 
-    &.has-background, &[style*=background-color] {
-
-        @extend .has-block-padding;
-
-        &.alignfull {
-
-            .alignfull:not( .has-background ) {
-                padding-left: 0;
-                padding-right: 0;
+            &.alignfull {
+                .alignfull:not(.has-background) {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
             }
         }
     }
-}
 
-.wp-block-column {
+    .wp-block-column {
+        margin-bottom: var(--text-spacing);
+        margin-left: 0 !important;
 
-    margin-bottom: var( --text-spacing );
+        // inner contents
+        & > :first-child {
+            margin-top: 0;
+        }
 
-    // inner contents
-    & > :first-child {
-        margin-top: 0;
-    }
+        & > :last-child {
+            margin-bottom: 0;
+        }
 
-    & > :last-child {
-        margin-bottom: 0;
-    }
+        // last column
+        &:last-child {
+            margin-bottom: 0;
+        }
 
-    // last column
-    &:last-child {
-        margin-bottom: 0;
+        .wp-block {
+            width: 100%;
+        }
     }
 }
 
@@ -51,22 +55,22 @@
     display: none;
 }
 
-@include screen('editor-tablet') {
+.editor-styles-wrapper {
+    @include screen('editor-tablet') {
+        .wp-block-columns {
+            display: flex;
+            flex-direction: row;
+        }
 
-    .wp-block-columns {
-        display: flex;
-        flex-direction: row;
-    }
+        // Individual columns.
+        .wp-block-column {
+            margin-right: var(--block-spacing);
+            flex-basis: 50%;
 
-    // Individual columns.
-    .wp-block-column {
-
-        margin-right: var( --block-spacing );
-        flex-basis: 50%;
-
-        // last column
-        &:last-child {
-            margin-right: 0;
+            // last column
+            &:last-child {
+                margin-right: 0;
+            }
         }
     }
 }

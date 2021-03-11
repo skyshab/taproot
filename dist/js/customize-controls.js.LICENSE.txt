@@ -1,0 +1,80 @@
+/**
+ * Alpha Color Picker
+ *
+ * This file handles the JavaScript for the custom color picker control
+ * that adds an opacity slider and allows for RGBA color values
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2020 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ */
+
+/**
+ * Customize control - Color
+ *
+ * This file handles the JavaScript for the color control in the customizer.
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2021 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://taproot-theme.com
+ */
+
+/**
+ * Customize control - Multicheck
+ *
+ * This file handles the JavaScript for the multicheck control in the customizer.
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2021 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://taproot-theme.com
+ */
+
+/**
+ * Customizer Responsive Controls
+ *
+ * This file handles the JavaScript for the responsive controls in the customizer.
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2021 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://taproot-theme.com
+ */
+
+/**
+ * Extend Color object
+ *
+ * This file handles the JavaScript to extend the Color object to support RGBA
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2021 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ */
+
+/**
+ * Font Styles Control
+ *
+ * This file handles the JavaScript for the custom font styles control
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2020 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ */
+
+/**
+ * Range with Unit Selector
+ *
+ * This file handles the JavaScript for the custom range control
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2020 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ */

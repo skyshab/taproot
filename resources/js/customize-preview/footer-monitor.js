@@ -11,10 +11,15 @@
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://taproot-theme.com
  */
-var taprootFooter = document.querySelector('.app-footer');
-if (taprootFooter.classList.contains('app-footer--has-fixed')) {
-  var taprootFooterObserver = new ResizeObserver(function () {
-    window.dispatchEvent(new Event('resize'));
-  });
-  taprootFooterObserver.observe(taprootFooter);
-}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const taprootFooter = document.querySelector('.app-footer');
+
+    if (taprootFooter.classList.contains('app-footer--has-fixed')) {
+        const taprootFooterObserver = new ResizeObserver(function() {
+            window.dispatchEvent(new Event('resize'));
+        });
+
+        taprootFooterObserver.observe(taprootFooter);
+    }
+});

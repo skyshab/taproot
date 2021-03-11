@@ -1,0 +1,51 @@
+////
+/// Gallery block - public responsive styles.
+///
+/// @group  Blocks
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.wp-block-gallery {
+    @media (min-width: 600px) {
+        &:not(.columns-1) .blocks-gallery-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @include screen('tablet-and-under') {
+        &.alignfull .blocks-gallery-grid {
+            padding: 0 var(--block-spacing);
+        }
+    }
+
+    @include screen('tablet-and-up') {
+        &.columns-3,
+        &.columns-5,
+        &.columns-6 {
+            .blocks-gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        &.columns-7,
+        &.columns-8 {
+            .blocks-gallery-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    }
+
+    @include screen('desktop') {
+        @for $i from 3 through 8 {
+            &.columns-#{ $i } .blocks-gallery-grid {
+                grid-template-columns: repeat(#{$i}, 1fr);
+            }
+        }
+    }
+}
+
+@include screen('desktop') {
+    .app-main--no-sidebar .wp-block-gallery.alignfull .blocks-gallery-grid {
+        padding: 0 var(--block-spacing);
+    }
+}

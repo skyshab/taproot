@@ -23,7 +23,7 @@ use function Hybrid\app;
  * @since  2.0.0
  * @access public
  */
-class Line_Height extends Range {
+class Height extends Range {
 
     /**
      * Control ID
@@ -31,7 +31,7 @@ class Line_Height extends Range {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'line-height';
+    public $name = 'height';
 
     /**
      * Label

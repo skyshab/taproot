@@ -7,7 +7,6 @@
 ////
 
 .wp-block-file {
-
     @extend .has-block-spacing;
 
     &.aligncenter {
@@ -21,19 +20,7 @@
     // todo: extend the theme button styles here instead.
 
     &__button {
-        background:      #000000;
-        color:           #ffffff;
-        padding:         0.5em 1em;
-        text-decoration: none;
-
-        &:hover,
-        &:visited,
-        &:focus,
-        &:active {
-            color:           #ffffff;
-            opacity:         0.85;
-            text-decoration: none;
-        }
+        @extend .wp-block-button__link;
     }
 }
 

@@ -10,10 +10,11 @@
 
 // Import component styles inside the editor styles wrapper
 .editor-styles-wrapper {
-
     @import 'block';
 
     .wp-block-verse {
         @extend .has-block-padding;
+        font-family: monospace;
+        color: inherit;
     }
 }

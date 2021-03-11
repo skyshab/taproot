@@ -1,0 +1,122 @@
+/**
+ * Block Editor Custom Settings Panel.
+ *
+ * This file handles the JavaScript for creating a custom panel
+ * in the block editor for post level settings.
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2020 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://taproot-theme.com
+ */
+
+/**
+ * Disable Main Bottom Padding Component
+ *
+ * This file handles the JavaScript for the setting that disables Main bottom padding.
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2020 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://taproot-theme.com
+ */
+
+/**
+ * Disable Main Top Padding Component
+ *
+ * This file handles the JavaScript for the setting that disables Main top padding.
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2020 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://taproot-theme.com
+ */
+
+/**
+ * Display Featured Image.
+ *
+ * This file handles the JavaScript for the setting in the editor theme panel.
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2020 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://taproot-theme.com
+ */
+
+/**
+ * Enable Header Title
+ *
+ * This file handles the JavaScript for the setting that adds the title to the header content.
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2020 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://taproot-theme.com
+ */
+
+/**
+ * Entry Header Layout
+ *
+ * Adds a setting to the block editor theme sidebar panel.
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2020 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://taproot-theme.com
+ */
+
+/**
+ * Header Image Overlay
+ *
+ * This file handles the JavaScript for the header image overlay settings in the editor.
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2020 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://taproot-theme.com
+ */
+
+/**
+ * Header Image Picker Component
+ *
+ * This file handles the JavaScript for creating an image
+ * picker control in the block editor theme sidebar panel.
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2020 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://taproot-theme.com
+ */
+
+/**
+ * Header Text Color
+ *
+ * This file handles the JavaScript for the header text color settings in the editor.
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2020 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://taproot-theme.com
+ */
+
+/**
+ * Layout Picker Component
+ *
+ * This file handles the JavaScript for creating a layout picker
+ * control in the block editor theme sidebar panel.
+ *
+ * @package   Taproot
+ * @author    Sky Shabatura <theme@sky.camp>
+ * @copyright 2020 Sky Shabatura
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://taproot-theme.com
+ */

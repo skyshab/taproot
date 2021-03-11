@@ -9,10 +9,11 @@
 @import '_custom-properties';
 @import 'component';
 
-
 // we don't need a bottom margin in the block editor interface
 .wp-block .wp-block-button {
     margin: 0;
+    width: auto;
+    display: inline-block;
 }
 
 // put space between the link field and the button
@@ -21,7 +22,8 @@
 }
 
 // put space between buttons when there are multiple in the same block
-.block-editor-block-list__block[data-type="core/button"] + .block-editor-block-list__block[data-type="core/button"] {
+.block-editor-block-list__block[data-type='core/button']
+    + .block-editor-block-list__block[data-type='core/button'] {
     margin-left: 1em;
 }
 
