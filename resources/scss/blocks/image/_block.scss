@@ -11,6 +11,7 @@
         max-width: 100%;
         display: block;
     }
+
     figure {
         &.alignleft,
         &.alignright {
@@ -27,14 +28,6 @@
 
     &.is-resized {
         width: min-content;
-
-        // Emulate min-content for Edge and IE11
-        display: -ms-inline-grid;
-        -ms-grid-columns: min-content;
-
-        figcaption {
-            -ms-grid-row: 2;
-        }
 
         img {
             max-width: none;
