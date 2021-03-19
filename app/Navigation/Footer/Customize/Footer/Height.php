@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Navigation\Top\Customize\Top;
+namespace Taproot\Navigation\Footer\Customize\Footer;
 
 use Taproot\Customize\Controls\Range\Range;
 use Taproot\Tools\Mod;
@@ -23,7 +23,7 @@ use function Hybrid\app;
  * @since  2.0.0
  * @access public
  */
-class Line_Height extends Range {
+class Height extends Range {
 
     /**
      * Control ID
@@ -31,7 +31,7 @@ class Line_Height extends Range {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'line-height';
+    public $name = 'height';
 
     /**
      * Label
@@ -39,7 +39,7 @@ class Line_Height extends Range {
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Line Height';
+    public $label = 'Menu Height';
 
     /**
      * Default values
@@ -47,7 +47,7 @@ class Line_Height extends Range {
      * @since 2.0.0
      * @var array
      */
-    public $default = '2.5';
+    public $default = '3rem';
 
     /**
      * Range atts
@@ -56,16 +56,13 @@ class Line_Height extends Range {
      * @var array
      */
     public $atts = [
-        'unitless' => [
-            'min' => 0.5,
-            'max' => 3,
-            'step' => 0.01,
-            'default' => 1
-        ],
         'px' => [
-            'min' => 0,
-            'max' => 72,
-        ]
+            'max' => 100,
+            'default' => 50,
+        ],
+        'rem' => [
+            'max' => 6,
+        ],
     ];
 
     /**
@@ -78,9 +75,9 @@ class Line_Height extends Range {
     public function styles( $styles ) {
 
         $styles->customProperty([
-            'name' => $this->id,
-            'value' => Mod::get( $this->id ),
-            'screen' => app('navigation/top/functions')->get_desktop_screen(),
+            'name'      => $this->id,
+            'value'     => Mod::get( $this->id ),
+            'screen'    => app('navigation/footer/functions')->get_desktop_screen(),
         ]);
     }
 
@@ -98,7 +95,7 @@ class Line_Height extends Range {
             value.bind( function( to ) {
                 rootstrap.customProperty({
                     name: "{$this->id}",
-                    screen: getDesktopScreen( wp.customize.instance('navigation--top-mobile--breakpoint').get() ),
+                    screen: getDesktopScreen( wp.customize.instance('navigation--footer-mobile--breakpoint').get() ),
                     value: to
                 });
             });

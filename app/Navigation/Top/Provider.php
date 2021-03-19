@@ -55,8 +55,8 @@ class Provider extends ServiceProvider {
                     Customize\Top\Font_Styles::class,
                     Customize\Top\Link_Color::class,
                     Customize\Top\Link_Color_Hover::class,
+                    Customize\Top\Height::class,
                     Customize\Top\Font_Size::class,
-                    Customize\Top\Line_Height::class,
                     Customize\Top\Padding::class
                 ]
             ]);
@@ -78,13 +78,14 @@ class Provider extends ServiceProvider {
                 'title'     => __('Top Nav', 'taproot'),
                 'controls'  => [
                     Customize\Top_Fixed\Enable::class,
+                    Customize\Top_Fixed\Hide::class,
                     Customize\Top_Fixed\Background_Color::class,
                     Customize\Top_Fixed\Link_Color::class,
                     Customize\Top_Fixed\Link_Color_Hover::class,
                     Customize\Top_Fixed\Font_Family::class,
                     Customize\Top_Fixed\Font_Styles::class,
+                    Customize\Top_Fixed\Height::class,
                     Customize\Top_Fixed\Font_Size::class,
-                    Customize\Top_Fixed\Line_Height::class,
                     Customize\Top_Fixed\Padding::class,
                     Customize\Top_Fixed\Align::class
                 ]

@@ -1,0 +1,36 @@
+////
+/// Gallery block - public responsive styles.
+///
+/// @group  Blocks
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+@include screen('mobile') {
+    .wp-block-column {
+        margin-bottom: var(--text-spacing);
+
+        // last column
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@include screen('tablet-and-up') {
+    .wp-block-columns {
+        display: flex;
+        flex-direction: row;
+    }
+
+    // Individual columns.
+    .wp-block-column {
+        margin-right: var(--block-spacing);
+        flex-basis: 50%;
+
+        // last column
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

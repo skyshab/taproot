@@ -41,6 +41,14 @@ class Height extends Range {
     public $label = 'Menu Height';
 
     /**
+     * Default values
+     *
+     * @since 2.0.0
+     * @var array
+     */
+    public $default = '3rem';    
+
+    /**
      * Range atts
      *
      * @since 2.0.0
@@ -51,7 +59,7 @@ class Height extends Range {
             'max' => 100,
             'default' => 50,
         ],
-        'em' => [
+        'rem' => [
             'max' => 6,
         ],
     ];
@@ -66,7 +74,7 @@ class Height extends Range {
     public function styles( $styles ) {
 
         $styles->customProperty([
-            'name'      => 'navigation--navbar--line-height',
+            'name'      => 'navigation--navbar--height',
             'value'     => Mod::get( $this->id ),
             'screen'    => 'desktop',
             'selector'  => '.app-header--fixed',
@@ -86,7 +94,7 @@ class Height extends Range {
         wp.customize( "{$this->id}", function( value ) {
             value.bind( function( to ) {
                 rootstrap.customProperty({
-                    name: 'navigation--navbar--line-height',
+                    name: 'navigation--navbar--height',
                     screen: 'desktop',
                     value: to,
                     selector: '.app-header--fixed'

@@ -1,0 +1,15 @@
+////
+/// Video block.
+///
+/// @group  Blocks
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+.wp-block-video {
+    @extend .has-block-spacing;
+
+    video {
+        max-width: 100%;
+    }
+}

@@ -6,56 +6,5 @@
 /// @link   https://taproot-theme.com
 ////
 
-// Columns wrapper with background
-.wp-block-columns.has-background {
-    @extend .has-block-padding;
-    @extend .has-block-spacing;
-}
-
-// Individual columns.
-
-.wp-block-column {
-
-    // inner contents
-    & > :first-child {
-        margin-top: 0;
-    }
-
-    & > :last-child {
-        margin-bottom: 0;
-    }
-}
-
-
-@include screen('mobile') {
-
-    .wp-block-column {
-
-        margin-bottom: var( --text-spacing );
-
-        // last column
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-}
-
-@include screen('tablet-and-up') {
-
-    .wp-block-columns {
-        display: flex;
-        flex-direction: row;
-    }
-
-    // Individual columns.
-    .wp-block-column {
-
-        margin-right: var( --block-spacing );
-        flex-basis: 50%;
-
-        // last column
-        &:last-child {
-            margin-right: 0;
-        }
-    }
-}
+@import 'common';
+@import 'public-screens';

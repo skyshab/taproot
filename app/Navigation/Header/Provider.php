@@ -87,6 +87,7 @@ class Provider extends ServiceProvider {
                 'name'      => 'header-fixed',
                 'title'     => __('Header Fixed', 'taproot'),
                 'controls'  => [
+                    Customize\Header_Fixed\Enable::class,
                     Customize\Header_Fixed\Hide::class,
                     Customize\Header_Fixed\Link_Color::class,
                     Customize\Header_Fixed\Link_Color_Hover::class,

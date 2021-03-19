@@ -50,12 +50,12 @@ class Provider extends ServiceProvider {
                 'controls'  => [
                     Customize\Navbar\Hide::class,
                     Customize\Navbar\Background_Color::class,
-                    Customize\Navbar\Line_Height::class,
                     Customize\Navbar\Align::class,
                     Customize\Navbar\Font_Family::class,
                     Customize\Navbar\Font_Styles::class,
                     Customize\Navbar\Link_Color::class,
                     Customize\Navbar\Link_Color_Hover::class,
+                    Customize\Navbar\Height::class,
                     Customize\Navbar\Font_Size::class,
                     Customize\Navbar\Padding::class,
                     Customize\Navbar\Dropdown_Background_Color::class,

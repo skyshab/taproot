@@ -6,37 +6,36 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2020, Sky Shabatura
+ * @copyright Copyright (c) 2021, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Navigation\Navbar\Customize\Navbar;
+namespace Taproot\Navigation\Top\Customize\Top_Fixed;
 
 use Taproot\Customize\Controls\Range\Range;
 use Taproot\Tools\Mod;
-use function Hybrid\app;
 
 /**
  * Class for range control
  *
- * @since  2.0.0
+ * @since  2.1.0
  * @access public
  */
-class Line_Height extends Range {
+class Height extends Range {
 
     /**
      * Control ID
      *
-     * @since 2.0.0
+     * @since 2.1.0
      * @var string
      */
-    public $name = 'line-height';
+    public $name = 'height';
 
     /**
      * Label
      *
-     * @since 2.0.0
+     * @since 2.1.0
      * @var string
      */
     public $label = 'Menu Height';
@@ -44,15 +43,15 @@ class Line_Height extends Range {
     /**
      * Default values
      *
-     * @since 2.0.0
+     * @since 2.1.0
      * @var array
      */
-    public $default = '3em';
+    public $default = '2.5rem';    
 
     /**
      * Range atts
      *
-     * @since 2.0.0
+     * @since 2.1.0
      * @var array
      */
     public $atts = [
@@ -60,7 +59,7 @@ class Line_Height extends Range {
             'max' => 100,
             'default' => 50,
         ],
-        'em' => [
+        'rem' => [
             'max' => 6,
         ],
     ];
@@ -68,23 +67,24 @@ class Line_Height extends Range {
     /**
      * Styles
      *
-     * @since  2.0.0
+     * @since  2.1.0
      * @access public
      * @return void
      */
     public function styles( $styles ) {
 
         $styles->customProperty([
-            'name'      => $this->id,
+            'name'      => 'navigation--top--height',
             'value'     => Mod::get( $this->id ),
-            'screen'    => app('navigation/navbar/functions')->get_desktop_screen(),
-        ]);
+            'screen'    => 'desktop',
+            'selector'  => '.app-header--fixed',
+        ]);        
     }
 
     /**
      * Preview Styles
      *
-     * @since  2.0.0
+     * @since  2.1.0
      * @access public
      * @return void
      */
@@ -94,9 +94,10 @@ class Line_Height extends Range {
         wp.customize( "{$this->id}", function( value ) {
             value.bind( function( to ) {
                 rootstrap.customProperty({
-                    name: "{$this->id}",
-                    screen: getDesktopScreen( wp.customize.instance('navigation--navbar-mobile--breakpoint').get() ),
-                    value: to
+                    name: 'navigation--top--height',
+                    screen: 'desktop',
+                    value: to,
+                    selector: '.app-header--fixed'
                 });
             });
         });

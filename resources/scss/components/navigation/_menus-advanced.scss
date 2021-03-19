@@ -6,12 +6,9 @@
 /// @link   https://taproot-theme.com
 ////
 
-
 // mixin to generate mobile nav styles
-@mixin mobile-styles( $screen ) {
-
+@mixin mobile-styles($screen) {
     .mobile-at-#{$screen} {
-
         // dropdown styles
         .menu__sub-menu {
             display: none;
@@ -24,16 +21,6 @@
                 opacity: 1;
                 display: flex;
                 height: auto;
-            }
-
-            a:before {
-                content: '';
-                display: inline-block;
-                width: 1.25em;
-            }
-
-            .menu__sub-menu a:before {
-                width: 2.5em;
             }
         }
 
@@ -63,13 +50,11 @@
             }
         }
 
-
         // global mobile styles
         &.mobile-type-slide,
         &.mobile-type-fullscreen,
         &.mobile-type-dropdown-slide,
         &.mobile-type-dropdown-fade {
-
             .menu__items {
                 display: none;
                 &.is-open {
@@ -77,7 +62,8 @@
                 }
             }
 
-            .menu__items > .menu__item:not(:first-of-type), .menu__sub-menu .menu__item {
+            .menu__items > .menu__item:not(:first-of-type),
+            .menu__sub-menu .menu__item {
                 border-top-width: 1px;
                 border-top-style: solid;
             }
@@ -88,17 +74,14 @@
             }
         }
 
-
         // fixed type mobile styles
         &.mobile-type-slide,
         &.mobile-type-fullscreen {
-
             .menu__items {
                 position: fixed;
                 height: 100%;
             }
         }
-
 
         // slide nav styles
         &.mobile-type-slide {
@@ -125,10 +108,8 @@
             }
         }
 
-
         // fullscreen nav styles
         &.mobile-type-fullscreen {
-
             .menu__items {
                 width: 100%;
                 top: 0;
@@ -140,7 +121,6 @@
             }
 
             .menu__items > .menu__item {
-
                 &:first-of-type {
                     border-top-width: 1px;
                     border-top-style: solid;
@@ -160,33 +140,28 @@
             }
         }
 
-
         // dropdown nav styles
         &.mobile-type-dropdown-slide,
         &.mobile-type-dropdown-fade {
             .menu__items {
                 position: absolute;
                 top: 100%;
-                box-shadow: 0 1px 0px 1px rgba(175,175,175,.2);
+                box-shadow: 0 1px 0px 1px rgba(175, 175, 175, 0.2);
                 overflow: hidden;
             }
         }
     }
 }
 
-
 // mixin to generate desktop nav styles
-@mixin desktop-styles( $screen ) {
-
+@mixin desktop-styles($screen) {
     .mobile-at-#{$screen} {
-
         .menu {
-
             &__sub-menu {
                 z-index: 2;
 
                 .menu__sub-menu {
-                    top: -0.6em;
+                    top: -0.4em;
                     left: 100%;
                     width: 100%;
                 }
@@ -198,35 +173,31 @@
                 }
 
                 .menu__item.has-children {
-
                     .dropdown-target--icon {
-                        transition: transform .3s ease-in-out;
-                        transform: rotate(0deg);
+                        transition: transform 0.3s ease-in-out;
                     }
 
                     &:hover .dropdown-target--icon {
-                        transition: transform .3s ease-in-out;
-                        transform: rotate(-90deg);
+                        transition: transform 0.3s ease-in-out;
+                        transform: rotate(0deg);
                     }
                 }
             }
 
             &__item {
-
                 &.has-children {
-
                     .menu__sub-menu {
                         position: absolute;
                         visibility: hidden;
                         opacity: 0;
                         padding: 0.4em 0;
-                        transition: all .5s ease-in-out;
+                        transition: all 0.5s ease-in-out;
                     }
 
                     &:hover > .menu__sub-menu {
                         visibility: visible;
                         opacity: 1;
-                        transition: all .5s ease-in-out;
+                        transition: all 0.5s ease-in-out;
                     }
                 }
             }
@@ -238,7 +209,7 @@
                 min-width: 100%;
 
                 &:before {
-                    content: " ";
+                    content: ' ';
                     position: absolute;
                     width: 0;
                     height: 0;
@@ -253,14 +224,12 @@
                 .menu__link {
                     line-height: 1.2em;
                     padding: 0.4em 1em;
-                    font-size: 0.875em
+                    font-size: 0.875em;
                 }
             }
-
         }
 
         .submenus-open-left .menu__sub-menu {
-
             .menu__sub-menu {
                 right: 100%;
                 left: auto;
@@ -272,9 +241,21 @@
         }
 
         .dropdown-target {
-            padding-left: .4em;
+            padding-left: 0.4em;
             margin-right: -1em;
             text-align: center;
+        }
+
+        .menu--theme__sub-menu .dropdown-target {
+            margin-right: 0;
+        }
+        .menu--theme__sub-menu .menu--theme__item.has-children.open-on-left {
+            & > .menu__link {
+                flex-direction: row-reverse;
+            }
+            &:hover .dropdown-target--icon {
+                transform: rotate(180deg);
+            }
         }
     }
 }
@@ -284,32 +265,31 @@
 // ****************
 
 // always mobile
-@include mobile-styles( 'always' );
+@include mobile-styles('always');
 
 // mobile only styles
 @include screen('mobile') {
-    @include mobile-styles( 'mobile' );
+    @include mobile-styles('mobile');
 }
 
 // tablet and under styles
 @include screen('tablet-and-under') {
-    @include mobile-styles( 'tablet-and-under' );
+    @include mobile-styles('tablet-and-under');
 }
-
 
 // ****************
 // * Desktop Styles
 // ****************
 
 // never mobile styles
-@include desktop-styles( 'never' );
+@include desktop-styles('never');
 
 // mobile only styles
 @include screen('tablet-and-up') {
-    @include desktop-styles( 'mobile' );
+    @include desktop-styles('mobile');
 }
 
 // tablet and under styles
 @include screen('desktop') {
-    @include desktop-styles( 'tablet-and-under' );
+    @include desktop-styles('tablet-and-under');
 }

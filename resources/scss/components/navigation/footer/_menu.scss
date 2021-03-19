@@ -6,10 +6,8 @@
 /// @link   https://taproot-theme.com
 ////
 
-
 // mixin to generate mobile nav styles
-@mixin menu-footer-mobile-styles( $screen ) {
-
+@mixin menu-footer-mobile-styles($screen) {
     &.mobile-at-#{$screen} {
         .container {
             padding-top: 1.5em;
@@ -19,24 +17,23 @@
 }
 
 // mixin to generate desktop nav styles
-@mixin menu-footer-desktop-styles( $screen ) {
-
+@mixin menu-footer-desktop-styles($screen) {
     &.mobile-at-#{$screen} {
-
         // customize default
         .menu--footer__link {
-            padding: 0 1em;
+            min-height: var(--navigation--footer--height);
+            display: flex;
+            align-items: center;
         }
     }
 }
 
 // Menu link color
 a.menu--footer__link {
-    color: var( --navigation--footer--color );
+    color: var(--navigation--footer--color);
 }
 
 .menu--footer {
-
     // customize default
     background-color: #000000;
 
@@ -44,36 +41,35 @@ a.menu--footer__link {
     order: 1;
 
     &__link {
-        font-size: var( --navigation--footer--font-size );
-        line-height: var( --navigation--footer--line-height );
+        font-size: var(--navigation--footer--font-size);
+        line-height: var(--navigation--footer--line-height);
     }
 
     // always mobile
-    @include menu-footer-mobile-styles( 'always' );
+    @include menu-footer-mobile-styles('always');
 
     // mobile only styles
     @include screen('mobile') {
-        @include menu-footer-mobile-styles( 'mobile' );
-    };
+        @include menu-footer-mobile-styles('mobile');
+    }
 
     // tablet and under styles
     @include screen('tablet-and-under') {
-        @include menu-footer-mobile-styles( 'tablet-and-under' );
-    };
-
+        @include menu-footer-mobile-styles('tablet-and-under');
+    }
 
     // Desktop Styles
 
     // never mobile styles
-    @include menu-footer-desktop-styles( 'never' );
+    @include menu-footer-desktop-styles('never');
 
     // mobile only styles
     @include screen('tablet-and-up') {
-        @include menu-footer-desktop-styles( 'mobile' );
-    };
+        @include menu-footer-desktop-styles('mobile');
+    }
 
     // tablet and under styles
     @include screen('desktop') {
-        @include menu-footer-desktop-styles( 'tablet-and-under' );
-    };
+        @include menu-footer-desktop-styles('tablet-and-under');
+    }
 }

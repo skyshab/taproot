@@ -7,10 +7,8 @@
 ////
 
 // mixin to generate mobile nav styles
-@mixin mobile-styles( $screen ) {
-
+@mixin mobile-styles($screen) {
     &.mobile-at-#{$screen} {
-
         // if no logo or titles, fill the space and add padding.
         &:first-child {
             flex: 100%;
@@ -19,9 +17,9 @@
         }
 
         &.mobile-type {
-
             &-dropdown {
-                &-slide, &-fade {
+                &-slide,
+                &-fade {
                     .menu__items {
                         left: 50%;
                         transform: translateX(-50%);
@@ -32,28 +30,34 @@
         }
 
         .menu--header__items {
-            background-color: var( --navigation--header-mobile--background-color );
+            background-color: var(
+                --navigation--header-mobile--background-color
+            );
         }
     }
 }
 
 // mixin to generate desktop nav styles
-@mixin desktop-styles( $screen ) {
+@mixin desktop-styles($screen) {
     &.mobile-at-#{$screen} {
         flex: 1 1 100%;
+        .menu--header__items > .menu--header__item > .menu--header__link {
+            min-height: var(--navigation--header--height);
+            display: flex;
+            align-items: center;
+        }
     }
 }
 
 // Menu link color
 a.menu--header__link {
-    color: var( --navigation--header--color );
+    color: var(--navigation--header--color);
 }
 
 .menu--header {
-
     &__link {
-        font-size: var( --navigation--header--font-size );
-        line-height: var( --navigation--header--height );
+        font-size: var(--navigation--header--font-size);
+        line-height: var(--navigation--header--line-height);
     }
 
     .menu--toggle {
@@ -64,44 +68,42 @@ a.menu--header__link {
     // Mobile Styles
 
     // always mobile
-    @include mobile-styles( 'always' );
+    @include mobile-styles('always');
 
     // mobile only styles
     @include screen('mobile') {
-        @include mobile-styles( 'mobile' );
-    };
+        @include mobile-styles('mobile');
+    }
 
     // tablet and under styles
     @include screen('tablet-and-under') {
-        @include mobile-styles( 'tablet-and-under' );
-    };
+        @include mobile-styles('tablet-and-under');
+    }
 
     // Desktop Styles
 
     // never mobile styles
-    @include desktop-styles( 'never' );
+    @include desktop-styles('never');
 
     // mobile at mobile only styles
     @include screen('tablet-and-up') {
-        @include desktop-styles( 'mobile' );
-    };
+        @include desktop-styles('mobile');
+    }
 
     // mobile at tablet and under styles
     @include screen('desktop') {
-        @include desktop-styles( 'tablet-and-under' );
-    };
+        @include desktop-styles('tablet-and-under');
+    }
 }
-
 
 // Stacked vertical header styles
 .app-header {
-
     @include screen('mobile') {
-
         &--mobile--vertical {
-
             .menu--header.mobile-at {
-                &-always, &-mobile, &-tablet-and-under {
+                &-always,
+                &-mobile,
+                &-tablet-and-under {
                     margin-top: 1em;
                 }
             }
@@ -109,11 +111,10 @@ a.menu--header__link {
     }
 
     @include screen('tablet-and-under') {
-
         &--tablet--vertical {
-
             .menu--header.mobile-at {
-                &-always, &-tablet-and-under {
+                &-always,
+                &-tablet-and-under {
                     margin-top: 1em;
                 }
             }
@@ -121,9 +122,7 @@ a.menu--header__link {
     }
 
     @include screen('desktop') {
-
         &--desktop--vertical {
-
             .menu--header.mobile-at {
                 &-always {
                     margin-top: 1em;
@@ -132,4 +131,3 @@ a.menu--header__link {
         }
     }
 }
-

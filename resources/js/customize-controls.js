@@ -12,8 +12,8 @@
  * @link      https://taproot-theme.com
  */
 
-import './customize-controls/Color.js';
-import './customize-controls/Range.js';
-import './customize-controls/FontStyles.js';
-import './customize-controls/DevicePicker.js';
-import './customize-controls/Multicheck.js';
+import './customize-controls/Color/index.js';
+import './customize-controls/DevicePicker/index.js';
+import './customize-controls/FontStyles/index.js';
+import './customize-controls/Multicheck/index.js';
+import './customize-controls/Range/index.js';

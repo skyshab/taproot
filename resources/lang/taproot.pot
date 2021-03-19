@@ -1,14 +1,14 @@
-# <!=Copyright (C) 2020 Sky Shabatura
+# <!=Copyright (C) 2021 Sky Shabatura
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Taproot 2.0.0\n"
+"Project-Id-Version: Taproot 2.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/taproot\n"
-"POT-Creation-Date: 2020-10-18 22:17:21+00:00\n"
+"POT-Creation-Date: 2021-03-18 11:49:14+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: node-wp-i18n 1.2.3\n"
@@ -446,7 +446,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr ""
 
-#: app/Navigation/Header/Provider.php:49 app/Navigation/Header/Provider.php:106
+#: app/Navigation/Header/Provider.php:49 app/Navigation/Header/Provider.php:107
 msgid "Header Nav"
 msgstr ""
 
@@ -472,7 +472,7 @@ msgid "Navigation"
 msgstr ""
 
 #: app/Navigation/Top/Provider.php:49 app/Navigation/Top/Provider.php:66
-#: app/Navigation/Top/Provider.php:78 app/Navigation/Top/Provider.php:94
+#: app/Navigation/Top/Provider.php:78 app/Navigation/Top/Provider.php:95
 msgid "Top Nav"
 msgstr ""
 
@@ -490,7 +490,7 @@ msgid "Pagination"
 msgstr ""
 
 #: app/Post_Title/Template.php:136
-#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:101
+#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:105
 #: vendor/justintadlock/hybrid-core/src/Util/Title.php:150
 #. Translators: %s is the search query.
 msgid "Search results for: %s"
@@ -691,41 +691,41 @@ msgid ""
 "Please upgrade and try again."
 msgstr ""
 
-#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:95
+#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:99
 msgid "Browse:"
 msgstr ""
 
-#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:97
+#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:101
 msgid "Home"
 msgstr ""
 
-#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:98
+#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:102
 #: vendor/justintadlock/hybrid-core/src/Util/Title.php:164
 msgid "404 Not Found"
 msgstr ""
 
-#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:99
+#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:103
 #: vendor/justintadlock/hybrid-core/src/Util/Title.php:97
 msgid "Archives"
 msgstr ""
 
-#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:103
+#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:107
 #. Translators: %s is the page number.
 msgid "Page %s"
 msgstr ""
 
-#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:105
+#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:109
 #. Translators: %s is the page number.
 msgid "Comment Page %s"
 msgstr ""
 
-#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:107
+#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:111
 #: vendor/justintadlock/hybrid-core/src/Util/Title.php:279
 #. Translators: Minute archive title. %s is the minute time format.
 msgid "Minute %s"
 msgstr ""
 
-#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:109
+#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:113
 #. Translators: Weekly archive title. %s is the week date format.
 msgid "Week %s"
 msgstr ""
@@ -981,7 +981,7 @@ msgctxt "sidebar"
 msgid "Primary"
 msgstr ""
 
-#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:96
+#: vendor/justintadlock/hybrid-breadcrumbs/src/Breadcrumbs.php:100
 msgctxt "breadcrumbs aria label"
 msgid "Breadcrumbs"
 msgstr ""

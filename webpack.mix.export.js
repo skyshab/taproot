@@ -13,9 +13,9 @@
  */
 
 // Import required packages.
-const mix     = require( 'laravel-mix' );
-const rimraf  = require( 'rimraf' );
-const fs      = require( 'fs' );
+const mix = require('laravel-mix');
+const rimraf = require('rimraf');
+const fs = require('fs');
 
 // Folder name to export the files to.
 let exportPath = 'taproot';
@@ -29,7 +29,7 @@ let files = [
     'index.php',
     'license.md',
     'readme.md',
-    'readme.txt',        // Required for WordPress.org theme review.
+    'readme.txt', // Required for WordPress.org theme review.
     'screenshot.png',
     'screenshot.jpg',
 ];
@@ -39,45 +39,48 @@ let folders = [
     'app',
     'dist',
     'resources/lang',
-    'resources/js',      // Required for WordPress.org theme review.
-    'resources/scss',    // Required for WordPress.org theme review.
+    'resources/js', // Required for WordPress.org theme review.
+    'resources/scss', // Required for WordPress.org theme review.
     'views',
-    'vendor', 
-    'tribe', 
-    'tribe-events'
+    'vendor',
+    'tribe',
+    'tribe-events',
 ];
 
 // Delete the previous export to start clean.
-rimraf.sync( exportPath );
+rimraf.sync(exportPath);
 
 // Loop through the root files and copy them over.
-files.forEach( file => {
-
-    if ( fs.existsSync( file ) ) {
-        mix.copy( file, `${exportPath}/${file}` );
+files.forEach((file) => {
+    if (fs.existsSync(file)) {
+        mix.copy(file, `${exportPath}/${file}`);
     }
-} );
+});
 
 // Loop through the folders and copy them over.
-folders.forEach( folder => {
-
-    if ( fs.existsSync( folder ) ) {
-        mix.copyDirectory( folder, `${exportPath}/${folder}` );
+folders.forEach((folder) => {
+    if (fs.existsSync(folder)) {
+        mix.copyDirectory(folder, `${exportPath}/${folder}`);
     }
-} );
+});
 
 // Delete the `vendor/bin` and `vendor/composer/installers` folder, which can
 // get left over, even in production. Mix will also create an additional
 // `mix-manifest.json` file in the root, which we don't need.
-mix.then( () => {
-
+mix.then(() => {
     let files = [
         'mix-manifest.json',
         `${exportPath}/vendor/bin`,
-        `${exportPath}/vendor/composer/installers`
+        `${exportPath}/vendor/composer/installers`,
+        `${exportPath}/vendor/skyshab/*/gulpfile.js`,
+        `${exportPath}/vendor/skyshab/*/package.json`,
+        `${exportPath}/vendor/skyshab/*/package-lock.json`,
+        `${exportPath}/vendor/skyshab/*/mix-manifest.json`,
+        `${exportPath}/vendor/skyshab/*/.gitignore`,
+        `${exportPath}/vendor/skyshab/*/.babelrc`,
     ];
 
-    files.forEach( file => {
-        rimraf.sync( file );
-    } );
-} );
+    files.forEach((file) => {
+        rimraf.sync(file);
+    });
+});

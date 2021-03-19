@@ -73,12 +73,11 @@ class Height extends Range {
      */
     public function styles( $styles ) {
 
-        $styles->add([
-            'selector' => '.app-header--fixed .menu--header__link',
-            'styles' => [
-                'line-height' => Mod::get( $this->id ),
-            ],
-            'screen' => 'desktop',
+        $styles->customProperty([
+            'name'      => 'navigation--header--height',
+            'value'     => Mod::get( $this->id ),
+            'screen'    => 'desktop',
+            'selector'  => '.app-header--fixed',
         ]);
     }
 
@@ -94,13 +93,11 @@ class Height extends Range {
         return <<< JS
         wp.customize( "{$this->id}", function( value ) {
             value.bind( function( to ) {
-                rootstrap.style({
-                    id: "{$this->id}",
-                    selector: '.app-header--fixed .menu--header__link',
+                rootstrap.customProperty({
+                    name: 'navigation--header--height',
                     screen: 'desktop',
-                    styles: {
-                        'line-height': to
-                    },
+                    value: to,
+                    selector: '.app-header--fixed'
                 });
             });
         });

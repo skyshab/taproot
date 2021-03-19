@@ -5,34 +5,44 @@
 /// @link   https://taproot-theme.com
 ////
 
-
 // featured image control
-.editor-post-featured-image .components-responsive-wrapper__content {
-    width: 100%;
-}
+// Maybe we don't need this?
+// .editor-post-featured-image {
+//     &__preview {
+//         overflow: hidden;
+//     }
+
+//     .components-responsive-wrapper__content {
+//         width: 100%;
+//     }
+// }
 
 .editor-styles-wrapper {
-
     // Get rid of the default padding
-    padding: 0!important;
+    //padding: 0 !important;
 
     // Override the styles that accomodate for the padding
-    .block-editor-block-list__layout.is-root-container > .wp-block[data-align="full"] {
-        margin-left: 0!important;
-        margin-right: 0!important;
+    .block-editor-block-list__layout.is-root-container
+        > .wp-block[data-align='full'] {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
 
     // Set the base text color
-    &.edit-post-visual-editor {
-        color: var( --colors--text );
+    .edit-post-visual-editor & {
+        color: var(--colors--text);
     }
 
     // Style the post title block
     .editor-post-title__input {
         font-family: inherit;
         font-weight: normal;
-        color:          var( --post--title--text-color );
-        font-size:      var( --post--title--font-size );
-        line-height:    var( --post--title--line-height );
+        color: var(--post--title--text-color, inherit);
+        font-size: var(--post--title--font-size, 2.5em);
+        line-height: var(--post--title--line-height, 1.2);
+    }
+
+    .block-library-html__edit .block-editor-plain-text {
+        color: inherit;
     }
 }

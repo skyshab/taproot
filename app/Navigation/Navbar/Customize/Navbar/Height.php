@@ -11,10 +11,11 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Taproot\Navigation\Top\Customize\Top_Fixed;
+namespace Taproot\Navigation\Navbar\Customize\Navbar;
 
 use Taproot\Customize\Controls\Range\Range;
 use Taproot\Tools\Mod;
+use function Hybrid\app;
 
 /**
  * Class for range control
@@ -22,7 +23,7 @@ use Taproot\Tools\Mod;
  * @since  2.0.0
  * @access public
  */
-class Line_Height extends Range {
+class Height extends Range {
 
     /**
      * Control ID
@@ -30,7 +31,7 @@ class Line_Height extends Range {
      * @since 2.0.0
      * @var string
      */
-    public $name = 'line-height';
+    public $name = 'height';
 
     /**
      * Label
@@ -38,7 +39,15 @@ class Line_Height extends Range {
      * @since 2.0.0
      * @var string
      */
-    public $label = 'Line Height';
+    public $label = 'Menu Height';
+
+    /**
+     * Default values
+     *
+     * @since 2.0.0
+     * @var array
+     */
+    public $default = '3rem';
 
     /**
      * Range atts
@@ -47,16 +56,13 @@ class Line_Height extends Range {
      * @var array
      */
     public $atts = [
-        'unitless' => [
-            'min' => 0.5,
-            'max' => 3,
-            'step' => 0.01,
-            'default' => 1
-        ],
         'px' => [
-            'min' => 0,
-            'max' => 72,
-        ]
+            'max' => 100,
+            'default' => 50,
+        ],
+        'rem' => [
+            'max' => 6,
+        ],
     ];
 
     /**
@@ -68,12 +74,10 @@ class Line_Height extends Range {
      */
     public function styles( $styles ) {
 
-        $styles->add([
-            'selector' => '.app-header--fixed .menu--top__link',
-            'styles' => [
-                'line-height' => Mod::get( $this->id ),
-            ],
-            'screen' => 'desktop',
+        $styles->customProperty([
+            'name'      => $this->id,
+            'value'     => Mod::get( $this->id ),
+            'screen'    => app('navigation/navbar/functions')->get_desktop_screen(),
         ]);
     }
 
@@ -89,13 +93,10 @@ class Line_Height extends Range {
         return <<< JS
         wp.customize( "{$this->id}", function( value ) {
             value.bind( function( to ) {
-                rootstrap.style({
-                    id: "{$this->id}",
-                    selector: '.app-header--fixed .menu--top__link',
-                    screen: 'desktop',
-                    styles: {
-                        'line-height': to
-                    },
+                rootstrap.customProperty({
+                    name: "{$this->id}",
+                    screen: getDesktopScreen( wp.customize.instance('navigation--navbar-mobile--breakpoint').get() ),
+                    value: to
                 });
             });
         });

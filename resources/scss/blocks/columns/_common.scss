@@ -1,0 +1,26 @@
+////
+/// Gallery block.
+///
+/// @group  Blocks
+/// @author Sky Shabatura <theme@sky.camp>
+/// @link   https://taproot-theme.com
+////
+
+// Columns wrapper with background
+.wp-block-columns.has-background {
+    @extend .has-block-padding;
+    @extend .has-block-spacing;
+}
+
+// Individual columns.
+
+.wp-block-column {
+    // inner contents
+    & > :first-child {
+        margin-top: 0;
+    }
+
+    & > :last-child {
+        margin-bottom: 0;
+    }
+}

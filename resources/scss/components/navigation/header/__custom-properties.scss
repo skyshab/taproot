@@ -7,9 +7,9 @@
 ////
 
 :root {
-
     --navigation--header--font-size: 1em;
-    --navigation--header--height: 2.5;
-    --navigation--header--color: var( --header--text-color );
+    --navigation--header--line-height: 1.2;
+    --navigation--header--height: 2.5em;
+    --navigation--header--color: var(--header--text-color);
     --navigation--header-mobile--background-color: #424242;
 }

@@ -9,8 +9,12 @@
 // drop cap styles
 .has-drop-cap:first-letter {
     float: left;
-    font-size: calc( 2em * var(--typography--body--line-height) );
+    font-size: calc(2em * var(--typography--body--line-height));
     line-height: 0.75;
     padding-top: 0.125em;
     padding-right: 0.125em;
+}
+
+p.has-background {
+    padding: 0.2em 0.4em;
 }

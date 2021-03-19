@@ -10,15 +10,10 @@
 
 // Import component styles inside the editor styles wrapper
 .editor-styles-wrapper {
-
-    @import 'block';
+    @import 'common';
 
     figure.wp-block-gallery {
         @extend .has-block-spacing;
-    }
-
-    .components-form-file-upload {
-        width: 100%;
     }
 
     .blocks-gallery-caption {
@@ -26,8 +21,52 @@
         margin-top: 16px;
     }
 
-    .blocks-gallery-grid {
-        margin: 0!important;
+    ul.blocks-gallery-grid {
+        padding-left: 0;
+    }
+
+    .wp-block-gallery.alignfull .blocks-gallery-grid {
+        padding: 0 var(--block-spacing);
     }
 }
 
+// Responsive editor styles
+#start-resizable-editor-section {
+    display: none;
+}
+
+.wp-block-gallery {
+    @media (min-width: 600px) {
+        &:not(.columns-1) .blocks-gallery-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @include screen('editor-tablet') {
+        &.columns-3,
+        &.columns-5,
+        &.columns-6 {
+            .blocks-gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        &.columns-7,
+        &.columns-8 {
+            .blocks-gallery-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    }
+
+    @include screen('editor-desktop') {
+        @for $i from 3 through 8 {
+            &.columns-#{ $i } .blocks-gallery-grid {
+                grid-template-columns: repeat(#{$i}, 1fr);
+            }
+        }
+    }
+}
+
+#end-resizable-editor-section {
+    display: none;
+}
