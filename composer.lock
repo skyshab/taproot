@@ -1,0 +1,1004 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "a855d4bb89422aa2c001e0e8e7455166",
+    "packages": [
+        {
+            "name": "composer/installers",
+            "version": "v1.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/installers.git",
+                "reference": "1a0357fccad9d1cc1ea0c9a05b8847fbccccb78d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/installers/zipball/1a0357fccad9d1cc1ea0c9a05b8847fbccccb78d",
+                "reference": "1a0357fccad9d1cc1ea0c9a05b8847fbccccb78d",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0 || ^2.0"
+            },
+            "replace": {
+                "roundcube/plugin-installer": "*",
+                "shama/baton": "*"
+            },
+            "require-dev": {
+                "composer/composer": "1.6.* || ^2.0",
+                "composer/semver": "^1 || ^3",
+                "phpstan/phpstan": "^0.12.55",
+                "phpstan/phpstan-phpunit": "^0.12.16",
+                "symfony/phpunit-bridge": "^4.2 || ^5",
+                "symfony/process": "^2.3"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Composer\\Installers\\Plugin",
+                "branch-alias": {
+                    "dev-main": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\Installers\\": "src/Composer/Installers"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Robinson Young",
+                    "email": "kyle@dontkry.com",
+                    "homepage": "https://github.com/shama"
+                }
+            ],
+            "description": "A multi-framework Composer library installer",
+            "homepage": "https://composer.github.io/installers/",
+            "keywords": [
+                "Craft",
+                "Dolibarr",
+                "Eliasis",
+                "Hurad",
+                "ImageCMS",
+                "Kanboard",
+                "Lan Management System",
+                "MODX Evo",
+                "MantisBT",
+                "Mautic",
+                "Maya",
+                "OXID",
+                "Plentymarkets",
+                "Porto",
+                "RadPHP",
+                "SMF",
+                "Starbug",
+                "Thelia",
+                "Whmcs",
+                "WolfCMS",
+                "agl",
+                "aimeos",
+                "annotatecms",
+                "attogram",
+                "bitrix",
+                "cakephp",
+                "chef",
+                "cockpit",
+                "codeigniter",
+                "concrete5",
+                "croogo",
+                "dokuwiki",
+                "drupal",
+                "eZ Platform",
+                "elgg",
+                "expressionengine",
+                "fuelphp",
+                "grav",
+                "installer",
+                "itop",
+                "joomla",
+                "known",
+                "kohana",
+                "laravel",
+                "lavalite",
+                "lithium",
+                "magento",
+                "majima",
+                "mako",
+                "mediawiki",
+                "modulework",
+                "modx",
+                "moodle",
+                "osclass",
+                "phpbb",
+                "piwik",
+                "ppi",
+                "processwire",
+                "puppet",
+                "pxcms",
+                "reindex",
+                "roundcube",
+                "shopware",
+                "silverstripe",
+                "sydes",
+                "sylius",
+                "symfony",
+                "typo3",
+                "wordpress",
+                "yawik",
+                "zend",
+                "zikula"
+            ],
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-01-14T11:07:16+00:00"
+        },
+        {
+            "name": "justintadlock/hybrid-breadcrumbs",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/themehybrid/hybrid-breadcrumbs.git",
+                "reference": "fcac7fd34c00b3c263e3bd9dabf9bfa939a83552"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/themehybrid/hybrid-breadcrumbs/zipball/fcac7fd34c00b3c263e3bd9dabf9bfa939a83552",
+                "reference": "fcac7fd34c00b3c263e3bd9dabf9bfa939a83552",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Hybrid\\Breadcrumbs\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Justin Tadlock",
+                    "email": "justintadlock@gmail.com",
+                    "homepage": "https://themehybrid.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A powerful breadcrumb script for inclusion with WordPress themes.",
+            "homepage": "https://github.com/justintadlock/hybrid-breadcrumbs",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2020-12-21T12:32:36+00:00"
+        },
+        {
+            "name": "justintadlock/hybrid-core",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/themehybrid/hybrid-core.git",
+                "reference": "c72dfeac30f32c2183d6900e9e214da1fd003bee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/themehybrid/hybrid-core/zipball/c72dfeac30f32c2183d6900e9e214da1fd003bee",
+                "reference": "c72dfeac30f32c2183d6900e9e214da1fd003bee",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Hybrid\\": "src/"
+                },
+                "files": [
+                    "src/bootstrap-hybrid.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Justin Tadlock",
+                    "email": "justintadlock@gmail.com",
+                    "homepage": "http://justintadlock.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Hybrid Core: A theme framework for developing modern WordPress themes.",
+            "homepage": "https://themehybrid.com/hybrid-core",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2019-09-03T17:24:16+00:00"
+        },
+        {
+            "name": "skyshab/rootstrap",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/skyshab/rootstrap.git",
+                "reference": "650aa8b6800ffbbcbaf0281fa5fa58a5790d3a22"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/skyshab/rootstrap/zipball/650aa8b6800ffbbcbaf0281fa5fa58a5790d3a22",
+                "reference": "650aa8b6800ffbbcbaf0281fa5fa58a5790d3a22",
+                "shasum": ""
+            },
+            "require": {
+                "justintadlock/hybrid-core": ">=5.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rootstrap\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Sky Shabatura",
+                    "email": "github@sky.camp",
+                    "homepage": "https://github.com/skyshab",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Rootstrap is a collection of utilities for managing WordPress Customizer controls, settings, responsive breakpoints and styles.",
+            "homepage": "https://github.com/skyshab/rootstrap",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2019-11-03T18:40:02+00:00"
+        },
+        {
+            "name": "skyshab/rootstrap-defaults",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/skyshab/rootstrap-defaults.git",
+                "reference": "43077f848cf1eaf139095189de5fc4250a796bb9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/skyshab/rootstrap-defaults/zipball/43077f848cf1eaf139095189de5fc4250a796bb9",
+                "reference": "43077f848cf1eaf139095189de5fc4250a796bb9",
+                "shasum": ""
+            },
+            "require": {
+                "skyshab/rootstrap": ">=2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rootstrap\\Defaults\\": "src/"
+                },
+                "files": []
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Sky Shabatura",
+                    "email": "github@sky.camp",
+                    "homepage": "https://github.com/skyshab",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Extends Rootstrap to add functionality for managing Customizer defaults.",
+            "homepage": "https://github.com/skyshab/rootstrap-defaults",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2019-12-26T15:00:21+00:00"
+        },
+        {
+            "name": "skyshab/rootstrap-devices",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/skyshab/rootstrap-devices.git",
+                "reference": "13fa1e48df3635c4e2de017ca4ab1c6b94d40508"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/skyshab/rootstrap-devices/zipball/13fa1e48df3635c4e2de017ca4ab1c6b94d40508",
+                "reference": "13fa1e48df3635c4e2de017ca4ab1c6b94d40508",
+                "shasum": ""
+            },
+            "require": {
+                "skyshab/rootstrap": ">=1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rootstrap\\Devices\\": "src/"
+                },
+                "files": []
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Sky Shabatura",
+                    "email": "github@sky.camp",
+                    "homepage": "https://github.com/skyshab",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Utility for managing the devices and breakpoints in the customizer and customize preview.",
+            "homepage": "https://github.com/skyshab/rootstrap-devices",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2019-11-03T12:32:53+00:00"
+        },
+        {
+            "name": "skyshab/rootstrap-panels",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/skyshab/rootstrap-panels.git",
+                "reference": "2d1c81d680039d04fbb34633bee21318347c4a3c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/skyshab/rootstrap-panels/zipball/2d1c81d680039d04fbb34633bee21318347c4a3c",
+                "reference": "2d1c81d680039d04fbb34633bee21318347c4a3c",
+                "shasum": ""
+            },
+            "require": {
+                "skyshab/rootstrap": ">=2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rootstrap\\Panels\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Sky Shabatura",
+                    "email": "github@sky.camp",
+                    "homepage": "https://github.com/skyshab",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Rootstrap Panels adds a custom panel type in the customizer that can be nested multiple levels deep.",
+            "homepage": "https://github.com/skyshab/rootstrap-panels",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2020-05-12T12:32:26+00:00"
+        },
+        {
+            "name": "skyshab/rootstrap-screens",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/skyshab/rootstrap-screens.git",
+                "reference": "d89cab3a13836ef7aecf93f40f4e91d1e9a46dcc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/skyshab/rootstrap-screens/zipball/d89cab3a13836ef7aecf93f40f4e91d1e9a46dcc",
+                "reference": "d89cab3a13836ef7aecf93f40f4e91d1e9a46dcc",
+                "shasum": ""
+            },
+            "require": {
+                "skyshab/rootstrap-devices": ">=1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rootstrap\\Screens\\": "src/"
+                },
+                "files": []
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Sky Shabatura",
+                    "email": "github@sky.camp",
+                    "homepage": "https://github.com/skyshab",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Rootstrap Screens extends Rootstrap to define media query breakpoints to use in theme styles.",
+            "homepage": "https://github.com/skyshab/rootstrap-screens",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2019-11-03T12:34:09+00:00"
+        },
+        {
+            "name": "skyshab/rootstrap-sequences",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/skyshab/rootstrap-sequences.git",
+                "reference": "48e65ac95eb43fe49271a3b06bb021c60f20848f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/skyshab/rootstrap-sequences/zipball/48e65ac95eb43fe49271a3b06bb021c60f20848f",
+                "reference": "48e65ac95eb43fe49271a3b06bb021c60f20848f",
+                "shasum": ""
+            },
+            "require": {
+                "skyshab/rootstrap": ">=1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rootstrap\\Sequences\\": "src/"
+                },
+                "files": []
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Sky Shabatura",
+                    "email": "github@sky.camp",
+                    "homepage": "https://github.com/skyshab",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Rootstrap Sequences extends Rootstrap to add 'prev/next' type navigation for customizer sections.",
+            "homepage": "https://github.com/skyshab/rootstrap-sequences",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2021-01-23T12:47:32+00:00"
+        },
+        {
+            "name": "skyshab/rootstrap-styles",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/skyshab/rootstrap-styles.git",
+                "reference": "0385e8786b0ecf5b0aa0c8e1865e7d696d6581d5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/skyshab/rootstrap-styles/zipball/0385e8786b0ecf5b0aa0c8e1865e7d696d6581d5",
+                "reference": "0385e8786b0ecf5b0aa0c8e1865e7d696d6581d5",
+                "shasum": ""
+            },
+            "require": {
+                "skyshab/rootstrap-screens": ">=1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rootstrap\\Styles\\": "src/"
+                },
+                "files": []
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Sky Shabatura",
+                    "email": "github@sky.camp",
+                    "homepage": "https://github.com/skyshab",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Rootstrap Styles extends Rootstrap to create and manage theme styles.",
+            "homepage": "https://github.com/skyshab/rootstrap-styles",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2020-09-19T15:39:02+00:00"
+        },
+        {
+            "name": "skyshab/rootstrap-tabs",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/skyshab/rootstrap-tabs.git",
+                "reference": "fb431986d2866c5063e4f1ef39566b6c4a66727c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/skyshab/rootstrap-tabs/zipball/fb431986d2866c5063e4f1ef39566b6c4a66727c",
+                "reference": "fb431986d2866c5063e4f1ef39566b6c4a66727c",
+                "shasum": ""
+            },
+            "require": {
+                "skyshab/rootstrap": ">=1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rootstrap\\Tabs\\": "src/"
+                },
+                "files": []
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Sky Shabatura",
+                    "email": "github@sky.camp",
+                    "homepage": "https://github.com/skyshab",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Rootstrap Tabs extends Rootstrap to add tabbed navigation for customizer sections.",
+            "homepage": "https://github.com/skyshab/rootstrap-tabs",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2020-06-28T15:26:23+00:00"
+        }
+    ],
+    "packages-dev": [
+        {
+            "name": "dealerdirect/phpcodesniffer-composer-installer",
+            "version": "v0.4.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dealerdirect/phpcodesniffer-composer-installer.git",
+                "reference": "2e41850d5f7797cbb1af7b030d245b3b24e63a08"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dealerdirect/phpcodesniffer-composer-installer/zipball/2e41850d5f7797cbb1af7b030d245b3b24e63a08",
+                "reference": "2e41850d5f7797cbb1af7b030d245b3b24e63a08",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "php": "^5.3|^7",
+                "squizlabs/php_codesniffer": "*"
+            },
+            "require-dev": {
+                "composer/composer": "*",
+                "wimg/php-compatibility": "^8.0"
+            },
+            "suggest": {
+                "dealerdirect/qa-tools": "All the PHP QA tools you'll need"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Franck Nijhof",
+                    "email": "f.nijhof@dealerdirect.nl",
+                    "homepage": "http://workingatdealerdirect.eu",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP_CodeSniffer Standards Composer Installer Plugin",
+            "homepage": "http://workingatdealerdirect.eu",
+            "keywords": [
+                "PHPCodeSniffer",
+                "PHP_CodeSniffer",
+                "code quality",
+                "codesniffer",
+                "composer",
+                "installer",
+                "phpcs",
+                "plugin",
+                "qa",
+                "quality",
+                "standard",
+                "standards",
+                "style guide",
+                "stylecheck",
+                "tests"
+            ],
+            "time": "2017-12-06T16:27:17+00:00"
+        },
+        {
+            "name": "phpcompatibility/php-compatibility",
+            "version": "9.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPCompatibility/PHPCompatibility.git",
+                "reference": "9fb324479acf6f39452e0655d2429cc0d3914243"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibility/zipball/9fb324479acf6f39452e0655d2429cc0d3914243",
+                "reference": "9fb324479acf6f39452e0655d2429cc0d3914243",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3",
+                "squizlabs/php_codesniffer": "^2.3 || ^3.0.2"
+            },
+            "conflict": {
+                "squizlabs/php_codesniffer": "2.6.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.5 || ^5.0 || ^6.0 || ^7.0"
+            },
+            "suggest": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.5 || This Composer plugin will sort out the PHPCS 'installed_paths' automatically.",
+                "roave/security-advisories": "dev-master || Helps prevent installing dependencies with known security issues."
+            },
+            "type": "phpcodesniffer-standard",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Wim Godden",
+                    "homepage": "https://github.com/wimg",
+                    "role": "lead"
+                },
+                {
+                    "name": "Juliette Reinders Folmer",
+                    "homepage": "https://github.com/jrfnl",
+                    "role": "lead"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/PHPCompatibility/PHPCompatibility/graphs/contributors"
+                }
+            ],
+            "description": "A set of sniffs for PHP_CodeSniffer that checks for PHP cross-version compatibility.",
+            "homepage": "http://techblog.wimgodden.be/tag/codesniffer/",
+            "keywords": [
+                "compatibility",
+                "phpcs",
+                "standards"
+            ],
+            "time": "2019-12-27T09:44:58+00:00"
+        },
+        {
+            "name": "phpcompatibility/phpcompatibility-paragonie",
+            "version": "1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPCompatibility/PHPCompatibilityParagonie.git",
+                "reference": "ddabec839cc003651f2ce695c938686d1086cf43"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibilityParagonie/zipball/ddabec839cc003651f2ce695c938686d1086cf43",
+                "reference": "ddabec839cc003651f2ce695c938686d1086cf43",
+                "shasum": ""
+            },
+            "require": {
+                "phpcompatibility/php-compatibility": "^9.0"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
+                "paragonie/random_compat": "dev-master",
+                "paragonie/sodium_compat": "dev-master"
+            },
+            "suggest": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7 || This Composer plugin will sort out the PHP_CodeSniffer 'installed_paths' automatically.",
+                "roave/security-advisories": "dev-master || Helps prevent installing dependencies with known security issues."
+            },
+            "type": "phpcodesniffer-standard",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Wim Godden",
+                    "role": "lead"
+                },
+                {
+                    "name": "Juliette Reinders Folmer",
+                    "role": "lead"
+                }
+            ],
+            "description": "A set of rulesets for PHP_CodeSniffer to check for PHP cross-version compatibility issues in projects, while accounting for polyfills provided by the Paragonie polyfill libraries.",
+            "homepage": "http://phpcompatibility.com/",
+            "keywords": [
+                "compatibility",
+                "paragonie",
+                "phpcs",
+                "polyfill",
+                "standards"
+            ],
+            "time": "2021-02-15T10:24:51+00:00"
+        },
+        {
+            "name": "phpcompatibility/phpcompatibility-wp",
+            "version": "2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPCompatibility/PHPCompatibilityWP.git",
+                "reference": "b7dc0cd7a8f767ccac5e7637550ea1c50a67b09e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibilityWP/zipball/b7dc0cd7a8f767ccac5e7637550ea1c50a67b09e",
+                "reference": "b7dc0cd7a8f767ccac5e7637550ea1c50a67b09e",
+                "shasum": ""
+            },
+            "require": {
+                "phpcompatibility/php-compatibility": "^9.0",
+                "phpcompatibility/phpcompatibility-paragonie": "^1.0"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7"
+            },
+            "suggest": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7 || This Composer plugin will sort out the PHP_CodeSniffer 'installed_paths' automatically.",
+                "roave/security-advisories": "dev-master || Helps prevent installing dependencies with known security issues."
+            },
+            "type": "phpcodesniffer-standard",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Wim Godden",
+                    "role": "lead"
+                },
+                {
+                    "name": "Juliette Reinders Folmer",
+                    "role": "lead"
+                }
+            ],
+            "description": "A ruleset for PHP_CodeSniffer to check for PHP cross-version compatibility issues in projects, while accounting for polyfills provided by WordPress.",
+            "homepage": "http://phpcompatibility.com/",
+            "keywords": [
+                "compatibility",
+                "phpcs",
+                "standards",
+                "wordpress"
+            ],
+            "time": "2021-02-15T12:58:46+00:00"
+        },
+        {
+            "name": "squizlabs/php_codesniffer",
+            "version": "3.5.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
+                "reference": "9d583721a7157ee997f235f327de038e7ea6dac4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/9d583721a7157ee997f235f327de038e7ea6dac4",
+                "reference": "9d583721a7157ee997f235f327de038e7ea6dac4",
+                "shasum": ""
+            },
+            "require": {
+                "ext-simplexml": "*",
+                "ext-tokenizer": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0"
+            },
+            "bin": [
+                "bin/phpcs",
+                "bin/phpcbf"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Greg Sherwood",
+                    "role": "lead"
+                }
+            ],
+            "description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
+            "homepage": "https://github.com/squizlabs/PHP_CodeSniffer",
+            "keywords": [
+                "phpcs",
+                "standards"
+            ],
+            "time": "2020-10-23T02:01:07+00:00"
+        },
+        {
+            "name": "wp-coding-standards/wpcs",
+            "version": "2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WordPress/WordPress-Coding-Standards.git",
+                "reference": "7da1894633f168fe244afc6de00d141f27517b62"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/7da1894633f168fe244afc6de00d141f27517b62",
+                "reference": "7da1894633f168fe244afc6de00d141f27517b62",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4",
+                "squizlabs/php_codesniffer": "^3.3.1"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.5 || ^0.6",
+                "phpcompatibility/php-compatibility": "^9.0",
+                "phpcsstandards/phpcsdevtools": "^1.0",
+                "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0"
+            },
+            "suggest": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.6 || This Composer plugin will sort out the PHPCS 'installed_paths' automatically."
+            },
+            "type": "phpcodesniffer-standard",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/WordPress/WordPress-Coding-Standards/graphs/contributors"
+                }
+            ],
+            "description": "PHP_CodeSniffer rules (sniffs) to enforce WordPress coding conventions",
+            "keywords": [
+                "phpcs",
+                "standards",
+                "wordpress"
+            ],
+            "time": "2020-05-13T23:57:56+00:00"
+        },
+        {
+            "name": "wptrt/wpthemereview",
+            "version": "0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WPTT/WPThemeReview.git",
+                "reference": "462e59020dad9399ed2fe8e61f2a21b5e206e420"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WPTT/WPThemeReview/zipball/462e59020dad9399ed2fe8e61f2a21b5e206e420",
+                "reference": "462e59020dad9399ed2fe8e61f2a21b5e206e420",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4",
+                "phpcompatibility/phpcompatibility-wp": "^2.0",
+                "squizlabs/php_codesniffer": "^3.3.1",
+                "wp-coding-standards/wpcs": "^2.2.0"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+                "phpcompatibility/php-compatibility": "^9.0",
+                "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0",
+                "roave/security-advisories": "dev-master"
+            },
+            "suggest": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0 || This Composer plugin will sort out the PHPCS 'installed_paths' automatically."
+            },
+            "type": "phpcodesniffer-standard",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Theme Review Team",
+                    "homepage": "https://make.wordpress.org/themes/handbook/",
+                    "role": "Strategy and rule setting"
+                },
+                {
+                    "name": "Ulrich Pogson",
+                    "homepage": "https://github.com/grappler",
+                    "role": "Lead developer"
+                },
+                {
+                    "name": "Juliette Reinders Folmer",
+                    "homepage": "https://github.com/jrfnl",
+                    "role": "Lead developer"
+                },
+                {
+                    "name": "Denis Žoljom",
+                    "homepage": "https://github.com/dingo-d",
+                    "role": "Plugin integration lead"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/WPTRT/WPThemeReview/graphs/contributors"
+                }
+            ],
+            "description": "PHP_CodeSniffer rules (sniffs) to verify theme compliance with the rules for theme hosting on wordpress.org",
+            "homepage": "https://make.wordpress.org/themes/handbook/review/",
+            "keywords": [
+                "phpcs",
+                "standards",
+                "themes",
+                "wordpress"
+            ],
+            "time": "2019-11-17T20:05:55+00:00"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "justintadlock/hybrid-core": 20,
+        "justintadlock/hybrid-breadcrumbs": 20,
+        "skyshab/rootstrap": 20,
+        "skyshab/rootstrap-devices": 20,
+        "skyshab/rootstrap-screens": 20,
+        "skyshab/rootstrap-styles": 20,
+        "skyshab/rootstrap-tabs": 20,
+        "skyshab/rootstrap-sequences": 20,
+        "skyshab/rootstrap-defaults": 20,
+        "skyshab/rootstrap-panels": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.6"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
+}

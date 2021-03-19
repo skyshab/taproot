@@ -2,8 +2,8 @@
 Contributors: skyshab
 Tags: custom-background, custom-header, custom-colors, custom-menu, featured-images, one-column, two-column, theme-options, block-editor-styles, threaded-comments
 Requires at least: 5.4
-Tested up to: 5.5.1
-Stable tag: 2.0.0
+Tested up to: 5.7.0
+Stable tag: 2.1.0
 
 A lightweight yet powerful all-purpose theme.
 
@@ -30,4 +30,4 @@ Taproot uses the following external packages:
 
 ## Copyright and License
 Taproot is licensed under the [GNU GPL](https://www.gnu.org/licenses/gpl-2.0.html), version 2 or later.
-2017-2020 © Sky Shabatura
+2017-2021 © Sky Shabatura

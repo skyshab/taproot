@@ -1,7 +1,1 @@
-.customize-partial-edit-shortcuts-shown .customize-partial-edit-shortcut-button {
-  display: none;
-}
-.customize-partial-edit-shortcuts-shown :hover > .customize-partial-edit-shortcut .customize-partial-edit-shortcut-button {
-  display: block;
-}
-/*# sourceMappingURL=customize-preview.css.map*/
+.customize-partial-edit-shortcuts-shown .customize-partial-edit-shortcut-button{display:none}.customize-partial-edit-shortcuts-shown :hover>.customize-partial-edit-shortcut .customize-partial-edit-shortcut-button{display:block}
