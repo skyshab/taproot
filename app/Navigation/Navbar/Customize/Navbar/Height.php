@@ -47,7 +47,7 @@ class Height extends Range {
      * @since 2.0.0
      * @var array
      */
-    public $default = '3em';
+    public $default = '3rem';
 
     /**
      * Range atts
@@ -60,7 +60,7 @@ class Height extends Range {
             'max' => 100,
             'default' => 50,
         ],
-        'em' => [
+        'rem' => [
             'max' => 6,
         ],
     ];

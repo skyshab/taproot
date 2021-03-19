@@ -6,7 +6,7 @@
  *
  * @package   Taproot
  * @author    Sky Shabatura
- * @copyright Copyright (c) 2020, Sky Shabatura
+ * @copyright Copyright (c) 2021, Sky Shabatura
  * @link      https://github.com/skyshab/taproot
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -19,68 +19,72 @@ use Taproot\Tools\Mod;
 /**
  * Class for range control
  *
- * @since  2.0.0
+ * @since  2.1.0
  * @access public
  */
-class Line_Height extends Range {
+class Height extends Range {
 
     /**
      * Control ID
      *
-     * @since 2.0.0
+     * @since 2.1.0
      * @var string
      */
-    public $name = 'line-height';
+    public $name = 'height';
 
     /**
      * Label
      *
-     * @since 2.0.0
+     * @since 2.1.0
      * @var string
      */
-    public $label = 'Line Height';
+    public $label = 'Menu Height';
+
+    /**
+     * Default values
+     *
+     * @since 2.1.0
+     * @var array
+     */
+    public $default = '2.5rem';    
 
     /**
      * Range atts
      *
-     * @since 2.0.0
+     * @since 2.1.0
      * @var array
      */
     public $atts = [
-        'unitless' => [
-            'min' => 0.5,
-            'max' => 3,
-            'step' => 0.01,
-            'default' => 1
-        ],
         'px' => [
-            'min' => 0,
-            'max' => 72,
-        ]
+            'max' => 100,
+            'default' => 50,
+        ],
+        'rem' => [
+            'max' => 6,
+        ],
     ];
 
     /**
      * Styles
      *
-     * @since  2.0.0
+     * @since  2.1.0
      * @access public
      * @return void
      */
     public function styles( $styles ) {
 
-        $styles->add([
-            'selector' => '.app-header--fixed .menu--top__link',
-            'styles' => [
-                'line-height' => Mod::get( $this->id ),
-            ],
-            'screen' => 'desktop',
-        ]);
+        $styles->customProperty([
+            'name'      => 'navigation--top--height',
+            'value'     => Mod::get( $this->id ),
+            'screen'    => 'desktop',
+            'selector'  => '.app-header--fixed',
+        ]);        
     }
 
     /**
      * Preview Styles
      *
-     * @since  2.0.0
+     * @since  2.1.0
      * @access public
      * @return void
      */
@@ -89,13 +93,11 @@ class Line_Height extends Range {
         return <<< JS
         wp.customize( "{$this->id}", function( value ) {
             value.bind( function( to ) {
-                rootstrap.style({
-                    id: "{$this->id}",
-                    selector: '.app-header--fixed .menu--top__link',
+                rootstrap.customProperty({
+                    name: 'navigation--top--height',
                     screen: 'desktop',
-                    styles: {
-                        'line-height': to
-                    },
+                    value: to,
+                    selector: '.app-header--fixed'
                 });
             });
         });

@@ -54,8 +54,8 @@ class Provider extends ServiceProvider {
                     Customize\Footer\Link_Color_Hover::class,
                     Customize\Footer\Font_Family::class,
                     Customize\Footer\Font_Styles::class,
+                    Customize\Footer\Height::class,
                     Customize\Footer\Font_Size::class,
-                    Customize\Footer\Line_Height::class,
                     Customize\Footer\Padding::class,
                     Customize\Footer\Align::class,
                     Customize\Footer\Position::class
