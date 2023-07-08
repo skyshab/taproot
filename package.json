@@ -44,7 +44,7 @@
         "rimraf": "^2.6.3",
         "sass": "^1.27.0",
         "sass-loader": "^8.0.2",
-        "stylelint": "^9.9.0",
+        "stylelint": "^15.10.1",
         "stylelint-config-wordpress": "^13.1.0",
         "vue-template-compiler": "^2.6.11"
     }
